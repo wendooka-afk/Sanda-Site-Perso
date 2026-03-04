@@ -140,11 +140,10 @@ Ce message a été envoyé via le formulaire de contact de oumarousanda.com
         recipients: [
             { email: CONTACT_RECIPIENT_EMAIL, name: CONTACT_RECIPIENT_NAME },
         ],
-        // Reply-to = l'expéditeur (pour répondre directement)
-        reply_to: {
-            email: data.email,
-            name: data.name,
-        },
+        // Reply-to = l'expéditeur (pour répondre directement) — tableau obligatoire
+        reply_to: [
+            { email: data.email, name: data.name },
+        ],
         subject: `[Contact] ${subjectLabel} — ${data.name}`,
         text: textBody,
         html: htmlBody,
