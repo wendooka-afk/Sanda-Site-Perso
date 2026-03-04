@@ -1,0 +1,11 @@
+export { default as DashboardLayout } from './DashboardLayout';
+export { default as DashboardOverview } from './DashboardOverview';
+export { default as DashboardArticles } from './DashboardArticles';
+export { default as DashboardFormations } from './DashboardFormations';
+export { default as DashboardComments } from './DashboardComments';
+export { default as DashboardLeads } from './DashboardLeads';
+export { default as DashboardMedia } from './DashboardMedia';
+export { default as DashboardAnalytics } from './DashboardAnalytics';
+export { default as DashboardSettings } from './DashboardSettings';
+export { default as DashboardLinks } from './DashboardLinks';
+export { ProtectedRoute, DashboardLogin } from './DashboardAuth';

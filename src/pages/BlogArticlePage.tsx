@@ -1,0 +1,1509 @@
+import DOMPurify from 'dompurify';
+import { useParams, Link, Navigate } from 'react-router-dom';
+import { AdUnit } from '../components/AdUnit';
+
+/** Convertit une date humaine française en ISO 8601 pour les schemas SEO.
+ *  "22 Fév 2026" → "2026-02-22" | "Mis à jour : Février 2026" → "2026-02-01" */
+function parseFrenchDate(dateStr?: string): string | undefined {
+  if (!dateStr) return undefined;
+  const M: Record<string, string> = {
+    jan:'01', fév:'02', fev:'02', mar:'03', avr:'04', mai:'05', juin:'06',
+    juil:'07', aoû:'08', aou:'08', sep:'09', oct:'10', nov:'11', déc:'12', dec:'12',
+    janvier:'01', février:'02', fevrier:'02', mars:'03', avril:'04',
+    juillet:'07', août:'08', aout:'08', septembre:'09',
+    octobre:'10', novembre:'11', décembre:'12', decembre:'12',
+  };
+  const normalize = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  // "22 Fév 2026"
+  const full = dateStr.match(/(\d{1,2})\s+(\w+)\s+(\d{4})/);
+  if (full) {
+    const mm = M[normalize(full[2])];
+    if (mm) return `${full[3]}-${mm}-${full[1].padStart(2,'0')}`;
+  }
+  // "Fév 2026" / "Mis à jour : Février 2026"
+  const partial = dateStr.match(/(\w+)\s+(\d{4})/);
+  if (partial) {
+    const mm = M[normalize(partial[1])];
+    if (mm) return `${partial[2]}-${mm}-01`;
+  }
+  return undefined;
+}
+import { motion } from 'framer-motion';
+import { articles } from '../data/articles';
+import { getDashboardArticleBySlug } from '../hooks/useDashboardArticles';
+import type { DashboardArticle } from '../hooks/useDashboardArticles';
+import { marked } from 'marked';
+import { Calendar, Clock, ArrowLeft, ArrowRight, Home, ChevronRight, Tag, Share2, ExternalLink, CheckCircle2, XCircle, AlertTriangle, List, Play, Puzzle, Palette, DollarSign, MessageCircle, Send, User, Heart, Reply, Linkedin, Facebook, Globe, Youtube, BookOpen } from 'lucide-react';
+import { useState, useEffect, useCallback } from 'react';
+import { SEOHead } from '../components/SEOHead';
+
+/* ═══ Rich Section Renderers ═══ */
+
+function RenderIntro({ content }: { content: string }) {
+  return (
+    <div className="text-[#404040] text-[16px] leading-relaxed mb-8 border-l-2 border-gold/40 pl-6" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content) }} />
+  );
+}
+
+function RenderHeading({ content, id }: { content: string; id?: string }) {
+  return (
+    <h2 id={id} className="font-heading font-bold !text-xl sm:!text-2xl text-[#0a0a0a] mt-12 mb-5 tracking-tight scroll-mt-28 flex items-center gap-3">
+      <span className="w-1.5 h-8 bg-gradient-to-b from-gold to-gold-light rounded-full" />
+      {content}
+    </h2>
+  );
+}
+
+function RenderText({ content }: { content: string }) {
+  return (
+    <div
+      className="prose-custom text-[#525252] text-[15px] leading-[1.85] mb-5 [&_p]:mb-4 [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-gold-light [&_strong]:text-[#0a0a0a] [&_strong]:font-semibold"
+      dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content) }}
+    />
+  );
+}
+
+function RenderList({ items }: { items: (string | { title: string; desc: string })[] }) {
+  return (
+    <div className="space-y-3 mb-6">
+      {items.map((item, i) => (
+        typeof item === 'string'
+          ? <div key={i} className="flex items-start gap-3 py-2.5">
+              <div className="w-1.5 h-1.5 rounded-full bg-gold/60 shrink-0 mt-[7px]" />
+              <p className="text-[#525252] text-[14px] leading-relaxed" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item) }} />
+            </div>
+          : <div key={i} className="bg-white border border-black/5 rounded-xl p-5 border-l-2 border-blue/20 shadow-sm">
+              <h4 className="font-heading font-semibold text-[#0a0a0a] text-[14px] mb-1.5">{item.title}</h4>
+              <p className="text-[#737373] text-[13px] leading-relaxed">{item.desc}</p>
+            </div>
+      ))}
+    </div>
+  );
+}
+
+function RenderCTA({ label, url, variant }: { label: string; url: string; variant: string }) {
+  return (
+    <div className="my-8 flex justify-center">
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={
+          'inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-heading font-bold text-[14px] transition-all duration-500 ' +
+          (variant === 'primary'
+            ? 'bg-gradient-to-r from-gold to-gold-light text-dark-950 hover:shadow-[0_8px_30px_rgba(201,168,76,0.25)]'
+            : 'bg-blue/10 border border-blue/20 text-blue hover:bg-blue/20')
+        }
+      >
+        {label}
+        <ExternalLink className="w-4 h-4" />
+      </a>
+    </div>
+  );
+}
+
+function RenderCompetitors({ items }: { items: string[] }) {
+  return (
+    <div className="grid grid-cols-3 sm:grid-cols-5 gap-2 my-6">
+      {items.map((item) => (
+        <div key={item} className="bg-white border border-black/5 rounded-lg px-3 py-2.5 text-center shadow-sm">
+          <span className="text-[#a3a3a3] text-[12px] font-medium">{item}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function RenderPros({ items }: { items: (string | { title: string; desc?: string })[] }) {
+  return (
+    <div className="space-y-2.5 my-6">
+      {items.map((item, i) => (
+        <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-emerald/5 border border-emerald/10 shadow-sm">
+          <CheckCircle2 className="w-4 h-4 text-emerald shrink-0 mt-0.5" />
+          <div>
+            {typeof item === 'string'
+              ? <p className="text-[#404040] text-[13px] leading-relaxed" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item) }} />
+              : <>
+                  <h4 className="font-heading font-semibold text-[#0a0a0a] text-[13px] mb-0.5">{item.title}</h4>
+                  {item.desc && <p className="text-[#737373] text-[12px] leading-relaxed">{item.desc}</p>}
+                </>
+            }
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function RenderCons({ items }: { items: { title: string; desc: string }[] }) {
+  return (
+    <div className="space-y-2.5 my-6">
+      {items.map((item) => (
+        <div key={item.title} className="flex items-start gap-3 p-4 rounded-xl bg-coral/5 border border-coral/10 shadow-sm">
+          <XCircle className="w-4 h-4 text-coral shrink-0 mt-0.5" />
+          <div>
+            <h4 className="font-heading font-semibold text-[#0a0a0a] text-[13px] mb-0.5">{item.title}</h4>
+            {item.desc && <p className="text-[#737373] text-[12px] leading-relaxed">{item.desc}</p>}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function RenderDisclaimer({ content }: { content: string }) {
+  return (
+    <div className="mt-8 p-5 rounded-xl bg-gold/5 border border-gold/15 flex items-start gap-3 shadow-sm">
+      <AlertTriangle className="w-4 h-4 text-gold shrink-0 mt-0.5" />
+      <p className="text-[#737373] text-[12px] leading-relaxed italic" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content) }} />
+    </div>
+  );
+}
+
+function RenderKeyPoints({ items }: { items: string[] }) {
+  return (
+    <div className="my-10 p-6 sm:p-8 rounded-2xl bg-white border border-gold/20 relative overflow-hidden group shadow-lg shadow-gold/5">
+      <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <h3 className="font-heading font-bold text-gold text-sm tracking-widest mb-6 flex items-center gap-2">
+        <CheckCircle2 className="w-4 h-4" />
+        Points clés à retenir
+      </h3>
+      <div className="grid sm:grid-cols-2 gap-y-4 gap-x-8">
+        {items.map((item, i) => (
+          <div key={i} className="flex items-start gap-3">
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald shrink-0 mt-1" />
+            <p className="text-[#404040] text-[13px] leading-relaxed">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function RenderStats({ items }: { items: { num?: string; value?: string; label: string }[] }) {
+  return (
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 my-10">
+      {items.map((item, i) => (
+        <div key={i} className="bg-white rounded-2xl p-5 text-center border border-black/5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="font-heading font-bold text-2xl text-gold mb-1">{item.num ?? item.value}</div>
+          <div className="text-[#a3a3a3] text-[10px] uppercase tracking-wider leading-tight font-medium">{item.label}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function RenderPlugin({ name, number, desc, plan, deal }: { name: string; number: number; desc: string; plan: string; deal: string }) {
+  const planColors: Record<string, string> = {
+    'Freemium': 'text-blue bg-blue/5 border-blue/10',
+    'Premium': 'text-gold bg-gold/5 border-gold/10',
+    'Gratuit': 'text-emerald bg-emerald/5 border-emerald/10',
+  };
+  const planStyle = planColors[plan] || 'text-[#737373] bg-black/5 border-black/5';
+
+  return (
+    <div className="bg-white rounded-2xl p-6 mb-5 border border-black/5 hover:border-gold/10 transition-all duration-500 group shadow-sm hover:shadow-md">
+      <div className="flex items-start gap-4">
+        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gold/10 to-transparent border border-gold/10 flex items-center justify-center shrink-0">
+          <span className="text-gold font-heading font-bold text-lg">{number}</span>
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-3 mb-2 flex-wrap">
+            <h3 className="font-heading font-bold text-[#0a0a0a] text-[16px] group-hover:text-gold transition-colors">{name}</h3>
+            <span className={'px-2.5 py-0.5 rounded-full text-[10px] font-semibold border ' + planStyle}>{plan}</span>
+          </div>
+          <p className="text-[#737373] text-[13px] leading-relaxed mb-3">{desc}</p>
+          <div className="flex items-center gap-2">
+            <Puzzle className="w-3.5 h-3.5 text-gold/40" />
+            <span className="text-gold/60 text-[12px] font-medium">{deal}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function RenderThemes({ items }: { items: { title: string; desc: string; badge: string }[] }) {
+  const badgeColors: Record<string, string> = {
+    'Populaire': 'text-blue bg-blue/5',
+    'Premium': 'text-gold bg-gold/5',
+    '#1 Vendu': 'text-coral bg-coral/5',
+    'News': 'text-violet bg-violet/5',
+    'E-Commerce': 'text-emerald bg-emerald/5',
+    'Éducation': 'text-orange-400 bg-orange-400/5',
+  };
+
+  return (
+    <div className="grid sm:grid-cols-2 gap-4 my-6">
+      {items.map((item) => (
+        <div key={item.title} className="bg-white rounded-xl p-5 border border-black/5 hover:border-gold/10 transition-all duration-300 group shadow-sm hover:shadow-md">
+          <div className="flex items-center gap-2 mb-3">
+            <Palette className="w-4 h-4 text-gold/40" />
+            <h4 className="font-heading font-bold text-[#0a0a0a] text-[14px] group-hover:text-gold transition-colors">{item.title}</h4>
+            <span className={'px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider ' + (badgeColors[item.badge] || 'text-[#a3a3a3] bg-black/5')}>
+              {item.badge}
+            </span>
+          </div>
+          <p className="text-[#737373] text-[12px] leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function RenderVideo({ url, title }: { url: string; title: string }) {
+  return (
+    <div className="my-8 rounded-2xl overflow-hidden border border-white/[0.06] bg-dark-900/50">
+      <div className="aspect-video relative">
+        <iframe
+          src={url}
+          title={title}
+          className="absolute inset-0 w-full h-full"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+      <div className="px-5 py-3 flex items-center gap-2 border-t border-white/[0.04]">
+        <Play className="w-3.5 h-3.5 text-coral" />
+        <span className="text-white/30 text-[12px] font-medium">{title}</span>
+      </div>
+    </div>
+  );
+}
+
+function RenderMonetization({ items }: { items: { title: string; desc: string; icon: string }[] }) {
+  return (
+    <div className="grid sm:grid-cols-2 gap-3 my-6">
+      {items.map((item, i) => (
+        <div key={item.title} className="bg-white rounded-xl p-5 border border-black/5 hover:border-emerald/10 transition-all duration-300 group shadow-sm hover:shadow-md">
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald/10 to-transparent border border-emerald/10 flex items-center justify-center shrink-0">
+              <span className="text-lg">{item.icon}</span>
+            </div>
+            <div>
+              <div className="flex items-center gap-2 mb-1.5">
+                <DollarSign className="w-3 h-3 text-emerald/40" />
+                <h4 className="font-heading font-semibold text-[#0a0a0a] text-[13px] group-hover:text-emerald transition-colors">
+                  {i + 1}. {item.title}
+                </h4>
+              </div>
+              <p className="text-[#737373] text-[12px] leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function RenderTable({ headers, rows }: { headers: string[]; rows: string[][] }) {
+  return (
+    <div className="my-8 overflow-x-auto rounded-xl border border-black/5 bg-[#fafafa]">
+      <table className="w-full text-[13px] border-collapse">
+        <thead className="bg-black/5">
+          <tr>
+            {headers.map((h, i) => (
+              <th key={i} className="px-5 py-3.5 text-left font-heading font-bold text-[#0a0a0a]/60 border-b border-black/5">
+                {h}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-black/5">
+          {rows.map((row, i) => (
+            <tr key={i} className="hover:bg-black/[0.02] transition-colors">
+              {row.map((cell, j) => (
+                <td
+                  key={j}
+                  className="px-5 py-3.5 text-[#525252] leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(cell) }}
+                />
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+/* ═══ FAQ Renderer ═══ */
+function RenderFAQ({ items }: { items: { q: string; a: string }[] }) {
+  return (
+    <div className="space-y-4 my-10">
+      {items.map((item, i) => (
+        <div key={i} className="bg-white rounded-2xl border border-black/5 overflow-hidden group shadow-sm hover:shadow-md transition-shadow">
+          <div className="px-6 py-4 bg-black/[0.02] border-b border-black/5 flex gap-3">
+            <span className="text-gold font-heading font-bold">Q —</span>
+            <h4 className="font-heading font-bold text-[#0a0a0a] text-[14px] leading-snug">{item.q}</h4>
+          </div>
+          <div className="px-6 py-4 text-[#737373] text-[13px] leading-relaxed" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.a) }} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ═══ Internal Links Renderer ═══ */
+function RenderInternalLinks({ items }: { items: { label: string; url?: string; slug?: string }[] }) {
+  return (
+    <div className="my-10 p-6 sm:p-8 rounded-2xl bg-[#fafafa] border border-black/5 shadow-inner">
+      <h4 className="font-heading font-bold text-[#0a0a0a] text-[14px] mb-5 flex items-center gap-2">
+        <BookOpen className="w-4 h-4 text-gold" />
+        À lire aussi sur oumarousanda.com
+      </h4>
+      <ul className="space-y-3">
+        {items.map((item, i) => (
+          <li key={i} className="flex items-start gap-3 group">
+            <ArrowRight className="w-3.5 h-3.5 text-gold/40 mt-1 transition-transform group-hover:translate-x-0.5" />
+            <a href={item.url ?? (item.slug ? '/blog/' + item.slug : '#')} className="text-gold/70 text-[13px] hover:text-gold transition-colors underline decoration-gold/20 underline-offset-4 font-medium">
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+/* ═══ Table of Contents ═══ */
+function TableOfContents({ items, className = '' }: { items: { id: string; label: string }[]; className?: string }) {
+  return (
+    <div className={`bg-white rounded-2xl p-6 mb-10 border border-black/5 shadow-sm ${className}`}>
+      <div className="flex items-center gap-2 mb-4">
+        <List className="w-4 h-4 text-gold" />
+        <h3 className="font-heading font-bold text-[#0a0a0a] text-[14px]">Table des matières</h3>
+      </div>
+      <nav className="space-y-1.5">
+        {items.map((item, i) => (
+          <a
+            key={item.id}
+            href={'#' + item.id}
+            className="flex items-center gap-3 py-1.5 text-[13px] text-[#737373] hover:text-gold transition-colors group"
+          >
+            <span className="text-gold/40 font-mono text-[11px] w-5 text-right">{String(i + 1).padStart(2, '0')}</span>
+            <span className="group-hover:translate-x-0.5 transition-transform">{item.label}</span>
+          </a>
+        ))}
+      </nav>
+    </div>
+  );
+}
+
+/* ═══ SEO Keywords Badge ═══ */
+function SEOKeywords({ keywords }: { keywords: string[] }) {
+  return (
+    <div className="mt-8 pt-6 border-t border-black/5">
+      <p className="text-[#a3a3a3] text-[11px] uppercase tracking-wider mb-3 font-semibold">Sujets connexes</p>
+      <div className="flex flex-wrap gap-1.5">
+        {keywords.map((kw) => (
+          <span key={kw} className="px-2.5 py-1 bg-black/5 border border-black/5 rounded-full text-[#737373] text-[10px] font-medium">
+            {kw}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ═══ Rich Article Renderer ═══ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function RichArticleContent({ article }: { article: any }) {
+  return (
+    <div>
+      {article.tableOfContents && <TableOfContents items={article.tableOfContents} className="xl:hidden" />}
+
+      {article.sections.map((section: Record<string, unknown>, i: number) => {
+        switch (section.type) {
+          case 'intro':
+            return <RenderIntro key={i} content={section.content as string || ''} />;
+          case 'heading':
+            return <RenderHeading key={i} content={section.content as string || ''} id={section.id as string} />;
+          case 'text':
+            return <RenderText key={i} content={section.content as string || ''} />;
+          case 'list':
+            return <RenderList key={i} items={section.items as (string | { title: string; desc: string })[]} />;
+          case 'cta':
+            return <RenderCTA key={i} label={section.label as string || ''} url={section.url as string || ''} variant={section.variant as string || 'primary'} />;
+          case 'competitors':
+            return <RenderCompetitors key={i} items={section.items as string[]} />;
+          case 'pros':
+            return <RenderPros key={i} items={section.items as (string | { title: string; desc?: string })[]} />;
+          case 'cons':
+            return <RenderCons key={i} items={section.items as { title: string; desc: string }[]} />;
+          case 'disclaimer':
+            return <RenderDisclaimer key={i} content={section.content as string || ''} />;
+          case 'plugin':
+            return <RenderPlugin key={i} name={section.name as string} number={section.number as number} desc={section.desc as string} plan={section.plan as string} deal={section.deal as string} />;
+          case 'themes':
+            return <RenderThemes key={i} items={section.items as { title: string; desc: string; badge: string }[]} />;
+          case 'video':
+            return <RenderVideo key={i} url={section.url as string} title={section.title as string} />;
+          case 'monetization':
+            return <RenderMonetization key={i} items={section.items as { title: string; desc: string; icon: string }[]} />;
+          case 'table':
+            return <RenderTable key={i} headers={section.headers as string[]} rows={section.rows as string[][]} />;
+          case 'key-points':
+            return <RenderKeyPoints key={i} items={section.items as string[]} />;
+          case 'stats-grid':
+            return <RenderStats key={i} items={section.items as { num?: string; value?: string; label: string }[]} />;
+          case 'faq-rich':
+            return <RenderFAQ key={i} items={section.items as { q: string; a: string }[]} />;
+          case 'internal-links':
+            return <RenderInternalLinks key={i} items={section.items as { label: string; url?: string; slug?: string }[]} />;
+          default:
+            return null;
+        }
+      })}
+
+      {article.seo?.secondaryKeywords && <SEOKeywords keywords={article.seo.secondaryKeywords} />}
+    </div>
+  );
+}
+
+/* ═══ Plain Article Renderer (markdown-like) ═══ */
+function PlainArticleContent({ content }: { content: string }) {
+  return (
+    <div className="max-w-none">
+      {content.split('\n\n').map((block, i) => {
+        const trimmed = block.trim();
+        if (trimmed.startsWith('## ')) return <h2 key={i} className="font-heading font-bold !text-xl text-[#0a0a0a] mt-10 mb-4 tracking-tight">{trimmed.replace('## ', '')}</h2>;
+        if (trimmed.startsWith('**') && trimmed.endsWith('**')) {
+          return <p key={i} className="text-[#404040] font-semibold leading-relaxed mb-4 text-[15px]">{trimmed.replace(/\*\*/g, '')}</p>;
+        }
+        if (trimmed.startsWith('- ')) {
+          const listItems = trimmed.split('\n').filter(l => l.trim().startsWith('- '));
+          return (
+            <ul key={i} className="space-y-2 mb-6 ml-4">
+              {listItems.map((li, j) => (
+                <li key={j} className="text-[#737373] text-[15px] leading-relaxed flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold/40 mt-2 shrink-0" />
+                  {li.replace(/^- /, '')}
+                </li>
+              ))}
+            </ul>
+          );
+        }
+        return <p key={i} className="text-[#737373] leading-relaxed mb-4 text-[15px]">{trimmed}</p>;
+      })}
+    </div>
+  );
+}
+
+/* ═══ Author Bio (Section 09 copy) ═══ */
+function AuthorBio() {
+  const socials = [
+    { icon: Youtube, label: 'YouTube', url: 'https://www.youtube.com/@Oumarou_Sanda', color: 'hover:text-red-500 hover:border-red-500/20 hover:bg-red-500/5' },
+    { icon: Linkedin, label: 'LinkedIn', url: 'https://linkedin.com/in/benibsanda', color: 'hover:text-blue hover:border-blue/20 hover:bg-blue/5' },
+    { icon: Facebook, label: 'Facebook', url: 'https://facebook.com/iamoumarousanda', color: 'hover:text-blue hover:border-blue/20 hover:bg-blue/5' },
+    { icon: Globe, label: 'Site Web', url: '/', color: 'hover:text-gold hover:border-gold/20 hover:bg-gold/5' },
+  ];
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="bg-white rounded-3xl p-7 sm:p-8 mt-8 border border-black/5 shadow-luxury"
+    >
+      <div className="flex items-center gap-2.5 mb-6">
+        <div className="w-1 h-5 bg-gradient-to-b from-gold to-gold-light rounded-full" />
+        <h3 className="font-heading font-bold text-[#0a0a0a] text-[15px] tracking-tight">À propos de l'auteur</h3>
+      </div>
+
+      <div className="flex flex-col sm:flex-row items-start gap-6">
+        <div className="shrink-0">
+          <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-gold/20 via-gold/10 to-transparent border border-gold/15 flex items-center justify-center relative overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-br from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <span className="text-gold font-heading font-bold text-2xl relative z-10">OS</span>
+          </div>
+        </div>
+
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-3 mb-2 flex-wrap">
+            <h4 className="font-heading font-bold text-[#0a0a0a] text-lg">Oumarou Sanda</h4>
+            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-gold/10 text-gold border border-gold/20">
+              Expert IA Générative
+            </span>
+          </div>
+
+          <p className="text-[#737373] text-[13px] leading-relaxed mb-4">
+            Oumarou Sanda est un entrepreneur digital, expert en intelligence artificielle et formateur basé au Cameroun. Fondateur de <span className="text-gold/70 font-semibold">Wendooka</span> et <span className="text-blue/80 font-semibold">Sanda Vibe Code</span>, il a formé des centaines d'entrepreneurs africains à utiliser l'IA pour générer des revenus. Il est l'auteur de «Si l'Afrique rate l'IA, elle rate le Futur».
+          </p>
+
+          <div className="flex items-center gap-4 flex-wrap">
+            <div className="flex items-center gap-1.5">
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={s.label}
+                  className={'w-8 h-8 rounded-lg bg-black/5 border border-black/10 flex items-center justify-center text-[#737373] transition-all duration-300 ' + s.color}
+                >
+                  <s.icon className="w-3.5 h-3.5" />
+                </a>
+              ))}
+            </div>
+            <Link
+              to="/blog"
+              className="text-gold/60 text-[12px] font-medium hover:text-gold transition-colors flex items-center gap-1.5 group"
+            >
+              Voir tous les articles
+              <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+/* ═══ Related Articles (Section 09 — Articles Liés) ═══ */
+function RelatedArticles({ currentSlug, category }: { currentSlug: string; category: string }) {
+  const related = articles
+    .filter(a => a.slug !== currentSlug && a.category === category)
+    .slice(0, 3);
+
+  if (related.length === 0) {
+    // Fallback: show any 3 articles not current
+    const fallback = articles.filter(a => a.slug !== currentSlug).slice(0, 3);
+    if (fallback.length === 0) return null;
+    return <RelatedGrid items={fallback} />;
+  }
+
+  return <RelatedGrid items={related} />;
+}
+
+function RelatedGrid({ items }: { items: typeof articles }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="mt-12"
+    >
+      <h3 className="font-heading font-bold text-[#0a0a0a] text-lg mb-6 flex items-center gap-2">
+        <BookOpen className="w-5 h-5 text-gold" />
+        Articles liés
+      </h3>
+      <div className="grid sm:grid-cols-3 gap-4">
+        {items.map((a) => (
+          <Link key={a.slug} to={'/blog/' + a.slug} className="bg-white border border-black/5 rounded-xl overflow-hidden group shadow-sm hover:shadow-md transition-all">
+            {'image' in a && a.image && (
+              <div className="w-full aspect-[16/9] overflow-hidden">
+                <img src={a.image} alt={a.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              </div>
+            )}
+            <div className="p-4">
+              <span className={'px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider mb-2 inline-block ' + (a.tagColor || '')}>{a.category}</span>
+              <h4 className="font-heading font-semibold text-[#0a0a0a] text-[13px] group-hover:text-gold transition-colors line-clamp-2">{a.title}</h4>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </motion.div>
+  );
+}
+
+/* ═══ CTA contextuel (milieu/fin de l'article) ═══ */
+function ArticleCTABlock({ category }: { category: string }) {
+  let ctaText = 'Tu veux aller plus loin ?';
+  let ctaDesc = 'Découvre les formations Oumarou Sanda et passe de la théorie à l\'action.';
+  let ctaLink = '/formations';
+  let ctaLabel = 'Voir les formations';
+
+  if (category === 'IA & Outils' || category === 'Vidéo IA') {
+    ctaDesc = 'Découvre le Protocole Vidéo IA — la formation complète pour maîtriser VEO, Sora et Wan.';
+    ctaLabel = 'Voir la formation vidéo IA';
+  } else if (category === 'Vibe Coding') {
+    ctaDesc = 'Apprends à créer des applications et SaaS sans coder grâce à Sanda Vibe Code.';
+    ctaLabel = 'Découvrir Sanda Vibe Code';
+    ctaLink = '/services';
+  } else if (category === 'Entrepreneuriat Afrique') {
+    ctaDesc = 'Crée ta société au UK, ouvre Stripe, et vends partout dans le monde avec Offshore Empire.';
+    ctaLabel = 'Voir Offshore Empire';
+  } else if (category === 'Analyses & Opinions') {
+    ctaDesc = 'Lis le livre manifeste « Si l\'Afrique rate l\'IA, elle rate le Futur », disponible maintenant.';
+    ctaLabel = 'Découvrir le livre';
+  }
+
+  return (
+    <div className="my-10 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-blue/[0.06] to-blue/[0.02] border border-blue/15 relative overflow-hidden">
+      <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue/5 rounded-full blur-3xl" />
+      <div className="relative z-10">
+        <h4 className="font-heading font-bold text-[#0a0a0a] text-lg mb-2">🚀 {ctaText}</h4>
+        <p className="text-[#525252] text-[14px] mb-5 leading-relaxed">{ctaDesc}</p>
+        <Link to={ctaLink} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold to-gold-light text-dark-950 font-heading font-bold text-[13px] rounded-xl hover:shadow-lg hover:shadow-gold/15 transition-all">
+          {ctaLabel}
+          <ArrowRight className="w-4 h-4" />
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+/* ═══ Newsletter CTA (Section 09) ═══ */
+function NewsletterCTA() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="mt-8 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-gold/10 to-transparent border border-gold/20 shadow-lg shadow-gold/5"
+    >
+      <div className="text-center">
+        <h4 className="font-heading font-bold text-[#0a0a0a] text-lg mb-2">📬 Rejoins +10 000 entrepreneurs</h4>
+        <p className="text-[#525252] text-[14px] mb-5">Mes stratégies IA chaque semaine dans ta boîte mail.</p>
+        <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <input
+            type="email"
+            placeholder="ton@email.com"
+            className="flex-1 bg-white border border-black/10 rounded-xl px-5 py-3 text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:outline-none focus:border-gold/40 transition-all text-sm"
+          />
+          <button className="px-6 py-3 bg-gradient-to-r from-gold to-gold-light text-dark-950 font-heading font-bold text-[13px] rounded-xl hover:shadow-lg hover:shadow-gold/15 transition-all whitespace-nowrap">
+            S'inscrire
+          </button>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+/* ═══ Comments Section ═══ */
+interface Comment {
+  id: string;
+  name: string;
+  email: string;
+  content: string;
+  date: string;
+  likes: number;
+  replies: Comment[];
+}
+
+function CommentsSection({ articleSlug }: { articleSlug: string }) {
+  const storageKey = 'comments_' + articleSlug;
+
+  const loadComments = useCallback((): Comment[] => {
+    try {
+      const stored = localStorage.getItem(storageKey);
+      return stored ? JSON.parse(stored) : [];
+    } catch {
+      return [];
+    }
+  }, [storageKey]);
+
+  const [comments, setComments] = useState<Comment[]>(loadComments);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [content, setContent] = useState('');
+  const [replyTo, setReplyTo] = useState<string | null>(null);
+  const [replyName, setReplyName] = useState('');
+  const [replyEmail, setReplyEmail] = useState('');
+  const [replyContent, setReplyContent] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem(storageKey, JSON.stringify(comments));
+  }, [comments, storageKey]);
+
+  const generateId = () => Date.now() + '_' + Math.random().toString(36).slice(2, 8);
+
+  const formatDate = (dateStr: string) => {
+    const d = new Date(dateStr);
+    return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name.trim() || !content.trim()) return;
+
+    const newComment: Comment = {
+      id: generateId(),
+      name: name.trim(),
+      email: email.trim(),
+      content: content.trim(),
+      date: new Date().toISOString(),
+      likes: 0,
+      replies: [],
+    };
+
+    setComments([newComment, ...comments]);
+    setName('');
+    setEmail('');
+    setContent('');
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 3000);
+  };
+
+  const handleReplySubmit = (parentId: string) => {
+    if (!replyName.trim() || !replyContent.trim()) return;
+
+    const newReply: Comment = {
+      id: generateId(),
+      name: replyName.trim(),
+      email: replyEmail.trim(),
+      content: replyContent.trim(),
+      date: new Date().toISOString(),
+      likes: 0,
+      replies: [],
+    };
+
+    setComments(comments.map(c =>
+      c.id === parentId
+        ? { ...c, replies: [...c.replies, newReply] }
+        : c
+    ));
+    setReplyTo(null);
+    setReplyName('');
+    setReplyEmail('');
+    setReplyContent('');
+  };
+
+  const handleLike = (commentId: string) => {
+    setComments(comments.map(c =>
+      c.id === commentId
+        ? { ...c, likes: c.likes + 1 }
+        : { ...c, replies: c.replies.map(r => r.id === commentId ? { ...r, likes: r.likes + 1 } : r) }
+    ));
+  };
+
+  const getInitials = (n: string) => {
+    const parts = n.trim().split(' ');
+    return parts.length > 1
+      ? (parts[0][0] + parts[parts.length - 1][0]).toUpperCase()
+      : n.slice(0, 2).toUpperCase();
+  };
+
+  const avatarColors = [
+    'from-gold/30 to-gold/10 text-gold',
+    'from-blue/30 to-blue/10 text-blue',
+    'from-emerald/30 to-emerald/10 text-emerald',
+    'from-coral/30 to-coral/10 text-coral',
+    'from-violet/30 to-violet/10 text-violet-400',
+    'from-pink-400/30 to-pink-400/10 text-pink-400',
+  ];
+
+  const getAvatarColor = (n: string) => {
+    let hash = 0;
+    for (let i = 0; i < n.length; i++) hash = n.charCodeAt(i) + ((hash << 5) - hash);
+    return avatarColors[Math.abs(hash) % avatarColors.length];
+  };
+
+  const CommentCard = ({ comment, isReply = false }: { comment: Comment; isReply?: boolean }) => (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      className={isReply ? 'ml-8 sm:ml-12 pl-5 border-l-2 border-black/5' : ''}
+    >
+      <div className={(isReply ? 'py-4' : 'bg-white rounded-2xl p-5 sm:p-6 border border-black/5 shadow-sm hover:shadow-md transition-shadow') + ' group'}>
+        <div className="flex items-start gap-3.5">
+          <div className={'w-10 h-10 rounded-xl bg-gradient-to-br ' + getAvatarColor(comment.name) + ' flex items-center justify-center shrink-0'}>
+            <span className="font-heading font-bold text-[11px]">{getInitials(comment.name)}</span>
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2.5 mb-2 flex-wrap">
+              <span className="font-heading font-semibold text-[#0a0a0a] text-[13px]">{comment.name}</span>
+              <span className="text-black/10 text-[11px]">•</span>
+              <span className="text-[#a3a3a3] text-[11px]">{formatDate(comment.date)}</span>
+            </div>
+            <p className="text-[#737373] text-[13px] leading-relaxed mb-3 whitespace-pre-wrap">{comment.content}</p>
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => handleLike(comment.id)}
+                className="flex items-center gap-1.5 text-[#a3a3a3] text-[11px] hover:text-coral transition-colors group/like"
+              >
+                <Heart className={'w-3.5 h-3.5 ' + (comment.likes > 0 ? 'text-coral fill-coral' : 'group-hover/like:text-coral shadow-sm') + ' transition-colors'} />
+                {comment.likes > 0 && <span className="text-coral">{comment.likes}</span>}
+                <span>{comment.likes > 0 ? '' : "J'aime"}</span>
+              </button>
+              {!isReply && (
+                <button
+                  onClick={() => setReplyTo(replyTo === comment.id ? null : comment.id)}
+                  className="flex items-center gap-1.5 text-[#a3a3a3] text-[11px] hover:text-blue transition-colors"
+                >
+                  <Reply className="w-3.5 h-3.5" />
+                  Répondre
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {replyTo === comment.id && (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: 'auto' }}
+          className="ml-8 sm:ml-12 pl-5 border-l-2 border-blue/10 mt-3 mb-4"
+        >
+          <div className="bg-blue/[0.02] border border-blue/10 rounded-xl p-4">
+            <p className="text-blue/50 text-[11px] mb-3 font-medium">Répondre à {comment.name}</p>
+            <div className="grid sm:grid-cols-2 gap-3 mb-3">
+              <input
+                type="text"
+                placeholder="Votre nom *"
+                value={replyName}
+                onChange={(e) => setReplyName(e.target.value)}
+                className="w-full bg-black/5 border border-black/10 rounded-lg px-3.5 py-2.5 text-[#0a0a0a] text-[13px] placeholder:text-[#a3a3a3] focus:outline-none focus:border-blue/30 transition-colors"
+              />
+              <input
+                type="email"
+                placeholder="Email (optionnel)"
+                value={replyEmail}
+                onChange={(e) => setReplyEmail(e.target.value)}
+                className="w-full bg-black/5 border border-black/10 rounded-lg px-3.5 py-2.5 text-[#0a0a0a] text-[13px] placeholder:text-[#a3a3a3] focus:outline-none focus:border-blue/30 transition-colors"
+              />
+            </div>
+            <textarea
+              placeholder="Votre réponse..."
+              rows={3}
+              value={replyContent}
+              onChange={(e) => setReplyContent(e.target.value)}
+              className="w-full bg-black/5 border border-black/10 rounded-xl px-3.5 py-2.5 text-[#0a0a0a] text-[13px] placeholder:text-[#a3a3a3] focus:outline-none focus:border-blue/30 transition-colors resize-none mb-3"
+            />
+            <div className="flex gap-2">
+              <button
+                onClick={() => handleReplySubmit(comment.id)}
+                disabled={!replyName.trim() || !replyContent.trim()}
+                className="px-4 py-2 bg-blue/10 border border-blue/20 text-blue text-[12px] font-semibold rounded-lg hover:bg-blue/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed flex items-center gap-1.5"
+              >
+                <Send className="w-3 h-3" /> Envoyer
+              </button>
+              <button
+                onClick={() => setReplyTo(null)}
+                className="px-4 py-2 text-[#a3a3a3] text-[12px] hover:text-[#737373] transition-colors"
+              >
+                Annuler
+              </button>
+            </div>
+          </div>
+        </motion.div>
+      )}
+
+      {comment.replies.length > 0 && (
+        <div className="space-y-0">
+          {comment.replies.map((reply) => (
+            <CommentCard key={reply.id} comment={reply} isReply />
+          ))}
+        </div>
+      )}
+    </motion.div>
+  );
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="mt-8"
+    >
+      <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center gap-2.5">
+          <MessageCircle className="w-5 h-5 text-gold" />
+          <h3 className="font-heading font-bold text-[#0a0a0a] text-lg">
+            Commentaires
+            {comments.length > 0 && (
+              <span className="ml-2 text-[13px] text-[#a3a3a3] font-normal">({comments.length})</span>
+            )}
+          </h3>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-black/5 mb-8 shadow-luxury">
+        <div className="flex items-center gap-3 mb-5">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gold/15 to-transparent border border-gold/10 flex items-center justify-center">
+            <User className="w-4 h-4 text-gold/60" />
+          </div>
+          <div>
+            <h4 className="font-heading font-semibold text-[#0a0a0a] text-[14px]">Laisser un commentaire</h4>
+            <p className="text-[#a3a3a3] text-[11px]">Votre avis compte ! Partagez vos réflexions ci-dessous.</p>
+          </div>
+        </div>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label className="text-[#a3a3a3] text-[11px] font-bold uppercase tracking-wider mb-1.5 block">Nom *</label>
+              <input
+                type="text"
+                placeholder="Votre nom complet"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                className="w-full bg-[#fafafa] border border-black/5 rounded-xl px-4 py-3 text-[#0a0a0a] text-[13px] placeholder:text-[#a3a3a3] focus:outline-none focus:border-gold/30 transition-all shadow-inner"
+              />
+            </div>
+            <div>
+              <label className="text-[#a3a3a3] text-[11px] font-bold uppercase tracking-wider mb-1.5 block">Email (optionnel)</label>
+              <input
+                type="email"
+                placeholder="votre@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full bg-[#fafafa] border border-black/5 rounded-xl px-4 py-3 text-[#0a0a0a] text-[13px] placeholder:text-[#a3a3a3] focus:outline-none focus:border-gold/30 transition-all shadow-inner"
+              />
+            </div>
+          </div>
+          <div>
+            <label className="text-[#a3a3a3] text-[11px] font-bold uppercase tracking-wider mb-1.5 block">Commentaire *</label>
+            <textarea
+              placeholder="Écrivez votre commentaire ici..."
+              rows={5}
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+              required
+              className="w-full bg-[#fafafa] border border-black/5 rounded-xl px-4 py-3 text-[#0a0a0a] text-[13px] placeholder:text-[#a3a3a3] focus:outline-none focus:border-gold/30 transition-all resize-none shadow-inner"
+            />
+          </div>
+          <div className="flex items-center justify-between">
+            <p className="text-[#a3a3a3] text-[11px] font-medium">* Champs obligatoires</p>
+            <button
+              type="submit"
+              disabled={!name.trim() || !content.trim()}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold to-gold-light text-dark-950 font-heading font-bold text-[13px] rounded-xl hover:shadow-[0_8px_30px_rgba(201,168,76,0.2)] transition-all duration-500 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:shadow-none"
+            >
+              <Send className="w-3.5 h-3.5" />
+              Publier le commentaire
+            </button>
+          </div>
+        </form>
+
+        {submitted && (
+          <motion.div
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-4 p-4 rounded-xl bg-emerald/[0.05] border border-emerald/15 flex items-center gap-2.5"
+          >
+            <CheckCircle2 className="w-4 h-4 text-emerald shrink-0" />
+            <p className="text-emerald text-[13px]">Votre commentaire a été publié avec succès !</p>
+          </motion.div>
+        )}
+      </div>
+
+      {comments.length > 0 ? (
+        <div className="space-y-4">
+          {comments.map((comment) => (
+            <CommentCard key={comment.id} comment={comment} />
+          ))}
+        </div>
+      ) : (
+        <div className="bg-white rounded-2xl p-10 text-center border border-black/5 shadow-sm">
+          <MessageCircle className="w-10 h-10 text-black/5 mx-auto mb-3" />
+          <h4 className="font-heading font-semibold text-[#a3a3a3] text-[14px] mb-1">Aucun commentaire pour le moment</h4>
+          <p className="text-[#d1d1d1] text-[12px]">Soyez le premier à partager votre avis sur cet article !</p>
+        </div>
+      )}
+    </motion.div>
+  );
+}
+
+
+/* ═══ Dashboard Article Renderer (Markdown → HTML) ═══ */
+function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
+  const [readProgress, setReadProgress] = useState(0);
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setReadProgress(docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+
+  const htmlContent = String(marked.parse(article.bodyMarkdown || ''));
+
+  const handleShare = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <>
+      <SEOHead
+        title={article.seo?.metaTitle || (article.title + ' | Oumarou Sanda')}
+        description={article.seo?.metaDescription || article.excerpt}
+        canonical={'/blog/' + article.slug}
+        ogType="article"
+        ogImage={article.image || undefined}
+        articlePublishedTime={article.createdAt}
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            { "@type": "BlogPosting", "headline": article.title, "author": { "@type": "Person", "name": article.author || "Oumarou Sanda", "url": "https://oumarousanda.com" }, "publisher": { "@type": "Person", "name": "Oumarou Sanda" }, "datePublished": article.createdAt, "mainEntityOfPage": "https://oumarousanda.com/blog/" + article.slug },
+            { "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://oumarousanda.com" }, { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://oumarousanda.com/blog" }, { "@type": "ListItem", "position": 3, "name": article.title, "item": "https://oumarousanda.com/blog/" + article.slug } ] }
+          ]
+        }}
+      />
+      {/* Reading progress bar */}
+      <div className="fixed top-0 left-0 z-[100] w-full h-[2px] bg-transparent pointer-events-none">
+        <div
+          className="h-full bg-gradient-to-r from-gold via-gold-light to-amber-300 transition-[width] duration-75 ease-linear"
+          style={{ width: `${readProgress}%` }}
+        />
+      </div>
+
+      {/* ── HERO ── */}
+      <section className="relative pt-36 sm:pt-44 pb-12 overflow-hidden">
+        <div className="absolute inset-0 bg-[#fafafa]" />
+        <div className="absolute inset-0 bg-mesh-light opacity-60" />
+        {article.image && (
+          <div className="absolute inset-0 z-0">
+            <img src={article.image} alt="" className="w-full h-full object-cover opacity-5" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#fafafa]/60 via-[#fafafa]/95 to-[#fafafa]" />
+          </div>
+        )}
+        <div className="relative max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 z-10">
+          {/* Breadcrumbs */}
+          <nav className="flex items-center gap-2 text-[13px] text-[#737373] mb-10">
+            <Link to="/" className="hover:text-gold transition-colors flex items-center gap-1.5"><Home className="w-3.5 h-3.5" /> Accueil</Link>
+            <ChevronRight className="w-3 h-3 opacity-40" />
+            <Link to="/blog" className="hover:text-gold transition-colors">Blog</Link>
+            <ChevronRight className="w-3 h-3 opacity-40" />
+            <span className="text-[#0a0a0a]/60 font-medium">{article.category}</span>
+          </nav>
+
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <div className="flex items-center gap-2 mb-5 flex-wrap">
+              <span className={'px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-sm ' + article.tagColor}>{article.tag}</span>
+              <span className="text-[#a3a3a3] text-[11px] font-medium uppercase tracking-widest">{article.category}</span>
+            </div>
+
+            <h1 className="font-heading font-black text-[clamp(2rem,3vw,5rem)] text-[#0a0a0a] leading-[1.1] tracking-tight mb-6">
+              {article.title}
+            </h1>
+            <p className="text-[#525252] text-lg leading-relaxed mb-8 max-w-2xl">{article.excerpt}</p>
+
+            <div className="flex items-center flex-wrap gap-5 text-[#737373] text-[13px] font-medium pt-6 border-t border-black/5">
+              <span className="flex items-center gap-2"><Calendar className="w-4 h-4" /> {article.date}</span>
+              <span className="flex items-center gap-2"><Clock className="w-4 h-4" /> {article.readTime}</span>
+              <span className="flex items-center gap-2"><User className="w-4 h-4" /> {article.author}</span>
+              <button
+                onClick={handleShare}
+                className="ml-auto flex items-center gap-2 px-4 py-2 rounded-xl bg-[#f5f5f5] hover:bg-[#eeeeee] border border-black/5 transition-all text-[12px] font-bold uppercase tracking-wider"
+              >
+                <Share2 className="w-3.5 h-3.5" />
+                {copied ? 'Copié !' : 'Partager'}
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── HERO IMAGE ── */}
+      {article.image && (
+        <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 -mt-4 mb-10">
+          <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden border border-black/5 shadow-lg">
+            <img src={article.image} alt={article.title} className="w-full h-full object-cover" />
+          </div>
+        </div>
+      )}
+
+      {/* ── BODY ── */}
+      <section className="pb-16 bg-[#fafafa]">
+        <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-[1fr_280px] gap-12 items-start">
+            {/* Article Content */}
+            <div>
+              <div
+                className="prose prose-lg max-w-none
+                  [&_h1]:font-heading [&_h1]:font-black [&_h1]:text-[#0a0a0a] [&_h1]:mt-10 [&_h1]:mb-4 [&_h1]:leading-tight
+                  [&_h2]:font-heading [&_h2]:font-bold [&_h2]:text-[#0a0a0a] [&_h2]:text-xl [&_h2]:sm:text-2xl [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:leading-tight [&_h2]:flex [&_h2]:items-center [&_h2]:gap-3
+                  [&_h3]:font-heading [&_h3]:font-semibold [&_h3]:text-[#0a0a0a] [&_h3]:text-lg [&_h3]:mt-7 [&_h3]:mb-3
+                  [&_p]:text-[#525252] [&_p]:leading-[1.85] [&_p]:mb-5
+                  [&_ul]:pl-6 [&_ul]:mb-5 [&_ul]:space-y-2
+                  [&_ol]:pl-6 [&_ol]:mb-5 [&_ol]:space-y-2
+                  [&_li]:text-[#525252] [&_li]:leading-relaxed
+                  [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-gold-dark
+                  [&_strong]:text-[#0a0a0a] [&_strong]:font-semibold
+                  [&_code]:bg-[#f5f5f5] [&_code]:text-[#0a0a0a] [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono
+                  [&_pre]:bg-[#0a0a0a] [&_pre]:text-white [&_pre]:rounded-2xl [&_pre]:p-5 [&_pre]:overflow-x-auto [&_pre]:mb-6
+                  [&_pre_code]:bg-transparent [&_pre_code]:text-white [&_pre_code]:p-0
+                  [&_blockquote]:border-l-4 [&_blockquote]:border-gold/40 [&_blockquote]:pl-5 [&_blockquote]:text-[#737373] [&_blockquote]:italic [&_blockquote]:my-6
+                  [&_hr]:border-black/5 [&_hr]:my-8
+                  [&_img]:rounded-xl [&_img]:shadow-md [&_img]:border [&_img]:border-black/5 [&_img]:my-6 [&_img]:max-w-full
+                  [&_table]:w-full [&_table]:border-collapse [&_table]:mb-6
+                  [&_th]:bg-[#f5f5f5] [&_th]:px-4 [&_th]:py-2.5 [&_th]:text-left [&_th]:font-bold [&_th]:text-[#0a0a0a] [&_th]:text-sm [&_th]:border [&_th]:border-black/5
+                  [&_td]:px-4 [&_td]:py-2.5 [&_td]:text-[#525252] [&_td]:text-sm [&_td]:border [&_td]:border-black/5"
+                dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(htmlContent) }}
+              />
+
+              {/* Share footer */}
+              <div className="mt-12 pt-8 border-t border-black/5 flex items-center justify-between flex-wrap gap-4">
+                <div>
+                  <p className="text-[#0a0a0a] font-bold text-sm mb-1">Cet article vous a aidé ?</p>
+                  <p className="text-[#737373] text-xs">Partagez-le avec votre réseau.</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <a href={'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href)} target="_blank" rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#0A66C2]/10 text-[#0A66C2] border border-[#0A66C2]/20 text-[12px] font-bold hover:bg-[#0A66C2]/20 transition-all">
+                    <Linkedin className="w-3.5 h-3.5" /> LinkedIn
+                  </a>
+                  <button onClick={handleShare}
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#f5f5f5] border border-black/5 text-[#525252] text-[12px] font-bold hover:bg-[#eeeeee] transition-all">
+                    <Share2 className="w-3.5 h-3.5" /> {copied ? 'Copié !' : 'Copier le lien'}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Sticky Sidebar */}
+            <aside className="hidden lg:block">
+              <div className="sticky top-28 space-y-5">
+                {/* Author Card */}
+                <div className="bg-white rounded-2xl p-6 border border-black/5 shadow-sm">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 flex items-center justify-center mb-4 border border-gold/10">
+                    <span className="font-heading font-black text-[#0a0a0a] text-xl">OS</span>
+                  </div>
+                  <p className="font-heading font-bold text-[#0a0a0a] text-base mb-1">{article.author}</p>
+                  <p className="text-[#737373] text-xs leading-relaxed">Expert en IA Générative, fondateur de Wendooka et Sanda Vibe Code.</p>
+                  <Link to="/a-propos" className="mt-4 flex items-center gap-1.5 text-gold text-xs font-bold hover:underline">
+                    En savoir plus <ArrowRight className="w-3 h-3" />
+                  </Link>
+                </div>
+
+                {/* Back to blog */}
+                <Link to="/blog" className="flex items-center gap-2 px-4 py-3 rounded-xl bg-[#f5f5f5] border border-black/5 text-[#525252] text-[13px] font-medium hover:bg-[#eeeeee] transition-all">
+                  <ArrowLeft className="w-4 h-4" /> Retour au blog
+                </Link>
+              </div>
+            </aside>
+          </div>
+
+          {/* Newsletter */}
+          <div className="mt-12">
+            <NewsletterCTA />
+          </div>
+
+          {/* Comments */}
+          <div className="mt-8">
+            <CommentsSection articleSlug={article.slug} />
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+/* ═══ MAIN PAGE ═══ */
+export default function BlogArticlePage() {
+  const { slug } = useParams();
+  // Check dashboard articles first (created via admin)
+  const dashboardArticle = getDashboardArticleBySlug(slug ?? '');
+  const article = articles.find((a) => a.slug === slug);
+  const [copied, setCopied] = useState(false);
+  const [readProgress, setReadProgress] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setReadProgress(docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+
+  if (!dashboardArticle && !article) return <Navigate to="/blog" replace />;
+  // Route dashboard articles to the markdown renderer
+  if (dashboardArticle) return <DashboardArticleRenderer article={dashboardArticle} />;
+  // TypeScript narrowing: article is guaranteed to exist here
+  if (!article) return <Navigate to="/blog" replace />;
+
+  const idx = articles.indexOf(article);
+  const prev = idx > 0 ? articles[idx - 1] : null;
+  const next = idx < articles.length - 1 ? articles[idx + 1] : null;
+  const isRich: boolean = !!(
+    'richContent' in article &&
+    (article as Record<string, unknown>).richContent &&
+    'sections' in article
+  );
+  const hasImage = 'image' in article && Boolean((article as Record<string, unknown>).image);
+
+  const handleShare = () => {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  // ── SEO helpers ────────────────────────────────────────────────
+  const isoDate = parseFrenchDate(article.date);
+  const articleImage = typeof article.image === 'string' ? article.image : 'https://oumarousanda.com/SANDA.webp';
+
+  // Extrait les FAQ pour le schema FAQPage (sections type "faq-rich")
+  type FaqItem = { q: string; a: string };
+  const rawSections = isRich && 'sections' in article
+    ? (article as Record<string, unknown>).sections as Array<{ type: string; items?: unknown[] }>
+    : [];
+  const faqItems: FaqItem[] = rawSections
+    .filter(s => s.type === 'faq-rich')
+    .flatMap(s => (s.items ?? []) as FaqItem[]);
+
+  const schemaGraph: object[] = [
+    {
+      "@type": "BlogPosting",
+      "@id": `https://oumarousanda.com/blog/${article.slug}#article`,
+      "headline": article.title,
+      "description": article.seo?.metaDescription || article.excerpt,
+      "inLanguage": "fr",
+      "url": `https://oumarousanda.com/blog/${article.slug}`,
+      "mainEntityOfPage": `https://oumarousanda.com/blog/${article.slug}`,
+      "image": articleImage,
+      "datePublished": isoDate,
+      "dateModified": isoDate,
+      "author": { "@type": "Person", "@id": "https://oumarousanda.com/#person", "name": "Oumarou Sanda", "url": "https://oumarousanda.com/a-propos" },
+      "publisher": { "@type": "Person", "@id": "https://oumarousanda.com/#person", "name": "Oumarou Sanda" },
+      "keywords": article.seo?.focusKeyword,
+      "articleSection": article.category,
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2", "h3"],
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://oumarousanda.com" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://oumarousanda.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": article.title, "item": `https://oumarousanda.com/blog/${article.slug}` },
+      ],
+    },
+    ...(faqItems.length > 0 ? [{
+      "@type": "FAQPage",
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": { "@type": "Answer", "text": item.a },
+      })),
+    }] : []),
+  ];
+
+  return (
+    <>
+      {/* Reading progress bar */}
+      <div className="fixed top-0 left-0 z-[100] w-full h-[2px] bg-transparent pointer-events-none">
+        <div
+          className="h-full bg-gradient-to-r from-gold via-gold-light to-amber-300 transition-[width] duration-75 ease-linear"
+          style={{ width: `${readProgress}%` }}
+        />
+      </div>
+
+      <SEOHead
+        title={(article.seo?.metaTitle) || (article.title + ' | Oumarou Sanda')}
+        description={(article.seo?.metaDescription) || article.excerpt}
+        canonical={'/blog/' + article.slug}
+        ogType="article"
+        ogImage={articleImage}
+        articlePublishedTime={isoDate}
+        schema={{ "@context": "https://schema.org", "@graph": schemaGraph }}
+      />
+      {/* ═══ HERO ═══ */}
+      <section className={`relative overflow-hidden ${hasImage ? 'min-h-[62vh] flex items-end pt-32' : 'pt-36 sm:pt-44 pb-12'}`}>
+        {hasImage ? (
+          <div className="absolute inset-0 z-0">
+            <img
+              src={(article as Record<string, unknown>).image as string}
+              alt={article.title}
+              className="w-full h-full object-cover"
+              loading="eager"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/75 to-[#0a0a0a]/20" />
+          </div>
+        ) : (
+          <>
+            <div className="absolute inset-0 bg-[#fafafa]" />
+            <div className="absolute inset-0 bg-mesh-light opacity-60" />
+            <div className="absolute inset-0 bg-grid-premium opacity-[0.03]" />
+          </>
+        )}
+
+        <div className={`relative max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 z-10 w-full ${hasImage ? 'pb-12' : ''}`}>
+          {/* Breadcrumbs */}
+          <nav className={`flex items-center gap-2 text-[13px] mb-10 ${hasImage ? 'text-white/50' : 'text-[#737373]'}`}>
+            <Link to="/" className="hover:text-gold transition-colors flex items-center gap-1.5"><Home className="w-3.5 h-3.5" /> Accueil</Link>
+            <ChevronRight className="w-3 h-3 opacity-40" />
+            <Link to="/blog" className="hover:text-gold transition-colors">Blog</Link>
+            <ChevronRight className="w-3 h-3 opacity-40" />
+            <span className={`font-medium ${hasImage ? 'text-white/40' : 'text-[#0a0a0a]/60'}`}>{article.category}</span>
+            <ChevronRight className="w-3 h-3 opacity-40" />
+            <span className={`font-medium truncate max-w-[200px] ${hasImage ? 'text-white/40' : 'text-[#0a0a0a]/60'}`}>{article.title}</span>
+          </nav>
+
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            {/* Tags */}
+            <div className="flex items-center gap-2 mb-5 flex-wrap">
+              <span className={'px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-sm ' + article.tagColor}>{article.tag}</span>
+              <span className={`text-[11px] flex items-center gap-1 font-bold ${hasImage ? 'text-white/50' : 'text-[#525252]'}`}><Tag className="w-3 h-3" />{article.category}</span>
+              {article.seo && (
+                <span className="text-[10px] text-gold border border-gold/30 bg-gold/10 px-2 py-0.5 rounded-full font-bold">
+                  Focus: {article.seo.focusKeyword}
+                </span>
+              )}
+            </div>
+
+            {/* Title */}
+            <h1 className={`font-heading text-[clamp(2rem,3vw,5rem)] font-bold mb-6 leading-tight tracking-tight ${hasImage ? 'text-white' : 'text-[#0a0a0a]'}`}>
+              {article.title}
+            </h1>
+
+            {/* Meta description (SEO) */}
+            {article.seo && (
+              <p className={`text-[15px] sm:text-[16px] mb-8 leading-relaxed italic border-l-3 pl-5 py-2 rounded-r-xl ${hasImage ? 'text-white/70 border-white/20 bg-white/5' : 'text-[#525252] border-gold/50 bg-gold/5'}`}>
+                {article.seo.metaDescription}
+              </p>
+            )}
+
+            {/* Author, Date, Time */}
+            <div className={`flex items-center gap-5 text-[13px] flex-wrap ${hasImage ? 'text-white/70' : 'text-[#737373]'}`}>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gold to-gold-light flex items-center justify-center shadow-md shrink-0">
+                  <span className="text-white font-bold text-[10px]">OS</span>
+                </div>
+                <span className={`font-bold ${hasImage ? 'text-white' : 'text-[#0a0a0a]'}`}>{article.author || 'Oumarou Sanda'}</span>
+              </div>
+              <span className="flex items-center gap-1 font-bold"><Calendar className="w-3.5 h-3.5 text-gold" />{article.date}</span>
+              <span className="flex items-center gap-1 font-bold"><Clock className="w-3.5 h-3.5 text-gold" />{article.readTime}</span>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══ ARTICLE BODY ═══ */}
+      <section className="relative pb-20 bg-[#fafafa]">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
+          <div className="xl:flex xl:gap-10 xl:items-start">
+
+            {/* ── MAIN CONTENT ── */}
+            <div className="flex-1 min-w-0">
+              <motion.article
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="bg-white rounded-3xl p-7 sm:p-10 lg:p-14 border border-black/5 shadow-luxury"
+              >
+                {isRich ? (
+                  <RichArticleContent article={article} />
+                ) : (
+                  <PlainArticleContent content={((article as Record<string, unknown>).content as string | undefined) ?? ''} />
+                )}
+
+                {/* CTA contextuel (milieu d'article) */}
+                <ArticleCTABlock category={article.category} />
+
+                {/* ── Publicité AdSense — In-Article (fin de contenu) ── */}
+                <AdUnit
+                  slot="7070630877"
+                  format="fluid"
+                  layout="in-article"
+                  className="my-8"
+                />
+
+                {/* Share & Social */}
+                <div className="mt-12 pt-8 border-t border-black/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <button onClick={handleShare} className="flex items-center gap-2 group">
+                    <Share2 className="w-4 h-4 text-[#a3a3a3] group-hover:text-gold transition-colors" />
+                    <span className="text-[#a3a3a3] text-[13px] group-hover:text-gold transition-colors font-medium">
+                      {copied ? '✓ Lien copié !' : 'Partager cet article'}
+                    </span>
+                  </button>
+                  <div className="flex items-center gap-2">
+                    {['Twitter', 'LinkedIn', 'Facebook'].map((s) => (
+                      <button key={s} className="px-3 py-1.5 bg-black/5 border border-black/5 rounded-lg text-[#737373] text-[11px] font-semibold hover:bg-gold/10 hover:text-gold transition-all">{s}</button>
+                    ))}
+                  </div>
+                </div>
+              </motion.article>
+
+              {/* Author Bio */}
+              <AuthorBio />
+
+              {/* Newsletter CTA */}
+              <NewsletterCTA />
+
+              {/* Related Articles */}
+              <RelatedArticles currentSlug={article.slug} category={article.category} />
+
+              {/* Comments */}
+              <CommentsSection articleSlug={article.slug} />
+
+              {/* ── Publicité AdSense — Display (avant navigation) ── */}
+              <AdUnit
+                slot="9367115017"
+                format="auto"
+                className="my-6"
+              />
+
+              {/* Prev/Next Navigation */}
+              <div className="grid sm:grid-cols-2 gap-4 mt-8">
+                {prev ? (
+                  <Link to={'/blog/' + prev.slug} className="bg-white rounded-xl p-5 border border-black/5 group hover:border-gold/30 transition-all shadow-sm">
+                    <span className="text-[11px] text-[#a3a3a3] flex items-center gap-1 mb-2 font-bold"><ArrowLeft className="w-3 h-3" /> Précédent</span>
+                    <h4 className="font-heading font-semibold text-[#0a0a0a] text-[13px] group-hover:text-gold transition-colors line-clamp-2">{prev.title}</h4>
+                  </Link>
+                ) : <div />}
+                {next && (
+                  <Link to={'/blog/' + next.slug} className="bg-white rounded-xl p-5 border border-black/5 group text-right hover:border-gold/30 transition-all shadow-sm">
+                    <span className="text-[11px] text-[#a3a3a3] flex items-center gap-1 mb-2 justify-end font-bold">Suivant <ArrowRight className="w-3 h-3" /></span>
+                    <h4 className="font-heading font-semibold text-[#0a0a0a] text-[13px] group-hover:text-gold transition-colors line-clamp-2">{next.title}</h4>
+                  </Link>
+                )}
+              </div>
+            </div>
+
+            {/* ── STICKY TOC SIDEBAR — desktop XL uniquement ── */}
+            {isRich && 'tableOfContents' in article && !!(article as Record<string, unknown>).tableOfContents && (
+              <aside className="hidden xl:block w-60 shrink-0 self-start sticky top-24">
+                {/* Table des matières */}
+                <div className="bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden mb-4">
+                  <div className="px-5 py-3.5 border-b border-black/5 flex items-center gap-2 bg-[#fafafa]">
+                    <List className="w-3.5 h-3.5 text-gold" />
+                    <span className="font-heading font-bold text-[#0a0a0a] text-[12px] uppercase tracking-wider">Table des matières</span>
+                  </div>
+                  <nav className="px-3 py-3 space-y-0.5 max-h-[60vh] overflow-y-auto">
+                    {((article as Record<string, unknown>).tableOfContents as { id: string; label: string }[]).map((item, i) => (
+                      <a
+                        key={item.id}
+                        href={'#' + item.id}
+                        className="flex items-start gap-2 py-1.5 px-2 text-[11px] text-[#737373] hover:text-gold hover:bg-gold/5 rounded-lg transition-all group block"
+                      >
+                        <span className="text-gold/30 font-mono text-[10px] shrink-0 mt-[2px] w-4 text-right">{String(i + 1).padStart(2, '0')}</span>
+                        <span className="group-hover:translate-x-0.5 transition-transform leading-snug">{item.label}</span>
+                      </a>
+                    ))}
+                  </nav>
+                </div>
+
+                {/* Share card compact */}
+                <div className="bg-white rounded-2xl border border-black/5 shadow-sm p-4">
+                  <p className="font-heading font-bold text-[#0a0a0a] text-[11px] uppercase tracking-wider mb-3">Partager</p>
+                  <div className="flex flex-col gap-2">
+                    <button
+                      onClick={handleShare}
+                      className="w-full py-2 bg-gold/10 border border-gold/20 rounded-lg text-gold text-[11px] font-bold hover:bg-gold/20 transition-all"
+                    >
+                      {copied ? '✓ Copié !' : '🔗 Copier le lien'}
+                    </button>
+                    <div className="flex gap-1.5">
+                      {['Twitter', 'LinkedIn'].map(s => (
+                        <button key={s} className="flex-1 py-1.5 bg-black/5 border border-black/5 rounded-lg text-[#737373] text-[10px] font-semibold hover:bg-gold/10 hover:text-gold transition-all">{s}</button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </aside>
+            )}
+
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

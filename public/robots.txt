@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Exclure le dashboard admin de l'indexation
+Disallow: /dashboard
+Disallow: /dashboard/
+
+# Sitemap
+Sitemap: https://oumarousanda.com/sitemap.xml
