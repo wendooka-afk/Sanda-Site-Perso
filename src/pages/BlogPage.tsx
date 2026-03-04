@@ -111,7 +111,7 @@ function BlogHero({
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
                     className={
-                      'px-5 py-2.5 rounded-full text-[12px] font-bold tracking-wider uppercase transition-all ' +
+                      'px-3 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] sm:text-[12px] font-bold tracking-wider uppercase transition-all flex-shrink-0 sm:flex-shrink-1 ' +
                       (isActive
                         ? 'bg-white text-[#0a0a0a] shadow-md'
                         : 'bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10')
@@ -150,7 +150,7 @@ function FeaturedCard({ article }: { article: BlogArticleMeta }) {
         className="group flex flex-col md:flex-row bg-white border border-black/5 hover:border-blue-500/30 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500"
       >
         {article.image && (
-          <div className="md:w-[45%] relative overflow-hidden aspect-[16/10] md:aspect-auto min-h-[260px]">
+          <div className="md:w-[45%] relative overflow-hidden aspect-[16/10] md:aspect-auto min-h-[220px] md:min-h-[260px]">
             <img
               src={article.image}
               alt={article.title}
@@ -158,21 +158,21 @@ function FeaturedCard({ article }: { article: BlogArticleMeta }) {
               loading="eager"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-            <div className="absolute top-4 left-4">
-              <span className={'px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-sm ' + (article.tagColor || 'bg-white text-[#0a0a0a]')}>
+            <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
+              <span className={'px-2.5 py-1 sm:px-3 rounded-full text-[9px] sm:text-[10px] font-bold tracking-widest uppercase shadow-sm ' + (article.tagColor || 'bg-white text-[#0a0a0a]')}>
                 {article.category}
               </span>
             </div>
-            <div className="absolute top-4 right-4 px-2.5 py-1 bg-black/60 backdrop-blur-sm rounded-full text-white text-[10px] font-bold tracking-wide">
+            <div className="absolute top-3 right-3 sm:top-4 sm:right-4 px-2.5 py-1 bg-black/60 backdrop-blur-sm rounded-full text-white text-[9px] sm:text-[10px] font-bold tracking-wide">
               ✦ À la une
             </div>
           </div>
         )}
-        <div className={`${article.image ? 'md:w-[55%]' : 'w-full'} p-7 lg:p-10 flex flex-col justify-center`}>
+        <div className={`${article.image ? 'md:w-[55%]' : 'w-full'} p-5 sm:p-7 lg:p-10 flex flex-col justify-center`}>
           <span className={'px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase border mb-4 self-start ' + article.tagColor}>
             {article.tag}
           </span>
-          <h2 className="font-heading font-black text-[clamp(1.3rem,1.5vw,3.25rem)] text-[#0a0a0a] mb-4 group-hover:text-blue-600 transition-colors leading-tight line-clamp-3">
+          <h2 className="font-heading font-black text-xl sm:text-2xl lg:text-[clamp(1.5rem,1.5vw,3.25rem)] text-[#0a0a0a] mb-4 group-hover:text-blue-600 transition-colors leading-tight line-clamp-3">
             {article.title}
           </h2>
           <p className="text-[#525252] text-[15px] leading-relaxed mb-6 line-clamp-3">{article.excerpt}</p>
@@ -254,9 +254,9 @@ function BlogGrid({ filteredArticles }: { filteredArticles: BlogArticleMeta[] })
                           </div>
                         )}
 
-                        <div className="p-5 sm:p-6 flex flex-col flex-1">
-                          <span className={'px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase border self-start mb-3 ' + article.tagColor}>{article.tag}</span>
-                          <h2 className="font-heading font-black text-[clamp(1.3rem,1.5vw,3.25rem)] text-[#0a0a0a] mb-3 group-hover:text-blue-600 transition-colors leading-snug line-clamp-2">
+                        <div className="p-4 sm:p-6 flex flex-col flex-1">
+                          <span className={'px-2.5 py-0.5 rounded-full text-[9px] font-bold tracking-wider uppercase border self-start mb-3 ' + article.tagColor}>{article.tag}</span>
+                          <h2 className="font-heading font-black text-lg sm:text-xl text-[#0a0a0a] mb-3 group-hover:text-blue-600 transition-colors leading-snug line-clamp-2">
                             {article.title}
                           </h2>
                           <p className="text-[#525252] text-[13px] leading-relaxed mb-5 line-clamp-2">
@@ -315,8 +315,8 @@ function BlogGrid({ filteredArticles }: { filteredArticles: BlogArticleMeta[] })
           viewport={{ once: true }}
           className="mt-12 text-center"
         >
-          <Link to="/formations" className="inline-flex items-center gap-2.5 px-8 py-4 bg-[#0a0a0a] text-white font-bold rounded-xl hover:bg-gold hover:shadow-md hover:shadow-gold/30 transition-all shadow-sm uppercase tracking-wider text-[14px]">
-            <BookOpen className="w-5 h-5" />
+          <Link to="/formations" className="inline-flex items-center gap-2.5 px-6 sm:px-8 py-4 bg-[#0a0a0a] text-white font-bold rounded-xl hover:bg-gold hover:shadow-md hover:shadow-gold/30 transition-all shadow-sm uppercase tracking-wider text-[12px] sm:text-[14px] leading-snug">
+            <BookOpen className="w-5 h-5 shrink-0" />
             Les articles c'est bien, l'action c'est mieux — Voir les formations
           </Link>
         </motion.div>

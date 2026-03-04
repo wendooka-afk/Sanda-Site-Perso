@@ -144,7 +144,7 @@ export default function ContactPage() {
                 </a>
 
                 {/* Card 4 */}
-                <a href="mailto:presse@oumarousanda.com" className="group bg-white border border-black/5 p-6 lg:p-8 rounded-2xl hover:border-black/15 hover:shadow-md transition-all duration-300 relative overflow-hidden">
+                <a href="mailto:presse@oumarousanda.com" className="group bg-white border border-black/5 p-5 sm:p-6 lg:p-8 rounded-2xl hover:border-black/15 hover:shadow-md transition-all duration-300 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 blur-3xl rounded-full group-hover:bg-emerald-500/10 transition-all" />
                   <FileText className="w-8 h-8 text-[#525252] group-hover:text-emerald-600 transition-colors mb-4" />
                   <h3 className="text-[#0a0a0a] font-bold text-lg mb-2 font-heading">Presse, Médias & Conférences</h3>
@@ -169,7 +169,7 @@ export default function ContactPage() {
                 transition={{ duration: 0.6 }}
                 className="lg:col-span-3 order-2 lg:order-1"
               >
-                <div className="bg-white border border-black/5 shadow-md p-6 sm:p-10 rounded-2xl relative">
+                <div className="bg-white border border-black/5 shadow-md p-5 sm:p-8 lg:p-10 rounded-2xl relative">
                   {submitted ? (
                     <div className="text-center py-20 px-4">
                       <div className="w-20 h-20 bg-emerald-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -324,7 +324,7 @@ export default function ContactPage() {
               className="grid lg:grid-cols-2 gap-12 lg:gap-20"
             >
               {/* Marques et Annonceurs */}
-              <div className="bg-white p-8 sm:p-10 rounded-3xl border border-coral-500/20 relative overflow-hidden shadow-sm">
+              <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-3xl border border-coral-500/20 relative overflow-hidden shadow-sm">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-coral-500/10 blur-[80px] rounded-full" />
                 <h3 className="font-heading text-2xl font-black text-[#0a0a0a] mb-6">Pour les marques et annonceurs</h3>
                 <p className="text-[#525252] mb-8 leading-relaxed">Tu représentes un outil IA, une plateforme SaaS, un événement tech ou une marque qui veut atteindre des entrepreneurs et créateurs francophones ?</p>
@@ -356,7 +356,7 @@ export default function ContactPage() {
               </div>
 
               {/* Médias et Événements */}
-              <div className="bg-white p-8 sm:p-10 rounded-3xl border border-black/5 shadow-sm">
+              <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-3xl border border-black/5 shadow-sm">
                 <h3 className="font-heading text-2xl font-black text-[#0a0a0a] mb-6">Pour les médias et organisateurs d'événements</h3>
                 <p className="text-[#525252] mb-8 leading-relaxed">Oumarou Sanda est disponible pour apporter son expertise sur l'IA et l'écosystème numérique africain.</p>
 

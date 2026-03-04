@@ -24,7 +24,6 @@ export function Footer() {
       { label: t.formationDetails.protocoleVideoIa.name, href: '/formations/protocole-video-ia' },
       { label: t.formationDetails.cerveauAugmente.name, href: '/formations/cerveau-augmente' },
       { label: t.formationDetails.offshoreEmpire.name, href: '/formations/offshore-empire' },
-      { label: t.footer.freeResources, href: '/blog' },
     ],
     [t.footer.usefulLinks]: [
       { label: t.nav.about, href: '/a-propos' },

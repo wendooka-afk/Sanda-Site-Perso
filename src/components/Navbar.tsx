@@ -86,7 +86,7 @@ export function Navbar() {
             <div className="flex items-center gap-4">
               <button
                 onClick={toggleLanguage}
-                className="flex items-center gap-2 px-3 py-2 rounded-lg text-[11px] font-bold text-white/70 hover:text-white hover:bg-white/[0.04] transition-all duration-300 border border-white/5 hover:border-white/10 uppercase tracking-widest glass-premium bg-white/5"
+                className="flex items-center gap-1 sm:gap-2 px-2.5 sm:px-3 py-2 rounded-lg text-[11px] font-bold text-white/70 hover:text-white hover:bg-white/[0.04] transition-all duration-300 border border-white/5 hover:border-white/10 uppercase tracking-widest glass-premium bg-white/5"
                 aria-label={language === 'fr' ? 'Switch to English' : 'Passer en Français'}
               >
                 <Globe className="w-3.5 h-3.5" />
@@ -103,7 +103,7 @@ export function Navbar() {
 
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="lg:hidden p-2.5 text-white/70 hover:text-white rounded-xl hover:bg-white/5 transition-all border border-transparent hover:border-white/10 glass-premium bg-white/5"
+                className="lg:hidden p-2 sm:p-2.5 ml-1 text-white/70 hover:text-white rounded-xl hover:bg-white/5 transition-all border border-transparent hover:border-white/10 glass-premium bg-white/5"
                 aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
                 aria-expanded={mobileOpen}
               >

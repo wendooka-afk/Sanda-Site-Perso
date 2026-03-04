@@ -171,7 +171,7 @@ function ChapterThree() {
       <div className="relative max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
         <Reveal direction="up" delay={0.1}>
           <span className="text-violet-600 font-bold tracking-widest uppercase text-sm mb-6 block">Chapitre 3 : Quand l'IA a tout changé</span>
-          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-black text-[#0a0a0a] mb-10 leading-[1.1] tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-6xl font-black text-[#0a0a0a] mb-10 leading-[1.1] tracking-tight">
             L'IA n'est pas arrivée dans ma vie.<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-blue-600">Je suis allé la chercher.</span>
           </h2>
@@ -364,7 +364,7 @@ function StatsGrid() {
           {stats.map((s, i) => (
             <Reveal key={i} direction="up" delay={i * 0.05}>
               <div className="text-center">
-                <h4 className="font-heading font-black text-4xl sm:text-5xl text-white drop-shadow-sm mb-2">{s.value}</h4>
+                <h4 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-white drop-shadow-sm mb-2">{s.value}</h4>
                 <p className="text-[#0a0a0a] text-[13px] font-bold uppercase tracking-wide leading-tight px-4">{s.label}</p>
               </div>
             </Reveal>
@@ -384,10 +384,10 @@ function VisionCTA() {
       <div className="relative max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
         <Reveal direction="up" delay={0.1}>
           <span className="text-gold font-bold tracking-widest uppercase text-sm mb-6 block">OÙ JE VAIS</span>
-          <h2 className="font-heading text-4xl sm:text-6xl font-black text-white mb-10 leading-tight">
+          <h2 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-black text-white mb-10 leading-tight">
             Ce que je construis<br /><span className="text-gold">dépasse le business.</span>
           </h2>
-          <blockquote className="text-xl sm:text-2xl text-[#525252] font-medium italic leading-relaxed mb-12 border-l-4 border-blue-500 pl-6 text-left shadow-sm">
+          <blockquote className="text-lg sm:text-2xl text-[#525252] font-medium italic leading-relaxed mb-12 border-l-4 border-blue-500 pl-6 text-left shadow-sm">
             “Démocratiser l'accès aux technologies avancées. Transformer les compétences locales en opportunités globales. Positionner l'Afrique francophone comme un acteur crédible de l'économie numérique mondiale.”
           </blockquote>
           <p className="text-[#525252] text-lg mb-16 text-left">
@@ -395,7 +395,7 @@ function VisionCTA() {
           </p>
 
           <div className="pt-16 border-t border-white/10">
-            <h3 className="font-heading text-3xl font-black text-white mb-4">Tu connais mon histoire.<br />Maintenant, écrivons la tienne.</h3>
+            <h3 className="font-heading text-2xl sm:text-3xl font-black text-white mb-4">Tu connais mon histoire.<br />Maintenant, écrivons la tienne.</h3>
             <p className="text-white/60 mb-10">Que tu veuilles te former, collaborer ou simplement rester connecté — choisis ton prochain pas.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/formations" className="btn-premium group px-8 py-5 bg-gold text-[#0a0a0a] font-bold text-[14px] rounded-xl hover:bg-white transition-all flex items-center justify-center uppercase tracking-wider shadow-[0_10px_30px_rgba(212,175,55,0.4)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.5)] glow-hover">

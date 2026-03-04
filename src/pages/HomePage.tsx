@@ -91,14 +91,14 @@ function PartnersSection() {
   return (
     <section className="py-12 bg-white border-b border-black/5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
-          <p className="text-[#767676] font-bold text-[10px] uppercase tracking-[0.2em] whitespace-nowrap shrink-0">Partenaires & sponsors</p>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 md:gap-10">
+          <p className="text-[#767676] font-bold text-[10px] uppercase tracking-[0.2em] text-center whitespace-normal sm:whitespace-nowrap shrink-0">Partenaires & sponsors</p>
           <div className="w-px h-8 bg-black/8 hidden md:block shrink-0" />
-          <div className="flex flex-wrap justify-center md:justify-start items-center gap-6 md:gap-10">
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-10">
             {partners.map((p) => (
               <span
                 key={p.name}
-                className="font-heading font-black text-base sm:text-lg text-[#767676] hover:text-[#0a0a0a] transition-colors duration-300 cursor-default tracking-tight"
+                className="font-heading font-black text-sm sm:text-base md:text-lg text-[#767676] hover:text-[#0a0a0a] transition-colors duration-300 cursor-default tracking-tight text-center"
               >
                 {p.name}
               </span>

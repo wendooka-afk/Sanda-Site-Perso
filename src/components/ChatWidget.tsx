@@ -46,11 +46,10 @@ export function ChatWidget() {
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? 'Fermer le chat' : 'Ouvrir le chat'}
         aria-expanded={isOpen}
-        className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-2xl shadow-2xl flex items-center justify-center transition-all duration-500 ${
-          isOpen
+        className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full sm:rounded-2xl shadow-2xl flex items-center justify-center transition-all duration-500 ${isOpen
             ? 'bg-[#1a1a1a] border border-black/20 rotate-0'
             : 'bg-gradient-to-br from-gold to-gold-light shadow-gold/20'
-        }`}
+          }`}
       >
         {isOpen ? (
           <X className="w-5 h-5 text-white/80" />
@@ -91,11 +90,10 @@ export function ChatWidget() {
                       <Bot className="w-3 h-3 text-gold" />
                     </div>
                   )}
-                  <div className={`max-w-[80%] px-3.5 py-2.5 rounded-2xl text-[13px] leading-relaxed whitespace-pre-line ${
-                    msg.role === 'user'
+                  <div className={`max-w-[80%] px-3.5 py-2.5 rounded-2xl text-[13px] leading-relaxed whitespace-pre-line ${msg.role === 'user'
                       ? 'bg-gold/10 text-[#0a0a0a] rounded-br-md'
                       : 'bg-black/[0.04] text-[#525252] rounded-bl-md'
-                  }`}>
+                    }`}>
                     {msg.text}
                   </div>
                   {msg.role === 'user' && (

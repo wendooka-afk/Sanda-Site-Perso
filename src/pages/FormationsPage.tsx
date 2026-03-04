@@ -14,12 +14,14 @@ const FORMATIONS_SCHEMA = {
     { "@type": "Course", "name": "Protocole Vidéo IA", "provider": { "@type": "Person", "name": "Oumarou Sanda", "url": "https://oumarousanda.com" }, "inLanguage": "fr", "offers": { "@type": "Offer", "price": "7590", "priceCurrency": "XAF" }, "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "113" }, "educationalLevel": "Beginner/Intermediate", "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "online" } },
     { "@type": "Course", "name": "Offshore Empire", "provider": { "@type": "Person", "name": "Oumarou Sanda", "url": "https://oumarousanda.com" }, "inLanguage": "fr", "offers": { "@type": "Offer", "price": "97750", "priceCurrency": "XAF" }, "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "20" }, "educationalLevel": "Intermediate", "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "online" } },
     { "@type": "Product", "name": "Le Cerveau Augmenté", "description": "Système mental pour penser et produire avec l'IA", "offers": { "@type": "Offer", "price": "4900", "priceCurrency": "XAF" }, "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "3" }, "brand": "Oumarou Sanda" },
-    { "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://oumarousanda.com" }, { "@type": "ListItem", "position": 2, "name": "Formations", "item": "https://oumarousanda.com/formations" } ] },
-    { "@type": "FAQPage", "mainEntity": [
-      { "@type": "Question", "name": "Quelles formations propose Oumarou Sanda ?", "acceptedAnswer": { "@type": "Answer", "text": "Protocole Vidéo IA (7 590 FCFA), Le Cerveau Augmenté (4 900 FCFA) et Offshore Empire (97 750 FCFA)." } },
-      { "@type": "Question", "name": "C'est quoi le Protocole Vidéo IA ?", "acceptedAnswer": { "@type": "Answer", "text": "Une formation pour créer des vidéos ultra-réalistes avec l'IA : Google VEO, Sora et Wan." } },
-      { "@type": "Question", "name": "Comment créer une société au Royaume-Uni depuis l'Afrique ?", "acceptedAnswer": { "@type": "Answer", "text": "La formation Offshore Empire montre comment créer une Private Limited Company (Ltd) UK depuis l'Afrique pour activer Stripe ou PayPal." } }
-    ]}
+    { "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://oumarousanda.com" }, { "@type": "ListItem", "position": 2, "name": "Formations", "item": "https://oumarousanda.com/formations" }] },
+    {
+      "@type": "FAQPage", "mainEntity": [
+        { "@type": "Question", "name": "Quelles formations propose Oumarou Sanda ?", "acceptedAnswer": { "@type": "Answer", "text": "Protocole Vidéo IA (7 590 FCFA), Le Cerveau Augmenté (4 900 FCFA) et Offshore Empire (97 750 FCFA)." } },
+        { "@type": "Question", "name": "C'est quoi le Protocole Vidéo IA ?", "acceptedAnswer": { "@type": "Answer", "text": "Une formation pour créer des vidéos ultra-réalistes avec l'IA : Google VEO, Sora et Wan." } },
+        { "@type": "Question", "name": "Comment créer une société au Royaume-Uni depuis l'Afrique ?", "acceptedAnswer": { "@type": "Answer", "text": "La formation Offshore Empire montre comment créer une Private Limited Company (Ltd) UK depuis l'Afrique pour activer Stripe ou PayPal." } }
+      ]
+    }
   ]
 };
 
@@ -78,7 +80,7 @@ function FormationVideoIA() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20">
           <Reveal direction="left" delay={0.1}>
             <span className="text-coral-600 font-bold tracking-widest uppercase text-sm mb-4 block">FORMATION 01</span>
-            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-black mb-4 leading-[1.1] tracking-tighter text-[#0a0a0a]">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-6xl font-black mb-4 leading-[1.1] tracking-tighter text-[#0a0a0a]">
               PROTOCOLE<br />VIDÉO IA™
             </h2>
             <p className="text-xl font-bold text-coral-600 mb-8">Créez des vidéos ultra-réalistes avec l'IA (VEO, Sora, Wan)</p>
@@ -114,7 +116,7 @@ function FormationVideoIA() {
           </Reveal>
 
           <Reveal direction="right" delay={0.1}>
-            <div className="bg-white text-[#0a0a0a] rounded-[2rem] p-8 lg:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-black/5 relative overflow-hidden mb-10 card-luxury card-hover-lift glow-hover">
+            <div className="bg-white text-[#0a0a0a] rounded-[2rem] p-6 sm:p-8 lg:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-black/5 relative overflow-hidden mb-10 card-luxury card-hover-lift glow-hover">
               <div className="absolute top-0 right-0 w-32 h-32 bg-coral-500/10 blur-[50px] rounded-full" />
               <h3 className="font-heading text-2xl font-bold mb-8">Le programme <span className="text-coral-600">(5 modules + MàJ à vie)</span></h3>
               <div className="space-y-6">
@@ -128,7 +130,7 @@ function FormationVideoIA() {
               </div>
             </div>
 
-            <div className="bg-white border-2 border-coral-300 shadow-xl rounded-[1.5rem] p-8 text-[#0a0a0a] relative card-luxury card-hover-lift glow-hover">
+            <div className="bg-white border-2 border-coral-300 shadow-xl rounded-[1.5rem] p-6 sm:p-8 text-[#0a0a0a] relative card-luxury card-hover-lift glow-hover">
               <div className="absolute -top-4 left-8 bg-coral-600 text-white font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest shadow-md">
                 Tarif Early Adopter
               </div>
@@ -170,7 +172,7 @@ function FormationCerveau() {
           <Reveal direction="right" delay={0.1}>
             <div className="order-1 lg:order-2">
               <span className="text-blue-400 font-bold tracking-widest uppercase text-sm mb-4 block">FORMATION 02</span>
-              <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-4 leading-[1.1] tracking-tighter">
+              <h2 className="font-heading text-3xl sm:text-4xl lg:text-6xl font-black text-white mb-4 leading-[1.1] tracking-tighter">
                 LE CERVEAU<br />AUGMENTÉ™
               </h2>
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 rounded-full mb-8">
@@ -236,7 +238,7 @@ function FormationOffshore() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           <Reveal direction="left" delay={0.1}>
             <span className="text-gold-dark font-bold tracking-widest uppercase text-sm mb-4 block">FORMATION 03</span>
-            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-black text-[#0a0a0a] mb-4 leading-[1.1] tracking-tighter">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-6xl font-black text-[#0a0a0a] mb-4 leading-[1.1] tracking-tighter">
               OFFSHORE<br />EMPIRE™
             </h2>
             <p className="text-xl font-bold text-gold-dark mb-8">Créer une société offshore au Royaume-Uni depuis l'Afrique</p>
@@ -284,7 +286,7 @@ function FormationOffshore() {
           </Reveal>
 
           <Reveal direction="right" delay={0.1}>
-            <div className="bg-white border border-black/5 rounded-[2rem] p-8 lg:p-10 shadow-xl relative card-luxury card-hover-lift glow-hover">
+            <div className="bg-white border border-black/5 rounded-[2rem] p-6 sm:p-8 lg:p-10 shadow-xl relative card-luxury card-hover-lift glow-hover">
               <div className="flex justify-center mb-8">
                 <img src="/OFFSHORE EMPIRE BOX.webp" alt="Offshore Empire" className="w-64 object-contain drop-shadow-xl" />
               </div>
@@ -370,7 +372,7 @@ function FormationsCompare() {
         <Reveal direction="up" delay={0.1}>
           <div className="text-center mb-16">
             <span className="text-[#737373] font-bold tracking-widest uppercase text-sm mb-4 block">COMPARATIF</span>
-            <h2 className="font-heading text-3xl sm:text-5xl font-bold text-[#0a0a0a] mb-6">
+            <h2 className="font-heading text-2xl sm:text-3xl lg:text-5xl font-bold text-[#0a0a0a] mb-6">
               Quelle formation est<br /><span className="text-gold">faite pour toi ?</span>
             </h2>
           </div>
