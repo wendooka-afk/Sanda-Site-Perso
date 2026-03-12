@@ -17,6 +17,7 @@ const ContactPage = lazy(() => import('./pages/ContactPage'));
 const RessourcesPage = lazy(() => import('./pages/RessourcesPage'));
 const MediaKitPage = lazy(() => import('./pages/MediaKitPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+const LinksPage = lazy(() => import('./pages/LinksPage'));
 
 // ─── Lazy-loaded dashboard ────────────────────────────────────────────────────
 const DashboardLayout = lazy(() => import('./dashboard/DashboardLayout'));
@@ -71,6 +72,9 @@ export function App() {
         <BrowserRouter>
           <Suspense fallback={<PageLoader />}>
           <Routes>
+            {/* Link in Bio — standalone (no navbar/footer) */}
+            <Route path="/links" element={<LinksPage />} />
+
             {/* Public Site */}
             <Route element={<Layout />}>
               <Route path="/" element={<HomePage />} />

@@ -55,7 +55,7 @@ function Hero() {
 
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="relative">
-              <img src="/Oumarou Sanda CEO Wendooka 3.webp" alt="Oumarou Sanda" width={420} height={560} fetchPriority="high" className="w-80 lg:w-[420px] object-cover drop-shadow-2xl" />
+              <img src="/Oumarou Sanda Homepage hero .webp" alt="Oumarou Sanda" width={420} height={560} fetchPriority="high" className="w-80 lg:w-[420px] object-cover drop-shadow-2xl" />
               {/* Floating cards — animation CSS pure, plus de motion.div */}
               <div className="absolute -top-6 -right-6 lg:-top-8 lg:-right-10 card-luxury rounded-2xl px-5 py-4 shadow-xl hidden sm:block animate-float">
                 <div className="flex items-center gap-4">
@@ -191,7 +191,7 @@ function PitchTeaser() {
 
                 {/* Image Placeholder - A template for their professional photo */}
                 <div className="w-full h-full bg-[#f5f5f7] flex items-center justify-center overflow-hidden">
-                  <img src="/Oumarou Sanda CEO Wendooka 10.webp" alt="Oumarou Sanda profil" width={480} height={600} loading="lazy" className="w-full h-full object-cover filter grayscale-[20%] contrast-105 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" />
+                  <img src="/Oumarou Sanda homepage about section.webp" alt="Oumarou Sanda profil" width={480} height={600} loading="lazy" className="w-full h-full object-cover filter grayscale-[20%] contrast-105 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" />
                 </div>
 
                 <div className="absolute inset-0 flex items-center justify-center z-30">
@@ -223,7 +223,7 @@ function ProblemSection() {
               <div className="aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-[2rem] overflow-hidden border border-black/5 card-luxury shadow-xl relative group bg-white card-hover-lift glow-hover">
 
                 <div className="w-full h-full bg-[#fafafa] flex items-center justify-center overflow-hidden">
-                  <img src="/Oumarou Sanda CEO Wendooka 8.webp" alt="Productivité IA" width={480} height={600} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" />
+                  <img src="/Oumarou Sanda 10 .webp" alt="Productivité IA" width={480} height={600} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" />
                 </div>
 
                 <div className="absolute -bottom-8 -right-8 sm:bottom-12 sm:-right-8 bg-white border border-black/5 rounded-2xl p-6 shadow-xl z-30 card-luxury animate-float">
@@ -563,11 +563,11 @@ function BooksProducts() {
             <div className="card-luxury bg-[#fafafa] border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.06)] rounded-3xl p-8 flex flex-col sm:flex-row items-center sm:items-start gap-8 group card-hover-lift glow-hover h-full">
               <div className="w-32 h-44 bg-white rounded-xl shrink-0 border border-black/5 flex items-center justify-center text-[#0a0a0a]/30 shadow-md group-hover:-translate-y-2 group-hover:rotate-2 transition-all duration-500 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-tr from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10" />
-                <img src="/Mockup livre.webp" alt="Livre Si l'Afrique rate l'IA" width={128} height={176} loading="lazy" className="w-full h-full object-cover" />
+                <img src="/Couverture livre si lafrique rate lia elle rate le futur .webp" alt="Livre Si l'Afrique rate l'IA" width={128} height={176} loading="lazy" className="w-full h-full object-cover" />
               </div>
               <div className="text-center sm:text-left flex-1 flex flex-col h-full">
                 <div className="mb-4">
-                  <h3 className="text-[#0a0a0a] font-heading font-extrabold text-2xl mb-2 leading-tight tracking-tight">Si l'Afrique rate l'IA...</h3>
+                  <h3 className="text-[#0a0a0a] font-heading font-extrabold text-2xl mb-2 leading-tight tracking-tight">Si l'Afrique rate l'IA, elle rate le futur</h3>
                   <div className="inline-block px-2 py-0.5 bg-gold/15 text-gold-dark rounded text-[10px] font-bold uppercase tracking-wider mb-2">En précommande</div>
                   <p className="text-[#525252] text-sm leading-relaxed font-inter">Un essai-manifeste sur la souveraineté numérique africaine (Sortie en mai 2026).</p>
                 </div>
@@ -780,7 +780,7 @@ export default function HomePage() {
               "name": "Oumarou Sanda",
               "jobTitle": "Expert Intelligence Artificielle, Formateur, Entrepreneur Digital",
               "url": "https://oumarousanda.com",
-              "image": "https://oumarousanda.com/SANDA.webp",
+              "image": "https://oumarousanda.com/Oumarou Sanda 1.webp",
               "sameAs": ["https://www.youtube.com/@Oumarou_Sanda", "https://tiktok.com/@iamsanda", "https://linkedin.com/in/benibsanda", "https://facebook.com/iamoumarousanda"]
             },
             {

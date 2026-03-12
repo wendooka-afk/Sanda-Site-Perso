@@ -1236,7 +1236,7 @@ export default function BlogArticlePage() {
 
   // ── SEO helpers ────────────────────────────────────────────────
   const isoDate = parseFrenchDate(article.date);
-  const articleImage = typeof article.image === 'string' ? article.image : 'https://oumarousanda.com/SANDA.webp';
+  const articleImage = typeof article.image === 'string' ? article.image : 'https://oumarousanda.com/Oumarou Sanda 1.webp';
 
   // Extrait les FAQ pour le schema FAQPage (sections type "faq-rich")
   type FaqItem = { q: string; a: string };

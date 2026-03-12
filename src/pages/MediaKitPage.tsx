@@ -99,7 +99,7 @@ function MediaKitHero() {
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative hidden lg:block">
             <div className="relative rounded-[2rem] overflow-hidden aspect-[3/4] max-h-[500px] border border-white/10 shadow-2xl bg-white/5">
               <img
-                src="/Oumarou Sanda CEO Wendooka 12.webp"
+                src="/Oumarou Sanda 15 .webp"
                 alt="Oumarou Sanda — Expert IA Générative"
                 className="w-full h-full object-cover object-top"
               />

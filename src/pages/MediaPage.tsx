@@ -95,7 +95,7 @@ export default function MediaPage() {
 
             {/* HER RIGHT CONTENT (IMAGE) */}
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={heroInView ? { opacity: 1, scale: 1 } : {}} transition={{ duration: 1, delay: 0.2 }} className="relative hidden lg:block h-[600px] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl bg-white/5">
-              <img src="/Oumarou Sanda CEO Wendooka 10.webp" alt="Oumarou Sanda Media" width={600} height={600} loading="lazy" className="w-full h-full object-cover" />
+              <img src="/Oumarou Sanda 16 .webp" alt="Oumarou Sanda Media" width={600} height={600} loading="lazy" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-80" />
             </motion.div>
           </div>
@@ -147,7 +147,7 @@ export default function MediaPage() {
             <div className="lg:col-span-4">
               <div className="bg-[#0a0a0a] border border-white/5 p-4 rounded-3xl sticky top-28">
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden mb-4 relative">
-                  <img src="/Oumarou Sanda CEO Wendooka 7.webp" alt="Oumarou Sanda Edition Presse" className="w-full h-full object-cover filter saturate-100" />
+                  <img src="/Oumarou Sanda 12 .webp" alt="Oumarou Sanda Edition Presse" className="w-full h-full object-cover object-top filter saturate-100" />
                 </div>
                 <p className="text-white/30 text-xs text-center italic">© Oumarou Sanda - Photo officielle</p>
               </div>

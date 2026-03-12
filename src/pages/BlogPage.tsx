@@ -126,7 +126,7 @@ function BlogHero({
 
           {/* HER RIGHT CONTENT (IMAGE) */}
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }} className="relative hidden lg:block h-[500px] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl bg-white/5">
-            <img src="/Oumarou Sanda CEO Wendooka 12.webp" alt="Blog Oumarou Sanda" className="w-full h-full object-cover object-top" />
+            <img src="/Oumarou Sanda 13.webp" alt="Blog Oumarou Sanda" className="w-full h-full object-cover object-top" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-80" />
           </motion.div>
         </div>

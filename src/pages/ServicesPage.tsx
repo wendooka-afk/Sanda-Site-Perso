@@ -109,7 +109,7 @@ function HeroServices() {
                         </div>
                     </motion.div>
                     <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }} className="relative h-[400px] lg:h-[600px] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-xl bg-white/5">
-                        <img src="/Oumarou Sanda CEO Wendooka 12.webp" alt="Oumarou Sanda Services" className="absolute inset-0 w-full h-full object-cover object-center" />
+                        <img src="/Oumarou Sanda 8.webp" alt="Oumarou Sanda Services" className="absolute inset-0 w-full h-full object-cover object-center" />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-80" />
                     </motion.div>
                 </div>
