@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 
 /* ═══════════════════════ DATA ═══════════════════════ */
 const stats = [
-  { value: '50K+', label: 'Abonnés YouTube', icon: '▶️', color: 'from-red-500/15 to-red-500/5 border-red-500/20' },
-  { value: '30K+', label: 'Abonnés TikTok', icon: '🎵', color: 'from-pink-500/15 to-pink-500/5 border-pink-500/20' },
-  { value: '15K+', label: 'Abonnés Facebook', icon: '👤', color: 'from-blue/15 to-blue/5 border-blue/20' },
-  { value: '10K+', label: 'Abonnés Instagram', icon: '📸', color: 'from-purple/15 to-purple/5 border-purple/20' },
+  { value: '125K+', label: 'Abonnés toutes plateformes', icon: '🌍', color: 'from-gold/15 to-gold/5 border-gold/20' },
+  { value: '100K+', label: 'Abonnés YouTube', icon: '▶️', color: 'from-red-500/15 to-red-500/5 border-red-500/20' },
+  { value: '15K+', label: 'Abonnés TikTok', icon: '🎵', color: 'from-pink-500/15 to-pink-500/5 border-pink-500/20' },
+  { value: '10K+', label: 'Abonnés Facebook', icon: '👤', color: 'from-blue/15 to-blue/5 border-blue/20' },
   { value: '5K+', label: 'Abonnés LinkedIn', icon: '💼', color: 'from-sky-500/15 to-sky-500/5 border-sky-500/20' },
-  { value: '10K+', label: 'Inscrits newsletter', icon: '📧', color: 'from-gold/15 to-gold/5 border-gold/20' },
-  { value: '2M+', label: 'Vues totales', icon: '👁️', color: 'from-emerald/15 to-emerald/5 border-emerald/20' },
-  { value: '5000+', label: 'Entrepreneurs formés', icon: '🎓', color: 'from-violet/15 to-violet/5 border-violet/20' },
+  { value: '500+', label: 'Apprenants formés', icon: '🎓', color: 'from-emerald/15 to-emerald/5 border-emerald/20' },
+  { value: '6+', label: 'Formations créées', icon: '📚', color: 'from-violet/15 to-violet/5 border-violet/20' },
+  { value: '2', label: 'Livres publiés', icon: '✍️', color: 'from-amber-500/15 to-amber-500/5 border-amber-500/20' },
 ];
 
 const topics = [
@@ -198,10 +198,10 @@ export default function MediaKitPage() {
                 Biographie courte
               </h2>
               <p className="text-[#525252] text-[15px] leading-relaxed mb-4">
-                Oumarou Sanda est un entrepreneur digital, expert en intelligence artificielle générative et formateur basé à Douala, Cameroun. Ancien journaliste, il s'est reconverti dans le digital en 2019 et a rapidement bâti une audience de plus de 100 000 personnes sur les réseaux sociaux.
+                Oumarou Sanda est un entrepreneur digital, expert en intelligence artificielle générative et formateur basé à Ngaoundéré, Cameroun. Ancien journaliste et correspondant Vision 4 TV dans la région de l'Adamaoua, il s'est reconverti dans le digital et a rapidement bâti une audience de plus de 125 000 abonnés sur les réseaux sociaux.
               </p>
               <p className="text-[#525252] text-[15px] leading-relaxed mb-6">
-                Fondateur de <strong className="text-[#0a0a0a]">Wendooka</strong> (agence IA & digital) et de <strong className="text-[#0a0a0a]">Sanda Vibe Code</strong> (plateforme de formations en vibe coding), il a formé plus de 5 000 entrepreneurs africains à utiliser l'intelligence artificielle pour générer des revenus en ligne. Il est l'auteur de <em>«Si l'Afrique rate l'IA, elle rate le Futur»</em>.
+                Fondateur de <strong className="text-[#0a0a0a]">Wendooka</strong> (agence IA & digital) et de <strong className="text-[#0a0a0a]">Sanda Vibe Code</strong> (plateforme de formations en vibe coding), il a formé des centaines d'entrepreneurs africains à utiliser l'intelligence artificielle pour générer des revenus en ligne. Il est l'auteur de <em>«Si l'Afrique rate l'IA, elle rate le Futur»</em> et de <em>«Le Cerveau Augmenté»</em>.
               </p>
 
               <div className="space-y-2.5">
@@ -214,7 +214,7 @@ export default function MediaKitPage() {
               </div>
 
               <div className="flex items-center gap-3 mt-8">
-                <a href="https://youtube.com/@OumarouSanda" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.youtube.com/@Oumarou_Sanda" target="_blank" rel="noopener noreferrer"
                   className="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-500 hover:bg-red-500/20 transition-all">
                   <Youtube className="w-4 h-4" />
                 </a>
@@ -393,7 +393,7 @@ export default function MediaKitPage() {
               </h2>
               <div className="space-y-3">
                 {[
-                  { icon: Mic, label: 'Interviews podcast & radio', desc: 'Disponible en distanciel (Zoom, Teams) ou présentiel à Douala.' },
+                  { icon: Mic, label: 'Interviews podcast & radio', desc: 'Disponible en distanciel (Zoom, Teams) ou présentiel à Ngaoundéré.' },
                   { icon: Play, label: 'Participations YouTube & Web TV', desc: 'Invité d\'honneur, co-animateur ou expert commentateur sur l\'IA et le business.' },
                   { icon: Users, label: 'Conférences & panels', desc: 'Keynote, table ronde, masterclass pour événements tech et entrepreneuriat.' },
                   { icon: BookOpen, label: 'Articles & tribunes', desc: 'Citations d\'expert, interviews écrites, tribunes d\'opinion sur l\'IA en Afrique.' },
@@ -434,13 +434,13 @@ export default function MediaKitPage() {
                 </div>
                 <div>
                   <p className="text-[11px] font-bold uppercase tracking-wider text-[#a3a3a3] mb-1">Basé à</p>
-                  <p className="text-[#0a0a0a] font-bold text-[15px]">Douala, Cameroun 🇨🇲</p>
+                  <p className="text-[#0a0a0a] font-bold text-[15px]">Ngaoundéré, Cameroun 🇨🇲</p>
                   <p className="text-[#737373] text-[13px] mt-0.5">Disponible en distanciel partout dans le monde</p>
                 </div>
                 <div className="pt-4 border-t border-black/5">
                   <p className="text-[#737373] text-[13px] mb-3 font-medium">Réseaux professionnels :</p>
                   <div className="flex items-center gap-3">
-                    <a href="https://youtube.com/@OumarouSanda" target="_blank" rel="noopener noreferrer"
+                    <a href="https://www.youtube.com/@Oumarou_Sanda" target="_blank" rel="noopener noreferrer"
                       className="px-3 py-1.5 rounded-lg bg-red-500/10 border border-red-500/20 text-red-500 text-[12px] font-bold hover:bg-red-500/20 transition-all flex items-center gap-1.5">
                       <Youtube className="w-3.5 h-3.5" /> YouTube
                     </a>
