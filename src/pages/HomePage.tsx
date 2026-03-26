@@ -113,7 +113,7 @@ function PartnersSection() {
 /* ═══════════════════════ STATS ═══════════════════════ */
 function StatsBar() {
   const stats = [
-    { icon: Youtube, value: '125 000+', label: 'abonnés', color: 'text-[#FF0000]', bg: 'bg-[#FF0000]/10' },
+    { icon: Youtube, value: '112 000+', label: 'abonnés', color: 'text-[#FF0000]', bg: 'bg-[#FF0000]/10' },
     { icon: Users, value: '200+', label: 'apprenants', color: 'text-[#1877F2]', bg: 'bg-[#1877F2]/10' },
     { icon: BookOpen, value: '6+', label: 'formations', color: 'text-gold', bg: 'bg-gold/10' },
     { icon: Briefcase, value: '3', label: 'entreprises', color: 'text-emerald', bg: 'bg-emerald/10' },
@@ -643,7 +643,7 @@ function MediaPodcast() {
                     Correspondant pour <strong className="text-[#0a0a0a] font-bold">Vision 4 TV</strong> dans la région de l'Adamaoua depuis 2020.
                   </p>
                   <p>
-                    Présent sur YouTube, TikTok, Facebook, Instagram et X avec plus de <strong className="text-[#0a0a0a] font-bold">125 000 abonnés</strong>. Quand l'Afrique francophone veut comprendre où va l'IA et le business digital, c'est ici que ça se passe.
+                    Présent sur YouTube, TikTok, Facebook, Instagram et X avec plus de <strong className="text-[#0a0a0a] font-bold">112 000 abonnés</strong>. Quand l'Afrique francophone veut comprendre où va l'IA et le business digital, c'est ici que ça se passe.
                   </p>
                 </div>
                 <a href="https://www.youtube.com/channel/UCHWKK_ss4JWCdhnr3TinFuA?sub_confirmation=1" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-[#FF0000] text-white hover:bg-[#CC0000] font-bold px-8 py-4.5 rounded-xl transition-all shadow-[0_10px_30px_rgba(255,0,0,0.3)] uppercase tracking-[0.1em] text-[13px] group">

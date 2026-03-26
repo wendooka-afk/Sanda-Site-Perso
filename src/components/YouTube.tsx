@@ -49,9 +49,9 @@ const videos = [
 ];
 
 const socials = [
-  { name: 'YouTube', handle: '@OumarouSanda', followers: '50K+', color: 'bg-red-500/10 text-red-400 border-red-500/20', icon: '▶️' },
-  { name: 'TikTok', handle: '@iamsanda', followers: '30K+', color: 'bg-pink-500/10 text-pink-400 border-pink-500/20', icon: '🎵' },
-  { name: 'Facebook', handle: 'Oumarou Sanda', followers: '15K+', color: 'bg-blue-500/10 text-blue-400 border-blue-500/20', icon: '👤' },
+  { name: 'YouTube', handle: '@Oumarou_Sanda', followers: '10 400', color: 'bg-red-500/10 text-red-400 border-red-500/20', icon: '▶️' },
+  { name: 'TikTok', handle: '@iamsanda', followers: '68 000', color: 'bg-pink-500/10 text-pink-400 border-pink-500/20', icon: '🎵' },
+  { name: 'Facebook', handle: 'Oumarou Sanda', followers: '34 000', color: 'bg-blue-500/10 text-blue-400 border-blue-500/20', icon: '👤' },
   { name: 'LinkedIn', handle: 'Oumarou Sanda', followers: '5K+', color: 'bg-sky-500/10 text-sky-400 border-sky-500/20', icon: '💼' },
   { name: 'Instagram', handle: '@oumarou.sanda', followers: '10K+', color: 'bg-purple-500/10 text-purple-400 border-purple-500/20', icon: '📸' },
 ];

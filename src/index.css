@@ -87,7 +87,7 @@ body {
 }
 
 p {
-  font-size: 18px;
+  font-size: clamp(16px, 1vw + 14px, 18px);
 }
 
 .font-heading {
@@ -310,6 +310,15 @@ p {
   animation: pan 30s linear infinite alternate;
 }
 
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
 .animate-pulse-ring {
   animation: pulse-ring 2s infinite;
 }
@@ -427,6 +436,14 @@ textarea:focus {
   box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.1);
 }
 
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid rgba(212, 175, 55, 0.6);
+  outline-offset: 2px;
+}
+
 /* ═══ Utilities ═══ */
 h1,
 h2,
@@ -440,7 +457,8 @@ p {
 }
 
 @media (max-width: 640px) {
-  .animate-float {
+  .animate-float,
+  .animate-pulse-slow {
     animation: none;
   }
 }

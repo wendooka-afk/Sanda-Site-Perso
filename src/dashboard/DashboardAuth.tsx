@@ -8,7 +8,7 @@ const SESSION_KEY = 'dashboard_auth_v1';
 // Or define VITE_DASHBOARD_PASSWORD in a .env file for production.
 const DASHBOARD_PASSWORD =
     (typeof import.meta !== 'undefined' && (import.meta as { env?: Record<string, string> }).env?.VITE_DASHBOARD_PASSWORD) ||
-    'Sanda@Admin2026!';
+    '';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 async function hashPassword(password: string): Promise<string> {

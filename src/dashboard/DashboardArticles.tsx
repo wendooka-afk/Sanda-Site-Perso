@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useDashboardArticles } from '../hooks/useDashboardArticles';
 import type { DashboardArticle } from '../hooks/useDashboardArticles';
-import ArticleEditor from './ArticleEditor';
+const ArticleEditor = lazy(() => import('./ArticleEditor'));
 
 const statusConfig = {
   published: { label: 'Publié', color: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' },
@@ -53,12 +53,14 @@ export default function DashboardArticles() {
   if (showEditor) {
     return (
       <AnimatePresence>
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-2 border-amber-400/30 border-t-amber-400 rounded-full animate-spin" /></div>}>
         <ArticleEditor
           article={editingArticle}
           onCreate={create}
           onUpdate={update}
           onClose={closeEditor}
         />
+        </Suspense>
       </AnimatePresence>
     );
   }

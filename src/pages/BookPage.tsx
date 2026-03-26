@@ -225,7 +225,7 @@ export default function BookPage() {
             <div>
               <h3 className="text-2xl font-heading font-black text-[#0a0a0a] mb-6">Pourquoi cet auteur ?</h3>
               <p className="text-[#525252] text-sm mb-4 leading-relaxed">
-                Oumarou Sanda n'est pas un théoricien qui écrit depuis une université occidentale. C'est un entrepreneur africain, basé à Ngaoundéré, au Cameroun, qui utilise l'IA chaque jour pour créer des businesses, former des centaines d'entrepreneurs et produire du contenu suivi par plus de 125 000 personnes.
+                Oumarou Sanda n'est pas un théoricien qui écrit depuis une université occidentale. C'est un entrepreneur africain, basé à Ngaoundéré, au Cameroun, qui utilise l'IA chaque jour pour créer des businesses, former des centaines d'entrepreneurs et produire du contenu suivi par plus de 112 000 personnes.
               </p>
               <p className="text-[#525252] text-sm leading-relaxed">
                 Ce livre est né d'un constat vécu de l'intérieur : l'Afrique a le talent, la jeunesse et la faim. Il ne lui manque que la stratégie, l'infrastructure et la volonté politique. Ce livre est à la fois un diagnostic et un plan de bataille.

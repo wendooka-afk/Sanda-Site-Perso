@@ -54,11 +54,18 @@ function writeToStorage(articles: DashboardArticle[]): void {
   }
 }
 
-/** Calcule automatiquement le score SEO (0-100) */
+/** Retire les balises HTML pour obtenir du texte brut */
+function stripHtmlTags(html: string): string {
+  return html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+/** Calcule automatiquement le score SEO (0-100) — compatible HTML et Markdown */
 export function computeSeoScore(article: Partial<DashboardArticle>): number {
   let score = 0;
   const kw = (article.seo?.focusKeyword || '').toLowerCase();
-  const body = (article.bodyMarkdown || '').toLowerCase();
+  const rawBody = article.bodyMarkdown || '';
+  // Si le contenu est du HTML (TipTap), on le convertit en texte brut pour l'analyse
+  const body = rawBody.startsWith('<') ? stripHtmlTags(rawBody).toLowerCase() : rawBody.toLowerCase();
   const title = (article.title || '').toLowerCase();
   const excerpt = (article.excerpt || '').toLowerCase();
 
@@ -72,8 +79,8 @@ export function computeSeoScore(article: Partial<DashboardArticle>): number {
   if (article.image) score += 10;
   if ((article.seo?.metaTitle || '').length > 30) score += 5;
   if ((article.seo?.metaDescription || '').length > 80) score += 5;
-  // Headings
-  if (body.includes('## ') || body.includes('# ')) score += 5;
+  // Headings : supporte HTML (<h2) et Markdown (## )
+  if (/<h[1-3][\s>]/i.test(rawBody) || rawBody.includes('## ') || rawBody.includes('# ')) score += 5;
   return Math.min(100, score);
 }
 
@@ -89,9 +96,10 @@ export function slugify(title: string): string {
     .replace(/-+/g, '-');
 }
 
-/** Estime le temps de lecture (~200 mots/min) */
-export function estimateReadTime(markdown: string): string {
-  const words = markdown.trim().split(/\s+/).length;
+/** Estime le temps de lecture (~200 mots/min) — compatible HTML et Markdown */
+export function estimateReadTime(content: string): string {
+  const text = content.startsWith('<') ? stripHtmlTags(content) : content;
+  const words = text.trim().split(/\s+/).filter(Boolean).length;
   const minutes = Math.max(1, Math.round(words / 200));
   return `${minutes} min`;
 }

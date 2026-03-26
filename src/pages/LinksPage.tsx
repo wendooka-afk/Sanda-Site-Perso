@@ -116,8 +116,8 @@ const SOCIALS = [
 ];
 
 const STATS: Array<{ value: string; label: Record<Lang, string> }> = [
-  { value: '100K+', label: { fr: 'abonnés', en: 'subscribers' } },
-  { value: '5 000+', label: { fr: 'formés', en: 'trained' } },
+  { value: '112K+', label: { fr: 'abonnés', en: 'subscribers' } },
+  { value: '500+', label: { fr: 'formés', en: 'trained' } },
   { value: '3+', label: { fr: 'formations', en: 'courses' } },
 ];
 

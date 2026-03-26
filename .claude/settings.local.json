@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(test -f .env)"
+      "Bash(test -f .env)",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }

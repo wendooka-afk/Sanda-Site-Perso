@@ -222,7 +222,7 @@ export default function ChallengePage() {
                 transition={{ duration: 0.6, delay: 0.35 }}
                 className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-white/40 text-[12px] mb-10"
               >
-                <span className="flex items-center gap-1.5"><Users className="w-3.5 h-3.5 text-gold" />100K+ abonnés</span>
+                <span className="flex items-center gap-1.5"><Users className="w-3.5 h-3.5 text-gold" />112K+ abonnés</span>
                 <span className="text-white/15">·</span>
                 <span className="flex items-center gap-1.5"><Award className="w-3.5 h-3.5 text-gold" />500+ apprenants</span>
                 <span className="text-white/15">·</span>
@@ -766,7 +766,7 @@ export default function ChallengePage() {
                 transition={{ duration: 3, repeat: Infinity }}
                 className="absolute -bottom-4 -right-4 bg-white border border-black/5 shadow-xl rounded-xl px-4 py-2"
               >
-                <p className="text-[#0a0a0a] font-heading font-black text-[13px]">100K+</p>
+                <p className="text-[#0a0a0a] font-heading font-black text-[13px]">112K+</p>
                 <p className="text-[#a3a3a3] text-[10px]">abonnés</p>
               </motion.div>
             </motion.div>
@@ -788,7 +788,7 @@ export default function ChallengePage() {
                 className="grid grid-cols-2 sm:grid-cols-4 gap-4"
               >
                 {[
-                  { val: 100, suffix: 'K+', lbl: 'abonnés' },
+                  { val: 112, suffix: 'K+', lbl: 'abonnés' },
                   { val: 500, suffix: '+',  lbl: 'apprenants formés' },
                   { val: 6,   suffix: ' ans', lbl: 'expertise IA' },
                   { val: 28,  suffix: '',  lbl: 'outils enseignés' },

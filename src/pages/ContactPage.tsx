@@ -69,7 +69,7 @@ export default function ContactPage() {
         {/* SECTION 01 — HERO CONTACT */}
         <section className="relative pt-32 pb-24 overflow-hidden section-dark border-b border-white/5">
           <div className="absolute inset-0 bg-grid-dark opacity-60" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-blue-500/10 to-transparent opacity-50 blur-3xl pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(59,130,246,0.1),transparent)] opacity-50 blur-3xl pointer-events-none" />
           <div ref={heroRef} className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
 
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -139,7 +139,7 @@ export default function ContactPage() {
                   <div className="absolute top-0 right-0 w-32 h-32 bg-coral-500/5 blur-3xl rounded-full group-hover:bg-coral-500/10 transition-all" />
                   <Globe className="w-8 h-8 text-[#525252] group-hover:text-coral-600 transition-colors mb-4" />
                   <h3 className="text-[#0a0a0a] font-bold text-lg mb-2 font-heading">Sponsoring & Collaborations</h3>
-                  <p className="text-[#525252] text-sm mb-6 line-clamp-2">Tu représentes une marque ou un outil IA et tu veux toucher 125 000+ abonnés ?</p>
+                  <p className="text-[#525252] text-sm mb-6 line-clamp-2">Tu représentes une marque ou un outil IA et tu veux toucher 112 000+ abonnés ?</p>
                   <span className="flex items-center gap-2 text-[13px] font-semibold text-coral-600 group-hover:text-coral-700">Envoie ta proposition <ExternalLink className="w-3.5 h-3.5" /></span>
                 </a>
 
@@ -291,8 +291,8 @@ export default function ContactPage() {
                   <h3 className="font-heading font-black text-xl text-[#0a0a0a] mb-6">Me retrouver</h3>
                   <div className="space-y-3">
                     {[
-                      { name: 'YouTube', url: 'https://www.youtube.com/@Oumarou_Sanda', icon: Youtube, subs: '100K+' },
-                      { name: 'TikTok', url: 'https://tiktok.com/@iamsanda', icon: MonitorPlay, subs: '20K+' },
+                      { name: 'YouTube', url: 'https://www.youtube.com/@Oumarou_Sanda', icon: Youtube, subs: '10 400' },
+                      { name: 'TikTok', url: 'https://tiktok.com/@iamsanda', icon: MonitorPlay, subs: '68 000' },
                       { name: 'LinkedIn', url: 'https://linkedin.com/in/benibsanda', icon: Linkedin, subs: 'Actif' },
                       { name: 'Facebook', url: 'https://facebook.com/iamoumarousanda', icon: Facebook, subs: 'Actif' },
                       { name: 'Instagram', url: 'https://instagram.com/iamsanda', icon: Instagram, subs: 'Actif' }

@@ -71,7 +71,7 @@ export function Hero() {
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start gap-1.5 mb-1.5">
                   <Youtube className="w-4 h-4 text-[#FF0000]" />
-                  <span className="font-heading font-extrabold text-2xl sm:text-3xl text-[#0a0a0a]">100K+</span>
+                  <span className="font-heading font-extrabold text-2xl sm:text-3xl text-[#0a0a0a]">112K+</span>
                 </div>
                 <span className="text-[12px] font-bold tracking-widest text-[#737373] uppercase">Abonnés</span>
               </div>

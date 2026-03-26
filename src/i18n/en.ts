@@ -88,10 +88,10 @@ export const en: Translations = {
     location: 'Cameroon 🇨🇲',
     specialty: 'Generative AI',
     brands: 'Wendooka • SVC',
-    community: '100K+',
+    community: '112K+',
     contactMe: 'Contact me',
     bio1: "I am <strong>Oumarou Sanda</strong>, a digital entrepreneur and expert in artificial intelligence applied to business and media. My journey is one of transformation: from a <strong>former journalist</strong> to a builder of digital ecosystems.",
-    bio2: "Today, I lead a community of over <strong>100,000 followers</strong> across YouTube, TikTok, Facebook, LinkedIn, and Instagram. My goal: <strong>democratize generative AI</strong> and prove it can be a growth lever for Africa.",
+    bio2: "Today, I lead a community of over <strong>112,000 followers</strong> across YouTube, TikTok, Facebook, LinkedIn, and Instagram. My goal: <strong>democratize generative AI</strong> and prove it can be a growth lever for Africa.",
     bio3: "As a regional correspondent for <strong>Vision 4 TV</strong> in Adamaoua, I developed journalistic rigor that I apply in every piece of content and course.",
     bio4: "I founded <strong>Wendooka</strong> (digital agency) and <strong>Sanda Vibe Code</strong> (AI ecosystem) to bridge the gap between cutting-edge technology and the realities of African entrepreneurs.",
     bio5: "My vision: <strong>if Africa misses AI, it misses the future.</strong>",
@@ -101,7 +101,7 @@ export const en: Translations = {
       { year: '2014–2018', title: 'Journalist & Correspondent', desc: 'Regional correspondent for Vision 4 TV in Adamaoua. Training in journalistic rigor and communication.' },
       { year: '2019–2021', title: 'Digital Transition', desc: 'Deep dive into digital marketing, freelancing and content creation. Birth of the entrepreneurial vision.' },
       { year: '2022–2024', title: 'AI Expert & Founder', desc: 'Created Wendooka and launched first courses on generative AI applied to business.' },
-      { year: '2025+', title: 'Ecosystem & Impact', desc: 'Launched Sanda Vibe Code, 100K+ subscribers, premium courses and positioning as the AI reference in Francophone Africa.' },
+      { year: '2025+', title: 'Ecosystem & Impact', desc: 'Launched Sanda Vibe Code, 112K+ subscribers, premium courses and positioning as the AI reference in Francophone Africa.' },
     ],
     values: [
       { title: 'Innovation', desc: 'Always at the forefront of AI technology.' },
@@ -120,7 +120,7 @@ export const en: Translations = {
     differentiators: [
       { title: 'Africa-Focused', desc: 'Solutions designed for the African market.' },
       { title: 'Innovation', desc: 'Latest AI advances integrated.' },
-      { title: 'Strong Community', desc: '100K+ entrepreneurs connected.' },
+      { title: 'Strong Community', desc: '112K+ entrepreneurs connected.' },
       { title: 'Concrete Results', desc: 'Measurable and immediate impact.' },
     ],
     wendooka: {

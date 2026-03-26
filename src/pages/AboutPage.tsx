@@ -48,7 +48,7 @@ const ABOUT_SCHEMA = {
         {
           "@type": "Question",
           "name": "Qui est Oumarou Sanda ?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Oumarou Sanda est un entrepreneur digital, expert en intelligence artificielle et formateur basé au Cameroun. Fondateur de Wendooka (agence web), Sanda Vibe Code et CommentSticker (SaaS). Auteur de deux livres dont «Si l'Afrique rate l'IA, elle rate le Futur», il fédère une communauté de plus de 125 000 abonnés." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Oumarou Sanda est un entrepreneur digital, expert en intelligence artificielle et formateur basé au Cameroun. Fondateur de Wendooka (agence web), Sanda Vibe Code et CommentSticker (SaaS). Auteur de deux livres dont «Si l'Afrique rate l'IA, elle rate le Futur», il fédère une communauté de plus de 112 000 abonnés." }
         },
         {
           "@type": "Question",
@@ -88,7 +88,7 @@ function HeroAbout() {
               <span className="text-gold block mt-2">Je le suis devenu en refusant de rester à ma place.</span>
             </h1>
             <p className="text-white/65 text-lg sm:text-xl leading-relaxed max-w-xl font-inter">
-              Du micro de journaliste aux systèmes d'intelligence artificielle. De Ngaoundéré au monde entier. Voici comment un gars de l'Adamaoua est devenu la référence IA en Afrique francophone — avec 125 000 abonnés, plusieurs entreprises et un SaaS à son actif.
+              Du micro de journaliste aux systèmes d'intelligence artificielle. De Ngaoundéré au monde entier. Voici comment un gars de l'Adamaoua est devenu la référence IA en Afrique francophone — avec 112 000 abonnés, plusieurs entreprises et un SaaS à son actif.
             </p>
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }} className="relative h-[500px] lg:h-[700px] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-xl bg-white/5">
@@ -154,7 +154,7 @@ function ChapterTwo() {
               Ensuite est venue la création de contenu. YouTube, TikTok, Facebook, LinkedIn, Instagram. Pas pour la célébrité — pour la légitimité. Pour prouver, vidéo après vidéo, que les outils que je recommande fonctionnent. Que les stratégies que j'enseigne génèrent des résultats. <strong className="text-gold-dark">Réel. Tangible. Mesurable.</strong>
             </p>
             <div className="bg-[#fafafa] border border-black/5 p-6 rounded-2xl inline-block mt-4 shadow-sm">
-              <p className="text-2xl font-black text-[#0a0a0a] m-0">125 000 abonnés plus tard, la preuve est faite.</p>
+              <p className="text-2xl font-black text-[#0a0a0a] m-0">112 000 abonnés plus tard, la preuve est faite.</p>
             </div>
           </div>
         </Reveal>
@@ -216,7 +216,7 @@ function Ecosystem() {
     },
     {
       title: "MES CONTENUS", subtitle: "La Voix", icon: Youtube, color: "text-[#FF0000]", bg: "bg-[#FF0000]/10",
-      desc: "125 000+ abonnés (YouTube, TikTok, Facebook, LinkedIn, Instagram). Correspondant pour Vision 4 TV dans la région de l'Adamaoua depuis 2020. Je ne crée pas du contenu pour divertir. Je crée du contenu pour armer. Chaque vidéo, chaque article, chaque post est une arme que tu peux utiliser pour ton business."
+      desc: "112 000+ abonnés (YouTube, TikTok, Facebook, LinkedIn, Instagram). Correspondant pour Vision 4 TV dans la région de l'Adamaoua depuis 2020. Je ne crée pas du contenu pour divertir. Je crée du contenu pour armer. Chaque vidéo, chaque article, chaque post est une arme que tu peux utiliser pour ton business."
     }
   ];
 
@@ -269,7 +269,7 @@ function Timeline() {
     { year: '2025', title: "Protocole Vidéo IA", desc: "Lancement de la formation phare sur la création vidéo avec l'intelligence artificielle. Centaines d'apprenants inscrits." },
     { year: '2025', title: 'Le Cerveau Augmenté & Offshore Empire', desc: "Déploiement de deux nouvelles formations. Structuration de l'écosystème de produits digitaux." },
     { year: '2025', title: 'Sanda Vibe Code + Livre Cerveau Augmenté', desc: "Lancement de l'écosystème vibe coding. Publication du livre «Cerveau Augmenté» — guide pour construire son système d'IA personnel." },
-    { year: '2026', title: 'CommentSticker + Livre sur l\'IA en Afrique', desc: "Lancement de CommentSticker (SaaS). Publication de «Si l'Afrique rate l'IA, elle rate le Futur». 125 000+ abonnés. Positionnement consolidé comme référence IA." }
+    { year: '2026', title: 'CommentSticker + Livre sur l\'IA en Afrique', desc: "Lancement de CommentSticker (SaaS). Publication de «Si l'Afrique rate l'IA, elle rate le Futur». 112 000+ abonnés. Positionnement consolidé comme référence IA." }
   ];
 
   return (
@@ -350,7 +350,7 @@ function ValuesSection() {
 /* ═══════════════════════ CHIFFRES CLÉS ═══════════════════════ */
 function StatsGrid() {
   const stats = [
-    { value: "125 000+", label: "abonnés sur les réseaux sociaux" },
+    { value: "112 000+", label: "abonnés sur les réseaux sociaux" },
     { value: "200+", label: "entrepreneurs et créateurs formés" },
     { value: "6+", label: "formations et programmes créés" },
     { value: "3", label: "entreprises fondées (Wendooka, Sanda Vibe Code, CommentSticker)" },
@@ -422,7 +422,7 @@ function FAQAbout() {
   const faqs = [
     {
       q: "Qui est Oumarou Sanda ?",
-      a: "Oumarou Sanda est un entrepreneur digital, expert en intelligence artificielle et formateur basé au Cameroun. Correspondant pour Vision 4 TV dans la région de l'Adamaoua depuis 2020, il est le fondateur de Wendooka (agence web et digitale), de Sanda Vibe Code (écosystème de vibe coding) et de CommentSticker (SaaS). Auteur de deux livres dont «Si l'Afrique rate l'IA, elle rate le Futur», il a formé des centaines d'entrepreneurs africains à utiliser l'IA pour générer des revenus, et fédère une communauté de plus de 125 000 abonnés."
+      a: "Oumarou Sanda est un entrepreneur digital, expert en intelligence artificielle et formateur basé au Cameroun. Correspondant pour Vision 4 TV dans la région de l'Adamaoua depuis 2020, il est le fondateur de Wendooka (agence web et digitale), de Sanda Vibe Code (écosystème de vibe coding) et de CommentSticker (SaaS). Auteur de deux livres dont «Si l'Afrique rate l'IA, elle rate le Futur», il a formé des centaines d'entrepreneurs africains à utiliser l'IA pour générer des revenus, et fédère une communauté de plus de 112 000 abonnés."
     },
     {
       q: "Quelles formations Oumarou Sanda propose-t-il ?",

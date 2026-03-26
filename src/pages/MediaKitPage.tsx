@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 /* ═══════════════════════ DATA ═══════════════════════ */
 const stats = [
-  { value: '115K+', label: 'Abonnés toutes plateformes', icon: '🌍', color: 'from-gold/15 to-gold/5 border-gold/20' },
+  { value: '112K+', label: 'Abonnés toutes plateformes', icon: '🌍', color: 'from-gold/15 to-gold/5 border-gold/20' },
   { value: '10 400', label: 'Abonnés YouTube', icon: '▶️', color: 'from-red-500/15 to-red-500/5 border-red-500/20' },
   { value: '68K+', label: 'Abonnés TikTok', icon: '🎵', color: 'from-pink-500/15 to-pink-500/5 border-pink-500/20' },
   { value: '34K+', label: 'Abonnés Facebook', icon: '👤', color: 'from-blue/15 to-blue/5 border-blue/20' },

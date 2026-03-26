@@ -12,6 +12,7 @@ interface Formation {
   students: number;
   rating: number;
   status: 'active' | 'draft' | 'archived';
+  description?: string;
 }
 
 const initialFormations: Formation[] = [
@@ -46,6 +47,7 @@ export default function DashboardFormations() {
         name: editing.name || '',
         price: editing.price || '0$',
         priceFCFA: editing.priceFCFA || '0 FCFA',
+        description: editing.description || '',
         sales: 0, revenue: '0 FCFA', students: 0, rating: 0,
         status: (editing.status as Formation['status']) || 'draft',
       };
@@ -107,8 +109,11 @@ export default function DashboardFormations() {
             className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-all group"
           >
             <div className="flex items-start justify-between mb-4">
-              <div>
+              <div className="flex-1 min-w-0 mr-3">
                 <h3 className="text-white font-semibold text-lg">{formation.name}</h3>
+                {formation.description && (
+                  <p className="text-white/40 text-xs mt-1 line-clamp-2 leading-relaxed">{formation.description}</p>
+                )}
                 <div className="flex items-center gap-2 mt-2">
                   <span className={`inline-flex px-2 py-0.5 rounded-md text-xs font-medium border ${statusConfig[formation.status].color}`}>
                     {statusConfig[formation.status].label}
@@ -230,6 +235,8 @@ export default function DashboardFormations() {
                   <label className="text-white/60 text-sm mb-2 block">Description</label>
                   <textarea
                     rows={4}
+                    value={editing?.description || ''}
+                    onChange={(e) => setEditing(prev => ({ ...prev, description: e.target.value }))}
                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm outline-none focus:border-amber-500/50 resize-none"
                     placeholder="Description de la formation..."
                   />

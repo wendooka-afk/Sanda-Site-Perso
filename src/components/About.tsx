@@ -33,7 +33,7 @@ const timeline = [
   {
     year: '2025+',
     title: 'Écosystème & Impact',
-    description: 'Lancement de Sanda Vibe Code, 100K+ abonnés, formations premium et positionnement comme référence IA en Afrique francophone.',
+    description: 'Lancement de Sanda Vibe Code, 112K+ abonnés, formations premium et positionnement comme référence IA en Afrique francophone.',
     icon: Rocket,
     color: 'border-accent-red',
     iconColor: 'text-accent-red',
@@ -96,7 +96,7 @@ export function About() {
               <div className="space-y-4 text-gray-300 leading-relaxed">
                 <p>
                   Ancien journaliste devenu bâtisseur d'écosystèmes digitaux, je fédère aujourd'hui 
-                  une communauté de plus de <span className="text-white font-semibold">100 000 abonnés</span> sur 
+                  une communauté de plus de <span className="text-white font-semibold">112 000 abonnés</span> sur
                   YouTube, TikTok, Facebook, LinkedIn et Instagram.
                 </p>
                 <p>

@@ -88,10 +88,10 @@ export const fr: Translations = {
     location: 'Cameroun 🇨🇲',
     specialty: 'IA Générative',
     brands: 'Wendooka • SVC',
-    community: '100K+',
+    community: '112K+',
     contactMe: 'Me contacter',
     bio1: "Je suis <strong>Oumarou Sanda</strong>, entrepreneur digital, expert en intelligence artificielle appliquée au business et aux médias. Mon parcours est celui d'une transformation : d'<strong>ancien journaliste</strong> à bâtisseur d'écosystèmes digitaux.",
-    bio2: "Aujourd'hui, je fédère une communauté de plus de <strong>100 000 abonnés</strong> sur YouTube, TikTok, Facebook, LinkedIn et Instagram. Mon objectif : <strong>démocratiser l'IA générative</strong> et prouver qu'elle peut être un levier de croissance pour l'Afrique.",
+    bio2: "Aujourd'hui, je fédère une communauté de plus de <strong>112 000 abonnés</strong> sur YouTube, TikTok, Facebook, LinkedIn et Instagram. Mon objectif : <strong>démocratiser l'IA générative</strong> et prouver qu'elle peut être un levier de croissance pour l'Afrique.",
     bio3: "Correspondant régional pour <strong>Vision 4 TV</strong> dans l'Adamaoua, j'ai développé une rigueur journalistique que j'applique dans chaque contenu et formation.",
     bio4: "J'ai fondé <strong>Wendooka</strong> (agence digitale) et <strong>Sanda Vibe Code</strong> (écosystème IA) pour créer un pont entre la technologie de pointe et les réalités des entrepreneurs africains.",
     bio5: "Ma vision : <strong>si l'Afrique rate l'IA, elle rate le futur.</strong>",
@@ -101,7 +101,7 @@ export const fr: Translations = {
       { year: '2014–2018', title: 'Journaliste & Correspondant', desc: "Correspondant régional pour Vision 4 TV dans l'Adamaoua. Formation en rigueur journalistique et communication." },
       { year: '2019–2021', title: 'Transition Digitale', desc: 'Plongée dans le marketing digital, le freelancing et la création de contenus. Naissance de la vision entrepreneuriale.' },
       { year: '2022–2024', title: 'Expert IA & Fondateur', desc: "Création de Wendooka et lancement des premières formations sur l'IA générative appliquée au business." },
-      { year: '2025+', title: 'Écosystème & Impact', desc: "Lancement de Sanda Vibe Code, 100K+ abonnés, formations premium et positionnement comme référence IA en Afrique francophone." },
+      { year: '2025+', title: 'Écosystème & Impact', desc: "Lancement de Sanda Vibe Code, 112K+ abonnés, formations premium et positionnement comme référence IA en Afrique francophone." },
     ],
     values: [
       { title: 'Innovation', desc: "Toujours à la pointe de la technologie IA." },
@@ -120,7 +120,7 @@ export const fr: Translations = {
     differentiators: [
       { title: 'Focalisé Afrique', desc: 'Solutions conçues pour le marché africain.' },
       { title: 'Innovation', desc: 'Dernières avancées IA intégrées.' },
-      { title: 'Communauté forte', desc: '100K+ entrepreneurs connectés.' },
+      { title: 'Communauté forte', desc: '112K+ entrepreneurs connectés.' },
       { title: 'Résultats concrets', desc: 'Impact mesurable et immédiat.' },
     ],
     wendooka: {

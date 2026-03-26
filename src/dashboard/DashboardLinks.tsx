@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link, ExternalLink, QrCode, Copy, Edit, Trash, Plus, Check } from 'lucide-react';
+import { Link, ExternalLink, QrCode, Copy, Edit, Trash, Plus, Check, Download } from 'lucide-react';
+import { QRCodeCanvas } from 'qrcode.react';
 import { useLocalStorage } from './useLocalStorage';
 
 interface PrettyLink {
@@ -12,6 +13,8 @@ interface PrettyLink {
   uniqueClicks: number;
   category: string;
   tags: string[];
+  /** Mots-clés déclenchant un lien automatique dans les articles de blog */
+  keywords: string[];
   status: 'active' | 'inactive';
   createdAt: string;
   attributes: {
@@ -30,60 +33,65 @@ const initialLinks: PrettyLink[] = [
     clicks: 1245, 
     uniqueClicks: 890, 
     category: 'Hébergement', 
-    tags: ['hosting', 'wordpress'], 
-    status: 'active', 
+    tags: ['hosting', 'wordpress'],
+    keywords: ['Hostinger', 'hébergement web', 'hébergeur'],
+    status: 'active',
     createdAt: '2024-01-15',
     attributes: { nofollow: true, sponsored: true, newTab: true }
   },
-  { 
-    id: '2', 
-    title: 'Cloudways Promo', 
-    slug: 'cloudways', 
-    destination: 'https://cloudways.com/promo/sanda20', 
-    clicks: 856, 
-    uniqueClicks: 620, 
-    category: 'Hébergement', 
-    tags: ['cloud', 'vps'], 
-    status: 'active', 
+  {
+    id: '2',
+    title: 'Cloudways Promo',
+    slug: 'cloudways',
+    destination: 'https://cloudways.com/promo/sanda20',
+    clicks: 856,
+    uniqueClicks: 620,
+    category: 'Hébergement',
+    tags: ['cloud', 'vps'],
+    keywords: ['Cloudways', 'hébergement cloud', 'VPS managé'],
+    status: 'active',
     createdAt: '2024-02-10',
     attributes: { nofollow: true, sponsored: true, newTab: true }
   },
-  { 
-    id: '3', 
-    title: 'Brevo Emailing', 
-    slug: 'brevo', 
-    destination: 'https://brevo.com/partner/sanda', 
-    clicks: 432, 
-    uniqueClicks: 310, 
-    category: 'Outils', 
-    tags: ['marketing', 'email'], 
-    status: 'active', 
+  {
+    id: '3',
+    title: 'Brevo Emailing',
+    slug: 'brevo',
+    destination: 'https://brevo.com/partner/sanda',
+    clicks: 432,
+    uniqueClicks: 310,
+    category: 'Outils',
+    tags: ['marketing', 'email'],
+    keywords: ['Brevo', 'emailing', 'email marketing', 'Sendinblue'],
+    status: 'active',
     createdAt: '2024-03-05',
     attributes: { nofollow: true, sponsored: false, newTab: true }
   },
-  { 
-    id: '4', 
-    title: 'Formation Vidéo IA', 
-    slug: 'go-video-ia', 
-    destination: 'https://oumarousanda.com/formations/protocole-video-ia', 
-    clicks: 2100, 
-    uniqueClicks: 1540, 
-    category: 'Formations', 
-    tags: ['interne', 'promo'], 
-    status: 'active', 
+  {
+    id: '4',
+    title: 'Formation Vidéo IA',
+    slug: 'go-video-ia',
+    destination: 'https://oumarousanda.com/formations/protocole-video-ia',
+    clicks: 2100,
+    uniqueClicks: 1540,
+    category: 'Formations',
+    tags: ['interne', 'promo'],
+    keywords: ['Protocole Vidéo IA', 'formation vidéo IA'],
+    status: 'active',
     createdAt: '2024-01-01',
     attributes: { nofollow: false, sponsored: false, newTab: false }
   },
-  { 
-    id: '5', 
-    title: 'YouTube Channel', 
-    slug: 'youtube', 
-    destination: 'https://youtube.com/@iamsanda', 
-    clicks: 5600, 
-    uniqueClicks: 4200, 
-    category: 'Réseaux Sociaux', 
-    tags: ['social', 'bio'], 
-    status: 'active', 
+  {
+    id: '5',
+    title: 'YouTube Channel',
+    slug: 'youtube',
+    destination: 'https://youtube.com/@iamsanda',
+    clicks: 5600,
+    uniqueClicks: 4200,
+    category: 'Réseaux Sociaux',
+    tags: ['social', 'bio'],
+    keywords: [],
+    status: 'active',
     createdAt: '2023-12-15',
     attributes: { nofollow: false, sponsored: false, newTab: true }
   },
@@ -99,6 +107,8 @@ export default function DashboardLinks() {
   const [currentLink, setCurrentLink] = useState<Partial<PrettyLink>>({});
   const [showQR, setShowQR] = useState<string | null>(null);
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [keywordInput, setKeywordInput] = useState('');
+  const qrRef = useRef<HTMLDivElement>(null);
 
   const filtered = links.filter(l => {
     const matchSearch = l.title.toLowerCase().includes(search.toLowerCase()) || l.slug.toLowerCase().includes(search.toLowerCase());
@@ -115,9 +125,23 @@ export default function DashboardLinks() {
     setTimeout(() => setCopiedId(null), 2000);
   };
 
+  const handleAddKeyword = (raw: string) => {
+    const kw = raw.trim();
+    if (!kw) return;
+    const existing = currentLink.keywords || [];
+    if (!existing.includes(kw)) {
+      setCurrentLink(prev => ({ ...prev, keywords: [...(prev.keywords || []), kw] }));
+    }
+    setKeywordInput('');
+  };
+
+  const handleRemoveKeyword = (kw: string) => {
+    setCurrentLink(prev => ({ ...prev, keywords: (prev.keywords || []).filter(k => k !== kw) }));
+  };
+
   const handleSave = () => {
     if (!currentLink.title || !currentLink.destination) return;
-    
+
     if (currentLink.id) {
       setLinks(prev => prev.map(l => l.id === currentLink.id ? { ...l, ...currentLink } as PrettyLink : l));
     } else {
@@ -130,6 +154,7 @@ export default function DashboardLinks() {
         uniqueClicks: 0,
         category: currentLink.category || 'Non classé',
         tags: [],
+        keywords: currentLink.keywords || [],
         status: 'active',
         createdAt: new Date().toISOString().split('T')[0],
         attributes: { nofollow: true, sponsored: false, newTab: true, ...(currentLink.attributes || {}) }
@@ -138,6 +163,7 @@ export default function DashboardLinks() {
     }
     setShowModal(false);
     setCurrentLink({});
+    setKeywordInput('');
   };
 
   const handleDelete = (id: string) => {
@@ -162,7 +188,7 @@ export default function DashboardLinks() {
           <p className="text-white/40 text-sm mt-1">Créez, suivez et gérez vos liens courts (PrettyLinks)</p>
         </div>
         <button
-          onClick={() => { setCurrentLink({}); setShowModal(true); }}
+          onClick={() => { setCurrentLink({ keywords: [] }); setKeywordInput(''); setShowModal(true); }}
           className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-black font-semibold text-sm hover:shadow-lg hover:shadow-amber-500/20 transition-all flex items-center gap-2"
         >
           <Plus className="w-4 h-4" /> Nouveau lien
@@ -263,6 +289,15 @@ export default function DashboardLinks() {
                   <p className="text-white/30 text-xs truncate max-w-md">
                     → {link.destination}
                   </p>
+                  {link.keywords && link.keywords.length > 0 && (
+                    <div className="flex flex-wrap gap-1 mt-1.5">
+                      {link.keywords.map(kw => (
+                        <span key={kw} className="px-1.5 py-0.5 rounded text-[10px] bg-violet-500/10 text-violet-300 border border-violet-500/20">
+                          🔑 {kw}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -295,7 +330,7 @@ export default function DashboardLinks() {
                   <QrCode className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={() => { setCurrentLink(link); setShowModal(true); }}
+                  onClick={() => { setCurrentLink(link); setKeywordInput(''); setShowModal(true); }}
                   className="p-2 rounded-lg bg-white/5 hover:bg-blue-500/20 text-white/60 hover:text-blue-400 transition-all"
                   title="Modifier"
                 >
@@ -443,6 +478,53 @@ export default function DashboardLinks() {
                     </label>
                   </div>
                 </div>
+
+                {/* Keywords */}
+                <div>
+                  <label className="text-white/60 text-xs uppercase font-bold tracking-wider mb-1 block">
+                    Mots-clés auto-link
+                  </label>
+                  <p className="text-white/30 text-xs mb-3">
+                    Ces mots-clés seront automatiquement transformés en liens dans vos articles de blog.
+                  </p>
+                  {/* Chip input */}
+                  <div className="flex flex-wrap gap-2 p-3 rounded-xl bg-white/[0.03] border border-white/10 min-h-[48px]">
+                    {(currentLink.keywords || []).map(kw => (
+                      <span
+                        key={kw}
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-violet-500/15 text-violet-300 border border-violet-500/25 text-xs font-medium"
+                      >
+                        {kw}
+                        <button
+                          type="button"
+                          onClick={() => handleRemoveKeyword(kw)}
+                          className="text-violet-400/60 hover:text-violet-300 transition-colors ml-0.5"
+                          title="Supprimer"
+                        >
+                          ✕
+                        </button>
+                      </span>
+                    ))}
+                    <input
+                      type="text"
+                      value={keywordInput}
+                      onChange={(e) => setKeywordInput(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ',') {
+                          e.preventDefault();
+                          handleAddKeyword(keywordInput);
+                        } else if (e.key === 'Backspace' && !keywordInput) {
+                          const kws = currentLink.keywords || [];
+                          if (kws.length > 0) handleRemoveKeyword(kws[kws.length - 1]);
+                        }
+                      }}
+                      onBlur={() => { if (keywordInput.trim()) handleAddKeyword(keywordInput); }}
+                      placeholder={(currentLink.keywords || []).length === 0 ? 'Tapez un mot-clé + Entrée…' : 'Ajouter…'}
+                      className="flex-1 min-w-[120px] bg-transparent text-white text-sm outline-none placeholder:text-white/20"
+                    />
+                  </div>
+                  <p className="text-white/20 text-[10px] mt-1.5">Appuyez sur Entrée ou virgule pour ajouter. Supprimer avec ✕ ou Backspace.</p>
+                </div>
               </div>
 
               <div className="p-6 border-t border-white/5 flex justify-end gap-3">
@@ -481,27 +563,54 @@ export default function DashboardLinks() {
               onClick={(e) => e.stopPropagation()}
               className="bg-white p-8 rounded-3xl text-center max-w-sm w-full"
             >
-              <h3 className="text-black font-bold text-xl mb-6">QR Code du lien</h3>
-              <div className="aspect-square bg-gray-100 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden">
-                {/* Simulated QR Code */}
-                <div className="w-48 h-48 bg-black pattern-dots relative">
-                  <div className="absolute inset-0 border-[16px] border-white"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-12 h-12 bg-amber-500 rounded-lg flex items-center justify-center text-white font-bold text-xl border-4 border-white">OS</div>
-                  </div>
-                  {/* Fake QR Pattern */}
-                  <div className="absolute top-4 left-4 w-10 h-10 border-4 border-black bg-white flex items-center justify-center"><div className="w-4 h-4 bg-black"></div></div>
-                  <div className="absolute top-4 right-4 w-10 h-10 border-4 border-black bg-white flex items-center justify-center"><div className="w-4 h-4 bg-black"></div></div>
-                  <div className="absolute bottom-4 left-4 w-10 h-10 border-4 border-black bg-white flex items-center justify-center"><div className="w-4 h-4 bg-black"></div></div>
-                </div>
+              <h3 className="text-black font-bold text-xl mb-2">QR Code du lien</h3>
+              <p className="text-gray-400 text-xs mb-6 font-mono break-all">
+                oumarousanda.com/go/{showQR}
+              </p>
+
+              {/* Vrai QR Code généré par qrcode.react */}
+              <div ref={qrRef} className="flex items-center justify-center bg-white p-4 rounded-2xl border border-gray-100 mb-6">
+                <QRCodeCanvas
+                  value={`https://oumarousanda.com/go/${showQR}`}
+                  size={200}
+                  bgColor="#ffffff"
+                  fgColor="#000000"
+                  level="H"
+                  imageSettings={{
+                    src: '/logo-sm.webp',
+                    x: undefined,
+                    y: undefined,
+                    height: 36,
+                    width: 36,
+                    excavate: true,
+                  }}
+                />
               </div>
-              <p className="text-gray-500 text-sm mb-6 font-mono">oumarousanda.com/go/{showQR}</p>
-              <button
-                onClick={() => setShowQR(null)}
-                className="w-full py-3 bg-black text-white font-bold rounded-xl hover:bg-gray-800 transition-all"
-              >
-                Fermer
-              </button>
+
+              <div className="flex gap-3">
+                <button
+                  onClick={() => {
+                    // Télécharger le QR code en PNG
+                    const canvas = qrRef.current?.querySelector('canvas');
+                    if (!canvas) return;
+                    const url = canvas.toDataURL('image/png');
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `qr-${showQR}.png`;
+                    a.click();
+                  }}
+                  className="flex-1 py-2.5 flex items-center justify-center gap-2 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition-all text-sm"
+                >
+                  <Download className="w-4 h-4" />
+                  Télécharger
+                </button>
+                <button
+                  onClick={() => setShowQR(null)}
+                  className="flex-1 py-2.5 bg-black text-white font-bold rounded-xl hover:bg-gray-800 transition-all text-sm"
+                >
+                  Fermer
+                </button>
+              </div>
             </motion.div>
           </motion.div>
         )}

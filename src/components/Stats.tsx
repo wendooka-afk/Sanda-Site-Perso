@@ -8,8 +8,8 @@ export function Stats() {
   const { t } = useLanguage();
 
   const stats = [
-    { icon: Youtube, value: '100K+', label: t.stats.subscribers, color: 'text-accent-red', bg: 'bg-accent-red/10' },
-    { icon: Users, value: '5 000+', label: t.stats.studentsTrained, color: 'text-accent-blue', bg: 'bg-accent-blue/10' },
+    { icon: Youtube, value: '112K+', label: t.stats.subscribers, color: 'text-accent-red', bg: 'bg-accent-red/10' },
+    { icon: Users, value: '500+', label: t.stats.studentsTrained, color: 'text-accent-blue', bg: 'bg-accent-blue/10' },
     { icon: GraduationCap, value: '6+', label: t.stats.trainingsCreated, color: 'text-accent-gold', bg: 'bg-accent-gold/10' },
     { icon: Globe, value: '15+', label: t.stats.countries, color: 'text-green-400', bg: 'bg-green-400/10' },
     { icon: Award, value: '10+', label: t.stats.yearsExp, color: 'text-purple-400', bg: 'bg-purple-400/10' },
