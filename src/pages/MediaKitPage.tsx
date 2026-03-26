@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 
 /* ═══════════════════════ DATA ═══════════════════════ */
 const stats = [
-  { value: '125K+', label: 'Abonnés toutes plateformes', icon: '🌍', color: 'from-gold/15 to-gold/5 border-gold/20' },
-  { value: '100K+', label: 'Abonnés YouTube', icon: '▶️', color: 'from-red-500/15 to-red-500/5 border-red-500/20' },
-  { value: '15K+', label: 'Abonnés TikTok', icon: '🎵', color: 'from-pink-500/15 to-pink-500/5 border-pink-500/20' },
-  { value: '10K+', label: 'Abonnés Facebook', icon: '👤', color: 'from-blue/15 to-blue/5 border-blue/20' },
+  { value: '115K+', label: 'Abonnés toutes plateformes', icon: '🌍', color: 'from-gold/15 to-gold/5 border-gold/20' },
+  { value: '10 400', label: 'Abonnés YouTube', icon: '▶️', color: 'from-red-500/15 to-red-500/5 border-red-500/20' },
+  { value: '68K+', label: 'Abonnés TikTok', icon: '🎵', color: 'from-pink-500/15 to-pink-500/5 border-pink-500/20' },
+  { value: '34K+', label: 'Abonnés Facebook', icon: '👤', color: 'from-blue/15 to-blue/5 border-blue/20' },
   { value: '5K+', label: 'Abonnés LinkedIn', icon: '💼', color: 'from-sky-500/15 to-sky-500/5 border-sky-500/20' },
   { value: '500+', label: 'Apprenants formés', icon: '🎓', color: 'from-emerald/15 to-emerald/5 border-emerald/20' },
   { value: '6+', label: 'Formations créées', icon: '📚', color: 'from-violet/15 to-violet/5 border-violet/20' },
@@ -198,7 +198,7 @@ export default function MediaKitPage() {
                 Biographie courte
               </h2>
               <p className="text-[#525252] text-[15px] leading-relaxed mb-4">
-                Oumarou Sanda est un entrepreneur digital, expert en intelligence artificielle générative et formateur basé à Ngaoundéré, Cameroun. Ancien journaliste et correspondant Vision 4 TV dans la région de l'Adamaoua, il s'est reconverti dans le digital et a rapidement bâti une audience de plus de 125 000 abonnés sur les réseaux sociaux.
+                Oumarou Sanda est un entrepreneur digital, expert en intelligence artificielle générative et formateur basé à Ngaoundéré, Cameroun. Ancien journaliste et correspondant Vision 4 TV dans la région de l'Adamaoua, il s'est reconverti dans le digital et a rapidement bâti une audience de plus de 110 000 abonnés sur les réseaux sociaux.
               </p>
               <p className="text-[#525252] text-[15px] leading-relaxed mb-6">
                 Fondateur de <strong className="text-[#0a0a0a]">Wendooka</strong> (agence IA & digital) et de <strong className="text-[#0a0a0a]">Sanda Vibe Code</strong> (plateforme de formations en vibe coding), il a formé des centaines d'entrepreneurs africains à utiliser l'intelligence artificielle pour générer des revenus en ligne. Il est l'auteur de <em>«Si l'Afrique rate l'IA, elle rate le Futur»</em> et de <em>«Le Cerveau Augmenté»</em>.
