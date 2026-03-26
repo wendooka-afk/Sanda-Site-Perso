@@ -83,6 +83,7 @@ function RenderList({ items }: { items: (string | { title: string; desc: string 
 }
 
 function RenderCTA({ label, url, variant }: { label: string; url: string; variant: string }) {
+  if (!url || url === '#') return null;
   return (
     <div className="my-8 flex justify-center">
       <a
@@ -354,14 +355,17 @@ function RenderInternalLinks({ items }: { items: { label: string; url?: string; 
         À lire aussi sur oumarousanda.com
       </h4>
       <ul className="space-y-3">
-        {items.map((item, i) => (
-          <li key={i} className="flex items-start gap-3 group">
-            <ArrowRight className="w-3.5 h-3.5 text-gold/40 mt-1 transition-transform group-hover:translate-x-0.5" />
-            <a href={item.url ?? (item.slug ? '/blog/' + item.slug : '#')} className="text-gold/70 text-[13px] hover:text-gold transition-colors underline decoration-gold/20 underline-offset-4 font-medium">
-              {item.label}
-            </a>
-          </li>
-        ))}
+        {items
+          .map((item) => ({ ...item, href: item.url ?? (item.slug ? '/blog/' + item.slug : null) }))
+          .filter((item) => item.href && item.href !== '#')
+          .map((item, i) => (
+            <li key={i} className="flex items-start gap-3 group">
+              <ArrowRight className="w-3.5 h-3.5 text-gold/40 mt-1 transition-transform group-hover:translate-x-0.5" />
+              <a href={item.href!} className="text-gold/70 text-[13px] hover:text-gold transition-colors underline decoration-gold/20 underline-offset-4 font-medium">
+                {item.label}
+              </a>
+            </li>
+          ))}
       </ul>
     </div>
   );

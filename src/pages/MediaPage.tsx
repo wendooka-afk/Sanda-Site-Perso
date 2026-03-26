@@ -72,9 +72,9 @@ export default function MediaPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center gap-4 mb-16">
-                <a href="/kit-presse-oumarou-sanda.zip" download className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 text-white hover:bg-white/10 rounded-xl font-heading font-bold text-sm transition-all flex items-center justify-center gap-2">
+                <Link to="/kit-media" className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 text-white hover:bg-white/10 rounded-xl font-heading font-bold text-sm transition-all flex items-center justify-center gap-2">
                   <Download className="w-4 h-4" /> Télécharger le kit presse
-                </a>
+                </Link>
                 <Link to="/contact" className="w-full sm:w-auto px-8 py-4 bg-blue-600 text-white hover:bg-blue-500 shadow-[0_0_20px_rgba(37,99,235,0.4)] rounded-xl font-heading font-bold text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2">
                   <Mic className="w-4 h-4" /> Demander une interview
                 </Link>
