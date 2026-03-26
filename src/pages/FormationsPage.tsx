@@ -308,7 +308,7 @@ function FormationOffshore() {
                 </div>
               </div>
 
-              <a href="https://formations.oumarousanda.com/offshore-empire" target="_blank" rel="noopener noreferrer" className="btn-premium block w-full py-5 bg-[#0a0a0a] text-white font-heading font-bold text-[15px] text-center rounded-xl hover:bg-gold transition-all uppercase tracking-wider shadow-[0_10px_30px_rgba(10,10,10,0.3)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.5)] glow-hover">
+              <a href="https://academy.oumarousanda.com/offshore-empire" target="_blank" rel="noopener noreferrer" className="btn-premium block w-full py-5 bg-[#0a0a0a] text-white font-heading font-bold text-[15px] text-center rounded-xl hover:bg-gold transition-all uppercase tracking-wider shadow-[0_10px_30px_rgba(10,10,10,0.3)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.5)] glow-hover">
                 REJOINDRE OFFSHORE EMPIRE
               </a>
             </div>

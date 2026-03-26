@@ -134,7 +134,7 @@ export function YouTubeSection() {
           className="text-center mb-16"
         >
           <a
-            href="https://youtube.com"
+            href="https://www.youtube.com/@Oumarou_Sanda"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-red-500/10 border border-red-500/20 text-red-400 rounded-xl hover:bg-red-500/20 transition-all font-semibold text-sm"

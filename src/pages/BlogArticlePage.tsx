@@ -33,7 +33,8 @@ import { articles } from '../data/articles';
 import { getDashboardArticleBySlug } from '../hooks/useDashboardArticles';
 import type { DashboardArticle } from '../hooks/useDashboardArticles';
 import { marked } from 'marked';
-import { Calendar, Clock, ArrowLeft, ArrowRight, Home, ChevronRight, Tag, Share2, ExternalLink, CheckCircle2, XCircle, AlertTriangle, List, Play, Puzzle, Palette, DollarSign, MessageCircle, Send, User, Heart, Reply, Linkedin, Facebook, Globe, Youtube, BookOpen } from 'lucide-react';
+import { applyAutoLinks } from '../utils/autoLink';
+import { Calendar, Clock, ArrowLeft, ArrowRight, Home, ChevronRight, Share2, ExternalLink, CheckCircle2, XCircle, AlertTriangle, List, Play, Puzzle, Palette, DollarSign, MessageCircle, Send, User, Heart, Reply, Linkedin, Facebook, Globe, Youtube, BookOpen } from 'lucide-react';
 import { useState, useEffect, useCallback } from 'react';
 import { SEOHead } from '../components/SEOHead';
 
@@ -615,8 +616,9 @@ function ArticleCTABlock({ category }: { category: string }) {
   let ctaLabel = 'Voir les formations';
 
   if (category === 'IA & Outils' || category === 'Vidéo IA') {
-    ctaDesc = 'Découvre le Protocole Vidéo IA — la formation complète pour maîtriser VEO, Sora et Wan.';
-    ctaLabel = 'Voir la formation vidéo IA';
+    ctaDesc = 'Maîtrise 28 outils IA en 15 min/jour — le Challenge 30 Jours IA, c\'est fait pour toi.';
+    ctaLabel = 'Voir le Challenge 30 Jours IA';
+    ctaLink = '/challenge-30-jours';
   } else if (category === 'Vibe Coding') {
     ctaDesc = 'Apprends à créer des applications et SaaS sans coder grâce à Sanda Vibe Code.';
     ctaLabel = 'Découvrir Sanda Vibe Code';
@@ -644,27 +646,46 @@ function ArticleCTABlock({ category }: { category: string }) {
   );
 }
 
-/* ═══ Newsletter CTA (Section 09) ═══ */
+/* ═══ Newsletter CTA — Premium ═══ */
 function NewsletterCTA() {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 15 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="mt-8 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-gold/10 to-transparent border border-gold/20 shadow-lg shadow-gold/5"
+      className="relative overflow-hidden rounded-3xl bg-[#0c0c0c] shadow-2xl"
     >
-      <div className="text-center">
-        <h4 className="font-heading font-bold text-[#0a0a0a] text-lg mb-2">📬 Rejoins +10 000 entrepreneurs</h4>
-        <p className="text-[#525252] text-[14px] mb-5">Mes stratégies IA chaque semaine dans ta boîte mail.</p>
-        <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-          <input
-            type="email"
-            placeholder="ton@email.com"
-            className="flex-1 bg-white border border-black/10 rounded-xl px-5 py-3 text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:outline-none focus:border-gold/40 transition-all text-sm"
-          />
-          <button className="px-6 py-3 bg-gradient-to-r from-gold to-gold-light text-dark-950 font-heading font-bold text-[13px] rounded-xl hover:shadow-lg hover:shadow-gold/15 transition-all whitespace-nowrap">
-            S'inscrire
-          </button>
+      {/* Ambient glow */}
+      <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-amber-400/10 blur-3xl rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-400/25 to-transparent" />
+
+      <div className="relative z-10 px-8 sm:px-14 py-12 sm:py-14 flex flex-col sm:flex-row items-start sm:items-center gap-10">
+        {/* Left */}
+        <div className="flex-1 min-w-0">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-400 text-[10px] font-black uppercase tracking-widest mb-5">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+            Newsletter hebdomadaire
+          </div>
+          <h3 className="font-heading font-black text-white text-2xl sm:text-3xl leading-tight mb-3">
+            Rejoins +10 000 entrepreneurs
+          </h3>
+          <p className="text-white/45 text-[14px] leading-relaxed max-w-md">
+            Chaque semaine : stratégies IA actionnables, outils testés, et tactiques business pour l'Afrique et le monde.
+          </p>
+        </div>
+        {/* Right — form */}
+        <div className="w-full sm:w-auto shrink-0">
+          <div className="flex flex-col gap-3 min-w-[300px]">
+            <input
+              type="email"
+              placeholder="ton@email.com"
+              className="w-full bg-white/[0.07] border border-white/10 rounded-xl px-5 py-3.5 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-amber-400/40 transition-all"
+            />
+            <button className="w-full px-6 py-3.5 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-black text-[13px] uppercase tracking-wider rounded-xl hover:shadow-xl hover:shadow-amber-500/30 transition-all">
+              S'inscrire gratuitement →
+            </button>
+          </div>
+          <p className="text-white/20 text-[10px] text-center mt-2.5">Zéro spam. Désabonnement en 1 clic.</p>
         </div>
       </div>
     </motion.div>
@@ -1000,23 +1021,24 @@ function CommentsSection({ articleSlug }: { articleSlug: string }) {
 }
 
 
-/* ═══ Dashboard Article Renderer (Markdown → HTML) ═══ */
+/* ═══ Dashboard Article Renderer — Premium Design ═══ */
 function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
   const [readProgress, setReadProgress] = useState(0);
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setReadProgress(docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0);
+      const el = document.documentElement;
+      const prog = el.scrollHeight - el.clientHeight;
+      setReadProgress(prog > 0 ? Math.min(100, (window.scrollY / prog) * 100) : 0);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-
-  const htmlContent = String(marked.parse(article.bodyMarkdown || ''));
+  const rawBody = article.bodyMarkdown || '';
+  const baseHtml = rawBody.trim().startsWith('<') ? rawBody : String(marked.parse(rawBody));
+  const htmlContent = applyAutoLinks(baseHtml);
 
   const handleShare = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -1024,8 +1046,46 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const circumference = 2 * Math.PI * 22;
+
   return (
     <>
+      <style>{`
+        .ap-body { font-size: 1.05rem; }
+        .ap-body h1 { font-weight: 900; color: #080808; font-size: clamp(1.8rem,3.5vw,2.4rem); line-height: 1.15; margin: 3.5rem 0 1.25rem; }
+        .ap-body h2 { font-weight: 800; color: #080808; font-size: clamp(1.25rem,2.4vw,1.65rem); line-height: 1.25; margin: 3.5rem 0 1.25rem; padding-left: 1.1rem; border-left: 3px solid #f59e0b; }
+        .ap-body h3 { font-weight: 700; color: #111; font-size: 1.15rem; line-height: 1.35; margin: 2.5rem 0 0.9rem; }
+        .ap-body h4 { font-weight: 700; color: #222; font-size: 1rem; line-height: 1.4; margin: 2rem 0 0.75rem; }
+        .ap-body p { color: #3a3a3a; line-height: 1.9; margin-bottom: 1.4rem; }
+        .ap-body ul { list-style: none; padding: 0; margin-bottom: 1.75rem; }
+        .ap-body ul li { position: relative; padding-left: 1.4rem; color: #3a3a3a; line-height: 1.85; margin-bottom: 0.55rem; }
+        .ap-body ul li::before { content: ''; position: absolute; left: 0; top: 0.68em; width: 6px; height: 6px; border-radius: 50%; background: #f59e0b; }
+        .ap-body ol { padding: 0; margin-bottom: 1.75rem; list-style: none; counter-reset: ol-counter; }
+        .ap-body ol li { counter-increment: ol-counter; position: relative; padding-left: 2.25rem; color: #3a3a3a; line-height: 1.85; margin-bottom: 0.55rem; }
+        .ap-body ol li::before { content: counter(ol-counter); position: absolute; left: 0; top: 0.05em; font-weight: 800; font-size: 0.78rem; color: #f59e0b; background: rgba(245,158,11,0.1); width: 1.5rem; height: 1.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; line-height: 1.5rem; }
+        .ap-body a { color: #b45309; text-decoration: none; border-bottom: 1px solid rgba(180,83,9,0.28); transition: border-color .2s, color .2s; }
+        .ap-body a:hover { color: #92400e; border-color: #92400e; }
+        .ap-body strong { color: #080808; font-weight: 700; }
+        .ap-body em { color: #525252; font-style: italic; }
+        .ap-body u { text-decoration: underline; text-underline-offset: 3px; }
+        .ap-body s { color: #a3a3a3; text-decoration: line-through; }
+        .ap-body mark { background: rgba(245,158,11,0.18); color: #92400e; padding: 1px 4px; border-radius: 3px; }
+        .ap-body code { background: #f3f0ff; color: #6d28d9; padding: 2px 7px; border-radius: 5px; font-size: 0.875em; font-family: 'JetBrains Mono','Fira Code',monospace; }
+        .ap-body pre { background: #0c0c0c; border: 1px solid rgba(255,255,255,0.07); border-radius: 18px; padding: 1.75rem; overflow-x: auto; margin: 0.5rem 0 2.25rem; box-shadow: 0 24px 60px rgba(0,0,0,0.22), 0 0 0 1px rgba(255,255,255,0.04); }
+        .ap-body pre code { background: transparent; color: #e2e8f0; padding: 0; font-size: 0.875em; }
+        .ap-body blockquote { margin: 2.75rem 0; padding: 2rem 2rem 2rem 2.5rem; background: #fffdf5; border-left: 3px solid #f59e0b; border-radius: 0 18px 18px 0; position: relative; box-shadow: inset 0 0 0 1px rgba(245,158,11,0.12); }
+        .ap-body blockquote::before { content: '"'; position: absolute; top: -0.75rem; left: 1.25rem; font-size: 5rem; color: #f59e0b; opacity: 0.25; font-family: Georgia,serif; line-height: 1; pointer-events: none; }
+        .ap-body blockquote p { color: #525252; font-size: 1.08rem; font-style: italic; line-height: 1.75; margin-bottom: 0; }
+        .ap-body hr { border: none; height: 1px; background: linear-gradient(90deg,transparent,rgba(0,0,0,0.08),transparent); margin: 3.5rem 0; }
+        .ap-body img { width: 100%; border-radius: 18px; box-shadow: 0 20px 60px rgba(0,0,0,0.1),0 1px 3px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04); margin: 2.25rem 0; display: block; }
+        .ap-body table { width: 100%; border-collapse: collapse; margin-bottom: 2.25rem; border-radius: 14px; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.06),0 0 0 1px rgba(0,0,0,0.04); }
+        .ap-body thead th { background: #0c0c0c; color: #fff; padding: 0.9rem 1.25rem; text-align: left; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.04em; text-transform: uppercase; }
+        .ap-body tbody td { padding: 0.9rem 1.25rem; color: #3a3a3a; font-size: 0.94rem; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .ap-body tbody tr:nth-child(even) td { background: #fafafa; }
+        .ap-body tbody tr:last-child td { border-bottom: none; }
+        .ap-body tbody tr:hover td { background: #fffbf0; transition: background .15s; }
+      `}</style>
+
       <SEOHead
         title={article.seo?.metaTitle || (article.title + ' | Oumarou Sanda')}
         description={article.seo?.metaDescription || article.excerpt}
@@ -1041,148 +1101,243 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
           ]
         }}
       />
-      {/* Reading progress bar */}
-      <div className="fixed top-0 left-0 z-[100] w-full h-[2px] bg-transparent pointer-events-none">
+
+      {/* ── Reading progress bar ── */}
+      <div className="fixed top-0 left-0 z-[100] w-full h-[3px] pointer-events-none bg-transparent">
         <div
-          className="h-full bg-gradient-to-r from-gold via-gold-light to-amber-300 transition-[width] duration-75 ease-linear"
-          style={{ width: `${readProgress}%` }}
+          className="h-full bg-gradient-to-r from-amber-600 via-amber-400 to-yellow-300 transition-[width] duration-75 ease-linear"
+          style={{ width: `${readProgress}%`, boxShadow: readProgress > 2 ? '0 0 10px rgba(251,191,36,0.65)' : 'none' }}
         />
       </div>
 
-      {/* ── HERO ── */}
-      <section className="relative pt-36 sm:pt-44 pb-12 overflow-hidden">
-        <div className="absolute inset-0 bg-[#fafafa]" />
-        <div className="absolute inset-0 bg-mesh-light opacity-60" />
-        {article.image && (
-          <div className="absolute inset-0 z-0">
-            <img src={article.image} alt="" className="w-full h-full object-cover opacity-5" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#fafafa]/60 via-[#fafafa]/95 to-[#fafafa]" />
-          </div>
-        )}
-        <div className="relative max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 z-10">
-          {/* Breadcrumbs */}
-          <nav className="flex items-center gap-2 text-[13px] text-[#737373] mb-10">
-            <Link to="/" className="hover:text-gold transition-colors flex items-center gap-1.5"><Home className="w-3.5 h-3.5" /> Accueil</Link>
-            <ChevronRight className="w-3 h-3 opacity-40" />
-            <Link to="/blog" className="hover:text-gold transition-colors">Blog</Link>
-            <ChevronRight className="w-3 h-3 opacity-40" />
-            <span className="text-[#0a0a0a]/60 font-medium">{article.category}</span>
-          </nav>
+      {/* ══════════════════════════════════════════
+          HERO — Fond blanc, titre + méta centrés
+      ══════════════════════════════════════════ */}
+      <section className="relative bg-white pt-32 sm:pt-40 pb-12 sm:pb-14 border-b border-black/[0.06]">
+        {/* Subtle top accent line */}
+        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-amber-400/50 to-transparent" />
 
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <div className="flex items-center gap-2 mb-5 flex-wrap">
-              <span className={'px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-sm ' + article.tagColor}>{article.tag}</span>
-              <span className="text-[#a3a3a3] text-[11px] font-medium uppercase tracking-widest">{article.category}</span>
+        <div className="max-w-[1120px] mx-auto px-5 sm:px-8">
+
+          {/* Breadcrumbs — alignés à gauche */}
+          <motion.nav
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            className="flex items-center gap-1.5 text-[11px] text-[#a3a3a3] font-medium mb-10"
+          >
+            <Link to="/" className="hover:text-[#d4af37] transition-colors flex items-center gap-1"><Home className="w-3 h-3" /> Accueil</Link>
+            <ChevronRight className="w-3 h-3 opacity-30" />
+            <Link to="/blog" className="hover:text-[#d4af37] transition-colors">Blog</Link>
+            <ChevronRight className="w-3 h-3 opacity-30" />
+            <span className="text-[#737373]">{article.category}</span>
+          </motion.nav>
+
+          {/* Contenu centré */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center"
+          >
+            {/* Tag + catégorie */}
+            <div className="inline-flex items-center gap-3 mb-6 flex-wrap justify-center">
+              <span className={'inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-black tracking-widest uppercase ' + article.tagColor}>
+                {article.tag}
+              </span>
+              <span className="text-[#a3a3a3] text-[11px] font-semibold uppercase tracking-widest">{article.category}</span>
             </div>
 
-            <h1 className="font-heading font-black text-[clamp(2rem,3vw,5rem)] text-[#0a0a0a] leading-[1.1] tracking-tight mb-6">
+            {/* Titre */}
+            <h1
+              className="font-heading font-black text-[#080808] tracking-tight mb-5"
+              style={{ fontSize: 'clamp(1.9rem, 4.5vw, 3.8rem)', lineHeight: '1.1' }}
+            >
               {article.title}
             </h1>
-            <p className="text-[#525252] text-lg leading-relaxed mb-8 max-w-2xl">{article.excerpt}</p>
 
-            <div className="flex items-center flex-wrap gap-5 text-[#737373] text-[13px] font-medium pt-6 border-t border-black/5">
-              <span className="flex items-center gap-2"><Calendar className="w-4 h-4" /> {article.date}</span>
-              <span className="flex items-center gap-2"><Clock className="w-4 h-4" /> {article.readTime}</span>
-              <span className="flex items-center gap-2"><User className="w-4 h-4" /> {article.author}</span>
+            {/* Excerpt */}
+            <p
+              className="text-[#737373] leading-relaxed mb-10 max-w-xl mx-auto font-light"
+              style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)' }}
+            >
+              {article.excerpt}
+            </p>
+
+            {/* Meta strip — centré */}
+            <div className="inline-flex items-center flex-wrap gap-x-5 gap-y-3 justify-center pt-7 border-t border-black/[0.07]">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400/20 to-amber-600/10 border border-amber-400/20 flex items-center justify-center">
+                  <span className="text-[#d4af37] font-black text-[8px]">OS</span>
+                </div>
+                <div className="text-left">
+                  <p className="text-[#0a0a0a] text-[12px] font-semibold leading-none mb-0.5">{article.author}</p>
+                  <p className="text-[#a3a3a3] text-[10px] uppercase tracking-wider">Expert IA</p>
+                </div>
+              </div>
+              <div className="w-px h-5 bg-black/10" />
+              <span className="flex items-center gap-1.5 text-[#737373] text-[12px]"><Calendar className="w-3.5 h-3.5 text-[#d4af37]" />{article.date}</span>
+              <span className="flex items-center gap-1.5 text-[#737373] text-[12px]"><Clock className="w-3.5 h-3.5 text-[#d4af37]" />{article.readTime} de lecture</span>
               <button
                 onClick={handleShare}
-                className="ml-auto flex items-center gap-2 px-4 py-2 rounded-xl bg-[#f5f5f5] hover:bg-[#eeeeee] border border-black/5 transition-all text-[12px] font-bold uppercase tracking-wider"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-black/10 text-[#737373] hover:text-[#0a0a0a] hover:border-black/20 transition-all text-[10px] font-bold uppercase tracking-wider"
               >
-                <Share2 className="w-3.5 h-3.5" />
-                {copied ? 'Copié !' : 'Partager'}
+                <Share2 className="w-3 h-3" />{copied ? '✓ Copié' : 'Partager'}
               </button>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* ── HERO IMAGE ── */}
+      {/* ══════════════════════════════════════════
+          FEATURED IMAGE
+      ══════════════════════════════════════════ */}
       {article.image && (
-        <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 -mt-4 mb-10">
-          <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden border border-black/5 shadow-lg">
-            <img src={article.image} alt={article.title} className="w-full h-full object-cover" />
+        <div className="bg-white py-8">
+          <div className="max-w-[1120px] mx-auto px-5 sm:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-xl shadow-black/10 border border-black/[0.05]"
+            >
+              <img src={article.image} alt={article.title} className="w-full h-full object-cover" />
+            </motion.div>
           </div>
         </div>
       )}
 
-      {/* ── BODY ── */}
-      <section className="pb-16 bg-[#fafafa]">
-        <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-[1fr_280px] gap-12 items-start">
-            {/* Article Content */}
-            <div>
+      {/* ══════════════════════════════════════════
+          CONTENT — Article (55fr) + Sidebar (15fr)
+      ══════════════════════════════════════════ */}
+      <section className="bg-white">
+        <div className="h-px bg-gradient-to-r from-transparent via-black/5 to-transparent" />
+
+        <div className="max-w-[1120px] mx-auto px-5 sm:px-8 py-14 sm:py-20">
+          <div className="grid lg:grid-cols-[55fr_25fr] gap-12 items-start">
+
+            {/* ── Main article body ── */}
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+            >
               <div
-                className="prose prose-lg max-w-none
-                  [&_h1]:font-heading [&_h1]:font-black [&_h1]:text-[#0a0a0a] [&_h1]:mt-10 [&_h1]:mb-4 [&_h1]:leading-tight
-                  [&_h2]:font-heading [&_h2]:font-bold [&_h2]:text-[#0a0a0a] [&_h2]:text-xl [&_h2]:sm:text-2xl [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:leading-tight [&_h2]:flex [&_h2]:items-center [&_h2]:gap-3
-                  [&_h3]:font-heading [&_h3]:font-semibold [&_h3]:text-[#0a0a0a] [&_h3]:text-lg [&_h3]:mt-7 [&_h3]:mb-3
-                  [&_p]:text-[#525252] [&_p]:leading-[1.85] [&_p]:mb-5
-                  [&_ul]:pl-6 [&_ul]:mb-5 [&_ul]:space-y-2
-                  [&_ol]:pl-6 [&_ol]:mb-5 [&_ol]:space-y-2
-                  [&_li]:text-[#525252] [&_li]:leading-relaxed
-                  [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-gold-dark
-                  [&_strong]:text-[#0a0a0a] [&_strong]:font-semibold
-                  [&_code]:bg-[#f5f5f5] [&_code]:text-[#0a0a0a] [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono
-                  [&_pre]:bg-[#0a0a0a] [&_pre]:text-white [&_pre]:rounded-2xl [&_pre]:p-5 [&_pre]:overflow-x-auto [&_pre]:mb-6
-                  [&_pre_code]:bg-transparent [&_pre_code]:text-white [&_pre_code]:p-0
-                  [&_blockquote]:border-l-4 [&_blockquote]:border-gold/40 [&_blockquote]:pl-5 [&_blockquote]:text-[#737373] [&_blockquote]:italic [&_blockquote]:my-6
-                  [&_hr]:border-black/5 [&_hr]:my-8
-                  [&_img]:rounded-xl [&_img]:shadow-md [&_img]:border [&_img]:border-black/5 [&_img]:my-6 [&_img]:max-w-full
-                  [&_table]:w-full [&_table]:border-collapse [&_table]:mb-6
-                  [&_th]:bg-[#f5f5f5] [&_th]:px-4 [&_th]:py-2.5 [&_th]:text-left [&_th]:font-bold [&_th]:text-[#0a0a0a] [&_th]:text-sm [&_th]:border [&_th]:border-black/5
-                  [&_td]:px-4 [&_td]:py-2.5 [&_td]:text-[#525252] [&_td]:text-sm [&_td]:border [&_td]:border-black/5"
+                className="ap-body"
                 dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(htmlContent) }}
               />
 
               {/* Share footer */}
-              <div className="mt-12 pt-8 border-t border-black/5 flex items-center justify-between flex-wrap gap-4">
-                <div>
-                  <p className="text-[#0a0a0a] font-bold text-sm mb-1">Cet article vous a aidé ?</p>
-                  <p className="text-[#737373] text-xs">Partagez-le avec votre réseau.</p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <a href={'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href)} target="_blank" rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#0A66C2]/10 text-[#0A66C2] border border-[#0A66C2]/20 text-[12px] font-bold hover:bg-[#0A66C2]/20 transition-all">
-                    <Linkedin className="w-3.5 h-3.5" /> LinkedIn
-                  </a>
-                  <button onClick={handleShare}
-                    className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#f5f5f5] border border-black/5 text-[#525252] text-[12px] font-bold hover:bg-[#eeeeee] transition-all">
-                    <Share2 className="w-3.5 h-3.5" /> {copied ? 'Copié !' : 'Copier le lien'}
-                  </button>
+              <div className="mt-16 pt-10 border-t border-black/5">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+                  <div>
+                    <p className="font-heading font-bold text-[#080808] text-[15px] mb-1">Cet article vous a aidé ?</p>
+                    <p className="text-[#a3a3a3] text-[13px]">Partagez-le avec votre réseau.</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <a
+                      href={'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href)}
+                      target="_blank" rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#0A66C2] text-white text-[12px] font-bold shadow-md hover:shadow-xl hover:shadow-[#0A66C2]/25 transition-all"
+                    >
+                      <Linkedin className="w-3.5 h-3.5" /> LinkedIn
+                    </a>
+                    <button
+                      onClick={handleShare}
+                      className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-black/10 text-[#525252] text-[12px] font-bold hover:bg-[#f8f8f8] transition-all"
+                    >
+                      <Share2 className="w-3.5 h-3.5" /> {copied ? '✓ Copié !' : 'Copier le lien'}
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Sticky Sidebar */}
+            {/* ── Sticky Sidebar ── */}
             <aside className="hidden lg:block">
-              <div className="sticky top-28 space-y-5">
-                {/* Author Card */}
-                <div className="bg-white rounded-2xl p-6 border border-black/5 shadow-sm">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 flex items-center justify-center mb-4 border border-gold/10">
-                    <span className="font-heading font-black text-[#0a0a0a] text-xl">OS</span>
+              <div className="sticky top-28 space-y-4">
+
+                {/* Progress ring */}
+                <div className="bg-white border border-black/[0.07] rounded-2xl p-5 shadow-sm">
+                  <div className="flex items-center gap-4">
+                    <div className="relative w-[54px] h-[54px] shrink-0">
+                      <svg className="w-[54px] h-[54px] -rotate-90" viewBox="0 0 54 54">
+                        <circle cx="27" cy="27" r="22" fill="none" stroke="#f5f5f5" strokeWidth="3.5" />
+                        <circle
+                          cx="27" cy="27" r="22" fill="none" stroke="#f59e0b" strokeWidth="3.5"
+                          strokeDasharray={circumference}
+                          strokeDashoffset={circumference * (1 - readProgress / 100)}
+                          strokeLinecap="round"
+                          style={{ transition: 'stroke-dashoffset 0.35s ease', filter: readProgress > 5 ? 'drop-shadow(0 0 4px rgba(245,158,11,0.5))' : 'none' }}
+                        />
+                      </svg>
+                      <span className="absolute inset-0 flex items-center justify-center text-[10px] font-black text-[#0a0a0a]">
+                        {Math.round(readProgress)}%
+                      </span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-[#0a0a0a] text-[13px] leading-none mb-1">Progression</p>
+                      <p className="text-[#b3b3b3] text-[11px]">{article.readTime} de lecture</p>
+                    </div>
                   </div>
-                  <p className="font-heading font-bold text-[#0a0a0a] text-base mb-1">{article.author}</p>
-                  <p className="text-[#737373] text-xs leading-relaxed">Expert en IA Générative, fondateur de Wendooka et Sanda Vibe Code.</p>
-                  <Link to="/a-propos" className="mt-4 flex items-center gap-1.5 text-gold text-xs font-bold hover:underline">
-                    En savoir plus <ArrowRight className="w-3 h-3" />
+                </div>
+
+                {/* Author card */}
+                <div className="bg-white border border-black/[0.07] rounded-2xl p-5 shadow-sm">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-400/20 to-amber-600/5 border border-amber-400/15 flex items-center justify-center">
+                      <span className="font-black text-[#0a0a0a] text-xs">OS</span>
+                    </div>
+                    <div>
+                      <p className="font-bold text-[#0a0a0a] text-[13px] leading-none mb-0.5">{article.author}</p>
+                      <p className="text-[#b3b3b3] text-[10px] uppercase tracking-wider">Expert IA</p>
+                    </div>
+                  </div>
+                  <p className="text-[#737373] text-[11px] leading-[1.7]">
+                    Fondateur de Wendooka & Sanda Vibe Code. Expert en IA générative pour entrepreneurs africains.
+                  </p>
+                  <Link to="/a-propos" className="mt-3.5 flex items-center gap-1.5 text-amber-600 text-[11px] font-bold hover:text-amber-700 transition-colors group">
+                    Voir le profil <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                   </Link>
                 </div>
 
-                {/* Back to blog */}
-                <Link to="/blog" className="flex items-center gap-2 px-4 py-3 rounded-xl bg-[#f5f5f5] border border-black/5 text-[#525252] text-[13px] font-medium hover:bg-[#eeeeee] transition-all">
-                  <ArrowLeft className="w-4 h-4" /> Retour au blog
+                {/* Back */}
+                <Link to="/blog" className="flex items-center gap-2 px-4 py-3 rounded-xl border border-black/[0.07] bg-[#fafafa] text-[#737373] text-[12px] font-medium hover:bg-white hover:shadow-sm transition-all">
+                  <ArrowLeft className="w-3.5 h-3.5" /> Retour au blog
                 </Link>
+
+                {/* Formation CTA dark */}
+                <div className="rounded-2xl overflow-hidden">
+                  <div className="bg-[#0c0c0c] p-5 relative overflow-hidden">
+                    <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-amber-400/8 blur-2xl" />
+                    <p className="text-amber-400 text-[9px] font-black uppercase tracking-[0.2em] mb-2">Formations IA</p>
+                    <p className="text-white font-bold text-[13px] leading-snug mb-2.5">
+                      Transforme l'IA en revenus concrets.
+                    </p>
+                    <p className="text-white/35 text-[10px] leading-relaxed mb-4">
+                      Formations pratiques. Résultats prouvés. Communauté active.
+                    </p>
+                    <Link
+                      to="/formations"
+                      className="flex items-center gap-2 justify-center w-full py-2.5 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-black text-[11px] uppercase tracking-wider rounded-xl hover:shadow-lg hover:shadow-amber-500/30 transition-all"
+                    >
+                      Découvrir <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </div>
+
               </div>
             </aside>
+
           </div>
 
           {/* Newsletter */}
-          <div className="mt-12">
+          <div className="mt-20 border-t border-black/5 pt-16">
             <NewsletterCTA />
           </div>
 
           {/* Comments */}
-          <div className="mt-8">
+          <div className="mt-12">
             <CommentsSection articleSlug={article.slug} />
           </div>
         </div>
@@ -1305,89 +1460,100 @@ export default function BlogArticlePage() {
         articlePublishedTime={isoDate}
         schema={{ "@context": "https://schema.org", "@graph": schemaGraph }}
       />
-      {/* ═══ HERO ═══ */}
-      <section className={`relative overflow-hidden ${hasImage ? 'min-h-[62vh] flex items-end pt-32' : 'pt-36 sm:pt-44 pb-12'}`}>
-        {hasImage ? (
-          <div className="absolute inset-0 z-0">
-            <img
-              src={(article as Record<string, unknown>).image as string}
-              alt={article.title}
-              className="w-full h-full object-cover"
-              loading="eager"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/75 to-[#0a0a0a]/20" />
-          </div>
-        ) : (
-          <>
-            <div className="absolute inset-0 bg-[#fafafa]" />
-            <div className="absolute inset-0 bg-mesh-light opacity-60" />
-            <div className="absolute inset-0 bg-grid-premium opacity-[0.03]" />
-          </>
-        )}
+      {/* ═══ HERO — Fond blanc, centré ═══ */}
+      <section className="relative bg-white pt-32 sm:pt-40 pb-12 sm:pb-14 border-b border-black/[0.06]">
+        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-amber-400/50 to-transparent" />
 
-        <div className={`relative max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 z-10 w-full ${hasImage ? 'pb-12' : ''}`}>
+        <div className="max-w-[1120px] mx-auto px-5 sm:px-8">
           {/* Breadcrumbs */}
-          <nav className={`flex items-center gap-2 text-[13px] mb-10 ${hasImage ? 'text-white/50' : 'text-[#737373]'}`}>
-            <Link to="/" className="hover:text-gold transition-colors flex items-center gap-1.5"><Home className="w-3.5 h-3.5" /> Accueil</Link>
-            <ChevronRight className="w-3 h-3 opacity-40" />
-            <Link to="/blog" className="hover:text-gold transition-colors">Blog</Link>
-            <ChevronRight className="w-3 h-3 opacity-40" />
-            <span className={`font-medium ${hasImage ? 'text-white/40' : 'text-[#0a0a0a]/60'}`}>{article.category}</span>
-            <ChevronRight className="w-3 h-3 opacity-40" />
-            <span className={`font-medium truncate max-w-[200px] ${hasImage ? 'text-white/40' : 'text-[#0a0a0a]/60'}`}>{article.title}</span>
+          <nav className="flex items-center gap-1.5 text-[11px] text-[#a3a3a3] font-medium mb-10">
+            <Link to="/" className="hover:text-[#d4af37] transition-colors flex items-center gap-1"><Home className="w-3.5 h-3.5" /> Accueil</Link>
+            <ChevronRight className="w-3 h-3 opacity-30" />
+            <Link to="/blog" className="hover:text-[#d4af37] transition-colors">Blog</Link>
+            <ChevronRight className="w-3 h-3 opacity-30" />
+            <span className="text-[#737373]">{article.category}</span>
           </nav>
 
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }} className="text-center">
             {/* Tags */}
-            <div className="flex items-center gap-2 mb-5 flex-wrap">
-              <span className={'px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-sm ' + article.tagColor}>{article.tag}</span>
-              <span className={`text-[11px] flex items-center gap-1 font-bold ${hasImage ? 'text-white/50' : 'text-[#525252]'}`}><Tag className="w-3 h-3" />{article.category}</span>
-              {article.seo && (
-                <span className="text-[10px] text-gold border border-gold/30 bg-gold/10 px-2 py-0.5 rounded-full font-bold">
-                  Focus: {article.seo.focusKeyword}
-                </span>
-              )}
+            <div className="inline-flex items-center gap-3 mb-6 flex-wrap justify-center">
+              <span className={'inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-black tracking-widest uppercase ' + article.tagColor}>{article.tag}</span>
+              <span className="text-[#a3a3a3] text-[11px] font-semibold uppercase tracking-widest">{article.category}</span>
             </div>
 
             {/* Title */}
-            <h1 className={`font-heading text-[clamp(2rem,3vw,5rem)] font-bold mb-6 leading-tight tracking-tight ${hasImage ? 'text-white' : 'text-[#0a0a0a]'}`}>
+            <h1
+              className="font-heading font-black text-[#080808] tracking-tight mb-5"
+              style={{ fontSize: 'clamp(1.9rem, 4.5vw, 3.8rem)', lineHeight: '1.1' }}
+            >
               {article.title}
             </h1>
 
-            {/* Meta description (SEO) */}
-            {article.seo && (
-              <p className={`text-[15px] sm:text-[16px] mb-8 leading-relaxed italic border-l-3 pl-5 py-2 rounded-r-xl ${hasImage ? 'text-white/70 border-white/20 bg-white/5' : 'text-[#525252] border-gold/50 bg-gold/5'}`}>
+            {/* Excerpt / meta description */}
+            {article.seo ? (
+              <p className="text-[#737373] leading-relaxed mb-10 max-w-xl mx-auto font-light" style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)' }}>
                 {article.seo.metaDescription}
+              </p>
+            ) : (
+              <p className="text-[#737373] leading-relaxed mb-10 max-w-xl mx-auto font-light" style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)' }}>
+                {article.excerpt}
               </p>
             )}
 
-            {/* Author, Date, Time */}
-            <div className={`flex items-center gap-5 text-[13px] flex-wrap ${hasImage ? 'text-white/70' : 'text-[#737373]'}`}>
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gold to-gold-light flex items-center justify-center shadow-md shrink-0">
-                  <span className="text-white font-bold text-[10px]">OS</span>
+            {/* Meta strip — centré */}
+            <div className="inline-flex items-center flex-wrap gap-x-5 gap-y-3 justify-center pt-7 border-t border-black/[0.07]">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400/20 to-amber-600/10 border border-amber-400/20 flex items-center justify-center">
+                  <span className="text-[#d4af37] font-black text-[8px]">OS</span>
                 </div>
-                <span className={`font-bold ${hasImage ? 'text-white' : 'text-[#0a0a0a]'}`}>{article.author || 'Oumarou Sanda'}</span>
+                <div className="text-left">
+                  <p className="text-[#0a0a0a] text-[12px] font-semibold leading-none mb-0.5">{article.author || 'Oumarou Sanda'}</p>
+                  <p className="text-[#a3a3a3] text-[10px] uppercase tracking-wider">Expert IA</p>
+                </div>
               </div>
-              <span className="flex items-center gap-1 font-bold"><Calendar className="w-3.5 h-3.5 text-gold" />{article.date}</span>
-              <span className="flex items-center gap-1 font-bold"><Clock className="w-3.5 h-3.5 text-gold" />{article.readTime}</span>
+              <div className="w-px h-5 bg-black/10" />
+              <span className="flex items-center gap-1.5 text-[#737373] text-[12px]"><Calendar className="w-3.5 h-3.5 text-[#d4af37]" />{article.date}</span>
+              <span className="flex items-center gap-1.5 text-[#737373] text-[12px]"><Clock className="w-3.5 h-3.5 text-[#d4af37]" />{article.readTime}</span>
+              <button
+                onClick={handleShare}
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-black/10 text-[#737373] hover:text-[#0a0a0a] hover:border-black/20 transition-all text-[10px] font-bold uppercase tracking-wider"
+              >
+                <Share2 className="w-3 h-3" />{copied ? '✓ Copié' : 'Partager'}
+              </button>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* ═══ ARTICLE BODY ═══ */}
-      <section className="relative pb-20 bg-[#fafafa]">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
-          <div className="xl:flex xl:gap-10 xl:items-start">
+      {/* ═══ FEATURED IMAGE ═══ */}
+      {hasImage && (
+        <div className="bg-white py-8">
+          <div className="max-w-[1120px] mx-auto px-5 sm:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-xl shadow-black/10 border border-black/[0.05]"
+            >
+              <img src={(article as Record<string, unknown>).image as string} alt={article.title} className="w-full h-full object-cover" loading="eager" />
+            </motion.div>
+          </div>
+        </div>
+      )}
+
+      {/* ═══ ARTICLE BODY — 55fr + 15fr ═══ */}
+      <section className="bg-white">
+        <div className="h-px bg-gradient-to-r from-transparent via-black/5 to-transparent" />
+
+        <div className="max-w-[1120px] mx-auto px-5 sm:px-8 py-14 sm:py-20">
+          <div className="grid lg:grid-cols-[55fr_25fr] gap-12 items-start">
 
             {/* ── MAIN CONTENT ── */}
-            <div className="flex-1 min-w-0">
+            <div className="min-w-0">
               <motion.article
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="bg-white rounded-3xl p-7 sm:p-10 lg:p-14 border border-black/5 shadow-luxury"
+                transition={{ delay: 0.15 }}
               >
                 {isRich ? (
                   <RichArticleContent article={article} />
@@ -1395,111 +1561,134 @@ export default function BlogArticlePage() {
                   <PlainArticleContent content={((article as Record<string, unknown>).content as string | undefined) ?? ''} />
                 )}
 
-                {/* CTA contextuel (milieu d'article) */}
                 <ArticleCTABlock category={article.category} />
 
-                {/* ── Publicité AdSense — In-Article (fin de contenu) ── */}
-                <AdUnit
-                  slot="7070630877"
-                  format="fluid"
-                  layout="in-article"
-                  className="my-8"
-                />
+                <AdUnit slot="7070630877" format="fluid" layout="in-article" className="my-8" />
 
-                {/* Share & Social */}
-                <div className="mt-12 pt-8 border-t border-black/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                  <button onClick={handleShare} className="flex items-center gap-2 group">
-                    <Share2 className="w-4 h-4 text-[#a3a3a3] group-hover:text-gold transition-colors" />
-                    <span className="text-[#a3a3a3] text-[13px] group-hover:text-gold transition-colors font-medium">
-                      {copied ? '✓ Lien copié !' : 'Partager cet article'}
-                    </span>
-                  </button>
-                  <div className="flex items-center gap-2">
-                    {['Twitter', 'LinkedIn', 'Facebook'].map((s) => (
-                      <button key={s} className="px-3 py-1.5 bg-black/5 border border-black/5 rounded-lg text-[#737373] text-[11px] font-semibold hover:bg-gold/10 hover:text-gold transition-all">{s}</button>
-                    ))}
+                {/* Share footer */}
+                <div className="mt-14 pt-8 border-t border-black/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <div>
+                    <p className="font-heading font-bold text-[#080808] text-[15px] mb-1">Cet article vous a aidé ?</p>
+                    <p className="text-[#a3a3a3] text-[13px]">Partagez-le avec votre réseau.</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <a href={'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href)} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#0A66C2] text-white text-[12px] font-bold shadow-md hover:shadow-xl hover:shadow-[#0A66C2]/20 transition-all">
+                      <Linkedin className="w-3.5 h-3.5" /> LinkedIn
+                    </a>
+                    <button onClick={handleShare}
+                      className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-black/10 text-[#525252] text-[12px] font-bold hover:bg-[#f8f8f8] transition-all">
+                      <Share2 className="w-3.5 h-3.5" /> {copied ? '✓ Copié !' : 'Copier le lien'}
+                    </button>
                   </div>
                 </div>
               </motion.article>
 
-              {/* Author Bio */}
               <AuthorBio />
-
-              {/* Newsletter CTA */}
               <NewsletterCTA />
-
-              {/* Related Articles */}
               <RelatedArticles currentSlug={article.slug} category={article.category} />
-
-              {/* Comments */}
               <CommentsSection articleSlug={article.slug} />
 
-              {/* ── Publicité AdSense — Display (avant navigation) ── */}
-              <AdUnit
-                slot="9367115017"
-                format="auto"
-                className="my-6"
-              />
+              <AdUnit slot="9367115017" format="auto" className="my-6" />
 
-              {/* Prev/Next Navigation */}
+              {/* Prev/Next */}
               <div className="grid sm:grid-cols-2 gap-4 mt-8">
                 {prev ? (
-                  <Link to={'/blog/' + prev.slug} className="bg-white rounded-xl p-5 border border-black/5 group hover:border-gold/30 transition-all shadow-sm">
+                  <Link to={'/blog/' + prev.slug} className="bg-white rounded-xl p-5 border border-black/5 group hover:border-amber-300/40 transition-all shadow-sm">
                     <span className="text-[11px] text-[#a3a3a3] flex items-center gap-1 mb-2 font-bold"><ArrowLeft className="w-3 h-3" /> Précédent</span>
-                    <h4 className="font-heading font-semibold text-[#0a0a0a] text-[13px] group-hover:text-gold transition-colors line-clamp-2">{prev.title}</h4>
+                    <h4 className="font-heading font-semibold text-[#0a0a0a] text-[13px] group-hover:text-[#d4af37] transition-colors line-clamp-2">{prev.title}</h4>
                   </Link>
                 ) : <div />}
                 {next && (
-                  <Link to={'/blog/' + next.slug} className="bg-white rounded-xl p-5 border border-black/5 group text-right hover:border-gold/30 transition-all shadow-sm">
+                  <Link to={'/blog/' + next.slug} className="bg-white rounded-xl p-5 border border-black/5 group text-right hover:border-amber-300/40 transition-all shadow-sm">
                     <span className="text-[11px] text-[#a3a3a3] flex items-center gap-1 mb-2 justify-end font-bold">Suivant <ArrowRight className="w-3 h-3" /></span>
-                    <h4 className="font-heading font-semibold text-[#0a0a0a] text-[13px] group-hover:text-gold transition-colors line-clamp-2">{next.title}</h4>
+                    <h4 className="font-heading font-semibold text-[#0a0a0a] text-[13px] group-hover:text-[#d4af37] transition-colors line-clamp-2">{next.title}</h4>
                   </Link>
                 )}
               </div>
             </div>
 
-            {/* ── STICKY TOC SIDEBAR — desktop XL uniquement ── */}
-            {isRich && 'tableOfContents' in article && !!(article as Record<string, unknown>).tableOfContents && (
-              <aside className="hidden xl:block w-60 shrink-0 self-start sticky top-24">
-                {/* Table des matières */}
-                <div className="bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden mb-4">
-                  <div className="px-5 py-3.5 border-b border-black/5 flex items-center gap-2 bg-[#fafafa]">
-                    <List className="w-3.5 h-3.5 text-gold" />
-                    <span className="font-heading font-bold text-[#0a0a0a] text-[12px] uppercase tracking-wider">Table des matières</span>
-                  </div>
-                  <nav className="px-3 py-3 space-y-0.5 max-h-[60vh] overflow-y-auto">
-                    {((article as Record<string, unknown>).tableOfContents as { id: string; label: string }[]).map((item, i) => (
-                      <a
-                        key={item.id}
-                        href={'#' + item.id}
-                        className="flex items-start gap-2 py-1.5 px-2 text-[11px] text-[#737373] hover:text-gold hover:bg-gold/5 rounded-lg transition-all group block"
-                      >
-                        <span className="text-gold/30 font-mono text-[10px] shrink-0 mt-[2px] w-4 text-right">{String(i + 1).padStart(2, '0')}</span>
-                        <span className="group-hover:translate-x-0.5 transition-transform leading-snug">{item.label}</span>
-                      </a>
-                    ))}
-                  </nav>
-                </div>
+            {/* ── STICKY SIDEBAR — 15fr ── */}
+            <aside className="hidden lg:block">
+              <div className="sticky top-28 space-y-4">
 
-                {/* Share card compact */}
-                <div className="bg-white rounded-2xl border border-black/5 shadow-sm p-4">
-                  <p className="font-heading font-bold text-[#0a0a0a] text-[11px] uppercase tracking-wider mb-3">Partager</p>
-                  <div className="flex flex-col gap-2">
-                    <button
-                      onClick={handleShare}
-                      className="w-full py-2 bg-gold/10 border border-gold/20 rounded-lg text-gold text-[11px] font-bold hover:bg-gold/20 transition-all"
-                    >
-                      {copied ? '✓ Copié !' : '🔗 Copier le lien'}
-                    </button>
-                    <div className="flex gap-1.5">
-                      {['Twitter', 'LinkedIn'].map(s => (
-                        <button key={s} className="flex-1 py-1.5 bg-black/5 border border-black/5 rounded-lg text-[#737373] text-[10px] font-semibold hover:bg-gold/10 hover:text-gold transition-all">{s}</button>
-                      ))}
+                {/* Progress ring */}
+                <div className="bg-white border border-black/[0.07] rounded-2xl p-4 shadow-sm">
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-[48px] h-[48px] shrink-0">
+                      <svg className="w-[48px] h-[48px] -rotate-90" viewBox="0 0 48 48">
+                        <circle cx="24" cy="24" r="19" fill="none" stroke="#f5f5f5" strokeWidth="3" />
+                        <circle cx="24" cy="24" r="19" fill="none" stroke="#d4af37" strokeWidth="3"
+                          strokeDasharray={2 * Math.PI * 19}
+                          strokeDashoffset={2 * Math.PI * 19 * (1 - readProgress / 100)}
+                          strokeLinecap="round"
+                          style={{ transition: 'stroke-dashoffset 0.35s ease' }}
+                        />
+                      </svg>
+                      <span className="absolute inset-0 flex items-center justify-center text-[9px] font-black text-[#0a0a0a]">{Math.round(readProgress)}%</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-[#0a0a0a] text-[12px] leading-none mb-1">Progression</p>
+                      <p className="text-[#b3b3b3] text-[10px]">{article.readTime}</p>
                     </div>
                   </div>
                 </div>
-              </aside>
-            )}
+
+                {/* ToC if available */}
+                {isRich && 'tableOfContents' in article && !!(article as Record<string, unknown>).tableOfContents && (
+                  <div className="bg-white border border-black/[0.07] rounded-2xl overflow-hidden shadow-sm">
+                    <div className="px-4 py-3 border-b border-black/5 flex items-center gap-2 bg-[#fafafa]">
+                      <List className="w-3 h-3 text-[#d4af37]" />
+                      <span className="font-bold text-[#0a0a0a] text-[11px] uppercase tracking-wider">Sommaire</span>
+                    </div>
+                    <nav className="px-2 py-2 space-y-0.5 max-h-[50vh] overflow-y-auto">
+                      {((article as Record<string, unknown>).tableOfContents as { id: string; label: string }[]).map((item, i) => (
+                        <a key={item.id} href={'#' + item.id}
+                          className="flex items-start gap-2 py-1.5 px-2 text-[10px] text-[#737373] hover:text-[#d4af37] hover:bg-amber-50 rounded-lg transition-all group block">
+                          <span className="text-[#d4af37]/30 font-mono text-[9px] shrink-0 mt-[2px] w-4 text-right">{String(i + 1).padStart(2, '0')}</span>
+                          <span className="group-hover:translate-x-0.5 transition-transform leading-snug">{item.label}</span>
+                        </a>
+                      ))}
+                    </nav>
+                  </div>
+                )}
+
+                {/* Author */}
+                <div className="bg-white border border-black/[0.07] rounded-2xl p-4 shadow-sm">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400/20 to-amber-600/5 border border-amber-400/15 flex items-center justify-center">
+                      <span className="font-black text-[#0a0a0a] text-[10px]">OS</span>
+                    </div>
+                    <div>
+                      <p className="font-bold text-[#0a0a0a] text-[12px] leading-none mb-0.5">Oumarou Sanda</p>
+                      <p className="text-[#b3b3b3] text-[9px] uppercase tracking-wider">Expert IA</p>
+                    </div>
+                  </div>
+                  <p className="text-[#737373] text-[10px] leading-[1.7]">Fondateur de Wendooka & Sanda Vibe Code.</p>
+                  <Link to="/a-propos" className="mt-3 flex items-center gap-1 text-amber-600 text-[10px] font-bold hover:text-amber-700 transition-colors">
+                    Voir le profil <ArrowRight className="w-2.5 h-2.5" />
+                  </Link>
+                </div>
+
+                <Link to="/blog" className="flex items-center gap-2 px-3 py-2.5 rounded-xl border border-black/[0.07] bg-[#fafafa] text-[#737373] text-[11px] font-medium hover:bg-white hover:shadow-sm transition-all">
+                  <ArrowLeft className="w-3 h-3" /> Retour au blog
+                </Link>
+
+                {/* CTA Formation */}
+                <div className="rounded-2xl overflow-hidden">
+                  <div className="bg-[#0c0c0c] p-4 relative overflow-hidden">
+                    <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-amber-400/8 blur-2xl" />
+                    <p className="text-amber-400 text-[9px] font-black uppercase tracking-[0.2em] mb-1.5">Formations IA</p>
+                    <p className="text-white font-bold text-[12px] leading-snug mb-3">Maîtrise l'IA et génère des revenus.</p>
+                    <Link to="/formations"
+                      className="flex items-center gap-1.5 justify-center w-full py-2 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-black text-[10px] uppercase tracking-wider rounded-xl hover:shadow-lg hover:shadow-amber-500/30 transition-all">
+                      Découvrir <ArrowRight className="w-3 h-3" />
+                    </Link>
+                  </div>
+                </div>
+
+              </div>
+            </aside>
 
           </div>
         </div>

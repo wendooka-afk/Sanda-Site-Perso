@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowUp, Youtube, Music2, Facebook, Linkedin, Twitter } from 'lucide-react';
+import { ArrowUp, Youtube, Music2, Facebook, Linkedin, Twitter, Instagram } from 'lucide-react';
 import { useLanguage } from '../i18n';
 
 const socialLinks = [
@@ -8,6 +8,7 @@ const socialLinks = [
   { icon: Facebook, label: 'Facebook', href: 'https://facebook.com/iamoumarousanda', color: 'hover:text-[#1877F2] hover:border-[#1877F2]/20 hover:bg-[#1877F2]/5 hover:shadow-[0_4px_15px_rgba(24,119,242,0.15)]' },
   { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/benibsanda', color: 'hover:text-[#0A66C2] hover:border-[#0A66C2]/20 hover:bg-[#0A66C2]/5 hover:shadow-[0_4px_15px_rgba(10,102,194,0.15)]' },
   { icon: Twitter, label: 'X', href: 'https://x.com/benibsanda', color: 'hover:text-[#000000] hover:border-black/20 hover:bg-black/5 hover:shadow-[0_4px_15px_rgba(0,0,0,0.15)]' },
+  { icon: Instagram, label: 'Instagram', href: 'https://instagram.com/iamsanda', color: 'hover:text-[#E1306C] hover:border-[#E1306C]/20 hover:bg-[#E1306C]/5 hover:shadow-[0_4px_15px_rgba(225,48,108,0.15)]' },
 ];
 
 export function Footer() {
