@@ -487,10 +487,13 @@ function CTAFinalFormations() {
           <p className="text-white/65 text-lg font-medium mb-12 max-w-2xl mx-auto">
             Chaque jour que tu passes sans te former, quelqu'un d'autre prend ta place. Les outils sont là. Les méthodes sont là. La seule variable, c'est toi.
           </p>
-          <div className="flex justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="btn-premium px-12 py-5 bg-gold text-[#0a0a0a] font-bold text-[15px] rounded-xl hover:bg-white transition-all uppercase tracking-wider shadow-[0_10px_30px_rgba(212,175,55,0.4)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.5)] glow-hover">
               CHOISIR MA FORMATION
             </button>
+            <Link to="/ressources" className="px-12 py-5 border-2 border-white/20 text-white font-bold text-[15px] rounded-xl hover:bg-white/10 transition-colors uppercase tracking-wider">
+              RESSOURCES GRATUITES
+            </Link>
           </div>
         </Reveal>
       </div>
@@ -501,7 +504,7 @@ function CTAFinalFormations() {
 /* ═══════════════════════ FAQ ═══════════════════════ */
 function FAQFormations() {
   const faqs = [
-    { q: "Quelles formations propose Oumarou Sanda ?", a: "Oumarou Sanda propose plusieurs formations en ligne : Protocole Vidéo IA (création de vidéos professionnelles avec l'intelligence artificielle, 7 590 FCFA), Le Cerveau Augmenté (système mental pour maîtriser et penser avec l'IA, 4 900 FCFA), Offshore Empire (création de société Ltd au Royaume-Uni depuis l'Afrique, 97 750 FCFA), et des formations à venir sur l'initiation à l'IA générative et la vente de sites web avec l'IA." },
+    { q: "Quelles formations propose Oumarou Sanda ?", a: "Oumarou Sanda propose plusieurs formations en ligne : Challenge 30 Jours IA (maîtriser 28 outils IA en 15 min/jour, 9 900 FCFA — son programme le plus accessible), Protocole Vidéo IA (création de vidéos professionnelles avec l'IA, 7 590 FCFA), Le Cerveau Augmenté (système mental pour maîtriser et penser avec l'IA, 4 900 FCFA), et Offshore Empire (création de société Ltd au Royaume-Uni depuis l'Afrique, 97 750 FCFA)." },
     { q: "C'est quoi le Protocole Vidéo IA ?", a: "Le Protocole Vidéo IA est une formation qui enseigne comment créer des vidéos ultra-réalistes avec l'intelligence artificielle en utilisant des outils comme Google VEO, Sora et Wan. C'est la première formation évolutive sur la vidéo générative en Afrique francophone." },
     { q: "Comment créer une société au Royaume-Uni depuis l'Afrique ?", a: "La formation Offshore Empire d'Oumarou Sanda montre pas à pas comment créer une Private Limited Company (Ltd) au Royaume-Uni depuis l'Afrique. La formation couvre le choix du nom, l'utilisation d'une adresse, la vérification KYC, et la préparation pour activer Stripe ou PayPal." },
     { q: "Les formations sont-elles accessibles depuis un téléphone ?", a: "Oui, toutes les formations d'Oumarou Sanda sont accessibles depuis un téléphone ou un ordinateur. Les prix sont adaptés au marché africain et le paiement est possible par Mobile Money ou carte bancaire. L'accès est immédiat après paiement." },

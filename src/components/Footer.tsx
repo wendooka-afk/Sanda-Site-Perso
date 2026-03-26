@@ -21,6 +21,7 @@ export function Footer() {
       { label: t.nav.blog, href: '/blog' },
     ],
     [t.footer.formations]: [
+      { label: '🚀 Challenge 30 Jours IA', href: '/challenge-30-jours' },
       { label: t.formationDetails.protocoleVideoIa.name, href: '/formations/protocole-video-ia' },
       { label: t.formationDetails.cerveauAugmente.name, href: '/formations/cerveau-augmente' },
       { label: t.formationDetails.offshoreEmpire.name, href: '/formations/offshore-empire' },

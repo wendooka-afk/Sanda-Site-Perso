@@ -426,7 +426,7 @@ function FAQAbout() {
     },
     {
       q: "Quelles formations Oumarou Sanda propose-t-il ?",
-      a: "Oumarou Sanda propose plusieurs formations en ligne : Protocole Vidéo IA (création de vidéos professionnelles avec l'intelligence artificielle), Le Cerveau Augmenté (système personnel d'IA pour la productivité et le business), et Offshore Empire (création de sociétés offshore au Royaume-Uni depuis l'Afrique). Toutes ses formations sont orientées résultats et adaptées au contexte africain et francophone."
+      a: "Oumarou Sanda propose plusieurs formations en ligne : le Challenge 30 Jours IA (maîtriser 28 outils IA en 15 min/jour — oumarousanda.com/challenge-30-jours), Protocole Vidéo IA (création de vidéos professionnelles avec l'IA), Le Cerveau Augmenté (système personnel d'IA pour la productivité et le business), et Offshore Empire (création de sociétés offshore au Royaume-Uni depuis l'Afrique). Toutes ses formations sont orientées résultats et adaptées au contexte africain et francophone."
     },
     {
       q: "C'est quoi Wendooka ?",
@@ -447,7 +447,7 @@ function FAQAbout() {
   return (
     <section className="py-20 bg-[#fafafa] border-t border-black/5">
       <div className="max-w-3xl mx-auto px-5 sm:px-6">
-        <h2 className="text-2xl font-black text-[#0a0a0a] mb-8 text-center tracking-widest text-sm uppercase">Questions Fréquentes</h2>
+        <h2 className="font-black text-[#0a0a0a] mb-8 text-center tracking-widest text-sm uppercase">Questions Fréquentes</h2>
         <div className="space-y-4">
           {faqs.map((faq, i) => (
             <div key={i} className="border border-black/5 rounded-2xl bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow">

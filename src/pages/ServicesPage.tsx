@@ -632,6 +632,12 @@ function CTAFinalServices() {
                                 ME CONTACTER PAR EMAIL
                             </a>
                         </div>
+                        <div className="mt-6 pt-6 border-t border-white/10 text-center">
+                            <p className="text-white/40 text-[13px] mb-3">Tu préfères te former en autonomie ?</p>
+                            <Link to="/formations" className="text-gold font-bold text-[14px] hover:text-white transition-colors underline underline-offset-4">
+                                Voir toutes mes formations →
+                            </Link>
+                        </div>
                     </div>
                 </Reveal>
             </div>

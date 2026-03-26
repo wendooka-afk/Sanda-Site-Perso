@@ -372,6 +372,9 @@ export default function MediaPage() {
             <a href="/kit-presse-oumarou-sanda.zip" download className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 text-white hover:bg-white/10 rounded-xl font-heading font-bold text-sm transition-all flex items-center justify-center gap-2">
               <Download className="w-4 h-4" /> Kit Presse
             </a>
+            <Link to="/kit-media" className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-gold/20 text-gold hover:bg-gold/10 rounded-xl font-heading font-bold text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+              Kit Média Complet
+            </Link>
             <Link to="/contact" className="w-full sm:w-auto px-8 py-4 bg-blue-600 text-white hover:bg-blue-500 shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] rounded-xl font-heading font-bold text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2">
               <Mic className="w-4 h-4" /> Demander une interview
             </Link>
