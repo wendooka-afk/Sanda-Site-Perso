@@ -1,4 +1,4 @@
-import { Video, Brain, Building2 } from 'lucide-react';
+import { Video, Brain, Building2, Zap } from 'lucide-react';
 
 export const formations = [
   {
@@ -139,6 +139,53 @@ export const formations = [
       { name: 'Aïcha B.', role: 'E-commerçante, Gabon', text: 'J\'ai structuré mon business à Dubai. Processus clair et simple.', avatar: 'AB' },
     ],
   },
+  {
+    id: 'challenge-30-jours',
+    name: 'Challenge 30 Jours IA',
+    tagline: 'Maîtrise 28 outils IA en 15 min/jour pendant 30 jours',
+    description: 'Passe du niveau zéro aux 28 outils IA que les pros utilisent en 2026. 15 min/jour, 30 jours, exemples africains concrets.',
+    longDescription: 'Un outil par jour pendant 30 jours. VEO 3, Sora 2, Nano Banana Pro, Antigravity, N8N et 22 autres. Des leçons micro-format de 15 minutes, exemples africains concrets, zéro prérequis technique.',
+    icon: Zap,
+    gradient: 'from-gold to-amber-400',
+    borderColor: 'border-gold/20',
+    price: '9 900 FCFA',
+    priceOld: '29 900 FCFA',
+    duration: '30 jours · 15 min/jour',
+    students: '500+',
+    rating: '4.9',
+    modules: 30,
+    customUrl: '/challenge-30-jours',
+    features: [
+      '28 outils IA 2026 (VEO 3, Sora 2, Nano Banana, Antigravity, N8N...)',
+      '15 minutes par jour — vraiment',
+      'Exemples africains concrets (Cameroun, Sénégal, Côte d\'Ivoire...)',
+      'Accès gratuit ou essai pour chaque outil',
+      '50 prompts prêts à l\'emploi par métier',
+      '2 Bonus Secrets débloqués au Jour 30',
+      'Communauté WhatsApp active',
+      'Mises à jour trimestrielles pendant 1 an',
+      'Certificat de complétion LinkedIn',
+    ],
+    curriculum: [
+      { title: 'Les 2 Fondations', lessons: 2 },
+      { title: 'Semaine 1 — Les Assistants IA de 2026', lessons: 5 },
+      { title: 'Semaine 2 — Image IA : Les Nouveaux Standards', lessons: 7 },
+      { title: 'Semaine 3 — Vidéo IA : La Révolution Cinématographique', lessons: 7 },
+      { title: 'Semaine 4 — Audio, Productivité, Code & Automatisation', lessons: 9 },
+    ],
+    faq: [
+      { q: 'J\'ai 40 ou 50 ans. Est-ce fait pour moi ?', a: 'Oui. 15 minutes par jour, un outil à la fois, aucun prérequis technique.' },
+      { q: 'Dois-je payer des abonnements en plus ?', a: 'Non. Pour chaque outil je te montre la version gratuite ou l\'essai disponible.' },
+      { q: '15 minutes par jour, c\'est vraiment possible ?', a: 'Oui. Chaque leçon est conçue pour être terminée en 15 à 20 minutes.' },
+      { q: 'Quels moyens de paiement ?', a: 'Orange Money, MTN MoMo, Wave, Visa/Mastercard, PayPal. Accès immédiat.' },
+    ],
+    badge: '🚀 NOUVEAU',
+    badgeColor: 'bg-gold text-[#050505]',
+    testimonials: [
+      { name: 'Aboubakar K.', role: 'Freelance vidéo · Yaoundé', text: 'Au Jour 20, j\'ai créé une vidéo avec VEO 3 pour un client. Il m\'a payé 150 000 FCFA.', avatar: 'AK' },
+      { name: 'Fatou D.', role: 'Créatrice de contenu · Dakar', text: 'Le Bonus secret du Jour 30 vaut 10 fois le prix. J\'utilise des outils à 200$/mois gratuitement.', avatar: 'FD' },
+    ],
+  },
 ];
 
-export type Formation = typeof formations[number];
+export type Formation = typeof formations[0];

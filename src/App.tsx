@@ -18,6 +18,8 @@ const RessourcesPage = lazy(() => import('./pages/RessourcesPage'));
 const MediaKitPage = lazy(() => import('./pages/MediaKitPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 const LinksPage = lazy(() => import('./pages/LinksPage'));
+const ChallengePage = lazy(() => import('./pages/ChallengePage'));
+const QuizIAPage = lazy(() => import('./pages/QuizIAPage'));
 
 // ─── Lazy-loaded dashboard ────────────────────────────────────────────────────
 const DashboardLayout = lazy(() => import('./dashboard/DashboardLayout'));
@@ -30,7 +32,8 @@ const DashboardMedia = lazy(() => import('./dashboard/DashboardMedia'));
 const DashboardAnalytics = lazy(() => import('./dashboard/DashboardAnalytics'));
 const DashboardSettings = lazy(() => import('./dashboard/DashboardSettings'));
 const DashboardLinks = lazy(() => import('./dashboard/DashboardLinks'));
-import { ProtectedRoute, DashboardLogin } from './dashboard/DashboardAuth';
+const DashboardLogin = lazy(() => import('./dashboard/DashboardAuth').then(m => ({ default: m.DashboardLogin })));
+const ProtectedRoute = lazy(() => import('./dashboard/DashboardAuth').then(m => ({ default: m.ProtectedRoute })));
 
 // ─── Global Error Boundary ─────────────────────────────────────────────────
 class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
@@ -72,8 +75,9 @@ export function App() {
         <BrowserRouter>
           <Suspense fallback={<PageLoader />}>
           <Routes>
-            {/* Link in Bio — standalone (no navbar/footer) */}
+            {/* Standalone pages (no navbar/footer) */}
             <Route path="/links" element={<LinksPage />} />
+            <Route path="/quiz-ia" element={<QuizIAPage />} />
 
             {/* Public Site */}
             <Route element={<Layout />}>
@@ -89,6 +93,7 @@ export function App() {
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/ressources" element={<RessourcesPage />} />
               <Route path="/kit-media" element={<MediaKitPage />} />
+              <Route path="/challenge-30-jours" element={<ChallengePage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Route>
 

@@ -1,9 +1,10 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Reveal } from '../components/animations/Reveal';
 import {
   ArrowRight, Globe, CheckCircle2,
-  Star, ChevronDown
+  Star, ChevronDown, Zap
 } from 'lucide-react';
 import { SEOHead } from '../components/SEOHead';
 
@@ -164,7 +165,7 @@ function FormationCerveau() {
           <Reveal direction="up" delay={0.1}>
             <div className="order-2 lg:order-1">
               <div className="relative max-w-md mx-auto">
-                <img src="/Le Cerveau Augmenté .webp" alt="Le Cerveau Augmenté" className="w-full h-auto object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.5)]" />
+                <img src="/Le Cerveau Augmenté .webp" alt="Le Cerveau Augmenté" width={400} height={500} loading="lazy" className="w-full h-auto object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.5)]" />
               </div>
             </div>
           </Reveal>
@@ -288,7 +289,7 @@ function FormationOffshore() {
           <Reveal direction="right" delay={0.1}>
             <div className="bg-white border border-black/5 rounded-[2rem] p-6 sm:p-8 lg:p-10 shadow-xl relative card-luxury card-hover-lift glow-hover">
               <div className="flex justify-center mb-8">
-                <img src="/OFFSHORE EMPIRE BOX.webp" alt="Offshore Empire" className="w-64 object-contain drop-shadow-xl" />
+                <img src="/OFFSHORE EMPIRE BOX.webp" alt="Offshore Empire" width={256} height={256} loading="lazy" className="w-64 object-contain drop-shadow-xl" />
               </div>
               <h3 className="text-[#0a0a0a] font-bold text-2xl mb-2">PRIX DE LANCEMENT MVP</h3>
               <p className="text-[#737373] text-[14px] mb-8">Accès à vie. Aucun abonnement. Aucun frais caché.</p>
@@ -412,6 +413,63 @@ function FormationsCompare() {
   );
 }
 
+/* ═══════════════════════ CHALLENGE 30 JOURS ═══════════════════════ */
+function FormationChallenge() {
+  return (
+    <section className="relative py-16 sm:py-20 bg-[#050505] overflow-hidden border-t border-white/5">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold/8 via-transparent to-transparent pointer-events-none" />
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 z-10">
+        <Reveal direction="up" delay={0.1}>
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center bg-white/3 border border-gold/20 rounded-3xl p-8 sm:p-10 lg:p-12 shadow-[0_0_60px_rgba(212,175,55,0.1)]">
+            {/* Icon + badge */}
+            <div className="shrink-0 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/15 border border-gold/30 text-gold text-[11px] font-black tracking-widest uppercase mb-5">
+                <span className="animate-pulse">🚀</span> NOUVEAU
+              </div>
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-gold to-amber-400 flex items-center justify-center shadow-[0_10px_30px_rgba(212,175,55,0.35)] mx-auto lg:mx-0">
+                <Zap className="w-9 h-9 text-[#050505]" />
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 text-center lg:text-left">
+              <span className="text-gold font-bold text-[11px] tracking-widest uppercase block mb-2">Formation 04</span>
+              <h2 className="font-heading font-black text-white tracking-tight mb-3" style={{ fontSize: 'clamp(1.8rem, 3vw, 2.8rem)' }}>
+                CHALLENGE 30 JOURS IA
+              </h2>
+              <p className="text-white/65 text-[15px] leading-relaxed mb-5 max-w-2xl">
+                Passe du <strong className="text-white">niveau zéro</strong> aux 28 outils IA que les pros utilisent vraiment en 2026. VEO 3, Sora 2, Nano Banana, Antigravity, N8N — <strong className="text-white">15 min/jour, 30 jours</strong>, exemples africains concrets.
+              </p>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6">
+                {['28 outils 2026', '15 min/jour', 'Zéro prérequis', 'Garanti 30j'].map((tag) => (
+                  <span key={tag} className="px-3 py-1 bg-white/5 border border-white/10 text-white/60 text-[11px] rounded-full font-medium">
+                    ✓ {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="shrink-0 text-center">
+              <p className="text-white/35 text-[12px] mb-1">Prix de lancement</p>
+              <p className="font-heading font-black text-white text-[36px] tracking-tight mb-1">9 900 <span className="text-[18px] text-white/50">FCFA</span></p>
+              <p className="text-white/30 text-[11px] mb-5">≈ 15€ · Paiement unique</p>
+              <Link
+                to="/challenge-30-jours"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-[#050505] font-heading font-black text-[14px] rounded-xl shadow-[0_8px_30px_rgba(212,175,55,0.35)] hover:brightness-110 transition-all duration-300 whitespace-nowrap"
+              >
+                <Zap className="w-4 h-4" />
+                Rejoindre le challenge
+              </Link>
+              <p className="text-white/20 text-[10px] mt-2">Orange Money · Wave · MTN MoMo</p>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 /* ═══════════════════════ CTA FINAL ═══════════════════════ */
 function CTAFinalFormations() {
   return (
@@ -492,6 +550,7 @@ export default function FormationsPage() {
       <FormationVideoIA />
       <FormationCerveau />
       <FormationOffshore />
+      <FormationChallenge />
       <FormationTeasers />
       <FormationsCompare />
       <CTAFinalFormations />

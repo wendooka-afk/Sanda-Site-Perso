@@ -205,7 +205,7 @@ export default function FormationDetailPage() {
           <h2 className="font-heading text-2xl font-black text-[#0a0a0a] mb-10 tracking-tight">Autres <span className="text-gold">formations</span></h2>
           <div className="grid sm:grid-cols-2 gap-5">
             {otherFormations.map((f) => (
-              <Link key={f.id} to={`/formations/${f.id}`} className="bg-white border border-black/5 shadow-sm rounded-2xl p-6 group flex items-start gap-4 hover:shadow-md transition-all">
+              <Link key={f.id} to={(f as { customUrl?: string }).customUrl ?? `/formations/${f.id}`} className="bg-white border border-black/5 shadow-sm rounded-2xl p-6 group flex items-start gap-4 hover:shadow-md transition-all">
                 <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${f.gradient} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-500`}>
                   <f.icon className="w-5 h-5 text-white" />
                 </div>

@@ -189,10 +189,13 @@ function PitchTeaser() {
               <div className="absolute -inset-4 bg-gradient-to-tr from-blue/10 to-gold/10 rounded-[2.5rem] blur-2xl opacity-50 transition-opacity duration-700 glow-hover" />
               <div className="aspect-[4/5] rounded-[2rem] overflow-hidden border border-black/5 bg-white relative card-luxury group cursor-pointer shadow-[0_20px_60px_rgba(0,0,0,0.05)] card-hover-lift">
 
-                {/* Image Placeholder - A template for their professional photo */}
-                <div className="w-full h-full bg-[#f5f5f7] flex items-center justify-center overflow-hidden">
-                  <img src="/Oumarou Sanda homepage about section.webp" alt="Oumarou Sanda profil" width={480} height={600} loading="lazy" className="w-full h-full object-cover filter grayscale-[20%] contrast-105 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" />
-                </div>
+                {/* Image en background-image pour garantir le remplissage complet */}
+                <div
+                  role="img"
+                  aria-label="Oumarou Sanda profil"
+                  className="absolute inset-0 bg-cover bg-top grayscale-[20%] contrast-105 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+                  style={{ backgroundImage: "url('/Oumarou Sanda homepage about section.webp')" }}
+                />
 
                 <div className="absolute inset-0 flex items-center justify-center z-30">
                   <div className="w-20 h-20 rounded-full glass-premium border border-black/10 flex items-center justify-center group-hover:scale-110 group-hover:border-gold/50 transition-all duration-500 shadow-[0_10px_40px_rgba(212,175,55,0.3)] bg-white/90">
@@ -285,6 +288,21 @@ function ProblemSection() {
 }
 
 /* ═══════════════════════ FORMATIONS ═══════════════════════ */
+const accentStyles: Record<string, { blob: string; badge: string }> = {
+  coral: {
+    blob: 'bg-[#f43f5e]/5 group-hover:bg-[#f43f5e]/10',
+    badge: 'border-[#f43f5e]/20 bg-[#f43f5e]/10 text-[#9f1239]',
+  },
+  blue: {
+    blob: 'bg-[#4f46e5]/5 group-hover:bg-[#4f46e5]/10',
+    badge: 'border-[#4f46e5]/20 bg-[#4f46e5]/10 text-[#3730a3]',
+  },
+  gold: {
+    blob: 'bg-[#d4af37]/5 group-hover:bg-[#d4af37]/10',
+    badge: 'border-[#d4af37]/20 bg-[#d4af37]/10 text-[#92400e]',
+  },
+};
+
 function FormationsVitrine() {
   const formations = [
     {
@@ -316,6 +334,18 @@ function FormationsVitrine() {
       accent: 'gold',
       gradient: 'from-[#f3e5ab] to-[#d4af37]',
       badge: 'Premium',
+      url: undefined,
+    },
+    {
+      id: 'challenge-30-jours',
+      title: 'CHALLENGE 30 JOURS IA',
+      desc: "Passe du niveau zéro aux 28 outils IA que les pros utilisent vraiment en 2026. VEO 3, Sora 2, Nano Banana, Antigravity, N8N — 15 minutes par jour, 30 jours, résultats concrets.",
+      target: "Débutants et intermédiaires qui veulent maîtriser rapidement l'écosystème IA 2026.",
+      icon: Zap,
+      accent: 'gold',
+      gradient: 'from-[#d4af37] to-[#f59e0b]',
+      badge: '🚀 Nouveau',
+      url: '/challenge-30-jours',
     }
   ];
 
@@ -342,14 +372,14 @@ function FormationsVitrine() {
             <Reveal key={f.id} direction="up" delay={i * 0.15}>
               <div className="card-luxury bg-white rounded-[2.5rem] p-8 sm:p-10 group relative flex flex-col h-full overflow-hidden hover:-translate-y-2 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.06)] card-hover-lift glow-hover">
 
-                <div className={`absolute top-0 right-0 w-48 h-48 bg-${f.accent}/5 rounded-bl-[100px] pointer-events-none transition-transform duration-700 group-hover:scale-150 group-hover:bg-${f.accent}/10`} />
+                <div className={`absolute top-0 right-0 w-48 h-48 rounded-bl-[100px] pointer-events-none transition-transform duration-700 group-hover:scale-150 ${accentStyles[f.accent].blob}`} />
 
-                <div className={`absolute top-8 right-8 border border-${f.accent}/20 bg-${f.accent}/10 text-${f.accent}-dark font-bold text-[10px] px-4 py-2 rounded-full tracking-[0.2em] uppercase shadow-sm bg-white/80 backdrop-blur-md z-10`}>
+                <div className={`absolute top-8 right-8 font-bold text-[10px] px-4 py-2 rounded-full tracking-[0.2em] uppercase shadow-sm bg-white/80 backdrop-blur-md z-10 ${accentStyles[f.accent].badge}`}>
                   {f.badge}
                 </div>
 
                 <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${f.gradient} flex items-center justify-center mb-10 shadow-[0_10px_30px_rgba(0,0,0,0.15)] relative z-10 group-hover:scale-110 transition-transform duration-500`}>
-                  <f.icon className={`w-7 h-7 ${f.accent === 'gold' ? 'text-white' : 'text-white'}`} />
+                  <f.icon className="w-7 h-7 text-white" />
                 </div>
 
                 <h3 className="font-heading font-extrabold text-2xl text-[#0a0a0a] mb-5 tracking-tight z-10 relative group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#0a0a0a] group-hover:to-[#525252] transition-all">{f.title}</h3>
@@ -360,7 +390,7 @@ function FormationsVitrine() {
                   <p className="text-[13px] text-[#0a0a0a] leading-[1.6] font-medium">{f.target}</p>
                 </div>
 
-                <Link to={`/formations/${f.id}`} className="btn-premium w-full py-4.5 rounded-xl bg-white hover:bg-[#0a0a0a] text-[#0a0a0a] hover:text-white border border-black/10 hover:border-[#0a0a0a] font-bold text-[13px] tracking-[0.1em] uppercase flex items-center justify-center gap-3 transition-all duration-400 group/btn z-10 relative shadow-sm">
+                <Link to={(f as { url?: string }).url ?? `/formations/${f.id}`} className="btn-premium w-full py-4.5 rounded-xl bg-white hover:bg-[#0a0a0a] text-[#0a0a0a] hover:text-white border border-black/10 hover:border-[#0a0a0a] font-bold text-[13px] tracking-[0.1em] uppercase flex items-center justify-center gap-3 transition-all duration-400 group/btn z-10 relative shadow-sm">
                   Rejoindre la formation <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform duration-300" />
                 </Link>
               </div>
@@ -429,6 +459,13 @@ function ServicesSection() {
               <p className="text-[#525252] text-[16px] sm:text-[18px] leading-[1.8] mb-10 font-inter">
                 Tu veux que quelqu'un fasse le travail pour toi ? Ou avec toi ? Que ce soit pour un site web ultra-performant, une stratégie IA sur mesure, ou un système d'automatisation complet — <strong className="text-[#0a0a0a] font-bold">mon équipe et moi, on délivre.</strong>
               </p>
+
+              <div
+                role="img"
+                aria-label="Oumarou Sanda"
+                className="w-full max-w-sm rounded-2xl shadow-lg aspect-[3/4] bg-cover bg-top"
+                style={{ backgroundImage: "url('/Oumarou Sanda 16 .webp')" }}
+              />
 
               <div className="hidden lg:block w-32 h-px bg-gradient-to-r from-blue/20 to-transparent" />
             </Reveal>
