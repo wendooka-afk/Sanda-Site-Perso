@@ -12,29 +12,43 @@ const socialLinks = [
 ];
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { t, language, localePath } = useLanguage();
 
-  const footerLinks = {
-    [t.footer.ecosystem]: [
-      { label: 'Wendooka', href: '/services' },
-      { label: 'Sanda Vibe Code', href: '/services' },
-      { label: t.nav.formations, href: '/formations' },
-      { label: t.nav.blog, href: '/blog' },
-    ],
-    [t.footer.formations]: [
-      { label: '🚀 Challenge 30 Jours IA', href: '/challenge-30-jours' },
-      { label: t.formationDetails.protocoleVideoIa.name, href: '/formations/protocole-video-ia' },
-      { label: t.formationDetails.cerveauAugmente.name, href: '/formations/cerveau-augmente' },
-      { label: t.formationDetails.offshoreEmpire.name, href: '/formations/offshore-empire' },
-    ],
-    [t.footer.usefulLinks]: [
-      { label: t.nav.about, href: '/a-propos' },
-      { label: t.nav.contact, href: '/contact' },
-      { label: t.footer.freeResources, href: '/ressources' },
-      { label: t.contactSection.mediaKit, href: '/kit-media' },
-      { label: t.nav.book, href: '/livres' },
-    ],
-  };
+  const footerLinks = language === 'en'
+    ? {
+        [t.footer.ecosystem]: [
+          { label: 'Wendooka', href: localePath('/services') },
+          { label: 'Sanda Vibe Code', href: localePath('/services') },
+          { label: t.nav.blog, href: localePath('/blog') },
+        ],
+        [t.footer.usefulLinks]: [
+          { label: t.nav.about, href: localePath('/about') },
+          { label: t.nav.contact, href: localePath('/contact') },
+          { label: t.footer.freeResources, href: localePath('/resources') },
+          { label: t.contactSection.mediaKit, href: localePath('/media-kit') },
+        ],
+      }
+    : {
+        [t.footer.ecosystem]: [
+          { label: 'Wendooka', href: localePath('/services') },
+          { label: 'Sanda Vibe Code', href: localePath('/services') },
+          { label: t.nav.formations, href: localePath('/formations') },
+          { label: t.nav.blog, href: localePath('/blog') },
+        ],
+        [t.footer.formations]: [
+          { label: '🚀 Challenge 30 Jours IA', href: localePath('/challenge-30-jours') },
+          { label: t.formationDetails.protocoleVideoIa.name, href: localePath('/formations/protocole-video-ia') },
+          { label: t.formationDetails.cerveauAugmente.name, href: localePath('/formations/cerveau-augmente') },
+          { label: t.formationDetails.offshoreEmpire.name, href: localePath('/formations/offshore-empire') },
+        ],
+        [t.footer.usefulLinks]: [
+          { label: t.nav.about, href: localePath('/a-propos') },
+          { label: t.nav.contact, href: localePath('/contact') },
+          { label: t.footer.freeResources, href: localePath('/ressources') },
+          { label: t.contactSection.mediaKit, href: localePath('/kit-media') },
+          { label: t.nav.book, href: localePath('/livres') },
+        ],
+      };
 
   return (
     <footer className="relative border-t border-black/5 bg-[#fafafa] overflow-hidden">
@@ -45,7 +59,7 @@ export function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-16 mb-12 sm:mb-20">
           {/* Logo + Description + Social */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-3 mb-8 group">
+            <Link to={localePath('/')} className="flex items-center gap-3 mb-8 group">
               <div className="relative">
                 <div className="absolute -inset-2 bg-gold/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#d4af37] to-[#f3e5ab] flex items-center justify-center shadow-[0_0_20px_rgba(212,175,55,0.3)] group-hover:scale-105 transition-all duration-500 relative z-10">
@@ -54,7 +68,9 @@ export function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="font-heading font-bold text-[#0a0a0a] text-[16px] tracking-tight group-hover:text-gold transition-colors duration-300">Oumarou Sanda</span>
-                <span className="text-[10px] text-[#525252] font-bold tracking-[0.2em] uppercase mt-0.5">Expert IA Générative</span>
+                <span className="text-[10px] text-[#525252] font-bold tracking-[0.2em] uppercase mt-0.5">
+                  {language === 'en' ? 'Generative AI Expert' : 'Expert IA Générative'}
+                </span>
               </div>
             </Link>
             <p className="text-[#525252] text-[15px] leading-[1.8] max-w-sm mb-10 font-inter">

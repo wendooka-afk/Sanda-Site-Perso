@@ -7,17 +7,21 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
-  const { language, toggleLanguage, t } = useLanguage();
+  const { language, toggleLanguage, t, prefix, localePath } = useLanguage();
 
-  const navLinks = [
-    { label: t.nav.about, href: '/a-propos' },
-    { label: t.nav.ecosystem, href: '/services' },
-    { label: t.nav.formations, href: '/formations' },
-    { label: t.nav.blog, href: '/blog' },
-    { label: t.nav.media, href: '/medias' },
-    { label: t.nav.book, href: '/livres' },
-    { label: t.nav.contact, href: '/contact' },
+  const allNavLinks = [
+    { label: t.nav.about, href: localePath(language === 'en' ? '/about' : '/a-propos') },
+    { label: t.nav.ecosystem, href: localePath('/services') },
+    { label: t.nav.formations, href: localePath('/formations'), frOnly: true },
+    { label: t.nav.blog, href: localePath('/blog') },
+    { label: t.nav.media, href: localePath(language === 'en' ? '/media' : '/medias'), frOnly: true },
+    { label: t.nav.book, href: localePath(language === 'en' ? '/books' : '/livres'), frOnly: true },
+    { label: t.nav.contact, href: localePath('/contact') },
   ];
+
+  const navLinks = language === 'en'
+    ? allNavLinks.filter(l => !l.frOnly)
+    : allNavLinks;
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 30);
@@ -35,8 +39,9 @@ export function Navbar() {
   }, [mobileOpen]);
 
   const isActive = (href: string) => {
-    if (href === '/') return location.pathname === '/';
-    return location.pathname.startsWith(href);
+    const path = location.pathname;
+    if (href === prefix || href === prefix + '/') return path === prefix || path === prefix + '/';
+    return path.startsWith(href);
   };
 
   return (
@@ -50,7 +55,7 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center justify-between h-[72px]">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 group">
+            <Link to={localePath('/')} className="flex items-center gap-3 group">
               <div className="relative">
                 <div className="absolute -inset-2 bg-gold/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="w-10 h-10 rounded-xl overflow-hidden shadow-[0_0_20px_rgba(212,175,55,0.3)] group-hover:scale-105 transition-all duration-500 relative z-10 bg-white">
@@ -59,7 +64,9 @@ export function Navbar() {
               </div>
               <div className="hidden sm:flex flex-col">
                 <span className="font-heading font-bold text-white text-[15px] leading-tight tracking-tight group-hover:text-gold transition-colors duration-300">Oumarou Sanda</span>
-                <span className="text-[10px] text-white/60 font-bold tracking-[0.2em] uppercase">Expert IA Générative</span>
+                <span className="text-[10px] text-white/60 font-bold tracking-[0.2em] uppercase">
+                  {language === 'en' ? 'Generative AI Expert' : 'Expert IA Générative'}
+                </span>
               </div>
             </Link>
 
@@ -93,13 +100,15 @@ export function Navbar() {
                 <span>{language === 'fr' ? 'EN' : 'FR'}</span>
               </button>
 
-              <Link
-                to="/formations"
-                className="hidden lg:flex items-center gap-2 px-5 py-2.5 bg-gold text-[#0a0a0a] font-bold text-[12px] uppercase tracking-[0.1em] rounded-xl hover:bg-white transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] group"
-              >
-                <Sparkles className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
-                {t.nav.formations}
-              </Link>
+              {language === 'fr' && (
+                <Link
+                  to={localePath('/formations')}
+                  className="hidden lg:flex items-center gap-2 px-5 py-2.5 bg-gold text-[#0a0a0a] font-bold text-[12px] uppercase tracking-[0.1em] rounded-xl hover:bg-white transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] group"
+                >
+                  <Sparkles className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
+                  {t.nav.formations}
+                </Link>
+              )}
 
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
@@ -114,7 +123,7 @@ export function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu — CSS transition, pas framer-motion */}
+      {/* Mobile Menu */}
       <div
         className={`fixed inset-0 z-40 bg-black/95 backdrop-blur-3xl lg:hidden border-t border-white/5 mt-[72px] transition-opacity duration-300 ${mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
           }`}
@@ -147,15 +156,17 @@ export function Navbar() {
             </button>
           </div>
 
-          <div className="mt-4">
-            <Link
-              to="/formations"
-              className="flex items-center justify-center gap-3 w-full py-4 bg-gold text-black font-bold uppercase tracking-[0.1em] text-[13px] rounded-xl hover:bg-white transition-all active:scale-95 shadow-md"
-            >
-              <Sparkles className="w-4 h-4" />
-              {t.nav.discoverFormations}
-            </Link>
-          </div>
+          {language === 'fr' && (
+            <div className="mt-4">
+              <Link
+                to={localePath('/formations')}
+                className="flex items-center justify-center gap-3 w-full py-4 bg-gold text-black font-bold uppercase tracking-[0.1em] text-[13px] rounded-xl hover:bg-white transition-all active:scale-95 shadow-md"
+              >
+                <Sparkles className="w-4 h-4" />
+                {t.nav.discoverFormations}
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </>

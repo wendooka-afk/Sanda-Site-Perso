@@ -7,9 +7,14 @@ import {
   Briefcase, Mic, Book, Mail, Target, PenTool
 } from 'lucide-react';
 import { SEOHead } from '../components/SEOHead';
+import { useLanguage } from '../i18n';
+import { homeTexts } from '../i18n/pages/home';
 
 /* ═══════════════════════ HERO ═══════════════════════ */
 function Hero() {
+  const { language, localePath } = useLanguage();
+  const tx = homeTexts[language];
+
   return (
     <section className="relative min-h-[100dvh] flex items-center overflow-hidden bg-[#fcfcfc]">
       <div className="absolute inset-0 bg-mesh-dark opacity-10" />
@@ -26,29 +31,29 @@ function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-gold" />
               </span>
-              <span className="text-[11px] text-[#0a0a0a] font-bold tracking-[0.2em] uppercase">Le monde change. Vite.</span>
+              <span className="text-[11px] text-[#0a0a0a] font-bold tracking-[0.2em] uppercase">{tx.hero.badge}</span>
             </div>
 
             <h1 className="font-heading font-extrabold leading-[1.05] mb-8 tracking-tighter" style={{ fontSize: 'clamp(2.5rem, 3.8vw, 5rem)' }}>
-              <span className="block text-[#050505]">Je t'apprends à utiliser l'IA</span>
-              <span className="block text-[#050505]/90">pour bâtir un business</span>
-              <span className="block text-gradient-gold">qui écrase la concurrence.</span>
+              <span className="block text-[#050505]">{tx.hero.h1_1}</span>
+              <span className="block text-[#050505]/90">{tx.hero.h1_2}</span>
+              <span className="block text-gradient-gold">{tx.hero.h1_3}</span>
             </h1>
 
             <p className="text-[#525252] text-base sm:text-lg lg:text-xl max-w-xl mx-auto lg:mx-0 mb-12 leading-[1.8] font-inter">
-              Entrepreneur digital, expert en intelligence artificielle et formateur. J'ai aidé des centaines d'entrepreneurs et créateurs africains à transformer l'IA en machine à revenus. Formations, services, outils — tout est là pour <strong className="text-[#0a0a0a] font-bold">accélérer ta croissance.</strong>
+              {tx.hero.desc} <strong className="text-[#0a0a0a] font-bold">{tx.hero.descBold}</strong>
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-              <Link to="/formations" className="group relative px-8 py-4 bg-[#050505] text-white font-heading font-bold text-[14px] rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.15)] hover:shadow-[0_12px_32px_-6px_rgba(212,175,55,0.4)] hover:bg-gold transition-all duration-500 overflow-hidden tracking-wider uppercase">
+              <Link to={localePath('/formations')} className="group relative px-8 py-4 bg-[#050505] text-white font-heading font-bold text-[14px] rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.15)] hover:shadow-[0_12px_32px_-6px_rgba(212,175,55,0.4)] hover:bg-gold transition-all duration-500 overflow-hidden tracking-wider uppercase">
                 <span className="relative z-10 flex items-center justify-center gap-3">
-                  Découvrir mes formations
+                  {tx.hero.cta1}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
                 </span>
                 <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%)] bg-[length:250%_250%,100%_100%] bg-[position:200%_0,0_0] group-hover:animate-shimmer" />
               </Link>
               <a href="https://academy.oumarousanda.com/coaching-ia" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-gold text-[#0a0a0a] font-heading font-bold text-[13px] tracking-[0.1em] uppercase rounded-xl hover:bg-white hover:text-[#0a0a0a] transition-all duration-300 flex items-center justify-center shadow-[0_10px_30px_rgba(212,175,55,0.4)]">
-                Travailler avec moi
+                {tx.hero.cta2}
               </a>
             </div>
           </div>
@@ -60,13 +65,13 @@ function Hero() {
               <div className="absolute -top-6 -right-6 lg:-top-8 lg:-right-10 card-luxury rounded-2xl px-5 py-4 shadow-xl hidden sm:block animate-float">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-blue/10 flex items-center justify-center"><Zap className="w-6 h-6 text-blue" /></div>
-                  <div><p className="text-[#0a0a0a] font-bold text-[14px]">Wendooka</p><p className="text-[#737373] text-[11px] font-medium uppercase tracking-wider">Agence Digitale</p></div>
+                  <div><p className="text-[#0a0a0a] font-bold text-[14px]">Wendooka</p><p className="text-[#737373] text-[11px] font-medium uppercase tracking-wider">{tx.hero.floatAgency}</p></div>
                 </div>
               </div>
               <div className="absolute -bottom-6 -left-6 lg:-bottom-8 lg:-left-10 card-luxury rounded-2xl px-5 py-4 shadow-xl hidden sm:block animate-float" style={{ animationDelay: '-2s', animationDirection: 'reverse' }}>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-coral/10 flex items-center justify-center"><Sparkles className="w-6 h-6 text-coral" /></div>
-                  <div><p className="text-[#0a0a0a] font-bold text-[14px]">Sanda Vibe Code</p><p className="text-[#737373] text-[11px] font-medium uppercase tracking-wider">SaaS & Outils IA</p></div>
+                  <div><p className="text-[#0a0a0a] font-bold text-[14px]">Sanda Vibe Code</p><p className="text-[#737373] text-[11px] font-medium uppercase tracking-wider">{tx.hero.floatSaas}</p></div>
                 </div>
               </div>
             </div>
@@ -80,6 +85,9 @@ function Hero() {
 
 /* ═══════════════════════ PARTNERS ═══════════════════════ */
 function PartnersSection() {
+  const { language } = useLanguage();
+  const tx = homeTexts[language];
+
   const partners = [
     { name: 'Higgsfield AI' },
     { name: 'Hitpaw Edimakor' },
@@ -92,7 +100,7 @@ function PartnersSection() {
     <section className="py-12 bg-white border-b border-black/5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 md:gap-10">
-          <p className="text-[#767676] font-bold text-[10px] uppercase tracking-[0.2em] text-center whitespace-normal sm:whitespace-nowrap shrink-0">Partenaires & sponsors</p>
+          <p className="text-[#767676] font-bold text-[10px] uppercase tracking-[0.2em] text-center whitespace-normal sm:whitespace-nowrap shrink-0">{tx.partners.label}</p>
           <div className="w-px h-8 bg-black/8 hidden md:block shrink-0" />
           <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-10">
             {partners.map((p) => (
@@ -112,12 +120,15 @@ function PartnersSection() {
 
 /* ═══════════════════════ STATS ═══════════════════════ */
 function StatsBar() {
+  const { language } = useLanguage();
+  const tx = homeTexts[language];
+
   const stats = [
-    { icon: Youtube, value: '112 000+', label: 'abonnés', color: 'text-[#FF0000]', bg: 'bg-[#FF0000]/10' },
-    { icon: Users, value: '200+', label: 'apprenants', color: 'text-[#1877F2]', bg: 'bg-[#1877F2]/10' },
-    { icon: BookOpen, value: '6+', label: 'formations', color: 'text-gold', bg: 'bg-gold/10' },
-    { icon: Briefcase, value: '3', label: 'entreprises', color: 'text-emerald', bg: 'bg-emerald/10' },
-    { icon: Book, value: '2', label: 'livres', color: 'text-violet', bg: 'bg-violet/10' }
+    { icon: Youtube, value: '112 000+', label: tx.stats.subscribers, color: 'text-[#FF0000]', bg: 'bg-[#FF0000]/10' },
+    { icon: Users, value: '200+', label: tx.stats.learners, color: 'text-[#1877F2]', bg: 'bg-[#1877F2]/10' },
+    { icon: BookOpen, value: '6+', label: tx.stats.courses, color: 'text-gold', bg: 'bg-gold/10' },
+    { icon: Briefcase, value: '3', label: tx.stats.companies, color: 'text-emerald', bg: 'bg-emerald/10' },
+    { icon: Book, value: '2', label: tx.stats.books, color: 'text-violet', bg: 'bg-violet/10' }
   ];
   return (
     <section className="relative py-10 sm:py-14 overflow-hidden section-dark border-y border-white/5">
@@ -144,6 +155,9 @@ function StatsBar() {
 
 /* ═══════════════════════ PITCH ═══════════════════════ */
 function PitchTeaser() {
+  const { language, localePath } = useLanguage();
+  const tx = homeTexts[language];
+
   return (
     <section className="relative py-16 sm:py-24 lg:py-32 bg-[#fafafa] overflow-hidden">
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-[600px] bg-blue/5 rounded-full blur-[150px] animate-pulse-slow" />
@@ -153,32 +167,32 @@ function PitchTeaser() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <Reveal direction="left" delay={0.1}>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-black/5 glass-premium text-[#0a0a0a] text-[10px] font-bold tracking-[0.2em] uppercase mb-8 shadow-sm">
-              <span className="w-1.5 h-1.5 bg-blue rounded-full animate-pulse" /> Qui est Oumarou Sanda ?
+              <span className="w-1.5 h-1.5 bg-blue rounded-full animate-pulse" /> {tx.pitch.badge}
             </div>
 
             <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0a0a0a] tracking-tight mb-8 leading-[1.05]">
-              Ancien journaliste.<br />
-              <span className="text-blue block mt-2">Entrepreneur.</span>
-              <span className="block mt-2">Obsédé par l'IA.</span>
+              {tx.pitch.h2_1}<br />
+              <span className="text-blue block mt-2">{tx.pitch.h2_2}</span>
+              <span className="block mt-2">{tx.pitch.h2_3}</span>
             </h2>
 
             <div className="space-y-6 text-[#525252] text-[16px] sm:text-[17px] leading-[1.8] font-inter">
               <p>
-                J'ai quitté le journalisme le jour où j'ai compris que l'information la plus puissante n'était pas celle qu'on diffuse à la télé — mais celle qui permet de créer des business.
+                {tx.pitch.p1}
               </p>
               <div className="pl-6 border-l-2 border-gold/30 relative py-2">
                 <p className="leading-relaxed text-[#404040]">
-                  Aujourd'hui, je dirige <strong className="text-[#0a0a0a] font-bold">Wendooka</strong> (agence web), je développe <strong className="text-[#0a0a0a] font-bold">Sanda Vibe Code</strong> (SaaS et IA), j'ai lancé <strong className="text-[#0a0a0a] font-bold">CommentSticker</strong>, et je forme des centaines d'entrepreneurs africains à transformer l'intelligence artificielle en <strong className="text-[#0a0a0a] font-bold">avantage compétitif concret</strong>.
+                  {tx.pitch.p2_prefix} <strong className="text-[#0a0a0a] font-bold">{tx.pitch.p2_wendooka}</strong> {tx.pitch.p2_mid1} <strong className="text-[#0a0a0a] font-bold">{tx.pitch.p2_svc}</strong> {tx.pitch.p2_mid2} <strong className="text-[#0a0a0a] font-bold">{tx.pitch.p2_cs}</strong>{tx.pitch.p2_suffix} <strong className="text-[#0a0a0a] font-bold">{tx.pitch.p2_bold}</strong>.
                 </p>
               </div>
               <p className="font-extrabold text-gold tracking-[0.15em] uppercase text-[12px] pt-4 leading-relaxed">
-                Pas de théorie. Pas de bla-bla tech.<br />Des systèmes. Des résultats. Des revenus.
+                {tx.pitch.tagline1}<br />{tx.pitch.tagline2}
               </p>
             </div>
 
             <div className="mt-12">
-              <Link to="/a-propos" className="inline-flex items-center gap-3 text-[#0a0a0a] font-bold text-[13px] hover:text-gold transition-colors duration-300 group uppercase tracking-[0.1em] pb-2 border-b border-black/10 hover:border-gold">
-                En savoir plus sur mon parcours
+              <Link to={localePath('/a-propos')} className="inline-flex items-center gap-3 text-[#0a0a0a] font-bold text-[13px] hover:text-gold transition-colors duration-300 group uppercase tracking-[0.1em] pb-2 border-b border-black/10 hover:border-gold">
+                {tx.pitch.link}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
               </Link>
             </div>
@@ -213,6 +227,9 @@ function PitchTeaser() {
 
 /* ═══════════════════════ PROBLEM ═══════════════════════ */
 function ProblemSection() {
+  const { language } = useLanguage();
+  const tx = homeTexts[language];
+
   return (
     <section className="relative py-16 sm:py-24 lg:py-32 overflow-hidden bg-white border-y border-black/5">
       <div className="absolute inset-0 bg-grid-premium opacity-50 mix-blend-overlay" />
@@ -235,7 +252,7 @@ function ProblemSection() {
                       <Target className="w-6 h-6 text-coral" />
                     </div>
                     <div>
-                      <div className="text-[#737373] font-bold text-[11px] uppercase tracking-[0.2em] mb-1">Gain de temps</div>
+                      <div className="text-[#737373] font-bold text-[11px] uppercase tracking-[0.2em] mb-1">{tx.problem.floatLabel}</div>
                       <div className="text-[#0a0a0a] font-heading font-extrabold text-4xl">x10</div>
                     </div>
                   </div>
@@ -247,34 +264,34 @@ function ProblemSection() {
           <div className="text-left order-1 lg:order-2">
             <Reveal direction="right" delay={0.2}>
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-coral/20 glass-premium text-coral text-[10px] font-bold tracking-[0.2em] uppercase mb-8 shadow-sm">
-                <span className="w-1.5 h-1.5 bg-coral rounded-full animate-pulse" /> L'urgence est réelle
+                <span className="w-1.5 h-1.5 bg-coral rounded-full animate-pulse" /> {tx.problem.badge}
               </div>
 
 
               <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0a0a0a] mb-8 tracking-tight leading-[1.05]">
-                Pendant que tu réfléchis, <span className="text-gradient-coral mt-2 block sm:inline">l'IA avance.</span>
+                {tx.problem.h2} <span className="text-gradient-coral mt-2 block sm:inline">{tx.problem.h2_accent}</span>
               </h2>
 
               <div className="text-[#404040] text-[16px] sm:text-[18px] leading-[1.8] font-inter space-y-8">
                 <p>
-                  Quelqu'un dans ton domaine utilise déjà l'IA pour créer du contenu <strong className="text-[#0a0a0a]">10x plus vite que toi</strong>. Pour lancer des produits digitaux pendant que tu planifies encore. Pour automatiser ce qui te prend des heures.
+                  {tx.problem.p1_pre} <strong className="text-[#0a0a0a]">{tx.problem.p1_bold}</strong>{tx.problem.p1_post}
                 </p>
 
                 <div className="p-6 rounded-2xl border border-black/5 bg-[#fafafa] relative overflow-hidden card-luxury shadow-sm">
                   <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-coral to-coral-dark" />
                   <p className="font-medium text-[#0a0a0a] italic text-lg leading-relaxed shadow-sm p-4 bg-white/50 rounded-lg">
-                    "Ce n'est pas une menace.<br />C'est un fait."
+                    "{tx.problem.quote1}<br />{tx.problem.quote2}"
                   </p>
                 </div>
 
                 <p>
-                  L'IA ne va pas te remplacer. Mais les gens qui savent l'utiliser vont te dépasser. Et l'écart se creuse chaque jour.
+                  {tx.problem.p2}
                 </p>
 
                 <div className="pt-8 mt-10 border-t border-black/10">
                   <p className="text-xl text-[#0a0a0a] font-bold leading-snug">
-                    La question n'est pas SI tu dois maîtriser l'IA.<br />
-                    <span className="text-coral mt-2 block">C'est COMBIEN tu vas perdre en attendant.</span>
+                    {tx.problem.conclusion1}<br />
+                    <span className="text-coral mt-2 block">{tx.problem.conclusion2}</span>
                   </p>
                 </div>
               </div>
@@ -304,47 +321,50 @@ const accentStyles: Record<string, { blob: string; badge: string }> = {
 };
 
 function FormationsVitrine() {
+  const { language, localePath } = useLanguage();
+  const tx = homeTexts[language];
+
   const formations = [
     {
       id: 'protocole-video-ia',
-      title: 'PROTOCOLE VIDÉO IA',
-      desc: "Crée des vidéos publicitaires et cinématographiques de niveau professionnel avec l'intelligence artificielle. VEO, Sora, Wan, Higgsfield — maîtrise les outils que les agences facturent des milliers d'euros.",
-      target: "Créateurs de contenu, marketeurs, entrepreneurs qui veulent des vidéos pro sans équipe ni budget.",
+      title: tx.formations.items[0].title,
+      desc: tx.formations.items[0].desc,
+      target: tx.formations.items[0].target,
       icon: Video,
       accent: 'coral',
       gradient: 'from-[#f43f5e] to-[#be123c]',
-      badge: 'Bestseller',
+      badge: tx.formations.items[0].badge,
     },
     {
       id: 'cerveau-augmente',
-      title: 'LE CERVEAU AUGMENTÉ',
-      desc: "Construis ton système personnel d'intelligence artificielle. Un cerveau numérique qui travaille pour toi 24h/24 : création de contenu, productivité, stratégie business, automatisation. Tout, centralisé.",
-      target: "Entrepreneurs et professionnels qui veulent multiplier leur productivité par 10 avec l'IA.",
+      title: tx.formations.items[1].title,
+      desc: tx.formations.items[1].desc,
+      target: tx.formations.items[1].target,
       icon: Brain,
       accent: 'blue',
       gradient: 'from-[#818cf8] to-[#4f46e5]',
-      badge: 'Le plus populaire',
+      badge: tx.formations.items[1].badge,
     },
     {
       id: 'offshore-empire',
-      title: 'OFFSHORE EMPIRE',
-      desc: "Structure ton business à l'international. Crée ta société au Royaume-Uni depuis l'Afrique, ouvre un compte bancaire business, et accède aux marchés mondiaux — légalement.",
-      target: "Entrepreneurs africains qui veulent scaler au-delà des frontières locales.",
+      title: tx.formations.items[2].title,
+      desc: tx.formations.items[2].desc,
+      target: tx.formations.items[2].target,
       icon: Building2,
       accent: 'gold',
       gradient: 'from-[#f3e5ab] to-[#d4af37]',
-      badge: 'Premium',
+      badge: tx.formations.items[2].badge,
       url: undefined,
     },
     {
       id: 'challenge-30-jours',
-      title: 'CHALLENGE 30 JOURS IA',
-      desc: "Passe du niveau zéro aux 28 outils IA que les pros utilisent vraiment en 2026. VEO 3, Sora 2, Nano Banana, Antigravity, N8N — 15 minutes par jour, 30 jours, résultats concrets.",
-      target: "Débutants et intermédiaires qui veulent maîtriser rapidement l'écosystème IA 2026.",
+      title: tx.formations.items[3].title,
+      desc: tx.formations.items[3].desc,
+      target: tx.formations.items[3].target,
       icon: Zap,
       accent: 'gold',
       gradient: 'from-[#d4af37] to-[#f59e0b]',
-      badge: '🚀 Nouveau',
+      badge: tx.formations.items[3].badge,
       url: '/challenge-30-jours',
     }
   ];
@@ -356,13 +376,13 @@ function FormationsVitrine() {
         <Reveal direction="up" delay={0.1}>
           <div className="text-center mb-20 max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-gold/20 glass-premium text-gold-dark text-[10px] font-bold tracking-[0.2em] uppercase mb-8 shadow-sm">
-              <Sparkles className="w-3.5 h-3.5" /> Mes Formations
+              <Sparkles className="w-3.5 h-3.5" /> {tx.formations.badge}
             </div>
             <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0a0a0a] tracking-tight mb-8">
-              Apprends. Applique. <span className="text-gradient-gold">Génère des revenus.</span>
+              {tx.formations.h2} <span className="text-gradient-gold">{tx.formations.h2_accent}</span>
             </h2>
             <p className="text-[#525252] text-[16px] sm:text-[18px] leading-[1.8] font-inter">
-              Chaque formation est conçue pour un objectif précis : te donner une compétence monétisable immédiatement. Pas de remplissage. Pas de théorie inutile. <strong className="text-[#0a0a0a] font-bold">Tu apprends, tu fais, tu gagnes.</strong>
+              {tx.formations.desc} <strong className="text-[#0a0a0a] font-bold">{tx.formations.descBold}</strong>
             </p>
           </div>
         </Reveal>
@@ -386,12 +406,12 @@ function FormationsVitrine() {
                 <p className="text-[#525252] text-[15px] leading-[1.7] mb-8 flex-1 z-10 relative font-inter">{f.desc}</p>
 
                 <div className="bg-[#f5f5f7] rounded-2xl p-5 mb-10 border border-black/5 z-10 relative group-hover:border-[#0a0a0a]/10 transition-colors">
-                  <p className="text-[10px] text-[#737373] uppercase font-bold mb-2 tracking-[0.2em]">Pour qui :</p>
+                  <p className="text-[10px] text-[#737373] uppercase font-bold mb-2 tracking-[0.2em]">{tx.formations.forWho}</p>
                   <p className="text-[13px] text-[#0a0a0a] leading-[1.6] font-medium">{f.target}</p>
                 </div>
 
-                <Link to={(f as { url?: string }).url ?? `/formations/${f.id}`} className="btn-premium w-full py-4.5 rounded-xl bg-white hover:bg-[#0a0a0a] text-[#0a0a0a] hover:text-white border border-black/10 hover:border-[#0a0a0a] font-bold text-[13px] tracking-[0.1em] uppercase flex items-center justify-center gap-3 transition-all duration-400 group/btn z-10 relative shadow-sm">
-                  Rejoindre la formation <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform duration-300" />
+                <Link to={localePath((f as { url?: string }).url ?? `/formations/${f.id}`)} className="btn-premium w-full py-4.5 rounded-xl bg-white hover:bg-[#0a0a0a] text-[#0a0a0a] hover:text-white border border-black/10 hover:border-[#0a0a0a] font-bold text-[13px] tracking-[0.1em] uppercase flex items-center justify-center gap-3 transition-all duration-400 group/btn z-10 relative shadow-sm">
+                  {tx.formations.joinCta} <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform duration-300" />
                 </Link>
               </div>
             </Reveal>
@@ -399,8 +419,8 @@ function FormationsVitrine() {
         </div>
 
         <div className="text-center">
-          <Link to="/formations" className="inline-flex items-center gap-3 text-[#0a0a0a] font-bold text-[14px] hover:text-gold transition-colors duration-300 group uppercase tracking-[0.1em] pb-2 border-b border-black/20 hover:border-gold">
-            Voir toutes mes formations <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
+          <Link to={localePath('/formations')} className="inline-flex items-center gap-3 text-[#0a0a0a] font-bold text-[14px] hover:text-gold transition-colors duration-300 group uppercase tracking-[0.1em] pb-2 border-b border-black/20 hover:border-gold">
+            {tx.formations.seeAll} <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
           </Link>
         </div>
       </div>
@@ -410,35 +430,38 @@ function FormationsVitrine() {
 
 /* ═══════════════════════ SERVICES ═══════════════════════ */
 function ServicesSection() {
+  const { language, localePath } = useLanguage();
+  const tx = homeTexts[language];
+
   const services = [
     {
-      title: 'AGENCE WEB & DIGITALE — WENDOOKA',
-      desc: "Sites web professionnels, tunnels de vente, SEO, automatisation marketing. On ne crée pas des sites vitrines. On crée des machines à clients.",
+      title: tx.services.items[0].title,
+      desc: tx.services.items[0].desc,
       icon: Globe,
       color: 'text-blue-light',
       bg: 'bg-blue/10',
       border: 'border-blue/20',
-      cta: 'DEMANDER UN DEVIS',
+      cta: tx.services.items[0].cta,
       link: '/contact'
     },
     {
-      title: 'CONSULTING & STRATÉGIE IA',
-      desc: "Tu veux intégrer l'IA dans ton business mais tu ne sais pas par où commencer ? Je t'accompagne : audit, stratégie, implémentation. Du diagnostic à l'action.",
+      title: tx.services.items[1].title,
+      desc: tx.services.items[1].desc,
       icon: Settings,
       color: 'text-gold-light',
       bg: 'bg-gold/10',
       border: 'border-gold/20',
-      cta: 'RÉSERVER UN APPEL',
+      cta: tx.services.items[1].cta,
       link: '/contact'
     },
     {
-      title: 'PRODUCTION VIDÉO IA',
-      desc: "Spots publicitaires, vidéos corporate, contenus cinématographiques — produits entièrement avec l'intelligence artificielle. Qualité studio, budget divisé par 10.",
+      title: tx.services.items[2].title,
+      desc: tx.services.items[2].desc,
       icon: Video,
       color: 'text-coral-light',
       bg: 'bg-coral/10',
       border: 'border-coral/20',
-      cta: 'VOIR MES RÉALISATIONS',
+      cta: tx.services.items[2].cta,
       link: '/services/video-ia'
     }
   ];
@@ -451,13 +474,13 @@ function ServicesSection() {
           <div className="lg:col-span-5 lg:sticky top-32">
             <Reveal direction="left">
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-blue/20 glass-premium text-blue text-[10px] font-bold tracking-[0.2em] uppercase mb-8 shadow-sm">
-                Mes Services
+                {tx.services.badge}
               </div>
               <h2 className="font-heading text-4xl sm:text-5xl font-extrabold text-[#0a0a0a] tracking-tight mb-8 leading-[1.1]">
-                Tu n'as pas besoin de<br /><span className="text-gradient-blue block mt-2">tout faire seul.</span>
+                {tx.services.h2}<br /><span className="text-gradient-blue block mt-2">{tx.services.h2_accent}</span>
               </h2>
               <p className="text-[#525252] text-[16px] sm:text-[18px] leading-[1.8] mb-10 font-inter">
-                Tu veux que quelqu'un fasse le travail pour toi ? Ou avec toi ? Que ce soit pour un site web ultra-performant, une stratégie IA sur mesure, ou un système d'automatisation complet — <strong className="text-[#0a0a0a] font-bold">mon équipe et moi, on délivre.</strong>
+                {tx.services.desc_pre} <strong className="text-[#0a0a0a] font-bold">{tx.services.descBold}</strong>
               </p>
 
               <div
@@ -481,7 +504,7 @@ function ServicesSection() {
                   <div className="flex-1">
                     <h3 className="font-heading font-extrabold text-xl text-[#0a0a0a] mb-4 tracking-tight leading-tight">{s.title}</h3>
                     <p className="text-[#525252] text-[15px] leading-[1.7] mb-8 font-inter">{s.desc}</p>
-                    <Link to={s.link} className="btn-premium inline-flex items-center gap-3 text-[#0a0a0a] hover:text-[#0a0a0a] font-bold text-[12px] group/btn tracking-[0.1em] uppercase border border-black/10 px-6 py-3 rounded-lg bg-white shadow-sm hover:bg-gold hover:border-gold hover:shadow-md transition-all duration-400">
+                    <Link to={localePath(s.link)} className="btn-premium inline-flex items-center gap-3 text-[#0a0a0a] hover:text-[#0a0a0a] font-bold text-[12px] group/btn tracking-[0.1em] uppercase border border-black/10 px-6 py-3 rounded-lg bg-white shadow-sm hover:bg-gold hover:border-gold hover:shadow-md transition-all duration-400">
                       {s.cta} <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform duration-300" />
                     </Link>
                   </div>
@@ -497,10 +520,13 @@ function ServicesSection() {
 
 /* ═══════════════════════ TESTIMONIALS ═══════════════════════ */
 function TestimonialsSection() {
+  const { language } = useLanguage();
+  const tx = homeTexts[language];
+
   const testimonials = [
-    { name: 'Abdoulaye K.', role: 'Sénégal', formation: 'Protocole Vidéo IA', text: "Grâce à Protocole Vidéo IA, j'ai décroché mon premier client à 500 000 FCFA en 3 semaines. La qualité de ce qu'on peut produire bluffe tout le monde.", avatar: 'AK' },
-    { name: 'Marie-Claire D.', role: 'Côte d\'Ivoire', formation: 'Le Cerveau Augmenté', text: "Le Cerveau Augmenté a libéré 15h dans ma semaine. Je gère ma boîte et ma création de contenu sans être épuisée. Un système redoutable.", avatar: 'MD' },
-    { name: 'Ibrahim M.', role: 'Cameroun', formation: 'Offshore Empire', text: "J'ai pu créer ma boîte au UK et ouvrir mon compte Stripe depuis Douala en quelques jours sans prise de tête. Oumarou va droit au but.", avatar: 'IM' },
+    { name: tx.testimonials.items[0].name, role: tx.testimonials.items[0].role, formation: tx.testimonials.items[0].formation, text: tx.testimonials.items[0].text, avatar: 'AK' },
+    { name: tx.testimonials.items[1].name, role: tx.testimonials.items[1].role, formation: tx.testimonials.items[1].formation, text: tx.testimonials.items[1].text, avatar: 'MD' },
+    { name: tx.testimonials.items[2].name, role: tx.testimonials.items[2].role, formation: tx.testimonials.items[2].formation, text: tx.testimonials.items[2].text, avatar: 'IM' },
   ];
 
   return (
@@ -512,12 +538,12 @@ function TestimonialsSection() {
         <Reveal direction="up" delay={0.1}>
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/15 bg-white/10 text-white/80 text-[10px] font-bold tracking-[0.2em] uppercase mb-8 shadow-sm">
-              <Star className="w-3.5 h-3.5 fill-gold text-gold" /> Success Stories
+              <Star className="w-3.5 h-3.5 fill-gold text-gold" /> {tx.testimonials.badge}
             </div>
             <h2 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight mb-6">
-              Ils ont franchi <span className="text-gold">le pas.</span>
+              {tx.testimonials.h2} <span className="text-gold">{tx.testimonials.h2_accent}</span>
             </h2>
-            <p className="text-white/65 text-[16px] sm:text-[18px] max-w-2xl mx-auto font-inter">Ce que disent ceux qui sont passés de l'idée à l'<strong className="text-white font-bold">exécution</strong>.</p>
+            <p className="text-white/65 text-[16px] sm:text-[18px] max-w-2xl mx-auto font-inter">{tx.testimonials.desc_pre}<strong className="text-white font-bold">{tx.testimonials.descBold}</strong>.</p>
           </div>
         </Reveal>
 
@@ -553,6 +579,9 @@ function TestimonialsSection() {
 
 /* ═══════════════════════ BOOKS & PRODUCTS ═══════════════════════ */
 function BooksProducts() {
+  const { language, localePath } = useLanguage();
+  const tx = homeTexts[language];
+
   return (
     <section className="relative py-16 sm:py-24 lg:py-32 bg-white overflow-hidden border-t border-black/5">
       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1/4 h-[500px] bg-gold/5 rounded-full blur-[150px] pointer-events-none" />
@@ -561,15 +590,15 @@ function BooksProducts() {
           <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-10 mb-20">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-gold/20 glass-premium text-gold-dark text-[10px] font-bold tracking-[0.2em] uppercase mb-8 shadow-sm">
-                <Book className="w-3.5 h-3.5" /> Livres & Guides
+                <Book className="w-3.5 h-3.5" /> {tx.books.badge}
               </div>
-              <h2 className="font-heading font-extrabold text-4xl sm:text-5xl text-[#0a0a0a] tracking-tight mb-6">L'expertise, <span className="text-gradient-gold">condensée.</span></h2>
+              <h2 className="font-heading font-extrabold text-4xl sm:text-5xl text-[#0a0a0a] tracking-tight mb-6">{tx.books.h2} <span className="text-gradient-gold">{tx.books.h2_accent}</span></h2>
               <p className="text-[#525252] text-[16px] sm:text-[18px] leading-[1.8] font-inter">
-                Des guides pratiques écrits pour ceux qui n'ont pas le temps. Chaque livre résout un problème précis et donne un plan d'action immédiat.
+                {tx.books.desc}
               </p>
             </div>
-            <Link to="/livres" className="btn-premium inline-flex shrink-0 items-center justify-center gap-3 border border-black/10 glass-premium text-[#0a0a0a] font-bold text-[12px] tracking-[0.1em] uppercase px-8 py-4.5 rounded-xl hover:bg-white hover:text-[#0a0a0a] shadow-sm hover:border-gold transition-all duration-300 group/btn">
-              Voir tous mes livres <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform" />
+            <Link to={localePath('/livres')} className="btn-premium inline-flex shrink-0 items-center justify-center gap-3 border border-black/10 glass-premium text-[#0a0a0a] font-bold text-[12px] tracking-[0.1em] uppercase px-8 py-4.5 rounded-xl hover:bg-white hover:text-[#0a0a0a] shadow-sm hover:border-gold transition-all duration-300 group/btn">
+              {tx.books.seeAll} <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform" />
             </Link>
           </div>
         </Reveal>
@@ -584,13 +613,13 @@ function BooksProducts() {
               </div>
               <div className="text-center sm:text-left flex-1 flex flex-col h-full">
                 <div className="mb-4">
-                  <h3 className="text-[#0a0a0a] font-heading font-extrabold text-2xl mb-2 leading-tight tracking-tight">Le Cerveau Augmenté</h3>
-                  <div className="inline-block px-2 py-0.5 bg-emerald-100 text-emerald-700 rounded text-[10px] font-bold uppercase tracking-wider mb-2">Disponible</div>
-                  <p className="text-[#525252] text-sm leading-relaxed font-inter">Le système mental complet pour maîtriser l'IA, incluant un catalogue de 200 prompts stratégiques.</p>
+                  <h3 className="text-[#0a0a0a] font-heading font-extrabold text-2xl mb-2 leading-tight tracking-tight">{tx.books.book1.title}</h3>
+                  <div className="inline-block px-2 py-0.5 bg-emerald-100 text-emerald-700 rounded text-[10px] font-bold uppercase tracking-wider mb-2">{tx.books.book1.status}</div>
+                  <p className="text-[#525252] text-sm leading-relaxed font-inter">{tx.books.book1.desc}</p>
                 </div>
                 <div className="mt-auto">
                   <p className="text-gold font-mono font-bold text-[18px] mb-4">4 900 FCFA</p>
-                  <a href="https://academy.oumarousanda.com/cerveau-augmente" target="_blank" rel="noopener noreferrer" className="btn-premium inline-block w-full sm:w-auto text-[12px] font-bold uppercase tracking-[0.1em] text-white bg-[#0a0a0a] shadow-md px-6 py-3 rounded-lg hover:bg-gold transition-colors text-center">Télécharger</a>
+                  <a href="https://academy.oumarousanda.com/cerveau-augmente" target="_blank" rel="noopener noreferrer" className="btn-premium inline-block w-full sm:w-auto text-[12px] font-bold uppercase tracking-[0.1em] text-white bg-[#0a0a0a] shadow-md px-6 py-3 rounded-lg hover:bg-gold transition-colors text-center">{tx.books.book1.cta}</a>
                 </div>
               </div>
             </div>
@@ -604,13 +633,13 @@ function BooksProducts() {
               </div>
               <div className="text-center sm:text-left flex-1 flex flex-col h-full">
                 <div className="mb-4">
-                  <h3 className="text-[#0a0a0a] font-heading font-extrabold text-2xl mb-2 leading-tight tracking-tight">Si l'Afrique rate l'IA, elle rate le futur</h3>
-                  <div className="inline-block px-2 py-0.5 bg-gold/15 text-gold-dark rounded text-[10px] font-bold uppercase tracking-wider mb-2">En précommande</div>
-                  <p className="text-[#525252] text-sm leading-relaxed font-inter">Un essai-manifeste sur la souveraineté numérique africaine (Sortie en mai 2026).</p>
+                  <h3 className="text-[#0a0a0a] font-heading font-extrabold text-2xl mb-2 leading-tight tracking-tight">{tx.books.book2.title}</h3>
+                  <div className="inline-block px-2 py-0.5 bg-gold/15 text-gold-dark rounded text-[10px] font-bold uppercase tracking-wider mb-2">{tx.books.book2.status}</div>
+                  <p className="text-[#525252] text-sm leading-relaxed font-inter">{tx.books.book2.desc}</p>
                 </div>
                 <div className="mt-auto">
                   <p className="text-gold font-mono font-bold text-[18px] mb-4">19,99 €</p>
-                  <Link to="/livres#livre-01" className="btn-premium inline-block w-full sm:w-auto text-[12px] font-bold uppercase tracking-[0.1em] text-white bg-[#0a0a0a] shadow-md px-6 py-3 rounded-lg hover:bg-gold transition-colors text-center">Précommander</Link>
+                  <Link to={localePath('/livres') + '#livre-01'} className="btn-premium inline-block w-full sm:w-auto text-[12px] font-bold uppercase tracking-[0.1em] text-white bg-[#0a0a0a] shadow-md px-6 py-3 rounded-lg hover:bg-gold transition-colors text-center">{tx.books.book2.cta}</Link>
                 </div>
               </div>
             </div>
@@ -623,6 +652,9 @@ function BooksProducts() {
 
 /* ═══════════════════════ MEDIA & PODCAST ═══════════════════════ */
 function MediaPodcast() {
+  const { language } = useLanguage();
+  const tx = homeTexts[language];
+
   return (
     <section className="relative py-16 sm:py-24 lg:py-32 overflow-hidden bg-[#fafafa]">
       <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
@@ -633,21 +665,21 @@ function MediaPodcast() {
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center relative z-10">
               <div>
                 <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-black/5 glass-premium text-[#0a0a0a] text-[10px] font-bold tracking-[0.2em] uppercase mb-8 shadow-sm">
-                  <Mic className="w-3.5 h-3.5 text-[#FF0000]" /> Dans les médias
+                  <Mic className="w-3.5 h-3.5 text-[#FF0000]" /> {tx.media.badge}
                 </div>
                 <h2 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-5xl text-[#0a0a0a] tracking-tight mb-8 leading-[1.1]">
-                  Pas juste un formateur.<br /><span className="text-[#FF0000]">Une voix.</span>
+                  {tx.media.h2}<br /><span className="text-[#FF0000]">{tx.media.h2_accent}</span>
                 </h2>
                 <div className="text-[#525252] text-[16px] sm:text-[17px] leading-[1.8] mb-10 font-inter space-y-4">
                   <p>
-                    Correspondant pour <strong className="text-[#0a0a0a] font-bold">Vision 4 TV</strong> dans la région de l'Adamaoua depuis 2020.
+                    {tx.media.p1_pre} <strong className="text-[#0a0a0a] font-bold">{tx.media.p1_bold}</strong> {tx.media.p1_post}
                   </p>
                   <p>
-                    Présent sur YouTube, TikTok, Facebook, Instagram et X avec plus de <strong className="text-[#0a0a0a] font-bold">112 000 abonnés</strong>. Quand l'Afrique francophone veut comprendre où va l'IA et le business digital, c'est ici que ça se passe.
+                    {tx.media.p2_pre} <strong className="text-[#0a0a0a] font-bold">{tx.media.p2_bold}</strong>{tx.media.p2_post}
                   </p>
                 </div>
                 <a href="https://www.youtube.com/channel/UCHWKK_ss4JWCdhnr3TinFuA?sub_confirmation=1" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-[#FF0000] text-white hover:bg-[#CC0000] font-bold px-8 py-4.5 rounded-xl transition-all shadow-[0_10px_30px_rgba(255,0,0,0.3)] uppercase tracking-[0.1em] text-[13px] group">
-                  <Youtube className="w-5 h-5 group-hover:scale-110 transition-transform" /> S'abonner sur YouTube
+                  <Youtube className="w-5 h-5 group-hover:scale-110 transition-transform" /> {tx.media.ytCta}
                 </a>
               </div>
 
@@ -662,7 +694,7 @@ function MediaPodcast() {
                 <div className="w-20 h-20 bg-[#FF0000] rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(255,0,0,0.4)] group-hover:scale-110 transition-transform duration-500">
                   <Play className="w-8 h-8 text-white ml-2 fill-white" />
                 </div>
-                <p className="mt-6 text-[#525252] text-[13px] font-bold uppercase tracking-[0.15em]">Voir la vidéo</p>
+                <p className="mt-6 text-[#525252] text-[13px] font-bold uppercase tracking-[0.15em]">{tx.media.watchVideo}</p>
               </a>
             </div>
           </div>
@@ -674,6 +706,9 @@ function MediaPodcast() {
 
 /* ═══════════════════════ BLOG PREVIEW ═══════════════════════ */
 function BlogPreview() {
+  const { language, localePath } = useLanguage();
+  const tx = homeTexts[language];
+
   const latestPosts = [
     { slug: 'vibe-coding-saas-sans-coder', title: "Vibe Coding : c'est quoi et comment créer un SaaS sans coder", category: 'Vibe Coding', date: '20 Fév 2026', readTime: '15 min', tagColor: 'text-blue bg-blue/10 border-blue/20' },
     { slug: 'creer-videos-ia-google-veo', title: "Créer des vidéos publicitaires avec Google VEO (Guide)", category: 'IA & Outils', date: '18 Fév 2026', readTime: '20 min', tagColor: 'text-coral bg-coral/10 border-coral/20' },
@@ -687,17 +722,17 @@ function BlogPreview() {
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-20">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-emerald/20 glass-premium text-emerald-600 text-[10px] font-bold tracking-[0.2em] uppercase mb-8 shadow-sm">
-                <PenTool className="w-3.5 h-3.5" /> Le Blog
+                <PenTool className="w-3.5 h-3.5" /> {tx.blogPreview.badge}
               </div>
               <h2 className="font-heading text-4xl sm:text-5xl font-extrabold text-[#0a0a0a] tracking-tight mb-6 leading-[1.1]">
-                Analyses. Tutoriels.<br />Stratégies. <span className="text-[#0a0a0a]/30">Sans filtre.</span>
+                {tx.blogPreview.h2_1}<br />{tx.blogPreview.h2_2} <span className="text-[#0a0a0a]/30">{tx.blogPreview.h2_3}</span>
               </h2>
               <p className="text-[#525252] text-[16px] sm:text-[18px] leading-[1.8] font-inter">
-                Je décrypte les dernières avancées de l'IA, je partage des stratégies business testées, et je montre comment les appliquer concrètement.
+                {tx.blogPreview.desc}
               </p>
             </div>
-            <Link to="/blog" className="btn-premium inline-flex shrink-0 items-center gap-3 text-[#0a0a0a] font-bold text-[13px] hover:text-[#0a0a0a] transition-colors duration-300 group uppercase tracking-[0.1em] border border-black/10 px-8 py-4.5 rounded-xl glass-premium hover:bg-white hover:border-gold shadow-sm">
-              Lire les articles <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
+            <Link to={localePath('/blog')} className="btn-premium inline-flex shrink-0 items-center gap-3 text-[#0a0a0a] font-bold text-[13px] hover:text-[#0a0a0a] transition-colors duration-300 group uppercase tracking-[0.1em] border border-black/10 px-8 py-4.5 rounded-xl glass-premium hover:bg-white hover:border-gold shadow-sm">
+              {tx.blogPreview.readArticles} <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
             </Link>
           </div>
         </Reveal>
@@ -705,7 +740,7 @@ function BlogPreview() {
         <div className="grid lg:grid-cols-3 gap-8">
           {latestPosts.map((post, i) => (
             <Reveal key={post.slug} direction="up" delay={i * 0.1}>
-              <Link to={`/blog/${post.slug}`} className="card-luxury bg-[#fafafa] shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-black/5 rounded-[2rem] p-8 group block h-full relative overflow-hidden hover:bg-white transition-colors card-hover-lift glow-hover">
+              <Link to={localePath(`/blog/${post.slug}`)} className="card-luxury bg-[#fafafa] shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-black/5 rounded-[2rem] p-8 group block h-full relative overflow-hidden hover:bg-white transition-colors card-hover-lift glow-hover">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-black/5 rounded-bl-[100px] pointer-events-none group-hover:scale-150 transition-transform duration-700" />
 
                 <div className={`inline-flex px-4 py-1.5 bg-white shadow-sm rounded-full text-[10px] font-bold tracking-[0.15em] uppercase border mb-8 ${post.tagColor}`}>
@@ -735,6 +770,9 @@ function BlogPreview() {
 
 /* ═══════════════════════ CTA FINAL ═══════════════════════ */
 function CTAFinal() {
+  const { language, localePath } = useLanguage();
+  const tx = homeTexts[language];
+
   return (
     <section className="relative py-20 sm:py-32 lg:py-40 overflow-hidden section-dark border-t border-white/5 border-b border-white/5">
       <div className="absolute inset-0 bg-grid-dark opacity-60" />
@@ -744,19 +782,19 @@ function CTAFinal() {
         <Reveal direction="up" delay={0.2} once={false}>
           <div className="flex flex-col items-center">
             <h2 className="font-heading font-extrabold text-5xl sm:text-7xl text-white mb-8 tracking-tight leading-[1.05] text-center">
-              L'IA n'attend pas. <span className="text-gold">Toi non plus.</span>
+              {tx.cta.h2} <span className="text-gold">{tx.cta.h2_accent}</span>
             </h2>
           </div>
           <p className="text-white/65 text-[18px] sm:text-[20px] mb-14 max-w-2xl mx-auto font-inter">
-            Que tu veuilles te former, lancer un business digital, ou intégrer l'IA dans ton activité existante — le moment, c'est maintenant. <strong className="text-white font-bold">Pas lundi. Maintenant.</strong>
+            {tx.cta.desc_pre} <strong className="text-white font-bold">{tx.cta.descBold}</strong>
           </p>
 
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <Link to="/formations" className="btn-premium group px-10 py-5 bg-gold text-[#0a0a0a] font-bold text-[14px] rounded-xl hover:bg-white transition-all flex items-center justify-center gap-3 uppercase tracking-[0.1em] shadow-[0_10px_30px_rgba(212,175,55,0.4)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.5)] glow-hover">
-              Commencer maintenant <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
+            <Link to={localePath('/formations')} className="btn-premium group px-10 py-5 bg-gold text-[#0a0a0a] font-bold text-[14px] rounded-xl hover:bg-white transition-all flex items-center justify-center gap-3 uppercase tracking-[0.1em] shadow-[0_10px_30px_rgba(212,175,55,0.4)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.5)] glow-hover">
+              {tx.cta.startNow} <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
             </Link>
-            <Link to="/contact" className="px-10 py-5 border border-white/20 text-white font-bold text-[14px] rounded-xl hover:bg-white/10 transition-colors shadow-sm flex items-center justify-center uppercase tracking-[0.1em]">
-              Discuter d'un projet
+            <Link to={localePath('/contact')} className="px-10 py-5 border border-white/20 text-white font-bold text-[14px] rounded-xl hover:bg-white/10 transition-colors shadow-sm flex items-center justify-center uppercase tracking-[0.1em]">
+              {tx.cta.discuss}
             </Link>
           </div>
         </Reveal>
@@ -767,6 +805,9 @@ function CTAFinal() {
 
 /* ═══════════════════════ NEWSLETTER ═══════════════════════ */
 function Newsletter() {
+  const { language } = useLanguage();
+  const tx = homeTexts[language];
+
   return (
     <section className="bg-white py-12 sm:py-16 lg:py-24 relative overflow-hidden">
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-blue/5 blur-[100px] pointer-events-none" />
@@ -775,22 +816,22 @@ function Newsletter() {
           <div className="flex-1 text-center lg:text-left">
             <div className="flex justify-center lg:justify-start items-center gap-4 text-[#0a0a0a] font-heading font-extrabold text-3xl sm:text-4xl mb-6">
               <Mail className="w-10 h-10 text-blue" />
-              Rejoins +10 000 visionnaires
+              {tx.newsletter.title}
             </div>
             <p className="text-[#525252] text-[16px] sm:text-[18px] max-w-2xl lg:max-w-xl font-inter">
-              Reçois mes stratégies IA chaque semaine. Pas de spam. Pas de blabla. Juste des tactiques, des outils et des opportunités introuvables ailleurs.
+              {tx.newsletter.desc}
             </p>
           </div>
           <div className="w-full lg:w-auto">
             <form className="flex flex-col sm:flex-row w-full lg:w-[450px] gap-3 p-2 bg-white/80 backdrop-blur-md rounded-2xl border border-black/5 shadow-sm" onSubmit={(e) => e.preventDefault()}>
               <input
                 type="email"
-                placeholder="Ton adresse email premium"
+                placeholder={tx.newsletter.placeholder}
                 className="flex-1 bg-transparent text-[#0a0a0a] px-6 py-4 outline-none text-[15px] font-inter placeholder:text-[#a3a3a3]"
                 required
               />
               <button type="submit" className="bg-[#0a0a0a] hover:bg-gold text-white font-bold text-[13px] tracking-[0.1em] uppercase px-8 py-4 rounded-xl transition-colors whitespace-nowrap shadow-md">
-                S'inscrire
+                {tx.newsletter.subscribe}
               </button>
             </form>
           </div>
@@ -802,11 +843,14 @@ function Newsletter() {
 
 /* ═══════════════════════ HOME ═══════════════════════ */
 export default function HomePage() {
+  const { language } = useLanguage();
+  const tx = homeTexts[language];
+
   return (
     <>
       <SEOHead
-        title="Oumarou Sanda | Expert IA, Formateur & Entrepreneur Digital"
-        description="Oumarou Sanda aide les entrepreneurs et créateurs africains à maîtriser l'IA pour générer des revenus. Formations, services, outils et stratégies pour bâtir un business digital rentable."
+        title={tx.seo.title}
+        description={tx.seo.description}
         canonical="/"
         schema={{
           "@context": "https://schema.org",

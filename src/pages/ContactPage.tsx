@@ -8,8 +8,13 @@ import {
 import { Link } from 'react-router-dom';
 import { SEOHead } from '../components/SEOHead';
 import { sendContactEmail, type ContactFormData } from '../services/mailzeet';
+import { useLanguage } from '../i18n';
+import { contactTexts } from '../i18n/pages/contact';
 
 export default function ContactPage() {
+  const { language, localePath } = useLanguage();
+  const tx = contactTexts[language];
+
   const { ref: heroRef, isInView: heroInView } = useInView(0.1);
   const { ref: optionsRef, isInView: optionsInView } = useInView(0.1);
   const { ref: formRef, isInView: formInView } = useInView(0.1);
@@ -41,26 +46,20 @@ export default function ContactPage() {
       setSendError(
         err instanceof Error
           ? err.message
-          : "Une erreur est survenue. Merci de réessayer ou d'écrire directement à contact@oumarousanda.com"
+          : tx.form.errorDefault
       );
     } finally {
       setSending(false);
     }
   };
 
-  const faqs = [
-    { q: "Comment contacter Oumarou Sanda ?", a: "Oumarou Sanda est joignable via le formulaire de contact sur oumarousanda.com/contact, par email à contact@oumarousanda.com, ou par WhatsApp. Il est également actif sur YouTube, TikTok, LinkedIn, Facebook et Instagram. Le délai de réponse moyen est de 48 heures." },
-    { q: "Oumarou Sanda est-il disponible pour des conférences ?", a: "Oui, Oumarou Sanda est disponible pour des conférences, keynotes, panels, interviews et interventions médias. Ses sujets d'expertise incluent l'intelligence artificielle appliquée, la souveraineté numérique africaine, le vibe coding et l'entrepreneuriat digital en Afrique francophone. Contact : presse@oumarousanda.com." },
-    { q: "Peut-on sponsoriser une vidéo d'Oumarou Sanda ?", a: "Oui, Oumarou Sanda propose des vidéos sponsorisées sur YouTube, du contenu TikTok et Reels, des posts LinkedIn et Facebook, ainsi que des newsletters sponsorisées. Son audience cumulée dépasse 125 000 abonnés dans la niche IA et business digital en Afrique francophone. Kit média disponible sur demande à sponsoring@oumarousanda.com." },
-    { q: "Quel est le délai de réponse d'Oumarou Sanda ?", a: "Le délai de réponse moyen est de 48 heures pour les demandes envoyées via le formulaire ou par email. Pour les demandes urgentes, le contact par WhatsApp est recommandé." },
-    { q: "Où est basé Oumarou Sanda ?", a: "Oumarou Sanda est basé à Ngaoundéré, région de l'Adamaoua, au Cameroun. Il travaille avec des clients et partenaires dans toute l'Afrique francophone et à l'international, principalement à distance." },
-  ];
+  const faqs = tx.faq.items;
 
   return (
     <>
       <SEOHead
-        title="Contact | Oumarou Sanda — Projets, Collaborations & Médias"
-        description="Contactez Oumarou Sanda pour un projet web, un consulting IA, une collaboration média, un sponsoring ou une demande presse. Expert IA, entrepreneur digital basé au Cameroun. Réponse sous 48h."
+        title={tx.seo.title}
+        description={tx.seo.description}
         canonical="/contact"
         schema={{ "@context": "https://schema.org", "@type": "ContactPage", "url": "https://oumarousanda.com/contact", "name": "Contact — Oumarou Sanda" }}
       />
@@ -80,10 +79,10 @@ export default function ContactPage() {
                 className="text-left"
               >
                 <h1 className="font-heading text-4xl sm:text-5xl lg:text-[4rem] font-black text-white mb-6 tracking-tight leading-[1.1]">
-                  Parlons de <span className="text-gold block mt-2">ton projet.</span>
+                  {tx.hero.h1} <span className="text-gold block mt-2">{tx.hero.h1_accent}</span>
                 </h1>
                 <p className="text-white/65 text-lg md:text-xl max-w-xl leading-relaxed mb-10">
-                  Que tu aies un projet web, une question business, une demande de sponsoring ou une invitation média — je suis accessible. Choisis le bon canal ci-dessous, et je reviens vers toi sous 48h.
+                  {tx.hero.desc}
                 </p>
 
                 <a href="#options" className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-white/10 transition-all animate-bounce">
@@ -109,7 +108,7 @@ export default function ContactPage() {
               animate={optionsInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-[11px] font-bold text-blue-600 tracking-widest text-center mb-10 uppercase">Choisis ton sujet</h2>
+              <h2 className="text-[11px] font-bold text-blue-600 tracking-widest text-center mb-10 uppercase">{tx.options.sectionTitle}</h2>
 
               <div className="grid sm:grid-cols-2 gap-4 lg:gap-6">
                 {/* Card 1 */}
@@ -120,36 +119,36 @@ export default function ContactPage() {
                 }} className="group bg-white border border-black/5 p-6 lg:p-8 rounded-2xl hover:border-black/15 hover:shadow-md transition-all duration-300 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-3xl rounded-full group-hover:bg-blue-500/10 transition-all" />
                   <MonitorPlay className="w-8 h-8 text-[#525252] group-hover:text-blue-600 transition-colors mb-4" />
-                  <h3 className="text-[#0a0a0a] font-bold text-lg mb-2 font-heading">Projet Web ou Digital</h3>
-                  <p className="text-[#525252] text-sm mb-6 line-clamp-2">Tu veux un site web, un tunnel de vente, une automatisation ou une solution digitale ?</p>
-                  <span className="flex items-center gap-2 text-[13px] font-semibold text-blue-600 group-hover:text-blue-700">Demande un devis gratuit <ExternalLink className="w-3.5 h-3.5" /></span>
+                  <h3 className="text-[#0a0a0a] font-bold text-lg mb-2 font-heading">{tx.options.card1.title}</h3>
+                  <p className="text-[#525252] text-sm mb-6 line-clamp-2">{tx.options.card1.desc}</p>
+                  <span className="flex items-center gap-2 text-[13px] font-semibold text-blue-600 group-hover:text-blue-700">{tx.options.card1.cta} <ExternalLink className="w-3.5 h-3.5" /></span>
                 </a>
 
                 {/* Card 2 */}
                 <a href="https://academy.oumarousanda.com/coaching-ia" target="_blank" rel="noopener noreferrer" className="group bg-white border border-black/5 p-6 lg:p-8 rounded-2xl hover:border-black/15 hover:shadow-md transition-all duration-300 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 blur-3xl rounded-full group-hover:bg-gold/10 transition-all" />
                   <Briefcase className="w-8 h-8 text-[#525252] group-hover:text-gold-dark transition-colors mb-4" />
-                  <h3 className="text-[#0a0a0a] font-bold text-lg mb-2 font-heading">Consulting IA</h3>
-                  <p className="text-[#525252] text-sm mb-6 line-clamp-2">Tu veux un accompagnement stratégique sur l'IA pour ton business ou ton équipe ?</p>
-                  <span className="flex items-center gap-2 text-[13px] font-semibold text-gold-dark group-hover:text-gold">Réserve un appel stratégique <ExternalLink className="w-3.5 h-3.5" /></span>
+                  <h3 className="text-[#0a0a0a] font-bold text-lg mb-2 font-heading">{tx.options.card2.title}</h3>
+                  <p className="text-[#525252] text-sm mb-6 line-clamp-2">{tx.options.card2.desc}</p>
+                  <span className="flex items-center gap-2 text-[13px] font-semibold text-gold-dark group-hover:text-gold">{tx.options.card2.cta} <ExternalLink className="w-3.5 h-3.5" /></span>
                 </a>
 
                 {/* Card 3 */}
                 <a href="mailto:sponsoring@oumarousanda.com" className="group bg-white border border-black/5 p-6 lg:p-8 rounded-2xl hover:border-black/15 hover:shadow-md transition-all duration-300 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-coral-500/5 blur-3xl rounded-full group-hover:bg-coral-500/10 transition-all" />
                   <Globe className="w-8 h-8 text-[#525252] group-hover:text-coral-600 transition-colors mb-4" />
-                  <h3 className="text-[#0a0a0a] font-bold text-lg mb-2 font-heading">Sponsoring & Collaborations</h3>
-                  <p className="text-[#525252] text-sm mb-6 line-clamp-2">Tu représentes une marque ou un outil IA et tu veux toucher 112 000+ abonnés ?</p>
-                  <span className="flex items-center gap-2 text-[13px] font-semibold text-coral-600 group-hover:text-coral-700">Envoie ta proposition <ExternalLink className="w-3.5 h-3.5" /></span>
+                  <h3 className="text-[#0a0a0a] font-bold text-lg mb-2 font-heading">{tx.options.card3.title}</h3>
+                  <p className="text-[#525252] text-sm mb-6 line-clamp-2">{tx.options.card3.desc}</p>
+                  <span className="flex items-center gap-2 text-[13px] font-semibold text-coral-600 group-hover:text-coral-700">{tx.options.card3.cta} <ExternalLink className="w-3.5 h-3.5" /></span>
                 </a>
 
                 {/* Card 4 */}
                 <a href="mailto:presse@oumarousanda.com" className="group bg-white border border-black/5 p-5 sm:p-6 lg:p-8 rounded-2xl hover:border-black/15 hover:shadow-md transition-all duration-300 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 blur-3xl rounded-full group-hover:bg-emerald-500/10 transition-all" />
                   <FileText className="w-8 h-8 text-[#525252] group-hover:text-emerald-600 transition-colors mb-4" />
-                  <h3 className="text-[#0a0a0a] font-bold text-lg mb-2 font-heading">Presse, Médias & Conférences</h3>
-                  <p className="text-[#525252] text-sm mb-6 line-clamp-2">Interview, article, podcast, conférence, intervention ou citation ?</p>
-                  <span className="flex items-center gap-2 text-[13px] font-semibold text-emerald-600 group-hover:text-emerald-700">Contacte le service presse <ExternalLink className="w-3.5 h-3.5" /></span>
+                  <h3 className="text-[#0a0a0a] font-bold text-lg mb-2 font-heading">{tx.options.card4.title}</h3>
+                  <p className="text-[#525252] text-sm mb-6 line-clamp-2">{tx.options.card4.desc}</p>
+                  <span className="flex items-center gap-2 text-[13px] font-semibold text-emerald-600 group-hover:text-emerald-700">{tx.options.card4.cta} <ExternalLink className="w-3.5 h-3.5" /></span>
                 </a>
               </div>
             </motion.div>
@@ -175,58 +174,58 @@ export default function ContactPage() {
                       <div className="w-20 h-20 bg-emerald-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
                         <CheckCircle className="w-10 h-10 text-emerald-500" />
                       </div>
-                      <h3 className="font-heading font-black text-2xl text-[#0a0a0a] mb-4">Message envoyé !</h3>
+                      <h3 className="font-heading font-black text-2xl text-[#0a0a0a] mb-4">{tx.form.successTitle}</h3>
                       <p className="text-[#525252] mb-8 max-w-sm mx-auto leading-relaxed">
-                        Merci ! Ton message a bien été envoyé. Je reviens vers toi sous 48 heures maximum. En attendant, tu peux me suivre sur YouTube ou découvrir mes formations.
+                        {tx.form.successDesc}
                       </p>
                       <button onClick={() => setSubmitted(false)} className="px-6 py-3 bg-black/5 text-[#0a0a0a] hover:bg-black/10 rounded-xl font-bold text-sm transition-all border border-black/5">
-                        Envoyer un autre message
+                        {tx.form.sendAnother}
                       </button>
                     </div>
                   ) : (
                     <>
-                      <h3 className="text-2xl font-heading font-black text-[#0a0a0a] mb-8">Envoyer une demande</h3>
+                      <h3 className="text-2xl font-heading font-black text-[#0a0a0a] mb-8">{tx.form.title}</h3>
                       <form onSubmit={handleSubmit} className="space-y-5">
                         <div className="grid sm:grid-cols-2 gap-5">
                           <div>
-                            <label className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">Nom complet *</label>
-                            <input name="name" type="text" required value={form.name} onChange={handleChange} placeholder="Ex: Jean Dupont" className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all" />
+                            <label className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">{tx.form.nameLabel}</label>
+                            <input name="name" type="text" required value={form.name} onChange={handleChange} placeholder={tx.form.namePlaceholder} className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all" />
                           </div>
                           <div>
-                            <label className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">Email *</label>
+                            <label className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">{tx.form.emailLabel}</label>
                             <input name="email" type="email" required value={form.email} onChange={handleChange} placeholder="jean@entreprise.com" className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all" />
                           </div>
                         </div>
                         <div className="grid sm:grid-cols-2 gap-5">
                           <div>
-                            <label className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">Téléphone / WhatsApp</label>
+                            <label className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">{tx.form.phoneLabel}</label>
                             <input name="phone" type="tel" value={form.phone} onChange={handleChange} placeholder="+237 6XX XX XX XX" className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all" />
                           </div>
                           <div>
-                            <label className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">Sujet *</label>
+                            <label className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">{tx.form.subjectLabel}</label>
                             <select name="subject" required value={form.subject} onChange={handleChange} className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] outline-none transition-all appearance-none cursor-pointer focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm">
-                              <option value="" disabled>Sélectionner un sujet...</option>
-                              <option value="projet">Projet web</option>
-                              <option value="consulting">Consulting IA</option>
-                              <option value="sponsoring">Sponsoring</option>
-                              <option value="presse">Presse &amp; Médias</option>
-                              <option value="autre">Autre demande</option>
+                              <option value="" disabled>{tx.form.subjectPlaceholder}</option>
+                              <option value="projet">{tx.form.subjects.projet}</option>
+                              <option value="consulting">{tx.form.subjects.consulting}</option>
+                              <option value="sponsoring">{tx.form.subjects.sponsoring}</option>
+                              <option value="presse">{tx.form.subjects.presse}</option>
+                              <option value="autre">{tx.form.subjects.autre}</option>
                             </select>
                           </div>
                         </div>
                         <div>
-                          <label className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">Budget estimé (Optionnel)</label>
+                          <label className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">{tx.form.budgetLabel}</label>
                           <select name="budget" value={form.budget} onChange={handleChange} className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] outline-none transition-all appearance-none cursor-pointer focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm">
-                            <option value="">Pas encore défini</option>
-                            <option value="Moins de 100K FCFA">&lt; 100K FCFA</option>
-                            <option value="100K - 500K FCFA">100K - 500K FCFA</option>
-                            <option value="500K - 1M FCFA">500K - 1M FCFA</option>
-                            <option value="1M+ FCFA">1M+ FCFA</option>
+                            <option value="">{tx.form.budgetOptions.none}</option>
+                            <option value="Moins de 100K FCFA">{tx.form.budgetOptions.low}</option>
+                            <option value="100K - 500K FCFA">{tx.form.budgetOptions.mid}</option>
+                            <option value="500K - 1M FCFA">{tx.form.budgetOptions.high}</option>
+                            <option value="1M+ FCFA">{tx.form.budgetOptions.premium}</option>
                           </select>
                         </div>
                         <div>
-                          <label className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">Message *</label>
-                          <textarea name="message" required minLength={20} rows={5} value={form.message} onChange={handleChange} placeholder="Décris ton projet ou ta demande en quelques lignes..." className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all resize-none" />
+                          <label className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">{tx.form.messageLabel}</label>
+                          <textarea name="message" required minLength={20} rows={5} value={form.message} onChange={handleChange} placeholder={tx.form.messagePlaceholder} className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all resize-none" />
                         </div>
 
                         {/* Erreur API */}
@@ -242,9 +241,9 @@ export default function ContactPage() {
                           className="w-full py-4 bg-[#0a0a0a] hover:bg-black text-white font-heading font-black rounded-xl hover:shadow-lg transition-all flex items-center justify-center gap-2 text-sm uppercase tracking-wider border border-black/10 disabled:opacity-60 disabled:cursor-not-allowed"
                         >
                           {sending ? (
-                            <><Loader2 className="w-4 h-4 animate-spin" /> Envoi en cours...</>
+                            <><Loader2 className="w-4 h-4 animate-spin" /> {tx.form.sending}</>
                           ) : (
-                            <><Send className="w-4 h-4" /> Envoyer le message</>
+                            <><Send className="w-4 h-4" /> {tx.form.send}</>
                           )}
                         </button>
                       </form>
@@ -261,17 +260,17 @@ export default function ContactPage() {
                 className="lg:col-span-2 order-1 lg:order-2 space-y-8"
               >
                 <div>
-                  <h3 className="font-heading font-black text-xl text-[#0a0a0a] mb-6">Canaux Alternatifs</h3>
+                  <h3 className="font-heading font-black text-xl text-[#0a0a0a] mb-6">{tx.sidebar.altChannels}</h3>
                   <div className="space-y-4">
                     <div className="bg-white border border-black/5 shadow-sm rounded-2xl p-5">
                       <div className="flex items-center gap-3 mb-4">
                         <Mail className="w-5 h-5 text-[#525252]" />
-                        <h4 className="font-bold text-[#0a0a0a] text-sm">Emails Directs</h4>
+                        <h4 className="font-bold text-[#0a0a0a] text-sm">{tx.sidebar.directEmails}</h4>
                       </div>
                       <ul className="space-y-3">
-                        <li className="flex flex-col"><span className="text-[11px] text-[#a3a3a3] uppercase font-bold tracking-wider">Général</span><a href="mailto:contact@oumarousanda.com" className="text-[#525252] hover:text-[#0a0a0a] transition-colors text-sm font-medium">contact@oumarousanda.com</a></li>
-                        <li className="flex flex-col"><span className="text-[11px] text-[#a3a3a3] uppercase font-bold tracking-wider">Presse & Médias</span><a href="mailto:presse@oumarousanda.com" className="text-[#525252] hover:text-[#0a0a0a] transition-colors text-sm font-medium">presse@oumarousanda.com</a></li>
-                        <li className="flex flex-col"><span className="text-[11px] text-[#a3a3a3] uppercase font-bold tracking-wider">Sponsoring</span><a href="mailto:sponsoring@oumarousanda.com" className="text-[#525252] hover:text-[#0a0a0a] transition-colors text-sm font-medium">sponsoring@oumarousanda.com</a></li>
+                        <li className="flex flex-col"><span className="text-[11px] text-[#a3a3a3] uppercase font-bold tracking-wider">{tx.sidebar.general}</span><a href="mailto:contact@oumarousanda.com" className="text-[#525252] hover:text-[#0a0a0a] transition-colors text-sm font-medium">contact@oumarousanda.com</a></li>
+                        <li className="flex flex-col"><span className="text-[11px] text-[#a3a3a3] uppercase font-bold tracking-wider">{tx.sidebar.pressMedia}</span><a href="mailto:presse@oumarousanda.com" className="text-[#525252] hover:text-[#0a0a0a] transition-colors text-sm font-medium">presse@oumarousanda.com</a></li>
+                        <li className="flex flex-col"><span className="text-[11px] text-[#a3a3a3] uppercase font-bold tracking-wider">{tx.sidebar.sponsoring}</span><a href="mailto:sponsoring@oumarousanda.com" className="text-[#525252] hover:text-[#0a0a0a] transition-colors text-sm font-medium">sponsoring@oumarousanda.com</a></li>
                       </ul>
                     </div>
 
@@ -280,15 +279,15 @@ export default function ContactPage() {
                         <MessageSquare className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-[#0a0a0a] text-sm mb-1">WhatsApp Business</h4>
-                        <p className="text-[#525252] text-[12px] group-hover:text-[#0a0a0a] transition-colors">Pour les demandes urgentes uniquement.</p>
+                        <h4 className="font-bold text-[#0a0a0a] text-sm mb-1">{tx.sidebar.whatsappTitle}</h4>
+                        <p className="text-[#525252] text-[12px] group-hover:text-[#0a0a0a] transition-colors">{tx.sidebar.whatsappDesc}</p>
                       </div>
                     </a>
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="font-heading font-black text-xl text-[#0a0a0a] mb-6">Me retrouver</h3>
+                  <h3 className="font-heading font-black text-xl text-[#0a0a0a] mb-6">{tx.sidebar.findMe}</h3>
                   <div className="space-y-3">
                     {[
                       { name: 'YouTube', url: 'https://www.youtube.com/@Oumarou_Sanda', icon: Youtube, subs: '10 400' },
@@ -326,12 +325,12 @@ export default function ContactPage() {
               {/* Marques et Annonceurs */}
               <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-3xl border border-coral-500/20 relative overflow-hidden shadow-sm">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-coral-500/10 blur-[80px] rounded-full" />
-                <h3 className="font-heading text-2xl font-black text-[#0a0a0a] mb-6">Pour les marques et annonceurs</h3>
-                <p className="text-[#525252] mb-8 leading-relaxed">Tu représentes un outil IA, une plateforme SaaS, un événement tech ou une marque qui veut atteindre des entrepreneurs et créateurs francophones ?</p>
+                <h3 className="font-heading text-2xl font-black text-[#0a0a0a] mb-6">{tx.sponsoring.brandsTitle}</h3>
+                <p className="text-[#525252] mb-8 leading-relaxed">{tx.sponsoring.brandsDesc}</p>
 
-                <h4 className="text-coral-600 font-bold text-sm tracking-wider mb-4 uppercase">Ce que je propose :</h4>
+                <h4 className="text-coral-600 font-bold text-sm tracking-wider mb-4 uppercase">{tx.sponsoring.brandsSubtitle}</h4>
                 <ul className="space-y-3 mb-8">
-                  {["Vidéos sponsorisées YouTube (tutoriels, reviews, mentions)", "Contenu TikTok / Reels (formats viraux, éducatifs)", "Posts LinkedIn & Facebook (audience B2B)", "Newsletter sponsorisée (email list qualifiée)", "Ambassadeur de marque (long terme)"].map((item, i) => (
+                  {tx.sponsoring.brandsItems.map((item, i) => (
                     <li key={i} className="flex gap-3 text-[#525252] text-sm">
                       <CheckCircle className="w-4 h-4 text-coral-500 shrink-0 mt-0.5" />
                       <span>{item}</span>
@@ -341,34 +340,28 @@ export default function ContactPage() {
 
                 <div className="grid grid-cols-2 gap-4 mb-8">
                   <div className="bg-[#fafafa] p-4 rounded-xl border border-black/5">
-                    <span className="block text-[#a3a3a3] text-[10px] uppercase font-bold tracking-wider mb-1">Audience cumulée</span>
-                    <span className="block text-[#0a0a0a] font-bold text-lg">125K+ abonnés</span>
+                    <span className="block text-[#a3a3a3] text-[10px] uppercase font-bold tracking-wider mb-1">{tx.sponsoring.audienceLabel}</span>
+                    <span className="block text-[#0a0a0a] font-bold text-lg">{tx.sponsoring.audienceValue}</span>
                   </div>
                   <div className="bg-[#fafafa] p-4 rounded-xl border border-black/5">
-                    <span className="block text-[#a3a3a3] text-[10px] uppercase font-bold tracking-wider mb-1">Démographie</span>
-                    <span className="block text-[#0a0a0a] font-bold text-sm mt-1">18-45 ans, 70% hommes, Afrique + Diaspora</span>
+                    <span className="block text-[#a3a3a3] text-[10px] uppercase font-bold tracking-wider mb-1">{tx.sponsoring.demoLabel}</span>
+                    <span className="block text-[#0a0a0a] font-bold text-sm mt-1">{tx.sponsoring.demoValue}</span>
                   </div>
                 </div>
 
                 <p className="text-[#a3a3a3] text-sm italic border-l-2 border-coral-500/30 pl-4">
-                  Kit média disponible sur demande. Envoie ta proposition à <a href="mailto:sponsoring@oumarousanda.com" className="text-coral-600 hover:underline">sponsoring@oumarousanda.com</a>
+                  {tx.sponsoring.kitNote} <a href="mailto:sponsoring@oumarousanda.com" className="text-coral-600 hover:underline">sponsoring@oumarousanda.com</a>
                 </p>
               </div>
 
               {/* Médias et Événements */}
               <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-3xl border border-black/5 shadow-sm">
-                <h3 className="font-heading text-2xl font-black text-[#0a0a0a] mb-6">Pour les médias et organisateurs d'événements</h3>
-                <p className="text-[#525252] mb-8 leading-relaxed">Oumarou Sanda est disponible pour apporter son expertise sur l'IA et l'écosystème numérique africain.</p>
+                <h3 className="font-heading text-2xl font-black text-[#0a0a0a] mb-6">{tx.sponsoring.mediaTitle}</h3>
+                <p className="text-[#525252] mb-8 leading-relaxed">{tx.sponsoring.mediaDesc}</p>
 
-                <h4 className="text-blue-600 font-bold text-sm tracking-wider mb-4 uppercase">Formats d'intervention :</h4>
+                <h4 className="text-blue-600 font-bold text-sm tracking-wider mb-4 uppercase">{tx.sponsoring.mediaSubtitle}</h4>
                 <ul className="space-y-3 mb-10">
-                  {[
-                    "Interviews (presse, radio, télé, podcast)",
-                    "Conférences et keynotes (IA, souveraineté numérique)",
-                    "Panels et tables rondes (tech, innovation)",
-                    "Citations et expertise (rappports, documentaires)",
-                    "Contributions écrites (tribunes, op-eds)"
-                  ].map((item, i) => (
+                  {tx.sponsoring.mediaItems.map((item, i) => (
                     <li key={i} className="flex gap-3 text-[#525252] text-sm">
                       <MonitorPlay className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
                       <span>{item}</span>
@@ -377,14 +370,14 @@ export default function ContactPage() {
                 </ul>
 
                 <div className="bg-[#fafafa] p-5 rounded-2xl mb-8 border border-black/5">
-                  <h4 className="text-[#0a0a0a] font-bold text-[11px] tracking-wider mb-2 uppercase">Sujets d'expertise</h4>
+                  <h4 className="text-[#0a0a0a] font-bold text-[11px] tracking-wider mb-2 uppercase">{tx.sponsoring.expertiseLabel}</h4>
                   <p className="text-[#525252] text-sm leading-relaxed">
-                    Intelligence artificielle appliquée, souveraineté numérique africaine, vibe coding, création de contenu avec l'IA, entrepreneuriat digital en Afrique francophone.
+                    {tx.sponsoring.expertiseValue}
                   </p>
                 </div>
 
                 <p className="text-[#a3a3a3] text-sm italic border-l-2 border-black/10 pl-4">
-                  Bio et photos HD disponibles. Contact presse : <a href="mailto:presse@oumarousanda.com" className="text-[#525252] hover:text-[#0a0a0a] hover:underline">presse@oumarousanda.com</a>
+                  {tx.sponsoring.bioNote} <a href="mailto:presse@oumarousanda.com" className="text-[#525252] hover:text-[#0a0a0a] hover:underline">presse@oumarousanda.com</a>
                 </p>
               </div>
 
@@ -395,28 +388,28 @@ export default function ContactPage() {
         {/* SECTION 06 — LIENS RAPIDES */}
         <section className="py-12 border-b border-black/5 relative overflow-hidden bg-white">
           <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-            <h3 className="text-center font-heading text-xl font-bold text-[#a3a3a3] mb-8">Avant de partir...</h3>
+            <h3 className="text-center font-heading text-xl font-bold text-[#a3a3a3] mb-8">{tx.quickLinks.title}</h3>
             <div className="grid md:grid-cols-3 gap-6">
-              <Link to="/services" className="bg-[#fafafa] border border-black/5 p-6 rounded-2xl hover:bg-white hover:border-black/15 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group h-full">
+              <Link to={localePath('/services')} className="bg-[#fafafa] border border-black/5 p-6 rounded-2xl hover:bg-white hover:border-black/15 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group h-full">
                 <div>
-                  <h4 className="font-bold text-[#0a0a0a] mb-2 group-hover:text-blue-600 transition-colors">Découvrir mes services</h4>
-                  <p className="text-[#525252] text-sm mb-6">Agence Wendooka, Consulting IA & Production.</p>
+                  <h4 className="font-bold text-[#0a0a0a] mb-2 group-hover:text-blue-600 transition-colors">{tx.quickLinks.services.title}</h4>
+                  <p className="text-[#525252] text-sm mb-6">{tx.quickLinks.services.desc}</p>
                 </div>
-                <span className="text-[12px] font-bold uppercase tracking-wider text-[#a3a3a3] group-hover:text-blue-600 flex items-center gap-1 transition-colors">Page Services <ChevronRight className="w-3.5 h-3.5" /></span>
+                <span className="text-[12px] font-bold uppercase tracking-wider text-[#a3a3a3] group-hover:text-blue-600 flex items-center gap-1 transition-colors">{tx.quickLinks.services.cta} <ChevronRight className="w-3.5 h-3.5" /></span>
               </Link>
-              <Link to="/formations" className="bg-[#fafafa] border border-black/5 p-6 rounded-2xl hover:bg-white hover:border-black/15 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group h-full">
+              <Link to={localePath('/formations')} className="bg-[#fafafa] border border-black/5 p-6 rounded-2xl hover:bg-white hover:border-black/15 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group h-full">
                 <div>
-                  <h4 className="font-bold text-[#0a0a0a] mb-2 group-hover:text-coral-600 transition-colors">Se former sur l'IA</h4>
-                  <p className="text-[#525252] text-sm mb-6">Protocole Vidéo IA, Le Cerveau Augmenté, Coaching IA.</p>
+                  <h4 className="font-bold text-[#0a0a0a] mb-2 group-hover:text-coral-600 transition-colors">{tx.quickLinks.formations.title}</h4>
+                  <p className="text-[#525252] text-sm mb-6">{tx.quickLinks.formations.desc}</p>
                 </div>
-                <span className="text-[12px] font-bold uppercase tracking-wider text-[#a3a3a3] group-hover:text-coral-600 flex items-center gap-1 transition-colors">Mes Formations <ChevronRight className="w-3.5 h-3.5" /></span>
+                <span className="text-[12px] font-bold uppercase tracking-wider text-[#a3a3a3] group-hover:text-coral-600 flex items-center gap-1 transition-colors">{tx.quickLinks.formations.cta} <ChevronRight className="w-3.5 h-3.5" /></span>
               </Link>
-              <Link to="/blog" className="bg-[#fafafa] border border-black/5 p-6 rounded-2xl hover:bg-white hover:border-black/15 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group h-full">
+              <Link to={localePath('/blog')} className="bg-[#fafafa] border border-black/5 p-6 rounded-2xl hover:bg-white hover:border-black/15 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group h-full">
                 <div>
-                  <h4 className="font-bold text-[#0a0a0a] mb-2 group-hover:text-emerald-600 transition-colors">Lire mes analyses</h4>
-                  <p className="text-[#525252] text-sm mb-6">IA & Outils, Business Digital, Vibe Coding, Afrique.</p>
+                  <h4 className="font-bold text-[#0a0a0a] mb-2 group-hover:text-emerald-600 transition-colors">{tx.quickLinks.blog.title}</h4>
+                  <p className="text-[#525252] text-sm mb-6">{tx.quickLinks.blog.desc}</p>
                 </div>
-                <span className="text-[12px] font-bold uppercase tracking-wider text-[#a3a3a3] group-hover:text-emerald-600 flex items-center gap-1 transition-colors">Le Blog <ChevronRight className="w-3.5 h-3.5" /></span>
+                <span className="text-[12px] font-bold uppercase tracking-wider text-[#a3a3a3] group-hover:text-emerald-600 flex items-center gap-1 transition-colors">{tx.quickLinks.blog.cta} <ChevronRight className="w-3.5 h-3.5" /></span>
               </Link>
             </div>
           </div>
@@ -425,7 +418,7 @@ export default function ContactPage() {
         {/* SECTION 07 — FAQ */}
         <section className="py-20 bg-[#fafafa]">
           <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
-            <h2 className="font-heading text-3xl font-black text-[#0a0a0a] text-center mb-12">Questions Fréquentes</h2>
+            <h2 className="font-heading text-3xl font-black text-[#0a0a0a] text-center mb-12">{tx.faq.title}</h2>
             <div className="space-y-4">
               {faqs.map((faq, index) => (
                 <div key={index} className="bg-white border border-black/5 shadow-sm rounded-2xl overflow-hidden">

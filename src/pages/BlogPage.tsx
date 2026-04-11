@@ -1,11 +1,14 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { articles as staticArticles } from '../data/articles';
+import { articlesEn } from '../data/articles-en';
 import { getDashboardArticles } from '../hooks/useDashboardArticles';
 import { Calendar, ArrowRight, Search, BookOpen, Clock } from 'lucide-react';
 import { SEOHead } from '../components/SEOHead';
 import { AdUnit } from '../components/AdUnit';
+import { useLanguage } from '../i18n';
+import { blogTexts } from '../i18n/pages/blog';
 
 /* ══ Shared article type (covers both static & dashboard articles) ══ */
 export interface BlogArticleMeta {
@@ -22,7 +25,24 @@ export interface BlogArticleMeta {
 }
 
 /* ══ Merge static + published dashboard articles ══ */
-function getAllArticles(): BlogArticleMeta[] {
+function getAllArticles(lang: 'fr' | 'en'): BlogArticleMeta[] {
+  if (lang === 'en') {
+    // English: only show English articles
+    return articlesEn.map((a) => ({
+      slug: a.slug,
+      title: a.title,
+      excerpt: a.excerpt,
+      category: a.category,
+      tag: a.tag,
+      tagColor: a.tagColor,
+      image: 'image' in a ? String(a.image) : undefined,
+      date: a.date,
+      readTime: a.readTime,
+      isDashboard: false,
+    }));
+  }
+
+  // French: static FR articles + dashboard articles
   const staticOnes: BlogArticleMeta[] = staticArticles.map((a) => ({
     slug: a.slug,
     title: a.title,
@@ -51,11 +71,12 @@ function getAllArticles(): BlogArticleMeta[] {
       isDashboard: true,
     }));
 
-  // Dashboard articles first (newest), then static
   return [...dashboardOnes, ...staticOnes];
 }
 
-const allCategories = ['Toutes', 'IA & Outils', 'Business Digital', 'Vibe Coding', 'Entrepreneuriat Afrique', 'Analyses & Opinions', 'Automatisation', 'Tutoriels', 'Avis & Tests'];
+/* Categories used for filtering */
+const frCategories = blogTexts.fr.categories;
+const enCategories = blogTexts.en.categories;
 
 /* ═══════════════════════ HERO BLOG ═══════════════════════ */
 function BlogHero({
@@ -69,6 +90,17 @@ function BlogHero({
   activeCategory: string;
   setActiveCategory: (c: string) => void;
 }) {
+  const { language } = useLanguage();
+  const tx = blogTexts[language];
+
+  const activeCats = language === 'en' ? enCategories : frCategories;
+
+  /* Map category key → display label for current language */
+  const categoryMap: Record<string, string> = {};
+  activeCats.forEach((cat, i) => {
+    categoryMap[cat] = tx.categories[i];
+  });
+
   return (
     <section className="relative pt-32 pb-16 section-dark overflow-hidden min-h-[50dvh] flex items-center justify-center border-b border-white/5">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-500/10 via-[#050505] to-[#050505] opacity-60" />
@@ -78,14 +110,14 @@ function BlogHero({
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-left w-full">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 font-bold text-[11px] tracking-wider uppercase mb-6 shadow-sm">
-              LE BLOG
+              {tx.hero.badge}
             </div>
             <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-black mb-6 tracking-tight text-white leading-[1.2]">
-              L'IA avance.<br />
-              <span className="text-gold block mt-2">Toi aussi.</span>
+              {tx.hero.h1_1}<br />
+              <span className="text-gold block mt-2">{tx.hero.h1_2}</span>
             </h1>
             <p className="text-white/65 text-lg sm:text-lg leading-relaxed mb-12 font-inter max-w-xl">
-              Analyses sans filtre, tutoriels concrets et stratégies testées sur l'intelligence artificielle, le business digital et l'entrepreneuriat — avec un focus Afrique francophone. Pas de théorie creuse. <strong className="text-white font-bold">Du contenu que tu peux appliquer dès maintenant.</strong>
+              {tx.hero.desc_pre} <strong className="text-white font-bold">{tx.hero.descBold}</strong>
             </p>
 
             {/* SEARCH BAR */}
@@ -98,13 +130,13 @@ function BlogHero({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white placeholder:text-white/40 focus:outline-none focus:border-blue-500/50 focus:bg-white/10 transition-all text-sm font-medium shadow-sm"
-                placeholder="Rechercher un article, un outil, une stratégie..."
+                placeholder={tx.hero.searchPlaceholder}
               />
             </div>
 
             {/* CATEGORIES FILTERS */}
             <div className="flex flex-wrap justify-start gap-2 max-w-lg">
-              {allCategories.map((cat) => {
+              {activeCats.map((cat) => {
                 const isActive = activeCategory === cat;
                 return (
                   <button
@@ -117,7 +149,7 @@ function BlogHero({
                         : 'bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10')
                     }
                   >
-                    {cat}
+                    {categoryMap[cat] || cat}
                   </button>
                 );
               })}
@@ -137,6 +169,9 @@ function BlogHero({
 
 /* ═══════════════════════ FEATURED CARD ═══════════════════════ */
 function FeaturedCard({ article }: { article: BlogArticleMeta }) {
+  const { language, localePath } = useLanguage();
+  const tx = blogTexts[language];
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -146,7 +181,7 @@ function FeaturedCard({ article }: { article: BlogArticleMeta }) {
       className="mb-10"
     >
       <Link
-        to={'/blog/' + article.slug}
+        to={localePath('/blog/' + article.slug)}
         className="group flex flex-col md:flex-row bg-white border border-black/5 hover:border-blue-500/30 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500"
       >
         {article.image && (
@@ -164,7 +199,7 @@ function FeaturedCard({ article }: { article: BlogArticleMeta }) {
               </span>
             </div>
             <div className="absolute top-3 right-3 sm:top-4 sm:right-4 px-2.5 py-1 bg-black/60 backdrop-blur-sm rounded-full text-white text-[9px] sm:text-[10px] font-bold tracking-wide">
-              ✦ À la une
+              {tx.featured}
             </div>
           </div>
         )}
@@ -180,7 +215,7 @@ function FeaturedCard({ article }: { article: BlogArticleMeta }) {
             <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" /> {article.date}</span>
             <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> {article.readTime}</span>
             <span className="ml-auto text-blue-600 flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
-              Lire l'article <ArrowRight className="w-3.5 h-3.5" />
+              {tx.readArticle} <ArrowRight className="w-3.5 h-3.5" />
             </span>
           </div>
         </div>
@@ -191,6 +226,8 @@ function FeaturedCard({ article }: { article: BlogArticleMeta }) {
 
 /* ═══════════════════════ ARTICLES GRID ═══════════════════════ */
 function BlogGrid({ filteredArticles }: { filteredArticles: BlogArticleMeta[] }) {
+  const { language, localePath } = useLanguage();
+  const tx = blogTexts[language];
   const [featured, ...rest] = filteredArticles;
 
   return (
@@ -204,8 +241,8 @@ function BlogGrid({ filteredArticles }: { filteredArticles: BlogArticleMeta[] })
               className="text-center py-20"
             >
               <Search className="w-12 h-12 text-[#a3a3a3] mx-auto mb-4" />
-              <h3 className="text-xl text-[#0a0a0a] font-bold mb-2">Aucun article trouvé.</h3>
-              <p className="text-[#525252]">Essayez une autre recherche ou catégorie.</p>
+              <h3 className="text-xl text-[#0a0a0a] font-bold mb-2">{tx.empty.title}</h3>
+              <p className="text-[#525252]">{tx.empty.desc}</p>
             </motion.div>
           ) : (
             <motion.div
@@ -235,7 +272,7 @@ function BlogGrid({ filteredArticles }: { filteredArticles: BlogArticleMeta[] })
                       transition={{ duration: 0.4, delay: i * 0.03 }}
                       className="h-full"
                     >
-                      <Link to={'/blog/' + article.slug} className="bg-white border border-black/5 hover:border-blue-500/30 transition-all duration-500 rounded-2xl overflow-hidden group flex flex-col h-full shadow-sm hover:shadow-xl">
+                      <Link to={localePath('/blog/' + article.slug)} className="bg-white border border-black/5 hover:border-blue-500/30 transition-all duration-500 rounded-2xl overflow-hidden group flex flex-col h-full shadow-sm hover:shadow-xl">
                         {/* IMAGE */}
                         {article.image && (
                           <div className="w-full aspect-[16/9] bg-[#f5f5f5] relative overflow-hidden border-b border-black/5">
@@ -268,7 +305,7 @@ function BlogGrid({ filteredArticles }: { filteredArticles: BlogArticleMeta[] })
                               <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {article.date}</span>
                               <span className="flex items-center gap-1 text-[#a3a3a3]"><Clock className="w-3 h-3" /> {article.readTime}</span>
                             </div>
-                            <span className="text-blue-600 flex items-center gap-1 group-hover:gap-1.5 transition-all text-[11px]">Lire <ArrowRight className="w-3 h-3" /></span>
+                            <span className="text-blue-600 flex items-center gap-1 group-hover:gap-1.5 transition-all text-[11px]">{tx.read} <ArrowRight className="w-3 h-3" /></span>
                           </div>
                         </div>
                       </Link>
@@ -291,19 +328,19 @@ function BlogGrid({ filteredArticles }: { filteredArticles: BlogArticleMeta[] })
             <div className="absolute -top-20 -right-20 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl" />
             <div className="relative z-10">
               <span className="text-3xl mb-4 block">📬</span>
-              <h3 className="font-heading text-2xl font-black text-[#0a0a0a] mb-3">Rejoins +10 000 entrepreneurs</h3>
-              <p className="text-[#525252] text-[15px] mb-8 max-w-lg mx-auto">Reçois mes stratégies IA, mes analyses et des opportunités business chaque semaine directement dans ta boîte mail.</p>
+              <h3 className="font-heading text-2xl font-black text-[#0a0a0a] mb-3">{tx.newsletter.title}</h3>
+              <p className="text-[#525252] text-[15px] mb-8 max-w-lg mx-auto">{tx.newsletter.desc}</p>
               <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <input
                   type="email"
-                  placeholder="ton@email.com"
+                  placeholder={tx.newsletter.placeholder}
                   className="flex-1 bg-white border border-black/10 rounded-xl px-5 py-3.5 text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:outline-none focus:border-blue-500/40 transition-all text-sm shadow-sm"
                 />
                 <button className="px-6 py-3.5 bg-blue-600 text-white font-bold tracking-wider text-[13px] rounded-xl hover:shadow-lg hover:shadow-blue-500/20 transition-all whitespace-nowrap uppercase">
-                  S'inscrire
+                  {tx.newsletter.subscribe}
                 </button>
               </div>
-              <p className="text-[#a3a3a3] text-[11px] mt-4 font-medium uppercase tracking-widest">Gratuit • Pas de spam • Désinscription en un clic</p>
+              <p className="text-[#a3a3a3] text-[11px] mt-4 font-medium uppercase tracking-widest">{tx.newsletter.note}</p>
             </div>
           </div>
         </motion.div>
@@ -315,9 +352,9 @@ function BlogGrid({ filteredArticles }: { filteredArticles: BlogArticleMeta[] })
           viewport={{ once: true }}
           className="mt-12 text-center"
         >
-          <Link to="/formations" className="inline-flex items-center gap-2.5 px-6 sm:px-8 py-4 bg-[#0a0a0a] text-white font-bold rounded-xl hover:bg-gold hover:shadow-md hover:shadow-gold/30 transition-all shadow-sm uppercase tracking-wider text-[12px] sm:text-[14px] leading-snug">
+          <Link to={localePath('/formations')} className="inline-flex items-center gap-2.5 px-6 sm:px-8 py-4 bg-[#0a0a0a] text-white font-bold rounded-xl hover:bg-gold hover:shadow-md hover:shadow-gold/30 transition-all shadow-sm uppercase tracking-wider text-[12px] sm:text-[14px] leading-snug">
             <BookOpen className="w-5 h-5 shrink-0" />
-            Les articles c'est bien, l'action c'est mieux — Voir les formations
+            {tx.ctaFormations}
           </Link>
         </motion.div>
       </div>
@@ -327,6 +364,9 @@ function BlogGrid({ filteredArticles }: { filteredArticles: BlogArticleMeta[] })
 
 /* ═══════════════════════ AUTHOR BIO (récurrent) ═══════════════════════ */
 function AuthorSidebar() {
+  const { language } = useLanguage();
+  const tx = blogTexts[language];
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -341,7 +381,7 @@ function AuthorSidebar() {
         <div>
           <h4 className="font-heading font-black text-[#0a0a0a] text-lg mb-1">Oumarou Sanda</h4>
           <p className="text-[#525252] text-[13px] leading-relaxed font-medium">
-            Entrepreneur digital, expert en intelligence artificielle et formateur basé au Cameroun. Fondateur de <span className="font-bold text-blue-600">Wendooka</span> et <span className="font-bold text-gold-dark">Sanda Vibe Code</span>, il a formé des centaines d'entrepreneurs africains à utiliser l'IA pour générer des revenus. Il est l'auteur de «Si l'Afrique rate l'IA, elle rate le Futur».
+            {tx.author.desc} <span className="font-bold text-blue-600">Wendooka</span> et <span className="font-bold text-gold-dark">Sanda Vibe Code</span>{tx.author.descEnd}
           </p>
         </div>
       </div>
@@ -351,20 +391,29 @@ function AuthorSidebar() {
 
 /* ═══════════════════════ PAGE EXPORT ═══════════════════════ */
 export default function BlogPage() {
+  const { language } = useLanguage();
+  const tx = blogTexts[language];
 
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeCategory, setActiveCategory] = useState('Toutes');
+  const cats = language === 'en' ? enCategories : frCategories;
+  const [activeCategory, setActiveCategory] = useState<string>(cats[0]);
 
-  // Get all articles (static + published dashboard)
-  const allArticles = useMemo(() => getAllArticles(), []);
+  // Reset category filter when language changes
+  useEffect(() => {
+    setActiveCategory(language === 'en' ? enCategories[0] : frCategories[0]);
+  }, [language]);
+
+  // Get all articles (static + published dashboard), filtered by language
+  const allArticles = useMemo(() => getAllArticles(language as 'fr' | 'en'), [language]);
 
   const filteredArticles = useMemo(() => {
     let result = [...allArticles];
 
     // Filter by Category
-    if (activeCategory !== 'Toutes') {
-      if (activeCategory === 'Tutoriels') {
-        result = result.filter((a) => a.tag === 'Tutoriel' || a.tag === 'Guide');
+    const allCat = language === 'en' ? enCategories[0] : frCategories[0];
+    if (activeCategory !== allCat) {
+      if (activeCategory === 'Tutoriels' || activeCategory === 'Tutorials') {
+        result = result.filter((a) => a.tag === 'Tutoriel' || a.tag === 'Guide' || a.tag === 'Tutorial');
       } else {
         result = result.filter((a) => a.category === activeCategory);
       }
@@ -387,8 +436,8 @@ export default function BlogPage() {
   return (
     <>
       <SEOHead
-        title="Blog | IA, Business Digital & Entrepreneuriat — Oumarou Sanda"
-        description="Analyses, tutoriels et stratégies sur l'intelligence artificielle, le business digital et l'entrepreneuriat en Afrique. Par Oumarou Sanda, expert IA et fondateur de Wendooka et Sanda Vibe Code."
+        title={tx.seo.title}
+        description={tx.seo.description}
         canonical="/blog"
         schema={{ "@context": "https://schema.org", "@type": "Blog", "name": "Blog Oumarou Sanda", "url": "https://oumarousanda.com/blog", "author": { "@type": "Person", "name": "Oumarou Sanda" } }}
       />

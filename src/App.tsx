@@ -68,33 +68,54 @@ function PageLoader() {
   return <div className="min-h-screen bg-white" aria-hidden="true" />;
 }
 
+/** Public site routes — shared between FR (/) and EN (/en) */
+function PublicRoutes() {
+  return (
+    <>
+      <Route element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="a-propos" element={<AboutPage />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="services" element={<ServicesPage />} />
+        <Route path="formations" element={<FormationsPage />} />
+        <Route path="formations/:slug" element={<FormationDetailPage />} />
+        <Route path="blog" element={<BlogPage />} />
+        <Route path="blog/:slug" element={<BlogArticlePage />} />
+        <Route path="medias" element={<MediaPage />} />
+        <Route path="media" element={<MediaPage />} />
+        <Route path="livres" element={<BookPage />} />
+        <Route path="books" element={<BookPage />} />
+        <Route path="contact" element={<ContactPage />} />
+        <Route path="ressources" element={<RessourcesPage />} />
+        <Route path="resources" element={<RessourcesPage />} />
+        <Route path="kit-media" element={<MediaKitPage />} />
+        <Route path="media-kit" element={<MediaKitPage />} />
+        <Route path="challenge-30-jours" element={<ChallengePage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </>
+  );
+}
+
 export function App() {
   return (
     <ErrorBoundary>
-      <LanguageProvider>
-        <BrowserRouter>
+      <BrowserRouter>
+        <LanguageProvider>
           <Suspense fallback={<PageLoader />}>
           <Routes>
             {/* Standalone pages (no navbar/footer) */}
             <Route path="/links" element={<LinksPage />} />
             <Route path="/quiz-ia" element={<QuizIAPage />} />
 
-            {/* Public Site */}
-            <Route element={<Layout />}>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/a-propos" element={<AboutPage />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/formations" element={<FormationsPage />} />
-              <Route path="/formations/:slug" element={<FormationDetailPage />} />
-              <Route path="/blog" element={<BlogPage />} />
-              <Route path="/blog/:slug" element={<BlogArticlePage />} />
-              <Route path="/medias" element={<MediaPage />} />
-              <Route path="/livres" element={<BookPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/ressources" element={<RessourcesPage />} />
-              <Route path="/kit-media" element={<MediaKitPage />} />
-              <Route path="/challenge-30-jours" element={<ChallengePage />} />
-              <Route path="*" element={<NotFoundPage />} />
+            {/* English site — /en/* */}
+            <Route path="/en/*">
+              {PublicRoutes()}
+            </Route>
+
+            {/* French site (default) — /* */}
+            <Route path="/*">
+              {PublicRoutes()}
             </Route>
 
             {/* Admin Dashboard — Login page (public) */}
@@ -116,8 +137,8 @@ export function App() {
             </Route>
           </Routes>
           </Suspense>
-        </BrowserRouter>
-      </LanguageProvider>
+        </LanguageProvider>
+      </BrowserRouter>
     </ErrorBoundary>
   );
 }

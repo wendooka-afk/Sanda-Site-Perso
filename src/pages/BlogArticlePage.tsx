@@ -30,6 +30,7 @@ function parseFrenchDate(dateStr?: string): string | undefined {
 }
 import { motion } from 'framer-motion';
 import { articles } from '../data/articles';
+import { articlesEn } from '../data/articles-en';
 import { getDashboardArticleBySlug } from '../hooks/useDashboardArticles';
 import type { DashboardArticle } from '../hooks/useDashboardArticles';
 import { marked } from 'marked';
@@ -37,6 +38,8 @@ import { applyAutoLinks } from '../utils/autoLink';
 import { Calendar, Clock, ArrowLeft, ArrowRight, Home, ChevronRight, Share2, ExternalLink, CheckCircle2, XCircle, AlertTriangle, List, Play, Puzzle, Palette, DollarSign, MessageCircle, Send, User, Heart, Reply, Linkedin, Facebook, Globe, Youtube, BookOpen } from 'lucide-react';
 import { useState, useEffect, useCallback } from 'react';
 import { SEOHead } from '../components/SEOHead';
+import { useLanguage } from '../i18n';
+import { blogTexts } from '../i18n/pages/blog';
 
 /* ═══ Rich Section Renderers ═══ */
 
@@ -163,12 +166,14 @@ function RenderDisclaimer({ content }: { content: string }) {
 }
 
 function RenderKeyPoints({ items }: { items: string[] }) {
+  const { language } = useLanguage();
+  const tx = blogTexts[language].article;
   return (
     <div className="my-10 p-6 sm:p-8 rounded-2xl bg-white border border-gold/20 relative overflow-hidden group shadow-lg shadow-gold/5">
       <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       <h3 className="font-heading font-bold text-gold text-sm tracking-widest mb-6 flex items-center gap-2">
         <CheckCircle2 className="w-4 h-4" />
-        Points clés à retenir
+        {tx.keyPoints}
       </h3>
       <div className="grid sm:grid-cols-2 gap-y-4 gap-x-8">
         {items.map((item, i) => (
@@ -348,11 +353,13 @@ function RenderFAQ({ items }: { items: { q: string; a: string }[] }) {
 
 /* ═══ Internal Links Renderer ═══ */
 function RenderInternalLinks({ items }: { items: { label: string; url?: string; slug?: string }[] }) {
+  const { language } = useLanguage();
+  const tx = blogTexts[language].article;
   return (
     <div className="my-10 p-6 sm:p-8 rounded-2xl bg-[#fafafa] border border-black/5 shadow-inner">
       <h4 className="font-heading font-bold text-[#0a0a0a] text-[14px] mb-5 flex items-center gap-2">
         <BookOpen className="w-4 h-4 text-gold" />
-        À lire aussi sur oumarousanda.com
+        {tx.alsoRead}
       </h4>
       <ul className="space-y-3">
         {items
@@ -373,11 +380,13 @@ function RenderInternalLinks({ items }: { items: { label: string; url?: string; 
 
 /* ═══ Table of Contents ═══ */
 function TableOfContents({ items, className = '' }: { items: { id: string; label: string }[]; className?: string }) {
+  const { language } = useLanguage();
+  const tx = blogTexts[language].article;
   return (
     <div className={`bg-white rounded-2xl p-6 mb-10 border border-black/5 shadow-sm ${className}`}>
       <div className="flex items-center gap-2 mb-4">
         <List className="w-4 h-4 text-gold" />
-        <h3 className="font-heading font-bold text-[#0a0a0a] text-[14px]">Table des matières</h3>
+        <h3 className="font-heading font-bold text-[#0a0a0a] text-[14px]">{tx.toc}</h3>
       </div>
       <nav className="space-y-1.5">
         {items.map((item, i) => (
@@ -497,6 +506,8 @@ function PlainArticleContent({ content }: { content: string }) {
 
 /* ═══ Author Bio (Section 09 copy) ═══ */
 function AuthorBio() {
+  const { language, localePath } = useLanguage();
+  const tx = blogTexts[language].article;
   const socials = [
     { icon: Youtube, label: 'YouTube', url: 'https://www.youtube.com/@Oumarou_Sanda', color: 'hover:text-red-500 hover:border-red-500/20 hover:bg-red-500/5' },
     { icon: Linkedin, label: 'LinkedIn', url: 'https://linkedin.com/in/benibsanda', color: 'hover:text-blue hover:border-blue/20 hover:bg-blue/5' },
@@ -513,7 +524,7 @@ function AuthorBio() {
     >
       <div className="flex items-center gap-2.5 mb-6">
         <div className="w-1 h-5 bg-gradient-to-b from-gold to-gold-light rounded-full" />
-        <h3 className="font-heading font-bold text-[#0a0a0a] text-[15px] tracking-tight">À propos de l'auteur</h3>
+        <h3 className="font-heading font-bold text-[#0a0a0a] text-[15px] tracking-tight">{tx.aboutAuthor}</h3>
       </div>
 
       <div className="flex flex-col sm:flex-row items-start gap-6">
@@ -528,12 +539,12 @@ function AuthorBio() {
           <div className="flex items-center gap-3 mb-2 flex-wrap">
             <h4 className="font-heading font-bold text-[#0a0a0a] text-lg">Oumarou Sanda</h4>
             <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-gold/10 text-gold border border-gold/20">
-              Expert IA Générative
+              {tx.expertTitle}
             </span>
           </div>
 
           <p className="text-[#737373] text-[13px] leading-relaxed mb-4">
-            Oumarou Sanda est un entrepreneur digital, expert en intelligence artificielle et formateur basé au Cameroun. Fondateur de <span className="text-gold/70 font-semibold">Wendooka</span> et <span className="text-blue/80 font-semibold">Sanda Vibe Code</span>, il a formé des centaines d'entrepreneurs africains à utiliser l'IA pour générer des revenus. Il est l'auteur de «Si l'Afrique rate l'IA, elle rate le Futur».
+            {tx.authorBio} <span className="text-gold/70 font-semibold">Wendooka</span> {language === 'en' ? 'and' : 'et'} <span className="text-blue/80 font-semibold">Sanda Vibe Code</span>{tx.authorBioEnd}
           </p>
 
           <div className="flex items-center gap-4 flex-wrap">
@@ -552,10 +563,10 @@ function AuthorBio() {
               ))}
             </div>
             <Link
-              to="/blog"
+              to={localePath('/blog')}
               className="text-gold/60 text-[12px] font-medium hover:text-gold transition-colors flex items-center gap-1.5 group"
             >
-              Voir tous les articles
+              {tx.viewAllArticles}
               <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </div>
@@ -567,13 +578,14 @@ function AuthorBio() {
 
 /* ═══ Related Articles (Section 09 — Articles Liés) ═══ */
 function RelatedArticles({ currentSlug, category }: { currentSlug: string; category: string }) {
-  const related = articles
+  const isEn = articlesEn.some(a => a.slug === currentSlug);
+  const source = isEn ? (articlesEn as typeof articles) : articles;
+  const related = source
     .filter(a => a.slug !== currentSlug && a.category === category)
     .slice(0, 3);
 
   if (related.length === 0) {
-    // Fallback: show any 3 articles not current
-    const fallback = articles.filter(a => a.slug !== currentSlug).slice(0, 3);
+    const fallback = source.filter(a => a.slug !== currentSlug).slice(0, 3);
     if (fallback.length === 0) return null;
     return <RelatedGrid items={fallback} />;
   }
@@ -582,6 +594,8 @@ function RelatedArticles({ currentSlug, category }: { currentSlug: string; categ
 }
 
 function RelatedGrid({ items }: { items: typeof articles }) {
+  const { language, localePath } = useLanguage();
+  const tx = blogTexts[language].article;
   return (
     <motion.div
       initial={{ opacity: 0, y: 15 }}
@@ -591,11 +605,11 @@ function RelatedGrid({ items }: { items: typeof articles }) {
     >
       <h3 className="font-heading font-bold text-[#0a0a0a] text-lg mb-6 flex items-center gap-2">
         <BookOpen className="w-5 h-5 text-gold" />
-        Articles liés
+        {tx.relatedArticles}
       </h3>
       <div className="grid sm:grid-cols-3 gap-4">
         {items.map((a) => (
-          <Link key={a.slug} to={'/blog/' + a.slug} className="bg-white border border-black/5 rounded-xl overflow-hidden group shadow-sm hover:shadow-md transition-all">
+          <Link key={a.slug} to={localePath('/blog/' + a.slug)} className="bg-white border border-black/5 rounded-xl overflow-hidden group shadow-sm hover:shadow-md transition-all">
             {'image' in a && a.image && (
               <div className="w-full aspect-[16/9] overflow-hidden">
                 <img src={a.image} alt={a.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
@@ -614,25 +628,39 @@ function RelatedGrid({ items }: { items: typeof articles }) {
 
 /* ═══ CTA contextuel (milieu/fin de l'article) ═══ */
 function ArticleCTABlock({ category }: { category: string }) {
-  let ctaText = 'Tu veux aller plus loin ?';
-  let ctaDesc = 'Découvre les formations Oumarou Sanda et passe de la théorie à l\'action.';
-  let ctaLink = '/formations';
-  let ctaLabel = 'Voir les formations';
+  const { language, localePath } = useLanguage();
+  const tx = blogTexts[language].article;
+  let ctaText: string = tx.ctaTitle;
+  let ctaDesc: string = tx.ctaDesc;
+  let ctaLink: string = language === 'en' ? '/services' : '/formations';
+  let ctaLabel: string = tx.ctaLabel;
 
-  if (category === 'IA & Outils' || category === 'Vidéo IA') {
-    ctaDesc = 'Maîtrise 28 outils IA en 15 min/jour — le Challenge 30 Jours IA, c\'est fait pour toi.';
-    ctaLabel = 'Voir le Challenge 30 Jours IA';
-    ctaLink = '/challenge-30-jours';
-  } else if (category === 'Vibe Coding') {
-    ctaDesc = 'Apprends à créer des applications et SaaS sans coder grâce à Sanda Vibe Code.';
-    ctaLabel = 'Découvrir Sanda Vibe Code';
-    ctaLink = '/services';
-  } else if (category === 'Entrepreneuriat Afrique') {
-    ctaDesc = 'Crée ta société au UK, ouvre Stripe, et vends partout dans le monde avec Offshore Empire.';
-    ctaLabel = 'Voir Offshore Empire';
-  } else if (category === 'Analyses & Opinions') {
-    ctaDesc = 'Lis le livre manifeste « Si l\'Afrique rate l\'IA, elle rate le Futur », disponible maintenant.';
-    ctaLabel = 'Découvrir le livre';
+  if (language === 'fr') {
+    if (category === 'IA & Outils' || category === 'Vidéo IA') {
+      ctaDesc = 'Maîtrise 28 outils IA en 15 min/jour — le Challenge 30 Jours IA, c\'est fait pour toi.';
+      ctaLabel = 'Voir le Challenge 30 Jours IA';
+      ctaLink = '/challenge-30-jours';
+    } else if (category === 'Vibe Coding') {
+      ctaDesc = 'Apprends à créer des applications et SaaS sans coder grâce à Sanda Vibe Code.';
+      ctaLabel = 'Découvrir Sanda Vibe Code';
+      ctaLink = '/services';
+    } else if (category === 'Entrepreneuriat Afrique') {
+      ctaDesc = 'Crée ta société au UK, ouvre Stripe, et vends partout dans le monde avec Offshore Empire.';
+      ctaLabel = 'Voir Offshore Empire';
+    } else if (category === 'Analyses & Opinions') {
+      ctaDesc = 'Lis le livre manifeste « Si l\'Afrique rate l\'IA, elle rate le Futur », disponible maintenant.';
+      ctaLabel = 'Découvrir le livre';
+    }
+  } else {
+    if (category === 'AI & Tools' || category === 'Automation') {
+      ctaDesc = 'Explore Oumarou Sanda\'s services and see how AI can transform your business.';
+      ctaLabel = 'View services';
+      ctaLink = '/services';
+    } else if (category === 'Digital Business') {
+      ctaDesc = 'Learn how to build a digital business with AI — from strategy to execution.';
+      ctaLabel = 'View services';
+      ctaLink = '/services';
+    }
   }
 
   return (
@@ -641,7 +669,7 @@ function ArticleCTABlock({ category }: { category: string }) {
       <div className="relative z-10">
         <h4 className="font-heading font-bold text-[#0a0a0a] text-lg mb-2">🚀 {ctaText}</h4>
         <p className="text-[#525252] text-[14px] mb-5 leading-relaxed">{ctaDesc}</p>
-        <Link to={ctaLink} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold to-gold-light text-dark-950 font-heading font-bold text-[13px] rounded-xl hover:shadow-lg hover:shadow-gold/15 transition-all">
+        <Link to={localePath(ctaLink)} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold to-gold-light text-dark-950 font-heading font-bold text-[13px] rounded-xl hover:shadow-lg hover:shadow-gold/15 transition-all">
           {ctaLabel}
           <ArrowRight className="w-4 h-4" />
         </Link>
@@ -652,6 +680,8 @@ function ArticleCTABlock({ category }: { category: string }) {
 
 /* ═══ Newsletter CTA — Premium ═══ */
 function NewsletterCTA() {
+  const { language } = useLanguage();
+  const tx = blogTexts[language].article;
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -668,13 +698,13 @@ function NewsletterCTA() {
         <div className="flex-1 min-w-0">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-400 text-[10px] font-black uppercase tracking-widest mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-            Newsletter hebdomadaire
+            {tx.newsletterBadge}
           </div>
           <h3 className="font-heading font-black text-white text-2xl sm:text-3xl leading-tight mb-3">
-            Rejoins +10 000 entrepreneurs
+            {tx.newsletterTitle}
           </h3>
           <p className="text-white/45 text-[14px] leading-relaxed max-w-md">
-            Chaque semaine : stratégies IA actionnables, outils testés, et tactiques business pour l'Afrique et le monde.
+            {tx.newsletterDesc}
           </p>
         </div>
         {/* Right — form */}
@@ -682,14 +712,14 @@ function NewsletterCTA() {
           <div className="flex flex-col gap-3 min-w-[300px]">
             <input
               type="email"
-              placeholder="ton@email.com"
+              placeholder={tx.newsletterPlaceholder}
               className="w-full bg-white/[0.07] border border-white/10 rounded-xl px-5 py-3.5 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-amber-400/40 transition-all"
             />
             <button className="w-full px-6 py-3.5 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-black text-[13px] uppercase tracking-wider rounded-xl hover:shadow-xl hover:shadow-amber-500/30 transition-all">
-              S'inscrire gratuitement →
+              {tx.newsletterBtn}
             </button>
           </div>
-          <p className="text-white/20 text-[10px] text-center mt-2.5">Zéro spam. Désabonnement en 1 clic.</p>
+          <p className="text-white/20 text-[10px] text-center mt-2.5">{tx.newsletterNote}</p>
         </div>
       </div>
     </motion.div>
@@ -708,6 +738,8 @@ interface Comment {
 }
 
 function CommentsSection({ articleSlug }: { articleSlug: string }) {
+  const { language } = useLanguage();
+  const tx = blogTexts[language].article;
   const storageKey = 'comments_' + articleSlug;
 
   const loadComments = useCallback((): Comment[] => {
@@ -864,25 +896,25 @@ function CommentsSection({ articleSlug }: { articleSlug: string }) {
           className="ml-8 sm:ml-12 pl-5 border-l-2 border-blue/10 mt-3 mb-4"
         >
           <div className="bg-blue/[0.02] border border-blue/10 rounded-xl p-4">
-            <p className="text-blue/50 text-[11px] mb-3 font-medium">Répondre à {comment.name}</p>
+            <p className="text-blue/50 text-[11px] mb-3 font-medium">{language === 'en' ? 'Reply to' : 'Répondre à'} {comment.name}</p>
             <div className="grid sm:grid-cols-2 gap-3 mb-3">
               <input
                 type="text"
-                placeholder="Votre nom *"
+                placeholder={tx.namePlaceholder}
                 value={replyName}
                 onChange={(e) => setReplyName(e.target.value)}
                 className="w-full bg-black/5 border border-black/10 rounded-lg px-3.5 py-2.5 text-[#0a0a0a] text-[13px] placeholder:text-[#a3a3a3] focus:outline-none focus:border-blue/30 transition-colors"
               />
               <input
                 type="email"
-                placeholder="Email (optionnel)"
+                placeholder={tx.emailPlaceholder}
                 value={replyEmail}
                 onChange={(e) => setReplyEmail(e.target.value)}
                 className="w-full bg-black/5 border border-black/10 rounded-lg px-3.5 py-2.5 text-[#0a0a0a] text-[13px] placeholder:text-[#a3a3a3] focus:outline-none focus:border-blue/30 transition-colors"
               />
             </div>
             <textarea
-              placeholder="Votre réponse..."
+              placeholder={language === 'en' ? 'Your reply...' : 'Votre réponse...'}
               rows={3}
               value={replyContent}
               onChange={(e) => setReplyContent(e.target.value)}
@@ -894,13 +926,13 @@ function CommentsSection({ articleSlug }: { articleSlug: string }) {
                 disabled={!replyName.trim() || !replyContent.trim()}
                 className="px-4 py-2 bg-blue/10 border border-blue/20 text-blue text-[12px] font-semibold rounded-lg hover:bg-blue/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed flex items-center gap-1.5"
               >
-                <Send className="w-3 h-3" /> Envoyer
+                <Send className="w-3 h-3" /> {language === 'en' ? 'Send' : 'Envoyer'}
               </button>
               <button
                 onClick={() => setReplyTo(null)}
                 className="px-4 py-2 text-[#a3a3a3] text-[12px] hover:text-[#737373] transition-colors"
               >
-                Annuler
+                {language === 'en' ? 'Cancel' : 'Annuler'}
               </button>
             </div>
           </div>
@@ -928,7 +960,7 @@ function CommentsSection({ articleSlug }: { articleSlug: string }) {
         <div className="flex items-center gap-2.5">
           <MessageCircle className="w-5 h-5 text-gold" />
           <h3 className="font-heading font-bold text-[#0a0a0a] text-lg">
-            Commentaires
+            {tx.comments}
             {comments.length > 0 && (
               <span className="ml-2 text-[13px] text-[#a3a3a3] font-normal">({comments.length})</span>
             )}
@@ -942,18 +974,18 @@ function CommentsSection({ articleSlug }: { articleSlug: string }) {
             <User className="w-4 h-4 text-gold/60" />
           </div>
           <div>
-            <h4 className="font-heading font-semibold text-[#0a0a0a] text-[14px]">Laisser un commentaire</h4>
-            <p className="text-[#a3a3a3] text-[11px]">Votre avis compte ! Partagez vos réflexions ci-dessous.</p>
+            <h4 className="font-heading font-semibold text-[#0a0a0a] text-[14px]">{tx.leaveComment}</h4>
+            <p className="text-[#a3a3a3] text-[11px]">{tx.commentSubtitle}</p>
           </div>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-[#a3a3a3] text-[11px] font-bold uppercase tracking-wider mb-1.5 block">Nom *</label>
+              <label className="text-[#a3a3a3] text-[11px] font-bold uppercase tracking-wider mb-1.5 block">{tx.nameLabel}</label>
               <input
                 type="text"
-                placeholder="Votre nom complet"
+                placeholder={tx.namePlaceholder}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
@@ -961,10 +993,10 @@ function CommentsSection({ articleSlug }: { articleSlug: string }) {
               />
             </div>
             <div>
-              <label className="text-[#a3a3a3] text-[11px] font-bold uppercase tracking-wider mb-1.5 block">Email (optionnel)</label>
+              <label className="text-[#a3a3a3] text-[11px] font-bold uppercase tracking-wider mb-1.5 block">{tx.emailLabel}</label>
               <input
                 type="email"
-                placeholder="votre@email.com"
+                placeholder={tx.emailPlaceholder}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full bg-[#fafafa] border border-black/5 rounded-xl px-4 py-3 text-[#0a0a0a] text-[13px] placeholder:text-[#a3a3a3] focus:outline-none focus:border-gold/30 transition-all shadow-inner"
@@ -972,9 +1004,9 @@ function CommentsSection({ articleSlug }: { articleSlug: string }) {
             </div>
           </div>
           <div>
-            <label className="text-[#a3a3a3] text-[11px] font-bold uppercase tracking-wider mb-1.5 block">Commentaire *</label>
+            <label className="text-[#a3a3a3] text-[11px] font-bold uppercase tracking-wider mb-1.5 block">{tx.commentLabel}</label>
             <textarea
-              placeholder="Écrivez votre commentaire ici..."
+              placeholder={tx.commentPlaceholder}
               rows={5}
               value={content}
               onChange={(e) => setContent(e.target.value)}
@@ -983,14 +1015,14 @@ function CommentsSection({ articleSlug }: { articleSlug: string }) {
             />
           </div>
           <div className="flex items-center justify-between">
-            <p className="text-[#a3a3a3] text-[11px] font-medium">* Champs obligatoires</p>
+            <p className="text-[#a3a3a3] text-[11px] font-medium">{tx.requiredFields}</p>
             <button
               type="submit"
               disabled={!name.trim() || !content.trim()}
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold to-gold-light text-dark-950 font-heading font-bold text-[13px] rounded-xl hover:shadow-[0_8px_30px_rgba(201,168,76,0.2)] transition-all duration-500 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:shadow-none"
             >
               <Send className="w-3.5 h-3.5" />
-              Publier le commentaire
+              {tx.publishComment}
             </button>
           </div>
         </form>
@@ -1002,7 +1034,7 @@ function CommentsSection({ articleSlug }: { articleSlug: string }) {
             className="mt-4 p-4 rounded-xl bg-emerald/[0.05] border border-emerald/15 flex items-center gap-2.5"
           >
             <CheckCircle2 className="w-4 h-4 text-emerald shrink-0" />
-            <p className="text-emerald text-[13px]">Votre commentaire a été publié avec succès !</p>
+            <p className="text-emerald text-[13px]">{tx.commentSuccess}</p>
           </motion.div>
         )}
       </div>
@@ -1016,8 +1048,8 @@ function CommentsSection({ articleSlug }: { articleSlug: string }) {
       ) : (
         <div className="bg-white rounded-2xl p-10 text-center border border-black/5 shadow-sm">
           <MessageCircle className="w-10 h-10 text-black/5 mx-auto mb-3" />
-          <h4 className="font-heading font-semibold text-[#a3a3a3] text-[14px] mb-1">Aucun commentaire pour le moment</h4>
-          <p className="text-[#d1d1d1] text-[12px]">Soyez le premier à partager votre avis sur cet article !</p>
+          <h4 className="font-heading font-semibold text-[#a3a3a3] text-[14px] mb-1">{tx.noComments}</h4>
+          <p className="text-[#d1d1d1] text-[12px]">{tx.noCommentsDesc}</p>
         </div>
       )}
     </motion.div>
@@ -1027,6 +1059,8 @@ function CommentsSection({ articleSlug }: { articleSlug: string }) {
 
 /* ═══ Dashboard Article Renderer — Premium Design ═══ */
 function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
+  const { language, localePath } = useLanguage();
+  const tx = blogTexts[language].article;
   const [readProgress, setReadProgress] = useState(0);
   const [copied, setCopied] = useState(false);
 
@@ -1130,9 +1164,9 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
             transition={{ duration: 0.4 }}
             className="flex items-center gap-1.5 text-[11px] text-[#a3a3a3] font-medium mb-10"
           >
-            <Link to="/" className="hover:text-[#d4af37] transition-colors flex items-center gap-1"><Home className="w-3 h-3" /> Accueil</Link>
+            <Link to={localePath('/')} className="hover:text-[#d4af37] transition-colors flex items-center gap-1"><Home className="w-3 h-3" /> {tx.home}</Link>
             <ChevronRight className="w-3 h-3 opacity-30" />
-            <Link to="/blog" className="hover:text-[#d4af37] transition-colors">Blog</Link>
+            <Link to={localePath('/blog')} className="hover:text-[#d4af37] transition-colors">Blog</Link>
             <ChevronRight className="w-3 h-3 opacity-30" />
             <span className="text-[#737373]">{article.category}</span>
           </motion.nav>
@@ -1176,17 +1210,17 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
                 </div>
                 <div className="text-left">
                   <p className="text-[#0a0a0a] text-[12px] font-semibold leading-none mb-0.5">{article.author}</p>
-                  <p className="text-[#a3a3a3] text-[10px] uppercase tracking-wider">Expert IA</p>
+                  <p className="text-[#a3a3a3] text-[10px] uppercase tracking-wider">{tx.expertIa}</p>
                 </div>
               </div>
               <div className="w-px h-5 bg-black/10" />
               <span className="flex items-center gap-1.5 text-[#737373] text-[12px]"><Calendar className="w-3.5 h-3.5 text-[#d4af37]" />{article.date}</span>
-              <span className="flex items-center gap-1.5 text-[#737373] text-[12px]"><Clock className="w-3.5 h-3.5 text-[#d4af37]" />{article.readTime} de lecture</span>
+              <span className="flex items-center gap-1.5 text-[#737373] text-[12px]"><Clock className="w-3.5 h-3.5 text-[#d4af37]" />{article.readTime} {language === 'en' ? 'read' : 'de lecture'}</span>
               <button
                 onClick={handleShare}
                 className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-black/10 text-[#737373] hover:text-[#0a0a0a] hover:border-black/20 transition-all text-[10px] font-bold uppercase tracking-wider"
               >
-                <Share2 className="w-3 h-3" />{copied ? '✓ Copié' : 'Partager'}
+                <Share2 className="w-3 h-3" />{copied ? tx.copied : tx.share}
               </button>
             </div>
           </motion.div>
@@ -1235,8 +1269,8 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
               <div className="mt-16 pt-10 border-t border-black/5">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
                   <div>
-                    <p className="font-heading font-bold text-[#080808] text-[15px] mb-1">Cet article vous a aidé ?</p>
-                    <p className="text-[#a3a3a3] text-[13px]">Partagez-le avec votre réseau.</p>
+                    <p className="font-heading font-bold text-[#080808] text-[15px] mb-1">{tx.helpedYou}</p>
+                    <p className="text-[#a3a3a3] text-[13px]">{tx.shareIt}</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <a
@@ -1250,7 +1284,7 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
                       onClick={handleShare}
                       className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-black/10 text-[#525252] text-[12px] font-bold hover:bg-[#f8f8f8] transition-all"
                     >
-                      <Share2 className="w-3.5 h-3.5" /> {copied ? '✓ Copié !' : 'Copier le lien'}
+                      <Share2 className="w-3.5 h-3.5" /> {copied ? tx.copied : tx.copyLink}
                     </button>
                   </div>
                 </div>
@@ -1280,8 +1314,8 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
                       </span>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#0a0a0a] text-[13px] leading-none mb-1">Progression</p>
-                      <p className="text-[#b3b3b3] text-[11px]">{article.readTime} de lecture</p>
+                      <p className="font-semibold text-[#0a0a0a] text-[13px] leading-none mb-1">{language === 'en' ? 'Progress' : 'Progression'}</p>
+                      <p className="text-[#b3b3b3] text-[11px]">{article.readTime} {language === 'en' ? 'read' : 'de lecture'}</p>
                     </div>
                   </div>
                 </div>
@@ -1294,41 +1328,43 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
                     </div>
                     <div>
                       <p className="font-bold text-[#0a0a0a] text-[13px] leading-none mb-0.5">{article.author}</p>
-                      <p className="text-[#b3b3b3] text-[10px] uppercase tracking-wider">Expert IA</p>
+                      <p className="text-[#b3b3b3] text-[10px] uppercase tracking-wider">{tx.expertIa}</p>
                     </div>
                   </div>
                   <p className="text-[#737373] text-[11px] leading-[1.7]">
-                    Fondateur de Wendooka & Sanda Vibe Code. Expert en IA générative pour entrepreneurs africains.
+                    {language === 'en' ? 'Founder of Wendooka & Sanda Vibe Code. AI expert for African entrepreneurs.' : 'Fondateur de Wendooka & Sanda Vibe Code. Expert en IA générative pour entrepreneurs africains.'}
                   </p>
-                  <Link to="/a-propos" className="mt-3.5 flex items-center gap-1.5 text-amber-600 text-[11px] font-bold hover:text-amber-700 transition-colors group">
-                    Voir le profil <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                  <Link to={localePath(language === 'en' ? '/about' : '/a-propos')} className="mt-3.5 flex items-center gap-1.5 text-amber-600 text-[11px] font-bold hover:text-amber-700 transition-colors group">
+                    {language === 'en' ? 'View profile' : 'Voir le profil'} <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                   </Link>
                 </div>
 
                 {/* Back */}
-                <Link to="/blog" className="flex items-center gap-2 px-4 py-3 rounded-xl border border-black/[0.07] bg-[#fafafa] text-[#737373] text-[12px] font-medium hover:bg-white hover:shadow-sm transition-all">
-                  <ArrowLeft className="w-3.5 h-3.5" /> Retour au blog
+                <Link to={localePath('/blog')} className="flex items-center gap-2 px-4 py-3 rounded-xl border border-black/[0.07] bg-[#fafafa] text-[#737373] text-[12px] font-medium hover:bg-white hover:shadow-sm transition-all">
+                  <ArrowLeft className="w-3.5 h-3.5" /> {language === 'en' ? 'Back to blog' : 'Retour au blog'}
                 </Link>
 
-                {/* Formation CTA dark */}
-                <div className="rounded-2xl overflow-hidden">
-                  <div className="bg-[#0c0c0c] p-5 relative overflow-hidden">
-                    <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-amber-400/8 blur-2xl" />
-                    <p className="text-amber-400 text-[9px] font-black uppercase tracking-[0.2em] mb-2">Formations IA</p>
-                    <p className="text-white font-bold text-[13px] leading-snug mb-2.5">
-                      Transforme l'IA en revenus concrets.
-                    </p>
-                    <p className="text-white/35 text-[10px] leading-relaxed mb-4">
-                      Formations pratiques. Résultats prouvés. Communauté active.
-                    </p>
-                    <Link
-                      to="/formations"
-                      className="flex items-center gap-2 justify-center w-full py-2.5 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-black text-[11px] uppercase tracking-wider rounded-xl hover:shadow-lg hover:shadow-amber-500/30 transition-all"
-                    >
-                      Découvrir <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
+                {/* CTA sidebar */}
+                {language === 'fr' && (
+                  <div className="rounded-2xl overflow-hidden">
+                    <div className="bg-[#0c0c0c] p-5 relative overflow-hidden">
+                      <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-amber-400/8 blur-2xl" />
+                      <p className="text-amber-400 text-[9px] font-black uppercase tracking-[0.2em] mb-2">Formations IA</p>
+                      <p className="text-white font-bold text-[13px] leading-snug mb-2.5">
+                        Transforme l'IA en revenus concrets.
+                      </p>
+                      <p className="text-white/35 text-[10px] leading-relaxed mb-4">
+                        Formations pratiques. Résultats prouvés. Communauté active.
+                      </p>
+                      <Link
+                        to="/formations"
+                        className="flex items-center gap-2 justify-center w-full py-2.5 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-black text-[11px] uppercase tracking-wider rounded-xl hover:shadow-lg hover:shadow-amber-500/30 transition-all"
+                      >
+                        Découvrir <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
                   </div>
-                </div>
+                )}
 
               </div>
             </aside>
@@ -1353,9 +1389,12 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
 /* ═══ MAIN PAGE ═══ */
 export default function BlogArticlePage() {
   const { slug } = useParams();
+  const { language, localePath } = useLanguage();
+  const tx = blogTexts[language].article;
   // Check dashboard articles first (created via admin)
   const dashboardArticle = getDashboardArticleBySlug(slug ?? '');
-  const article = articles.find((a) => a.slug === slug);
+  const isEnArticle = articlesEn.some((a) => a.slug === slug);
+  const article = articles.find((a) => a.slug === slug) || (articlesEn.find((a) => a.slug === slug) as typeof articles[number] | undefined);
   const [copied, setCopied] = useState(false);
   const [readProgress, setReadProgress] = useState(0);
 
@@ -1370,15 +1409,16 @@ export default function BlogArticlePage() {
   }, []);
 
 
-  if (!dashboardArticle && !article) return <Navigate to="/blog" replace />;
+  if (!dashboardArticle && !article) return <Navigate to={localePath('/blog')} replace />;
   // Route dashboard articles to the markdown renderer
   if (dashboardArticle) return <DashboardArticleRenderer article={dashboardArticle} />;
   // TypeScript narrowing: article is guaranteed to exist here
-  if (!article) return <Navigate to="/blog" replace />;
+  if (!article) return <Navigate to={localePath('/blog')} replace />;
 
-  const idx = articles.indexOf(article);
-  const prev = idx > 0 ? articles[idx - 1] : null;
-  const next = idx < articles.length - 1 ? articles[idx + 1] : null;
+  const sourceList = isEnArticle ? (articlesEn as typeof articles) : articles;
+  const idx = sourceList.findIndex((a) => a.slug === slug);
+  const prev = idx > 0 ? sourceList[idx - 1] : null;
+  const next = idx < sourceList.length - 1 ? sourceList[idx + 1] : null;
   const isRich: boolean = !!(
     'richContent' in article &&
     (article as Record<string, unknown>).richContent &&
@@ -1471,9 +1511,9 @@ export default function BlogArticlePage() {
         <div className="max-w-[1120px] mx-auto px-5 sm:px-8">
           {/* Breadcrumbs */}
           <nav className="flex items-center gap-1.5 text-[11px] text-[#a3a3a3] font-medium mb-10">
-            <Link to="/" className="hover:text-[#d4af37] transition-colors flex items-center gap-1"><Home className="w-3.5 h-3.5" /> Accueil</Link>
+            <Link to={localePath('/')} className="hover:text-[#d4af37] transition-colors flex items-center gap-1"><Home className="w-3.5 h-3.5" /> {tx.home}</Link>
             <ChevronRight className="w-3 h-3 opacity-30" />
-            <Link to="/blog" className="hover:text-[#d4af37] transition-colors">Blog</Link>
+            <Link to={localePath('/blog')} className="hover:text-[#d4af37] transition-colors">Blog</Link>
             <ChevronRight className="w-3 h-3 opacity-30" />
             <span className="text-[#737373]">{article.category}</span>
           </nav>
@@ -1512,7 +1552,7 @@ export default function BlogArticlePage() {
                 </div>
                 <div className="text-left">
                   <p className="text-[#0a0a0a] text-[12px] font-semibold leading-none mb-0.5">{article.author || 'Oumarou Sanda'}</p>
-                  <p className="text-[#a3a3a3] text-[10px] uppercase tracking-wider">Expert IA</p>
+                  <p className="text-[#a3a3a3] text-[10px] uppercase tracking-wider">{tx.expertIa}</p>
                 </div>
               </div>
               <div className="w-px h-5 bg-black/10" />
@@ -1522,7 +1562,7 @@ export default function BlogArticlePage() {
                 onClick={handleShare}
                 className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-black/10 text-[#737373] hover:text-[#0a0a0a] hover:border-black/20 transition-all text-[10px] font-bold uppercase tracking-wider"
               >
-                <Share2 className="w-3 h-3" />{copied ? '✓ Copié' : 'Partager'}
+                <Share2 className="w-3 h-3" />{copied ? tx.copied : tx.share}
               </button>
             </div>
           </motion.div>
@@ -1572,8 +1612,8 @@ export default function BlogArticlePage() {
                 {/* Share footer */}
                 <div className="mt-14 pt-8 border-t border-black/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div>
-                    <p className="font-heading font-bold text-[#080808] text-[15px] mb-1">Cet article vous a aidé ?</p>
-                    <p className="text-[#a3a3a3] text-[13px]">Partagez-le avec votre réseau.</p>
+                    <p className="font-heading font-bold text-[#080808] text-[15px] mb-1">{tx.helpedYou}</p>
+                    <p className="text-[#a3a3a3] text-[13px]">{tx.shareIt}</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <a href={'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href)} target="_blank" rel="noopener noreferrer"
@@ -1582,7 +1622,7 @@ export default function BlogArticlePage() {
                     </a>
                     <button onClick={handleShare}
                       className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-black/10 text-[#525252] text-[12px] font-bold hover:bg-[#f8f8f8] transition-all">
-                      <Share2 className="w-3.5 h-3.5" /> {copied ? '✓ Copié !' : 'Copier le lien'}
+                      <Share2 className="w-3.5 h-3.5" /> {copied ? tx.copied : tx.copyLink}
                     </button>
                   </div>
                 </div>
@@ -1598,14 +1638,14 @@ export default function BlogArticlePage() {
               {/* Prev/Next */}
               <div className="grid sm:grid-cols-2 gap-4 mt-8">
                 {prev ? (
-                  <Link to={'/blog/' + prev.slug} className="bg-white rounded-xl p-5 border border-black/5 group hover:border-amber-300/40 transition-all shadow-sm">
-                    <span className="text-[11px] text-[#a3a3a3] flex items-center gap-1 mb-2 font-bold"><ArrowLeft className="w-3 h-3" /> Précédent</span>
+                  <Link to={localePath('/blog/' + prev.slug)} className="bg-white rounded-xl p-5 border border-black/5 group hover:border-amber-300/40 transition-all shadow-sm">
+                    <span className="text-[11px] text-[#a3a3a3] flex items-center gap-1 mb-2 font-bold"><ArrowLeft className="w-3 h-3" /> {tx.prev}</span>
                     <h4 className="font-heading font-semibold text-[#0a0a0a] text-[13px] group-hover:text-[#d4af37] transition-colors line-clamp-2">{prev.title}</h4>
                   </Link>
                 ) : <div />}
                 {next && (
-                  <Link to={'/blog/' + next.slug} className="bg-white rounded-xl p-5 border border-black/5 group text-right hover:border-amber-300/40 transition-all shadow-sm">
-                    <span className="text-[11px] text-[#a3a3a3] flex items-center gap-1 mb-2 justify-end font-bold">Suivant <ArrowRight className="w-3 h-3" /></span>
+                  <Link to={localePath('/blog/' + next.slug)} className="bg-white rounded-xl p-5 border border-black/5 group text-right hover:border-amber-300/40 transition-all shadow-sm">
+                    <span className="text-[11px] text-[#a3a3a3] flex items-center gap-1 mb-2 justify-end font-bold">{tx.next} <ArrowRight className="w-3 h-3" /></span>
                     <h4 className="font-heading font-semibold text-[#0a0a0a] text-[13px] group-hover:text-[#d4af37] transition-colors line-clamp-2">{next.title}</h4>
                   </Link>
                 )}
@@ -1632,7 +1672,7 @@ export default function BlogArticlePage() {
                       <span className="absolute inset-0 flex items-center justify-center text-[9px] font-black text-[#0a0a0a]">{Math.round(readProgress)}%</span>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#0a0a0a] text-[12px] leading-none mb-1">Progression</p>
+                      <p className="font-semibold text-[#0a0a0a] text-[12px] leading-none mb-1">{language === 'en' ? 'Progress' : 'Progression'}</p>
                       <p className="text-[#b3b3b3] text-[10px]">{article.readTime}</p>
                     </div>
                   </div>
@@ -1665,31 +1705,33 @@ export default function BlogArticlePage() {
                     </div>
                     <div>
                       <p className="font-bold text-[#0a0a0a] text-[12px] leading-none mb-0.5">Oumarou Sanda</p>
-                      <p className="text-[#b3b3b3] text-[9px] uppercase tracking-wider">Expert IA</p>
+                      <p className="text-[#b3b3b3] text-[9px] uppercase tracking-wider">{tx.expertIa}</p>
                     </div>
                   </div>
-                  <p className="text-[#737373] text-[10px] leading-[1.7]">Fondateur de Wendooka & Sanda Vibe Code.</p>
-                  <Link to="/a-propos" className="mt-3 flex items-center gap-1 text-amber-600 text-[10px] font-bold hover:text-amber-700 transition-colors">
-                    Voir le profil <ArrowRight className="w-2.5 h-2.5" />
+                  <p className="text-[#737373] text-[10px] leading-[1.7]">{language === 'en' ? 'Founder of Wendooka & Sanda Vibe Code.' : 'Fondateur de Wendooka & Sanda Vibe Code.'}</p>
+                  <Link to={localePath(language === 'en' ? '/about' : '/a-propos')} className="mt-3 flex items-center gap-1 text-amber-600 text-[10px] font-bold hover:text-amber-700 transition-colors">
+                    {language === 'en' ? 'View profile' : 'Voir le profil'} <ArrowRight className="w-2.5 h-2.5" />
                   </Link>
                 </div>
 
-                <Link to="/blog" className="flex items-center gap-2 px-3 py-2.5 rounded-xl border border-black/[0.07] bg-[#fafafa] text-[#737373] text-[11px] font-medium hover:bg-white hover:shadow-sm transition-all">
-                  <ArrowLeft className="w-3 h-3" /> Retour au blog
+                <Link to={localePath('/blog')} className="flex items-center gap-2 px-3 py-2.5 rounded-xl border border-black/[0.07] bg-[#fafafa] text-[#737373] text-[11px] font-medium hover:bg-white hover:shadow-sm transition-all">
+                  <ArrowLeft className="w-3 h-3" /> {language === 'en' ? 'Back to blog' : 'Retour au blog'}
                 </Link>
 
-                {/* CTA Formation */}
-                <div className="rounded-2xl overflow-hidden">
-                  <div className="bg-[#0c0c0c] p-4 relative overflow-hidden">
-                    <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-amber-400/8 blur-2xl" />
-                    <p className="text-amber-400 text-[9px] font-black uppercase tracking-[0.2em] mb-1.5">Formations IA</p>
-                    <p className="text-white font-bold text-[12px] leading-snug mb-3">Maîtrise l'IA et génère des revenus.</p>
-                    <Link to="/formations"
-                      className="flex items-center gap-1.5 justify-center w-full py-2 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-black text-[10px] uppercase tracking-wider rounded-xl hover:shadow-lg hover:shadow-amber-500/30 transition-all">
-                      Découvrir <ArrowRight className="w-3 h-3" />
-                    </Link>
+                {/* CTA Formation (FR only) */}
+                {language === 'fr' && (
+                  <div className="rounded-2xl overflow-hidden">
+                    <div className="bg-[#0c0c0c] p-4 relative overflow-hidden">
+                      <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-amber-400/8 blur-2xl" />
+                      <p className="text-amber-400 text-[9px] font-black uppercase tracking-[0.2em] mb-1.5">Formations IA</p>
+                      <p className="text-white font-bold text-[12px] leading-snug mb-3">Maîtrise l'IA et génère des revenus.</p>
+                      <Link to="/formations"
+                        className="flex items-center gap-1.5 justify-center w-full py-2 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-black text-[10px] uppercase tracking-wider rounded-xl hover:shadow-lg hover:shadow-amber-500/30 transition-all">
+                        Découvrir <ArrowRight className="w-3 h-3" />
+                      </Link>
+                    </div>
                   </div>
-                </div>
+                )}
 
               </div>
             </aside>
