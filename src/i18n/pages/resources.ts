@@ -37,6 +37,7 @@ export const resourcesTexts = {
       submit: "Recevoir",
       successFree: "Accès débloqué — bonne lecture !",
       successEmail: "Envoyé ! Vérifie ta boîte mail.",
+      viewContent: "Voir le contenu",
     },
     newsletter: {
       title: "Reçois toutes les nouvelles ressources",
@@ -146,6 +147,7 @@ export const resourcesTexts = {
       submit: "Get it",
       successFree: "Access unlocked — enjoy reading!",
       successEmail: "Sent! Check your inbox.",
+      viewContent: "View content",
     },
     newsletter: {
       title: "Get all new resources first",

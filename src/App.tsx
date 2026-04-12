@@ -15,6 +15,7 @@ const MediaPage = lazy(() => import('./pages/MediaPage'));
 const BookPage = lazy(() => import('./pages/BookPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const RessourcesPage = lazy(() => import('./pages/RessourcesPage'));
+const ResourceDetailPage = lazy(() => import('./pages/ResourceDetailPage'));
 const MediaKitPage = lazy(() => import('./pages/MediaKitPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 const LinksPage = lazy(() => import('./pages/LinksPage'));
@@ -87,7 +88,9 @@ function PublicRoutes() {
         <Route path="books" element={<BookPage />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="ressources" element={<RessourcesPage />} />
+        <Route path="ressources/:slug" element={<ResourceDetailPage />} />
         <Route path="resources" element={<RessourcesPage />} />
+        <Route path="resources/:slug" element={<ResourceDetailPage />} />
         <Route path="kit-media" element={<MediaKitPage />} />
         <Route path="media-kit" element={<MediaKitPage />} />
         <Route path="challenge-30-jours" element={<ChallengePage />} />

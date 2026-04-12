@@ -5,6 +5,7 @@ import { Download, Play, FileText, CheckSquare, Wrench, ExternalLink, Mail, Arro
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n';
 import { resourcesTexts } from '../i18n/pages/resources';
+import { resourceSlugById } from '../data/resources-content';
 
 /* ═══════════════════════ DATA ═══════════════════════ */
 type ResourceMeta = {
@@ -61,9 +62,10 @@ type ResourceCardProps = {
   cta: string;
   tx: typeof resourcesTexts['fr'];
   i: number;
+  detailPath: string;
 };
 
-function ResourceCard({ meta, title, description, cta, tx, i }: ResourceCardProps) {
+function ResourceCard({ meta, title, description, cta, tx, i, detailPath }: ResourceCardProps) {
   const TypeIcon = typeIcons[meta.type] || FileText;
   const [showForm, setShowForm] = useState(false);
   const [email, setEmail] = useState('');
@@ -129,9 +131,11 @@ function ResourceCard({ meta, title, description, cta, tx, i }: ResourceCardProp
             </span>
           </div>
         )}
-        <h3 className="font-heading font-bold text-[#0a0a0a] text-[17px] mb-3 leading-snug">
-          {title}
-        </h3>
+        <Link to={detailPath} className="group/title">
+          <h3 className="font-heading font-bold text-[#0a0a0a] text-[17px] mb-3 leading-snug group-hover/title:text-blue transition-colors">
+            {title}
+          </h3>
+        </Link>
         <p className="text-[#525252] text-[13px] leading-relaxed mb-5 flex-1">
           {description}
         </p>
@@ -159,13 +163,22 @@ function ResourceCard({ meta, title, description, cta, tx, i }: ResourceCardProp
             </button>
           </form>
         ) : (
-          <button
-            onClick={handleAccess}
-            className="self-start flex items-center gap-2 px-5 py-2.5 bg-[#0a0a0a] hover:bg-blue text-white font-bold rounded-xl text-[13px] transition-all duration-300 group/btn"
-          >
-            <Download className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
-            {cta}
-          </button>
+          <div className="flex items-center gap-2 flex-wrap">
+            <button
+              onClick={handleAccess}
+              className="flex items-center gap-2 px-5 py-2.5 bg-[#0a0a0a] hover:bg-blue text-white font-bold rounded-xl text-[13px] transition-all duration-300 group/btn"
+            >
+              <Download className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
+              {cta}
+            </button>
+            <Link
+              to={detailPath}
+              className="flex items-center gap-1.5 px-4 py-2.5 bg-white border border-black/10 text-[#525252] font-semibold rounded-xl text-[12px] hover:border-black/20 hover:text-[#0a0a0a] transition-all"
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              {tx.card.viewContent}
+            </Link>
+          </div>
         )}
       </div>
     </motion.div>
@@ -278,11 +291,17 @@ export default function RessourcesPage() {
 
   const [activeCategory, setActiveCategory] = useState(tx.categories[0]);
 
-  // Build merged resource list (meta + translated text)
-  const allResources = resourcesMeta.map((meta, idx) => ({
-    meta,
-    ...(tx.resources[idx] as { id: string; title: string; description: string; cta: string }),
-  }));
+  // Build merged resource list (meta + translated text + detail path)
+  const allResources = resourcesMeta.map((meta, idx) => {
+    const slugs = resourceSlugById[meta.id];
+    const slug = language === 'en' ? slugs?.en : slugs?.fr;
+    const detailPath = language === 'en' ? `/en/resources/${slug}` : `/ressources/${slug}`;
+    return {
+      meta,
+      detailPath,
+      ...(tx.resources[idx] as { id: string; title: string; description: string; cta: string }),
+    };
+  });
 
   // Category filter: index 0 = "All/Tout"
   const filtered = activeCategory === tx.categories[0]
@@ -337,6 +356,7 @@ export default function RessourcesPage() {
                 cta={resource.cta}
                 tx={tx}
                 i={i}
+                detailPath={resource.detailPath}
               />
             ))}
           </div>
