@@ -2,9 +2,12 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SEOHead } from '../components/SEOHead';
 
-// ─── PAYMENT LINK (same as ChallengePage) ────────────────────────────────────
-const LINK_CHECKOUT = '#'; // TODO: lien paiement 9 900 FCFA
+// ─── PAYMENT LINK (fallback sûr vers /contact tant que le checkout dédié n'est pas prêt) ──
+// Quand le lien de paiement direct (9 900 FCFA) sera disponible, remplacer par l'URL du
+// prestataire (ex : Stripe Checkout, Paystack, CinetPay…).
+const LINK_CHECKOUT = '/contact?offre=quiz-ia';
 // ─────────────────────────────────────────────────────────────────────────────
 
 // ─── Quiz data ────────────────────────────────────────────────────────────────
@@ -147,6 +150,12 @@ export default function QuizIAPage() {
   const result = isResult ? computeResult(answers) : null;
 
   return (
+    <>
+    <SEOHead
+      title="Quiz IA — Découvre ton profil en 60 secondes | Oumarou Sanda"
+      description="Réponds à 5 questions et découvre le plan IA personnalisé qui te fera gagner du temps et des revenus dès cette semaine."
+      noindex
+    />
     <div className="min-h-screen bg-[#050505] text-white flex flex-col">
       {/* Progress bar */}
       {!isResult && (
@@ -371,5 +380,6 @@ export default function QuizIAPage() {
         </AnimatePresence>
       </div>
     </div>
+    </>
   );
 }

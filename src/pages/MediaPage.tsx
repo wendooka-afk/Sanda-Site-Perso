@@ -341,16 +341,7 @@ export default function MediaPage() {
         </div>
       </section>
 
-      {/* SECTION 08 — TÉMOIGNAGES (PLACEHOLDER) */}
-      <section className="py-24 bg-[#050505] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 text-center border border-white/5 bg-white/[0.01] p-12 rounded-3xl border-dashed">
-          <Quote className="w-12 h-12 text-white/10 mx-auto mb-6" />
-          <h2 className="font-heading text-2xl font-bold text-white/30 mb-4">Espace Témoignages & Citations</h2>
-          <p className="text-white/20 max-w-lg mx-auto text-sm">Cet espace est réservé pour afficher les retours des partenaires médias, journalistes et collaborateurs.</p>
-        </div>
-      </section>
-
-      {/* SECTION 09 — CTA FINAL */}
+      {/* SECTION 08 — CTA FINAL */}
       <section className="relative py-16 sm:py-24 lg:py-32 overflow-hidden bg-[#0a0a0a] border-t border-white/5">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-5 mix-blend-overlay" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#0a0a0a]/90 to-transparent" />

@@ -36,6 +36,12 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Honeypot anti-spam — si rempli, silencieusement "soumettre" sans envoyer
+    const honeypot = (e.currentTarget as HTMLFormElement).querySelector<HTMLInputElement>('input[name="website"]');
+    if (honeypot?.value) {
+      setSubmitted(true);
+      return;
+    }
     setSending(true);
     setSendError(null);
     try {
@@ -188,22 +194,22 @@ export default function ContactPage() {
                       <form onSubmit={handleSubmit} className="space-y-5">
                         <div className="grid sm:grid-cols-2 gap-5">
                           <div>
-                            <label className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">{tx.form.nameLabel}</label>
-                            <input name="name" type="text" required value={form.name} onChange={handleChange} placeholder={tx.form.namePlaceholder} className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all" />
+                            <label htmlFor="contact-name" className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">{tx.form.nameLabel}</label>
+                            <input id="contact-name" name="name" type="text" autoComplete="name" required aria-required="true" value={form.name} onChange={handleChange} placeholder={tx.form.namePlaceholder} className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all" />
                           </div>
                           <div>
-                            <label className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">{tx.form.emailLabel}</label>
-                            <input name="email" type="email" required value={form.email} onChange={handleChange} placeholder="jean@entreprise.com" className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all" />
+                            <label htmlFor="contact-email" className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">{tx.form.emailLabel}</label>
+                            <input id="contact-email" name="email" type="email" autoComplete="email" required aria-required="true" value={form.email} onChange={handleChange} placeholder="jean@entreprise.com" className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all" />
                           </div>
                         </div>
                         <div className="grid sm:grid-cols-2 gap-5">
                           <div>
-                            <label className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">{tx.form.phoneLabel}</label>
-                            <input name="phone" type="tel" value={form.phone} onChange={handleChange} placeholder="+237 6XX XX XX XX" className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all" />
+                            <label htmlFor="contact-phone" className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">{tx.form.phoneLabel}</label>
+                            <input id="contact-phone" name="phone" type="tel" autoComplete="tel" value={form.phone} onChange={handleChange} placeholder="+237 6XX XX XX XX" className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all" />
                           </div>
                           <div>
-                            <label className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">{tx.form.subjectLabel}</label>
-                            <select name="subject" required value={form.subject} onChange={handleChange} className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] outline-none transition-all appearance-none cursor-pointer focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm">
+                            <label htmlFor="contact-subject" className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">{tx.form.subjectLabel}</label>
+                            <select id="contact-subject" name="subject" required aria-required="true" value={form.subject} onChange={handleChange} className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] outline-none transition-all appearance-none cursor-pointer focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm">
                               <option value="" disabled>{tx.form.subjectPlaceholder}</option>
                               <option value="projet">{tx.form.subjects.projet}</option>
                               <option value="consulting">{tx.form.subjects.consulting}</option>
@@ -214,8 +220,8 @@ export default function ContactPage() {
                           </div>
                         </div>
                         <div>
-                          <label className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">{tx.form.budgetLabel}</label>
-                          <select name="budget" value={form.budget} onChange={handleChange} className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] outline-none transition-all appearance-none cursor-pointer focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm">
+                          <label htmlFor="contact-budget" className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">{tx.form.budgetLabel}</label>
+                          <select id="contact-budget" name="budget" value={form.budget} onChange={handleChange} className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] outline-none transition-all appearance-none cursor-pointer focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm">
                             <option value="">{tx.form.budgetOptions.none}</option>
                             <option value="Moins de 100K FCFA">{tx.form.budgetOptions.low}</option>
                             <option value="100K - 500K FCFA">{tx.form.budgetOptions.mid}</option>
@@ -224,13 +230,19 @@ export default function ContactPage() {
                           </select>
                         </div>
                         <div>
-                          <label className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">{tx.form.messageLabel}</label>
-                          <textarea name="message" required minLength={20} rows={5} value={form.message} onChange={handleChange} placeholder={tx.form.messagePlaceholder} className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all resize-none" />
+                          <label htmlFor="contact-message" className="block text-[#a3a3a3] text-xs font-bold uppercase tracking-wider mb-2">{tx.form.messageLabel}</label>
+                          <textarea id="contact-message" name="message" required aria-required="true" minLength={20} rows={5} value={form.message} onChange={handleChange} placeholder={tx.form.messagePlaceholder} className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all resize-none" />
+                        </div>
+
+                        {/* Honeypot anti-spam — invisible aux humains, rempli par les bots */}
+                        <div className="hidden" aria-hidden="true">
+                          <label htmlFor="contact-website">Website</label>
+                          <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
                         </div>
 
                         {/* Erreur API */}
                         {sendError && (
-                          <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-red-700 text-sm">
+                          <div role="alert" aria-live="polite" aria-atomic="true" className="bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-red-700 text-sm">
                             ⚠️ {sendError}
                           </div>
                         )}

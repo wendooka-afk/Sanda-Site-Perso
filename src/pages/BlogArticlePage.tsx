@@ -1129,12 +1129,25 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
         description={article.seo?.metaDescription || article.excerpt}
         canonical={'/blog/' + article.slug}
         ogType="article"
-        ogImage={article.image || undefined}
+        ogImage={article.image ? (article.image.startsWith('http') ? article.image : 'https://oumarousanda.com' + article.image) : undefined}
         articlePublishedTime={article.createdAt}
+        articleModifiedTime={(article as { updatedAt?: string }).updatedAt || article.createdAt}
         schema={{
           "@context": "https://schema.org",
           "@graph": [
-            { "@type": "BlogPosting", "headline": article.title, "author": { "@type": "Person", "name": article.author || "Oumarou Sanda", "url": "https://oumarousanda.com" }, "publisher": { "@type": "Person", "name": "Oumarou Sanda" }, "datePublished": article.createdAt, "mainEntityOfPage": "https://oumarousanda.com/blog/" + article.slug },
+            {
+              "@type": "BlogPosting",
+              "@id": "https://oumarousanda.com/blog/" + article.slug + "#article",
+              "headline": article.title,
+              "description": article.excerpt,
+              "image": article.image ? (article.image.startsWith('http') ? article.image : 'https://oumarousanda.com' + article.image) : "https://oumarousanda.com/Oumarou Sanda 1.webp",
+              "author": { "@type": "Person", "name": article.author || "Oumarou Sanda", "url": "https://oumarousanda.com/a-propos" },
+              "publisher": { "@type": "Person", "name": "Oumarou Sanda", "url": "https://oumarousanda.com", "logo": { "@type": "ImageObject", "url": "https://oumarousanda.com/logo-sm.webp" } },
+              "datePublished": article.createdAt,
+              "dateModified": (article as { updatedAt?: string }).updatedAt || article.createdAt,
+              "mainEntityOfPage": { "@type": "WebPage", "@id": "https://oumarousanda.com/blog/" + article.slug },
+              "inLanguage": "fr-CM"
+            },
             { "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://oumarousanda.com" }, { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://oumarousanda.com/blog" }, { "@type": "ListItem", "position": 3, "name": article.title, "item": "https://oumarousanda.com/blog/" + article.slug } ] }
           ]
         }}
