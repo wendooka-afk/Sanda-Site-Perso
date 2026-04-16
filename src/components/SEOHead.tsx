@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
 import { useLanguage } from '../i18n';
 
 const SITE_URL = 'https://oumarousanda.com';
@@ -97,6 +98,40 @@ export function SEOHead({
   // Sérialisation JSON-LD (ne sérialise qu'une fois, stabilisé)
   const schemaStr = schema ? JSON.stringify(schema) : null;
 
+  // Injection JSON-LD directement dans <head> (react-helmet-async 2.x ne rend pas
+  // correctement les <script> children avec React 19 — on contourne).
+  useEffect(() => {
+    if (!schemaStr) return;
+    const el = document.createElement('script');
+    el.type = 'application/ld+json';
+    el.setAttribute('data-schema', 'page');
+    el.textContent = schemaStr;
+    document.head.appendChild(el);
+    return () => {
+      if (el.parentNode) el.parentNode.removeChild(el);
+    };
+  }, [schemaStr]);
+
+  // Override robots meta dynamiquement (helmet-async n'override pas le meta statique
+  // de index.html de manière fiable — on prend le contrôle via useEffect).
+  useEffect(() => {
+    const content = noindex
+      ? 'noindex, nofollow'
+      : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+    let el = document.querySelector<HTMLMetaElement>('meta[name="robots"]');
+    const prev = el?.content;
+    if (!el) {
+      el = document.createElement('meta');
+      el.name = 'robots';
+      document.head.appendChild(el);
+    }
+    el.content = content;
+    return () => {
+      // Restaure la valeur par défaut si la page se démonte (sécurise les navigations SPA)
+      if (el && prev !== undefined) el.content = prev;
+    };
+  }, [noindex]);
+
   return (
     <Helmet htmlAttributes={{ lang: language === 'en' ? 'en' : 'fr-CM' }}>
       <title>{fullTitle}</title>
@@ -157,10 +192,7 @@ export function SEOHead({
       <meta name="twitter:image" content={ogImage} />
       <meta name="twitter:image:alt" content={resolvedOgTitle} />
 
-      {/* ── JSON-LD Schema.org ── */}
-      {schemaStr && (
-        <script type="application/ld+json">{schemaStr}</script>
-      )}
+      {/* ── JSON-LD Schema.org ── injecté via useEffect ci-dessus (bypass helmet-async) ── */}
     </Helmet>
   );
 }
