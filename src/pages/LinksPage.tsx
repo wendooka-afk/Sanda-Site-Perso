@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Youtube, Linkedin, Twitter, Instagram, Music2 } from 'lucide-react';
+import { SEOHead } from '../components/SEOHead';
 
 type Lang = 'fr' | 'en';
 
@@ -125,6 +126,13 @@ export default function LinksPage() {
   const [lang, setLang] = useState<Lang>('fr');
 
   return (
+    <>
+    <SEOHead
+      title="Tous mes liens — Oumarou Sanda"
+      description="Retrouve en un seul endroit mes formations, ressources gratuites, livres et réseaux sociaux."
+      canonical="/links"
+      ogType="profile"
+    />
     <div
       className="min-h-screen w-full flex flex-col items-center py-10 px-4"
       style={{
@@ -380,5 +388,6 @@ export default function LinksPage() {
         </motion.div>
       </div>
     </div>
+    </>
   );
 }

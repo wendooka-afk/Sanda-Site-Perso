@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import DOMPurify from 'dompurify';
 import { Reveal } from '../components/animations/Reveal';
 import {
   ArrowRight, Globe, CheckCircle2,
@@ -109,7 +110,7 @@ function FormationVideoIA() {
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3 text-[15px] text-[#525252]">
                     <CheckCircle2 className="w-5 h-5 text-coral-600 shrink-0 mt-0.5" />
-                    <span dangerouslySetInnerHTML={{ __html: item.replace(/'([^']+)'/g, "<strong>'$1'</strong>") }} />
+                    <span dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.replace(/'([^']+)'/g, "<strong>'$1'</strong>"), { ALLOWED_TAGS: ['strong', 'em'], ALLOWED_ATTR: [] }) }} />
                   </li>
                 ))}
               </ul>

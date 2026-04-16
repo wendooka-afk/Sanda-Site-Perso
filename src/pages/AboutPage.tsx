@@ -7,6 +7,7 @@ import {
   Globe,
   Target, Sparkles, Quote, ChevronDown
 } from 'lucide-react';
+import DOMPurify from 'dompurify';
 import { SEOHead } from '../components/SEOHead';
 import { useLanguage } from '../i18n';
 import { aboutTexts } from '../i18n/pages/about';
@@ -155,7 +156,7 @@ function ChapterTwo() {
             {tx.chapter2.heading}
           </h2>
           <div className="prose max-w-none prose-lg text-[#525252] font-inter space-y-6">
-            <p dangerouslySetInnerHTML={{ __html: tx.chapter2.p1 }} />
+            <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(tx.chapter2.p1, { ALLOWED_TAGS: ['strong', 'em', 'span', 'br'], ALLOWED_ATTR: ['class'] }) }} />
             <p>
               {tx.chapter2.p2}
             </p>

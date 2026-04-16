@@ -44,6 +44,8 @@ function buildRel(attrs: PrettyLinkLite['attributes']): string {
   if (attrs.nofollow) parts.push('nofollow');
   if (attrs.sponsored) parts.push('sponsored');
   parts.push('noopener');
+  // noreferrer requis pour les liens qui ouvrent dans un nouvel onglet (sécurité + tabnabbing)
+  if (attrs.newTab) parts.push('noreferrer');
   return parts.join(' ');
 }
 

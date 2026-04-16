@@ -35,21 +35,21 @@ export function PageHeader({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex items-center gap-2 text-[13px] text-white/30 mb-10"
+            className="flex items-center gap-2 text-[13px] text-[#737373] mb-10"
           >
-            <Link to="/" className="hover:text-gold transition-colors flex items-center gap-1.5">
+            <Link to="/" className="hover:text-gold transition-colors flex items-center gap-1.5" aria-label={t.common.home}>
               <Home className="w-3.5 h-3.5" />
               <span>{t.common.home}</span>
             </Link>
             {breadcrumbs.map((crumb, i) => (
               <span key={i} className="flex items-center gap-2">
-                <ChevronRight className="w-3 h-3 opacity-40" />
+                <ChevronRight className="w-3 h-3 opacity-50" aria-hidden="true" />
                 {crumb.href ? (
                   <Link to={crumb.href} className="hover:text-gold transition-colors">
                     {crumb.label}
                   </Link>
                 ) : (
-                  <span className="text-white/60">{crumb.label}</span>
+                  <span className="text-[#0a0a0a] font-medium" aria-current="page">{crumb.label}</span>
                 )}
               </span>
             ))}
@@ -65,10 +65,10 @@ export function PageHeader({
           <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border ${badgeColor} text-[12px] font-medium tracking-wider uppercase mb-6 bg-white/[0.02]`}>
             {badge}
           </div>
-          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-white mb-6 leading-[1.2] tracking-tight">
+          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-[#0a0a0a] mb-6 leading-[1.2] tracking-tight">
             {title}<span className="text-gradient-gold block mt-2">{titleHighlight}</span>
           </h1>
-          <p className="text-white/40 text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl">
+          <p className="text-[#525252] text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl">
             {description}
           </p>
         </motion.div>

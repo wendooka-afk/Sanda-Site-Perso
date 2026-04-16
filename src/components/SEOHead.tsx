@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { useLanguage } from '../i18n';
 
 const SITE_URL = 'https://oumarousanda.com';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/Oumarou Sanda 1.webp`;
@@ -21,6 +22,8 @@ interface SEOHeadProps {
   ogType?: 'website' | 'article' | 'profile';
   /** ISO date de publication pour les articles (article:published_time) */
   articlePublishedTime?: string;
+  /** ISO date de dernière modification (article:modified_time) */
+  articleModifiedTime?: string;
   /** Mettre noindex (pour dashboard, pages privées) */
   noindex?: boolean;
   /** Schema.org JSON-LD — objet ou tableau d'objets */
@@ -52,9 +55,12 @@ export function SEOHead({
   ogImage = DEFAULT_OG_IMAGE,
   ogType = 'website',
   articlePublishedTime,
+  articleModifiedTime,
   noindex = false,
   schema,
 }: SEOHeadProps) {
+  const { language } = useLanguage();
+
   // Ajoute "| Oumarou Sanda" uniquement si non présent
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
   const resolvedOgTitle = ogTitle ?? fullTitle;
@@ -67,11 +73,32 @@ export function SEOHead({
       : `${SITE_URL}${canonical.startsWith('/') ? canonical : `/${canonical}`}`
     : undefined;
 
+  // Construit les URLs alternates FR ↔ EN à partir de la canonical
+  // FR: https://oumarousanda.com/blog → EN: https://oumarousanda.com/en/blog
+  const { frHref, enHref } = (() => {
+    if (!canonicalHref) return { frHref: undefined, enHref: undefined };
+    try {
+      const u = new URL(canonicalHref);
+      const isEn = u.pathname === '/en' || u.pathname.startsWith('/en/');
+      const frPath = isEn ? (u.pathname.replace(/^\/en/, '') || '/') : u.pathname;
+      const enPath = isEn ? u.pathname : ('/en' + (u.pathname === '/' ? '' : u.pathname));
+      return {
+        frHref: `${SITE_URL}${frPath}${u.search}`,
+        enHref: `${SITE_URL}${enPath}${u.search}`,
+      };
+    } catch {
+      return { frHref: undefined, enHref: undefined };
+    }
+  })();
+
+  const ogLocale = language === 'en' ? 'en_US' : 'fr_CM';
+  const ogLocaleAlt = language === 'en' ? 'fr_CM' : 'en_US';
+
   // Sérialisation JSON-LD (ne sérialise qu'une fois, stabilisé)
   const schemaStr = schema ? JSON.stringify(schema) : null;
 
   return (
-    <Helmet>
+    <Helmet htmlAttributes={{ lang: language === 'en' ? 'en' : 'fr-CM' }}>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
 
@@ -88,11 +115,13 @@ export function SEOHead({
       {/* Canonical */}
       {canonicalHref && <link rel="canonical" href={canonicalHref} />}
 
-      {/* ── Hreflang (contenu FR principal, x-default pour les crawlers) ── */}
-      {canonicalHref && !noindex && (
+      {/* ── Hreflang (FR ↔ EN réciproques + x-default FR) ── */}
+      {!noindex && frHref && enHref && (
         <>
-          <link rel="alternate" hrefLang="fr" href={canonicalHref} />
-          <link rel="alternate" hrefLang="x-default" href={canonicalHref} />
+          <link rel="alternate" hrefLang="fr" href={frHref} />
+          <link rel="alternate" hrefLang="fr-CM" href={frHref} />
+          <link rel="alternate" hrefLang="en" href={enHref} />
+          <link rel="alternate" hrefLang="x-default" href={frHref} />
         </>
       )}
 
@@ -102,13 +131,18 @@ export function SEOHead({
       <meta property="og:title" content={resolvedOgTitle} />
       <meta property="og:description" content={resolvedOgDesc} />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:image:secure_url" content={ogImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={resolvedOgTitle} />
-      <meta property="og:locale" content="fr_CM" />
+      <meta property="og:locale" content={ogLocale} />
+      <meta property="og:locale:alternate" content={ogLocaleAlt} />
       {canonicalHref && <meta property="og:url" content={canonicalHref} />}
       {articlePublishedTime && (
         <meta property="article:published_time" content={articlePublishedTime} />
+      )}
+      {articleModifiedTime && (
+        <meta property="article:modified_time" content={articleModifiedTime} />
       )}
       {ogType === 'article' && (
         <meta property="article:author" content="https://oumarousanda.com/a-propos" />
@@ -121,6 +155,7 @@ export function SEOHead({
       <meta name="twitter:title" content={resolvedOgTitle} />
       <meta name="twitter:description" content={resolvedOgDesc} />
       <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image:alt" content={resolvedOgTitle} />
 
       {/* ── JSON-LD Schema.org ── */}
       {schemaStr && (

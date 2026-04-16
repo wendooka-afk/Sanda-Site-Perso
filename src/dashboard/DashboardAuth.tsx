@@ -3,7 +3,8 @@ import { Navigate, Outlet, useNavigate } from 'react-router-dom';
 import { Lock, Eye, EyeOff, Shield } from 'lucide-react';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
-const SESSION_KEY = 'dashboard_auth_v1';
+const SESSION_KEY = 'dashboard_auth_v2';
+const SESSION_TTL_MS = 2 * 60 * 60 * 1000; // 2 heures
 // Change this value to set your admin password.
 // Or define VITE_DASHBOARD_PASSWORD in a .env file for production.
 const DASHBOARD_PASSWORD =
@@ -19,21 +20,61 @@ async function hashPassword(password: string): Promise<string> {
     return hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
 }
 
+/** Constant-time string comparison to prevent timing attacks */
+function constantTimeEqual(a: string, b: string): boolean {
+    if (a.length !== b.length) return false;
+    let result = 0;
+    for (let i = 0; i < a.length; i++) {
+        result |= a.charCodeAt(i) ^ b.charCodeAt(i);
+    }
+    return result === 0;
+}
+
+interface SessionPayload {
+    ts: number;
+    token: string;
+}
+
+function readSession(): SessionPayload | null {
+    try {
+        const raw = sessionStorage.getItem(SESSION_KEY);
+        if (!raw) return null;
+        const payload = JSON.parse(raw) as SessionPayload;
+        if (!payload || typeof payload.ts !== 'number' || typeof payload.token !== 'string') return null;
+        if (Date.now() - payload.ts > SESSION_TTL_MS) {
+            sessionStorage.removeItem(SESSION_KEY);
+            return null;
+        }
+        return payload;
+    } catch {
+        sessionStorage.removeItem(SESSION_KEY);
+        return null;
+    }
+}
+
+function writeSession(): void {
+    const token = Array.from(crypto.getRandomValues(new Uint8Array(16)))
+        .map((b) => b.toString(16).padStart(2, '0'))
+        .join('');
+    const payload: SessionPayload = { ts: Date.now(), token };
+    sessionStorage.setItem(SESSION_KEY, JSON.stringify(payload));
+}
+
 export function useAuth() {
     const [authenticated, setAuthenticated] = useState<boolean | null>(null);
 
     useEffect(() => {
-        const stored = sessionStorage.getItem(SESSION_KEY);
-        setAuthenticated(stored === 'true');
+        setAuthenticated(readSession() !== null);
     }, []);
 
     const login = async (password: string): Promise<boolean> => {
+        if (!DASHBOARD_PASSWORD) return false;
         const [inputHash, correctHash] = await Promise.all([
             hashPassword(password),
             hashPassword(DASHBOARD_PASSWORD),
         ]);
-        const ok = inputHash === correctHash;
-        if (ok) sessionStorage.setItem(SESSION_KEY, 'true');
+        const ok = constantTimeEqual(inputHash, correctHash);
+        if (ok) writeSession();
         return ok;
     };
 
@@ -47,8 +88,7 @@ export function useAuth() {
 
 // ─── Protected Route ──────────────────────────────────────────────────────────
 export function ProtectedRoute() {
-    const stored = sessionStorage.getItem(SESSION_KEY);
-    if (stored !== 'true') {
+    if (readSession() === null) {
         return <Navigate to="/dashboard/login" replace />;
     }
     return <Outlet />;
@@ -66,7 +106,7 @@ export function DashboardLogin() {
 
     // Redirect if already authenticated
     useEffect(() => {
-        if (sessionStorage.getItem(SESSION_KEY) === 'true') {
+        if (readSession() !== null) {
             navigate('/dashboard', { replace: true });
         }
     }, [navigate]);
