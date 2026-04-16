@@ -856,12 +856,40 @@ export default function HomePage() {
           "@context": "https://schema.org",
           "@graph": [
             {
+              "@type": "WebSite",
+              "@id": "https://oumarousanda.com/#website",
+              "url": "https://oumarousanda.com",
+              "name": "Oumarou Sanda",
+              "inLanguage": "fr-CM",
+              "publisher": { "@id": "https://oumarousanda.com/#organization" },
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://oumarousanda.com/blog?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            },
+            {
+              "@type": "Organization",
+              "@id": "https://oumarousanda.com/#organization",
+              "name": "Oumarou Sanda",
+              "url": "https://oumarousanda.com",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://oumarousanda.com/logo-sm.webp",
+                "width": 512,
+                "height": 512
+              },
+              "founder": { "@id": "https://oumarousanda.com/#person" },
+              "sameAs": ["https://www.youtube.com/@Oumarou_Sanda", "https://tiktok.com/@iamsanda", "https://linkedin.com/in/benibsanda", "https://facebook.com/iamoumarousanda"]
+            },
+            {
               "@type": "Person",
               "@id": "https://oumarousanda.com/#person",
               "name": "Oumarou Sanda",
               "jobTitle": "Expert Intelligence Artificielle, Formateur, Entrepreneur Digital",
               "url": "https://oumarousanda.com",
               "image": "https://oumarousanda.com/Oumarou Sanda 1.webp",
+              "worksFor": { "@id": "https://oumarousanda.com/#organization" },
               "sameAs": ["https://www.youtube.com/@Oumarou_Sanda", "https://tiktok.com/@iamsanda", "https://linkedin.com/in/benibsanda", "https://facebook.com/iamoumarousanda"]
             },
             {

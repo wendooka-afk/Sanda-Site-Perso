@@ -14,8 +14,14 @@ export function Layout() {
 
   return (
     <div className="min-h-screen bg-dark-950 text-[#333333]">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#0a0a0a] focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-gold"
+      >
+        Aller au contenu principal
+      </a>
       <Navbar />
-      <main>
+      <main id="main-content">
         <Outlet />
       </main>
       <Footer />

@@ -2,10 +2,18 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Home, ArrowLeft, Search } from 'lucide-react';
 import { useLanguage } from '../i18n';
+import { SEOHead } from '../components/SEOHead';
 
 export default function NotFoundPage() {
   const { t } = useLanguage();
   return (
+    <>
+    <SEOHead
+      title={t.notFound.title + ' — 404'}
+      description={t.notFound.description}
+      canonical="/404"
+      noindex
+    />
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent opacity-60" />
       <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-gold/5 rounded-full blur-[100px]" />
@@ -29,5 +37,6 @@ export default function NotFoundPage() {
         </motion.div>
       </div>
     </section>
+    </>
   );
 }
