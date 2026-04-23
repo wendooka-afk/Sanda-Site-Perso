@@ -1,0 +1,35 @@
+# Dependencies — never copy, rebuilt inside Docker
+node_modules/
+
+# Build output — rebuilt inside Docker
+dist/
+dist-ssr/
+
+# Environment secrets — injected via Coolify build args
+.env
+.env.local
+.env.*.local
+
+# Git history
+.git/
+.gitignore
+
+# Logs
+*.log
+npm-debug.log*
+npm_error.log
+logs/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Dev scripts (not needed in production)
+compress-images.mjs
+info-images.mjs
+nul
+
+# TypeScript build cache
+*.tsbuildinfo
