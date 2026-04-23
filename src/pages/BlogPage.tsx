@@ -440,6 +440,7 @@ export default function BlogPage() {
         description={tx.seo.description}
         canonical="/blog"
         schema={{ "@context": "https://schema.org", "@type": "Blog", "name": "Blog Oumarou Sanda", "url": "https://oumarousanda.com/blog", "author": { "@type": "Person", "name": "Oumarou Sanda" } }}
+        adsense
       />
       <BlogHero
         searchQuery={searchQuery}

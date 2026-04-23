@@ -1138,6 +1138,7 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
             { "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://oumarousanda.com" }, { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://oumarousanda.com/blog" }, { "@type": "ListItem", "position": 3, "name": article.title, "item": "https://oumarousanda.com/blog/" + article.slug } ] }
           ]
         }}
+        adsense
       />
 
       {/* ── Reading progress bar ── */}
@@ -1503,6 +1504,7 @@ export default function BlogArticlePage() {
         ogImage={articleImage}
         articlePublishedTime={isoDate}
         schema={{ "@context": "https://schema.org", "@graph": schemaGraph }}
+        adsense
       />
       {/* ═══ HERO — Fond blanc, centré ═══ */}
       <section className="relative bg-white pt-32 sm:pt-40 pb-12 sm:pb-14 border-b border-black/[0.06]">

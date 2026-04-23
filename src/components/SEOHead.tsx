@@ -25,6 +25,8 @@ interface SEOHeadProps {
   noindex?: boolean;
   /** Schema.org JSON-LD — objet ou tableau d'objets */
   schema?: object | object[];
+  /** Charger le script Google AdSense sur cette page */
+  adsense?: boolean;
 }
 
 /**
@@ -54,6 +56,7 @@ export function SEOHead({
   articlePublishedTime,
   noindex = false,
   schema,
+  adsense = false,
 }: SEOHeadProps) {
   // Ajoute "| Oumarou Sanda" uniquement si non présent
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
@@ -125,6 +128,15 @@ export function SEOHead({
       {/* ── JSON-LD Schema.org ── */}
       {schemaStr && (
         <script type="application/ld+json">{schemaStr}</script>
+      )}
+
+      {/* ── Google AdSense (blog & articles uniquement) ── */}
+      {adsense && (
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4434058814138910"
+          crossOrigin="anonymous"
+        />
       )}
     </Helmet>
   );
