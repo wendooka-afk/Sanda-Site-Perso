@@ -291,7 +291,7 @@ export default function ContactPage() {
                   <div className="space-y-3">
                     {[
                       { name: 'YouTube', url: 'https://www.youtube.com/@Oumarou_Sanda', icon: Youtube, subs: '10 400' },
-                      { name: 'TikTok', url: 'https://tiktok.com/@iamsanda', icon: MonitorPlay, subs: '68 000' },
+                      { name: 'TikTok', url: 'https://www.tiktok.com/@iamsanda', icon: MonitorPlay, subs: '68 000' },
                       { name: 'LinkedIn', url: 'https://linkedin.com/in/benibsanda', icon: Linkedin, subs: 'Actif' },
                       { name: 'Facebook', url: 'https://facebook.com/iamoumarousanda', icon: Facebook, subs: 'Actif' },
                       { name: 'Instagram', url: 'https://instagram.com/iamsanda', icon: Instagram, subs: 'Actif' }

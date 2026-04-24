@@ -29,7 +29,7 @@ const ABOUT_SCHEMA = {
       "knowsLanguage": ["fr", "en"],
       "sameAs": [
         "https://www.youtube.com/@Oumarou_Sanda",
-        "https://tiktok.com/@iamsanda",
+        "https://www.tiktok.com/@iamsanda",
         "https://linkedin.com/in/benibsanda",
         "https://facebook.com/iamoumarousanda",
         "https://wendooka.com",

@@ -4,7 +4,7 @@ import { useLanguage } from '../i18n';
 
 const socialLinks = [
   { icon: Youtube, label: 'YouTube', href: 'https://www.youtube.com/@Oumarou_Sanda', color: 'hover:text-[#FF0000] hover:border-[#FF0000]/20 hover:bg-[#FF0000]/5 hover:shadow-[0_4px_15px_rgba(255,0,0,0.15)]' },
-  { icon: Music2, label: 'TikTok', href: 'https://tiktok.com/@iamsanda', color: 'hover:text-[#000000] hover:border-black/20 hover:bg-black/5 hover:shadow-[0_4px_15px_rgba(0,0,0,0.15)]' },
+  { icon: Music2, label: 'TikTok', href: 'https://www.tiktok.com/@iamsanda', color: 'hover:text-[#000000] hover:border-black/20 hover:bg-black/5 hover:shadow-[0_4px_15px_rgba(0,0,0,0.15)]' },
   { icon: Facebook, label: 'Facebook', href: 'https://facebook.com/iamoumarousanda', color: 'hover:text-[#1877F2] hover:border-[#1877F2]/20 hover:bg-[#1877F2]/5 hover:shadow-[0_4px_15px_rgba(24,119,242,0.15)]' },
   { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/benibsanda', color: 'hover:text-[#0A66C2] hover:border-[#0A66C2]/20 hover:bg-[#0A66C2]/5 hover:shadow-[0_4px_15px_rgba(10,102,194,0.15)]' },
   { icon: Twitter, label: 'X', href: 'https://x.com/benibsanda', color: 'hover:text-[#000000] hover:border-black/20 hover:bg-black/5 hover:shadow-[0_4px_15px_rgba(0,0,0,0.15)]' },

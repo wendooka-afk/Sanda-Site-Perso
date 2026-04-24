@@ -20,7 +20,7 @@ export default function DashboardSettings() {
     clarityId: 'xxxxxxxxxx',
     // Social
     youtube: 'https://youtube.com/@iamsanda',
-    tiktok: 'https://tiktok.com/@iamsanda',
+    tiktok: 'https://www.tiktok.com/@iamsanda',
     linkedin: 'https://linkedin.com/in/oumarousanda',
     instagram: 'https://instagram.com/iamsanda',
     facebook: 'https://facebook.com/oumarousanda',

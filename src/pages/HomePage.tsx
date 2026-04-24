@@ -685,7 +685,7 @@ function MediaPodcast() {
 
               {/* Vignette YouTube — lien direct sans charger img.youtube.com (3rd-party hit) */}
               <a
-                href="https://youtu.be/WPSXX6Bg6Ks?si=3AMzY765vlTpbdMD"
+                href="https://www.youtube.com/watch?v=WPSXX6Bg6Ks"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Voir la dernière vidéo YouTube d'Oumarou Sanda"
@@ -862,7 +862,7 @@ export default function HomePage() {
               "jobTitle": "Expert Intelligence Artificielle, Formateur, Entrepreneur Digital",
               "url": "https://oumarousanda.com",
               "image": "https://oumarousanda.com/Oumarou Sanda 1.webp",
-              "sameAs": ["https://www.youtube.com/@Oumarou_Sanda", "https://tiktok.com/@iamsanda", "https://linkedin.com/in/benibsanda", "https://facebook.com/iamoumarousanda"]
+              "sameAs": ["https://www.youtube.com/@Oumarou_Sanda", "https://www.tiktok.com/@iamsanda", "https://linkedin.com/in/benibsanda", "https://facebook.com/iamoumarousanda"]
             },
             {
               "@type": "FAQPage",

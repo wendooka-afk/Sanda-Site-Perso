@@ -109,7 +109,7 @@ const LINKS: LinkItem[] = [
 
 const SOCIALS = [
   { Icon: Youtube, href: 'https://www.youtube.com/@Oumarou_Sanda', label: 'YouTube' },
-  { Icon: Music2, href: 'https://tiktok.com/@iamsanda', label: 'TikTok' },
+  { Icon: Music2, href: 'https://www.tiktok.com/@iamsanda', label: 'TikTok' },
   { Icon: Linkedin, href: 'https://linkedin.com/in/benibsanda', label: 'LinkedIn' },
   { Icon: Twitter, href: 'https://x.com/benibsanda', label: 'X' },
   { Icon: Instagram, href: 'https://instagram.com/iamsanda', label: 'Instagram' },

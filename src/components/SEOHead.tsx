@@ -70,6 +70,15 @@ export function SEOHead({
       : `${SITE_URL}${canonical.startsWith('/') ? canonical : `/${canonical}`}`
     : undefined;
 
+  // Détecte si c'est une page EN (/en/...) pour hreflang FR↔EN
+  const isEnPage = canonicalHref ? canonicalHref.includes(`${SITE_URL}/en/`) : false;
+  const frUrl = isEnPage && canonicalHref
+    ? canonicalHref.replace(`${SITE_URL}/en/`, `${SITE_URL}/`)
+    : canonicalHref;
+  const enUrl = !isEnPage && canonicalHref
+    ? canonicalHref.replace(`${SITE_URL}/`, `${SITE_URL}/en/`)
+    : canonicalHref;
+
   // Sérialisation JSON-LD (ne sérialise qu'une fois, stabilisé)
   const schemaStr = schema ? JSON.stringify(schema) : null;
 
@@ -91,11 +100,12 @@ export function SEOHead({
       {/* Canonical */}
       {canonicalHref && <link rel="canonical" href={canonicalHref} />}
 
-      {/* ── Hreflang (contenu FR principal, x-default pour les crawlers) ── */}
+      {/* ── Hreflang FR↔EN (pages bilingues) ── */}
       {canonicalHref && !noindex && (
         <>
-          <link rel="alternate" hrefLang="fr" href={canonicalHref} />
-          <link rel="alternate" hrefLang="x-default" href={canonicalHref} />
+          <link rel="alternate" hrefLang="fr" href={frUrl} />
+          <link rel="alternate" hrefLang="en" href={enUrl} />
+          <link rel="alternate" hrefLang="x-default" href={frUrl} />
         </>
       )}
 
