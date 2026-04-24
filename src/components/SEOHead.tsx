@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 
 const SITE_URL = 'https://oumarousanda.com';
-const DEFAULT_OG_IMAGE = `${SITE_URL}/Oumarou Sanda 1.webp`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/Oumarou%20Sanda%201.webp`;
 const SITE_NAME = 'Oumarou Sanda';
 
 interface SEOHeadProps {

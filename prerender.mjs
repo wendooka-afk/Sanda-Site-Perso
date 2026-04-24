@@ -58,7 +58,7 @@ const BLOG_SLUGS_EN = [
   'how-to-start-budgeting-beginners-guide-2026',
 ];
 
-const FORMATION_SLUGS = ['protocole-video-ia', 'cerveau-augmente', 'offshore-empire'];
+const FORMATION_SLUGS = ['protocole-video-ia', 'cerveau-augmente', 'offshore-empire', 'challenge-30-jours'];
 
 const RESOURCE_SLUGS_FR = [
   'outils-ia-entrepreneurs',

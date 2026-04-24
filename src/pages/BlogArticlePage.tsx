@@ -1134,8 +1134,33 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
         schema={{
           "@context": "https://schema.org",
           "@graph": [
-            { "@type": "BlogPosting", "headline": article.title, "author": { "@type": "Person", "name": article.author || "Oumarou Sanda", "url": "https://oumarousanda.com" }, "publisher": { "@type": "Person", "name": "Oumarou Sanda" }, "datePublished": article.createdAt, "mainEntityOfPage": "https://oumarousanda.com/blog/" + article.slug },
-            { "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://oumarousanda.com" }, { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://oumarousanda.com/blog" }, { "@type": "ListItem", "position": 3, "name": article.title, "item": "https://oumarousanda.com/blog/" + article.slug } ] }
+            {
+              "@type": "BlogPosting",
+              "headline": article.title,
+              "description": article.excerpt || article.seo?.metaDescription,
+              "image": article.image || "https://oumarousanda.com/Oumarou%20Sanda%201.webp",
+              "url": "https://oumarousanda.com/blog/" + article.slug,
+              "mainEntityOfPage": { "@type": "WebPage", "@id": "https://oumarousanda.com/blog/" + article.slug },
+              "author": { "@type": "Person", "name": article.author || "Oumarou Sanda", "url": "https://oumarousanda.com/a-propos" },
+              "publisher": {
+                "@type": "Person",
+                "name": "Oumarou Sanda",
+                "url": "https://oumarousanda.com",
+                "image": { "@type": "ImageObject", "url": "https://oumarousanda.com/Oumarou%20Sanda%201.webp" }
+              },
+              "datePublished": article.createdAt,
+              "dateModified": article.createdAt,
+              "inLanguage": "fr",
+              "keywords": article.tag || article.category
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://oumarousanda.com" },
+                { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://oumarousanda.com/blog" },
+                { "@type": "ListItem", "position": 3, "name": article.title, "item": "https://oumarousanda.com/blog/" + article.slug }
+              ]
+            }
           ]
         }}
         adsense
@@ -1436,7 +1461,7 @@ export default function BlogArticlePage() {
 
   // ── SEO helpers ────────────────────────────────────────────────
   const isoDate = parseFrenchDate(article.date);
-  const articleImage = typeof article.image === 'string' ? article.image : 'https://oumarousanda.com/Oumarou Sanda 1.webp';
+  const articleImage = typeof article.image === 'string' ? article.image : 'https://oumarousanda.com/Oumarou%20Sanda%201.webp';
 
   // Extrait les FAQ pour le schema FAQPage (sections type "faq-rich")
   type FaqItem = { q: string; a: string };
