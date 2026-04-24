@@ -36,10 +36,35 @@ import type { DashboardArticle } from '../hooks/useDashboardArticles';
 import { marked } from 'marked';
 import { applyAutoLinks } from '../utils/autoLink';
 import { Calendar, Clock, ArrowLeft, ArrowRight, Home, ChevronRight, Share2, ExternalLink, CheckCircle2, XCircle, AlertTriangle, List, Play, Puzzle, Palette, DollarSign, MessageCircle, Send, User, Heart, Reply, Linkedin, Facebook, Globe, Youtube, BookOpen } from 'lucide-react';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, Fragment } from 'react';
 import { SEOHead } from '../components/SEOHead';
 import { useLanguage } from '../i18n';
 import { blogTexts } from '../i18n/pages/blog';
+
+/** Extrait le nombre de minutes depuis readTime ("~10 min", "25 min", etc.) */
+function parseReadTimeMinutes(readTime: string): number {
+  const m = readTime.match(/(\d+)/);
+  return m ? parseInt(m[1], 10) : 0;
+}
+
+/** Positions (indices de section) après lesquelles injecter un AdUnit */
+function getAdPositions(total: number, isLong: boolean): Set<number> {
+  if (total < 4) return new Set();
+  const raw = isLong
+    ? [Math.max(2, Math.floor(total * 0.2)), Math.floor(total * 0.5), Math.min(total - 3, Math.floor(total * 0.8))]
+    : [Math.max(2, Math.floor(total * 0.3)), Math.min(total - 3, Math.floor(total * 0.7))];
+  return new Set(raw.filter((p, _, arr) => p >= 2 && p <= total - 2 && arr.indexOf(p) === arr.lastIndexOf(p)));
+}
+
+/** Positions (indices de chunk HTML) après lesquelles injecter un AdUnit */
+function getHtmlAdPositions(chunks: string[], isLong: boolean): Set<number> {
+  const n = chunks.length;
+  if (n < 3) return new Set([Math.floor(n / 2)].filter(p => p < n));
+  const raw = isLong
+    ? [Math.max(1, Math.floor(n * 0.2)), Math.floor(n * 0.5), Math.min(n - 2, Math.floor(n * 0.8))]
+    : [Math.max(1, Math.floor(n * 0.3)), Math.min(n - 2, Math.floor(n * 0.7))];
+  return new Set(raw.filter(p => p >= 1 && p < n));
+}
 
 /* ═══ Rich Section Renderers ═══ */
 
@@ -422,52 +447,46 @@ function SEOKeywords({ keywords }: { keywords: string[] }) {
 
 /* ═══ Rich Article Renderer ═══ */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function RichArticleContent({ article }: { article: any }) {
+function RichArticleContent({ article, readTime = '' }: { article: any; readTime?: string }) {
+  const mins = parseReadTimeMinutes(readTime);
+  const isLong = mins > 10;
+  const sections = article.sections as Record<string, unknown>[];
+  const adPositions = getAdPositions(sections.length, isLong);
+
   return (
     <div>
       {article.tableOfContents && <TableOfContents items={article.tableOfContents} className="xl:hidden" />}
 
-      {article.sections.map((section: Record<string, unknown>, i: number) => {
+      {sections.map((section, i) => {
+        let el: React.ReactNode = null;
         switch (section.type) {
-          case 'intro':
-            return <RenderIntro key={i} content={section.content as string || ''} />;
-          case 'heading':
-            return <RenderHeading key={i} content={section.content as string || ''} id={section.id as string} />;
-          case 'text':
-            return <RenderText key={i} content={section.content as string || ''} />;
-          case 'list':
-            return <RenderList key={i} items={section.items as (string | { title: string; desc: string })[]} />;
-          case 'cta':
-            return <RenderCTA key={i} label={section.label as string || ''} url={section.url as string || ''} variant={section.variant as string || 'primary'} />;
-          case 'competitors':
-            return <RenderCompetitors key={i} items={section.items as string[]} />;
-          case 'pros':
-            return <RenderPros key={i} items={section.items as (string | { title: string; desc?: string })[]} />;
-          case 'cons':
-            return <RenderCons key={i} items={section.items as { title: string; desc: string }[]} />;
-          case 'disclaimer':
-            return <RenderDisclaimer key={i} content={section.content as string || ''} />;
-          case 'plugin':
-            return <RenderPlugin key={i} name={section.name as string} number={section.number as number} desc={section.desc as string} plan={section.plan as string} deal={section.deal as string} />;
-          case 'themes':
-            return <RenderThemes key={i} items={section.items as { title: string; desc: string; badge: string }[]} />;
-          case 'video':
-            return <RenderVideo key={i} url={section.url as string} title={section.title as string} />;
-          case 'monetization':
-            return <RenderMonetization key={i} items={section.items as { title: string; desc: string; icon: string }[]} />;
-          case 'table':
-            return <RenderTable key={i} headers={section.headers as string[]} rows={section.rows as string[][]} />;
-          case 'key-points':
-            return <RenderKeyPoints key={i} items={section.items as string[]} />;
-          case 'stats-grid':
-            return <RenderStats key={i} items={section.items as { num?: string; value?: string; label: string }[]} />;
-          case 'faq-rich':
-            return <RenderFAQ key={i} items={section.items as { q: string; a: string }[]} />;
-          case 'internal-links':
-            return <RenderInternalLinks key={i} items={section.items as { label: string; url?: string; slug?: string }[]} />;
-          default:
-            return null;
+          case 'intro':         el = <RenderIntro content={section.content as string || ''} />; break;
+          case 'heading':       el = <RenderHeading content={section.content as string || ''} id={section.id as string} />; break;
+          case 'text':          el = <RenderText content={section.content as string || ''} />; break;
+          case 'list':          el = <RenderList items={section.items as (string | { title: string; desc: string })[]} />; break;
+          case 'cta':           el = <RenderCTA label={section.label as string || ''} url={section.url as string || ''} variant={section.variant as string || 'primary'} />; break;
+          case 'competitors':   el = <RenderCompetitors items={section.items as string[]} />; break;
+          case 'pros':          el = <RenderPros items={section.items as (string | { title: string; desc?: string })[]} />; break;
+          case 'cons':          el = <RenderCons items={section.items as { title: string; desc: string }[]} />; break;
+          case 'disclaimer':    el = <RenderDisclaimer content={section.content as string || ''} />; break;
+          case 'plugin':        el = <RenderPlugin name={section.name as string} number={section.number as number} desc={section.desc as string} plan={section.plan as string} deal={section.deal as string} />; break;
+          case 'themes':        el = <RenderThemes items={section.items as { title: string; desc: string; badge: string }[]} />; break;
+          case 'video':         el = <RenderVideo url={section.url as string} title={section.title as string} />; break;
+          case 'monetization':  el = <RenderMonetization items={section.items as { title: string; desc: string; icon: string }[]} />; break;
+          case 'table':         el = <RenderTable headers={section.headers as string[]} rows={section.rows as string[][]} />; break;
+          case 'key-points':    el = <RenderKeyPoints items={section.items as string[]} />; break;
+          case 'stats-grid':    el = <RenderStats items={section.items as { num?: string; value?: string; label: string }[]} />; break;
+          case 'faq-rich':      el = <RenderFAQ items={section.items as { q: string; a: string }[]} />; break;
+          case 'internal-links':el = <RenderInternalLinks items={section.items as { label: string; url?: string; slug?: string }[]} />; break;
         }
+        return (
+          <Fragment key={i}>
+            {el}
+            {adPositions.has(i) && (
+              <AdUnit slot="7070630877" format="fluid" layout="in-article" className="my-10" />
+            )}
+          </Fragment>
+        );
       })}
 
       {article.seo?.secondaryKeywords && <SEOKeywords keywords={article.seo.secondaryKeywords} />}
@@ -1271,6 +1290,13 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
         </div>
       )}
 
+      {/* ══ BANNIÈRE publicitaire — entre méta et corps de l'article ══ */}
+      <div className="bg-white border-t border-black/[0.04]">
+        <div className="max-w-[1120px] mx-auto px-5 sm:px-8 py-4">
+          <AdUnit slot="9367115017" format="auto" className="w-full" />
+        </div>
+      </div>
+
       {/* ══════════════════════════════════════════
           CONTENT — Article (55fr) + Sidebar (15fr)
       ══════════════════════════════════════════ */}
@@ -1286,10 +1312,20 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15 }}
             >
-              <div
-                className="ap-body"
-                dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(htmlContent) }}
-              />
+              {/* Split HTML on H2 boundaries to inject in-article ads */}
+              {(() => {
+                const isLong = parseReadTimeMinutes(article.readTime) > 10;
+                const chunks = htmlContent.split(/(?=<h2[\s>])/i).filter(Boolean);
+                const adAt = getHtmlAdPositions(chunks, isLong);
+                return chunks.map((chunk, ci) => (
+                  <Fragment key={ci}>
+                    <div className="ap-body" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(chunk) }} />
+                    {adAt.has(ci) && (
+                      <AdUnit slot="7070630877" format="fluid" layout="in-article" className="my-10" />
+                    )}
+                  </Fragment>
+                ));
+              })()}
 
               {/* Share footer */}
               <div className="mt-16 pt-10 border-t border-black/5">
@@ -1392,6 +1428,12 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
                   </div>
                 )}
 
+                {/* ── Bloc publicitaire sidebar ── */}
+                <div className="rounded-2xl overflow-hidden border border-black/[0.06] bg-[#fafafa]">
+                  <p className="text-[9px] text-[#c0c0c0] text-center pt-2 uppercase tracking-widest">Annonce</p>
+                  <AdUnit slot="9367115017" format="auto" className="w-full" />
+                </div>
+
               </div>
             </aside>
 
@@ -1405,6 +1447,11 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
           {/* Comments */}
           <div className="mt-12">
             <CommentsSection articleSlug={article.slug} />
+          </div>
+
+          {/* ── Bloc publicitaire sous les commentaires ── */}
+          <div className="mt-8">
+            <AdUnit slot="9367115017" format="auto" className="w-full" />
           </div>
         </div>
       </section>
@@ -1612,6 +1659,13 @@ export default function BlogArticlePage() {
         </div>
       )}
 
+      {/* ══ BANNIÈRE publicitaire — entre méta et corps de l'article ══ */}
+      <div className="bg-white border-t border-black/[0.04]">
+        <div className="max-w-[1120px] mx-auto px-5 sm:px-8 py-4">
+          <AdUnit slot="9367115017" format="auto" className="w-full" />
+        </div>
+      </div>
+
       {/* ═══ ARTICLE BODY — 55fr + 15fr ═══ */}
       <section className="bg-white">
         <div className="h-px bg-gradient-to-r from-transparent via-black/5 to-transparent" />
@@ -1627,14 +1681,12 @@ export default function BlogArticlePage() {
                 transition={{ delay: 0.15 }}
               >
                 {isRich ? (
-                  <RichArticleContent article={article} />
+                  <RichArticleContent article={article} readTime={article.readTime} />
                 ) : (
                   <PlainArticleContent content={((article as Record<string, unknown>).content as string | undefined) ?? ''} />
                 )}
 
                 <ArticleCTABlock category={article.category} />
-
-                <AdUnit slot="7070630877" format="fluid" layout="in-article" className="my-8" />
 
                 {/* Share footer */}
                 <div className="mt-14 pt-8 border-t border-black/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
@@ -1759,6 +1811,12 @@ export default function BlogArticlePage() {
                     </div>
                   </div>
                 )}
+
+                {/* ── Bloc publicitaire sidebar ── */}
+                <div className="rounded-2xl overflow-hidden border border-black/[0.06] bg-[#fafafa]">
+                  <p className="text-[9px] text-[#c0c0c0] text-center pt-2 uppercase tracking-widest">Annonce</p>
+                  <AdUnit slot="9367115017" format="auto" className="w-full" />
+                </div>
 
               </div>
             </aside>
