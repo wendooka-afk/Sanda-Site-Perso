@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Download, CheckSquare, FileText, Play, BookOpen, Wrench, Check } from 'lucide-react';
+import { ArrowLeft, Download, CheckSquare, Check } from 'lucide-react';
 import { useState } from 'react';
 import { SEOHead } from '../components/SEOHead';
 import { useLanguage } from '../i18n';
@@ -162,7 +162,7 @@ function SectionRenderer({ section }: { section: ResourceSection }) {
 /* ══════════════════════════════════════
    GATED ACCESS FORM
 ══════════════════════════════════════ */
-function GatedAccess({ badge, isFree, lang }: { badge: string; isFree: boolean; lang: 'fr' | 'en' }) {
+function GatedAccess({ badge: _badge, isFree, lang }: { badge: string; isFree: boolean; lang: 'fr' | 'en' }) {
   const [email, setEmail] = useState('');
   const [unlocked, setUnlocked] = useState(false);
 
@@ -208,17 +208,6 @@ function GatedAccess({ badge, isFree, lang }: { badge: string; isFree: boolean; 
     </motion.div>
   );
 }
-
-/* ══════════════════════════════════════
-   TYPE ICON MAP
-══════════════════════════════════════ */
-const typeIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  pdf: FileText,
-  checklist: CheckSquare,
-  template: BookOpen,
-  video: Play,
-  outil: Wrench,
-};
 
 const badgeColorMap: Record<string, string> = {
   'Guide PDF': 'bg-blue/10 text-blue border-blue/20',

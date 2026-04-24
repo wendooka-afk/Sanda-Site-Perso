@@ -25,12 +25,50 @@ export default function FormationDetailPage() {
         ogType="website"
         schema={{
           "@context": "https://schema.org",
-          "@type": "Course",
-          "name": formation.name,
-          "description": formation.longDescription,
-          "provider": { "@type": "Person", "name": "Oumarou Sanda", "url": "https://oumarousanda.com" },
-          "inLanguage": "fr",
-          "url": `https://oumarousanda.com/formations/${formation.id}`
+          "@graph": [
+            {
+              "@type": "Course",
+              "name": formation.name,
+              "description": formation.longDescription,
+              "provider": { "@type": "Person", "name": "Oumarou Sanda", "url": "https://oumarousanda.com" },
+              "inLanguage": "fr",
+              "url": `https://oumarousanda.com/formations/${formation.id}`,
+              "offers": {
+                "@type": "Offer",
+                "price": formation.price.replace(/[^\d]/g, ''),
+                "priceCurrency": "XAF",
+                "availability": "https://schema.org/InStock"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": formation.rating,
+                "bestRating": "5",
+                "ratingCount": formation.students.replace(/[^\d]/g, '')
+              },
+              "hasCourseInstance": {
+                "@type": "CourseInstance",
+                "courseMode": "online",
+                "courseWorkload": formation.duration
+              },
+              "educationalLevel": "Beginner"
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://oumarousanda.com" },
+                { "@type": "ListItem", "position": 2, "name": "Formations", "item": "https://oumarousanda.com/formations" },
+                { "@type": "ListItem", "position": 3, "name": formation.name, "item": `https://oumarousanda.com/formations/${formation.id}` }
+              ]
+            },
+            ...(formation.faq?.length ? [{
+              "@type": "FAQPage",
+              "mainEntity": formation.faq.map((item: { q: string; a: string }) => ({
+                "@type": "Question",
+                "name": item.q,
+                "acceptedAnswer": { "@type": "Answer", "text": item.a }
+              }))
+            }] : [])
+          ]
         }}
       />
       {/* Hero */}

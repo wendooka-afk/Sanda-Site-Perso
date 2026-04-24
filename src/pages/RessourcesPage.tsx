@@ -55,12 +55,14 @@ const categoryIndexMap: Record<string, number> = {
 };
 
 /* ═══════════════════════ RESOURCE CARD ═══════════════════════ */
+type ResourcesText = typeof resourcesTexts['fr'] | typeof resourcesTexts['en'];
+
 type ResourceCardProps = {
   meta: ResourceMeta;
   title: string;
   description: string;
   cta: string;
-  tx: typeof resourcesTexts['fr'];
+  tx: ResourcesText;
   i: number;
   detailPath: string;
 };
@@ -186,7 +188,7 @@ function ResourceCard({ meta, title, description, cta, tx, i, detailPath }: Reso
 }
 
 /* ═══════════════════════ HERO ═══════════════════════ */
-function RessourcesHero({ tx }: { tx: typeof resourcesTexts['fr'] }) {
+function RessourcesHero({ tx }: { tx: ResourcesText }) {
   const pdfCount = resourcesMeta.filter(r => r.type === 'pdf').length;
   const checklistCount = resourcesMeta.filter(r => r.type === 'checklist').length;
   const templateCount = resourcesMeta.filter(r => r.type === 'template').length;
@@ -223,7 +225,7 @@ function RessourcesHero({ tx }: { tx: typeof resourcesTexts['fr'] }) {
 }
 
 /* ═══════════════════════ NEWSLETTER CTA ═══════════════════════ */
-function NewsletterCTA({ tx }: { tx: typeof resourcesTexts['fr'] }) {
+function NewsletterCTA({ tx }: { tx: ResourcesText }) {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
@@ -289,7 +291,7 @@ export default function RessourcesPage() {
   const { language, localePath } = useLanguage();
   const tx = resourcesTexts[language];
 
-  const [activeCategory, setActiveCategory] = useState(tx.categories[0]);
+  const [activeCategory, setActiveCategory] = useState<string>(tx.categories[0]);
 
   // Build merged resource list (meta + translated text + detail path)
   const allResources = resourcesMeta.map((meta, idx) => {
@@ -317,6 +319,36 @@ export default function RessourcesPage() {
         title={tx.seo.title}
         description={tx.seo.description}
         canonical={tx.seo.canonical}
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "CollectionPage",
+              "name": tx.seo.title,
+              "description": tx.seo.description,
+              "url": `https://oumarousanda.com${tx.seo.canonical}`,
+              "author": { "@type": "Person", "name": "Oumarou Sanda", "url": "https://oumarousanda.com" }
+            },
+            {
+              "@type": "ItemList",
+              "name": language === 'en' ? "Free Resources — Oumarou Sanda" : "Ressources Gratuites — Oumarou Sanda",
+              "url": `https://oumarousanda.com${tx.seo.canonical}`,
+              "itemListElement": allResources.map((r, i) => ({
+                "@type": "ListItem",
+                "position": i + 1,
+                "name": r.title,
+                "url": `https://oumarousanda.com${r.detailPath}`
+              }))
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": language === 'en' ? "Home" : "Accueil", "item": "https://oumarousanda.com" },
+                { "@type": "ListItem", "position": 2, "name": language === 'en' ? "Resources" : "Ressources", "item": `https://oumarousanda.com${tx.seo.canonical}` }
+              ]
+            }
+          ]
+        }}
       />
       <RessourcesHero tx={tx} />
 

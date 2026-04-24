@@ -439,7 +439,37 @@ export default function BlogPage() {
         title={tx.seo.title}
         description={tx.seo.description}
         canonical="/blog"
-        schema={{ "@context": "https://schema.org", "@type": "Blog", "name": "Blog Oumarou Sanda", "url": "https://oumarousanda.com/blog", "author": { "@type": "Person", "name": "Oumarou Sanda" } }}
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Blog",
+              "name": "Blog Oumarou Sanda",
+              "url": "https://oumarousanda.com/blog",
+              "description": tx.seo.description,
+              "author": { "@type": "Person", "name": "Oumarou Sanda", "url": "https://oumarousanda.com" },
+              "inLanguage": "fr"
+            },
+            {
+              "@type": "ItemList",
+              "name": "Articles récents — Blog Oumarou Sanda",
+              "url": "https://oumarousanda.com/blog",
+              "itemListElement": staticArticles.slice(0, 10).map((a, i) => ({
+                "@type": "ListItem",
+                "position": i + 1,
+                "name": a.title,
+                "url": `https://oumarousanda.com/blog/${a.slug}`
+              }))
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://oumarousanda.com" },
+                { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://oumarousanda.com/blog" }
+              ]
+            }
+          ]
+        }}
         adsense
       />
       <BlogHero
