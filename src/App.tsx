@@ -11,6 +11,7 @@ const FormationsPage = lazy(() => import('./pages/FormationsPage'));
 const FormationDetailPage = lazy(() => import('./pages/FormationDetailPage'));
 const BlogPage = lazy(() => import('./pages/BlogPage'));
 const BlogArticlePage = lazy(() => import('./pages/BlogArticlePage'));
+const GuidePage = lazy(() => import('./pages/GuidePage'));
 const MediaPage = lazy(() => import('./pages/MediaPage'));
 const BookPage = lazy(() => import('./pages/BookPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
@@ -82,6 +83,7 @@ function PublicRoutes() {
         <Route path="formations/:slug" element={<FormationDetailPage />} />
         <Route path="blog" element={<BlogPage />} />
         <Route path="blog/:slug" element={<BlogArticlePage />} />
+        <Route path="guide" element={<GuidePage />} />
         <Route path="medias" element={<MediaPage />} />
         <Route path="media" element={<MediaPage />} />
         <Route path="livres" element={<BookPage />} />

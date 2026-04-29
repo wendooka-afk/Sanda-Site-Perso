@@ -290,7 +290,6 @@ function BlogGrid({ filteredArticles }: { filteredArticles: BlogArticleMeta[] })
                             </div>
                           </div>
                         )}
-
                         <div className="p-4 sm:p-6 flex flex-col flex-1">
                           <span className={'px-2.5 py-0.5 rounded-full text-[9px] font-bold tracking-wider uppercase border self-start mb-3 ' + article.tagColor}>{article.tag}</span>
                           <h2 className="font-heading font-black text-lg sm:text-xl text-[#0a0a0a] mb-3 group-hover:text-blue-600 transition-colors leading-snug line-clamp-2">
@@ -299,7 +298,6 @@ function BlogGrid({ filteredArticles }: { filteredArticles: BlogArticleMeta[] })
                           <p className="text-[#525252] text-[13px] leading-relaxed mb-5 line-clamp-2">
                             {article.excerpt}
                           </p>
-
                           <div className="mt-auto flex items-center justify-between text-[#737373] text-[11px] font-bold tracking-wide pt-4 border-t border-black/5">
                             <div className="flex items-center gap-3">
                               <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {article.date}</span>

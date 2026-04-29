@@ -14,6 +14,7 @@ export function Navbar() {
     { label: t.nav.ecosystem, href: localePath('/services') },
     { label: t.nav.formations, href: localePath('/formations'), frOnly: true },
     { label: t.nav.blog, href: localePath('/blog') },
+    { label: t.nav.guide, href: localePath('/guide') },
     { label: t.nav.media, href: localePath(language === 'en' ? '/media' : '/medias'), frOnly: true },
     { label: t.nav.book, href: localePath(language === 'en' ? '/books' : '/livres'), frOnly: true },
     { label: t.nav.contact, href: localePath('/contact') },

@@ -1,4 +1,5 @@
 import path from "path";
+import fs from "fs";
 import { fileURLToPath } from "url";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
@@ -9,7 +10,30 @@ const __dirname = path.dirname(__filename);
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    // Sert public/<slug>/index.html pour les pages articles statiques
+    // (en prod Apache fait ça nativement via DirectoryIndex)
+    {
+      name: "serve-static-articles",
+      configureServer(server) {
+        server.middlewares.use((req, res, next) => {
+          const pathname = (req.url ?? "/").split("?")[0].split("#")[0];
+          // Ignore la racine et les chemins avec extension (.js, .css, etc.)
+          if (pathname === "/" || path.extname(pathname)) return next();
+          const clean = pathname.replace(/^\/|\/$/g, "");
+          const candidate = path.resolve(__dirname, "public", clean, "index.html");
+          if (fs.existsSync(candidate)) {
+            res.setHeader("Content-Type", "text/html; charset=utf-8");
+            res.end(fs.readFileSync(candidate));
+          } else {
+            next();
+          }
+        });
+      },
+    },
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),

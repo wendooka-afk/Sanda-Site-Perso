@@ -7,6 +7,7 @@ export const en: Translations = {
     ecosystem: 'Services',
     formations: 'Courses',
     blog: 'Blog',
+    guide: 'Guides',
     media: 'Media',
     book: 'My Books',
     contact: 'Contact',

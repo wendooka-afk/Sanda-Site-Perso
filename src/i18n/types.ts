@@ -8,6 +8,7 @@ export interface Translations {
     ecosystem: string;
     formations: string;
     blog: string;
+    guide: string;
     media: string;
     book: string;
     contact: string;

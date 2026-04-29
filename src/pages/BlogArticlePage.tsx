@@ -1498,6 +1498,9 @@ export default function BlogArticlePage() {
     'sections' in article
   );
   const hasImage = 'image' in article && Boolean((article as Record<string, unknown>).image);
+  const hasBodyHtml = 'bodyHtml' in article && Boolean((article as Record<string, unknown>).bodyHtml);
+  const articleBodyHtml = hasBodyHtml ? (article as Record<string, unknown>).bodyHtml as string : '';
+  const articleBodyCss = hasBodyHtml && 'bodyCss' in article ? (article as Record<string, unknown>).bodyCss as string : '';
 
   const handleShare = () => {
     const url = window.location.href;
@@ -1682,6 +1685,11 @@ export default function BlogArticlePage() {
               >
                 {isRich ? (
                   <RichArticleContent article={article} readTime={article.readTime} />
+                ) : hasBodyHtml ? (
+                  <>
+                    {articleBodyCss && <style>{articleBodyCss}</style>}
+                    <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(articleBodyHtml, { ADD_TAGS: ['style'], ADD_ATTR: ['class', 'id'] }) }} />
+                  </>
                 ) : (
                   <PlainArticleContent content={((article as Record<string, unknown>).content as string | undefined) ?? ''} />
                 )}
