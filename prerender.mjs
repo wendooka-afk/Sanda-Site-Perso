@@ -91,6 +91,7 @@ const ROUTES = [
   '/services',
   '/formations',
   '/blog',
+  '/guide',
   '/medias',
   '/livres',
   '/contact',
