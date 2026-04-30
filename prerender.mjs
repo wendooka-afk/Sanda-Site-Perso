@@ -84,6 +84,10 @@ const RESOURCE_SLUGS_EN = [
   'my-complete-stack',
 ];
 
+const GUIDE_SLUGS_FR = [
+  'comment-utiliser-veo-3-videos-publicitaires',
+];
+
 const ROUTES = [
   // ── Pages principales FR ──
   '/',
@@ -122,6 +126,9 @@ const ROUTES = [
 
   // ── Articles blog EN ──
   ...BLOG_SLUGS_EN.map((s) => `/en/blog/${s}`),
+
+  // ── Guides FR ──
+  ...GUIDE_SLUGS_FR.map((s) => `/guide/${s}`),
 
   // ── Ressources ──
   ...RESOURCE_SLUGS_FR.map((s) => `/ressources/${s}`),
@@ -253,7 +260,7 @@ const SITE_URL = 'https://oumarousanda.com';
 function priorityFor(route) {
   if (route === '/') return '1.0';
   if (route === '/blog' || route === '/formations') return '0.9';
-  if (route.startsWith('/blog/') || route.startsWith('/formations/')) return '0.8';
+  if (route.startsWith('/blog/') || route.startsWith('/formations/') || route.startsWith('/guide/')) return '0.8';
   if (route.startsWith('/en/')) return '0.6';
   return '0.7';
 }
