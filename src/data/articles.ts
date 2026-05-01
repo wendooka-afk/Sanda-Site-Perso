@@ -14,8 +14,8 @@ export const articles = [
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80',
     seo: {
       focusKeyword: 'BMO services bancaires en ligne',
-      metaTitle: 'BMO Banque de Montréal : Guide Complet des Services Bancaires en Ligne (2026)',
-      metaDescription: 'Guide complet sur les services bancaires en ligne de BMO Banque de Montréal : connexion, application mobile, virements, sécurité, comptes et fonctionnalités numériques en 2025-2026.',
+      metaTitle: 'BMO : Guide des Services Bancaires en Ligne (2026)',
+      metaDescription: 'Guide BMO Banque de Montréal : connexion, application mobile, virements Interac, sécurité et comptes en ligne. Tout savoir en 2026.',
     },
     tableOfContents: [
       { id: 'intro', label: 'BMO en chiffres : une banque numérique de référence' },
