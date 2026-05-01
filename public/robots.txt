@@ -1,7 +1,12 @@
+# ═══════════════════════════════════════════════════════════════
+#  robots.txt — oumarousanda.com
+# ═══════════════════════════════════════════════════════════════
+
+# Autoriser tous les bots (y compris Bingbot, Googlebot, etc.)
 User-agent: *
 Allow: /
 
-# Exclure le dashboard admin de l'indexation
+# Exclure uniquement le dashboard admin
 Disallow: /dashboard
 Disallow: /dashboard/
 
