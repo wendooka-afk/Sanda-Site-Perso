@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build && node prerender.mjs",
     "build:only": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "indexnow": "node indexnow-submit.mjs",
+    "indexnow:dry": "node indexnow-submit.mjs --dry-run"
   },
   "dependencies": {
     "@tiptap/extension-code-block-lowlight": "^3.20.1",
