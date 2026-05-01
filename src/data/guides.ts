@@ -22,4 +22,15 @@ export const guides: GuideArticle[] = [
     readTime: '18 min',
     author: 'Oumarou Sanda',
   },
+  {
+    slug: 'comment-utiliser-suno-ai-creer-musique',
+    title: 'Comment utiliser Suno AI pour créer de la musique (Guide 2026)',
+    excerpt: 'Guide complet Suno AI : créez des chansons, jingles et musiques de fond avec l\'IA. Prompts prêts à copier, prix, workflow et erreurs à éviter.',
+    tag: 'Suno AI',
+    tagColor: 'bg-purple-500/10 text-purple-700 border border-purple-500/20',
+    image: '',
+    date: '1 Mai 2026',
+    readTime: '18 min',
+    author: 'Oumarou Sanda',
+  },
 ];
