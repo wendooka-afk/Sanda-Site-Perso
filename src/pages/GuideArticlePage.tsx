@@ -1,16 +1,15 @@
 import { useParams, Navigate } from 'react-router-dom';
 import { guides } from '../data/guides';
 import { useLanguage } from '../i18n';
-import { useEffect } from 'react';
+import { SEOHead } from '../components/SEOHead';
 
 /**
- * GuideArticlePage — Redirects to the static HTML guide.
+ * GuideArticlePage — Displays static HTML guides in a full-page iframe.
  *
- * Guide articles are standalone static HTML files stored in
- * public/guide/<slug>/index.html with their own design, SEO,
- * and structured data. This component simply performs a hard
- * redirect so the browser loads the static HTML directly,
- * preserving the original formatting exactly as intended.
+ * Guide articles are standalone HTML files in public/guide/<slug>/index.html
+ * with their own design, SEO, and structured data. This component loads them
+ * via iframe to preserve the original formatting exactly as intended,
+ * without causing redirect loops.
  */
 export default function GuideArticlePage() {
   const { slug } = useParams();
@@ -18,24 +17,29 @@ export default function GuideArticlePage() {
 
   const guide = guides.find((g) => g.slug === slug);
 
-  useEffect(() => {
-    if (guide) {
-      // Hard redirect to the static HTML file — bypasses React SPA
-      window.location.replace(`/guide/${guide.slug}/`);
-    }
-  }, [guide]);
-
   if (!guide) {
     return <Navigate to={localePath('/guide')} replace />;
   }
 
-  // Show minimal loading state while redirect happens
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#faf9f6]">
-      <div className="text-center">
-        <div className="w-8 h-8 border-2 border-[#e8d48b] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-        <p className="text-[#7a7a7a] text-sm font-medium">Chargement du guide…</p>
-      </div>
-    </div>
+    <>
+      <SEOHead
+        title={guide.title + ' | Oumarou Sanda'}
+        description={guide.excerpt}
+        canonical={'/guide/' + guide.slug}
+        ogType="article"
+      />
+      <iframe
+        src={`/guide/${guide.slug}/index.html`}
+        title={guide.title}
+        style={{
+          width: '100%',
+          height: '100vh',
+          border: 'none',
+          display: 'block',
+          overflow: 'auto',
+        }}
+      />
+    </>
   );
 }
