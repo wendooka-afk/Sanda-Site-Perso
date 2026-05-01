@@ -1109,7 +1109,7 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
     <>
       <style>{`
         .ap-body { font-size: 1.05rem; }
-        .ap-body h1 { font-weight: 900; color: #080808; font-size: clamp(1.8rem,3.5vw,2.4rem); line-height: 1.15; margin: 3.5rem 0 1.25rem; }
+        .ap-body h1 { font-weight: 800; color: #080808; font-size: clamp(1.25rem,2.4vw,1.65rem); line-height: 1.25; margin: 3.5rem 0 1.25rem; padding-left: 1.1rem; border-left: 3px solid #f59e0b; }
         .ap-body h2 { font-weight: 800; color: #080808; font-size: clamp(1.25rem,2.4vw,1.65rem); line-height: 1.25; margin: 3.5rem 0 1.25rem; padding-left: 1.1rem; border-left: 3px solid #f59e0b; }
         .ap-body h3 { font-weight: 700; color: #111; font-size: 1.15rem; line-height: 1.35; margin: 2.5rem 0 0.9rem; }
         .ap-body h4 { font-weight: 700; color: #222; font-size: 1rem; line-height: 1.4; margin: 2rem 0 0.75rem; }

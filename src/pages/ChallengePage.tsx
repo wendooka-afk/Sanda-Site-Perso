@@ -737,7 +737,7 @@ export default function ChallengePage() {
       <section className="relative py-20 sm:py-28 bg-[#fafafa] border-b border-black/5 overflow-hidden">
         {/* Decorative background photo blurred */}
         <div className="absolute inset-0 opacity-3 pointer-events-none overflow-hidden">
-          <img src="/Oumarou Sanda homepage about section.webp" alt="" aria-hidden className="w-full h-full object-cover blur-[80px] scale-110 opacity-20" />
+          <img src="/Oumarou Sanda homepage about section.webp" alt="Oumarou Sanda - Formateur IA" aria-hidden="true" className="w-full h-full object-cover blur-[80px] scale-110 opacity-20" />
         </div>
         <div className="relative max-w-5xl mx-auto px-5 sm:px-6 z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}
