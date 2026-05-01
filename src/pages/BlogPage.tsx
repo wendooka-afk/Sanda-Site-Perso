@@ -28,7 +28,7 @@ export interface BlogArticleMeta {
 function getAllArticles(lang: 'fr' | 'en'): BlogArticleMeta[] {
   if (lang === 'en') {
     // English: only show English articles
-    return articlesEn.map((a) => ({
+    return [...articlesEn].reverse().map((a) => ({
       slug: a.slug,
       title: a.title,
       excerpt: a.excerpt,

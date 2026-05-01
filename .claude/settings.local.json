@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "Bash(test -f .env)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npm run *)",
+      "Bash(node -e ' *)",
+      "Bash(git checkout *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }

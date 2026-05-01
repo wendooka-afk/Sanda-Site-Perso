@@ -395,7 +395,7 @@ export const articlesEn = [
     tag: 'Complete Guide 2026',
     tagColor: 'text-blue bg-blue/10',
     author: 'Oumarou Sanda',
-    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80',
     lang: 'en' as const,
     seo: {
       focusKeyword: 'how to start budgeting',
@@ -555,6 +555,170 @@ export const articlesEn = [
           { label: 'AI Budget Automation: Save 10+ Hours a Week on Your Finances', slug: 'ai-budget-automation-save-10-hours-week' },
           { label: 'How to Use AI to Build a Passive Income Stream (Step-by-Step)', slug: 'ai-passive-income-stream-step-by-step' },
           { label: '7 AI Tools to Start a Profitable Side Hustle in 2026', slug: '7-ai-tools-profitable-side-hustle-2026' },
+        ]
+      },
+    ],
+  },
+
+  {
+    slug: '25-free-printable-diy-crafts-kids-adults',
+    title: '25 Free Printable DIY Crafts for Kids & Adults (2026)',
+    excerpt: 'The ultimate collection of free printable craft templates you can download, print, and make at home today — paper dolls, 3D houses, bookmarks, masks, gift boxes, and more.',
+    content: `Why buy expensive craft kits when your printer can do the work? These 25 free printable DIY crafts are ready to download, print on cardstock, and assemble — no artistic skill required.`,
+    richContent: true,
+    category: 'DIY & Crafts',
+    date: 'May 2026',
+    readTime: '~16 min',
+    tag: 'Free Templates',
+    tagColor: 'text-emerald bg-emerald/10',
+    author: 'Oumarou Sanda',
+    image: 'https://images.unsplash.com/photo-1452860606245-08f33f0147b6?auto=format&fit=crop&q=80',
+    lang: 'en' as const,
+    seo: {
+      focusKeyword: 'free printable DIY crafts',
+      metaTitle: '25 Free Printable DIY Crafts for Kids & Adults (2026)',
+      metaDescription: 'Download 25 free printable DIY craft templates: paper dolls, 3D houses, bookmarks, masks, gift boxes, puppets & more. Print on cardstock and create today.',
+    },
+    tableOfContents: [
+      { id: 'intro', label: 'Why Printable Crafts?' },
+      { id: 'supplies', label: 'Supplies You Need' },
+      { id: 'paper-dolls', label: 'Paper Dolls (Crafts 1-4)' },
+      { id: 'paper-houses', label: '3D Paper Houses (Crafts 5-7)' },
+      { id: 'bookmarks', label: 'Bookmarks (Crafts 8-10)' },
+      { id: 'masks', label: 'Paper Masks (Crafts 11-13)' },
+      { id: 'gift-boxes', label: 'Gift Boxes & Envelopes (Crafts 14-16)' },
+      { id: 'puppets', label: 'Puppets & Paper Toys (Crafts 17-19)' },
+      { id: 'cards', label: 'Greeting Cards (Crafts 20-22)' },
+      { id: 'seasonal', label: 'Seasonal Crafts (Crafts 23-25)' },
+      { id: 'tips', label: 'Pro Tips for Best Results' },
+      { id: 'conclusion', label: 'Start Crafting Today' },
+    ],
+    sections: [
+{ type: 'disclaimer', content: '<strong>Affiliate disclosure:</strong> This post contains affiliate links to crafting supplies on Amazon. I may earn a small commission at no extra cost to you. I only recommend products I believe provide genuine value.' },
+
+      { type: 'intro', content: 'The ultimate collection of 25 free printable DIY crafts for kids and adults — paper dolls, 3D houses, bookmarks, masks, gift boxes, puppets, greeting cards, and seasonal projects. Every template is free to download, print on cardstock, and assemble at home. No artistic talent required.' },
+
+      {
+        type: 'key-points', items: [
+          'All 25 crafts are 100% free to download — no email required for most sources',
+          'Print on 65-80 lb cardstock (not regular paper) for durable, professional results',
+          'Most crafts take 10-30 minutes to complete — perfect for rainy day activities',
+          'Kid-friendly projects for ages 4-12, plus sophisticated designs for teens and adults',
+          'Every craft includes a direct link to the free PDF or printable template',
+          'Screen-free activities that develop fine motor skills, creativity, and patience',
+          'Ideal for homeschool art projects, birthday parties, and classroom activities',
+        ]
+      },
+
+      { type: 'heading', content: 'Supplies You\'ll Need Before You Start', id: 'supplies' },
+      { type: 'text', content: `Before diving into the crafts, gather these basic supplies. You probably already have most of them at home. The single most important upgrade you can make is switching from regular printer paper to <strong>cardstock</strong> — it makes every craft sturdier, more colorful, and more satisfying to build.` },
+      {
+        type: 'list', items: [
+          { title: 'White cardstock (65-80 lb)', desc: 'The foundation of every printable craft. 65 lb is flexible enough for paper dolls and flowers; 80 lb is ideal for 3D houses and gift boxes. A 250-sheet pack costs about $12-15 on Amazon and will last you months.' },
+          { title: 'Color printer', desc: 'Any inkjet or laser printer works. Set print quality to "Best" or "High Quality" for vibrant colors. If you don\'t own a printer, most libraries and office supply stores offer color printing for $0.25-0.50 per page.' },
+          { title: 'Scissors (adult + kid-safe pair)', desc: 'Sharp scissors for adults produce cleaner cuts. For kids ages 4-7, blunt-tip safety scissors work perfectly for straight lines.' },
+          { title: 'Glue stick or craft glue', desc: 'Glue sticks are mess-free and dry quickly — ideal for kids. Craft glue (like Elmer\'s) creates stronger bonds for 3D structures and gift boxes.' },
+          { title: 'Ruler and pencil', desc: 'For scoring fold lines on 3D crafts. Score by pressing firmly along the fold line with a ruler edge — this creates a crisp, clean fold every time.' },
+          { title: 'Optional: Laminator', desc: 'A basic laminator ($25-35 on Amazon) makes bookmarks, paper dolls, and game pieces virtually indestructible. Great investment if you craft regularly with kids.' },
+        ]
+      },
+
+      { type: 'heading', content: 'Paper Dolls — Crafts 1-4', id: 'paper-dolls' },
+      { type: 'text', content: `Paper dolls are one of the <strong>most searched printable crafts on Pinterest</strong> — and for good reason. They're screen-free, endlessly customizable, and kids can play with them for hours. The concept is simple: print a doll figure and a set of outfits with fold-over tabs, cut them out, and dress the doll by folding the tabs over the body.` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">1. Classic Girl Paper Doll with 10 Outfits</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">A beautifully illustrated paper doll with 10 mix-and-match outfits including a sundress, winter coat, ballet tutu, school uniform, and pajamas. Each outfit includes fold-over tabs for easy dressing. Perfect for ages 4-10.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://mrprintables.com/paper-dolls.html" target="_blank" rel="noopener">Mr Printables</a> — One of the best free printable sites on the internet. Their paper dolls are professionally designed with beautiful illustrations.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Easy · Time: 15 min · Ages: 4+</p>` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">2. Multicultural Paper Doll Collection</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">A diverse set of paper dolls representing different cultures and ethnicities, each with traditional and modern outfits. Excellent for teaching kids about world cultures while they play. Includes 4 dolls with 6 outfits each.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.education.com/worksheets/paper-dolls/" target="_blank" rel="noopener">Education.com</a> — Free with account registration. Thousands of educational printables including beautifully designed paper dolls.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Easy · Time: 20 min · Ages: 5+</p>` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">3. Career Paper Dolls (Doctor, Firefighter, Astronaut)</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">Kids can explore different careers by dressing paper dolls in professional uniforms — doctor's coat, firefighter gear, astronaut suit, chef's hat, and police uniform. Educational and fun.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.supercoloring.com/paper-crafts/paper-dolls" target="_blank" rel="noopener">Super Coloring</a> — Massive library of free printable paper dolls in multiple styles and themes.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Easy · Time: 15 min · Ages: 4+</p>` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">4. Seasonal Paper Dolls (Spring, Summer, Fall, Winter)</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">Four paper dolls with season-specific outfits: swimsuits and sunhats for summer, cozy sweaters and scarves for fall, puffy coats and mittens for winter, and rain boots with flower crowns for spring. Great for teaching kids about seasons.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.thecraftathomefamily.com/paper-doll-template/" target="_blank" rel="noopener">The Craft at Home Family</a> — Free PDF download with detailed printing instructions.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Easy · Time: 20 min · Ages: 4+</p>` },
+
+      { type: 'heading', content: '3D Paper Houses — Crafts 5-7', id: 'paper-houses' },
+      { type: 'text', content: `Building miniature paper houses is one of the most <strong>satisfying printable crafts</strong> for both kids and adults. You print the template, cut along the solid lines, fold along the dotted lines, and glue the tabs together. The result is a cute 3D house that can be displayed on a shelf, used in imaginative play, or combined into an entire paper village.` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">5. Simple Cottage Paper House (Beginner)</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">A charming little cottage with colorful walls, a pitched roof, windows, and a front door. This is the easiest 3D paper house to start with — only 6 tabs to glue. Kids as young as 6 can build it with minimal help.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.babbledabbledo.com/free-printable-house-templates/" target="_blank" rel="noopener">Babble Dabble Do</a> — Beautifully designed STEM crafts and architecture-inspired projects for kids.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Easy · Time: 20 min · Ages: 6+</p>` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">6. Christmas Village Paper Houses (Set of 4)</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">A set of four different houses — a bakery, a toy shop, a church, and a family home — that together form a charming Christmas village. Add LED tea lights inside for a magical glow effect. One of the most popular holiday crafts on Pinterest.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.skiptomylou.org/paper-house-template/" target="_blank" rel="noopener">Skip to My Lou</a> — High-quality free printables with step-by-step photo instructions.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Medium · Time: 45 min per house · Ages: 8+</p>` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">7. Modern Dollhouse Furniture (Printable Set)</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">Tiny printable furniture pieces — bed, table, chairs, sofa, bookshelf, and kitchen set — that fold into 3D miniatures. Perfect companion to paper houses or any dollhouse. Incredibly detailed and fun to assemble.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://mrprintables.com/printable-dollhouse-furniture.html" target="_blank" rel="noopener">Mr Printables</a> — Free PDF download. Print on 80 lb cardstock for best stability.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Medium · Time: 30 min · Ages: 8+</p>` },
+
+      { type: 'heading', content: 'Bookmarks — Crafts 8-10', id: 'bookmarks' },
+      { type: 'text', content: `Printable bookmarks are the <strong>perfect quick craft</strong> — you can print, cut, and use them in under 5 minutes. They also make wonderful handmade gifts for book lovers. For maximum durability, laminate them after printing.` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">8. Corner Bookmarks (Origami-Style)</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">These clever bookmarks fold into a triangle that clips onto the corner of your page — they never fall out. Designs include a monster mouth, fox face, penguin, unicorn, and heart. Kids love making and using these.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.easypeasyandfun.com/corner-bookmarks/" target="_blank" rel="noopener">Easy Peasy and Fun</a> — Step-by-step instructions with printable templates for 20+ corner bookmark designs.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Easy · Time: 10 min · Ages: 5+</p>` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">9. Aesthetic Floral Bookmarks (Set of 8)</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">Eight beautifully designed bookmarks featuring watercolor flowers, botanical illustrations, and inspirational quotes. These look professionally made and are gorgeous gifts for Mother's Day, teacher appreciation, or book club friends.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.homemade-gifts-made-easy.com/free-printable-bookmark-templates.html" target="_blank" rel="noopener">Homemade Gifts Made Easy</a> — Over 100 free printable bookmark designs organized by theme.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Easy · Time: 5 min · Ages: All</p>` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">10. Reading Tracker Bookmarks</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">Functional bookmarks that double as reading trackers — color in a section each time you finish a chapter or reach a reading goal. Gamifies reading for kids and makes a great classroom tool for teachers.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://printabulls.com/bookmarks/" target="_blank" rel="noopener">Printabulls</a> — 500+ free printable bookmarks including reading trackers, coloring bookmarks, and seasonal designs.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Easy · Time: 5 min · Ages: 6+</p>` },
+
+      { type: 'heading', content: 'Paper Masks — Crafts 11-13', id: 'masks' },
+      { type: 'text', content: `Paper masks are a hit at <strong>birthday parties, Halloween, and classroom activities</strong>. Print, color (if B&W), cut out the eye holes, and attach elastic string or a popsicle stick. Instant costume — no sewing required.` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">11. Animal Masks Collection (Lion, Fox, Owl, Bear)</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">Four detailed animal masks in both full-color and black-and-white versions. The coloring versions let kids customize their mask before wearing it — doubling the activity time and creative engagement.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.childhoodmagic.com/printable-masks/" target="_blank" rel="noopener">Childhood Magic</a> — Free PDF downloads for 9 different mask designs plus a complete bundle.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Easy · Time: 15 min · Ages: 4+</p>` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">12. Superhero Masks (6 Designs)</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">Six colorful superhero mask templates in different styles — from classic domino masks to full-face hero masks. Print on cardstock, cut out, and attach elastic. Perfect for superhero-themed birthday parties or everyday imaginative play.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://123kidsfun.com/masks/" target="_blank" rel="noopener">123 Kids Fun</a> — Large collection of printable masks including masquerade, Mardi Gras, and holiday themes.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Easy · Time: 10 min · Ages: 3+</p>` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">13. Venetian Masquerade Mask (Adult)</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">An elegant, detailed masquerade mask template for adults and teens. Print on metallic or glitter cardstock for a stunning effect. Decorate with feathers, rhinestones, or glitter glue for a show-stopping party accessory.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.firstpalette.com/craft/masquerade-mask.html" target="_blank" rel="noopener">First Palette</a> — Free template with detailed crafting instructions and decoration ideas.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Medium · Time: 25 min · Ages: 10+</p>` },,
+{ type: 'heading', content: 'Gift Boxes & Envelopes — Crafts 14-16', id: 'gift-boxes' },
+      { type: 'text', content: `Handmade gift packaging adds a personal touch that store-bought bags can't match. These printable templates fold into <strong>beautiful boxes and envelopes</strong> — perfect for jewelry, small gifts, candy, or party favors.` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">14. Pillow Gift Box Template (3 Sizes)</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">The pillow box is the easiest gift box to make — just two curved folds and you're done. These templates come in three sizes (small for jewelry, medium for candy, large for small gifts) and can be printed on patterned cardstock for an elegant look.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.gatheringbeauty.com/blog/diy-pillow-boxes" target="_blank" rel="noopener">Gathering Beauty</a> — Free templates with beautiful photography and clear assembly instructions.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Easy · Time: 10 min · Ages: 8+</p>` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">15. Hexagonal Gift Box with Lid</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">A stunning six-sided gift box that looks like you bought it at a boutique shop. Print the template on thick cardstock (80 lb minimum), score the fold lines carefully, and assemble. Fill with chocolates, bath bombs, or small trinkets for a premium handmade gift.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.templatemaker.nl/en/box/" target="_blank" rel="noopener">Template Maker</a> — An incredible free tool that generates custom box templates in any size. Enter your dimensions and download a perfectly calculated PDF.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Medium · Time: 25 min · Ages: 10+</p>` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">16. Mini Envelopes for Cards & Notes</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">Adorable mini envelopes perfect for gift cards, love notes, party invitations, or journal inserts. Print on decorative paper or plain cardstock and decorate with washi tape and stickers. These are incredibly popular on Pinterest for planners and bullet journals.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.superstarworksheets.com/paper-craft/envelope-templates/" target="_blank" rel="noopener">Superstar Worksheets</a> — Multiple envelope sizes from mini to full A4, all free PDF downloads.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Easy · Time: 10 min · Ages: 6+</p>` },
+
+      { type: 'heading', content: 'Puppets & Paper Toys — Crafts 17-19', id: 'puppets' },
+      { type: 'text', content: `Paper puppets transform craft time into <strong>storytelling and imaginative play</strong>. Finger puppets, stick puppets, and articulated paper toys keep kids engaged long after the cutting and gluing is done.` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">17. Finger Puppet Animals (Set of 10)</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">Ten adorable animal finger puppets — cat, dog, rabbit, frog, elephant, giraffe, pig, chicken, fish, and butterfly. Print, cut, and tape into a cone that fits on a child's finger. Instant puppet show!</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://mrprintables.com/finger-puppets.html" target="_blank" rel="noopener">Mr Printables</a> — Beautifully illustrated finger puppet templates, completely free.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Easy · Time: 15 min · Ages: 3+</p>` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">18. Paper Bag Puppets (Farm Animals)</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">Print the animal face pieces, cut them out, and glue them onto brown paper lunch bags to create talking puppets. The bag's fold becomes the puppet's mouth. Includes cow, horse, pig, chicken, and sheep designs.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.simpleeverydaymom.com/farm-animal-paper-bag-puppets/" target="_blank" rel="noopener">Simple Everyday Mom</a> — Free printable with photo-illustrated assembly guide.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Easy · Time: 20 min · Ages: 3+</p>` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">19. Articulated Paper Robot (Movable Arms & Legs)</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">A jointed paper robot with arms and legs that actually move — connected with brass fastener brads. Kids can customize the colors, add stickers, and create their own robot character. A fantastic STEM-meets-art project.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.easypeasyandfun.com/paper-robots/" target="_blank" rel="noopener">Easy Peasy and Fun</a> — Free template with step-by-step instructions for the jointed assembly.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Medium · Time: 25 min · Ages: 6+</p>` },
+
+      { type: 'heading', content: 'Greeting Cards — Crafts 20-22', id: 'cards' },
+      { type: 'text', content: `Handmade cards are <strong>always more meaningful</strong> than store-bought ones. These printable templates give you a professional-looking foundation that you can personalize with your own message.` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">20. Pop-Up Heart Card (Valentine's / Anniversary)</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">A card that opens to reveal a 3D pop-up heart — simple to make but genuinely impressive. Works for Valentine's Day, anniversaries, Mother's Day, or just telling someone you love them. Print on red or pink cardstock for maximum impact.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.easypeasyandfun.com/pop-up-heart-card/" target="_blank" rel="noopener">Easy Peasy and Fun</a> — Free template with video tutorial showing the folding technique.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Easy · Time: 15 min · Ages: 6+</p>` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">21. Birthday Card with Cake Pop-Up</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">Open the card and a colorful 3-tier birthday cake pops up. Add real candles (flat birthday candles) for an extra surprise element. One of the most popular printable card designs for kids to make for friends and family.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.redtedart.com/pop-up-birthday-card/" target="_blank" rel="noopener">Red Ted Art</a> — Free template plus video tutorial. One of the web's best kids' craft sites.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Medium · Time: 20 min · Ages: 7+</p>` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">22. Thank You Card Set (Floral Design, Set of 4)</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">Four elegantly designed thank you cards with watercolor floral illustrations. Print, fold, and write your message inside. These look like $5 cards from a stationery shop — but they're completely free. Print extras to keep on hand for spontaneous gratitude.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.canva.com/templates/?query=thank-you-card-printable" target="_blank" rel="noopener">Canva Free Templates</a> — Thousands of free, customizable card templates. Edit colors, fonts, and text before printing.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Easy · Time: 5 min · Ages: All</p>` },
+
+      { type: 'heading', content: 'Seasonal Crafts — Crafts 23-25', id: 'seasonal' },
+      { type: 'text', content: `Seasonal crafts are <strong>Pinterest gold</strong> — searches for "printable Christmas crafts" and "printable Halloween crafts" spike every year. These three projects cover the biggest seasonal opportunities.` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">23. Paper Crown (Birthday / Dress-Up)</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">A regal paper crown that kids can color, decorate with stickers and gems, and wear for birthday celebrations or royal dress-up play. Print on cardstock, cut out, and tape or staple to fit the child's head. Available in both pre-colored and black-and-white coloring versions.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.gatheringbeauty.com/blog/paper-crown-template" target="_blank" rel="noopener">Gathering Beauty</a> — Free template in multiple styles including classic, floral, and medieval.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Easy · Time: 15 min · Ages: 3+</p>` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">24. Halloween Paper Haunted House</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">A spooky 3D haunted house with bats, ghosts, and jack-o-lanterns. The windows open to reveal hidden creepy surprises inside. Place an LED tea light inside for an eerie glow effect. A show-stopping Halloween decoration that kids can build themselves.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.redtedart.com/3d-paper-house-craft/" target="_blank" rel="noopener">Red Ted Art</a> — Free Halloween house template with step-by-step assembly photos.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Medium · Time: 35 min · Ages: 7+</p>` },
+
+      { type: 'text', content: `<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-3">25. Paper Snowflake Templates (12 Unique Designs)</h3><p class="text-[#404040] text-[15px] leading-relaxed mb-4">Twelve intricate snowflake patterns that guide you exactly where to fold and cut. Each template produces a unique, symmetrical snowflake — from simple geometric patterns to stunning crystalline designs. Hang them on windows, string them as garlands, or use them as gift toppers.</p><p class="text-[#404040] text-[15px] leading-relaxed mb-2"><strong>Source:</strong> <a href="https://www.firstpalette.com/craft/paper-snowflake.html" target="_blank" rel="noopener">First Palette</a> — Free PDF templates with cutting guides for 12 unique snowflake designs.</p><p class="text-[#737373] text-[13px] italic">Difficulty: Easy-Medium · Time: 10 min each · Ages: 6+</p>` },
+
+      { type: 'heading', content: 'Pro Tips for the Best Printable Craft Results', id: 'tips' },
+      { type: 'text', content: `After years of printable crafting, these tips make the difference between "meh" results and crafts that look <strong>professionally made</strong>.` },
+      {
+        type: 'list', items: [
+          { title: 'Always use cardstock, never regular paper', desc: 'Standard 20 lb printer paper is too thin and flimsy. Use 65 lb cardstock for paper dolls and bookmarks, 80 lb for 3D structures. The $3 difference per pack transforms every project.' },
+          { title: 'Print on "Best Quality" setting', desc: 'The default "Normal" setting uses less ink and produces duller colors. Switch to "Best" or "High Quality" in your printer settings — the ink cost difference is negligible but the visual impact is dramatic.' },
+          { title: 'Score fold lines before folding', desc: 'For any 3D craft, use a ruler and a ballpoint pen (no ink) or a bone folder to score the fold lines. This creates crisp, professional folds instead of wobbly ones.' },
+          { title: 'Let glue dry completely before handling', desc: 'The number one reason 3D crafts fall apart is impatience. Use clothespins or binder clips to hold glued tabs while they dry for 5-10 minutes.' },
+          { title: 'Laminate items that will be handled often', desc: 'Bookmarks, paper dolls, and game pieces last 10x longer when laminated. A basic laminator costs $25-35 and pays for itself quickly if you craft regularly.' },
+          { title: 'Use a cutting mat and craft knife for small details', desc: 'For intricate masks, snowflakes, and small accessories, a self-healing cutting mat ($8) and a craft knife produce much cleaner cuts than scissors.' },
+        ]
+      },
+
+      { type: 'heading', content: 'Start Crafting Today', id: 'conclusion' },
+      { type: 'text', content: `You now have <strong>25 free printable crafts</strong> ready to download and create — that's weeks of screen-free creative activities without spending a dime on templates. All you need is a printer, cardstock, scissors, and glue.` },
+      { type: 'text', content: `The beauty of printable crafts is that <strong>you can print them as many times as you want</strong>. Made a mistake cutting? Print another one. Want to make 20 bookmarks for a class party? Hit print 20 times. Want to create a paper doll for every kid at a birthday party? Done. Zero waste, zero cost beyond paper and ink.` },
+      { type: 'text', content: `<strong>Start with the easiest projects</strong> — corner bookmarks (#8) or finger puppets (#17) take under 15 minutes and are virtually impossible to mess up. Once you've built your confidence, move on to the 3D houses and gift boxes for a more satisfying challenge.` },
+      { type: 'text', content: `Happy crafting!` },
+
+      {
+        type: 'internal-links', items: [
+          { label: '7 AI Tools to Start a Profitable Side Hustle in 2026', slug: '7-ai-tools-profitable-side-hustle-2026' },
+          { label: 'How to Use AI to Build a Passive Income Stream (Step-by-Step)', slug: 'ai-passive-income-stream-step-by-step' },
         ]
       },
     ],
