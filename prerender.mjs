@@ -56,6 +56,7 @@ const BLOG_SLUGS_EN = [
   'ai-passive-income-stream-step-by-step',
   'ai-budget-automation-save-10-hours-week',
   'how-to-start-budgeting-beginners-guide-2026',
+  '25-free-printable-diy-crafts-kids-adults',
 ];
 
 const FORMATION_SLUGS = ['protocole-video-ia', 'cerveau-augmente', 'offshore-empire', 'challenge-30-jours'];
@@ -86,6 +87,7 @@ const RESOURCE_SLUGS_EN = [
 
 const GUIDE_SLUGS_FR = [
   'comment-utiliser-veo-3-videos-publicitaires',
+  'comment-utiliser-suno-ai-creer-musique',
 ];
 
 const ROUTES = [
