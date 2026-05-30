@@ -2,14 +2,25 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from '../components/useInView';
 import {
-  Send, Mail, Globe, Briefcase, MessageSquare, Loader2,
+  Send, Mail, Globe, Briefcase, MessageSquare,
   CheckCircle, ArrowDown, ExternalLink, Youtube, Linkedin, Facebook, Instagram, ChevronDown, MonitorPlay, FileText, ChevronRight
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEOHead } from '../components/SEOHead';
-import { sendContactEmail, type ContactFormData } from '../services/mailzeet';
 import { useLanguage } from '../i18n';
 import { contactTexts } from '../i18n/pages/contact';
+
+interface ContactFormData {
+  name: string;
+  email: string;
+  phone?: string;
+  subject: string;
+  budget?: string;
+  message: string;
+}
+
+// Boîte de réception du formulaire de contact
+const CONTACT_INBOX = 'contact@oumarousanda.com';
 
 export default function ContactPage() {
   const { language, localePath } = useLanguage();
@@ -21,8 +32,6 @@ export default function ContactPage() {
   const { ref: mediaRef, isInView: mediaInView } = useInView(0.1);
 
   const [submitted, setSubmitted] = useState(false);
-  const [sending, setSending] = useState(false);
-  const [sendError, setSendError] = useState<string | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   // État du formulaire
@@ -34,23 +43,38 @@ export default function ContactPage() {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // Ouvre le client mail de l'utilisateur avec un message pré-rempli vers la boîte de contact.
+  // Pas de backend ni de clé API → fonctionne sur l'hébergement statique.
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSending(true);
-    setSendError(null);
-    try {
-      await sendContactEmail(form);
-      setSubmitted(true);
-      setForm({ name: '', email: '', phone: '', subject: '', budget: '', message: '' });
-    } catch (err) {
-      setSendError(
-        err instanceof Error
-          ? err.message
-          : tx.form.errorDefault
-      );
-    } finally {
-      setSending(false);
-    }
+
+    const subjectMap: Record<string, string> = {
+      projet: 'Projet Web ou Digital',
+      consulting: 'Consulting IA',
+      sponsoring: 'Sponsoring',
+      presse: 'Presse & Médias',
+      autre: 'Autre demande',
+    };
+    const subjectLabel = subjectMap[form.subject] || form.subject;
+
+    const body = [
+      `Nom : ${form.name}`,
+      `Email : ${form.email}`,
+      form.phone ? `Téléphone : ${form.phone}` : null,
+      `Sujet : ${subjectLabel}`,
+      form.budget ? `Budget estimé : ${form.budget}` : null,
+      '',
+      'Message :',
+      form.message,
+    ].filter((line): line is string => line !== null).join('\n');
+
+    const mailto = `mailto:${CONTACT_INBOX}?subject=${encodeURIComponent(
+      `[Contact] ${subjectLabel} — ${form.name}`
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailto;
+    setSubmitted(true);
+    setForm({ name: '', email: '', phone: '', subject: '', budget: '', message: '' });
   };
 
   const faqs = tx.faq.items;
@@ -228,23 +252,11 @@ export default function ContactPage() {
                           <textarea name="message" required minLength={20} rows={5} value={form.message} onChange={handleChange} placeholder={tx.form.messagePlaceholder} className="w-full bg-[#fafafa] border border-black/10 rounded-xl px-4 py-3.5 text-[#0a0a0a] placeholder:text-[#a3a3a3] focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all resize-none" />
                         </div>
 
-                        {/* Erreur API */}
-                        {sendError && (
-                          <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-red-700 text-sm">
-                            ⚠️ {sendError}
-                          </div>
-                        )}
-
                         <button
                           type="submit"
-                          disabled={sending}
-                          className="w-full py-4 bg-[#0a0a0a] hover:bg-black text-white font-heading font-black rounded-xl hover:shadow-lg transition-all flex items-center justify-center gap-2 text-sm uppercase tracking-wider border border-black/10 disabled:opacity-60 disabled:cursor-not-allowed"
+                          className="w-full py-4 bg-[#0a0a0a] hover:bg-black text-white font-heading font-black rounded-xl hover:shadow-lg transition-all flex items-center justify-center gap-2 text-sm uppercase tracking-wider border border-black/10"
                         >
-                          {sending ? (
-                            <><Loader2 className="w-4 h-4 animate-spin" /> {tx.form.sending}</>
-                          ) : (
-                            <><Send className="w-4 h-4" /> {tx.form.send}</>
-                          )}
+                          <Send className="w-4 h-4" /> {tx.form.send}
                         </button>
                       </form>
                     </>
