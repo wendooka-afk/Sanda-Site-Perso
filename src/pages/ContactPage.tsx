@@ -286,7 +286,7 @@ export default function ContactPage() {
                       </ul>
                     </div>
 
-                    <a href="https://wa.me/237699999999?text=Bonjour%20Oumarou,%20je%20vous%20contacte%20via%20votre%20site%20web.%20Je%20souhaite..." target="_blank" rel="noopener noreferrer" className="bg-[#25D366]/5 border border-[#25D366]/20 rounded-2xl p-5 flex items-center gap-4 hover:bg-[#25D366]/10 transition-all group">
+                    <a href="https://wa.me/237672051289?text=Bonjour%20Oumarou,%20je%20vous%20contacte%20via%20votre%20site%20web.%20Je%20souhaite..." target="_blank" rel="noopener noreferrer" className="bg-[#25D366]/5 border border-[#25D366]/20 rounded-2xl p-5 flex items-center gap-4 hover:bg-[#25D366]/10 transition-all group">
                       <div className="w-12 h-12 bg-[#25D366] rounded-full flex items-center justify-center shrink-0 shadow-sm">
                         <MessageSquare className="w-6 h-6 text-white" />
                       </div>
