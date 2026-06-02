@@ -23,7 +23,7 @@ const ABOUT_SCHEMA = {
       "jobTitle": "Expert Intelligence Artificielle, Formateur, Entrepreneur Digital",
       "description": "Entrepreneur digital et expert en intelligence artificielle basé à Ngaoundéré, Cameroun. Fondateur de Wendooka, Sanda Vibe Code et CommentSticker. Auteur et formateur pour entrepreneurs africains francophones.",
       "url": "https://oumarousanda.com/a-propos",
-      "image": "https://oumarousanda.com/Oumarou Sanda 1.webp",
+      "image": "https://oumarousanda.com/oumarou-sanda-1.webp",
       "birthPlace": { "@type": "Place", "addressCountry": "CM", "addressRegion": "Adamaoua", "addressLocality": "Ngaoundéré" },
       "nationality": "Camerounaise",
       "knowsLanguage": ["fr", "en"],
@@ -97,7 +97,7 @@ function HeroAbout() {
             </p>
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }} className="relative h-[500px] lg:h-[700px] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-xl bg-white/5">
-            <img src="/Oumarou Sanda 5.webp" alt="Oumarou Sanda" className="absolute inset-0 w-full h-full object-cover object-top" />
+            <img src="/oumarou-sanda-5.webp" alt="Oumarou Sanda" className="absolute inset-0 w-full h-full object-cover object-top" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-80" />
           </motion.div>
         </div>

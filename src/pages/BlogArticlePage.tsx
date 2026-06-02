@@ -1157,7 +1157,7 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
               "@type": "BlogPosting",
               "headline": article.title,
               "description": article.excerpt || article.seo?.metaDescription,
-              "image": article.image || "https://oumarousanda.com/Oumarou%20Sanda%201.webp",
+              "image": article.image || "https://oumarousanda.com/oumarou-sanda-1.webp",
               "url": "https://oumarousanda.com/blog/" + article.slug,
               "mainEntityOfPage": { "@type": "WebPage", "@id": "https://oumarousanda.com/blog/" + article.slug },
               "author": { "@type": "Person", "name": article.author || "Oumarou Sanda", "url": "https://oumarousanda.com/a-propos" },
@@ -1165,7 +1165,7 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
                 "@type": "Person",
                 "name": "Oumarou Sanda",
                 "url": "https://oumarousanda.com",
-                "image": { "@type": "ImageObject", "url": "https://oumarousanda.com/Oumarou%20Sanda%201.webp" }
+                "image": { "@type": "ImageObject", "url": "https://oumarousanda.com/oumarou-sanda-1.webp" }
               },
               "datePublished": article.createdAt,
               "dateModified": article.createdAt,
@@ -1511,7 +1511,7 @@ export default function BlogArticlePage() {
 
   // ── SEO helpers ────────────────────────────────────────────────
   const isoDate = parseFrenchDate(article.date);
-  const articleImage = typeof article.image === 'string' ? article.image : 'https://oumarousanda.com/Oumarou%20Sanda%201.webp';
+  const articleImage = typeof article.image === 'string' ? article.image : 'https://oumarousanda.com/oumarou-sanda-1.webp';
 
   // Extrait les FAQ pour le schema FAQPage (sections type "faq-rich")
   type FaqItem = { q: string; a: string };

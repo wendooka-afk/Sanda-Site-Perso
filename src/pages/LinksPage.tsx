@@ -186,7 +186,7 @@ export default function LinksPage() {
               }}
             >
               <img
-                src="/Oumarou Sanda 1.webp"
+                src="/oumarou-sanda-1.webp"
                 alt="Oumarou Sanda"
                 width={96}
                 height={96}

@@ -60,7 +60,7 @@ function Hero() {
 
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="relative">
-              <img src="/Oumarou Sanda Homepage hero .webp" alt="Oumarou Sanda" width={420} height={560} fetchPriority="high" className="w-80 lg:w-[420px] object-cover drop-shadow-2xl" />
+              <img src="/oumarou-sanda-hero.webp" alt="Oumarou Sanda" width={420} height={560} fetchPriority="high" className="w-80 lg:w-[420px] object-cover drop-shadow-2xl" />
               {/* Floating cards — animation CSS pure, plus de motion.div */}
               <div className="absolute -top-6 -right-6 lg:-top-8 lg:-right-10 card-luxury rounded-2xl px-5 py-4 shadow-xl hidden sm:block animate-float">
                 <div className="flex items-center gap-4">
@@ -208,7 +208,7 @@ function PitchTeaser() {
                   role="img"
                   aria-label="Oumarou Sanda profil"
                   className="absolute inset-0 bg-cover bg-top grayscale-[20%] contrast-105 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
-                  style={{ backgroundImage: "url('/Oumarou Sanda homepage about section.webp')" }}
+                  style={{ backgroundImage: "url('/oumarou-sanda-about.webp')" }}
                 />
 
                 <div className="absolute inset-0 flex items-center justify-center z-30">
@@ -243,7 +243,7 @@ function ProblemSection() {
               <div className="aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-[2rem] overflow-hidden border border-black/5 card-luxury shadow-xl relative group bg-white card-hover-lift glow-hover">
 
                 <div className="w-full h-full bg-[#fafafa] flex items-center justify-center overflow-hidden">
-                  <img src="/Oumarou Sanda 10 .webp" alt="Productivité IA" width={480} height={600} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" />
+                  <img src="/oumarou-sanda-10.webp" alt="Productivité IA" width={480} height={600} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" />
                 </div>
 
                 <div className="absolute -bottom-8 -right-8 sm:bottom-12 sm:-right-8 bg-white border border-black/5 rounded-2xl p-6 shadow-xl z-30 card-luxury animate-float">
@@ -487,7 +487,7 @@ function ServicesSection() {
                 role="img"
                 aria-label="Oumarou Sanda"
                 className="w-full max-w-sm rounded-2xl shadow-lg aspect-[3/4] bg-cover bg-top"
-                style={{ backgroundImage: "url('/Oumarou Sanda 16 .webp')" }}
+                style={{ backgroundImage: "url('/oumarou-sanda-16.webp')" }}
               />
 
               <div className="hidden lg:block w-32 h-px bg-gradient-to-r from-blue/20 to-transparent" />
@@ -609,7 +609,7 @@ function BooksProducts() {
             <div className="card-luxury bg-[#fafafa] border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.06)] rounded-3xl p-8 flex flex-col sm:flex-row items-center sm:items-start gap-8 group card-hover-lift glow-hover h-full">
               <div className="w-32 h-44 bg-white rounded-xl shrink-0 border border-black/5 flex items-center justify-center text-[#0a0a0a]/30 shadow-md group-hover:-translate-y-2 group-hover:rotate-2 transition-all duration-500 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-tr from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10" />
-                <img src="/Le Cerveau Augmenté .webp" alt="Livre Le Cerveau Augmenté" width={128} height={176} loading="lazy" className="w-full h-full object-cover" />
+                <img src="/cerveau-augmente.webp" alt="Livre Le Cerveau Augmenté" width={128} height={176} loading="lazy" className="w-full h-full object-cover" />
               </div>
               <div className="text-center sm:text-left flex-1 flex flex-col h-full">
                 <div className="mb-4">
@@ -629,7 +629,7 @@ function BooksProducts() {
             <div className="card-luxury bg-[#fafafa] border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.06)] rounded-3xl p-8 flex flex-col sm:flex-row items-center sm:items-start gap-8 group card-hover-lift glow-hover h-full">
               <div className="w-32 h-44 bg-white rounded-xl shrink-0 border border-black/5 flex items-center justify-center text-[#0a0a0a]/30 shadow-md group-hover:-translate-y-2 group-hover:rotate-2 transition-all duration-500 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-tr from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10" />
-                <img src="/Couverture livre si lafrique rate lia elle rate le futur .webp" alt="Livre Si l'Afrique rate l'IA" width={128} height={176} loading="lazy" className="w-full h-full object-cover" />
+                <img src="/livre-afrique-ia.webp" alt="Livre Si l'Afrique rate l'IA" width={128} height={176} loading="lazy" className="w-full h-full object-cover" />
               </div>
               <div className="text-center sm:text-left flex-1 flex flex-col h-full">
                 <div className="mb-4">
@@ -861,7 +861,7 @@ export default function HomePage() {
               "name": "Oumarou Sanda",
               "jobTitle": "Expert Intelligence Artificielle, Formateur, Entrepreneur Digital",
               "url": "https://oumarousanda.com",
-              "image": "https://oumarousanda.com/Oumarou Sanda 1.webp",
+              "image": "https://oumarousanda.com/oumarou-sanda-1.webp",
               "sameAs": ["https://www.youtube.com/@Oumarou_Sanda", "https://www.tiktok.com/@iamsanda", "https://linkedin.com/in/benibsanda", "https://facebook.com/iamoumarousanda"]
             },
             {

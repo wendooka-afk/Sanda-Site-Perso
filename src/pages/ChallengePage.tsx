@@ -301,7 +301,7 @@ export default function ChallengePage() {
               <div className="relative w-full">
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent z-10 rounded-3xl pointer-events-none" />
                 <img
-                  src="/Oumarou Sanda 1.webp"
+                  src="/oumarou-sanda-1.webp"
                   alt="Oumarou Sanda — Expert IA"
                   width={400}
                   height={520}
@@ -737,7 +737,7 @@ export default function ChallengePage() {
       <section className="relative py-20 sm:py-28 bg-[#fafafa] border-b border-black/5 overflow-hidden">
         {/* Decorative background photo blurred */}
         <div className="absolute inset-0 opacity-3 pointer-events-none overflow-hidden">
-          <img src="/Oumarou Sanda homepage about section.webp" alt="Oumarou Sanda - Formateur IA" aria-hidden="true" className="w-full h-full object-cover blur-[80px] scale-110 opacity-20" />
+          <img src="/oumarou-sanda-about.webp" alt="Oumarou Sanda - Formateur IA" aria-hidden="true" className="w-full h-full object-cover blur-[80px] scale-110 opacity-20" />
         </div>
         <div className="relative max-w-5xl mx-auto px-5 sm:px-6 z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger}
@@ -752,7 +752,7 @@ export default function ChallengePage() {
                 className="relative w-52 sm:w-64 rounded-3xl overflow-hidden border-2 border-gold/20 shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
               >
                 <img
-                  src="/Oumarou Sanda Homepage hero .webp"
+                  src="/oumarou-sanda-hero.webp"
                   alt="Oumarou Sanda"
                   width={256}
                   height={320}
@@ -819,9 +819,9 @@ export default function ChallengePage() {
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={stagger} className="grid sm:grid-cols-3 gap-5">
             {[
-              { name: 'Aboubakar K.', role: 'Freelance vidéo · Yaoundé', avatar: 'AK', img: '/Oumarou Sanda 8.webp', text: '"Je disais que j\'étais au niveau zéro. Au Jour 20, j\'ai créé une vidéo publicitaire avec VEO 3 pour un client. Il m\'a payé 150 000 FCFA."', highlight: '150 000 FCFA au Jour 20' },
-              { name: 'Marcel B.', role: 'Cadre administratif · Douala', avatar: 'MB', img: '/Oumarou Sanda 9 .webp', text: '"J\'avais 50 ans et je pensais que c\'était trop tard pour moi. Au Jour 30 j\'ai mon propre stack IA qui m\'aide dans mon travail quotidien."', highlight: 'Stack IA personnel au Jour 30' },
-              { name: 'Fatou D.', role: 'Créatrice de contenu · Dakar', avatar: 'FD', img: '/Oumarou Sanda 10 .webp', text: '"Le Bonus secret du Jour 30 vaut à lui seul 10 fois le prix. J\'utilise maintenant des outils à 200$/mois gratuitement."', highlight: 'Outils 200$/mois → gratuit' },
+              { name: 'Aboubakar K.', role: 'Freelance vidéo · Yaoundé', avatar: 'AK', img: '/oumarou-sanda-8.webp', text: '"Je disais que j\'étais au niveau zéro. Au Jour 20, j\'ai créé une vidéo publicitaire avec VEO 3 pour un client. Il m\'a payé 150 000 FCFA."', highlight: '150 000 FCFA au Jour 20' },
+              { name: 'Marcel B.', role: 'Cadre administratif · Douala', avatar: 'MB', img: '/oumarou-sanda-9.webp', text: '"J\'avais 50 ans et je pensais que c\'était trop tard pour moi. Au Jour 30 j\'ai mon propre stack IA qui m\'aide dans mon travail quotidien."', highlight: 'Stack IA personnel au Jour 30' },
+              { name: 'Fatou D.', role: 'Créatrice de contenu · Dakar', avatar: 'FD', img: '/oumarou-sanda-10.webp', text: '"Le Bonus secret du Jour 30 vaut à lui seul 10 fois le prix. J\'utilise maintenant des outils à 200$/mois gratuitement."', highlight: 'Outils 200$/mois → gratuit' },
             ].map((t) => (
               <motion.div key={t.name} variants={fadeUp}
                 whileHover={{ y: -6, boxShadow: '0 20px 60px rgba(0,0,0,0.1)', transition: { duration: 0.25 } }}
@@ -1022,7 +1022,7 @@ export default function ChallengePage() {
               <div className="flex items-center gap-4 mb-8">
                 <div className="relative shrink-0">
                   <img
-                    src="/Oumarou Sanda 2.webp"
+                    src="/oumarou-sanda-2.webp"
                     alt="Oumarou Sanda"
                     width={56}
                     height={56}
@@ -1087,7 +1087,7 @@ export default function ChallengePage() {
                 <div className="relative w-[390px] xl:w-[432px] rounded-3xl overflow-hidden border border-white/10 shadow-[0_40px_80px_rgba(0,0,0,0.6)]">
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 via-transparent to-transparent z-10 pointer-events-none rounded-3xl" />
                   <img
-                    src="/Oumarou Sanda 2.webp"
+                    src="/oumarou-sanda-2.webp"
                     alt="Oumarou Sanda — Challenge 30 Jours IA"
                     width={320}
                     height={420}

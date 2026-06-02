@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 
 const SITE_URL = 'https://oumarousanda.com';
-const DEFAULT_OG_IMAGE = `${SITE_URL}/Oumarou%20Sanda%201.webp`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/oumarou-sanda-1.webp`;
 const SITE_NAME = 'Oumarou Sanda';
 
 interface SEOHeadProps {
@@ -15,7 +15,7 @@ interface SEOHeadProps {
   ogTitle?: string;
   /** Description OG — fallback sur `description` */
   ogDescription?: string;
-  /** Image OG — fallback sur SANDA.webp (1200×630) */
+  /** Image OG — fallback sur oumarou-sanda-1.webp (1200×630) */
   ogImage?: string;
   /** Type OG — 'website' par défaut, 'article' pour les articles de blog */
   ogType?: 'website' | 'article' | 'profile';

@@ -54,7 +54,7 @@ export default function BookPage() {
               <div className="relative w-[240px] md:w-[280px] -rotate-6 hover:rotate-0 hover:scale-105 transition-all duration-500 ease-out z-10">
                 <div className="absolute -inset-2 bg-gradient-to-br from-gold/30 to-transparent rounded-2xl blur-lg opacity-50"></div>
                 <img
-                  src="/Le Cerveau Augmenté .webp"
+                  src="/cerveau-augmente.webp"
                   alt="Livre Cerveau Augmenté"
                   width={280}
                   height={380}
@@ -66,7 +66,7 @@ export default function BookPage() {
               <div className="relative w-[240px] md:w-[280px] rotate-6 hover:rotate-0 hover:scale-105 transition-all duration-500 ease-out md:-ml-12 z-20">
                 <div className="absolute -inset-2 bg-gradient-to-br from-white/20 to-transparent rounded-2xl blur-lg opacity-50"></div>
                 <img
-                  src="/Couverture livre si lafrique rate lia elle rate le futur .webp"
+                  src="/livre-afrique-ia.webp"
                   alt="Livre Si l'Afrique rate l'IA, elle rate le Futur"
                   width={280}
                   height={380}

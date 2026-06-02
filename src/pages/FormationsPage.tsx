@@ -55,7 +55,7 @@ function FormationsHero() {
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }} className="relative h-[400px] lg:h-[600px] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-xl bg-white/5">
-            <img src="/Oumarou Sanda 9 .webp" alt="Oumarou Sanda Formations" className="absolute inset-0 w-full h-full object-cover object-center" />
+            <img src="/oumarou-sanda-9.webp" alt="Oumarou Sanda Formations" className="absolute inset-0 w-full h-full object-cover object-center" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-80" />
           </motion.div>
         </div>
@@ -165,7 +165,7 @@ function FormationCerveau() {
           <Reveal direction="up" delay={0.1}>
             <div className="order-2 lg:order-1">
               <div className="relative max-w-md mx-auto">
-                <img src="/Le Cerveau Augmenté .webp" alt="Le Cerveau Augmenté" width={400} height={500} loading="lazy" className="w-full h-auto object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.5)]" />
+                <img src="/cerveau-augmente.webp" alt="Le Cerveau Augmenté" width={400} height={500} loading="lazy" className="w-full h-auto object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.5)]" />
               </div>
             </div>
           </Reveal>
@@ -289,7 +289,7 @@ function FormationOffshore() {
           <Reveal direction="right" delay={0.1}>
             <div className="bg-white border border-black/5 rounded-[2rem] p-6 sm:p-8 lg:p-10 shadow-xl relative card-luxury card-hover-lift glow-hover">
               <div className="flex justify-center mb-8">
-                <img src="/OFFSHORE EMPIRE BOX.webp" alt="Offshore Empire" width={256} height={256} loading="lazy" className="w-64 object-contain drop-shadow-xl" />
+                <img src="/offshore-empire-box.webp" alt="Offshore Empire" width={256} height={256} loading="lazy" className="w-64 object-contain drop-shadow-xl" />
               </div>
               <h3 className="text-[#0a0a0a] font-bold text-2xl mb-2">PRIX DE LANCEMENT MVP</h3>
               <p className="text-[#737373] text-[14px] mb-8">Accès à vie. Aucun abonnement. Aucun frais caché.</p>
