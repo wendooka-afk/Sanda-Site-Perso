@@ -7,11 +7,7 @@ const menuItems = [
   { path: '/dashboard/articles', icon: '📝', label: 'Articles' },
   { path: '/dashboard/formations', icon: '🎓', label: 'Formations' },
   { path: '/dashboard/links', icon: '🔗', label: 'Gestionnaire Liens' },
-  { path: '/dashboard/comments', icon: '💬', label: 'Commentaires' },
-  { path: '/dashboard/leads', icon: '📧', label: 'Leads & Newsletter' },
   { path: '/dashboard/media', icon: '🎬', label: 'Médias' },
-  { path: '/dashboard/analytics', icon: '📈', label: 'Analytics' },
-  { path: '/dashboard/settings', icon: '⚙️', label: 'Paramètres' },
 ];
 
 export default function DashboardLayout() {
@@ -154,12 +150,6 @@ export default function DashboardLayout() {
                   className="bg-transparent text-white text-sm placeholder:text-white/30 outline-none flex-1"
                 />
               </div>
-
-              {/* Notifications */}
-              <button className="relative w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all">
-                🔔
-                <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-red-500 text-[10px] text-white flex items-center justify-center">3</span>
-              </button>
 
               {/* Profile */}
               <div className="flex items-center gap-3 pl-3 border-l border-white/10">

@@ -29,11 +29,7 @@ const DashboardLayout = lazy(() => import('./dashboard/DashboardLayout'));
 const DashboardOverview = lazy(() => import('./dashboard/DashboardOverview'));
 const DashboardArticles = lazy(() => import('./dashboard/DashboardArticles'));
 const DashboardFormations = lazy(() => import('./dashboard/DashboardFormations'));
-const DashboardComments = lazy(() => import('./dashboard/DashboardComments'));
-const DashboardLeads = lazy(() => import('./dashboard/DashboardLeads'));
 const DashboardMedia = lazy(() => import('./dashboard/DashboardMedia'));
-const DashboardAnalytics = lazy(() => import('./dashboard/DashboardAnalytics'));
-const DashboardSettings = lazy(() => import('./dashboard/DashboardSettings'));
 const DashboardLinks = lazy(() => import('./dashboard/DashboardLinks'));
 const DashboardLogin = lazy(() => import('./dashboard/DashboardAuth').then(m => ({ default: m.DashboardLogin })));
 const ProtectedRoute = lazy(() => import('./dashboard/DashboardAuth').then(m => ({ default: m.ProtectedRoute })));
@@ -135,11 +131,7 @@ export function App() {
                 <Route path="articles" element={<DashboardArticles />} />
                 <Route path="formations" element={<DashboardFormations />} />
                 <Route path="links" element={<DashboardLinks />} />
-                <Route path="comments" element={<DashboardComments />} />
-                <Route path="leads" element={<DashboardLeads />} />
                 <Route path="media" element={<DashboardMedia />} />
-                <Route path="analytics" element={<DashboardAnalytics />} />
-                <Route path="settings" element={<DashboardSettings />} />
               </Route>
             </Route>
           </Routes>
