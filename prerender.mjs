@@ -283,7 +283,9 @@ async function generateSitemap() {
     .filter((r) => !excluded.has(r))
     .map((route) => {
       // Normaliser /en/ → /en (sans slash final hors racine)
-      const path = route === '/en/' ? '/en' : route;
+      let path = route === '/en/' ? '/en' : route;
+      // Les pages guide (HTML standalone servies en répertoire) ont un canonical avec slash final
+      if (path.startsWith('/guide/')) path += '/';
       return `  <url>
     <loc>${SITE_URL}${path}</loc>
     <lastmod>${today}</lastmod>
