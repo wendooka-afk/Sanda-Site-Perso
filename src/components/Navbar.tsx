@@ -1,13 +1,18 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Sparkles, ChevronRight, Globe } from 'lucide-react';
+import { Sparkles, ChevronRight, Globe } from 'lucide-react';
 import { useLanguage } from '../i18n';
+import { cn } from '../utils/cn';
+import { MenuToggleIcon } from './ui/menu-toggle-icon';
+import { useScroll } from './ui/use-scroll';
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
   const { language, toggleLanguage, t, prefix, localePath } = useLanguage();
+
+  // Nouveau style : barre flottante qui se rétracte au scroll (hook partagé ui/use-scroll)
+  const scrolled = useScroll(20);
 
   const allNavLinks = [
     { label: t.nav.about, href: localePath(language === 'en' ? '/about' : '/a-propos') },
@@ -25,12 +30,6 @@ export function Navbar() {
     : allNavLinks;
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 30);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
     setMobileOpen(false);
   }, [location]);
 
@@ -45,16 +44,31 @@ export function Navbar() {
     return path.startsWith(href);
   };
 
+  // La barre flotte (pilule centrée arrondie) seulement quand on scrolle ET que le menu mobile est fermé
+  const floating = scrolled && !mobileOpen;
+
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-          ? 'bg-black/95 backdrop-blur-md border-b border-white/10 shadow-lg'
-          : 'bg-black/80 backdrop-blur-sm shadow-sm'
-          }`}
+        className={cn(
+          'fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out',
+          floating && 'md:px-4 md:pt-4',
+        )}
       >
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex items-center justify-between h-[72px]">
+        <div
+          className={cn(
+            'mx-auto transition-all duration-500 ease-out',
+            floating
+              ? 'max-w-7xl border-b border-white/10 bg-black/90 backdrop-blur-lg md:max-w-4xl md:rounded-2xl md:border md:shadow-[0_8px_30px_rgba(0,0,0,0.45)]'
+              : 'max-w-none border-b border-white/10 bg-black/80 backdrop-blur-md shadow-sm',
+          )}
+        >
+          <div
+            className={cn(
+              'mx-auto flex max-w-7xl items-center justify-between px-5 transition-all duration-500 ease-out sm:px-6 lg:px-8',
+              floating ? 'h-16 md:h-14 md:px-5' : 'h-[72px]',
+            )}
+          >
             {/* Logo */}
             <Link to={localePath('/')} className="flex items-center gap-3 group">
               <div className="relative">
@@ -77,10 +91,10 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`relative px-4 py-2 text-[12px] rounded-lg transition-all duration-300 font-bold tracking-[0.1em] uppercase ${isActive(link.href)
-                    ? 'text-white'
-                    : 'text-white/70 hover:text-white'
-                    }`}
+                  className={cn(
+                    'relative px-4 py-2 text-[12px] rounded-lg transition-all duration-300 font-bold tracking-[0.1em] uppercase',
+                    isActive(link.href) ? 'text-white' : 'text-white/70 hover:text-white',
+                  )}
                 >
                   {link.label}
                   {isActive(link.href) && (
@@ -117,7 +131,7 @@ export function Navbar() {
                 aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
                 aria-expanded={mobileOpen}
               >
-                {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                <MenuToggleIcon open={mobileOpen} className="w-5 h-5" duration={300} />
               </button>
             </div>
           </div>
@@ -126,8 +140,10 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 z-40 bg-black/95 backdrop-blur-3xl lg:hidden border-t border-white/5 mt-[72px] transition-opacity duration-300 ${mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-          }`}
+        className={cn(
+          'fixed inset-0 z-40 bg-black/95 backdrop-blur-3xl lg:hidden border-t border-white/5 mt-[72px] transition-opacity duration-300',
+          mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none',
+        )}
         aria-hidden={!mobileOpen}
       >
         <div className="flex flex-col h-full px-6 pt-10 pb-24 overflow-y-auto relative z-10">
@@ -136,13 +152,13 @@ export function Navbar() {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`flex items-center justify-between py-4 border-b border-white/[0.04] transition-all ${isActive(link.href)
-                  ? 'text-white'
-                  : 'text-white/70 hover:text-white'
-                  }`}
+                className={cn(
+                  'flex items-center justify-between py-4 border-b border-white/[0.04] transition-all',
+                  isActive(link.href) ? 'text-white' : 'text-white/70 hover:text-white',
+                )}
               >
                 <span className="font-heading text-2xl font-bold tracking-tight uppercase">{link.label}</span>
-                <ChevronRight className={`w-5 h-5 transition-transform ${isActive(link.href) ? 'text-gold opacity-100 translate-x-1' : 'opacity-30'}`} />
+                <ChevronRight className={cn('w-5 h-5 transition-transform', isActive(link.href) ? 'text-gold opacity-100 translate-x-1' : 'opacity-30')} />
               </Link>
             ))}
           </div>

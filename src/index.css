@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 @theme {
   /* Pristine Whites & Soft Grays for Premium Light Mode */
@@ -42,6 +43,22 @@
   --color-faint: #a3a3a3;      /* labels / placeholders */
   --color-canvas: #fafafa;     /* fond de page clair */
   --color-hairline: rgba(0, 0, 0, 0.06);
+
+  /* shadcn/ui design tokens — required by @/components/ui/* (button…).
+     Mapped to the existing light-mode luxury palette. --color-border already
+     defined above is reused by `border-border`. */
+  --color-background: #ffffff;
+  --color-foreground: #0a0a0a;
+  --color-primary: #0a0a0a;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f5f5f7;
+  --color-secondary-foreground: #0a0a0a;
+  --color-accent: #f5f5f7;
+  --color-accent-foreground: #0a0a0a;
+  --color-destructive: #f43f5e;
+  --color-destructive-foreground: #ffffff;
+  --color-input: #e5e5e5;
+  --color-ring: #d4af37;
 
   /* Typography */
   --font-heading: 'Outfit', sans-serif;
