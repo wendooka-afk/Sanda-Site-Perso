@@ -12,6 +12,17 @@ export interface GuideArticle {
 
 export const guides: GuideArticle[] = [
   {
+    slug: 'comment-avoir-claude-code-gratuitement',
+    title: 'Comment avoir Claude Code gratuitement (Guide 2026)',
+    excerpt: 'La méthode 100% légale pour utiliser Claude Code gratuitement : le faire tourner sur des modèles IA open-source en local avec Ollama. Tutoriel pas à pas, sans carte bancaire.',
+    tag: 'Claude Code',
+    tagColor: 'bg-indigo-500/10 text-indigo-700 border border-indigo-500/20',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80',
+    date: '3 Juin 2026',
+    readTime: '14 min',
+    author: 'Oumarou Sanda',
+  },
+  {
     slug: 'comment-utiliser-veo-3-videos-publicitaires',
     title: 'Comment utiliser VEO 3 pour créer des vidéos publicitaires (Guide 2026)',
     excerpt: 'Guide complet pour débutants : apprenez à créer des vidéos publicitaires professionnelles avec Google VEO 3. Prompts prêts à copier, workflow étape par étape, et erreurs à éviter.',

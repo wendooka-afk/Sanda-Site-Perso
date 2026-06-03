@@ -86,6 +86,7 @@ const RESOURCE_SLUGS_EN = [
 ];
 
 const GUIDE_SLUGS_FR = [
+  'comment-avoir-claude-code-gratuitement',
   'comment-utiliser-veo-3-videos-publicitaires',
   'comment-utiliser-suno-ai-creer-musique',
 ];

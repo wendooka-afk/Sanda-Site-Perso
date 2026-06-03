@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment avoir Claude Code gratuitement (Guide 2026)</title>
+    <meta name="description" content="La méthode légale pour utiliser Claude Code gratuitement : le faire tourner sur des modèles IA open-source en local avec Ollama. Tutoriel pas à pas.">
+    <link rel="canonical" href="https://oumarousanda.com/guide/comment-avoir-claude-code-gratuitement/">
+    <meta property="og:title" content="Comment avoir Claude Code gratuitement (Guide 2026)">
+    <meta property="og:description" content="Faites tourner Claude Code gratuitement sur votre machine avec Ollama et des modèles open-source. Tutoriel complet, sans carte bancaire.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://oumarousanda.com/guide/comment-avoir-claude-code-gratuitement/">
+    <meta property="og:site_name" content="Oumarou Sanda">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Comment avoir Claude Code gratuitement (Guide 2026)">
+    <meta name="twitter:description" content="Faites tourner Claude Code gratuitement avec Ollama et des modèles IA open-source. Tutoriel pas à pas.">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"HowTo","name":"Comment avoir Claude Code gratuitement avec Ollama","description":"Méthode étape par étape pour utiliser Claude Code gratuitement en le branchant sur des modèles IA open-source en local via Ollama.","datePublished":"2026-06-03","dateModified":"2026-06-03","author":{"@type":"Person","name":"Oumarou Sanda","url":"https://oumarousanda.com"},"publisher":{"@type":"Organization","name":"Oumarou Sanda","url":"https://oumarousanda.com"},"totalTime":"PT20M","step":[{"@type":"HowToStep","name":"Installer Claude Code","text":"Installez l'outil en ligne de commande Claude Code avec npm."},{"@type":"HowToStep","name":"Installer Ollama","text":"Téléchargez et installez Ollama, le moteur qui fait tourner les modèles IA en local."},{"@type":"HowToStep","name":"Télécharger un modèle open-source","text":"Récupérez un modèle de code open-source comme Qwen2.5-Coder avec la commande ollama pull."},{"@type":"HowToStep","name":"Installer le routeur claude-code-router","text":"Installez le proxy qui traduit les requêtes de Claude Code vers Ollama."},{"@type":"HowToStep","name":"Configurer le routeur","text":"Pointez le routeur vers Ollama dans son fichier de configuration."},{"@type":"HowToStep","name":"Lancer Claude Code","text":"Démarrez Claude Code via le routeur avec la commande ccr code."}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Est-ce légal d'utiliser Claude Code avec Ollama ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Claude Code autorise les points d'accès personnalisés via la variable ANTHROPIC_BASE_URL. Vous utilisez des modèles open-source sous licence ouverte, pas les modèles Claude d'Anthropic. Il n'y a aucun piratage ni contournement de paiement."}},{"@type":"Question","name":"Claude Code avec Ollama est-il vraiment 100% gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui, hors coût d'électricité. Ollama et les modèles open-source sont gratuits. Vous n'avez besoin d'aucun abonnement, d'aucune clé API payante et d'aucune carte bancaire."}},{"@type":"Question","name":"Quelle configuration faut-il pour faire tourner un modèle en local ?","acceptedAnswer":{"@type":"Answer","text":"Comptez environ 8 Go de RAM pour un modèle 7B, 16 Go pour un 14B et 32 Go ou un GPU pour un 32B. Sans carte graphique dédiée, la génération est plus lente mais reste utilisable pour apprendre."}},{"@type":"Question","name":"La qualité est-elle la même que le vrai Claude ?","acceptedAnswer":{"@type":"Answer","text":"Non. Les modèles open-source en local sont nettement moins puissants que Claude Sonnet ou Opus. Cette méthode est idéale pour apprendre, coder hors ligne et préserver sa vie privée, pas pour égaler la qualité de Claude sur des tâches complexes."}},{"@type":"Question","name":"Ça marche sur Windows, Mac et Linux ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Ollama, Node.js et claude-code-router fonctionnent sur les trois systèmes. La méthode est identique."}},{"@type":"Question","name":"Peut-on utiliser le vrai Claude Code gratuitement ?","acceptedAnswer":{"@type":"Answer","text":"Le seul accès gratuit officiel à Claude est claude.ai (chat web), qui n'inclut pas Claude Code. Claude Code nécessite un abonnement Claude Pro/Max ou des crédits API. La méthode Ollama est la seule façon d'obtenir l'expérience Claude Code sans payer."}}]}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root{--brand-black:#0C0B0B;--brand-gold:#e8d48b;--brand-gold-dim:#c4b06e;--text-primary:#1a1a1a;--text-secondary:#4a4a4a;--text-muted:#7a7a7a;--bg-page:#faf9f6;--bg-white:#fff;--bg-warm:#f5f0e8;--bg-dark:#0C0B0B;--border-subtle:#e8e4dc;--accent-green:#2d6a4f;--accent-red:#c1292e;--radius-sm:6px;--radius-md:12px;--radius-lg:20px;--shadow-card:0 2px 20px rgba(12,11,11,.06);--shadow-elevated:0 8px 40px rgba(12,11,11,.1);--max-width:780px}
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{font-size:17px;scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+        body{font-family:'Source Serif 4',Georgia,serif;color:var(--text-primary);background:var(--bg-page);line-height:1.75}
+        .hero{background:var(--bg-dark);color:#fff;padding:3.5rem 1.5rem 3rem;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;right:-30%;width:600px;height:600px;background:radial-gradient(circle,rgba(232,212,139,.12) 0%,transparent 70%);pointer-events:none}
+        .hero-inner{max-width:var(--max-width);margin:0 auto;position:relative;z-index:1;text-align:center}
+        .hero-badge{display:inline-flex;align-items:center;gap:.4rem;font-family:'Poppins',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-gold);border:1px solid rgba(232,212,139,.3);padding:.35rem .85rem;border-radius:100px;margin-bottom:1.5rem}
+        .hero h1{font-family:'Poppins',sans-serif;font-size:2.35rem;font-weight:800;line-height:1.15;margin-bottom:1.2rem;letter-spacing:-.02em}
+        .hero h1 em{font-style:normal;color:var(--brand-gold)}
+        .hero-subtitle{font-size:1.1rem;color:rgba(255,255,255,.7);line-height:1.6;max-width:620px;margin:0 auto}
+        .hero-meta{margin-top:2rem;display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;font-family:'Poppins',sans-serif;font-size:.78rem;color:rgba(255,255,255,.5)}
+        .hero-meta span{display:flex;align-items:center;gap:.3rem}
+        .content-wrap{max-width:var(--max-width);margin:0 auto;padding:2.5rem 1.5rem 4rem}
+        .toc{background:var(--bg-white);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:1.5rem 2rem;margin-bottom:3rem;box-shadow:var(--shadow-card)}
+        .toc-title{font-family:'Poppins',sans-serif;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:.8rem}
+        .toc ol{list-style:none;counter-reset:toc-counter}
+        .toc ol li{counter-increment:toc-counter;margin-bottom:.35rem}
+        .toc ol li a{font-family:'Poppins',sans-serif;font-size:.88rem;color:var(--text-secondary);text-decoration:none;display:flex;align-items:baseline;gap:.5rem;padding:.2rem 0;transition:color .2s}
+        .toc ol li a::before{content:counter(toc-counter, decimal-leading-zero);font-size:.72rem;font-weight:700;color:var(--brand-gold-dim);min-width:1.4rem}
+        .toc ol li a:hover{color:var(--brand-black)}
+        h2{font-family:'Poppins',sans-serif;font-size:1.6rem;font-weight:700;line-height:1.25;margin:3rem 0 1rem;color:var(--brand-black);letter-spacing:-.01em}
+        h3{font-family:'Poppins',sans-serif;font-size:1.15rem;font-weight:600;line-height:1.35;margin:2rem 0 .7rem;color:var(--text-primary)}
+        p{margin-bottom:1.2rem}
+        .content-wrap a{color:var(--brand-black);text-decoration:underline;text-decoration-color:var(--brand-gold);text-underline-offset:3px;transition:text-decoration-color .2s}
+        .content-wrap a:hover{text-decoration-color:var(--brand-black)}
+        a[target="_blank"]::after{content:' ↗';font-size:.75em;opacity:.5}
+        .callout{background:var(--bg-warm);border-left:4px solid var(--brand-gold);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:.95rem}
+        .callout-label{font-family:'Poppins',sans-serif;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--brand-gold-dim);margin-bottom:.3rem}
+        .callout-warning{background:#fdf2f2;border-left-color:var(--accent-red)}
+        .callout-warning .callout-label{color:var(--accent-red)}
+        .callout-tip{background:#f0f7f4;border-left-color:var(--accent-green)}
+        .callout-tip .callout-label{color:var(--accent-green)}
+        .prompt-block{background:var(--bg-dark);color:#e0ddd5;border-radius:var(--radius-md);padding:1.5rem 1.8rem;margin:1.5rem 0;font-family:'Poppins',sans-serif;font-size:.88rem;line-height:1.65;position:relative;overflow:hidden;white-space:pre-wrap;word-break:break-word}
+        .prompt-block::before{content:'PROMPT';position:absolute;top:.7rem;right:1rem;font-size:.62rem;font-weight:700;letter-spacing:.12em;color:var(--brand-gold-dim);opacity:.6}
+        .prompt-block.is-terminal::before{content:'TERMINAL'}
+        .prompt-block.is-config::before{content:'CONFIG · config.json'}
+        .prompt-block em{color:var(--brand-gold);font-style:normal}
+        .comparison-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.9rem;font-family:'Poppins',sans-serif}
+        .comparison-table thead{background:var(--bg-dark);color:#fff}
+        .comparison-table th{padding:.85rem 1rem;text-align:left;font-weight:600;font-size:.82rem;letter-spacing:.03em}
+        .comparison-table td{padding:.75rem 1rem;border-bottom:1px solid var(--border-subtle);vertical-align:top}
+        .comparison-table tbody tr:nth-child(even){background:var(--bg-warm)}
+        .comparison-table tbody tr:hover{background:rgba(232,212,139,.12)}
+        .cta-card{background:var(--bg-dark);color:#fff;border-radius:var(--radius-lg);padding:2.5rem 2rem;margin:3rem 0;text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow-elevated)}
+        .cta-card::before{content:'';position:absolute;top:-40%;left:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(232,212,139,.1) 0%,transparent 70%);pointer-events:none}
+        .cta-card>*{position:relative;z-index:1}
+        .cta-eyebrow{font-family:'Poppins',sans-serif;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--brand-gold);margin-bottom:.8rem}
+        .cta-card h3{font-family:'Poppins',sans-serif;font-size:1.45rem;font-weight:700;color:#fff;margin-bottom:.8rem;line-height:1.3}
+        .cta-card p{color:rgba(255,255,255,.65);font-size:.95rem;max-width:540px;margin:0 auto 1.5rem}
+        .cta-button{display:inline-block;background:var(--brand-gold);color:var(--brand-black);font-family:'Poppins',sans-serif;font-weight:700;font-size:.95rem;padding:.85rem 2.2rem;border-radius:100px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+        .cta-button:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(232,212,139,.3)}
+        .inline-cta{background:var(--bg-warm);border:1px solid var(--brand-gold);border-radius:var(--radius-md);padding:1.2rem 1.5rem;margin:2rem 0;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+        .inline-cta-text{flex:1;min-width:200px;font-family:'Poppins',sans-serif;font-size:.88rem;color:var(--text-primary)}
+        .inline-cta a{font-family:'Poppins',sans-serif;font-weight:600;font-size:.82rem;background:var(--brand-black);color:var(--brand-gold);padding:.55rem 1.3rem;border-radius:100px;text-decoration:none;white-space:nowrap;transition:opacity .2s}
+        .inline-cta a:hover{opacity:.85}
+        .ad-slot{margin:2.5rem 0;padding:0;text-align:center;min-height:90px;clear:both}
+        .checklist{list-style:none;margin:1rem 0}
+        .checklist li{padding:.35rem 0 .35rem 1.8rem;position:relative;font-size:.95rem}
+        .checklist li::before{content:'✓';position:absolute;left:0;color:var(--accent-green);font-weight:700;font-size:1rem}
+        .step{display:flex;gap:1.2rem;margin:2rem 0;align-items:flex-start}
+        .step-number{flex-shrink:0;width:2.6rem;height:2.6rem;background:var(--brand-black);color:var(--brand-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:800;font-size:1rem;margin-top:.15rem}
+        .step-content h3{margin-top:0;margin-bottom:.4rem}
+        @media(max-width:600px){html{font-size:16px}.hero h1{font-size:1.75rem}h2{font-size:1.35rem}.hero{padding:2.5rem 1.2rem 2rem}.content-wrap{padding:2rem 1.2rem 3rem}.comparison-table{font-size:.8rem}.comparison-table th,.comparison-table td{padding:.55rem .6rem}.step{flex-direction:column;gap:.5rem}.inline-cta{flex-direction:column;text-align:center}}
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4434058814138910" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Site header (injecté — navigation vers le site principal) -->
+    <nav style="position:sticky;top:0;z-index:9999;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;background:rgba(10,10,10,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.1);font-family:Inter,system-ui,-apple-system,sans-serif">
+      <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+        <img src="/logo-sm.webp" alt="Oumarou Sanda" width="34" height="34" style="border-radius:8px;background:#fff;display:block" />
+        <span style="color:#fff;font-weight:700;font-size:15px;white-space:nowrap">Oumarou Sanda</span>
+      </a>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;font-size:13px;font-weight:600">
+        <a href="/" style="color:rgba(255,255,255,.7);text-decoration:none">Accueil</a>
+        <a href="/guide" style="color:rgba(255,255,255,.7);text-decoration:none">Guides</a>
+        <a href="/formations" style="color:rgba(255,255,255,.7);text-decoration:none">Formations</a>
+        <a href="/blog" style="color:rgba(255,255,255,.7);text-decoration:none">Blog</a>
+        <a href="/contact" style="color:#0a0a0a;background:#d4af37;padding:7px 15px;border-radius:10px;text-decoration:none;font-weight:700;white-space:nowrap">Contact</a>
+      </div>
+    </nav>
+    <header class="hero">
+        <div class="hero-inner">
+            <div class="hero-badge">💻 Guide pas à pas — IA open source</div>
+            <h1>Comment avoir Claude Code <em>gratuitement</em></h1>
+            <p class="hero-subtitle">Claude Code coûte normalement un abonnement ou des crédits API. Voici la méthode 100 % légale pour le faire tourner gratuitement sur votre machine, avec des modèles IA open-source via Ollama. Sans carte bancaire.</p>
+            <div class="hero-meta">
+                <span>Par Oumarou Sanda</span>
+                <span>Mis à jour : juin 2026</span>
+                <span>Temps de lecture : 14 min</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="content-wrap">
+
+        <nav class="toc" aria-label="Sommaire">
+            <div class="toc-title">Dans ce guide</div>
+            <ol>
+                <li><a href="#cest-quoi">C'est quoi Claude Code (et pourquoi il fait le buzz)</a></li>
+                <li><a href="#pourquoi-payant">Pourquoi Claude Code coûte normalement de l'argent</a></li>
+                <li><a href="#lastuce">L'astuce : Claude Code sur des modèles open-source en local</a></li>
+                <li><a href="#prerequis">Ce qu'il vous faut avant de commencer</a></li>
+                <li><a href="#tutoriel">Tutoriel : Claude Code gratuit avec Ollama en 6 étapes</a></li>
+                <li><a href="#quel-modele">Quel modèle open-source choisir</a></li>
+                <li><a href="#limites">Les limites à connaître (la vérité)</a></li>
+                <li><a href="#faq">Questions fréquentes</a></li>
+            </ol>
+        </nav>
+
+<!-- SECTION 1 -->
+<h2 id="cest-quoi">C'est quoi Claude Code (et pourquoi il fait le buzz)</h2>
+
+<p>Claude Code est l'outil de programmation en ligne de commande d'Anthropic. Il vit dans votre terminal, lit et modifie vos fichiers, lance des commandes et exécute des tâches de développement complètes — pas seulement répondre à des questions.</p>
+
+<p>La différence avec un chatbot classique est nette. Vous ne copiez plus du code à la main. Vous dites « ajoute une page de contact à mon site », et Claude Code lit votre projet, écrit les fichiers, corrige les erreurs et teste le résultat. C'est un agent, pas un assistant.</p>
+
+<p>C'est ce qui en fait l'un des outils les plus puissants du <a href="/blog/vibe-coding-saas-sans-coder" target="_blank">vibe coding</a> : construire des logiciels en décrivant ce que vous voulez, en langage naturel. Le problème ? Cet outil n'est pas gratuit par défaut.</p>
+
+<div class="callout">
+    <div class="callout-label">Ce que vous allez apprendre dans ce guide</div>
+    Faire tourner Claude Code sur votre propre ordinateur, gratuitement, en le branchant sur des modèles d'IA open-source (Qwen, DeepSeek, Llama). Aucun abonnement, aucune clé API payante, aucune carte bancaire. La méthode est légale et fonctionne sur Windows, Mac et Linux.
+</div>
+
+<div class="ad-slot" id="ad-after-intro">
+    <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4434058814138910" data-ad-slot="7070630877"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- SECTION 2 -->
+<h2 id="pourquoi-payant">Pourquoi Claude Code coûte normalement de l'argent</h2>
+
+<p>Claude Code est gratuit à télécharger, mais il a besoin d'un « cerveau » payant pour fonctionner : les modèles Claude d'Anthropic, facturés à l'usage. Il existe deux façons officielles de le payer.</p>
+
+<h3>Option 1 — Un abonnement Claude</h3>
+<p>Claude Code est inclus dans les abonnements Claude. Le plan Pro coûte 20 $/mois (~13 000 FCFA) avec des limites d'usage. Le plan Max démarre à 100 $/mois (~65 000 FCFA) pour un usage intensif.</p>
+
+<h3>Option 2 — Des crédits API (paiement à l'usage)</h3>
+<p>Vous pouvez aussi connecter Claude Code à une clé API Anthropic et payer chaque token consommé. Sur un vrai projet, la facture grimpe vite — quelques dollars par heure de travail intensif.</p>
+
+<div class="callout callout-warning">
+    <div class="callout-label">⚠️ Le vrai blocage pour beaucoup d'Africains</div>
+    Au-delà du prix, ces deux options exigent une <strong>carte bancaire internationale</strong> (Visa/Mastercard) acceptée par Anthropic. Pour beaucoup d'entrepreneurs et d'étudiants en Afrique francophone, c'est le premier mur. La méthode de ce guide contourne ce mur entièrement — légalement.
+</div>
+
+<p>L'idée centrale est simple. Claude Code n'est qu'une interface. On peut remplacer le « cerveau » payant (Claude) par un cerveau gratuit qui tourne sur votre propre machine.</p>
+
+<!-- SECTION 3 -->
+<h2 id="lastuce">L'astuce : faire tourner Claude Code sur des modèles open-source en local</h2>
+
+<p>La méthode gratuite consiste à brancher Claude Code sur un modèle d'IA open-source qui tourne sur votre ordinateur, via un logiciel appelé Ollama. Vous gardez l'interface de Claude Code, mais le calcul se fait chez vous, sans payer Anthropic.</p>
+
+<p>Trois pièces composent le montage :</p>
+
+<ul class="checklist">
+    <li><strong>Claude Code</strong> — l'interface en ligne de commande (l'agent qui lit et écrit vos fichiers).</li>
+    <li><strong>Ollama</strong> — le moteur gratuit qui fait tourner des modèles d'IA en local sur votre machine. Voir le site officiel <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a>.</li>
+    <li><strong>claude-code-router</strong> — un petit « traducteur » qui fait croire à Claude Code qu'il parle à Anthropic, alors qu'il parle à Ollama.</li>
+</ul>
+
+<p>Pourquoi un traducteur ? Parce que Claude Code parle le langage de l'API Anthropic, et Ollama parle le langage de l'API OpenAI. Le routeur <a href="https://github.com/musistudio/claude-code-router" target="_blank" rel="noopener">claude-code-router</a> traduit entre les deux. C'est lui qui rend le branchement possible.</p>
+
+<div class="callout callout-tip">
+    <div class="callout-label">Pourquoi c'est 100 % légal</div>
+    Claude Code prévoit officiellement une variable <em>ANTHROPIC_BASE_URL</em> pour pointer vers un autre serveur. Vous ne piratez rien : vous utilisez une fonctionnalité prévue, avec des modèles open-source sous licence ouverte. Vous n'utilisez jamais les modèles Claude sans payer — vous utilisez d'autres modèles, gratuits.
+</div>
+
+<!-- SECTION 4 -->
+<h2 id="prerequis">Ce qu'il vous faut avant de commencer</h2>
+
+<p>Avant le tutoriel, vérifiez que vous avez le minimum. Rien de tout cela n'est payant.</p>
+
+<ul class="checklist">
+    <li><strong>Node.js</strong> installé (version 18 ou plus). À télécharger sur <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a>. C'est nécessaire pour installer Claude Code et le routeur.</li>
+    <li><strong>Un terminal</strong> — l'invite de commande Windows (PowerShell), le Terminal sur Mac, ou bash sur Linux.</li>
+    <li><strong>De la RAM</strong> — minimum 8 Go pour un petit modèle, 16 Go recommandé pour de meilleurs résultats.</li>
+    <li><strong>~10 Go d'espace disque</strong> libre pour télécharger un modèle.</li>
+    <li><strong>Une connexion internet</strong> — uniquement pour l'installation et le téléchargement du modèle. Ensuite, tout fonctionne hors ligne.</li>
+</ul>
+
+<div class="callout">
+    <div class="callout-label">Bon à savoir sur le matériel</div>
+    Pas besoin d'un ordinateur de gamer. Un PC ou Mac récent avec 8 à 16 Go de RAM suffit pour démarrer avec un modèle 7B. Plus votre machine est puissante (surtout avec une carte graphique), plus les réponses sont rapides et le modèle peut être gros.
+</div>
+
+<!-- SECTION 5 -->
+<h2 id="tutoriel">Tutoriel : Claude Code gratuit avec Ollama en 6 étapes</h2>
+
+<p>Voici le processus complet, de zéro à un Claude Code fonctionnel et gratuit. Comptez 15 à 20 minutes, dont le temps de téléchargement du modèle.</p>
+
+<div class="step"><div class="step-number">1</div><div class="step-content"><h3>Installer Claude Code</h3>
+<p>Ouvrez votre terminal et installez Claude Code via npm :</p>
+<div class="prompt-block is-terminal">npm install -g @anthropic-ai/claude-code</div>
+<p>Vérifiez l'installation avec <em>claude --version</em>.</p></div></div>
+
+<div class="step"><div class="step-number">2</div><div class="step-content"><h3>Installer Ollama</h3>
+<p>Téléchargez Ollama depuis <a href="https://ollama.com/download" target="_blank" rel="noopener">ollama.com/download</a> (installateur Windows et Mac). Sur Linux :</p>
+<div class="prompt-block is-terminal">curl -fsSL https://ollama.com/install.sh | sh</div>
+<p>Une fois installé, Ollama tourne en arrière-plan sur l'adresse <em>http://localhost:11434</em>.</p></div></div>
+
+<div class="step"><div class="step-number">3</div><div class="step-content"><h3>Télécharger un modèle de code open-source</h3>
+<p>Récupérez un modèle spécialisé en programmation. Qwen2.5-Coder est le meilleur choix pour débuter :</p>
+<div class="prompt-block is-terminal">ollama pull qwen2.5-coder:7b</div>
+<p>Le téléchargement fait environ 4,7 Go. Si vous avez 16 Go de RAM ou plus, essayez la version <em>qwen2.5-coder:14b</em> pour de meilleurs résultats.</p></div></div>
+
+<div class="step"><div class="step-number">4</div><div class="step-content"><h3>Installer le routeur claude-code-router</h3>
+<p>Ce paquet traduit les requêtes entre Claude Code et Ollama :</p>
+<div class="prompt-block is-terminal">npm install -g @musistudio/claude-code-router</div></div></div>
+
+<div class="step"><div class="step-number">5</div><div class="step-content"><h3>Configurer le routeur vers Ollama</h3>
+<p>Créez le fichier <em>~/.claude-code-router/config.json</em> (sur Windows : <em>C:\Users\VotreNom\.claude-code-router\config.json</em>) avec ce contenu :</p>
+<div class="prompt-block is-config">{
+  "Providers": [
+    {
+      "name": "ollama",
+      "api_base_url": "http://localhost:11434/v1/chat/completions",
+      "api_key": "ollama",
+      "models": ["qwen2.5-coder:7b"]
+    }
+  ],
+  "Router": {
+    "default": "ollama,qwen2.5-coder:7b"
+  }
+}</div>
+<p>La clé <em>api_key</em> peut contenir n'importe quoi : Ollama ne vérifie aucune clé en local.</p></div></div>
+
+<div class="step"><div class="step-number">6</div><div class="step-content"><h3>Lancer Claude Code en mode gratuit</h3>
+<p>Placez-vous dans le dossier de votre projet, puis démarrez Claude Code via le routeur :</p>
+<div class="prompt-block is-terminal">cd mon-projet
+ccr code</div>
+<p>Claude Code s'ouvre normalement, mais chaque réponse est générée gratuitement par votre modèle local. Tapez votre première instruction, par exemple « explique-moi la structure de ce projet ».</p></div></div>
+
+<div class="callout callout-tip">
+    <div class="callout-label">Astuce vérification</div>
+    Pendant que Claude Code travaille, ouvrez un second terminal et tapez <em>ollama ps</em>. Si votre modèle apparaît comme actif, c'est la preuve que le calcul se fait bien en local — donc gratuitement.
+</div>
+
+<div class="inline-cta">
+    <div class="inline-cta-text"><strong>Le montage marche mais vous bloquez sur les bases du code ?</strong> Sanda Vibe Code enseigne à construire de vraies applications avec l'IA, même en partant de zéro.</div>
+    <a href="https://sandavibecode.com" target="_blank" rel="noopener">Découvrir Sanda Vibe Code →</a>
+</div>
+
+<div class="cta-card">
+    <div class="cta-eyebrow">Passer à la pratique</div>
+    <h3>Installer l'outil, c'est 20 minutes. Savoir construire avec, c'est un système.</h3>
+    <p>Dans l'écosystème Sanda Vibe Code, j'enseigne le workflow complet pour transformer une idée en application réelle avec l'IA — du prompt au produit livré, adapté au contexte africain.</p>
+    <a href="https://sandavibecode.com" class="cta-button" target="_blank" rel="noopener">Explorer Sanda Vibe Code →</a>
+</div>
+
+<div class="ad-slot" id="ad-mid-article">
+    <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4434058814138910" data-ad-slot="7070630877"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- SECTION 6 -->
+<h2 id="quel-modele">Quel modèle open-source choisir</h2>
+
+<p>Pour coder, tous les modèles ne se valent pas. Voici les meilleurs modèles gratuits disponibles sur Ollama en 2026, classés par besoin en mémoire.</p>
+
+<table class="comparison-table">
+<thead><tr><th>Modèle</th><th>Taille</th><th>RAM conseillée</th><th>Idéal pour</th></tr></thead>
+<tbody>
+<tr><td><strong>Qwen2.5-Coder 7B</strong></td><td>~4,7 Go</td><td>8 Go</td><td>Débuter, machines modestes</td></tr>
+<tr><td><strong>Qwen2.5-Coder 14B</strong></td><td>~9 Go</td><td>16 Go</td><td>Le meilleur équilibre qualité/RAM</td></tr>
+<tr><td><strong>Qwen2.5-Coder 32B</strong></td><td>~20 Go</td><td>32 Go ou GPU</td><td>Qualité maximale en local</td></tr>
+<tr><td><strong>DeepSeek-Coder-V2 16B</strong></td><td>~9 Go</td><td>16 Go</td><td>Alternative solide pour le code</td></tr>
+<tr><td><strong>Llama 3.1 8B</strong></td><td>~4,7 Go</td><td>8 Go</td><td>Polyvalent (code + texte)</td></tr>
+</tbody>
+</table>
+
+<p><strong>Mon conseil :</strong> commencez avec Qwen2.5-Coder 7B pour valider que tout fonctionne. Si votre machine a 16 Go de RAM, passez vite au 14B — le saut de qualité est net. Pour changer de modèle, faites un <em>ollama pull</em> du nouveau modèle, puis mettez à jour le fichier config.json.</p>
+
+<!-- SECTION 7 -->
+<h2 id="limites">Les limites à connaître (la vérité)</h2>
+
+<p>Soyons honnêtes : cette méthode est gratuite, mais elle n'égale pas le vrai Claude Code. Voici exactement ce que vous gagnez et ce que vous perdez.</p>
+
+<h3>Ce que vous perdez</h3>
+<ul class="checklist">
+    <li><strong>La puissance.</strong> Un modèle 7B ou 14B en local est loin derrière Claude Sonnet ou Opus. Sur des tâches complexes, il fait plus d'erreurs.</li>
+    <li><strong>La vitesse</strong> (sans GPU). Sur un ordinateur sans carte graphique dédiée, les réponses sont plus lentes.</li>
+    <li><strong>Le contexte.</strong> Les modèles locaux gèrent moins de fichiers à la fois qu'un Claude complet.</li>
+</ul>
+
+<h3>Ce que vous gagnez</h3>
+<ul class="checklist">
+    <li><strong>Zéro coût</strong> récurrent et aucune carte bancaire.</li>
+    <li><strong>La confidentialité totale</strong> — votre code ne quitte jamais votre machine.</li>
+    <li><strong>Le mode hors ligne</strong> — une fois installé, ça marche sans internet.</li>
+    <li><strong>L'apprentissage</strong> — vous maîtrisez le workflow agentique sans dépenser un franc.</li>
+</ul>
+
+<div class="callout">
+    <div class="callout-label">Mon verdict honnête</div>
+    Utilisez cette méthode pour apprendre, expérimenter et coder hors ligne sans dépenser. Pour un travail client sérieux ou des projets complexes, le vrai Claude (via Pro ou API) reste supérieur. Beaucoup de développeurs gardent les deux : Ollama pour les tâches simples et l'apprentissage, Claude payant pour le travail critique.
+</div>
+
+<div class="ad-slot" id="ad-before-faq">
+    <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4434058814138910" data-ad-slot="7070630877"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- SECTION 8 -->
+<h2 id="faq">Questions fréquentes</h2>
+
+<h3>Est-ce légal d'utiliser Claude Code avec Ollama ?</h3>
+<p>Oui. Claude Code autorise officiellement les points d'accès personnalisés via la variable <em>ANTHROPIC_BASE_URL</em>. Vous utilisez des modèles open-source sous licence ouverte, pas les modèles Claude d'Anthropic. Il n'y a aucun piratage ni contournement de paiement — vous remplacez simplement le moteur par une alternative gratuite que vous avez le droit d'utiliser.</p>
+
+<h3>Claude Code avec Ollama est-il vraiment 100 % gratuit ?</h3>
+<p>Oui, hors coût d'électricité. Ollama et les modèles open-source sont gratuits. Vous n'avez besoin d'aucun abonnement, d'aucune clé API payante et d'aucune carte bancaire internationale. C'est le principal avantage pour les entrepreneurs et étudiants africains.</p>
+
+<h3>Quelle configuration faut-il pour faire tourner un modèle en local ?</h3>
+<p>Comptez environ 8 Go de RAM pour un modèle 7B, 16 Go pour un 14B et 32 Go (ou un GPU) pour un 32B. Sans carte graphique dédiée, la génération est plus lente mais reste utilisable pour apprendre et coder des tâches simples.</p>
+
+<h3>La qualité est-elle la même que le vrai Claude ?</h3>
+<p>Non, et il faut être clair là-dessus. Les modèles open-source en local sont nettement moins puissants que Claude Sonnet ou Opus. Cette méthode est idéale pour apprendre, coder hors ligne et préserver sa vie privée. Pour des tâches complexes ou du travail client, le vrai Claude reste supérieur.</p>
+
+<h3>Ça marche sur Windows, Mac et Linux ?</h3>
+<p>Oui. Ollama, Node.js et claude-code-router fonctionnent sur les trois systèmes. La procédure est identique, à part la commande d'installation d'Ollama (installateur graphique sur Windows et Mac, script sur Linux).</p>
+
+<h3>Peut-on utiliser le vrai Claude Code gratuitement ?</h3>
+<p>Le seul accès gratuit officiel à Claude est <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> (le chat web), qui n'inclut pas Claude Code. Claude Code nécessite un abonnement Claude Pro/Max ou des crédits API. La méthode Ollama décrite ici est donc la seule façon d'obtenir l'expérience Claude Code sans payer.</p>
+
+<!-- SECTION 9 -->
+<h2>Conclusion</h2>
+
+<p>Vous savez maintenant comment avoir Claude Code gratuitement. Le montage tient en trois pièces : Claude Code pour l'interface, Ollama pour faire tourner un modèle gratuit en local, et claude-code-router pour les relier. Aucun abonnement, aucune carte bancaire.</p>
+
+<p>C'est la porte d'entrée parfaite vers le <a href="/blog/no-code-vs-vibe-coding" target="_blank">vibe coding</a> quand on part de zéro et sans budget. Installez, testez, cassez des choses, apprenez. Le jour où vos projets deviennent sérieux, vous saurez exactement quand passer à un modèle plus puissant.</p>
+
+<div class="cta-card">
+    <div class="cta-eyebrow">L'écosystème complet</div>
+    <h3>L'outil est gratuit. Apprendre à construire de vrais produits, c'est ce qui change votre vie.</h3>
+    <p>Sanda Vibe Code vous accompagne pour transformer l'IA en compétence monétisable : créer des sites, des applications et des SaaS avec l'IA, étape par étape, depuis l'Afrique.</p>
+    <a href="https://sandavibecode.com" class="cta-button" target="_blank" rel="noopener">Rejoindre Sanda Vibe Code →</a>
+</div>
+
+<div class="ad-slot" id="ad-end-article">
+    <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4434058814138910" data-ad-slot="7070630877"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+    </main>
+    <!-- Site footer (injecté) -->
+    <footer style="background:#000;color:rgba(255,255,255,.8);font-family:Inter,system-ui,-apple-system,sans-serif;padding:44px 20px 32px;border-top:1px solid rgba(255,255,255,.1)">
+      <div style="max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between">
+        <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none">
+          <img src="/logo-sm.webp" alt="Oumarou Sanda" width="40" height="40" style="border-radius:10px;background:#fff;display:block" />
+          <span>
+            <span style="display:block;color:#fff;font-weight:700">Oumarou Sanda</span>
+            <span style="display:block;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.5)">Expert IA Générative</span>
+          </span>
+        </a>
+        <nav style="display:flex;flex-wrap:wrap;gap:14px 20px;font-size:14px">
+          <a href="/" style="color:rgba(255,255,255,.8);text-decoration:none">Accueil</a>
+          <a href="/guide" style="color:rgba(255,255,255,.8);text-decoration:none">Guides</a>
+          <a href="/formations" style="color:rgba(255,255,255,.8);text-decoration:none">Formations</a>
+          <a href="/blog" style="color:rgba(255,255,255,.8);text-decoration:none">Blog</a>
+          <a href="/ressources" style="color:rgba(255,255,255,.8);text-decoration:none">Ressources</a>
+          <a href="/contact" style="color:rgba(255,255,255,.8);text-decoration:none">Contact</a>
+        </nav>
+      </div>
+      <div style="max-width:1080px;margin:24px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);font-size:13px;color:rgba(255,255,255,.6);text-align:center">© 2026 Oumarou Sanda. Tous droits réservés. Fait avec ❤️ depuis le Cameroun.</div>
+    </footer>
+</body>
+</html>
