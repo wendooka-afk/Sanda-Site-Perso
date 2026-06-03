@@ -1,65 +1,79 @@
 import { useParams, Navigate } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 import { guides } from '../data/guides';
 import { useLanguage } from '../i18n';
 import { SEOHead } from '../components/SEOHead';
+import '../styles/guide.css';
 
 /**
- * GuideArticlePage — Displays static HTML guides embedded in the site shell.
+ * GuideArticlePage — renders a guide article INSIDE the React site shell.
  *
- * Guide articles are standalone HTML files in public/guide/<slug>/index.html
- * with their own design. They are embedded via a same-origin iframe whose
- * height is synced to its content (no inner scrollbar), so the shared site
- * Navbar (from Layout, fixed) stays visible on top and the Footer renders
- * naturally below — letting visitors navigate back to the rest of the site.
+ * The article body lives in src/data/guides-html/<slug>.html (content only —
+ * no <head>, no nav, no footer). It is injected here so the page uses the
+ * SAME <Navbar> and <Footer> as every other page (this route is under <Layout>).
+ * The guide's CSS is scoped under `.guide-content` (src/styles/guide.css) so it
+ * cannot leak onto the rest of the site.
+ *
+ * eager glob = content is bundled synchronously → present at first paint → the
+ * prerender step captures the full article (SEO preserved).
  */
+const guideHtml = import.meta.glob('../data/guides-html/*.html', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+}) as Record<string, string>;
+
+function getHtml(slug: string): string | undefined {
+  const entry = Object.entries(guideHtml).find(([path]) => path.endsWith(`/${slug}.html`));
+  return entry?.[1];
+}
+
 export default function GuideArticlePage() {
   const { slug } = useParams();
   const { localePath } = useLanguage();
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-  const [height, setHeight] = useState(0);
 
   const guide = guides.find((g) => g.slug === slug);
+  const html = slug ? getHtml(slug) : undefined;
 
   useEffect(() => {
-    const iframe = iframeRef.current;
-    if (!iframe) return;
+    if (!html) return;
 
-    let observer: ResizeObserver | null = null;
+    // Fonts utilisées par les articles guide (Poppins + Source Serif 4)
+    if (!document.getElementById('guide-fonts')) {
+      const link = document.createElement('link');
+      link.id = 'guide-fonts';
+      link.rel = 'stylesheet';
+      link.href =
+        'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap';
+      document.head.appendChild(link);
+    }
 
-    const syncHeight = () => {
-      try {
-        const doc = iframe.contentDocument;
-        if (doc) setHeight(doc.documentElement.scrollHeight);
-      } catch {
-        /* cross-origin guard — guides are same-origin so this won't trigger */
-      }
-    };
+    // Charge le script AdSense si absent (les <script> inline du HTML ne s'exécutent
+    // pas via dangerouslySetInnerHTML — on pousse les pubs manuellement)
+    if (!document.querySelector('script[src*="adsbygoogle.js"]')) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.crossOrigin = 'anonymous';
+      s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4434058814138910';
+      document.head.appendChild(s);
+    }
 
-    const onLoad = () => {
-      syncHeight();
-      try {
-        const doc = iframe.contentDocument;
-        if (doc) {
-          observer = new ResizeObserver(syncHeight);
-          observer.observe(doc.documentElement);
+    const timer = window.setTimeout(() => {
+      const ads = document.querySelectorAll('.guide-content ins.adsbygoogle');
+      ads.forEach(() => {
+        try {
+          // @ts-expect-error — injecté globalement par le script AdSense
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } catch {
+          /* bloqueur de pub actif — silencieux */
         }
-      } catch { /* noop */ }
-      // Fallbacks for late-loading images/fonts inside the guide
-      window.setTimeout(syncHeight, 600);
-      window.setTimeout(syncHeight, 1500);
-    };
+      });
+    }, 600);
 
-    iframe.addEventListener('load', onLoad);
-    window.addEventListener('resize', syncHeight);
-    return () => {
-      iframe.removeEventListener('load', onLoad);
-      window.removeEventListener('resize', syncHeight);
-      observer?.disconnect();
-    };
-  }, [slug]);
+    return () => window.clearTimeout(timer);
+  }, [html]);
 
-  if (!guide) {
+  if (!guide || !html) {
     return <Navigate to={localePath('/guide')} replace />;
   }
 
@@ -71,22 +85,7 @@ export default function GuideArticlePage() {
         canonical={'/guide/' + guide.slug}
         ogType="article"
       />
-      {/* pt offset clears the fixed Navbar; dark bg matches the guide + navbar */}
-      <div className="bg-[#0C0B0B] pt-[72px]">
-        <iframe
-          ref={iframeRef}
-          src={`/guide/${guide.slug}/index.html`}
-          title={guide.title}
-          scrolling="no"
-          style={{
-            width: '100%',
-            height: height ? `${height}px` : '100vh',
-            border: 'none',
-            display: 'block',
-            overflow: 'hidden',
-          }}
-        />
-      </div>
+      <article className="guide-content" dangerouslySetInnerHTML={{ __html: html }} />
     </>
   );
 }

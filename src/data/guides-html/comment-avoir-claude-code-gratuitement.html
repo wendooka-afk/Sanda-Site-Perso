@@ -1,113 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comment avoir Claude Code gratuitement (Guide 2026)</title>
-    <meta name="description" content="La méthode légale pour utiliser Claude Code gratuitement : le faire tourner sur des modèles IA open-source en local avec Ollama. Tutoriel pas à pas.">
-    <link rel="canonical" href="https://oumarousanda.com/guide/comment-avoir-claude-code-gratuitement/">
-    <meta property="og:title" content="Comment avoir Claude Code gratuitement (Guide 2026)">
-    <meta property="og:description" content="Faites tourner Claude Code gratuitement sur votre machine avec Ollama et des modèles open-source. Tutoriel complet, sans carte bancaire.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://oumarousanda.com/guide/comment-avoir-claude-code-gratuitement/">
-    <meta property="og:site_name" content="Oumarou Sanda">
-    <meta property="og:locale" content="fr_FR">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Comment avoir Claude Code gratuitement (Guide 2026)">
-    <meta name="twitter:description" content="Faites tourner Claude Code gratuitement avec Ollama et des modèles IA open-source. Tutoriel pas à pas.">
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"HowTo","name":"Comment avoir Claude Code gratuitement avec Ollama","description":"Méthode étape par étape pour utiliser Claude Code gratuitement en le branchant sur des modèles IA open-source en local via Ollama.","datePublished":"2026-06-03","dateModified":"2026-06-03","author":{"@type":"Person","name":"Oumarou Sanda","url":"https://oumarousanda.com"},"publisher":{"@type":"Organization","name":"Oumarou Sanda","url":"https://oumarousanda.com"},"totalTime":"PT20M","step":[{"@type":"HowToStep","name":"Installer Claude Code","text":"Installez l'outil en ligne de commande Claude Code avec npm."},{"@type":"HowToStep","name":"Installer Ollama","text":"Téléchargez et installez Ollama, le moteur qui fait tourner les modèles IA en local."},{"@type":"HowToStep","name":"Télécharger un modèle open-source","text":"Récupérez un modèle de code open-source comme Qwen2.5-Coder avec la commande ollama pull."},{"@type":"HowToStep","name":"Installer le routeur claude-code-router","text":"Installez le proxy qui traduit les requêtes de Claude Code vers Ollama."},{"@type":"HowToStep","name":"Configurer le routeur","text":"Pointez le routeur vers Ollama dans son fichier de configuration."},{"@type":"HowToStep","name":"Lancer Claude Code","text":"Démarrez Claude Code via le routeur avec la commande ccr code."}]}
-    </script>
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Est-ce légal d'utiliser Claude Code avec Ollama ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Claude Code autorise les points d'accès personnalisés via la variable ANTHROPIC_BASE_URL. Vous utilisez des modèles open-source sous licence ouverte, pas les modèles Claude d'Anthropic. Il n'y a aucun piratage ni contournement de paiement."}},{"@type":"Question","name":"Claude Code avec Ollama est-il vraiment 100% gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui, hors coût d'électricité. Ollama et les modèles open-source sont gratuits. Vous n'avez besoin d'aucun abonnement, d'aucune clé API payante et d'aucune carte bancaire."}},{"@type":"Question","name":"Quelle configuration faut-il pour faire tourner un modèle en local ?","acceptedAnswer":{"@type":"Answer","text":"Comptez environ 8 Go de RAM pour un modèle 7B, 16 Go pour un 14B et 32 Go ou un GPU pour un 32B. Sans carte graphique dédiée, la génération est plus lente mais reste utilisable pour apprendre."}},{"@type":"Question","name":"La qualité est-elle la même que le vrai Claude ?","acceptedAnswer":{"@type":"Answer","text":"Non. Les modèles open-source en local sont nettement moins puissants que Claude Sonnet ou Opus. Cette méthode est idéale pour apprendre, coder hors ligne et préserver sa vie privée, pas pour égaler la qualité de Claude sur des tâches complexes."}},{"@type":"Question","name":"Ça marche sur Windows, Mac et Linux ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Ollama, Node.js et claude-code-router fonctionnent sur les trois systèmes. La méthode est identique."}},{"@type":"Question","name":"Peut-on utiliser le vrai Claude Code gratuitement ?","acceptedAnswer":{"@type":"Answer","text":"Le seul accès gratuit officiel à Claude est claude.ai (chat web), qui n'inclut pas Claude Code. Claude Code nécessite un abonnement Claude Pro/Max ou des crédits API. La méthode Ollama est la seule façon d'obtenir l'expérience Claude Code sans payer."}}]}
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <style>
-        :root{--brand-black:#0C0B0B;--brand-gold:#e8d48b;--brand-gold-dim:#c4b06e;--text-primary:#1a1a1a;--text-secondary:#4a4a4a;--text-muted:#7a7a7a;--bg-page:#faf9f6;--bg-white:#fff;--bg-warm:#f5f0e8;--bg-dark:#0C0B0B;--border-subtle:#e8e4dc;--accent-green:#2d6a4f;--accent-red:#c1292e;--radius-sm:6px;--radius-md:12px;--radius-lg:20px;--shadow-card:0 2px 20px rgba(12,11,11,.06);--shadow-elevated:0 8px 40px rgba(12,11,11,.1);--max-width:780px}
-        *{margin:0;padding:0;box-sizing:border-box}
-        html{font-size:17px;scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-        body{font-family:'Source Serif 4',Georgia,serif;color:var(--text-primary);background:var(--bg-page);line-height:1.75}
-        .hero{background:var(--bg-dark);color:#fff;padding:3.5rem 1.5rem 3rem;position:relative;overflow:hidden}
-        .hero::before{content:'';position:absolute;top:-50%;right:-30%;width:600px;height:600px;background:radial-gradient(circle,rgba(232,212,139,.12) 0%,transparent 70%);pointer-events:none}
-        .hero-inner{max-width:var(--max-width);margin:0 auto;position:relative;z-index:1;text-align:center}
-        .hero-badge{display:inline-flex;align-items:center;gap:.4rem;font-family:'Poppins',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-gold);border:1px solid rgba(232,212,139,.3);padding:.35rem .85rem;border-radius:100px;margin-bottom:1.5rem}
-        .hero h1{font-family:'Poppins',sans-serif;font-size:2.35rem;font-weight:800;line-height:1.15;margin-bottom:1.2rem;letter-spacing:-.02em}
-        .hero h1 em{font-style:normal;color:var(--brand-gold)}
-        .hero-subtitle{font-size:1.1rem;color:rgba(255,255,255,.7);line-height:1.6;max-width:620px;margin:0 auto}
-        .hero-meta{margin-top:2rem;display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;font-family:'Poppins',sans-serif;font-size:.78rem;color:rgba(255,255,255,.5)}
-        .hero-meta span{display:flex;align-items:center;gap:.3rem}
-        .content-wrap{max-width:var(--max-width);margin:0 auto;padding:2.5rem 1.5rem 4rem}
-        .toc{background:var(--bg-white);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:1.5rem 2rem;margin-bottom:3rem;box-shadow:var(--shadow-card)}
-        .toc-title{font-family:'Poppins',sans-serif;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:.8rem}
-        .toc ol{list-style:none;counter-reset:toc-counter}
-        .toc ol li{counter-increment:toc-counter;margin-bottom:.35rem}
-        .toc ol li a{font-family:'Poppins',sans-serif;font-size:.88rem;color:var(--text-secondary);text-decoration:none;display:flex;align-items:baseline;gap:.5rem;padding:.2rem 0;transition:color .2s}
-        .toc ol li a::before{content:counter(toc-counter, decimal-leading-zero);font-size:.72rem;font-weight:700;color:var(--brand-gold-dim);min-width:1.4rem}
-        .toc ol li a:hover{color:var(--brand-black)}
-        h2{font-family:'Poppins',sans-serif;font-size:1.6rem;font-weight:700;line-height:1.25;margin:3rem 0 1rem;color:var(--brand-black);letter-spacing:-.01em}
-        h3{font-family:'Poppins',sans-serif;font-size:1.15rem;font-weight:600;line-height:1.35;margin:2rem 0 .7rem;color:var(--text-primary)}
-        p{margin-bottom:1.2rem}
-        .content-wrap a{color:var(--brand-black);text-decoration:underline;text-decoration-color:var(--brand-gold);text-underline-offset:3px;transition:text-decoration-color .2s}
-        .content-wrap a:hover{text-decoration-color:var(--brand-black)}
-        a[target="_blank"]::after{content:' ↗';font-size:.75em;opacity:.5}
-        .callout{background:var(--bg-warm);border-left:4px solid var(--brand-gold);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:.95rem}
-        .callout-label{font-family:'Poppins',sans-serif;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--brand-gold-dim);margin-bottom:.3rem}
-        .callout-warning{background:#fdf2f2;border-left-color:var(--accent-red)}
-        .callout-warning .callout-label{color:var(--accent-red)}
-        .callout-tip{background:#f0f7f4;border-left-color:var(--accent-green)}
-        .callout-tip .callout-label{color:var(--accent-green)}
-        .prompt-block{background:var(--bg-dark);color:#e0ddd5;border-radius:var(--radius-md);padding:1.5rem 1.8rem;margin:1.5rem 0;font-family:'Poppins',sans-serif;font-size:.88rem;line-height:1.65;position:relative;overflow:hidden;white-space:pre-wrap;word-break:break-word}
-        .prompt-block::before{content:'PROMPT';position:absolute;top:.7rem;right:1rem;font-size:.62rem;font-weight:700;letter-spacing:.12em;color:var(--brand-gold-dim);opacity:.6}
-        .prompt-block.is-terminal::before{content:'TERMINAL'}
-        .prompt-block.is-config::before{content:'CONFIG · config.json'}
-        .prompt-block em{color:var(--brand-gold);font-style:normal}
-        .comparison-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.9rem;font-family:'Poppins',sans-serif}
-        .comparison-table thead{background:var(--bg-dark);color:#fff}
-        .comparison-table th{padding:.85rem 1rem;text-align:left;font-weight:600;font-size:.82rem;letter-spacing:.03em}
-        .comparison-table td{padding:.75rem 1rem;border-bottom:1px solid var(--border-subtle);vertical-align:top}
-        .comparison-table tbody tr:nth-child(even){background:var(--bg-warm)}
-        .comparison-table tbody tr:hover{background:rgba(232,212,139,.12)}
-        .cta-card{background:var(--bg-dark);color:#fff;border-radius:var(--radius-lg);padding:2.5rem 2rem;margin:3rem 0;text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow-elevated)}
-        .cta-card::before{content:'';position:absolute;top:-40%;left:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(232,212,139,.1) 0%,transparent 70%);pointer-events:none}
-        .cta-card>*{position:relative;z-index:1}
-        .cta-eyebrow{font-family:'Poppins',sans-serif;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--brand-gold);margin-bottom:.8rem}
-        .cta-card h3{font-family:'Poppins',sans-serif;font-size:1.45rem;font-weight:700;color:#fff;margin-bottom:.8rem;line-height:1.3}
-        .cta-card p{color:rgba(255,255,255,.65);font-size:.95rem;max-width:540px;margin:0 auto 1.5rem}
-        .cta-button{display:inline-block;background:var(--brand-gold);color:var(--brand-black);font-family:'Poppins',sans-serif;font-weight:700;font-size:.95rem;padding:.85rem 2.2rem;border-radius:100px;text-decoration:none;transition:transform .2s,box-shadow .2s}
-        .cta-button:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(232,212,139,.3)}
-        .inline-cta{background:var(--bg-warm);border:1px solid var(--brand-gold);border-radius:var(--radius-md);padding:1.2rem 1.5rem;margin:2rem 0;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-        .inline-cta-text{flex:1;min-width:200px;font-family:'Poppins',sans-serif;font-size:.88rem;color:var(--text-primary)}
-        .inline-cta a{font-family:'Poppins',sans-serif;font-weight:600;font-size:.82rem;background:var(--brand-black);color:var(--brand-gold);padding:.55rem 1.3rem;border-radius:100px;text-decoration:none;white-space:nowrap;transition:opacity .2s}
-        .inline-cta a:hover{opacity:.85}
-        .ad-slot{margin:2.5rem 0;padding:0;text-align:center;min-height:90px;clear:both}
-        .checklist{list-style:none;margin:1rem 0}
-        .checklist li{padding:.35rem 0 .35rem 1.8rem;position:relative;font-size:.95rem}
-        .checklist li::before{content:'✓';position:absolute;left:0;color:var(--accent-green);font-weight:700;font-size:1rem}
-        .step{display:flex;gap:1.2rem;margin:2rem 0;align-items:flex-start}
-        .step-number{flex-shrink:0;width:2.6rem;height:2.6rem;background:var(--brand-black);color:var(--brand-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:800;font-size:1rem;margin-top:.15rem}
-        .step-content h3{margin-top:0;margin-bottom:.4rem}
-        @media(max-width:600px){html{font-size:16px}.hero h1{font-size:1.75rem}h2{font-size:1.35rem}.hero{padding:2.5rem 1.2rem 2rem}.content-wrap{padding:2rem 1.2rem 3rem}.comparison-table{font-size:.8rem}.comparison-table th,.comparison-table td{padding:.55rem .6rem}.step{flex-direction:column;gap:.5rem}.inline-cta{flex-direction:column;text-align:center}}
-    </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4434058814138910" crossorigin="anonymous"></script>
-</head>
-<body>
-    <!-- Site header (injecté — navigation vers le site principal) -->
-    <nav style="position:sticky;top:0;z-index:9999;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;background:rgba(10,10,10,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.1);font-family:Inter,system-ui,-apple-system,sans-serif">
-      <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none">
-        <img src="/logo-sm.webp" alt="Oumarou Sanda" width="34" height="34" style="border-radius:8px;background:#fff;display:block" />
-        <span style="color:#fff;font-weight:700;font-size:15px;white-space:nowrap">Oumarou Sanda</span>
-      </a>
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;font-size:13px;font-weight:600">
-        <a href="/" style="color:rgba(255,255,255,.7);text-decoration:none">Accueil</a>
-        <a href="/guide" style="color:rgba(255,255,255,.7);text-decoration:none">Guides</a>
-        <a href="/formations" style="color:rgba(255,255,255,.7);text-decoration:none">Formations</a>
-        <a href="/blog" style="color:rgba(255,255,255,.7);text-decoration:none">Blog</a>
-        <a href="/contact" style="color:#0a0a0a;background:#d4af37;padding:7px 15px;border-radius:10px;text-decoration:none;font-weight:700;white-space:nowrap">Contact</a>
-      </div>
-    </nav>
-    <header class="hero">
+<header class="hero">
         <div class="hero-inner">
             <div class="hero-badge">💻 Guide pas à pas — IA open source</div>
             <h1>Comment avoir Claude Code <em>gratuitement</em></h1>
@@ -152,7 +43,7 @@
 
 <div class="ad-slot" id="ad-after-intro">
     <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4434058814138910" data-ad-slot="7070630877"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    
 </div>
 
 <!-- SECTION 2 -->
@@ -277,7 +168,7 @@ ccr code</div>
 
 <div class="ad-slot" id="ad-mid-article">
     <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4434058814138910" data-ad-slot="7070630877"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    
 </div>
 
 <!-- SECTION 6 -->
@@ -325,7 +216,7 @@ ccr code</div>
 
 <div class="ad-slot" id="ad-before-faq">
     <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4434058814138910" data-ad-slot="7070630877"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    
 </div>
 
 <!-- SECTION 8 -->
@@ -365,30 +256,7 @@ ccr code</div>
 
 <div class="ad-slot" id="ad-end-article">
     <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4434058814138910" data-ad-slot="7070630877"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    
 </div>
 
     </main>
-    <!-- Site footer (injecté) -->
-    <footer style="background:#000;color:rgba(255,255,255,.8);font-family:Inter,system-ui,-apple-system,sans-serif;padding:44px 20px 32px;border-top:1px solid rgba(255,255,255,.1)">
-      <div style="max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between">
-        <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none">
-          <img src="/logo-sm.webp" alt="Oumarou Sanda" width="40" height="40" style="border-radius:10px;background:#fff;display:block" />
-          <span>
-            <span style="display:block;color:#fff;font-weight:700">Oumarou Sanda</span>
-            <span style="display:block;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.5)">Expert IA Générative</span>
-          </span>
-        </a>
-        <nav style="display:flex;flex-wrap:wrap;gap:14px 20px;font-size:14px">
-          <a href="/" style="color:rgba(255,255,255,.8);text-decoration:none">Accueil</a>
-          <a href="/guide" style="color:rgba(255,255,255,.8);text-decoration:none">Guides</a>
-          <a href="/formations" style="color:rgba(255,255,255,.8);text-decoration:none">Formations</a>
-          <a href="/blog" style="color:rgba(255,255,255,.8);text-decoration:none">Blog</a>
-          <a href="/ressources" style="color:rgba(255,255,255,.8);text-decoration:none">Ressources</a>
-          <a href="/contact" style="color:rgba(255,255,255,.8);text-decoration:none">Contact</a>
-        </nav>
-      </div>
-      <div style="max-width:1080px;margin:24px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);font-size:13px;color:rgba(255,255,255,.6);text-align:center">© 2026 Oumarou Sanda. Tous droits réservés. Fait avec ❤️ depuis le Cameroun.</div>
-    </footer>
-</body>
-</html>
