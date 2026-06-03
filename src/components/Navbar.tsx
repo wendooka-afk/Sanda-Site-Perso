@@ -59,7 +59,7 @@ export function Navbar() {
           className={cn(
             'mx-auto transition-all duration-500 ease-out',
             floating
-              ? 'max-w-7xl border-b border-white/10 bg-black/90 backdrop-blur-lg md:max-w-4xl md:rounded-2xl md:border md:shadow-[0_8px_30px_rgba(0,0,0,0.45)]'
+              ? 'max-w-7xl border-b border-white/10 bg-black/90 backdrop-blur-lg md:rounded-2xl md:border md:shadow-[0_8px_30px_rgba(0,0,0,0.45)]'
               : 'max-w-none border-b border-white/10 bg-black/80 backdrop-blur-md shadow-sm',
           )}
         >
@@ -70,7 +70,7 @@ export function Navbar() {
             )}
           >
             {/* Logo */}
-            <Link to={localePath('/')} className="flex items-center gap-3 group">
+            <Link to={localePath('/')} className="flex items-center gap-3 group shrink-0">
               <div className="relative">
                 <div className="absolute -inset-2 bg-gold/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="w-10 h-10 rounded-xl overflow-hidden shadow-[0_0_20px_rgba(212,175,55,0.3)] group-hover:scale-105 transition-all duration-500 relative z-10 bg-white">
@@ -86,13 +86,14 @@ export function Navbar() {
             </Link>
 
             {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center gap-1">
+            <div className={cn('hidden lg:flex items-center transition-all duration-500 ease-out', floating ? 'gap-0.5' : 'gap-1')}>
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
                   className={cn(
-                    'relative px-4 py-2 text-[12px] rounded-lg transition-all duration-300 font-bold tracking-[0.1em] uppercase',
+                    'relative py-2 text-[12px] rounded-lg transition-all duration-300 font-bold tracking-[0.1em] uppercase whitespace-nowrap',
+                    floating ? 'px-2.5' : 'px-4',
                     isActive(link.href) ? 'text-white' : 'text-white/70 hover:text-white',
                   )}
                 >
@@ -105,7 +106,7 @@ export function Navbar() {
             </div>
 
             {/* Language + CTA + Mobile toggle */}
-            <div className="flex items-center gap-4">
+            <div className={cn('flex items-center shrink-0 transition-all duration-500 ease-out', floating ? 'gap-2' : 'gap-4')}>
               <button
                 onClick={toggleLanguage}
                 className="flex items-center gap-1 sm:gap-2 px-2.5 sm:px-3 py-2 rounded-lg text-[11px] font-bold text-white/70 hover:text-white hover:bg-white/[0.04] transition-all duration-300 border border-white/5 hover:border-white/10 uppercase tracking-widest glass-premium bg-white/5"
@@ -118,7 +119,10 @@ export function Navbar() {
               {language === 'fr' && (
                 <Link
                   to={localePath('/formations')}
-                  className="hidden lg:flex items-center gap-2 px-5 py-2.5 bg-gold text-[#0a0a0a] font-bold text-[12px] uppercase tracking-[0.1em] rounded-xl hover:bg-white transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] group"
+                  className={cn(
+                    'hidden lg:flex items-center gap-2 bg-gold text-[#0a0a0a] font-bold text-[12px] uppercase tracking-[0.1em] rounded-xl whitespace-nowrap hover:bg-white transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] group',
+                    floating ? 'px-4 py-2' : 'px-5 py-2.5',
+                  )}
                 >
                   <Sparkles className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
                   {t.nav.formations}
