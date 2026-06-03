@@ -716,6 +716,21 @@
 </head>
 <body>
 
+    <!-- Site header (injecté — navigation vers le site principal) -->
+    <nav style="position:sticky;top:0;z-index:9999;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;background:rgba(10,10,10,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.1);font-family:Inter,system-ui,-apple-system,sans-serif">
+      <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+        <img src="/logo-sm.webp" alt="Oumarou Sanda" width="34" height="34" style="border-radius:8px;background:#fff;display:block" />
+        <span style="color:#fff;font-weight:700;font-size:15px;white-space:nowrap">Oumarou Sanda</span>
+      </a>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;font-size:13px;font-weight:600">
+        <a href="/" style="color:rgba(255,255,255,.7);text-decoration:none">Accueil</a>
+        <a href="/guide" style="color:rgba(255,255,255,.7);text-decoration:none">Guides</a>
+        <a href="/formations" style="color:rgba(255,255,255,.7);text-decoration:none">Formations</a>
+        <a href="/blog" style="color:rgba(255,255,255,.7);text-decoration:none">Blog</a>
+        <a href="/contact" style="color:#0a0a0a;background:#d4af37;padding:7px 15px;border-radius:10px;text-decoration:none;font-weight:700;white-space:nowrap">Contact</a>
+      </div>
+    </nav>
+
     <!-- ====== HERO ====== -->
     <header class="hero">
         <div class="hero-inner">
@@ -1141,6 +1156,28 @@
 
 
     </main>
+
+    <!-- Site footer (injecté) -->
+    <footer style="background:#000;color:rgba(255,255,255,.8);font-family:Inter,system-ui,-apple-system,sans-serif;padding:44px 20px 32px;border-top:1px solid rgba(255,255,255,.1)">
+      <div style="max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between">
+        <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none">
+          <img src="/logo-sm.webp" alt="Oumarou Sanda" width="40" height="40" style="border-radius:10px;background:#fff;display:block" />
+          <span>
+            <span style="display:block;color:#fff;font-weight:700">Oumarou Sanda</span>
+            <span style="display:block;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.5)">Expert IA Générative</span>
+          </span>
+        </a>
+        <nav style="display:flex;flex-wrap:wrap;gap:14px 20px;font-size:14px">
+          <a href="/" style="color:rgba(255,255,255,.8);text-decoration:none">Accueil</a>
+          <a href="/guide" style="color:rgba(255,255,255,.8);text-decoration:none">Guides</a>
+          <a href="/formations" style="color:rgba(255,255,255,.8);text-decoration:none">Formations</a>
+          <a href="/blog" style="color:rgba(255,255,255,.8);text-decoration:none">Blog</a>
+          <a href="/ressources" style="color:rgba(255,255,255,.8);text-decoration:none">Ressources</a>
+          <a href="/contact" style="color:rgba(255,255,255,.8);text-decoration:none">Contact</a>
+        </nav>
+      </div>
+      <div style="max-width:1080px;margin:24px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);font-size:13px;color:rgba(255,255,255,.6);text-align:center">© 2026 Oumarou Sanda. Tous droits réservés. Fait avec ❤️ depuis le Cameroun.</div>
+    </footer>
 
 </body>
 </html>
