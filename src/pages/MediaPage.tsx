@@ -96,7 +96,7 @@ export default function MediaPage() {
             {/* HER RIGHT CONTENT (IMAGE) */}
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={heroInView ? { opacity: 1, scale: 1 } : {}} transition={{ duration: 1, delay: 0.2 }} className="relative hidden lg:block h-[600px] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl bg-white/5">
               <img src="/oumarou-sanda-16.webp" alt="Oumarou Sanda Media" width={600} height={600} loading="lazy" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-80" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-40" />
             </motion.div>
           </div>
         </div>
