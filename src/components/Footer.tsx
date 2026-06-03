@@ -112,24 +112,26 @@ export function Footer() {
             </div>
           ))}
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-black/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      {/* Bottom Bar — bande noire pleine largeur */}
+      <div className="relative z-10 bg-black">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
-            <p className="text-[#737373] text-[13px] text-center sm:text-left font-inter">
+            <p className="text-white/80 text-[13px] text-center sm:text-left font-inter">
               {t.footer.rights} {t.footer.madeWith}
             </p>
-            <div className="w-1 h-1 rounded-full bg-black/10 hidden sm:block" />
+            <div className="w-1 h-1 rounded-full bg-white/25 hidden sm:block" />
             <Link
               to="/dashboard"
-              className="text-[#737373] hover:text-[#0a0a0a] text-[13px] font-inter transition-colors duration-300 hover:underline underline-offset-4"
+              className="text-white/80 hover:text-white text-[13px] font-inter transition-colors duration-300 hover:underline underline-offset-4"
             >
               Admin
             </Link>
           </div>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="w-12 h-12 rounded-xl glass-premium border border-black/10 bg-white shadow-sm text-[#525252] hover:text-gold hover:border-gold/30 hover:bg-gold/5 transition-all duration-300 group flex items-center justify-center hover:shadow-[0_4px_15px_rgba(212,175,55,0.15)]"
+            className="w-12 h-12 rounded-xl border border-white/15 bg-white/5 text-white/80 hover:text-gold hover:border-gold/40 hover:bg-white/10 transition-all duration-300 group flex items-center justify-center"
             aria-label="Back to top"
           >
             <ArrowUp className="w-5 h-5 group-hover:-translate-y-1 transition-transform duration-300" />
