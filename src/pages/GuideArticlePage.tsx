@@ -1,6 +1,7 @@
 import { useParams, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { guides } from '../data/guides';
+import { guidesSchema } from '../data/guides-schema';
 import { useLanguage } from '../i18n';
 import { SEOHead } from '../components/SEOHead';
 import '../styles/guide.css';
@@ -84,6 +85,7 @@ export default function GuideArticlePage() {
         description={guide.excerpt}
         canonical={'/guide/' + guide.slug}
         ogType="article"
+        schema={guidesSchema[guide.slug]}
       />
       <article className="guide-content" dangerouslySetInnerHTML={{ __html: html }} />
     </>
