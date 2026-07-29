@@ -65,75 +65,75 @@ const programme = [
     id: 's1',
     color: 'from-blue-500 to-indigo-600',
     emoji: '📘',
-    title: 'Semaine 1 — Les Assistants IA de 2026',
+    title: 'Semaine 1 - Les Assistants IA de 2026',
     days: 'Jours 3–7',
     lessons: [
-      { day: 3, title: 'Master 01 : ChatGPT', desc: 'Bien au-delà de la rédaction — analyse, images, vidéo, code.', access: 'Freemium', badge: '' },
+      { day: 3, title: 'Master 01 : ChatGPT', desc: 'Bien au-delà de la rédaction - analyse, images, vidéo, code.', access: 'Freemium', badge: '' },
       { day: 4, title: 'Master 02 : Claude AI', desc: 'Le meilleur pour analyser de longs documents, rédiger et raisonner.', access: 'Freemium', badge: '' },
-      { day: 5, title: 'Master 03 : Gemini 2.5 Pro', desc: 'L\'IA de Google — multimodal, recherche web temps réel, VEO intégré.', access: 'Freemium · Essai 1 mois', badge: '' },
-      { day: 6, title: 'Master 04 : Grok 3', desc: 'L\'IA de X — veille virale, actualité, génération images et vidéos.', access: 'Freemium', badge: 'NEW 2026' },
-      { day: 7, title: 'Master 05 : Perplexity', desc: 'Remplace Google pour la recherche — sources citées, réponses vérifiées.', access: 'Freemium', badge: '' },
+      { day: 5, title: 'Master 03 : Gemini 2.5 Pro', desc: 'L\'IA de Google - multimodal, recherche web temps réel, VEO intégré.', access: 'Freemium · Essai 1 mois', badge: '' },
+      { day: 6, title: 'Master 04 : Grok 3', desc: 'L\'IA de X - veille virale, actualité, génération images et vidéos.', access: 'Freemium', badge: 'NEW 2026' },
+      { day: 7, title: 'Master 05 : Perplexity', desc: 'Remplace Google pour la recherche - sources citées, réponses vérifiées.', access: 'Freemium', badge: '' },
     ],
   },
   {
     id: 's2',
     color: 'from-violet-500 to-purple-600',
     emoji: '📙',
-    title: 'Semaine 2 — Image IA : Les Nouveaux Standards',
+    title: 'Semaine 2 - Image IA : Les Nouveaux Standards',
     days: 'Jours 8–14',
     lessons: [
       { day: 8,  title: 'Master 06 : Higgsfield', desc: 'La plateforme qui réunit tous les meilleurs modèles image et vidéo en un seul endroit.', access: 'Freemium', badge: 'NEW 2026' },
-      { day: 9,  title: 'Master 07 : Nano Banana Pro', desc: 'Images 4K natives avec texte lisible — le modèle qui a rendu Midjourney obsolète.', access: 'Freemium', badge: 'NEW 2026' },
-      { day: 10, title: 'Master 08 : Seedream 4.5', desc: 'Photoréalisme 4K et cohérence de personnage — parfait pour les campagnes commerciales.', access: 'Freemium', badge: 'NEW 2026' },
-      { day: 11, title: 'Master 09 : Flux Kontext', desc: 'Modifier une image existante sans la recréer — édition contextuelle avancée.', access: 'Freemium', badge: 'NEW 2026' },
-      { day: 12, title: 'Master 10 : GPT Image', desc: 'Créer des visuels marketing directement dans ChatGPT — thumbnails, posts, affiches.', access: 'Freemium', badge: 'NEW 2026' },
-      { day: 13, title: 'Master 11 : Canva AI', desc: 'Design augmenté par IA — posts, flyers, présentations en 1 clic.', access: 'Freemium', badge: '' },
-      { day: 14, title: 'Master 12 : Leonardo AI', desc: 'Suite créative rachetée par Canva — images, vidéo, textures 3D.', access: 'Freemium', badge: '' },
+      { day: 9,  title: 'Master 07 : Nano Banana Pro', desc: 'Images 4K natives avec texte lisible - le modèle qui a rendu Midjourney obsolète.', access: 'Freemium', badge: 'NEW 2026' },
+      { day: 10, title: 'Master 08 : Seedream 4.5', desc: 'Photoréalisme 4K et cohérence de personnage - parfait pour les campagnes commerciales.', access: 'Freemium', badge: 'NEW 2026' },
+      { day: 11, title: 'Master 09 : Flux Kontext', desc: 'Modifier une image existante sans la recréer - édition contextuelle avancée.', access: 'Freemium', badge: 'NEW 2026' },
+      { day: 12, title: 'Master 10 : GPT Image', desc: 'Créer des visuels marketing directement dans ChatGPT - thumbnails, posts, affiches.', access: 'Freemium', badge: 'NEW 2026' },
+      { day: 13, title: 'Master 11 : Canva AI', desc: 'Design augmenté par IA - posts, flyers, présentations en 1 clic.', access: 'Freemium', badge: '' },
+      { day: 14, title: 'Master 12 : Leonardo AI', desc: 'Suite créative rachetée par Canva - images, vidéo, textures 3D.', access: 'Freemium', badge: '' },
     ],
   },
   {
     id: 's3',
     color: 'from-rose-500 to-pink-600',
     emoji: '📕',
-    title: 'Semaine 3 — Vidéo IA : La Révolution Cinématographique',
+    title: 'Semaine 3 - Vidéo IA : La Révolution Cinématographique',
     days: 'Jours 15–21',
     lessons: [
-      { day: 15, title: 'Master 13 : VEO 3.1', desc: 'Google DeepMind — clips 60s ultra-réalistes avec audio natif.', access: 'Essai gratuit inclus', badge: 'NEW 2026' },
-      { day: 16, title: 'Master 14 : Sora 2', desc: 'OpenAI — scènes complexes, physique réaliste, narration avancée.', access: 'Via Higgsfield', badge: 'NEW 2026' },
-      { day: 17, title: 'Master 15 : Kling 3.0', desc: '22 millions d\'utilisateurs — clips jusqu\'à 3 minutes, audio natif.', access: 'Freemium', badge: 'NEW 2026' },
-      { day: 18, title: 'Master 16 : Runway Gen-4.5', desc: '#1 mondial Video Arena — chorégraphie caméra, effets cinéma pro.', access: 'Freemium', badge: '' },
-      { day: 19, title: 'Master 17 : HeyGen', desc: 'Avatar IA parlant en 175 langues — formations vidéo, marketing, doublage.', access: 'Freemium', badge: '' },
-      { day: 20, title: 'Master 18 : CapCut IA', desc: 'Montage IA gratuit — sous-titres automatiques, effets viraux, avatars.', access: '100% Gratuit', badge: '' },
-      { day: 21, title: 'Master 19 : Hailuo MiniMax', desc: 'Génération vidéo rapide — idéal pour les Shorts, Reels et TikToks.', access: 'Freemium', badge: 'NEW 2026' },
+      { day: 15, title: 'Master 13 : VEO 3.1', desc: 'Google DeepMind - clips 60s ultra-réalistes avec audio natif.', access: 'Essai gratuit inclus', badge: 'NEW 2026' },
+      { day: 16, title: 'Master 14 : Sora 2', desc: 'OpenAI - scènes complexes, physique réaliste, narration avancée.', access: 'Via Higgsfield', badge: 'NEW 2026' },
+      { day: 17, title: 'Master 15 : Kling 3.0', desc: '22 millions d\'utilisateurs - clips jusqu\'à 3 minutes, audio natif.', access: 'Freemium', badge: 'NEW 2026' },
+      { day: 18, title: 'Master 16 : Runway Gen-4.5', desc: '#1 mondial Video Arena - chorégraphie caméra, effets cinéma pro.', access: 'Freemium', badge: '' },
+      { day: 19, title: 'Master 17 : HeyGen', desc: 'Avatar IA parlant en 175 langues - formations vidéo, marketing, doublage.', access: 'Freemium', badge: '' },
+      { day: 20, title: 'Master 18 : CapCut IA', desc: 'Montage IA gratuit - sous-titres automatiques, effets viraux, avatars.', access: '100% Gratuit', badge: '' },
+      { day: 21, title: 'Master 19 : Hailuo MiniMax', desc: 'Génération vidéo rapide - idéal pour les Shorts, Reels et TikToks.', access: 'Freemium', badge: 'NEW 2026' },
     ],
   },
   {
     id: 's4',
     color: 'from-amber-500 to-orange-600',
     emoji: '📓',
-    title: 'Semaine 4 — Audio, Productivité, Code & Automatisation',
+    title: 'Semaine 4 - Audio, Productivité, Code & Automatisation',
     days: 'Jours 22–30',
     lessons: [
-      { day: 22, title: 'Master 20 : ElevenLabs', desc: 'Voix IA ultra-réalistes — narration, podcasts, doublage, e-learning.', access: 'Freemium', badge: '' },
-      { day: 23, title: 'Master 21 : Suno v4', desc: 'Musique IA complète — jingles, génériques, fonds sonores.', access: 'Freemium', badge: '' },
-      { day: 24, title: 'Master 22 : Notion AI', desc: 'Organise ton travail avec l\'IA — résumés, projets, base de connaissances.', access: 'Freemium', badge: '' },
+      { day: 22, title: 'Master 20 : ElevenLabs', desc: 'Voix IA ultra-réalistes - narration, podcasts, doublage, e-learning.', access: 'Freemium', badge: '' },
+      { day: 23, title: 'Master 21 : Suno v4', desc: 'Musique IA complète - jingles, génériques, fonds sonores.', access: 'Freemium', badge: '' },
+      { day: 24, title: 'Master 22 : Notion AI', desc: 'Organise ton travail avec l\'IA - résumés, projets, base de connaissances.', access: 'Freemium', badge: '' },
       { day: 25, title: 'Master 23 : Gamma', desc: 'Présentations professionnelles générées en 30 secondes depuis un prompt.', access: 'Freemium', badge: '' },
       { day: 26, title: 'Master 24 : Mammouth AI', desc: 'GPT-5, Claude, Gemini, Grok en un seul abonnement à 10€/mois.', access: 'Payant · 10€/mois', badge: 'NEW' },
-      { day: 27, title: 'Master 25 : Antigravity (Google)', desc: 'Vibe coding — décris ton app en français, l\'IA la construit et la déploie.', access: 'Gratuit', badge: 'NEW 2026' },
-      { day: 28, title: 'Master 26 : N8N', desc: 'Automatisations puissantes — connecte tes apps, crée des workflows IA.', access: 'Self-hosted gratuit', badge: 'NEW' },
-      { day: 29, title: 'Master 27 : Google AI Studio', desc: 'Le playground officiel de Gemini — tester, expérimenter, créer des agents.', access: '100% Gratuit', badge: '' },
+      { day: 27, title: 'Master 25 : Antigravity (Google)', desc: 'Vibe coding - décris ton app en français, l\'IA la construit et la déploie.', access: 'Gratuit', badge: 'NEW 2026' },
+      { day: 28, title: 'Master 26 : N8N', desc: 'Automatisations puissantes - connecte tes apps, crée des workflows IA.', access: 'Self-hosted gratuit', badge: 'NEW' },
+      { day: 29, title: 'Master 27 : Google AI Studio', desc: 'Le playground officiel de Gemini - tester, expérimenter, créer des agents.', access: '100% Gratuit', badge: '' },
       { day: 30, title: 'Master 28 : Bilan & Plan d\'Action', desc: 'Ton stack IA personnalisé selon ton métier. Certification. Bonus secrets débloqués.', access: '🏆 Certification offerte', badge: '' },
     ],
   },
 ];
 
 const faqs = [
-  { q: "J'ai 40 ou 50 ans. Est-ce que ce challenge est fait pour moi ?", a: "Oui — et tu es exactement la personne pour qui ce challenge est conçu. 15 minutes par jour, un outil à la fois, aucun prérequis technique. L'âge n'est pas un frein. Le manque d'un guide clair l'est — et c'est exactement ce problème que ce challenge résout." },
+  { q: "J'ai 40 ou 50 ans. Est-ce que ce challenge est fait pour moi ?", a: "Oui - et tu es exactement la personne pour qui ce challenge est conçu. 15 minutes par jour, un outil à la fois, aucun prérequis technique. L'âge n'est pas un frein. Le manque d'un guide clair l'est - et c'est exactement ce problème que ce challenge résout." },
   { q: "Est-ce que je dois payer des abonnements aux outils en plus ?", a: "Non. Pour chaque outil, je te montre comment accéder à sa version gratuite ou son essai. VEO 3 est accessible via Gemini avec un essai d'un mois gratuit. Sora 2 est accessible via Higgsfield. CapCut et Google AI Studio sont 100% gratuits. Tu peux suivre tout le challenge sans dépenser un centime supplémentaire." },
-  { q: "15 minutes par jour, c'est vraiment possible ?", a: "Chaque leçon est conçue pour être terminée en 15 à 20 minutes exactement. Pas de vidéo de 2 heures. Pas de rembourrage. Tu regardes, tu pratiques immédiatement sur l'outil, tu passes au suivant. Le jour où tu n'as pas le temps, tu reprends le lendemain — l'accès est permanent." },
-  { q: "Quels moyens de paiement acceptes-tu ?", a: "Orange Money, MTN MoMo, Wave, carte bancaire (Visa/Mastercard) et PayPal. L'accès est immédiat après paiement. Si tu veux payer en plusieurs fois, contacte-moi directement sur WhatsApp — on trouve une solution." },
-  { q: "Que sont les 2 bonus secrets exactement ?", a: "Je ne les révèle pas avant la fin — c'est voulu, et c'est l'une des raisons pour lesquelles les apprenants terminent le challenge. Ces 2 outils te donnent accès à des IA premium normalement payantes à 80–200$/mois, gratuitement." },
-  { q: "La formation sera-t-elle mise à jour si les outils changent ?", a: "Oui. Les mises à jour sont trimestrielles. L'IA évolue vite — cette formation aussi. Tu ne paies pas pour du contenu obsolète en 6 mois." },
+  { q: "15 minutes par jour, c'est vraiment possible ?", a: "Chaque leçon est conçue pour être terminée en 15 à 20 minutes exactement. Pas de vidéo de 2 heures. Pas de rembourrage. Tu regardes, tu pratiques immédiatement sur l'outil, tu passes au suivant. Le jour où tu n'as pas le temps, tu reprends le lendemain - l'accès est permanent." },
+  { q: "Quels moyens de paiement acceptes-tu ?", a: "Orange Money, MTN MoMo, Wave, carte bancaire (Visa/Mastercard) et PayPal. L'accès est immédiat après paiement. Si tu veux payer en plusieurs fois, contacte-moi directement sur WhatsApp - on trouve une solution." },
+  { q: "Que sont les 2 bonus secrets exactement ?", a: "Je ne les révèle pas avant la fin - c'est voulu, et c'est l'une des raisons pour lesquelles les apprenants terminent le challenge. Ces 2 outils te donnent accès à des IA premium normalement payantes à 80–200$/mois, gratuitement." },
+  { q: "La formation sera-t-elle mise à jour si les outils changent ?", a: "Oui. Les mises à jour sont trimestrielles. L'IA évolue vite - cette formation aussi. Tu ne paies pas pour du contenu obsolète en 6 mois." },
 ];
 
 // ─── COMPONENT ────────────────────────────────────────────────────────────────
@@ -144,7 +144,7 @@ export default function ChallengePage() {
   return (
     <>
       <SEOHead
-        title="Challenge 30 Jours IA — Maîtrise 28 Outils en 15 min/jour | Oumarou Sanda"
+        title="Challenge 30 Jours IA - Maîtrise 28 Outils en 15 min/jour | Oumarou Sanda"
         description="Passe du niveau zéro aux 28 outils IA que les pros utilisent vraiment en 2026. VEO 3, Sora 2, Nano Banana, Antigravity. 15 min/jour. 30 jours. 9 900 FCFA."
         canonical="/challenge-30-jours"
         schema={{
@@ -212,7 +212,7 @@ export default function ChallengePage() {
               >
                 ChatGPT, c'est le niveau débutant. Ce challenge te fait passer aux{' '}
                 <strong className="text-white">28 outils que les meilleurs utilisent vraiment en 2026</strong>{' '}
-                — 15 minutes par jour, pendant 30 jours.
+                - 15 minutes par jour, pendant 30 jours.
               </motion.p>
 
               {/* Social proof inline */}
@@ -302,7 +302,7 @@ export default function ChallengePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent z-10 rounded-3xl pointer-events-none" />
                 <img
                   src="/oumarou-sanda-1.webp"
-                  alt="Oumarou Sanda — Expert IA"
+                  alt="Oumarou Sanda - Expert IA"
                   width={400}
                   height={520}
                   className="w-full h-auto rounded-3xl object-cover shadow-[0_30px_80px_rgba(0,0,0,0.6)] border border-white/5"
@@ -333,13 +333,13 @@ export default function ChallengePage() {
               L'IA a <span className="text-gold">3 niveaux.</span><br />
               La plupart restent bloqués au premier.
             </h2>
-            <p className="text-white/50 text-[15px] max-w-xl mx-auto">Voici exactement où tu en es — et où ce challenge t'emmène en 30 jours.</p>
+            <p className="text-white/50 text-[15px] max-w-xl mx-auto">Voici exactement où tu en es - et où ce challenge t'emmène en 30 jours.</p>
           </motion.div>
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }} variants={stagger} className="grid md:grid-cols-3 gap-5">
             {[
-              { num: '01', title: 'Les LLMs', tools: 'ChatGPT · Claude · Gemini · Grok', desc: 'Tu poses des questions, tu obtiens des réponses. C\'est du traitement de texte intelligent — puissant, mais c\'est le début. 90% des gens s\'arrêtent ici.', label: '← Où tu es aujourd\'hui', labelColor: 'text-white/40', border: 'border-white/10', grad: 'from-white/4 to-transparent', active: false },
-              { num: '02', title: 'Les Outils Spécialisés', tools: 'VEO 3 · Sora 2 · Nano Banana · ElevenLabs · N8N', desc: 'Des outils qui créent des vidéos, des images 4K, des musiques, des automatisations. C\'est ici que l\'IA génère de la vraie valeur — et de l\'argent.', label: '← Ce challenge t\'y emmène', labelColor: 'text-gold font-semibold', border: 'border-gold/30', grad: 'from-gold/8 to-transparent', active: true },
+              { num: '01', title: 'Les LLMs', tools: 'ChatGPT · Claude · Gemini · Grok', desc: 'Tu poses des questions, tu obtiens des réponses. C\'est du traitement de texte intelligent - puissant, mais c\'est le début. 90% des gens s\'arrêtent ici.', label: '← Où tu es aujourd\'hui', labelColor: 'text-white/40', border: 'border-white/10', grad: 'from-white/4 to-transparent', active: false },
+              { num: '02', title: 'Les Outils Spécialisés', tools: 'VEO 3 · Sora 2 · Nano Banana · ElevenLabs · N8N', desc: 'Des outils qui créent des vidéos, des images 4K, des musiques, des automatisations. C\'est ici que l\'IA génère de la vraie valeur - et de l\'argent.', label: '← Ce challenge t\'y emmène', labelColor: 'text-gold font-semibold', border: 'border-gold/30', grad: 'from-gold/8 to-transparent', active: true },
               { num: '03', title: 'Les Agents IA', tools: 'Antigravity · Cursor · Claude Code · Windsurf', desc: 'Des systèmes qui perçoivent, décident et agissent seuls. Ils livrent des applications entières pendant que tu dors. Le futur est déjà là.', label: '← Introduit au Jour 27', labelColor: 'text-violet-400 font-semibold', border: 'border-violet/30', grad: 'from-violet/5 to-transparent', active: false },
             ].map((level) => (
               <motion.div key={level.num} variants={fadeUp}
@@ -379,9 +379,9 @@ export default function ChallengePage() {
             {[
               { cartoon: '😰', bg: 'bg-red-50',   border: 'border-red-100',   quote: '"Je suis au niveau zéro. Je ne sais même pas par où commencer."', resp: "Tu as l'impression que tout le monde avance sauf toi. Ce challenge commence exactement là où tu en es." },
               { cartoon: '🤔', bg: 'bg-blue-50',  border: 'border-blue-100',  quote: '"J\'utilise ChatGPT mais je sens que je n\'utilise que 10% de ce que l\'IA peut faire."', resp: "Tu as le bon feeling. ChatGPT, c'est juste la porte d'entrée. Ce challenge t'ouvre les 27 portes suivantes." },
-              { cartoon: '👀', bg: 'bg-violet-50', border: 'border-violet-100', quote: '"Je vois des gens créer des vidéos, des images, des applications avec l\'IA. Moi je ne sais pas comment."', resp: "VEO 3, Nano Banana, Sora — ces noms te semblent lointains. Dans 30 jours, ce sera ton quotidien." },
+              { cartoon: '👀', bg: 'bg-violet-50', border: 'border-violet-100', quote: '"Je vois des gens créer des vidéos, des images, des applications avec l\'IA. Moi je ne sais pas comment."', resp: "VEO 3, Nano Banana, Sora - ces noms te semblent lointains. Dans 30 jours, ce sera ton quotidien." },
               { cartoon: '🧓', bg: 'bg-amber-50',  border: 'border-amber-100',  quote: '"J\'ai 40, 50 ans. Est-ce que c\'est encore possible pour moi ?"', resp: "Oui. Ce challenge est fait pour toi. 15 minutes par jour, un outil à la fois. Aucun prérequis technique." },
-              { cartoon: '💼', bg: 'bg-emerald-50', border: 'border-emerald-100', quote: '"Je veux utiliser l\'IA dans mon travail mais je ne sais pas quel outil choisir."', resp: "Comptable, fonctionnaire, commerçant, créateur — il y a un outil IA fait pour ton métier. Je te le montre." },
+              { cartoon: '💼', bg: 'bg-emerald-50', border: 'border-emerald-100', quote: '"Je veux utiliser l\'IA dans mon travail mais je ne sais pas quel outil choisir."', resp: "Comptable, fonctionnaire, commerçant, créateur - il y a un outil IA fait pour ton métier. Je te le montre." },
             ].map((item, i) => (
               <motion.div key={i} variants={fadeUp}
                 whileHover={{ x: 4, transition: { duration: 0.18 } }}
@@ -424,10 +424,10 @@ export default function ChallengePage() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={stagger} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               { icon: Zap,           title: '28 outils 2026',             desc: 'VEO 3, Sora 2, Nano Banana Pro, Kling 3.0, Flux Kontext, Antigravity, N8N.' },
-              { icon: Clock,         title: '15 min/jour — vraiment',      desc: 'Chaque leçon est conçue pour être terminée en un quart d\'heure. Pas de rembourrage.' },
-              { icon: Target,        title: 'Exemples africains concrets', desc: 'Des cas d\'usage camerounais, sénégalais, ivoiriens, congolais — pas des copies US.' },
+              { icon: Clock,         title: '15 min/jour - vraiment',      desc: 'Chaque leçon est conçue pour être terminée en un quart d\'heure. Pas de rembourrage.' },
+              { icon: Target,        title: 'Exemples africains concrets', desc: 'Des cas d\'usage camerounais, sénégalais, ivoiriens, congolais - pas des copies US.' },
               { icon: CheckCircle2,  title: 'Accès gratuit à chaque outil',desc: 'Je te montre comment accéder à chaque outil sans payer d\'abonnements supplémentaires.' },
-              { icon: BookOpen,      title: 'Applicable à ton métier',     desc: 'Comptable, enseignant, créateur, commerçant — je te montre comment l\'IA s\'adapte.' },
+              { icon: BookOpen,      title: 'Applicable à ton métier',     desc: 'Comptable, enseignant, créateur, commerçant - je te montre comment l\'IA s\'adapte.' },
               { icon: RefreshCw,     title: 'Mises à jour trimestrielles', desc: 'L\'IA évolue vite. Cette formation aussi. Tu ne paies pas pour du contenu obsolète.' },
             ].map((feat, i) => (
               <motion.div key={feat.title} variants={fadeUp}
@@ -478,7 +478,7 @@ export default function ChallengePage() {
               {[
                 {
                   icon: '⚡',
-                  title: 'Micro-learning — vraiment',
+                  title: 'Micro-learning - vraiment',
                   desc: '15 minutes par jour, un outil, une pratique immédiate. Adapté à tout âge, tout niveau, toute activité. Pas de vidéo de 2h, pas de théorie sans pratique.',
                 },
                 {
@@ -494,7 +494,7 @@ export default function ChallengePage() {
                 {
                   icon: '🎯',
                   title: 'Applicable dès le premier jour',
-                  desc: 'Chaque outil appris le Jour N est utilisé le Jour N. Des exemples africains concrets — pas des cas d\'usage américains qui ne te parlent pas.',
+                  desc: 'Chaque outil appris le Jour N est utilisé le Jour N. Des exemples africains concrets - pas des cas d\'usage américains qui ne te parlent pas.',
                 },
               ].map((feat) => (
                 <motion.div key={feat.title} variants={fadeUp}
@@ -547,7 +547,7 @@ export default function ChallengePage() {
                         <span className="text-4xl">🎬</span>
                       </div>
                       <p className="text-gold text-[9px] font-bold tracking-wider uppercase mb-1">Master 13 · Vidéo IA</p>
-                      <p className="text-white font-heading font-bold text-[13px] mb-1">VEO 3.1 — Google DeepMind</p>
+                      <p className="text-white font-heading font-bold text-[13px] mb-1">VEO 3.1 - Google DeepMind</p>
                       <p className="text-white/40 text-[10px]">Clips 60s ultra-réalistes · Audio natif</p>
                       <div className="flex items-center gap-2 mt-3">
                         <div className="flex-1 h-1 bg-white/10 rounded-full">
@@ -685,8 +685,8 @@ export default function ChallengePage() {
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }} variants={stagger} className="grid sm:grid-cols-2 gap-5 mb-8">
             {[
-              { title: 'Bonus Secret 01', desc: 'Une plateforme qui donne accès à 800+ modèles IA premium — OpenAI, Google, Anthropic — sans payer plusieurs abonnements. Ce que tu paierais normalement 80 à 200$/mois.', value: 'Valeur : jusqu\'à 200$/mois → gratuit' },
-              { title: 'Bonus Secret 02', desc: 'Une plateforme pour tester et comparer tous les grands modèles IA en duel anonyme. Tu découvres exactement quel outil utiliser pour chaque tâche — sans compte ni abonnement.', value: 'Valeur : inestimable pour ta stratégie IA' },
+              { title: 'Bonus Secret 01', desc: 'Une plateforme qui donne accès à 800+ modèles IA premium - OpenAI, Google, Anthropic - sans payer plusieurs abonnements. Ce que tu paierais normalement 80 à 200$/mois.', value: 'Valeur : jusqu\'à 200$/mois → gratuit' },
+              { title: 'Bonus Secret 02', desc: 'Une plateforme pour tester et comparer tous les grands modèles IA en duel anonyme. Tu découvres exactement quel outil utiliser pour chaque tâche - sans compte ni abonnement.', value: 'Valeur : inestimable pour ta stratégie IA' },
             ].map((b, i) => (
               <motion.div key={b.title} variants={fadeUp}
                 whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
@@ -779,7 +779,7 @@ export default function ChallengePage() {
               </h2>
               <p className="text-[#a3a3a3] text-[13px] mb-6">Expert IA · Fondateur Wendooka & Sanda Vibe Code · Correspondant Vision 4</p>
               <p className="text-[#525252] text-[15px] leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-                Ancien journaliste reconverti en expert IA, je vulgarise les technologies d'intelligence artificielle pour les entrepreneurs et créateurs africains francophones depuis 2020. J'ai fondé <strong className="text-[#0a0a0a]">Wendooka</strong> et <strong className="text-[#0a0a0a]">Sanda Vibe Code</strong>. Mes formations précédentes — <em>Protocole Vidéo IA</em> et <em>Le Cerveau Augmenté</em> — ont transformé des centaines d'apprenants.
+                Ancien journaliste reconverti en expert IA, je vulgarise les technologies d'intelligence artificielle pour les entrepreneurs et créateurs africains francophones depuis 2020. J'ai fondé <strong className="text-[#0a0a0a]">Wendooka</strong> et <strong className="text-[#0a0a0a]">Sanda Vibe Code</strong>. Mes formations précédentes - <em>Protocole Vidéo IA</em> et <em>Le Cerveau Augmenté</em> - ont transformé des centaines d'apprenants.
               </p>
 
               {/* Stats animées */}
@@ -869,7 +869,7 @@ export default function ChallengePage() {
             <h2 className="font-heading font-black text-white tracking-tight mb-3" style={{ fontSize: 'clamp(1.7rem, 3vw, 2.7rem)' }}>
               Investis en toi.<br /><span className="text-gold">Commence aujourd'hui.</span>
             </h2>
-            <p className="text-white/40 text-[14px]">Réponds à 5 questions rapides — je construis ton plan personnalisé.</p>
+            <p className="text-white/40 text-[14px]">Réponds à 5 questions rapides - je construis ton plan personnalisé.</p>
           </motion.div>
 
           <motion.div
@@ -895,7 +895,7 @@ export default function ChallengePage() {
             </div>
 
             <p className="text-white/70 text-[15px] leading-relaxed mb-8 max-w-sm mx-auto">
-              Avant de te montrer ton tarif, dis-moi qui tu es. 5 questions, 2 minutes —
+              Avant de te montrer ton tarif, dis-moi qui tu es. 5 questions, 2 minutes -
               je personnalise ton parcours selon <span className="text-white font-semibold">ton profil et tes objectifs.</span>
             </p>
 
@@ -949,7 +949,7 @@ export default function ChallengePage() {
             <Shield className="w-8 h-8 text-emerald-400" />
           </motion.div>
           <div>
-            <h3 className="font-heading font-black text-white text-[18px] tracking-tight mb-2">Garantie Satisfait ou Remboursé — 30 jours</h3>
+            <h3 className="font-heading font-black text-white text-[18px] tracking-tight mb-2">Garantie Satisfait ou Remboursé - 30 jours</h3>
             <p className="text-emerald-200/70 text-[13px] leading-relaxed">
               Tu as 30 jours pour tester le challenge. Si tu n'es pas satisfait pour quelque raison que ce soit, un email suffit et je te rembourse intégralement.{' '}
               <strong className="text-emerald-300">Zéro question. Zéro justification.</strong> Ton investissement est 100% protégé.
@@ -1088,7 +1088,7 @@ export default function ChallengePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 via-transparent to-transparent z-10 pointer-events-none rounded-3xl" />
                   <img
                     src="/oumarou-sanda-2.webp"
-                    alt="Oumarou Sanda — Challenge 30 Jours IA"
+                    alt="Oumarou Sanda - Challenge 30 Jours IA"
                     width={320}
                     height={420}
                     loading="lazy"

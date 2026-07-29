@@ -1,5 +1,5 @@
 # ═══════════════════════════════════════════════════════════════
-#  robots.txt — oumarousanda.com
+#  robots.txt - oumarousanda.com
 # ═══════════════════════════════════════════════════════════════
 
 # Autoriser tous les bots (y compris Bingbot, Googlebot, etc.)

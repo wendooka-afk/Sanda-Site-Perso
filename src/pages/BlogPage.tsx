@@ -450,7 +450,7 @@ export default function BlogPage() {
             },
             {
               "@type": "ItemList",
-              "name": "Articles récents — Blog Oumarou Sanda",
+              "name": "Articles récents - Blog Oumarou Sanda",
               "url": "https://oumarousanda.com/blog",
               "itemListElement": staticArticles.slice(0, 10).map((a, i) => ({
                 "@type": "ListItem",

@@ -262,7 +262,7 @@ export default function ResourceDetailPage() {
   return (
     <>
       <SEOHead
-        title={`${resource.title} — Oumarou Sanda`}
+        title={`${resource.title} - Oumarou Sanda`}
         description={resource.subtitle}
         canonical={language === 'fr' ? `/ressources/${slug}` : `/en/resources/${slug}`}
       />

@@ -1,6 +1,6 @@
 <header class="hero">
         <div class="hero-inner">
-            <div class="hero-badge">💻 Guide pas à pas — IA open source</div>
+            <div class="hero-badge">💻 Guide pas à pas - IA open source</div>
             <h1>Comment avoir Claude Code <em>gratuitement</em></h1>
             <p class="hero-subtitle">Claude Code coûte normalement un abonnement ou des crédits API. Voici la méthode 100 % légale pour le faire tourner gratuitement sur votre machine, avec des modèles IA open-source via Ollama. Sans carte bancaire.</p>
             <div class="hero-meta">
@@ -30,7 +30,7 @@
 <!-- SECTION 1 -->
 <h2 id="cest-quoi">C'est quoi Claude Code (et pourquoi il fait le buzz)</h2>
 
-<p>Claude Code est l'outil de programmation en ligne de commande d'Anthropic. Il vit dans votre terminal, lit et modifie vos fichiers, lance des commandes et exécute des tâches de développement complètes — pas seulement répondre à des questions.</p>
+<p>Claude Code est l'outil de programmation en ligne de commande d'Anthropic. Il vit dans votre terminal, lit et modifie vos fichiers, lance des commandes et exécute des tâches de développement complètes - pas seulement répondre à des questions.</p>
 
 <p>La différence avec un chatbot classique est nette. Vous ne copiez plus du code à la main. Vous dites « ajoute une page de contact à mon site », et Claude Code lit votre projet, écrit les fichiers, corrige les erreurs et teste le résultat. C'est un agent, pas un assistant.</p>
 
@@ -51,15 +51,15 @@
 
 <p>Claude Code est gratuit à télécharger, mais il a besoin d'un « cerveau » payant pour fonctionner : les modèles Claude d'Anthropic, facturés à l'usage. Il existe deux façons officielles de le payer.</p>
 
-<h3>Option 1 — Un abonnement Claude</h3>
+<h3>Option 1 - Un abonnement Claude</h3>
 <p>Claude Code est inclus dans les abonnements Claude. Le plan Pro coûte 20 $/mois (~13 000 FCFA) avec des limites d'usage. Le plan Max démarre à 100 $/mois (~65 000 FCFA) pour un usage intensif.</p>
 
-<h3>Option 2 — Des crédits API (paiement à l'usage)</h3>
-<p>Vous pouvez aussi connecter Claude Code à une clé API Anthropic et payer chaque token consommé. Sur un vrai projet, la facture grimpe vite — quelques dollars par heure de travail intensif.</p>
+<h3>Option 2 - Des crédits API (paiement à l'usage)</h3>
+<p>Vous pouvez aussi connecter Claude Code à une clé API Anthropic et payer chaque token consommé. Sur un vrai projet, la facture grimpe vite - quelques dollars par heure de travail intensif.</p>
 
 <div class="callout callout-warning">
     <div class="callout-label">⚠️ Le vrai blocage pour beaucoup d'Africains</div>
-    Au-delà du prix, ces deux options exigent une <strong>carte bancaire internationale</strong> (Visa/Mastercard) acceptée par Anthropic. Pour beaucoup d'entrepreneurs et d'étudiants en Afrique francophone, c'est le premier mur. La méthode de ce guide contourne ce mur entièrement — légalement.
+    Au-delà du prix, ces deux options exigent une <strong>carte bancaire internationale</strong> (Visa/Mastercard) acceptée par Anthropic. Pour beaucoup d'entrepreneurs et d'étudiants en Afrique francophone, c'est le premier mur. La méthode de ce guide contourne ce mur entièrement - légalement.
 </div>
 
 <p>L'idée centrale est simple. Claude Code n'est qu'une interface. On peut remplacer le « cerveau » payant (Claude) par un cerveau gratuit qui tourne sur votre propre machine.</p>
@@ -72,16 +72,16 @@
 <p>Trois pièces composent le montage :</p>
 
 <ul class="checklist">
-    <li><strong>Claude Code</strong> — l'interface en ligne de commande (l'agent qui lit et écrit vos fichiers).</li>
-    <li><strong>Ollama</strong> — le moteur gratuit qui fait tourner des modèles d'IA en local sur votre machine. Voir le site officiel <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a>.</li>
-    <li><strong>claude-code-router</strong> — un petit « traducteur » qui fait croire à Claude Code qu'il parle à Anthropic, alors qu'il parle à Ollama.</li>
+    <li><strong>Claude Code</strong> - l'interface en ligne de commande (l'agent qui lit et écrit vos fichiers).</li>
+    <li><strong>Ollama</strong> - le moteur gratuit qui fait tourner des modèles d'IA en local sur votre machine. Voir le site officiel <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a>.</li>
+    <li><strong>claude-code-router</strong> - un petit « traducteur » qui fait croire à Claude Code qu'il parle à Anthropic, alors qu'il parle à Ollama.</li>
 </ul>
 
 <p>Pourquoi un traducteur ? Parce que Claude Code parle le langage de l'API Anthropic, et Ollama parle le langage de l'API OpenAI. Le routeur <a href="https://github.com/musistudio/claude-code-router" target="_blank" rel="noopener">claude-code-router</a> traduit entre les deux. C'est lui qui rend le branchement possible.</p>
 
 <div class="callout callout-tip">
     <div class="callout-label">Pourquoi c'est 100 % légal</div>
-    Claude Code prévoit officiellement une variable <em>ANTHROPIC_BASE_URL</em> pour pointer vers un autre serveur. Vous ne piratez rien : vous utilisez une fonctionnalité prévue, avec des modèles open-source sous licence ouverte. Vous n'utilisez jamais les modèles Claude sans payer — vous utilisez d'autres modèles, gratuits.
+    Claude Code prévoit officiellement une variable <em>ANTHROPIC_BASE_URL</em> pour pointer vers un autre serveur. Vous ne piratez rien : vous utilisez une fonctionnalité prévue, avec des modèles open-source sous licence ouverte. Vous n'utilisez jamais les modèles Claude sans payer - vous utilisez d'autres modèles, gratuits.
 </div>
 
 <!-- SECTION 4 -->
@@ -91,10 +91,10 @@
 
 <ul class="checklist">
     <li><strong>Node.js</strong> installé (version 18 ou plus). À télécharger sur <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a>. C'est nécessaire pour installer Claude Code et le routeur.</li>
-    <li><strong>Un terminal</strong> — l'invite de commande Windows (PowerShell), le Terminal sur Mac, ou bash sur Linux.</li>
-    <li><strong>De la RAM</strong> — minimum 8 Go pour un petit modèle, 16 Go recommandé pour de meilleurs résultats.</li>
+    <li><strong>Un terminal</strong> - l'invite de commande Windows (PowerShell), le Terminal sur Mac, ou bash sur Linux.</li>
+    <li><strong>De la RAM</strong> - minimum 8 Go pour un petit modèle, 16 Go recommandé pour de meilleurs résultats.</li>
     <li><strong>~10 Go d'espace disque</strong> libre pour télécharger un modèle.</li>
-    <li><strong>Une connexion internet</strong> — uniquement pour l'installation et le téléchargement du modèle. Ensuite, tout fonctionne hors ligne.</li>
+    <li><strong>Une connexion internet</strong> - uniquement pour l'installation et le téléchargement du modèle. Ensuite, tout fonctionne hors ligne.</li>
 </ul>
 
 <div class="callout">
@@ -151,7 +151,7 @@ ccr code</div>
 
 <div class="callout callout-tip">
     <div class="callout-label">Astuce vérification</div>
-    Pendant que Claude Code travaille, ouvrez un second terminal et tapez <em>ollama ps</em>. Si votre modèle apparaît comme actif, c'est la preuve que le calcul se fait bien en local — donc gratuitement.
+    Pendant que Claude Code travaille, ouvrez un second terminal et tapez <em>ollama ps</em>. Si votre modèle apparaît comme actif, c'est la preuve que le calcul se fait bien en local - donc gratuitement.
 </div>
 
 <div class="inline-cta">
@@ -162,7 +162,7 @@ ccr code</div>
 <div class="cta-card">
     <div class="cta-eyebrow">Passer à la pratique</div>
     <h3>Installer l'outil, c'est 20 minutes. Savoir construire avec, c'est un système.</h3>
-    <p>Dans l'écosystème Sanda Vibe Code, j'enseigne le workflow complet pour transformer une idée en application réelle avec l'IA — du prompt au produit livré, adapté au contexte africain.</p>
+    <p>Dans l'écosystème Sanda Vibe Code, j'enseigne le workflow complet pour transformer une idée en application réelle avec l'IA - du prompt au produit livré, adapté au contexte africain.</p>
     <a href="https://sandavibecode.com" class="cta-button" target="_blank" rel="noopener">Explorer Sanda Vibe Code →</a>
 </div>
 
@@ -187,7 +187,7 @@ ccr code</div>
 </tbody>
 </table>
 
-<p><strong>Mon conseil :</strong> commencez avec Qwen2.5-Coder 7B pour valider que tout fonctionne. Si votre machine a 16 Go de RAM, passez vite au 14B — le saut de qualité est net. Pour changer de modèle, faites un <em>ollama pull</em> du nouveau modèle, puis mettez à jour le fichier config.json.</p>
+<p><strong>Mon conseil :</strong> commencez avec Qwen2.5-Coder 7B pour valider que tout fonctionne. Si votre machine a 16 Go de RAM, passez vite au 14B - le saut de qualité est net. Pour changer de modèle, faites un <em>ollama pull</em> du nouveau modèle, puis mettez à jour le fichier config.json.</p>
 
 <!-- SECTION 7 -->
 <h2 id="limites">Les limites à connaître (la vérité)</h2>
@@ -204,9 +204,9 @@ ccr code</div>
 <h3>Ce que vous gagnez</h3>
 <ul class="checklist">
     <li><strong>Zéro coût</strong> récurrent et aucune carte bancaire.</li>
-    <li><strong>La confidentialité totale</strong> — votre code ne quitte jamais votre machine.</li>
-    <li><strong>Le mode hors ligne</strong> — une fois installé, ça marche sans internet.</li>
-    <li><strong>L'apprentissage</strong> — vous maîtrisez le workflow agentique sans dépenser un franc.</li>
+    <li><strong>La confidentialité totale</strong> - votre code ne quitte jamais votre machine.</li>
+    <li><strong>Le mode hors ligne</strong> - une fois installé, ça marche sans internet.</li>
+    <li><strong>L'apprentissage</strong> - vous maîtrisez le workflow agentique sans dépenser un franc.</li>
 </ul>
 
 <div class="callout">
@@ -223,7 +223,7 @@ ccr code</div>
 <h2 id="faq">Questions fréquentes</h2>
 
 <h3>Est-ce légal d'utiliser Claude Code avec Ollama ?</h3>
-<p>Oui. Claude Code autorise officiellement les points d'accès personnalisés via la variable <em>ANTHROPIC_BASE_URL</em>. Vous utilisez des modèles open-source sous licence ouverte, pas les modèles Claude d'Anthropic. Il n'y a aucun piratage ni contournement de paiement — vous remplacez simplement le moteur par une alternative gratuite que vous avez le droit d'utiliser.</p>
+<p>Oui. Claude Code autorise officiellement les points d'accès personnalisés via la variable <em>ANTHROPIC_BASE_URL</em>. Vous utilisez des modèles open-source sous licence ouverte, pas les modèles Claude d'Anthropic. Il n'y a aucun piratage ni contournement de paiement - vous remplacez simplement le moteur par une alternative gratuite que vous avez le droit d'utiliser.</p>
 
 <h3>Claude Code avec Ollama est-il vraiment 100 % gratuit ?</h3>
 <p>Oui, hors coût d'électricité. Ollama et les modèles open-source sont gratuits. Vous n'avez besoin d'aucun abonnement, d'aucune clé API payante et d'aucune carte bancaire internationale. C'est le principal avantage pour les entrepreneurs et étudiants africains.</p>

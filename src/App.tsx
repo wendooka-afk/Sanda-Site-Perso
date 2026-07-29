@@ -22,6 +22,7 @@ const MediaKitPage = lazy(() => import('./pages/MediaKitPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 const LinksPage = lazy(() => import('./pages/LinksPage'));
 const ChallengePage = lazy(() => import('./pages/ChallengePage'));
+const SkillsPackPage = lazy(() => import('./pages/SkillsPackPage'));
 const QuizIAPage = lazy(() => import('./pages/QuizIAPage'));
 
 // ─── Lazy-loaded dashboard ────────────────────────────────────────────────────
@@ -94,6 +95,7 @@ function PublicRoutes() {
         <Route path="kit-media" element={<MediaKitPage />} />
         <Route path="media-kit" element={<MediaKitPage />} />
         <Route path="challenge-30-jours" element={<ChallengePage />} />
+        <Route path="claude-skills-pack" element={<SkillsPackPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </>

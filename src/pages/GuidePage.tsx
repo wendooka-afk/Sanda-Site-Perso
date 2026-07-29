@@ -7,7 +7,7 @@ export default function GuidePage() {
   return (
     <>
       <SEOHead
-        title="Guides pratiques IA & Business Digital — Oumarou Sanda"
+        title="Guides pratiques IA & Business Digital - Oumarou Sanda"
         description="Des guides complets et actionnables sur l'IA, la vidéo IA, le business digital et l'entrepreneuriat en Afrique. Tutoriels pas à pas, prompts prêts à copier."
         canonical="https://oumarousanda.com/guide"
       />
@@ -32,7 +32,7 @@ export default function GuidePage() {
               <span className="text-[#e8d48b]">passer à l'action</span>
             </h1>
             <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto">
-              Chaque guide est une ressource complète — workflow étape par étape, prompts prêts à copier, erreurs à éviter. Pas de théorie creuse.
+              Chaque guide est une ressource complète - workflow étape par étape, prompts prêts à copier, erreurs à éviter. Pas de théorie creuse.
             </p>
           </motion.div>
         </div>

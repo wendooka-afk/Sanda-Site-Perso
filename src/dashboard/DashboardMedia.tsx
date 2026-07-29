@@ -167,7 +167,7 @@ export default function DashboardMedia() {
                   </td>
                   <td className="p-4 hidden lg:table-cell text-white/50 text-sm">{item.platform}</td>
                   <td className="p-4 text-right hidden sm:table-cell text-white/50 text-sm">{item.size}</td>
-                  <td className="p-4 text-right hidden sm:table-cell text-white/50 text-sm">{item.views > 0 ? item.views.toLocaleString() : '—'}</td>
+                  <td className="p-4 text-right hidden sm:table-cell text-white/50 text-sm">{item.views > 0 ? item.views.toLocaleString() : '-'}</td>
                   <td className="p-4 text-right text-white/40 text-sm">{new Date(item.date).toLocaleDateString('fr-FR')}</td>
                 </tr>
               ))}

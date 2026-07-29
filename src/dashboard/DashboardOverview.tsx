@@ -19,7 +19,7 @@ export default function DashboardOverview() {
       {/* Header */}
       <div>
         <h2 className="text-white text-xl font-bold">Vue d'ensemble</h2>
-        <p className="text-white/40 text-sm mt-1">Gestion de contenu — site statique</p>
+        <p className="text-white/40 text-sm mt-1">Gestion de contenu - site statique</p>
       </div>
 
       {/* Honesty banner — explique le fonctionnement réel */}

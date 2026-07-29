@@ -366,7 +366,7 @@ function RenderFAQ({ items }: { items: { q: string; a: string }[] }) {
       {items.map((item, i) => (
         <div key={i} className="bg-white rounded-2xl border border-black/5 overflow-hidden group shadow-sm hover:shadow-md transition-shadow">
           <div className="px-6 py-4 bg-black/[0.02] border-b border-black/5 flex gap-3">
-            <span className="text-gold font-heading font-bold">Q —</span>
+            <span className="text-gold font-heading font-bold">Q -</span>
             <h4 className="font-heading font-bold text-[#0a0a0a] text-[14px] leading-snug">{item.q}</h4>
           </div>
           <div className="px-6 py-4 text-[#737373] text-[13px] leading-relaxed" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.a) }} />
@@ -656,7 +656,7 @@ function ArticleCTABlock({ category }: { category: string }) {
 
   if (language === 'fr') {
     if (category === 'IA & Outils' || category === 'Vidéo IA') {
-      ctaDesc = 'Maîtrise 28 outils IA en 15 min/jour — le Challenge 30 Jours IA, c\'est fait pour toi.';
+      ctaDesc = 'Maîtrise 28 outils IA en 15 min/jour - le Challenge 30 Jours IA, c\'est fait pour toi.';
       ctaLabel = 'Voir le Challenge 30 Jours IA';
       ctaLink = '/challenge-30-jours';
     } else if (category === 'Vibe Coding') {
@@ -676,7 +676,7 @@ function ArticleCTABlock({ category }: { category: string }) {
       ctaLabel = 'View services';
       ctaLink = '/services';
     } else if (category === 'Digital Business') {
-      ctaDesc = 'Learn how to build a digital business with AI — from strategy to execution.';
+      ctaDesc = 'Learn how to build a digital business with AI - from strategy to execution.';
       ctaLabel = 'View services';
       ctaLink = '/services';
     }
@@ -1194,7 +1194,7 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
       </div>
 
       {/* ══════════════════════════════════════════
-          HERO — Fond blanc, titre + méta centrés
+          HERO - Fond blanc, titre + méta centrés
       ══════════════════════════════════════════ */}
       <section className="relative bg-white pt-32 sm:pt-40 pb-12 sm:pb-14 border-b border-black/[0.06]">
         {/* Subtle top accent line */}
@@ -1298,7 +1298,7 @@ function DashboardArticleRenderer({ article }: { article: DashboardArticle }) {
       </div>
 
       {/* ══════════════════════════════════════════
-          CONTENT — Article (55fr) + Sidebar (15fr)
+          CONTENT - Article (55fr) + Sidebar (15fr)
       ══════════════════════════════════════════ */}
       <section className="bg-white">
         <div className="h-px bg-gradient-to-r from-transparent via-black/5 to-transparent" />

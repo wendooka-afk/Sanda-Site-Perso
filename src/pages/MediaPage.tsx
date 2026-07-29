@@ -45,7 +45,7 @@ export default function MediaPage() {
   return (
     <>
       <SEOHead
-        title="Médias & Presse | Oumarou Sanda — Expert IA, Conférences & Interviews"
+        title="Médias & Presse | Oumarou Sanda - Expert IA, Conférences & Interviews"
         description="Retrouvez les apparitions médias, interviews, conférences et interventions d'Oumarou Sanda. Expert en intelligence artificielle, entrepreneuriat digital et souveraineté numérique africaine."
         canonical="/medias"
       />
@@ -199,7 +199,7 @@ export default function MediaPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: Laptop, title: "Intelligence artificielle appliquée", desc: "L'IA comme outil concret de création, de productivité et de business — pas comme concept abstrait. Génération vidéo, assistants IA, automatisation des workflows. Regard de praticien." },
+              { icon: Laptop, title: "Intelligence artificielle appliquée", desc: "L'IA comme outil concret de création, de productivité et de business - pas comme concept abstrait. Génération vidéo, assistants IA, automatisation des workflows. Regard de praticien." },
               { icon: Presentation, title: "Souveraineté numérique africaine", desc: "L'Afrique face à la révolution IA : dépendance aux GAFAM, infrastructure, données, fuite des cerveaux. Analyse documentée et plaidoyer (auteur de 'Si l'Afrique rate l'IA...')." },
               { icon: MonitorPlay, title: "Vibe coding & produits digitaux", desc: "Créer des SaaS et applications en combinant IA, no-code et logique produit. Fondateur de CommentSticker (SaaS créé par vibe coding) et de l'écosystème Sanda Vibe Code." },
               { icon: Briefcase, title: "Entrepreneuriat digital africain", desc: "Les défis spécifiques (paiement, structure juridique, accès aux plateformes) et les solutions concrètes. Expérience directe de création et de gestion depuis le continent." },
@@ -321,7 +321,7 @@ export default function MediaPage() {
                 </div>
                 <h3 className="font-heading text-2xl font-bold text-white mb-4">Kit Presse</h3>
                 <p className="text-white/60 text-sm mb-6 leading-relaxed">
-                  Tout ce dont un journaliste, un organisateur d'événement ou un partenaire a besoin — en un seul fichier de moins de 20 Mo.
+                  Tout ce dont un journaliste, un organisateur d'événement ou un partenaire a besoin - en un seul fichier de moins de 20 Mo.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {['Biographies officielles (courte & longue)', 'Photos haute résolution', 'Logos vectoriels (SVG/PNG)', 'Fiche chiffres clés', 'Couvertures de livres HD'].map((item) => (
@@ -361,7 +361,7 @@ export default function MediaPage() {
             <span className="text-blue">Un expert disponible.</span>
           </h2>
           <p className="text-white/60 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-            Que ce soit pour un plateau TV, un podcast, une conférence ou un article — je suis disponible pour partager mon expertise sur l'IA, le business digital et l'avenir numérique de l'Afrique.
+            Que ce soit pour un plateau TV, un podcast, une conférence ou un article - je suis disponible pour partager mon expertise sur l'IA, le business digital et l'avenir numérique de l'Afrique.
           </p>
           <div className="mb-10">
             <span className="text-white/40 text-sm uppercase tracking-widest font-bold">Contact presse :</span>

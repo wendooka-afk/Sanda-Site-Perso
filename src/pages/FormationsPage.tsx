@@ -438,7 +438,7 @@ function FormationChallenge() {
                 CHALLENGE 30 JOURS IA
               </h2>
               <p className="text-white/65 text-[15px] leading-relaxed mb-5 max-w-2xl">
-                Passe du <strong className="text-white">niveau zéro</strong> aux 28 outils IA que les pros utilisent vraiment en 2026. VEO 3, Sora 2, Nano Banana, Antigravity, N8N — <strong className="text-white">15 min/jour, 30 jours</strong>, exemples africains concrets.
+                Passe du <strong className="text-white">niveau zéro</strong> aux 28 outils IA que les pros utilisent vraiment en 2026. VEO 3, Sora 2, Nano Banana, Antigravity, N8N - <strong className="text-white">15 min/jour, 30 jours</strong>, exemples africains concrets.
               </p>
               <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6">
                 {['28 outils 2026', '15 min/jour', 'Zéro prérequis', 'Garanti 30j'].map((tag) => (
@@ -504,7 +504,7 @@ function CTAFinalFormations() {
 /* ═══════════════════════ FAQ ═══════════════════════ */
 function FAQFormations() {
   const faqs = [
-    { q: "Quelles formations propose Oumarou Sanda ?", a: "Oumarou Sanda propose plusieurs formations en ligne : Challenge 30 Jours IA (maîtriser 28 outils IA en 15 min/jour, 9 900 FCFA — son programme le plus accessible), Protocole Vidéo IA (création de vidéos professionnelles avec l'IA, 7 590 FCFA), Le Cerveau Augmenté (système mental pour maîtriser et penser avec l'IA, 4 900 FCFA), et Offshore Empire (création de société Ltd au Royaume-Uni depuis l'Afrique, 97 750 FCFA)." },
+    { q: "Quelles formations propose Oumarou Sanda ?", a: "Oumarou Sanda propose plusieurs formations en ligne : Challenge 30 Jours IA (maîtriser 28 outils IA en 15 min/jour, 9 900 FCFA - son programme le plus accessible), Protocole Vidéo IA (création de vidéos professionnelles avec l'IA, 7 590 FCFA), Le Cerveau Augmenté (système mental pour maîtriser et penser avec l'IA, 4 900 FCFA), et Offshore Empire (création de société Ltd au Royaume-Uni depuis l'Afrique, 97 750 FCFA)." },
     { q: "C'est quoi le Protocole Vidéo IA ?", a: "Le Protocole Vidéo IA est une formation qui enseigne comment créer des vidéos ultra-réalistes avec l'intelligence artificielle en utilisant des outils comme Google VEO, Sora et Wan. C'est la première formation évolutive sur la vidéo générative en Afrique francophone." },
     { q: "Comment créer une société au Royaume-Uni depuis l'Afrique ?", a: "La formation Offshore Empire d'Oumarou Sanda montre pas à pas comment créer une Private Limited Company (Ltd) au Royaume-Uni depuis l'Afrique. La formation couvre le choix du nom, l'utilisation d'une adresse, la vérification KYC, et la préparation pour activer Stripe ou PayPal." },
     { q: "Les formations sont-elles accessibles depuis un téléphone ?", a: "Oui, toutes les formations d'Oumarou Sanda sont accessibles depuis un téléphone ou un ordinateur. Les prix sont adaptés au marché africain et le paiement est possible par Mobile Money ou carte bancaire. L'accès est immédiat après paiement." },
@@ -544,7 +544,7 @@ export default function FormationsPage() {
   return (
     <>
       <SEOHead
-        title="Formations IA & Business Digital | Oumarou Sanda — Vidéo IA, Productivité, Offshore"
+        title="Formations IA & Business Digital | Oumarou Sanda - Vidéo IA, Productivité, Offshore"
         description="Découvrez les formations d'Oumarou Sanda : Protocole Vidéo IA (création vidéo avec l'IA), Le Cerveau Augmenté (système mental IA), Offshore Empire (créer une société UK depuis l'Afrique). Prix adaptés au marché africain."
         canonical="/formations"
         schema={FORMATIONS_SCHEMA}

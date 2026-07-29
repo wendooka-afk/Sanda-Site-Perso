@@ -22,7 +22,7 @@ export type ResourceContent = {
 };
 
 /* ══════════════════════════════════════════
-   RESOURCE 1 — AI Tools PDF
+   RESOURCE 1 - AI Tools PDF
 ══════════════════════════════════════════ */
 const resource1_fr: ResourceContent = {
   slug: 'outils-ia-entrepreneurs',
@@ -32,7 +32,7 @@ const resource1_fr: ResourceContent = {
   badge: 'Guide PDF',
   icon: '🤖',
   sections: [
-    { type: 'intro', content: 'L\'IA n\'est plus un luxe réservé aux grandes entreprises. En 2026, les meilleurs outils sont accessibles à moins de 20€/mois — et certains sont entièrement gratuits. Voici ma sélection rigoureuse des 10 outils qui ont le plus d\'impact pour un entrepreneur digital, testés et utilisés au quotidien.' },
+    { type: 'intro', content: 'L\'IA n\'est plus un luxe réservé aux grandes entreprises. En 2026, les meilleurs outils sont accessibles à moins de 20€/mois - et certains sont entièrement gratuits. Voici ma sélection rigoureuse des 10 outils qui ont le plus d\'impact pour un entrepreneur digital, testés et utilisés au quotidien.' },
     { type: 'heading', content: '🏆 Les 10 outils à maîtriser absolument' },
     { type: 'tool-card', name: 'ChatGPT (GPT-4o)', category: 'Rédaction & stratégie', price: 'Gratuit / $20/mois (Plus)', use: 'Créer du contenu, rédiger des emails, analyser des données, générer des idées de business', free: 'Oui (GPT-4o mini)' },
     { type: 'tool-card', name: 'Claude (Anthropic)', category: 'Rédaction longue & analyse', price: 'Gratuit / $20/mois (Pro)', use: 'Écrire des articles longs, analyser des documents PDF, coder des pages web', free: 'Oui (claude.ai)' },
@@ -65,7 +65,7 @@ const resource1_en: ResourceContent = {
   badge: 'PDF Guide',
   icon: '🤖',
   sections: [
-    { type: 'intro', content: 'AI is no longer a luxury for big companies. In 2026, the best tools are accessible for under $20/month — and some are completely free. Here\'s my curated selection of the 10 highest-impact tools for a digital entrepreneur, tested and used daily.' },
+    { type: 'intro', content: 'AI is no longer a luxury for big companies. In 2026, the best tools are accessible for under $20/month - and some are completely free. Here\'s my curated selection of the 10 highest-impact tools for a digital entrepreneur, tested and used daily.' },
     { type: 'heading', content: '🏆 The 10 tools you must master' },
     { type: 'tool-card', name: 'ChatGPT (GPT-4o)', category: 'Writing & strategy', price: 'Free / $20/month (Plus)', use: 'Create content, write emails, analyze data, generate business ideas', free: 'Yes (GPT-4o mini)' },
     { type: 'tool-card', name: 'Claude (Anthropic)', category: 'Long-form writing & analysis', price: 'Free / $20/month (Pro)', use: 'Write long articles, analyze PDF documents, code web pages', free: 'Yes (claude.ai)' },
@@ -91,7 +91,7 @@ const resource1_en: ResourceContent = {
 };
 
 /* ══════════════════════════════════════════
-   RESOURCE 2 — 30-Day Launch Checklist
+   RESOURCE 2 - 30-Day Launch Checklist
 ══════════════════════════════════════════ */
 const resource2_fr: ResourceContent = {
   slug: 'checklist-lancer-business-30-jours',
@@ -101,8 +101,8 @@ const resource2_fr: ResourceContent = {
   badge: 'Checklist',
   icon: '✅',
   sections: [
-    { type: 'intro', content: 'Cette checklist contient exactement ce que tu dois faire pour passer de zéro à un business digital qui génère ses premiers revenus — en 30 jours. Pas de théorie. Pas de cours infini. Juste les actions dans l\'ordre.' },
-    { type: 'heading', content: '📅 Semaine 1 — Fondations (Jours 1–7)' },
+    { type: 'intro', content: 'Cette checklist contient exactement ce que tu dois faire pour passer de zéro à un business digital qui génère ses premiers revenus - en 30 jours. Pas de théorie. Pas de cours infini. Juste les actions dans l\'ordre.' },
+    { type: 'heading', content: '📅 Semaine 1 - Fondations (Jours 1–7)' },
     { type: 'checklist', items: [
       'Choisir sa niche (utilise ChatGPT pour valider : "est-ce que cette niche est rentable en 2026 ?")',
       'Définir son avatar client idéal (âge, problème, budget, plateforme utilisée)',
@@ -112,17 +112,17 @@ const resource2_fr: ResourceContent = {
       'Définir son offre principale : quel problème tu résous, pour qui, à quel prix',
       'Installer Notion pour organiser tout ton business (template gratuit disponible)',
     ]},
-    { type: 'heading', content: '📅 Semaine 2 — Création de contenu (Jours 8–14)' },
+    { type: 'heading', content: '📅 Semaine 2 - Création de contenu (Jours 8–14)' },
     { type: 'checklist', items: [
       'Créer 5 posts/vidéos de contenu de valeur (utilise le Prompt Pack ressource #3)',
       'Rédiger une page "À propos" qui convertit (problème → solution → crédibilité)',
       'Créer une landing page simple avec Carrd ou Systeme.io (gratuit)',
-      'Configurer un autorépondeur email (Brevo ou Beehiiv — gratuit jusqu\'à 2 500 contacts)',
+      'Configurer un autorépondeur email (Brevo ou Beehiiv - gratuit jusqu\'à 2 500 contacts)',
       'Créer un lead magnet (PDF gratuit, checklist, ou mini-formation)',
       'Publier 3 fois par semaine minimum sur ton canal principal',
       'Engager avec 10 comptes dans ta niche chaque jour',
     ]},
-    { type: 'heading', content: '📅 Semaine 3 — Offre & tunnel (Jours 15–21)' },
+    { type: 'heading', content: '📅 Semaine 3 - Offre & tunnel (Jours 15–21)' },
     { type: 'checklist', items: [
       'Rédiger la page de vente de ton offre (utilise le Template ressource #8)',
       'Créer la séquence email de bienvenue (3 emails : valeur / histoire / offre)',
@@ -132,7 +132,7 @@ const resource2_fr: ResourceContent = {
       'Fixer ton prix de lancement (20–30% moins cher que le prix final)',
       'Préparer 3 témoignages ou preuves sociales (même si tu dois tester gratuitement)',
     ]},
-    { type: 'heading', content: '📅 Semaine 4 — Lancement (Jours 22–30)' },
+    { type: 'heading', content: '📅 Semaine 4 - Lancement (Jours 22–30)' },
     { type: 'checklist', items: [
       'Envoyer l\'email de lancement à toute ta liste',
       'Faire un live ou une story de lancement sur ton canal principal',
@@ -154,8 +154,8 @@ const resource2_en: ResourceContent = {
   badge: 'Checklist',
   icon: '✅',
   sections: [
-    { type: 'intro', content: 'This checklist contains exactly what you need to do to go from zero to a digital business generating its first revenue — in 30 days. No theory. No endless courses. Just the actions in order.' },
-    { type: 'heading', content: '📅 Week 1 — Foundations (Days 1–7)' },
+    { type: 'intro', content: 'This checklist contains exactly what you need to do to go from zero to a digital business generating its first revenue - in 30 days. No theory. No endless courses. Just the actions in order.' },
+    { type: 'heading', content: '📅 Week 1 - Foundations (Days 1–7)' },
     { type: 'checklist', items: [
       'Choose your niche (use ChatGPT to validate: "is this niche profitable in 2026?")',
       'Define your ideal client avatar (age, problem, budget, platform they use)',
@@ -165,17 +165,17 @@ const resource2_en: ResourceContent = {
       'Define your main offer: what problem you solve, for whom, at what price',
       'Set up Notion to organize your entire business (free template available)',
     ]},
-    { type: 'heading', content: '📅 Week 2 — Content Creation (Days 8–14)' },
+    { type: 'heading', content: '📅 Week 2 - Content Creation (Days 8–14)' },
     { type: 'checklist', items: [
       'Create 5 value-packed posts/videos (use the Prompt Pack resource #3)',
       'Write an "About" page that converts (problem → solution → credibility)',
       'Create a simple landing page with Carrd or Systeme.io (free)',
-      'Set up an email autoresponder (Brevo or Beehiiv — free up to 2,500 contacts)',
+      'Set up an email autoresponder (Brevo or Beehiiv - free up to 2,500 contacts)',
       'Create a lead magnet (free PDF, checklist, or mini-training)',
       'Publish at least 3 times per week on your main channel',
       'Engage with 10 accounts in your niche every day',
     ]},
-    { type: 'heading', content: '📅 Week 3 — Offer & Funnel (Days 15–21)' },
+    { type: 'heading', content: '📅 Week 3 - Offer & Funnel (Days 15–21)' },
     { type: 'checklist', items: [
       'Write your offer\'s sales page (use the Template resource #8)',
       'Create your welcome email sequence (3 emails: value / story / offer)',
@@ -185,7 +185,7 @@ const resource2_en: ResourceContent = {
       'Set your launch price (20–30% less than final price)',
       'Prepare 3 testimonials or social proof (even if you test for free)',
     ]},
-    { type: 'heading', content: '📅 Week 4 — Launch (Days 22–30)' },
+    { type: 'heading', content: '📅 Week 4 - Launch (Days 22–30)' },
     { type: 'checklist', items: [
       'Send the launch email to your entire list',
       'Go live or post a launch story on your main channel',
@@ -200,7 +200,7 @@ const resource2_en: ResourceContent = {
 };
 
 /* ══════════════════════════════════════════
-   RESOURCE 3 — 50 ChatGPT Prompts
+   RESOURCE 3 - 50 ChatGPT Prompts
 ══════════════════════════════════════════ */
 const resource3_fr: ResourceContent = {
   slug: 'prompt-pack-50-chatgpt',
@@ -210,7 +210,7 @@ const resource3_fr: ResourceContent = {
   badge: 'Pack Gratuit',
   icon: '💬',
   sections: [
-    { type: 'intro', content: 'Ces 50 prompts sont le résultat de centaines d\'heures de tests. Chaque prompt a été optimisé pour produire un résultat utilisable directement — pas du contenu générique. Copie, colle, adapte à ton business.' },
+    { type: 'intro', content: 'Ces 50 prompts sont le résultat de centaines d\'heures de tests. Chaque prompt a été optimisé pour produire un résultat utilisable directement - pas du contenu générique. Copie, colle, adapte à ton business.' },
     { type: 'heading', content: '✍️ Articles de blog (10 prompts)' },
     { type: 'prompt-block', label: 'Plan d\'article complet', prompt: 'Tu es un expert SEO spécialisé dans [ta niche]. Crée un plan d\'article complet pour le mot-clé "[mot-clé]". Inclus : titre accrocheur, méta-description, introduction, 5 sections H2 avec sous-parties H3, conclusion avec CTA. Format markdown.' },
     { type: 'prompt-block', label: 'Introduction captivante', prompt: 'Écris une introduction de 150 mots pour un article sur "[sujet]". Commence par une statistique choc ou une question provocatrice. Adresse le problème principal du lecteur et annonce ce qu\'il va apprendre. Ton : direct, sans jargon.' },
@@ -245,7 +245,7 @@ const resource3_en: ResourceContent = {
   badge: 'Free Pack',
   icon: '💬',
   sections: [
-    { type: 'intro', content: 'These 50 prompts are the result of hundreds of hours of testing. Each prompt has been optimized to produce directly usable output — not generic content. Copy, paste, adapt to your business.' },
+    { type: 'intro', content: 'These 50 prompts are the result of hundreds of hours of testing. Each prompt has been optimized to produce directly usable output - not generic content. Copy, paste, adapt to your business.' },
     { type: 'heading', content: '✍️ Blog Articles (10 prompts)' },
     { type: 'prompt-block', label: 'Full article outline', prompt: 'You are an SEO expert specialized in [your niche]. Create a complete article outline for the keyword "[keyword]". Include: catchy title, meta description, introduction, 5 H2 sections with H3 sub-sections, conclusion with CTA. Format: markdown.' },
     { type: 'prompt-block', label: 'Captivating introduction', prompt: 'Write a 150-word introduction for an article on "[topic]". Start with a shocking statistic or provocative question. Address the reader\'s main problem and announce what they will learn. Tone: direct, no jargon.' },
@@ -273,7 +273,7 @@ const resource3_en: ResourceContent = {
 };
 
 /* ══════════════════════════════════════════
-   RESOURCE 4 — Video Training
+   RESOURCE 4 - Video Training
 ══════════════════════════════════════════ */
 const resource4_fr: ResourceContent = {
   slug: 'formation-video-premier-revenu-ia',
@@ -291,7 +291,7 @@ const resource4_fr: ResourceContent = {
       'Créer ton premier contenu de valeur qui attire des clients sans payer de publicité',
       'Utiliser l\'IA pour produire 10x plus vite sans perdre en authenticité',
       'Configurer ton premier tunnel de vente en moins de 2h (outils gratuits uniquement)',
-      'Générer tes 100 premiers euros en ligne — sans audience préexistante',
+      'Générer tes 100 premiers euros en ligne - sans audience préexistante',
     ]},
     { type: 'heading', content: '📋 Programme (45 min)' },
     { type: 'table', headers: ['Module', 'Durée', 'Contenu'], rows: [
@@ -328,7 +328,7 @@ const resource4_en: ResourceContent = {
       'Create your first value content that attracts clients without paid ads',
       'Use AI to produce 10x faster without losing authenticity',
       'Set up your first sales funnel in under 2h (free tools only)',
-      'Generate your first $100 online — without a pre-existing audience',
+      'Generate your first $100 online - without a pre-existing audience',
     ]},
     { type: 'heading', content: '📋 Curriculum (45 min)' },
     { type: 'table', headers: ['Module', 'Duration', 'Content'], rows: [
@@ -350,7 +350,7 @@ const resource4_en: ResourceContent = {
 };
 
 /* ══════════════════════════════════════════
-   RESOURCE 5 — 30-Day Content Plan Template
+   RESOURCE 5 - 30-Day Content Plan Template
 ══════════════════════════════════════════ */
 const resource5_fr: ResourceContent = {
   slug: 'template-plan-contenu-30-jours',
@@ -372,11 +372,11 @@ const resource5_fr: ResourceContent = {
     ]},
     { type: 'heading', content: '🗂️ Les 5 piliers thématiques inclus' },
     { type: 'numbered', items: [
-      '**Éducation** — Apprendre quelque chose d\'utile à ton audience (tutoriels, explications)',
-      '**Inspiration** — Histoires, success stories, motivations, citations commentées',
-      '**Promotion** — Présenter ton offre, tes services, tes ressources (20% max)',
-      '**Engagement** — Questions, sondages, controverses légères, challenges',
-      '**Coulisses** — Montrer ton processus, tes outils, ta journée type',
+      '**Éducation** - Apprendre quelque chose d\'utile à ton audience (tutoriels, explications)',
+      '**Inspiration** - Histoires, success stories, motivations, citations commentées',
+      '**Promotion** - Présenter ton offre, tes services, tes ressources (20% max)',
+      '**Engagement** - Questions, sondages, controverses légères, challenges',
+      '**Coulisses** - Montrer ton processus, tes outils, ta journée type',
     ]},
     { type: 'heading', content: '📝 Exemple de semaine type' },
     { type: 'table', headers: ['Jour', 'Plateforme', 'Type', 'Exemple d\'idée'], rows: [
@@ -411,11 +411,11 @@ const resource5_en: ResourceContent = {
     ]},
     { type: 'heading', content: '🗂️ The 5 included thematic pillars' },
     { type: 'numbered', items: [
-      '**Education** — Teach your audience something useful (tutorials, explanations)',
-      '**Inspiration** — Stories, success stories, motivations, commented quotes',
-      '**Promotion** — Showcase your offer, services, resources (max 20%)',
-      '**Engagement** — Questions, polls, light controversy, challenges',
-      '**Behind the scenes** — Show your process, tools, typical day',
+      '**Education** - Teach your audience something useful (tutorials, explanations)',
+      '**Inspiration** - Stories, success stories, motivations, commented quotes',
+      '**Promotion** - Showcase your offer, services, resources (max 20%)',
+      '**Engagement** - Questions, polls, light controversy, challenges',
+      '**Behind the scenes** - Show your process, tools, typical day',
     ]},
     { type: 'heading', content: '📝 Example week' },
     { type: 'table', headers: ['Day', 'Platform', 'Type', 'Example idea'], rows: [
@@ -431,7 +431,7 @@ const resource5_en: ResourceContent = {
 };
 
 /* ══════════════════════════════════════════
-   RESOURCE 6 — SEO Checklist
+   RESOURCE 6 - SEO Checklist
 ══════════════════════════════════════════ */
 const resource6_fr: ResourceContent = {
   slug: 'checklist-seo-27-points',
@@ -538,7 +538,7 @@ const resource6_en: ResourceContent = {
 };
 
 /* ══════════════════════════════════════════
-   RESOURCE 7 — AI Glossary
+   RESOURCE 7 - AI Glossary
 ══════════════════════════════════════════ */
 const resource7_fr: ResourceContent = {
   slug: 'glossaire-ia-150-termes',
@@ -548,13 +548,13 @@ const resource7_fr: ResourceContent = {
   badge: 'Guide PDF',
   icon: '📖',
   sections: [
-    { type: 'intro', content: 'L\'IA a son propre vocabulaire — et il évolue vite. Ce glossaire couvre les 150 termes les plus importants que tu vas rencontrer dans les articles, podcasts et outils IA. Classés par catégorie, expliqués sans jargon inutile.' },
+    { type: 'intro', content: 'L\'IA a son propre vocabulaire - et il évolue vite. Ce glossaire couvre les 150 termes les plus importants que tu vas rencontrer dans les articles, podcasts et outils IA. Classés par catégorie, expliqués sans jargon inutile.' },
     { type: 'heading', content: '🧠 Termes fondamentaux (extrait)' },
     { type: 'table', headers: ['Terme', 'Définition simple'], rows: [
-      ['LLM', 'Large Language Model — un modèle d\'IA entraîné sur des milliards de textes pour comprendre et générer du langage naturel (ex: GPT-4, Claude)'],
+      ['LLM', 'Large Language Model - un modèle d\'IA entraîné sur des milliards de textes pour comprendre et générer du langage naturel (ex: GPT-4, Claude)'],
       ['Prompt', 'L\'instruction que tu donnes à une IA. La qualité du prompt détermine directement la qualité de la réponse.'],
       ['Fine-tuning', 'Processus d\'entraînement supplémentaire d\'un LLM sur des données spécifiques pour le spécialiser dans un domaine.'],
-      ['RAG', 'Retrieval-Augmented Generation — technique qui permet à un LLM de chercher dans une base de données externe avant de répondre.'],
+      ['RAG', 'Retrieval-Augmented Generation - technique qui permet à un LLM de chercher dans une base de données externe avant de répondre.'],
       ['Token', 'Unité de texte utilisée par les LLMs. Environ 1 token ≈ 0,75 mot en anglais. Les prix des APIs sont calculés en tokens.'],
       ['Hallucination', 'Quand une IA invente des informations fausses mais les présente avec confiance. Toujours vérifier les faits importants.'],
       ['Embedding', 'Représentation mathématique (vecteur) d\'un texte, permettant de comparer la similarité entre documents.'],
@@ -590,13 +590,13 @@ const resource7_en: ResourceContent = {
   badge: 'PDF Guide',
   icon: '📖',
   sections: [
-    { type: 'intro', content: 'AI has its own vocabulary — and it evolves fast. This glossary covers the 150 most important terms you\'ll encounter in articles, podcasts and AI tools. Organized by category, explained without unnecessary jargon.' },
+    { type: 'intro', content: 'AI has its own vocabulary - and it evolves fast. This glossary covers the 150 most important terms you\'ll encounter in articles, podcasts and AI tools. Organized by category, explained without unnecessary jargon.' },
     { type: 'heading', content: '🧠 Core terms (excerpt)' },
     { type: 'table', headers: ['Term', 'Simple definition'], rows: [
-      ['LLM', 'Large Language Model — an AI model trained on billions of texts to understand and generate natural language (e.g., GPT-4, Claude)'],
+      ['LLM', 'Large Language Model - an AI model trained on billions of texts to understand and generate natural language (e.g., GPT-4, Claude)'],
       ['Prompt', 'The instruction you give to an AI. The quality of the prompt directly determines the quality of the response.'],
       ['Fine-tuning', 'The process of further training an LLM on specific data to specialize it in a domain.'],
-      ['RAG', 'Retrieval-Augmented Generation — a technique that allows an LLM to search an external database before responding.'],
+      ['RAG', 'Retrieval-Augmented Generation - a technique that allows an LLM to search an external database before responding.'],
       ['Token', 'Unit of text used by LLMs. Approximately 1 token ≈ 0.75 words in English. API prices are calculated in tokens.'],
       ['Hallucination', 'When an AI invents false information but presents it confidently. Always verify important facts.'],
       ['Embedding', 'Mathematical representation (vector) of text, enabling comparison of similarity between documents.'],
@@ -625,7 +625,7 @@ const resource7_en: ResourceContent = {
 };
 
 /* ══════════════════════════════════════════
-   RESOURCE 8 — Sales Page Template
+   RESOURCE 8 - Sales Page Template
 ══════════════════════════════════════════ */
 const resource8_fr: ResourceContent = {
   slug: 'template-page-de-vente',
@@ -635,26 +635,26 @@ const resource8_fr: ResourceContent = {
   badge: 'Template',
   icon: '💰',
   sections: [
-    { type: 'intro', content: 'Une page de vente suit toujours la même structure psychologique. Ce template te donne exactement quoi écrire dans chaque section — avec des formules testées et des exemples concrets.' },
+    { type: 'intro', content: 'Une page de vente suit toujours la même structure psychologique. Ce template te donne exactement quoi écrire dans chaque section - avec des formules testées et des exemples concrets.' },
     { type: 'heading', content: '📐 Structure complète (12 blocs)' },
     { type: 'numbered', items: [
-      '**Headline principale** — Promesse de transformation en 1 ligne (formule : [Résultat désiré] + [Délai] + [Sans objection principale])',
-      '**Sous-titre** — Développe la promesse, cible le problème principal, 2 lignes max',
-      '**Section "Pour qui"** — 3–5 bullets qui font dire "c\'est exactement pour moi"',
-      '**Histoire / Credibilité** — Ton parcours en lien avec le problème du client (pas ton CV)',
-      '**Le problème** — Agite la douleur, montre que tu comprends mieux que quiconque',
-      '**La solution** — Présente ton offre comme LA réponse logique au problème',
-      '**Contenu / ce que tu reçois** — Détaille chaque module/livrable avec la valeur perçue',
-      '**Témoignages** — 3 minimum, avec photo + prénom + résultat spécifique',
-      '**FAQ** — 5–8 questions qui lèvent les objections restantes',
-      '**Garantie** — Réduit le risque perçu (satisfait ou remboursé, accès à vie, etc.)',
-      '**Prix + CTA** — Présente le prix après la valeur, jamais avant',
-      '**Urgence/Rareté** — Raison légitime d\'agir maintenant (date limite, bonus early)',
+      '**Headline principale** - Promesse de transformation en 1 ligne (formule : [Résultat désiré] + [Délai] + [Sans objection principale])',
+      '**Sous-titre** - Développe la promesse, cible le problème principal, 2 lignes max',
+      '**Section "Pour qui"** - 3–5 bullets qui font dire "c\'est exactement pour moi"',
+      '**Histoire / Credibilité** - Ton parcours en lien avec le problème du client (pas ton CV)',
+      '**Le problème** - Agite la douleur, montre que tu comprends mieux que quiconque',
+      '**La solution** - Présente ton offre comme LA réponse logique au problème',
+      '**Contenu / ce que tu reçois** - Détaille chaque module/livrable avec la valeur perçue',
+      '**Témoignages** - 3 minimum, avec photo + prénom + résultat spécifique',
+      '**FAQ** - 5–8 questions qui lèvent les objections restantes',
+      '**Garantie** - Réduit le risque perçu (satisfait ou remboursé, accès à vie, etc.)',
+      '**Prix + CTA** - Présente le prix après la valeur, jamais avant',
+      '**Urgence/Rareté** - Raison légitime d\'agir maintenant (date limite, bonus early)',
     ]},
     { type: 'heading', content: '✍️ Formules de copywriting incluses' },
     { type: 'prompt-block', label: 'Formule Headline (PAS)', prompt: 'Problème : [Ce que le client veut éviter]\nAgitation : [Conséquences si le problème persiste]\nSolution : [Ce que tu proposes]\n\nEx: "Tu travailles 60h/semaine et tu n\'avances pas ? Découvre comment utiliser l\'IA pour diviser ton temps de travail par 3 en 30 jours."' },
     { type: 'prompt-block', label: 'Formule Bénéfice (FAB)', prompt: 'Feature (Caractéristique) → Advantage (Avantage) → Benefit (Bénéfice)\n\nEx: "Accès à vie [F] → Tu peux regarder les vidéos quand tu veux [A] → Tu apprends à ton rythme sans aucune pression [B]"' },
-    { type: 'prompt-block', label: 'Formule Témoignage', prompt: '"Avant [produit], j\'avais [problème]. Après [durée], j\'ai obtenu [résultat spécifique]. Ce qui m\'a le plus surpris c\'est [insight inattendu]." — [Prénom], [Ville/Pays]' },
+    { type: 'prompt-block', label: 'Formule Témoignage', prompt: '"Avant [produit], j\'avais [problème]. Après [durée], j\'ai obtenu [résultat spécifique]. Ce qui m\'a le plus surpris c\'est [insight inattendu]." - [Prénom], [Ville/Pays]' },
     { type: 'callout', label: '💡 Règle d\'or', content: 'Ne parle jamais de toi. Parle toujours de ton client. Remplace chaque "Je/Mon/Ma" par "Tu/Ton/Ta" et vois la différence de connexion émotionnelle.' },
   ],
 };
@@ -667,32 +667,32 @@ const resource8_en: ResourceContent = {
   badge: 'Template',
   icon: '💰',
   sections: [
-    { type: 'intro', content: 'A sales page always follows the same psychological structure. This template tells you exactly what to write in each section — with tested formulas and concrete examples.' },
+    { type: 'intro', content: 'A sales page always follows the same psychological structure. This template tells you exactly what to write in each section - with tested formulas and concrete examples.' },
     { type: 'heading', content: '📐 Complete structure (12 blocks)' },
     { type: 'numbered', items: [
-      '**Main headline** — Transformation promise in 1 line (formula: [Desired result] + [Timeline] + [Without main objection])',
-      '**Subtitle** — Develops the promise, targets the main problem, 2 lines max',
-      '"**For who" section** — 3–5 bullets that make them say "that\'s exactly for me"',
-      '**Story / Credibility** — Your journey related to the client\'s problem (not your CV)',
-      '**The problem** — Agitate the pain, show you understand better than anyone',
-      '**The solution** — Present your offer as THE logical response to the problem',
-      '**Content / what they receive** — Detail each module/deliverable with perceived value',
-      '**Testimonials** — Minimum 3, with photo + name + specific result',
-      '**FAQ** — 5–8 questions that remove remaining objections',
-      '**Guarantee** — Reduces perceived risk (money-back, lifetime access, etc.)',
-      '**Price + CTA** — Present the price after the value, never before',
-      '**Urgency/Scarcity** — Legitimate reason to act now (deadline, early bonus)',
+      '**Main headline** - Transformation promise in 1 line (formula: [Desired result] + [Timeline] + [Without main objection])',
+      '**Subtitle** - Develops the promise, targets the main problem, 2 lines max',
+      '"**For who" section** - 3–5 bullets that make them say "that\'s exactly for me"',
+      '**Story / Credibility** - Your journey related to the client\'s problem (not your CV)',
+      '**The problem** - Agitate the pain, show you understand better than anyone',
+      '**The solution** - Present your offer as THE logical response to the problem',
+      '**Content / what they receive** - Detail each module/deliverable with perceived value',
+      '**Testimonials** - Minimum 3, with photo + name + specific result',
+      '**FAQ** - 5–8 questions that remove remaining objections',
+      '**Guarantee** - Reduces perceived risk (money-back, lifetime access, etc.)',
+      '**Price + CTA** - Present the price after the value, never before',
+      '**Urgency/Scarcity** - Legitimate reason to act now (deadline, early bonus)',
     ]},
     { type: 'heading', content: '✍️ Included copywriting formulas' },
     { type: 'prompt-block', label: 'Headline formula (PAS)', prompt: 'Problem: [What the client wants to avoid]\nAgitation: [Consequences if the problem persists]\nSolution: [What you offer]\n\nEx: "Working 60h/week and not moving forward? Discover how to use AI to cut your work time by 3x in 30 days."' },
     { type: 'prompt-block', label: 'Benefit formula (FAB)', prompt: 'Feature → Advantage → Benefit\n\nEx: "Lifetime access [F] → Watch the videos whenever you want [A] → Learn at your own pace with zero pressure [B]"' },
-    { type: 'prompt-block', label: 'Testimonial formula', prompt: '"Before [product], I had [problem]. After [time], I achieved [specific result]. What surprised me most was [unexpected insight]." — [First name], [City/Country]' },
+    { type: 'prompt-block', label: 'Testimonial formula', prompt: '"Before [product], I had [problem]. After [time], I achieved [specific result]. What surprised me most was [unexpected insight]." - [First name], [City/Country]' },
     { type: 'callout', label: '💡 Golden rule', content: 'Never talk about yourself. Always talk about your client. Replace every "I/My/Mine" with "You/Your/Yours" and see the difference in emotional connection.' },
   ],
 };
 
 /* ══════════════════════════════════════════
-   RESOURCE 9 — My Complete Stack
+   RESOURCE 9 - My Complete Stack
 ══════════════════════════════════════════ */
 const resource9_fr: ResourceContent = {
   slug: 'ma-stack-complete',
@@ -702,7 +702,7 @@ const resource9_fr: ResourceContent = {
   badge: 'Accès immédiat',
   icon: '⚙️',
   sections: [
-    { type: 'intro', content: 'Voici exactement les outils que j\'utilise pour gérer mon business digital — contenu, formation, newsletter, réseaux sociaux, automatisation. J\'ai inclus le prix réel que je paie et une alternative gratuite pour chaque catégorie.' },
+    { type: 'intro', content: 'Voici exactement les outils que j\'utilise pour gérer mon business digital - contenu, formation, newsletter, réseaux sociaux, automatisation. J\'ai inclus le prix réel que je paie et une alternative gratuite pour chaque catégorie.' },
     { type: 'heading', content: '✍️ Création de contenu' },
     { type: 'tool-card', name: 'Claude Pro (Anthropic)', category: 'Rédaction principale', price: '$20/mois', use: 'Articles de blog longs, scripts, analyses, code', free: 'Claude.ai (limité)' },
     { type: 'tool-card', name: 'ChatGPT Plus', category: 'Idéation & recherche', price: '$20/mois', use: 'Brainstorming, recherches rapides, images DALL-E 3', free: 'ChatGPT gratuit (GPT-4o mini)' },
@@ -733,7 +733,7 @@ const resource9_en: ResourceContent = {
   badge: 'Instant access',
   icon: '⚙️',
   sections: [
-    { type: 'intro', content: 'Here are exactly the tools I use to run my digital business — content, courses, newsletter, social media, automation. I\'ve included the real price I pay and a free alternative for every category.' },
+    { type: 'intro', content: 'Here are exactly the tools I use to run my digital business - content, courses, newsletter, social media, automation. I\'ve included the real price I pay and a free alternative for every category.' },
     { type: 'heading', content: '✍️ Content Creation' },
     { type: 'tool-card', name: 'Claude Pro (Anthropic)', category: 'Main writing', price: '$20/month', use: 'Long blog articles, scripts, analyses, code', free: 'Claude.ai (limited)' },
     { type: 'tool-card', name: 'ChatGPT Plus', category: 'Ideation & research', price: '$20/month', use: 'Brainstorming, quick research, DALL-E 3 images', free: 'Free ChatGPT (GPT-4o mini)' },

@@ -87,7 +87,7 @@ function computeResult(answers: Answers) {
   let reassurance = 'Ce challenge est structuré pour toi : un outil par jour, 15 minutes, zéro prérequis.';
   if (blocker.includes('commencer')) reassurance = 'Bonne nouvelle : le Challenge 30 Jours commence exactement à zéro. Jour 1, outil 1, étape par étape.';
   else if (blocker.includes('outils')) reassurance = 'C\'est exactement pour ça que le challenge existe : une progression claire parmi les 28 meilleurs outils 2026.';
-  else if (blocker.includes('temps')) reassurance = 'Le challenge est conçu pour 15 min/jour — pas besoin de te libérer des heures. Juste 15 minutes.';
+  else if (blocker.includes('temps')) reassurance = 'Le challenge est conçu pour 15 min/jour - pas besoin de te libérer des heures. Juste 15 minutes.';
   else if (blocker.includes('comprendre')) reassurance = 'Aucune notion technique requise. Si tu peux envoyer un WhatsApp, tu peux suivre ce challenge.';
 
   return { name, skillLabel, skillPercent, potential, goalContext, reassurance };
@@ -351,7 +351,7 @@ export default function QuizIAPage() {
                   href={LINK_CHECKOUT}
                   className="w-full flex items-center justify-center gap-2 py-4 rounded-2xl bg-[#d4af37] text-[#050505] font-bold text-lg hover:bg-[#c9a227] transition-colors"
                 >
-                  Démarrer le Challenge — 9 900 FCFA <ArrowRight size={20} />
+                  Démarrer le Challenge - 9 900 FCFA <ArrowRight size={20} />
                 </a>
                 <Link
                   to="/challenge-30-jours"
@@ -363,7 +363,7 @@ export default function QuizIAPage() {
 
               {/* Guarantee */}
               <p className="text-center text-white/40 text-xs mt-5">
-                🔒 Satisfait ou remboursé 7 jours — Accès immédiat après paiement
+                🔒 Satisfait ou remboursé 7 jours - Accès immédiat après paiement
               </p>
             </motion.div>
           )}

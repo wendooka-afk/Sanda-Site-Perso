@@ -157,7 +157,7 @@ export const formations = [
     customUrl: '/challenge-30-jours',
     features: [
       '28 outils IA 2026 (VEO 3, Sora 2, Nano Banana, Antigravity, N8N...)',
-      '15 minutes par jour — vraiment',
+      '15 minutes par jour - vraiment',
       'Exemples africains concrets (Cameroun, Sénégal, Côte d\'Ivoire...)',
       'Accès gratuit ou essai pour chaque outil',
       '50 prompts prêts à l\'emploi par métier',
@@ -168,10 +168,10 @@ export const formations = [
     ],
     curriculum: [
       { title: 'Les 2 Fondations', lessons: 2 },
-      { title: 'Semaine 1 — Les Assistants IA de 2026', lessons: 5 },
-      { title: 'Semaine 2 — Image IA : Les Nouveaux Standards', lessons: 7 },
-      { title: 'Semaine 3 — Vidéo IA : La Révolution Cinématographique', lessons: 7 },
-      { title: 'Semaine 4 — Audio, Productivité, Code & Automatisation', lessons: 9 },
+      { title: 'Semaine 1 - Les Assistants IA de 2026', lessons: 5 },
+      { title: 'Semaine 2 - Image IA : Les Nouveaux Standards', lessons: 7 },
+      { title: 'Semaine 3 - Vidéo IA : La Révolution Cinématographique', lessons: 7 },
+      { title: 'Semaine 4 - Audio, Productivité, Code & Automatisation', lessons: 9 },
     ],
     faq: [
       { q: 'J\'ai 40 ou 50 ans. Est-ce fait pour moi ?', a: 'Oui. 15 minutes par jour, un outil à la fois, aucun prérequis technique.' },

@@ -117,25 +117,31 @@ export function Footer() {
       {/* Bottom Bar — bande noire pleine largeur */}
       <div className="relative z-10 bg-black">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
-            <p className="text-white/80 text-[13px] text-center sm:text-left font-inter">
-              {t.footer.rights} {t.footer.madeWith}
+          <p className="text-white/80 text-[13px] text-center sm:text-left font-inter">
+            {t.footer.rights}
+          </p>
+          <div className="flex items-center gap-5">
+            <p className="text-white text-[13px] font-inter">
+              {language === 'en' ? 'Designed with ' : 'Conçu avec '}
+              <span className="text-red-500">&#10084;</span>
+              {language === 'en' ? ' by ' : ' par '}
+              <a
+                href="https://wendooka.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-gold transition-colors duration-300 hover:underline underline-offset-4"
+              >
+                wendooka
+              </a>
             </p>
-            <div className="w-1 h-1 rounded-full bg-white/25 hidden sm:block" />
-            <Link
-              to="/dashboard"
-              className="text-white/80 hover:text-white text-[13px] font-inter transition-colors duration-300 hover:underline underline-offset-4"
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="w-12 h-12 rounded-xl border border-white/15 bg-white/5 text-white/80 hover:text-gold hover:border-gold/40 hover:bg-white/10 transition-all duration-300 group flex items-center justify-center"
+              aria-label="Back to top"
             >
-              Admin
-            </Link>
+              <ArrowUp className="w-5 h-5 group-hover:-translate-y-1 transition-transform duration-300" />
+            </button>
           </div>
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="w-12 h-12 rounded-xl border border-white/15 bg-white/5 text-white/80 hover:text-gold hover:border-gold/40 hover:bg-white/10 transition-all duration-300 group flex items-center justify-center"
-            aria-label="Back to top"
-          >
-            <ArrowUp className="w-5 h-5 group-hover:-translate-y-1 transition-transform duration-300" />
-          </button>
         </div>
       </div>
     </footer >

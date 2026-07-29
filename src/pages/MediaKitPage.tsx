@@ -34,7 +34,7 @@ const topics = [
   {
     icon: '📱',
     title: 'Création de contenu et réseaux sociaux',
-    desc: 'Stratégies YouTube, TikTok, LinkedIn — créer une audience, monétiser son personal brand, storytelling digital.',
+    desc: 'Stratégies YouTube, TikTok, LinkedIn - créer une audience, monétiser son personal brand, storytelling digital.',
   },
   {
     icon: '⚡',
@@ -52,8 +52,8 @@ const highlights = [
   'Invité dans plusieurs médias africains et podcasts francophones',
   'Conférencier au Forum IA & Business Afrique (Douala, 2025)',
   'Auteur de «Si l\'Afrique rate l\'IA, elle rate le Futur» (disponible sur Amazon)',
-  'Fondateur de Wendooka — agence IA & digital basée au Cameroun',
-  'Co-fondateur de Sanda Vibe Code — plateforme de formations en vibe coding',
+  'Fondateur de Wendooka - agence IA & digital basée au Cameroun',
+  'Co-fondateur de Sanda Vibe Code - plateforme de formations en vibe coding',
   'Ancien journaliste reconverti en entrepreneur digital en 2019',
 ];
 
@@ -72,7 +72,7 @@ function MediaKitHero() {
               Kit Média & Presse
             </div>
             <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-black mb-5 tracking-tight text-white leading-[1.2]">
-              Oumarou Sanda —<br />
+              Oumarou Sanda -<br />
               <span className="text-gold">Expert IA Générative</span>
             </h1>
             <p className="text-white/65 text-lg leading-relaxed mb-8 max-w-xl">
@@ -100,7 +100,7 @@ function MediaKitHero() {
             <div className="relative rounded-[2rem] overflow-hidden aspect-[3/4] max-h-[500px] border border-white/10 shadow-2xl bg-white/5">
               <img
                 src="/oumarou-sanda-15.webp"
-                alt="Oumarou Sanda — Expert IA Générative"
+                alt="Oumarou Sanda - Expert IA Générative"
                 className="w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/70 via-transparent to-transparent" />
@@ -124,7 +124,7 @@ export default function MediaKitPage() {
   return (
     <>
       <SEOHead
-        title="Kit Média | Press Kit — Oumarou Sanda, Expert IA Générative"
+        title="Kit Média | Press Kit - Oumarou Sanda, Expert IA Générative"
         description="Kit média officiel d'Oumarou Sanda : biographie, statistiques d'audience, sujets d'expertise, photos HD, logos et informations pour collaborations médias et interviews."
         canonical="/kit-media"
       />
@@ -173,7 +173,7 @@ export default function MediaKitPage() {
           >
             {[
               { label: 'Localisation principale', value: 'Afrique francophone (65%), France & Canada (25%), Reste du monde (10%)' },
-              { label: 'Tranche d\'âge', value: '25–45 ans (72%) — entrepreneurs, créateurs, étudiants en reconversion' },
+              { label: 'Tranche d\'âge', value: '25–45 ans (72%) - entrepreneurs, créateurs, étudiants en reconversion' },
               { label: 'Centres d\'intérêt', value: 'IA & Tech (88%), Entrepreneuriat (79%), Création de contenu (64%)' },
             ].map((item, i) => (
               <div key={i} className="bg-white border border-black/5 rounded-2xl p-6 shadow-sm">
@@ -360,7 +360,7 @@ export default function MediaKitPage() {
               </div>
               <div className="flex flex-col gap-3 shrink-0">
                 <a
-                  href="mailto:contact@oumarousanda.com?subject=Demande Kit Presse — Oumarou Sanda"
+                  href="mailto:contact@oumarousanda.com?subject=Demande Kit Presse - Oumarou Sanda"
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-gradient-to-r from-gold to-gold-light text-[#0a0a0a] font-bold rounded-xl hover:shadow-lg hover:shadow-gold/20 transition-all text-[14px] whitespace-nowrap"
                 >
                   <Download className="w-4 h-4" />

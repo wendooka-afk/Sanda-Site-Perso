@@ -26,7 +26,7 @@ export const articles = [
       { id: 'interac', label: 'Virements Interac avec BMO' },
       { id: 'securite', label: 'Sécurité des services bancaires numériques BMO' },
       { id: 'comparatif', label: 'Comparatif des comptes BMO disponibles en ligne' },
-      { id: 'faq', label: 'FAQ — Questions fréquentes' },
+      { id: 'faq', label: 'FAQ - Questions fréquentes' },
       { id: 'conclusion', label: 'Conclusion & ressources utiles' },
     ],
     sections: [
@@ -46,7 +46,7 @@ export const articles = [
       },
 
       { type: 'heading', content: '1. BMO en chiffres : une banque numérique de référence', id: 'intro' },
-      { type: 'text', content: "Fondée en 1817, la Banque de Montréal (BMO) est la <strong>première banque créée au Canada</strong>. Plus de deux siècles après sa fondation, elle compte aujourd'hui parmi les institutions financières les plus avancées technologiquement en Amérique du Nord. Sa transformation numérique n'est pas un simple virage marketing — c'est une refonte profonde de la relation client." },
+      { type: 'text', content: "Fondée en 1817, la Banque de Montréal (BMO) est la <strong>première banque créée au Canada</strong>. Plus de deux siècles après sa fondation, elle compte aujourd'hui parmi les institutions financières les plus avancées technologiquement en Amérique du Nord. Sa transformation numérique n'est pas un simple virage marketing - c'est une refonte profonde de la relation client." },
 
       {
         type: 'stats-grid', items: [
@@ -57,8 +57,8 @@ export const articles = [
         ]
       },
 
-      { type: 'text', content: "En mai 2025, l'étude comparative d'EMARKETER a classé <strong>BMO au premier rang des banques canadiennes</strong> pour les fonctionnalités de services bancaires mobiles — devant TD, RBC et Desjardins. Cette reconnaissance illustre un investissement massif dans l'infrastructure numérique : dépôt de chèques par photo, assistant virtuel IA, paiement instantané, vérification biométrique… BMO ne gère plus seulement de l'argent, elle gère une expérience." },
-      { type: 'text', content: "Son modèle repose sur trois piliers stratégiques : les <strong>services bancaires aux particuliers et aux entreprises</strong>, la <strong>gestion de patrimoine</strong>, et <strong>BMO Marchés des capitaux</strong>. Dans cet article, nous nous concentrons sur le volet \"services bancaires aux particuliers en ligne\" — celui qui concerne directement les millions de clients utilisant bmo.com ou l'application mobile au quotidien." },
+      { type: 'text', content: "En mai 2025, l'étude comparative d'EMARKETER a classé <strong>BMO au premier rang des banques canadiennes</strong> pour les fonctionnalités de services bancaires mobiles - devant TD, RBC et Desjardins. Cette reconnaissance illustre un investissement massif dans l'infrastructure numérique : dépôt de chèques par photo, assistant virtuel IA, paiement instantané, vérification biométrique… BMO ne gère plus seulement de l'argent, elle gère une expérience." },
+      { type: 'text', content: "Son modèle repose sur trois piliers stratégiques : les <strong>services bancaires aux particuliers et aux entreprises</strong>, la <strong>gestion de patrimoine</strong>, et <strong>BMO Marchés des capitaux</strong>. Dans cet article, nous nous concentrons sur le volet \"services bancaires aux particuliers en ligne\" - celui qui concerne directement les millions de clients utilisant bmo.com ou l'application mobile au quotidien." },
 
       { type: 'heading', content: '2. Se connecter aux services bancaires en ligne BMO', id: 'connexion' },
       { type: 'text', content: "La connexion à votre espace client BMO est conçue pour être à la fois <strong>simple et hautement sécurisée</strong>. Que vous accédiez depuis un ordinateur de bureau, une tablette ou un téléphone, le processus reste identique et ne prend que quelques secondes." },
@@ -105,13 +105,13 @@ export const articles = [
       { type: 'disclaimer', content: "<strong>🎁 Offre 2026 :</strong> BMO offre une prime pouvant atteindre <strong>800 $</strong> pour l'ouverture d'un nouveau compte chèques dans le cadre d'une offre à durée limitée. Les conditions s'appliquent. Vérifiez les détails sur bmo.com/offres." },
 
       { type: 'text', content: '<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-4">Ouverture de compte avant l\'arrivée au Canada</h3>' },
-      { type: 'text', content: "BMO offre également aux <strong>résidents permanents, travailleurs et étudiants étrangers</strong> la possibilité d'ouvrir un compte de chèques canadien <em>avant même leur arrivée au Canada</em>. Une fois arrivé, il suffit de se rendre dans n'importe quelle succursale BMO pour activer le compte et accéder à l'argent — sans rendez-vous préalable." },
+      { type: 'text', content: "BMO offre également aux <strong>résidents permanents, travailleurs et étudiants étrangers</strong> la possibilité d'ouvrir un compte de chèques canadien <em>avant même leur arrivée au Canada</em>. Une fois arrivé, il suffit de se rendre dans n'importe quelle succursale BMO pour activer le compte et accéder à l'argent - sans rendez-vous préalable." },
 
       { type: 'heading', content: '5. Payer des factures et faire des virements', id: 'paiements' },
       { type: 'text', content: "Le module <strong>Paiement et virement</strong> est le cœur opérationnel des services bancaires en ligne BMO. Il centralise toutes vos transactions sortantes dans une interface unique, accessible en quelques clics depuis votre ordinateur ou téléphone." },
 
       { type: 'text', content: '<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-4">Paiement de factures</h3>' },
-      { type: 'text', content: "Pour payer une facture, ouvrez une session sur bmo.com ou l'application, accédez à l'onglet <strong>Paiement et virement</strong>, sélectionnez votre créancier dans la liste (Hydro-Québec, Bell, Rogers, Desjardins, etc.), choisissez le montant et confirmez. Le traitement peut prendre <strong>jusqu'à 3 jours ouvrables</strong> selon l'institution destinataire — pensez donc à anticiper vos paiements." },
+      { type: 'text', content: "Pour payer une facture, ouvrez une session sur bmo.com ou l'application, accédez à l'onglet <strong>Paiement et virement</strong>, sélectionnez votre créancier dans la liste (Hydro-Québec, Bell, Rogers, Desjardins, etc.), choisissez le montant et confirmez. Le traitement peut prendre <strong>jusqu'à 3 jours ouvrables</strong> selon l'institution destinataire - pensez donc à anticiper vos paiements." },
 
       { type: 'text', content: '<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-4">Virements entre comptes BMO</h3>' },
       { type: 'text', content: "Si vous avez plusieurs comptes chez BMO (compte chèques + épargne + carte de crédit), les virements entre ces comptes sont <strong>instantanés</strong>. Pour rembourser votre carte de crédit BMO, par exemple, les fonds sont immédiatement disponibles sur votre carte, même si le mouvement comptable s'affiche sous 3 jours ouvrables." },
@@ -119,7 +119,7 @@ export const articles = [
       { type: 'disclaimer', content: "<strong>💡 Astuce :</strong> Utilisez la <strong>fonction QuickPay de BMO</strong> pour automatiser le paiement de vos factures récurrentes. Configurez-la une seule fois et BMO s'occupe de tout le mois suivant." },
 
       { type: 'heading', content: '6. Virement Interac avec BMO : le guide complet', id: 'interac' },
-      { type: 'text', content: "Le <strong>Virement Interac</strong> est le standard de paiement entre particuliers au Canada. BMO offre des virements Interac <strong>illimités et sans frais</strong> sur la plupart de ses forfaits bancaires — une décision stratégique qui a largement fidélisé sa clientèle." },
+      { type: 'text', content: "Le <strong>Virement Interac</strong> est le standard de paiement entre particuliers au Canada. BMO offre des virements Interac <strong>illimités et sans frais</strong> sur la plupart de ses forfaits bancaires - une décision stratégique qui a largement fidélisé sa clientèle." },
 
       { type: 'text', content: '<h3 class="font-heading font-bold text-lg text-[#0a0a0a] mt-8 mb-4">Comment envoyer un virement Interac via BMO ?</h3>' },
       {
@@ -145,7 +145,7 @@ export const articles = [
           { title: 'Centre de sécurité BMO', desc: 'Ressources disponibles sur bmo.com/securite pour reconnaître les tentatives de fraude.' },
         ]
       },
-      { type: 'text', content: "Plus de <strong>14 millions de transactions ont été réalisées sans papier</strong> grâce à la signature électronique — un gain écologique et opérationnel considérable." },
+      { type: 'text', content: "Plus de <strong>14 millions de transactions ont été réalisées sans papier</strong> grâce à la signature électronique - un gain écologique et opérationnel considérable." },
 
       { type: 'heading', content: '8. Comparatif des comptes BMO disponibles en ligne', id: 'comparatif' },
       { type: 'text', content: "BMO propose plusieurs types de comptes adaptés à des besoins différents. Tous ces comptes sont accessibles et gérables depuis les services bancaires en ligne BMO et l'application mobile." },
@@ -163,7 +163,7 @@ export const articles = [
         ]
       },
 
-      { type: 'heading', content: '9. FAQ — Questions fréquentes sur BMO en ligne', id: 'faq' },
+      { type: 'heading', content: '9. FAQ - Questions fréquentes sur BMO en ligne', id: 'faq' },
       {
         type: 'faq-rich', items: [
           { q: 'Comment me connecter à mon compte BMO en ligne ?', a: "Rendez-vous sur <strong>bmo.com</strong> et cliquez sur « Ouvrir une session ». Entrez votre numéro de carte de débit BMO (16 chiffres) comme identifiant, puis votre mot de passe. Si un nouvel appareil est détecté, BMO vous enverra un code de vérification par SMS pour confirmer votre identité." },
@@ -172,14 +172,14 @@ export const articles = [
           { q: 'Puis-je ouvrir un compte BMO entièrement en ligne sans aller en succursale ?', a: "Oui, dans la plupart des cas. Vous pouvez ouvrir un compte de chèques ou d'épargne BMO en ligne en moins de 10 minutes, en fournissant vos informations personnelles et votre numéro d'assurance sociale (NAS). Une visite en succursale peut être requise pour les nouveaux arrivants." },
           { q: 'Comment payer mes factures en ligne avec BMO ?', a: "Connectez-vous à vos services bancaires en ligne BMO, cliquez sur l'onglet <strong>Paiement et virement</strong>, sélectionnez « Payer une facture », choisissez ou ajoutez votre créancier, saisissez le montant et confirmez." },
           { q: 'Que faire si j\'oublie mon mot de passe BMO en ligne ?', a: "Sur la page de connexion de bmo.com, cliquez sur <strong>« Mot de passe oublié »</strong>. Vous serez guidé pour réinitialiser votre mot de passe via votre numéro de carte de débit et votre question de sécurité, ou un code envoyé par SMS." },
-          { q: 'Qu\'est-ce que le Coach Crédit de BMO ?', a: "Lancée en novembre 2025, la fonctionnalité <strong>Coach Crédit BMO</strong> permet aux clients de surveiller leur cote de crédit, de comprendre les facteurs qui l'influencent et de recevoir des conseils personnalisés pour l'améliorer — sans affecter leur score de crédit." },
+          { q: 'Qu\'est-ce que le Coach Crédit de BMO ?', a: "Lancée en novembre 2025, la fonctionnalité <strong>Coach Crédit BMO</strong> permet aux clients de surveiller leur cote de crédit, de comprendre les facteurs qui l'influencent et de recevoir des conseils personnalisés pour l'améliorer - sans affecter leur score de crédit." },
           { q: 'Puis-je accéder aux services bancaires BMO en ligne depuis l\'étranger ?', a: "L'accès aux services bancaires numériques de BMO depuis l'extérieur du Canada peut être limité dans certains cas. BMO recommande de configurer la vérification en deux étapes avant de voyager." },
         ]
       },
 
       { type: 'heading', content: '10. En résumé : pourquoi choisir BMO pour ses services en ligne', id: 'conclusion' },
-      { type: 'text', content: "Les <strong>services bancaires en ligne de BMO Banque de Montréal</strong> représentent aujourd'hui l'un des écosystèmes numériques bancaires les plus complets et les plus sécurisés au Canada. Classée première par EMARKETER en 2025, BMO n'a pas simplement digitalisé ses services traditionnels — elle a repensé l'ensemble de l'expérience client autour du mobile, de l'instantané et de la sécurité." },
-      { type: 'text', content: "Que vous souhaitiez <strong>ouvrir un compte en quelques minutes</strong>, payer vos factures depuis votre canapé, envoyer un virement Interac en cinq secondes, surveiller votre cote de crédit avec Coach Crédit, ou encore déposer un chèque par simple photo, BMO met à disposition une boîte à outils financière complète — accessible 24h/24, 7j/7, depuis n'importe quel appareil." },
+      { type: 'text', content: "Les <strong>services bancaires en ligne de BMO Banque de Montréal</strong> représentent aujourd'hui l'un des écosystèmes numériques bancaires les plus complets et les plus sécurisés au Canada. Classée première par EMARKETER en 2025, BMO n'a pas simplement digitalisé ses services traditionnels - elle a repensé l'ensemble de l'expérience client autour du mobile, de l'instantané et de la sécurité." },
+      { type: 'text', content: "Que vous souhaitiez <strong>ouvrir un compte en quelques minutes</strong>, payer vos factures depuis votre canapé, envoyer un virement Interac en cinq secondes, surveiller votre cote de crédit avec Coach Crédit, ou encore déposer un chèque par simple photo, BMO met à disposition une boîte à outils financière complète - accessible 24h/24, 7j/7, depuis n'importe quel appareil." },
       { type: 'text', content: "Pour les nouveaux arrivants au Canada, les étudiants étrangers et les professionnels en mobilité internationale, la plateforme numérique de BMO représente également un atout logistique considérable : la possibilité d'ouvrir un compte <em>avant même d'atterrir</em> au Canada élimine l'une des frictions majeures de l'installation dans un nouveau pays." },
 
       { type: 'disclaimer', content: "<strong>📌 Ressources officielles BMO :</strong><br/>• Portail principal : <a href=\"https://www.bmo.com/fr-ca/principal/particuliers/\" target=\"_blank\" rel=\"noopener\">bmo.com – Particuliers</a><br/>• Services numériques : <a href=\"https://www.bmo.com/fr-ca/principal/particuliers/vos-operations-bancaires/services-bancaires-numeriques/\" target=\"_blank\" rel=\"noopener\">bmo.com – Services bancaires numériques</a><br/>• Centre de sécurité : <a href=\"https://www.bmo.com/fr-ca/securite\" target=\"_blank\" rel=\"noopener\">bmo.com/securite</a><br/>• Service client : <strong>1-877-225-5266</strong>" },
@@ -228,7 +228,7 @@ export const articles = [
       { id: 'faq', label: 'FAQ' },
     ],
     sections: [
-      { type: 'intro', content: "Le guide complet étape par étape : documents, états recommandés, EIN, compte bancaire US, Stripe, conformité annuelle — sans visa, sans déplacement, 100% en ligne." },
+      { type: 'intro', content: "Le guide complet étape par étape : documents, états recommandés, EIN, compte bancaire US, Stripe, conformité annuelle - sans visa, sans déplacement, 100% en ligne." },
 
       {
         type: 'stats-grid', items: [
@@ -243,24 +243,24 @@ export const articles = [
 
       {
         type: 'key-points', items: [
-          'Tout non-résident peut légalement posséder une LLC américaine — aucun visa, SSN ou associé américain n\'est requis',
+          'Tout non-résident peut légalement posséder une LLC américaine - aucun visa, SSN ou associé américain n\'est requis',
           'Wyoming et Delaware sont les états les plus avantageux pour les entrepreneurs africains non-résidents',
           'Un EIN (numéro fiscal fédéral) s\'obtient sans SSN via formulaire SS-4 ou directement via doola',
           'La création complète prend entre 1 et 4 semaines selon l\'état choisi',
           'Avec une LLC US + EIN, vous pouvez activer Stripe, PayPal Business, Wise Business, Mercury sans être aux USA',
-          'La LLC à un seul associé étranger (single-member) est considérée comme "disregarded entity" par l\'IRS — pas d\'impôt US si aucun revenu n\'est généré aux États-Unis',
+          'La LLC à un seul associé étranger (single-member) est considérée comme "disregarded entity" par l\'IRS - pas d\'impôt US si aucun revenu n\'est généré aux États-Unis',
           'doola gère l\'intégralité du processus : formation, registered agent, EIN, bookkeeping et filings annuels',
-          'Non-respect des obligations annuelles = dissolution administrative et amendes — ne négligez pas la conformité'
+          'Non-respect des obligations annuelles = dissolution administrative et amendes - ne négligez pas la conformité'
         ]
       },
 
       { type: 'heading', content: '1. Pourquoi un entrepreneur africain crée-t-il une LLC aux USA ?', id: 'pourquoi' },
       { type: 'text', content: "La question revient constamment dans les forums d'entrepreneurs africains, les groupes WhatsApp de freelances, les communautés e-commerce et les cercles de créateurs de contenu : <strong>comment toucher des paiements internationaux sans être bloqué par les restrictions locales ?</strong> La réponse, depuis plusieurs années, se précise autour d'une structure juridique simple et accessible : la <strong>LLC américaine</strong>." },
-      { type: 'text', content: "La LLC (<em>Limited Liability Company</em>) est l'équivalent américain d'une SARL française ou d'une EURL — une société à responsabilité limitée. Mais contrairement aux structures africaines locales, une LLC américaine vous ouvre instantanément les portes de l'économie numérique mondiale : Stripe, Shopify Payments, PayPal Business, Amazon, Google AdSense business, Airbnb host payouts, et bien d'autres." },
+      { type: 'text', content: "La LLC (<em>Limited Liability Company</em>) est l'équivalent américain d'une SARL française ou d'une EURL - une société à responsabilité limitée. Mais contrairement aux structures africaines locales, une LLC américaine vous ouvre instantanément les portes de l'économie numérique mondiale : Stripe, Shopify Payments, PayPal Business, Amazon, Google AdSense business, Airbnb host payouts, et bien d'autres." },
 
       { type: 'heading', content: '2. Est-ce légal ? Ce que dit la loi américaine', id: 'legal' },
       { type: 'text', content: "Oui, c'est 100% légal. Contrairement à une idée reçue, les États-Unis n'exigent pas que vous soyez citoyen ou résident pour posséder une entreprise sur leur sol. Mieux encore, ils encouragent l'investissement étranger." },
-      { type: 'text', content: "Le concept de <strong>Single-Member LLC</strong> pour les non-résidents est particulièrement puissant : l'IRS (le fisc américain) considère votre société comme une « disregarded entity » (entité transparente). Cela signifie que si vous travaillez depuis l'Afrique, sans employés ni bureaux physiques aux USA, vos revenus ne sont pas imposables aux États-Unis (sous réserve de respecter certaines conditions de non-connexion avec un commerce américain — ETBUS)." },
+      { type: 'text', content: "Le concept de <strong>Single-Member LLC</strong> pour les non-résidents est particulièrement puissant : l'IRS (le fisc américain) considère votre société comme une « disregarded entity » (entité transparente). Cela signifie que si vous travaillez depuis l'Afrique, sans employés ni bureaux physiques aux USA, vos revenus ne sont pas imposables aux États-Unis (sous réserve de respecter certaines conditions de non-connexion avec un commerce américain - ETBUS)." },
 
       { type: 'heading', content: '3. Wyoming vs Delaware : quel état choisir ?', id: 'etat' },
       {
@@ -349,7 +349,7 @@ export const articles = [
       { type: 'text', content: "<strong>Plan d'amélioration :</strong><br/>• Si votre scalabilité est sous 80% : Automatisez vos processus avec Make et l'IA.<br/>• Si votre conformité est sous 90% : Souscrivez au plan 'Total Compliance' de doola.<br/>• Si votre liberté de paiement est totale : Activez Stripe dès aujourd'hui." },
       { type: 'text', content: "Si vos scores globaux sont supérieurs à 80%, vous n'avez plus aucune excuse pour ne pas lancer votre structure américaine ce mois-ci." },
 
-      { type: 'heading', content: 'FAQ — Questions fréquentes (Version Étendue)', id: 'faq' },
+      { type: 'heading', content: 'FAQ - Questions fréquentes (Version Étendue)', id: 'faq' },
       {
         type: 'faq-rich', items: [
           { q: 'Un Africain peut-il légalement créer une LLC aux États-Unis ?', a: "Oui. La loi américaine autorise tout non-résident étranger à créer et posséder une LLC aux États-Unis. Aucun visa, aucune présence physique et aucun associé américain ne sont requis." },
@@ -407,10 +407,10 @@ export const articles = [
       { id: 'exemple', label: 'Exemple concret : SaaS de génération de bio Instagram' },
       { id: 'erreurs', label: 'Les 6 erreurs classiques des débutants' },
       { id: 'monetisation', label: 'Monétiser son SaaS : les 3 modèles qui fonctionnent' },
-      { id: 'faq', label: 'FAQ — Questions fréquentes' },
+      { id: 'faq', label: 'FAQ - Questions fréquentes' },
     ],
     sections: [
-      { type: 'intro', content: 'En 2025, Andrej Karpathy — l\'un des cofondateurs d\'OpenAI — a inventé le terme "Vibe Coding" dans un tweet. En quelques mois, le concept a révolutionné la façon dont les entrepreneurs, créateurs et marketeurs créent des logiciels. Plus besoin de maîtriser Python, React ou SQL. Il suffit de "vibe" avec l\'IA — de lui expliquer ce que vous voulez en langage naturel — et elle génère le code.' },
+      { type: 'intro', content: 'En 2025, Andrej Karpathy - l\'un des cofondateurs d\'OpenAI - a inventé le terme "Vibe Coding" dans un tweet. En quelques mois, le concept a révolutionné la façon dont les entrepreneurs, créateurs et marketeurs créent des logiciels. Plus besoin de maîtriser Python, React ou SQL. Il suffit de "vibe" avec l\'IA - de lui expliquer ce que vous voulez en langage naturel - et elle génère le code.' },
 
       { type: 'key-points', items: [
         'Le Vibe Coding n\'est pas du No-Code : vous obtenez du vrai code que vous possédez à 100%',
@@ -418,13 +418,13 @@ export const articles = [
         'Un SaaS simple peut être créé en 1 à 3 jours avec le bon workflow',
         'La pensée logique est plus importante que la maîtrise d\'un langage de programmation',
         'Le Vibe Coding est particulièrement adapté aux MVP (versions minimales de produit)',
-        'CommentSticker — mon propre SaaS — a été créé à 90% avec cette méthode',
+        'CommentSticker - mon propre SaaS - a été créé à 90% avec cette méthode',
         'Les erreurs de l\'IA se corrigent en décrivant le problème, pas en comprenant le code',
         'Le déploiement peut être automatisé via Vercel ou Netlify en un seul clic',
       ]},
 
       { type: 'heading', content: '1. Qu\'est-ce que le Vibe Coding exactement ?', id: 'definition' },
-      { type: 'text', content: 'Le Vibe Coding, c\'est l\'art de <strong>converser avec l\'intelligence artificielle pour créer des logiciels</strong>. Vous décrivez ce que vous voulez — en français, en langage naturel, sans jargon technique — et l\'IA génère le code correspondant. Vous testez. L\'IA corrige. Vous itérez.' },
+      { type: 'text', content: 'Le Vibe Coding, c\'est l\'art de <strong>converser avec l\'intelligence artificielle pour créer des logiciels</strong>. Vous décrivez ce que vous voulez - en français, en langage naturel, sans jargon technique - et l\'IA génère le code correspondant. Vous testez. L\'IA corrige. Vous itérez.' },
       { type: 'text', content: 'Ce qui change fondamentalement, c\'est votre rôle. Vous n\'êtes plus un <em>développeur</em> (celui qui écrit du code). Vous devenez un <em>architecte</em> (celui qui décide ce que le logiciel doit faire). L\'IA est votre développeur full-stack disponible 24h/24, qui ne prend jamais de vacances et qui code 10x plus vite qu\'un humain.' },
       { type: 'stats-grid', items: [
         { value: '10×', label: 'Plus rapide qu\'un développeur junior sur un MVP simple' },
@@ -446,12 +446,12 @@ export const articles = [
 
       { type: 'heading', content: '3. Les meilleurs outils Vibe Coding en 2026', id: 'outils' },
       { type: 'list', items: [
-        '<strong>Cursor</strong> — L\'éditeur de code IA le plus puissant. Interface familière (basée sur VS Code). Parfait pour les projets complexes avec plusieurs fichiers. Plan gratuit disponible, Pro à 20$/mois. <em>Mon outil principal.</em>',
-        '<strong>Bolt.new (par StackBlitz)</strong> — Idéal pour démarrer un projet from scratch dans le navigateur. Génère une app complète en quelques secondes. Parfait pour les débutants absolus.',
-        '<strong>Claude (Anthropic)</strong> — Pas un éditeur de code, mais le meilleur "pair programmer" pour expliquer une architecture, déboguer, et générer des composants complexes. Je l\'utilise en combinaison avec Cursor.',
-        '<strong>Windsurf (ex-Codeium)</strong> — Alternative sérieuse à Cursor. Meilleur sur la gestion de la mémoire contextuelle longue. Plan gratuit généreux.',
-        '<strong>v0 (par Vercel)</strong> — Spécialisé dans la génération d\'interfaces UI avec React et Tailwind. Parfait pour créer les pages rapidement.',
-        '<strong>Replit AI</strong> — Environnement cloud complet avec IA. Idéal si vous n\'avez pas un PC puissant. Le déploiement est intégré.',
+        '<strong>Cursor</strong> - L\'éditeur de code IA le plus puissant. Interface familière (basée sur VS Code). Parfait pour les projets complexes avec plusieurs fichiers. Plan gratuit disponible, Pro à 20$/mois. <em>Mon outil principal.</em>',
+        '<strong>Bolt.new (par StackBlitz)</strong> - Idéal pour démarrer un projet from scratch dans le navigateur. Génère une app complète en quelques secondes. Parfait pour les débutants absolus.',
+        '<strong>Claude (Anthropic)</strong> - Pas un éditeur de code, mais le meilleur "pair programmer" pour expliquer une architecture, déboguer, et générer des composants complexes. Je l\'utilise en combinaison avec Cursor.',
+        '<strong>Windsurf (ex-Codeium)</strong> - Alternative sérieuse à Cursor. Meilleur sur la gestion de la mémoire contextuelle longue. Plan gratuit généreux.',
+        '<strong>v0 (par Vercel)</strong> - Spécialisé dans la génération d\'interfaces UI avec React et Tailwind. Parfait pour créer les pages rapidement.',
+        '<strong>Replit AI</strong> - Environnement cloud complet avec IA. Idéal si vous n\'avez pas un PC puissant. Le déploiement est intégré.',
       ]},
 
       { type: 'heading', content: '4. Le mindset de l\'architecte', id: 'mindset' },
@@ -460,12 +460,12 @@ export const articles = [
 
       { type: 'heading', content: '5. Le workflow complet : de l\'idée au SaaS déployé', id: 'workflow' },
       { type: 'pros', items: [
-        '<strong>Phase 1 — Spécification (30 min) :</strong> Rédigez un "PRD" (Product Requirements Document) en français. Listez les fonctionnalités, les pages, les interactions utilisateur. Plus vous êtes précis, plus l\'IA produira un résultat proche de votre vision.',
-        '<strong>Phase 2 — Architecture (1h) :</strong> Demandez à Claude ou ChatGPT de vous proposer une stack technique adaptée à votre projet (ex: "React + Node.js + Supabase pour une app de gestion de leads"). Validez ou ajustez.',
-        '<strong>Phase 3 — Génération initiale (2-4h) :</strong> Dans Cursor ou Bolt, collez votre PRD et demandez à l\'IA de générer la structure complète du projet. Pages, composants, logique backend. Attendez-vous à 70-80% de fonctionnel.',
-        '<strong>Phase 4 — Itération et débogage (2-4h) :</strong> Testez chaque fonctionnalité. Quand quelque chose ne fonctionne pas, décrivez le bug à l\'IA en termes clairs ("Le bouton Submit ne déclenche pas l\'envoi d\'email"). L\'IA corrige.',
-        '<strong>Phase 5 — Design et UX (1-2h) :</strong> Utilisez v0.dev pour générer des composants UI modernes. Intégrez Tailwind CSS pour le style. L\'IA peut transformer une interface basique en design professionnel.',
-        '<strong>Phase 6 — Déploiement (30 min) :</strong> Connectez votre repo GitHub à Vercel. Chaque push sur `main` déploie automatiquement votre nouvelle version. Nom de domaine configurable en 5 minutes.',
+        '<strong>Phase 1 - Spécification (30 min) :</strong> Rédigez un "PRD" (Product Requirements Document) en français. Listez les fonctionnalités, les pages, les interactions utilisateur. Plus vous êtes précis, plus l\'IA produira un résultat proche de votre vision.',
+        '<strong>Phase 2 - Architecture (1h) :</strong> Demandez à Claude ou ChatGPT de vous proposer une stack technique adaptée à votre projet (ex: "React + Node.js + Supabase pour une app de gestion de leads"). Validez ou ajustez.',
+        '<strong>Phase 3 - Génération initiale (2-4h) :</strong> Dans Cursor ou Bolt, collez votre PRD et demandez à l\'IA de générer la structure complète du projet. Pages, composants, logique backend. Attendez-vous à 70-80% de fonctionnel.',
+        '<strong>Phase 4 - Itération et débogage (2-4h) :</strong> Testez chaque fonctionnalité. Quand quelque chose ne fonctionne pas, décrivez le bug à l\'IA en termes clairs ("Le bouton Submit ne déclenche pas l\'envoi d\'email"). L\'IA corrige.',
+        '<strong>Phase 5 - Design et UX (1-2h) :</strong> Utilisez v0.dev pour générer des composants UI modernes. Intégrez Tailwind CSS pour le style. L\'IA peut transformer une interface basique en design professionnel.',
+        '<strong>Phase 6 - Déploiement (30 min) :</strong> Connectez votre repo GitHub à Vercel. Chaque push sur `main` déploie automatiquement votre nouvelle version. Nom de domaine configurable en 5 minutes.',
       ]},
 
       { type: 'heading', content: '6. Exemple concret : SaaS de génération de bio Instagram', id: 'exemple' },
@@ -538,25 +538,25 @@ export const articles = [
       { id: 'exemples', label: '8 prompts VEO testés et commentés' },
       { id: 'stack', label: 'La stack complète : VEO + ElevenLabs + CapCut' },
       { id: 'erreurs', label: 'Les 5 erreurs classiques et comment les éviter' },
-      { id: 'faq', label: 'FAQ — Questions fréquentes' },
+      { id: 'faq', label: 'FAQ - Questions fréquentes' },
     ],
     sections: [
-      { type: 'intro', content: 'Google VEO 3 est en 2026 l\'outil de génération vidéo IA le plus impressionnant pour les créateurs de contenu commercial. Sa capacité à générer du son et de la vidéo simultanément — une première dans l\'industrie — change fondamentalement la façon dont on produit des publicités. Ce guide est basé sur mes propres tests pour des clients e-commerce et des marques africaines.' },
+      { type: 'intro', content: 'Google VEO 3 est en 2026 l\'outil de génération vidéo IA le plus impressionnant pour les créateurs de contenu commercial. Sa capacité à générer du son et de la vidéo simultanément - une première dans l\'industrie - change fondamentalement la façon dont on produit des publicités. Ce guide est basé sur mes propres tests pour des clients e-commerce et des marques africaines.' },
 
       { type: 'key-points', items: [
-        'VEO 3 est le seul outil IA à générer son et vidéo simultanément — bruits ambiants, voix, musique',
+        'VEO 3 est le seul outil IA à générer son et vidéo simultanément - bruits ambiants, voix, musique',
         'La qualité photoréaliste de VEO est optimale pour les publicités produit e-commerce',
         'Accessible via Google One AI Premium (30$/mois) ou VideoFX (accès sur liste d\'attente)',
         'Les clips sont limités à ~8 secondes, mais c\'est suffisant pour 80% des publicités sociales',
         'La méthode "Neuronal Prompting" (caméra + action + éclairage + émotion) est la clé du succès',
-        'VEO ne remplace pas le montage — il fournit les clips bruts à assembler dans CapCut ou Premiere',
+        'VEO ne remplace pas le montage - il fournit les clips bruts à assembler dans CapCut ou Premiere',
         'Temps de génération moyen : 30 secondes à 2 minutes selon la complexité du prompt',
       ]},
 
       { type: 'heading', content: '1. Google VEO : pourquoi c\'est différent', id: 'intro' },
-      { type: 'text', content: 'VEO (Video Experience with Optimized outputs) est le modèle de génération vidéo de Google DeepMind. Sa version 3, lancée fin 2025, introduit une fonctionnalité que personne n\'avait encore réussie : la <strong>génération audio-vidéo synchronisée</strong>. Quand vous demandez à VEO de générer une publicité pour un flacon de parfum avec un bruit de vaporisation et une ambiance musicale douce, vous obtenez exactement ça — sans post-production audio.' },
+      { type: 'text', content: 'VEO (Video Experience with Optimized outputs) est le modèle de génération vidéo de Google DeepMind. Sa version 3, lancée fin 2025, introduit une fonctionnalité que personne n\'avait encore réussie : la <strong>génération audio-vidéo synchronisée</strong>. Quand vous demandez à VEO de générer une publicité pour un flacon de parfum avec un bruit de vaporisation et une ambiance musicale douce, vous obtenez exactement ça - sans post-production audio.' },
       { type: 'stats-grid', items: [
-        { value: '8s', label: 'Durée maximale par clip généré — idéal pour Reels et TikTok' },
+        { value: '8s', label: 'Durée maximale par clip généré - idéal pour Reels et TikTok' },
         { value: '4K', label: 'Résolution maximale disponible sur VEO 3' },
         { value: '30s', label: 'Temps de génération minimum pour un clip simple' },
         { value: '1er', label: 'Outil IA à générer son + vidéo simultanément sur le marché commercial' },
@@ -574,22 +574,22 @@ export const articles = [
       { type: 'heading', content: '3. Anatomie d\'un prompt VEO parfait', id: 'anatomie' },
       { type: 'text', content: 'La qualité d\'une vidéo VEO est directement proportionnelle à la précision de votre prompt. J\'ai développé la méthode <strong>"Neuronal Prompting"</strong> après des dizaines d\'heures de tests : elle décompose le prompt en 5 couches séquentielles.' },
       { type: 'pros', items: [
-        '<strong>Couche 1 — Sujet :</strong> Décrivez précisément l\'objet ou le personnage principal. Pas "un flacon de parfum" mais "un flacon de parfum cylindrique en verre ambré avec un bouchon doré, posé sur une surface en marbre blanc".',
-        '<strong>Couche 2 — Action :</strong> Décrivez le mouvement. Pas "une publicité" mais "le flacon tourne lentement sur lui-même, des gouttelettes d\'eau glissent le long du verre, un jet de parfum s\'échappe du vaporisateur en brume légère".',
-        '<strong>Couche 3 — Caméra :</strong> Précisez le mouvement de caméra. "Travelling lent vers l\'avant", "plan macro tournant", "dolly shot latéral de gauche à droite", "caméra statique, légèrement en contre-plongée".',
-        '<strong>Couche 4 — Éclairage :</strong> L\'éclairage fait 50% du réalisme. "Lumière dorée de golden hour venant de la droite", "studio avec fond blanc, éclairage studio trois points", "éclairage cinématique sombre avec reflets métalliques".',
-        '<strong>Couche 5 — Ambiance sonore (optionnel) :</strong> VEO 3 supporte les instructions audio. "Son doux de vaporisation", "musique ambient luxueuse en arrière-plan", "bruit de verre tintant".',
+        '<strong>Couche 1 - Sujet :</strong> Décrivez précisément l\'objet ou le personnage principal. Pas "un flacon de parfum" mais "un flacon de parfum cylindrique en verre ambré avec un bouchon doré, posé sur une surface en marbre blanc".',
+        '<strong>Couche 2 - Action :</strong> Décrivez le mouvement. Pas "une publicité" mais "le flacon tourne lentement sur lui-même, des gouttelettes d\'eau glissent le long du verre, un jet de parfum s\'échappe du vaporisateur en brume légère".',
+        '<strong>Couche 3 - Caméra :</strong> Précisez le mouvement de caméra. "Travelling lent vers l\'avant", "plan macro tournant", "dolly shot latéral de gauche à droite", "caméra statique, légèrement en contre-plongée".',
+        '<strong>Couche 4 - Éclairage :</strong> L\'éclairage fait 50% du réalisme. "Lumière dorée de golden hour venant de la droite", "studio avec fond blanc, éclairage studio trois points", "éclairage cinématique sombre avec reflets métalliques".',
+        '<strong>Couche 5 - Ambiance sonore (optionnel) :</strong> VEO 3 supporte les instructions audio. "Son doux de vaporisation", "musique ambient luxueuse en arrière-plan", "bruit de verre tintant".',
       ]},
 
       { type: 'heading', content: '4. Workflow complet de la pub à la publication', id: 'workflow' },
       { type: 'text', content: 'Voici mon workflow exact pour produire une publicité sociale complète avec VEO en moins de 2 heures :' },
       { type: 'list', items: [
-        '<strong>Étape 1 — Brief client (20 min) :</strong> Obtenez 3-5 photos du produit en haute résolution, les couleurs de marque, le message principal, et la plateforme cible (TikTok, Instagram, YouTube).',
-        '<strong>Étape 2 — Structure de la pub (15 min) :</strong> Découpez votre pub en 3-5 scènes de 3-8 secondes. Une pub de 20 secondes = 3-4 clips VEO.',
-        '<strong>Étape 3 — Génération des clips (30-60 min) :</strong> Générez 2-3 variantes de chaque scène avec des prompts légèrement différents. Gardez les meilleures.',
-        '<strong>Étape 4 — Voix off avec ElevenLabs (15 min) :</strong> Rédigez le script de voix off. Clonez ou choisissez une voix dans ElevenLabs. Générez l\'audio.',
-        '<strong>Étape 5 — Montage CapCut (20 min) :</strong> Assemblez vos clips VEO, ajoutez la voix off ElevenLabs, ajoutez des sous-titres animés, réglez la musique de fond.',
-        '<strong>Étape 6 — Export et publication :</strong> Exportez en 9:16 pour Stories/Reels ou 16:9 pour YouTube. Optimisez la miniature si besoin.',
+        '<strong>Étape 1 - Brief client (20 min) :</strong> Obtenez 3-5 photos du produit en haute résolution, les couleurs de marque, le message principal, et la plateforme cible (TikTok, Instagram, YouTube).',
+        '<strong>Étape 2 - Structure de la pub (15 min) :</strong> Découpez votre pub en 3-5 scènes de 3-8 secondes. Une pub de 20 secondes = 3-4 clips VEO.',
+        '<strong>Étape 3 - Génération des clips (30-60 min) :</strong> Générez 2-3 variantes de chaque scène avec des prompts légèrement différents. Gardez les meilleures.',
+        '<strong>Étape 4 - Voix off avec ElevenLabs (15 min) :</strong> Rédigez le script de voix off. Clonez ou choisissez une voix dans ElevenLabs. Générez l\'audio.',
+        '<strong>Étape 5 - Montage CapCut (20 min) :</strong> Assemblez vos clips VEO, ajoutez la voix off ElevenLabs, ajoutez des sous-titres animés, réglez la musique de fond.',
+        '<strong>Étape 6 - Export et publication :</strong> Exportez en 9:16 pour Stories/Reels ou 16:9 pour YouTube. Optimisez la miniature si besoin.',
       ]},
 
       { type: 'heading', content: '5. 8 prompts VEO testés et commentés', id: 'exemples' },
@@ -607,10 +607,10 @@ export const articles = [
       { type: 'heading', content: '6. La stack complète : VEO + ElevenLabs + CapCut', id: 'stack' },
       { type: 'text', content: 'VEO seul ne suffit pas pour une publicité complète. Voici la stack que j\'utilise pour produire des contenus professionnels à moins de 35$/mois :' },
       { type: 'list', items: [
-        '<strong>Google VEO (via Google One AI) — 30$/mois :</strong> Génération des clips vidéo produit. C\'est la fondation de la stack.',
-        '<strong>ElevenLabs (plan Starter) — 5$/mois :</strong> Voix off réaliste en français, wolof, anglais. Clone de la voix d\'une marque possible.',
-        '<strong>CapCut Desktop — Gratuit :</strong> Montage final, sous-titres automatiques, transitions, musique de fond libre de droits.',
-        '<strong>Canva — Gratuit/Pro :</strong> Création de miniatures, visuels statiques complémentaires, stories textuelles.',
+        '<strong>Google VEO (via Google One AI) - 30$/mois :</strong> Génération des clips vidéo produit. C\'est la fondation de la stack.',
+        '<strong>ElevenLabs (plan Starter) - 5$/mois :</strong> Voix off réaliste en français, wolof, anglais. Clone de la voix d\'une marque possible.',
+        '<strong>CapCut Desktop - Gratuit :</strong> Montage final, sous-titres automatiques, transitions, musique de fond libre de droits.',
+        '<strong>Canva - Gratuit/Pro :</strong> Création de miniatures, visuels statiques complémentaires, stories textuelles.',
         '<strong>Total : ~35$/mois</strong> pour une stack professionnelle qui concurrence des productions à 1 500$.',
       ]},
 
@@ -620,13 +620,13 @@ export const articles = [
         '<strong>Trop de personnages humains :</strong> VEO gère mal les visages sur de longues durées et les mains restent un point faible. Centrez vos publicités sur les produits, pas les personnes.',
         '<strong>Demander du texte dans la vidéo :</strong> Les modèles IA restent faibles pour générer du texte lisible dans une image. Ajoutez les textes et slogans en post-production avec CapCut.',
         '<strong>Générer une seule variante :</strong> Générez toujours 3+ variantes du même clip. La première tentative est rarement la meilleure.',
-        '<strong>Ignorer l\'aspect sonore :</strong> VEO peut générer du son — utilisez-le. Spécifiez les sons attendus dans votre prompt pour des résultats cohérents.',
+        '<strong>Ignorer l\'aspect sonore :</strong> VEO peut générer du son - utilisez-le. Spécifiez les sons attendus dans votre prompt pour des résultats cohérents.',
       ]},
 
       { type: 'faq-rich', items: [
         { q: 'Peut-on utiliser les vidéos VEO pour des publicités commerciales ?', a: 'Oui. Google autorise l\'usage commercial des vidéos générées via ses services, sous réserve de respecter les conditions d\'utilisation (pas de contenu trompeur, pas d\'utilisation pour des deepfakes d\'individus réels sans consentement). Vérifiez les CGU à jour avant une campagne majeure.' },
         { q: 'VEO fonctionne-t-il bien pour les produits africains (artisanat, textiles) ?', a: 'Très bien pour les textures et matières (tissus wax, bois sculptés, poteries). Les éclairages dorés chauds rendent particulièrement bien les tons ocre et terre africains. Spécifiez "lumière naturelle africaine dorée" ou "lumière chaude équatoriale" dans vos prompts pour de meilleurs résultats.' },
-        { q: 'Quelle est la différence entre VEO et Sora pour les publicités ?', a: 'VEO est optimisé pour les clips courts photoréalistes avec son intégré — parfait pour les publicités produit. Sora excelle sur les séquences narratives longues et les mouvements de caméra cinématiques. Pour la publicité e-commerce standard de 5-15 secondes, VEO gagne.' },
+        { q: 'Quelle est la différence entre VEO et Sora pour les publicités ?', a: 'VEO est optimisé pour les clips courts photoréalistes avec son intégré - parfait pour les publicités produit. Sora excelle sur les séquences narratives longues et les mouvements de caméra cinématiques. Pour la publicité e-commerce standard de 5-15 secondes, VEO gagne.' },
         { q: 'Comment accéder à VEO depuis l\'Afrique sans carte internationale ?', a: 'Google One AI Premium est accessible depuis la plupart des pays africains. Le paiement peut être effectué via Google Play avec un compte Google africain lié à un moyen de paiement local (carte Visa prépayée, Wise, ou carte bancaire classique). VideoFX (gratuit, liste d\'attente) est universel.' },
       ]},
 
@@ -665,20 +665,20 @@ export const articles = [
       { id: 'fiscalite', label: 'Fiscalité et obligations comptables pour non-résidents' },
       { id: 'couts', label: 'Coûts réels : création, maintenance, taxes' },
       { id: 'erreurs', label: 'Les 5 erreurs fatales à éviter' },
-      { id: 'faq', label: 'FAQ — Questions fréquentes' },
+      { id: 'faq', label: 'FAQ - Questions fréquentes' },
     ],
     sections: [
-      { type: 'intro', content: 'Vous avez un business digital, une formation en ligne, ou un service freelance — mais Stripe refuse votre inscription parce que vous êtes au Cameroun, au Sénégal ou en Côte d\'Ivoire. Ce n\'est pas une fatalité. Des milliers d\'entrepreneurs africains ont résolu ce problème en créant une Ltd au Royaume-Uni. Ce guide vous explique tout, de A à Z.' },
+      { type: 'intro', content: 'Vous avez un business digital, une formation en ligne, ou un service freelance - mais Stripe refuse votre inscription parce que vous êtes au Cameroun, au Sénégal ou en Côte d\'Ivoire. Ce n\'est pas une fatalité. Des milliers d\'entrepreneurs africains ont résolu ce problème en créant une Ltd au Royaume-Uni. Ce guide vous explique tout, de A à Z.' },
 
       { type: 'key-points', items: [
         'Une Ltd britannique se crée en ligne en moins de 24h pour un coût de 12£ à 50£',
         'Le Royaume-Uni supporte Stripe, PayPal, Wise, Revolut Business et toutes les grandes plateformes',
-        'Aucune obligation de résider au UK — vous pouvez vivre en Afrique et diriger une Ltd britannique',
+        'Aucune obligation de résider au UK - vous pouvez vivre en Afrique et diriger une Ltd britannique',
         'Une adresse de service virtuelle au UK est suffisante (coût : 5£ à 15£/mois)',
         'Les bénéfices rapatriés en Afrique ne sont pas imposés une deuxième fois si votre pays applique les conventions fiscales',
         'La comptabilité annuelle obligatoire peut être externalisée pour 200£ à 500£/an',
         'Une Ltd peut ouvrir un compte chez Wise Business, Monzo Business ou Revolut sans se déplacer',
-        'CommentSticker et Sanda Vibe Code utilisent ce modèle — c\'est une stratégie éprouvée',
+        'CommentSticker et Sanda Vibe Code utilisent ce modèle - c\'est une stratégie éprouvée',
       ]},
 
       { type: 'heading', content: '1. Pourquoi le Royaume-Uni plutôt qu\'une LLC américaine ?', id: 'pourquoi-uk' },
@@ -700,23 +700,23 @@ export const articles = [
 
       { type: 'heading', content: '3. Ce dont vous avez besoin avant de commencer', id: 'prerequis' },
       { type: 'list', items: [
-        '<strong>Un passeport valide</strong> — c\'est le seul document d\'identité accepté par Companies House pour les directeurs non-résidents',
-        '<strong>Une adresse email professionnelle</strong> — elle sera rattachée au compte Companies House',
-        '<strong>Un numéro de téléphone valide</strong> — pour la vérification d\'identité',
-        '<strong>Une adresse de service au UK</strong> — vous ne pouvez pas utiliser une adresse africaine comme adresse enregistrée. Des services comme 1st Formations (partenaire de Sanda Vibe Code) fournissent une adresse virtuelle légale pour 5£ à 15£/mois',
-        '<strong>Votre code SIC</strong> — le Standard Industrial Classification code qui décrit votre activité. Exemple : 62012 (développement logiciel), 74909 (conseil), 85590 (formation). Cherchez sur le site de Companies House',
-        '<strong>Un moyen de paiement international</strong> — carte Visa ou Mastercard pour payer les frais de création (12£)',
+        '<strong>Un passeport valide</strong> - c\'est le seul document d\'identité accepté par Companies House pour les directeurs non-résidents',
+        '<strong>Une adresse email professionnelle</strong> - elle sera rattachée au compte Companies House',
+        '<strong>Un numéro de téléphone valide</strong> - pour la vérification d\'identité',
+        '<strong>Une adresse de service au UK</strong> - vous ne pouvez pas utiliser une adresse africaine comme adresse enregistrée. Des services comme 1st Formations (partenaire de Sanda Vibe Code) fournissent une adresse virtuelle légale pour 5£ à 15£/mois',
+        '<strong>Votre code SIC</strong> - le Standard Industrial Classification code qui décrit votre activité. Exemple : 62012 (développement logiciel), 74909 (conseil), 85590 (formation). Cherchez sur le site de Companies House',
+        '<strong>Un moyen de paiement international</strong> - carte Visa ou Mastercard pour payer les frais de création (12£)',
       ]},
 
       { type: 'heading', content: '4. Les 7 étapes pour créer votre Ltd en ligne', id: 'etapes' },
       { type: 'pros', items: [
-        '<strong>Étape 1 — Choisissez votre nom de société :</strong> Vérifiez la disponibilité sur Companies House Name Checker. Le nom doit se terminer par "Limited" ou "Ltd". Évitez les mots comme "Royal", "Bank" ou "Government" qui nécessitent des autorisations spéciales.',
-        '<strong>Étape 2 — Choisissez un agent d\'enregistrement :</strong> Vous pouvez passer directement par Companies House (12£) ou via un agent comme 1st Formations, Rapid Formations ou Companies Made Simple qui incluent souvent l\'adresse virtuelle dans leurs packs (39£ – 89£).',
-        '<strong>Étape 3 — Remplissez le formulaire IN01 (digitalisé) :</strong> Vous renseignez le nom de la société, l\'adresse enregistrée (l\'adresse virtuelle), les détails du/des directeur(s) et actionnaire(s), et votre code SIC.',
-        '<strong>Étape 4 — Payez les frais :</strong> 12£ via Companies House en direct, ou les frais de l\'agent si vous passez par un intermédiaire. Carte internationale acceptée.',
-        '<strong>Étape 5 — Recevez votre Certificate of Incorporation :</strong> Généralement en 24h par email. Ce document officiel contient votre Company Number — c\'est votre passeport d\'entreprise.',
-        '<strong>Étape 6 — Obtenez votre UTR (Unique Taxpayer Reference) :</strong> HMRC (l\'équivalent britannique du fisc) vous envoie automatiquement votre UTR par courrier à l\'adresse enregistrée, dans les 2 à 4 semaines suivant l\'incorporation.',
-        '<strong>Étape 7 — Ouvrez votre compte bancaire professionnel :</strong> Avec votre Certificate of Incorporation, ouvrez un compte Wise Business ou Revolut Business entièrement en ligne. Ces comptes fournissent un IBAN britannique réel pour recevoir Stripe.',
+        '<strong>Étape 1 - Choisissez votre nom de société :</strong> Vérifiez la disponibilité sur Companies House Name Checker. Le nom doit se terminer par "Limited" ou "Ltd". Évitez les mots comme "Royal", "Bank" ou "Government" qui nécessitent des autorisations spéciales.',
+        '<strong>Étape 2 - Choisissez un agent d\'enregistrement :</strong> Vous pouvez passer directement par Companies House (12£) ou via un agent comme 1st Formations, Rapid Formations ou Companies Made Simple qui incluent souvent l\'adresse virtuelle dans leurs packs (39£ – 89£).',
+        '<strong>Étape 3 - Remplissez le formulaire IN01 (digitalisé) :</strong> Vous renseignez le nom de la société, l\'adresse enregistrée (l\'adresse virtuelle), les détails du/des directeur(s) et actionnaire(s), et votre code SIC.',
+        '<strong>Étape 4 - Payez les frais :</strong> 12£ via Companies House en direct, ou les frais de l\'agent si vous passez par un intermédiaire. Carte internationale acceptée.',
+        '<strong>Étape 5 - Recevez votre Certificate of Incorporation :</strong> Généralement en 24h par email. Ce document officiel contient votre Company Number - c\'est votre passeport d\'entreprise.',
+        '<strong>Étape 6 - Obtenez votre UTR (Unique Taxpayer Reference) :</strong> HMRC (l\'équivalent britannique du fisc) vous envoie automatiquement votre UTR par courrier à l\'adresse enregistrée, dans les 2 à 4 semaines suivant l\'incorporation.',
+        '<strong>Étape 7 - Ouvrez votre compte bancaire professionnel :</strong> Avec votre Certificate of Incorporation, ouvrez un compte Wise Business ou Revolut Business entièrement en ligne. Ces comptes fournissent un IBAN britannique réel pour recevoir Stripe.',
       ]},
 
       { type: 'heading', content: '5. Activer Stripe, PayPal et Wise avec votre Ltd', id: 'stripe' },
@@ -724,7 +724,7 @@ export const articles = [
       { type: 'list', items: [
         '<strong>Stripe :</strong> Allez sur stripe.com → "Créer un compte" → Sélectionnez "Royaume-Uni" → Entrez votre Company Number, votre adresse enregistrée, votre UTR, et liez votre compte Wise Business (IBAN UK). Délai d\'approbation : 1 à 3 jours.',
         '<strong>PayPal Business :</strong> Créez un compte PayPal Business avec l\'email de votre société. Vérifiez le compte avec votre Certificate of Incorporation. Liez votre compte Wise pour les virements.',
-        '<strong>Paddle / LemonSqueezy :</strong> Ces plateformes agissent comme "merchant of record" — elles gèrent la TVA mondiale pour vous. Idéales pour les formations et les SaaS. Elles acceptent les Ltd britanniques sans friction.',
+        '<strong>Paddle / LemonSqueezy :</strong> Ces plateformes agissent comme "merchant of record" - elles gèrent la TVA mondiale pour vous. Idéales pour les formations et les SaaS. Elles acceptent les Ltd britanniques sans friction.',
         '<strong>Gumroad / Teachable / Podia :</strong> Acceptent tous les Ltd britanniques. Connectez Stripe pour les paiements.',
       ]},
 
@@ -738,7 +738,7 @@ export const articles = [
       ]},
 
       { type: 'heading', content: '7. Fiscalité et obligations pour non-résidents', id: 'fiscalite' },
-      { type: 'text', content: 'C\'est le point qui fait peur — à tort. Les règles sont simples si vous n\'avez pas de bureau physique ni d\'employés au UK :' },
+      { type: 'text', content: 'C\'est le point qui fait peur - à tort. Les règles sont simples si vous n\'avez pas de bureau physique ni d\'employés au UK :' },
       { type: 'list', items: [
         '<strong>Corporation Tax :</strong> 19% sur les bénéfices inférieurs à 50,000£ (taux réduit 2026). Si votre Ltd ne fait pas de bénéfices imposables au UK (car vous, le directeur, vivez en Afrique), la double imposition peut être limitée grâce aux conventions fiscales.',
         '<strong>Confirmation Statement :</strong> À remplir chaque année sur Companies House (13£). C\'est votre seule obligation annuelle obligatoire si la société est inactive.',
@@ -819,16 +819,16 @@ export const articles = [
 
       { type: 'key-points', items: [
         'Ces 5 modèles fonctionnent depuis l\'Afrique, l\'Europe ou n\'importe où avec une connexion internet',
-        'Aucun ne nécessite de capital de départ élevé — le plus coûteux démarre à environ 50$/mois',
+        'Aucun ne nécessite de capital de départ élevé - le plus coûteux démarre à environ 50$/mois',
         'Chaque modèle peut générer entre 500$ et 5 000$/mois selon votre niveau d\'implication',
-        'L\'IA amplifie votre productivité — vous faites plus de travail en moins de temps, donc plus de marge',
+        'L\'IA amplifie votre productivité - vous faites plus de travail en moins de temps, donc plus de marge',
         'Les modèles basés sur les services sont les plus rapides à monetiser (premiers revenus en 1-4 semaines)',
         'Les SaaS sont plus lents à démarrer mais les plus scalables à long terme',
         'La combinaison gagnante : commencez par les services, réinvestissez dans un produit',
       ]},
 
       { type: 'heading', content: '1. Agence de sites web et landing pages IA', id: 'modele1' },
-      { type: 'text', content: 'Le modèle le plus accessible. Vous utilisez le Vibe Coding (Cursor, Bolt.new, Framer IA) pour créer des sites web et landing pages professionnelles en quelques heures, que vous vendez à la valeur — pas au temps.' },
+      { type: 'text', content: 'Le modèle le plus accessible. Vous utilisez le Vibe Coding (Cursor, Bolt.new, Framer IA) pour créer des sites web et landing pages professionnelles en quelques heures, que vous vendez à la valeur - pas au temps.' },
       { type: 'text', content: '<strong>Réalité terrain :</strong> Un site web "classique" qui prend 2-3 semaines à un développeur junior peut être créé en Vibe Coding en 3-8 heures. Vous le facturez 300$ à 1 500$ selon la complexité. Marge brute : 80%+.' },
       { type: 'stats-grid', items: [
         { value: '3-8h', label: 'Temps de création d\'un site web professionnel avec Vibe Coding' },
@@ -837,7 +837,7 @@ export const articles = [
         { value: '80%+', label: 'Marge brute après coûts des outils IA' },
       ]},
       { type: 'list', items: [
-        '<strong>Cibles prioritaires :</strong> PME locales (restaurants, salons de beauté, boutiques), entrepreneurs en ligne, ONG, cabinets médicaux — tous ont besoin d\'une présence web mais ont rarement un budget pour une agence traditionnelle.',
+        '<strong>Cibles prioritaires :</strong> PME locales (restaurants, salons de beauté, boutiques), entrepreneurs en ligne, ONG, cabinets médicaux - tous ont besoin d\'une présence web mais ont rarement un budget pour une agence traditionnelle.',
         '<strong>Outils :</strong> Bolt.new ou Cursor (code), Framer IA (site no-code rapide), ChatGPT (copyrighting), Canva (visuels), Vercel (déploiement).',
         '<strong>Comment trouver des clients :</strong> Prospection directe sur LinkedIn/WhatsApp avec un portfolio de 3-5 exemples, groupes Facebook d\'entrepreneurs locaux, bouche-à-oreille.',
       ]},
@@ -856,12 +856,12 @@ export const articles = [
       { type: 'list', items: [
         '<strong>Stack :</strong> Google VEO 3 (clips vidéo) + ElevenLabs (voix off) + CapCut (montage) + Canva (miniature). Coût total : 35$/mois.',
         '<strong>Format de vente :</strong> Pack publicité réseaux sociaux (3-5 clips de 8-15s) : 200-400$. Pack complet campagne (10 clips + montage + voix off) : 500-800$.',
-        '<strong>Marché africain :</strong> Les marques e-commerce africaines (cosmétiques, mode, alimentation) ont besoin de publicités vidéo pour Instagram et TikTok — et le budget est souvent là sans prestataire local compétent.',
+        '<strong>Marché africain :</strong> Les marques e-commerce africaines (cosmétiques, mode, alimentation) ont besoin de publicités vidéo pour Instagram et TikTok - et le budget est souvent là sans prestataire local compétent.',
       ]},
 
       { type: 'heading', content: '4. SaaS créé avec le Vibe Coding', id: 'modele4' },
-      { type: 'text', content: 'Le modèle le plus scalable — et le plus difficile à démarrer. Vous créez un micro-SaaS (outil web avec abonnement) en Vibe Coding. Revenus récurrents passifs une fois le produit validé.' },
-      { type: 'text', content: '<strong>Exemple concret :</strong> CommentSticker — mon propre SaaS, créé en 30 jours avec Cursor et Claude, à 90% en Vibe Coding. Résultat à J30 : 1 200 inscrits, 51 abonnés payants, ~255$ de MRR. À J90 : >1 000$/mois.' },
+      { type: 'text', content: 'Le modèle le plus scalable - et le plus difficile à démarrer. Vous créez un micro-SaaS (outil web avec abonnement) en Vibe Coding. Revenus récurrents passifs une fois le produit validé.' },
+      { type: 'text', content: '<strong>Exemple concret :</strong> CommentSticker - mon propre SaaS, créé en 30 jours avec Cursor et Claude, à 90% en Vibe Coding. Résultat à J30 : 1 200 inscrits, 51 abonnés payants, ~255$ de MRR. À J90 : >1 000$/mois.' },
       { type: 'list', items: [
         '<strong>Comment trouver l\'idée :</strong> Résolvez votre propre problème. Cherchez les "je voudrais un outil qui..." dans les forums, Reddit, groupes Facebook de votre niche.',
         '<strong>Stack recommandée :</strong> React + Supabase + Stripe + Vercel. Coût mensuel : 20-30$/mois pour le démarrage.',
@@ -927,31 +927,31 @@ export const articles = [
       { id: 'faq', label: 'Questions fréquentes' },
     ],
     sections: [
-      { type: 'intro', content: 'Ce texte est un manifeste. Pas un article de blog ordinaire. Je l\'écris avec la conviction que ce que l\'Afrique fera — ou ne fera pas — avec l\'intelligence artificielle dans les cinq prochaines années déterminera son positionnement géopolitique pour le siècle entier. Les enjeux sont trop lourds pour rester silencieux.' },
+      { type: 'intro', content: 'Ce texte est un manifeste. Pas un article de blog ordinaire. Je l\'écris avec la conviction que ce que l\'Afrique fera - ou ne fera pas - avec l\'intelligence artificielle dans les cinq prochaines années déterminera son positionnement géopolitique pour le siècle entier. Les enjeux sont trop lourds pour rester silencieux.' },
 
       { type: 'key-points', items: [
-        'L\'Afrique a raté la révolution industrielle du XIXe siècle et la révolution numérique des années 90 — deux retards qui pèsent encore aujourd\'hui',
-        'La révolution IA se déroule maintenant, en temps réel — la fenêtre pour monter à bord se ferme en 2026-2028',
-        'Le continent africain représente 60% des terres arables mondiales, 30% des ressources naturelles et 1,4 milliard de personnes — des actifs colossaux si on maîtrise l\'IA pour les valoriser',
-        'Les modèles d\'IA actuels sont entraînés sur des données à 95% occidentales — ils portent des biais structurels qui invisibilisent les réalités africaines',
+        'L\'Afrique a raté la révolution industrielle du XIXe siècle et la révolution numérique des années 90 - deux retards qui pèsent encore aujourd\'hui',
+        'La révolution IA se déroule maintenant, en temps réel - la fenêtre pour monter à bord se ferme en 2026-2028',
+        'Le continent africain représente 60% des terres arables mondiales, 30% des ressources naturelles et 1,4 milliard de personnes - des actifs colossaux si on maîtrise l\'IA pour les valoriser',
+        'Les modèles d\'IA actuels sont entraînés sur des données à 95% occidentales - ils portent des biais structurels qui invisibilisent les réalités africaines',
         'Des jeunes Africains créent déjà des startups IA remarquables : Instadeep (Tunisie/Londres), Lelapa AI (Afrique du Sud), Saada (Sénégal)',
-        'L\'IA n\'est pas une menace pour l\'emploi africain si elle est adoptée activement — elle est une opportunité de sauter des étapes de développement',
+        'L\'IA n\'est pas une menace pour l\'emploi africain si elle est adoptée activement - elle est une opportunité de sauter des étapes de développement',
         'Ce livre n\'est pas un manuel technique : c\'est un appel à l\'action pour les décideurs, les jeunes et les entrepreneurs africains',
       ]},
 
       { type: 'heading', content: '1. L\'Afrique et les révolutions industrielles : un historique douloureux', id: 'contexte' },
-      { type: 'text', content: 'L\'histoire économique mondiale peut se lire comme une série de révolutions technologiques. La première révolution industrielle (1760-1840) — vapeur, textile, acier — s\'est jouée en Angleterre et en Europe occidentale, pendant que l\'Afrique était au cœur de la traite négrière. La deuxième (électricité, pétrole, acier de masse, 1870-1914) ? L\'Afrique était colonisée. La troisième révolution — informatique et internet, 1970-2000 — a décollé quand une grande partie du continent subsaharienne n\'avait pas d\'électricité stable ni de connexion internet fiable.' },
-      { type: 'text', content: '<strong>Chaque fois, le retard n\'est pas dû à un manque d\'intelligence ou de ressources africaines — c\'est un problème d\'accès et de contexte géopolitique.</strong> Mais les conséquences se mesurent en décennies de PIB perdu, en dépendance technologique, en fuite des cerveaux. Et voilà que la quatrième révolution — celle de l\'IA — est là. Cette fois, les conditions sont radicalement différentes.' },
+      { type: 'text', content: 'L\'histoire économique mondiale peut se lire comme une série de révolutions technologiques. La première révolution industrielle (1760-1840) - vapeur, textile, acier - s\'est jouée en Angleterre et en Europe occidentale, pendant que l\'Afrique était au cœur de la traite négrière. La deuxième (électricité, pétrole, acier de masse, 1870-1914) ? L\'Afrique était colonisée. La troisième révolution - informatique et internet, 1970-2000 - a décollé quand une grande partie du continent subsaharienne n\'avait pas d\'électricité stable ni de connexion internet fiable.' },
+      { type: 'text', content: '<strong>Chaque fois, le retard n\'est pas dû à un manque d\'intelligence ou de ressources africaines - c\'est un problème d\'accès et de contexte géopolitique.</strong> Mais les conséquences se mesurent en décennies de PIB perdu, en dépendance technologique, en fuite des cerveaux. Et voilà que la quatrième révolution - celle de l\'IA - est là. Cette fois, les conditions sont radicalement différentes.' },
       { type: 'stats-grid', items: [
-        { value: '1re révolution', label: 'Industrielle (vapeur) — Afrique absente, colonisée ou esclave' },
-        { value: '2e révolution', label: 'Électricité & pétrole — Afrique exploitée comme fournisseur de matières' },
-        { value: '3e révolution', label: 'Internet — Afrique sous-équipée, retard de 15-20 ans sur le monde' },
-        { value: '4e révolution', label: 'IA — Afrique PRÉSENTE, mobile-first, 60% de moins de 25 ans' },
+        { value: '1re révolution', label: 'Industrielle (vapeur) - Afrique absente, colonisée ou esclave' },
+        { value: '2e révolution', label: 'Électricité & pétrole - Afrique exploitée comme fournisseur de matières' },
+        { value: '3e révolution', label: 'Internet - Afrique sous-équipée, retard de 15-20 ans sur le monde' },
+        { value: '4e révolution', label: 'IA - Afrique PRÉSENTE, mobile-first, 60% de moins de 25 ans' },
       ]},
 
       { type: 'heading', content: '2. L\'IA : une fenêtre d\'opportunité historique qui se ferme vite', id: 'opportunite' },
-      { type: 'text', content: 'Pour la première fois depuis des siècles, l\'Afrique démarre au même moment que les autres. ChatGPT est sorti en novembre 2022 pour tout le monde — pas avec un retard de 20 ans. Les outils IA (Claude, Gemini, Mistral, Perplexity) sont accessibles depuis Dakar, Abidjan, Douala ou Nairobi avec un simple smartphone et une connexion mobile. <strong>Le champ de jeu n\'a jamais été aussi égal depuis la révolution de l\'imprimerie.</strong>' },
-      { type: 'text', content: 'Mais cette fenêtre ne restera pas ouverte indéfiniment. Les grandes puissances (États-Unis, Chine, UE) investissent massivement dans des infrastructures IA nationales : centres de calcul, modèles souverains, réglementations protectionnistes. Si l\'Afrique ne forme pas ses ingénieurs, ne développe pas ses propres modèles, et n\'intègre pas l\'IA dans ses systèmes éducatifs et économiques dans les 3 à 5 prochaines années, elle se retrouvera à consommer passivement des outils étrangers — comme elle consomme aujourd\'hui des applications dont elle n\'a pas écrit une ligne.' },
+      { type: 'text', content: 'Pour la première fois depuis des siècles, l\'Afrique démarre au même moment que les autres. ChatGPT est sorti en novembre 2022 pour tout le monde - pas avec un retard de 20 ans. Les outils IA (Claude, Gemini, Mistral, Perplexity) sont accessibles depuis Dakar, Abidjan, Douala ou Nairobi avec un simple smartphone et une connexion mobile. <strong>Le champ de jeu n\'a jamais été aussi égal depuis la révolution de l\'imprimerie.</strong>' },
+      { type: 'text', content: 'Mais cette fenêtre ne restera pas ouverte indéfiniment. Les grandes puissances (États-Unis, Chine, UE) investissent massivement dans des infrastructures IA nationales : centres de calcul, modèles souverains, réglementations protectionnistes. Si l\'Afrique ne forme pas ses ingénieurs, ne développe pas ses propres modèles, et n\'intègre pas l\'IA dans ses systèmes éducatifs et économiques dans les 3 à 5 prochaines années, elle se retrouvera à consommer passivement des outils étrangers - comme elle consomme aujourd\'hui des applications dont elle n\'a pas écrit une ligne.' },
       { type: 'table', headers: ['Indicateur', 'Afrique (2026)', 'Chine (2026)', 'États-Unis (2026)'], rows: [
         ['Budget IA gouvernemental annuel', '< 50M$ total continental', '~15 Mds $', '~8 Mds $ (public) + DARPA'],
         ['Ingénieurs IA formés par an', '~5 000 (estimation)', '100 000+', '50 000+'],
@@ -961,41 +961,41 @@ export const articles = [
       ]},
 
       { type: 'heading', content: '3. L\'enjeu de la souveraineté technologique', id: 'souverainete' },
-      { type: 'text', content: 'Nous consommons de l\'IA construite sur des biais occidentaux. ChatGPT, Gemini, Claude — tous ces modèles sont entraînés sur des corpus de textes et d\'images majoritairement en anglais, avec des références culturelles nord-américaines ou européennes. Quand on demande à ces modèles de générer une image "d\'un entrepreneur africain", les résultats sont souvent caricaturaux ou stéréotypés. Quand on leur demande des conseils business adaptés au marché camerounais, ils hallucinent des données ou extrapolent depuis des contextes américains.' },
-      { type: 'text', content: '<strong>Ce n\'est pas de la malveillance — c\'est de la mathématique.</strong> Un modèle reproduit les patterns de ses données d\'entraînement. Si 95% de ces données sont occidentales, les biais le seront aussi. La vraie souveraineté africaine sur l\'IA implique trois niveaux : (1) maîtriser les outils existants pour nos problèmes locaux, (2) contribuer aux corpus de données en langues africaines (wolof, haoussa, yoruba, swahili, etc.), et (3) à terme, développer nos propres modèles entraînés sur nos réalités.' },
+      { type: 'text', content: 'Nous consommons de l\'IA construite sur des biais occidentaux. ChatGPT, Gemini, Claude - tous ces modèles sont entraînés sur des corpus de textes et d\'images majoritairement en anglais, avec des références culturelles nord-américaines ou européennes. Quand on demande à ces modèles de générer une image "d\'un entrepreneur africain", les résultats sont souvent caricaturaux ou stéréotypés. Quand on leur demande des conseils business adaptés au marché camerounais, ils hallucinent des données ou extrapolent depuis des contextes américains.' },
+      { type: 'text', content: '<strong>Ce n\'est pas de la malveillance - c\'est de la mathématique.</strong> Un modèle reproduit les patterns de ses données d\'entraînement. Si 95% de ces données sont occidentales, les biais le seront aussi. La vraie souveraineté africaine sur l\'IA implique trois niveaux : (1) maîtriser les outils existants pour nos problèmes locaux, (2) contribuer aux corpus de données en langues africaines (wolof, haoussa, yoruba, swahili, etc.), et (3) à terme, développer nos propres modèles entraînés sur nos réalités.' },
 
       { type: 'heading', content: '4. Ce que l\'Afrique a que le monde n\'a pas', id: 'avantages' },
       { type: 'text', content: 'Au lieu de se concentrer sur le retard, regardons les avantages structurels africains qui deviennent des atouts exceptionnels à l\'ère de l\'IA :' },
       { type: 'list', items: [
         '<strong>La jeunesse :</strong> L\'Afrique est le continent le plus jeune du monde. 60% de la population a moins de 25 ans. Ces natifs du mobile apprennent les outils IA en quelques heures, sans les freins cognitifs des générations précédentes.',
         '<strong>Le mobile-first :</strong> L\'Afrique a sauté l\'étape du PC fixe. La majorité des Africains accède à internet via smartphone. Cette infrastructure mobile est parfaitement compatible avec les outils IA modernes, accessibles via API ou application web.',
-        '<strong>Les problèmes à résoudre :</strong> L\'agriculture, la santé, l\'éducation, la logistique urbaine — l\'Afrique présente des défis réels et massifs qui peuvent être partiellement résolus par l\'IA. Chaque problème est un marché.',
+        '<strong>Les problèmes à résoudre :</strong> L\'agriculture, la santé, l\'éducation, la logistique urbaine - l\'Afrique présente des défis réels et massifs qui peuvent être partiellement résolus par l\'IA. Chaque problème est un marché.',
         '<strong>Les langues :</strong> Le continent compte 2 000 à 3 000 langues. Celui qui construira les modèles de traduction automatique, de reconnaissance vocale et de génération de contenu en langues africaines détiendra un monopole de fait sur 1,4 milliard de personnes.',
         '<strong>La diaspora :</strong> Des millions d\'Africains de la diaspora travaillent dans les plus grandes entreprises tech mondiales (Google, Meta, OpenAI, DeepMind). Ce pont humain est un atout stratégique immense pour le transfert de compétences.',
       ]},
 
       { type: 'heading', content: '5. Pourquoi j\'ai écrit ce livre', id: 'livre' },
-      { type: 'text', content: 'J\'ai formé plus de 500 entrepreneurs africains à l\'IA. J\'ai vu les mêmes blocages se répéter : la peur de la technologie, le sentiment d\'être en retard, la croyance que "c\'est fait pour les Occidentaux". Et j\'ai aussi vu des éclairs d\'intelligence et de créativité qui m\'ont profondément ému — des femmes entrepreneures sénégalaises automatisant leur gestion de stock avec Make.com, des jeunes Camerounais créant des SaaS avec le Vibe Coding depuis leur téléphone.' },
+      { type: 'text', content: 'J\'ai formé plus de 500 entrepreneurs africains à l\'IA. J\'ai vu les mêmes blocages se répéter : la peur de la technologie, le sentiment d\'être en retard, la croyance que "c\'est fait pour les Occidentaux". Et j\'ai aussi vu des éclairs d\'intelligence et de créativité qui m\'ont profondément ému - des femmes entrepreneures sénégalaises automatisant leur gestion de stock avec Make.com, des jeunes Camerounais créant des SaaS avec le Vibe Coding depuis leur téléphone.' },
       { type: 'text', content: '<strong>Ce livre est un manifeste, pas un manuel.</strong> Il ne vous apprend pas à utiliser ChatGPT étape par étape. Il vous donne les arguments, la vision et l\'urgence pour agir. Il est destiné à trois audiences : les entrepreneurs qui hésitent encore à adopter l\'IA dans leur business, les décideurs politiques qui tardent à inscrire l\'IA dans les curricula scolaires, et la jeunesse africaine qui doute de sa place dans ce monde technologique.' },
       { type: 'stats-grid', items: [
         { value: '500+', label: 'Entrepreneurs africains formés à l\'IA par Oumarou Sanda' },
         { value: '12', label: 'Pays africains représentés dans ses formations (2024-2026)' },
         { value: '3 ans', label: 'De recherche et d\'expérience terrain avant d\'écrire ce livre' },
-        { value: '1', label: 'Message central : l\'IA est notre chance de rattrapage — à saisir maintenant' },
+        { value: '1', label: 'Message central : l\'IA est notre chance de rattrapage - à saisir maintenant' },
       ]},
 
       { type: 'heading', content: '6. Les 5 actions urgentes pour ne pas rater ce train', id: 'actions' },
       { type: 'pros', items: [
-        '<strong>Action 1 — Former votre entourage :</strong> Organisez des sessions de démonstration dans votre cercle (famille, employés, associés). Montrez ce que ChatGPT ou Gemini peuvent faire en 5 minutes. L\'adoption commence par la démystification.',
-        '<strong>Action 2 — Intégrer l\'IA dans votre business dès cette semaine :</strong> Identifiez une tâche répétitive dans votre business (réponse aux emails, rédaction de devis, résumé de documents) et automatisez-la avec l\'IA. Un seul usage concret vaut mille théories.',
-        '<strong>Action 3 — Soutenir les startups IA africaines :</strong> Achetez leurs produits, partagez leur travail, investissez si vous le pouvez. L\'écosystème se construit par la demande locale, pas uniquement par les financements étrangers.',
-        '<strong>Action 4 — Contribuer aux données africaines :</strong> Common Voice (Mozilla), Masakhane, et d\'autres projets collectent des données vocales et textuelles en langues africaines. Y contribuer, c\'est construire les modèles de demain.',
-        '<strong>Action 5 — Interpeller vos élus :</strong> L\'IA doit entrer dans les programmes scolaires africains maintenant. Pas dans 10 ans. Interpellez vos représentants, vos ministres de l\'éducation, vos dirigeants universitaires. La demande politique vient des citoyens.',
+        '<strong>Action 1 - Former votre entourage :</strong> Organisez des sessions de démonstration dans votre cercle (famille, employés, associés). Montrez ce que ChatGPT ou Gemini peuvent faire en 5 minutes. L\'adoption commence par la démystification.',
+        '<strong>Action 2 - Intégrer l\'IA dans votre business dès cette semaine :</strong> Identifiez une tâche répétitive dans votre business (réponse aux emails, rédaction de devis, résumé de documents) et automatisez-la avec l\'IA. Un seul usage concret vaut mille théories.',
+        '<strong>Action 3 - Soutenir les startups IA africaines :</strong> Achetez leurs produits, partagez leur travail, investissez si vous le pouvez. L\'écosystème se construit par la demande locale, pas uniquement par les financements étrangers.',
+        '<strong>Action 4 - Contribuer aux données africaines :</strong> Common Voice (Mozilla), Masakhane, et d\'autres projets collectent des données vocales et textuelles en langues africaines. Y contribuer, c\'est construire les modèles de demain.',
+        '<strong>Action 5 - Interpeller vos élus :</strong> L\'IA doit entrer dans les programmes scolaires africains maintenant. Pas dans 10 ans. Interpellez vos représentants, vos ministres de l\'éducation, vos dirigeants universitaires. La demande politique vient des citoyens.',
       ]},
 
       { type: 'faq-rich', items: [
-        { q: 'L\'IA va-t-elle détruire des emplois en Afrique ?', a: 'Certains emplois d\'exécution seront automatisés, oui. Mais l\'Afrique part d\'un niveau d\'automatisation très bas — le risque net de destruction d\'emplois est plus faible qu\'en Europe ou aux États-Unis. En revanche, l\'IA va créer de nouveaux métiers (prompt engineers, automaticiens IA, formateurs) et démultiplier la productivité des entrepreneurs existants. Le vrai risque, c\'est de ne PAS adopter l\'IA et de devenir dépendant des outils créés ailleurs.' },
-        { q: 'Faut-il apprendre à coder pour profiter de l\'IA en Afrique ?', a: 'Non. Les outils IA les plus puissants sont accessibles via des interfaces en langage naturel (ChatGPT, Claude, Gemini). Le Vibe Coding permet même de créer des applications sans connaître la programmation. Ce qui est nécessaire, c\'est la pensée logique, la curiosité et la volonté d\'apprendre — des qualités que l\'Afrique n\'a jamais manquées.' },
+        { q: 'L\'IA va-t-elle détruire des emplois en Afrique ?', a: 'Certains emplois d\'exécution seront automatisés, oui. Mais l\'Afrique part d\'un niveau d\'automatisation très bas - le risque net de destruction d\'emplois est plus faible qu\'en Europe ou aux États-Unis. En revanche, l\'IA va créer de nouveaux métiers (prompt engineers, automaticiens IA, formateurs) et démultiplier la productivité des entrepreneurs existants. Le vrai risque, c\'est de ne PAS adopter l\'IA et de devenir dépendant des outils créés ailleurs.' },
+        { q: 'Faut-il apprendre à coder pour profiter de l\'IA en Afrique ?', a: 'Non. Les outils IA les plus puissants sont accessibles via des interfaces en langage naturel (ChatGPT, Claude, Gemini). Le Vibe Coding permet même de créer des applications sans connaître la programmation. Ce qui est nécessaire, c\'est la pensée logique, la curiosité et la volonté d\'apprendre - des qualités que l\'Afrique n\'a jamais manquées.' },
         { q: 'Où trouver des formations IA adaptées au contexte africain ?', a: 'Les formations de Oumarou Sanda (disponibles sur ce site) sont spécifiquement conçues pour les entrepreneurs africains : exemples locaux, cas d\'usage du marché francophone, solutions de paiement adaptées (Mobile Money, Wise). D\'autres ressources francophones incluent les chaînes YouTube dédiées à l\'IA en français et les communautés comme l\'Africa AI Network.' },
         { q: 'Comment contribuer au développement de l\'IA africaine si on n\'est pas technicien ?', a: 'En tant qu\'entrepreneur, investissez dans les outils IA africains. En tant que parent ou enseignant, exposez les enfants à l\'IA dès le primaire. En tant que citoyen, interpellez vos dirigeants. En tant que créateur de contenu, publiez en langues africaines pour enrichir les corpus. Chaque action compte.' },
         { q: 'Où se procurer le livre de Oumarou Sanda sur l\'IA et l\'Afrique ?', a: 'Le livre est disponible en version numérique et physique sur ce site, ainsi que sur les principales plateformes de vente en ligne accessibles depuis l\'Afrique francophone. Rendez-vous dans la section Livre de ce site pour plus d\'informations.' },
@@ -1042,15 +1042,15 @@ export const articles = [
       { type: 'key-points', items: [
         'CommentSticker permet aux créateurs de générer des stickers de commentaires personnalisés pour leurs vidéos et posts',
         '90% du code backend a été généré par Cursor + Claude 3.7 sans que j\'écrive une seule ligne manuellement',
-        'Le MVP fonctionnel était prêt en 7 jours — la semaine suivante a été consacrée aux bugs',
-        'Stack : React + Supabase + Stripe + Vercel — la combo Vibe Coding standard',
+        'Le MVP fonctionnel était prêt en 7 jours - la semaine suivante a été consacrée aux bugs',
+        'Stack : React + Supabase + Stripe + Vercel - la combo Vibe Coding standard',
         'Premier utilisateur payant : jour 18 après le début du projet',
-        'Obstacle principal : la gestion des images/canvas côté navigateur — 2 jours de debugging',
+        'Obstacle principal : la gestion des images/canvas côté navigateur - 2 jours de debugging',
         'Budget total pour lancer : moins de 50$/mois (hébergement + IA + outils)',
       ]},
 
       { type: 'heading', content: '1. L\'idée : un problème réel que j\'avais moi-même', id: 'origine' },
-      { type: 'text', content: 'Tout a commencé d\'une frustration personnelle. Sur mes vidéos YouTube et TikTok, j\'interagissais beaucoup avec ma communauté — mais la mise en avant des commentaires dans mes vidéos prenait un temps fou. Capturer le screenshot, ouvrir Canva, redimensionner, ajouter le fond, exporter… une opération qui prenait 10-15 minutes par commentaire.' },
+      { type: 'text', content: 'Tout a commencé d\'une frustration personnelle. Sur mes vidéos YouTube et TikTok, j\'interagissais beaucoup avec ma communauté - mais la mise en avant des commentaires dans mes vidéos prenait un temps fou. Capturer le screenshot, ouvrir Canva, redimensionner, ajouter le fond, exporter… une opération qui prenait 10-15 minutes par commentaire.' },
       { type: 'text', content: '<strong>CommentSticker résout un seul problème : transformer un commentaire texte en sticker visuel prêt à l\'emploi en 10 secondes.</strong> L\'utilisateur colle son commentaire, choisit un style (YouTube, TikTok, Instagram, Twitter/X), et télécharge le PNG immédiatement. Simple. Utile. Répétable.' },
 
       { type: 'heading', content: '2. La stack technique choisie', id: 'stack' },
@@ -1077,15 +1077,15 @@ export const articles = [
       { type: 'heading', content: '4. Semaines 2-3 : les galères réelles', id: 'jour8-20' },
       { type: 'text', content: 'Si la première semaine était excitante, la deuxième était frustrante. Les bugs que l\'IA introduit ne sont pas toujours évidents à expliquer.' },
       { type: 'list', items: [
-        '<strong>Bug #1 — Les images de profil CORS :</strong> Les photos de profil chargées depuis une URL externe causaient une erreur CORS sur le Canvas. L\'IA a proposé 3 solutions avant de trouver la bonne : proxifier les images via une fonction Edge Vercel.',
-        '<strong>Bug #2 — Le rendu du texte long :</strong> Les commentaires longs débordaient du sticker. La gestion du line-wrapping sur Canvas est complexe. 1 jour de debugging avec Claude pour obtenir un algorithme propre.',
-        '<strong>Bug #3 — Stripe webhooks :</strong> Les webhooks de confirmation de paiement ne fonctionnaient pas en local. Solution : ngrok + documentation Stripe + patience.',
-        '<strong>Bug #4 — Performance mobile :</strong> La génération Canvas était lente sur les anciens iPhones. Optimisation de la résolution et mise en cache des fonts.',
+        '<strong>Bug #1 - Les images de profil CORS :</strong> Les photos de profil chargées depuis une URL externe causaient une erreur CORS sur le Canvas. L\'IA a proposé 3 solutions avant de trouver la bonne : proxifier les images via une fonction Edge Vercel.',
+        '<strong>Bug #2 - Le rendu du texte long :</strong> Les commentaires longs débordaient du sticker. La gestion du line-wrapping sur Canvas est complexe. 1 jour de debugging avec Claude pour obtenir un algorithme propre.',
+        '<strong>Bug #3 - Stripe webhooks :</strong> Les webhooks de confirmation de paiement ne fonctionnaient pas en local. Solution : ngrok + documentation Stripe + patience.',
+        '<strong>Bug #4 - Performance mobile :</strong> La génération Canvas était lente sur les anciens iPhones. Optimisation de la résolution et mise en cache des fonts.',
       ]},
 
       { type: 'heading', content: '5. Semaine 4 : lancement et premiers utilisateurs', id: 'lancement' },
-      { type: 'text', content: 'J\'ai lancé CommentSticker avec un post TikTok montrant le produit en action — sans budget publicitaire. La vidéo a fait 40k vues en 48h. 300 inscrits le premier jour. Premier paiement le jour 18.' },
-      { type: 'text', content: 'Le modèle freemium fonctionne : <strong>10 téléchargements gratuits/jour</strong>, puis plan Pro à <strong>4,99$/mois pour illimité</strong>. Le taux de conversion freemium → payant est de 4,2% — au-dessus de la moyenne SaaS.' },
+      { type: 'text', content: 'J\'ai lancé CommentSticker avec un post TikTok montrant le produit en action - sans budget publicitaire. La vidéo a fait 40k vues en 48h. 300 inscrits le premier jour. Premier paiement le jour 18.' },
+      { type: 'text', content: 'Le modèle freemium fonctionne : <strong>10 téléchargements gratuits/jour</strong>, puis plan Pro à <strong>4,99$/mois pour illimité</strong>. Le taux de conversion freemium → payant est de 4,2% - au-dessus de la moyenne SaaS.' },
 
       { type: 'heading', content: '6. Résultats après 30 jours', id: 'resultats' },
       { type: 'stats-grid', items: [
@@ -1139,7 +1139,7 @@ export const articles = [
       { id: 'wan', label: 'Wan 2.5 : analyse détaillée' },
       { id: 'cas-usage', label: 'Quel outil pour quel usage ?' },
       { id: 'verdict', label: 'Mon verdict et recommandations' },
-      { id: 'faq', label: 'FAQ — Questions fréquentes' },
+      { id: 'faq', label: 'FAQ - Questions fréquentes' },
     ],
     sections: [
       { type: 'intro', content: 'En moins de 24 mois, la vidéo générée par IA est passée d\'un gadget de laboratoire à un outil professionnel utilisé par des agences de publicité, des YouTubers et des marques e-commerce. En 2026, les trois géants qui dominent le secteur sont Sora (OpenAI), VEO 3 (Google DeepMind) et Wan 2.5 (Alibaba). Ce comparatif est basé sur des tests réels effectués sur des projets clients.' },
@@ -1147,15 +1147,15 @@ export const articles = [
       { type: 'key-points', items: [
         'Sora excelle dans les scènes cinématiques longues et les mouvements complexes de caméra',
         'VEO 3 est le meilleur choix pour la publicité produit photoréaliste et les plans courts',
-        'Wan 2.5 surprend avec la gestion des fluides, fumées et textures complexes — souvent surpassant ses rivaux',
+        'Wan 2.5 surprend avec la gestion des fluides, fumées et textures complexes - souvent surpassant ses rivaux',
         'Aucun des trois n\'est parfait : le "meilleur" dépend de votre cas d\'usage spécifique',
         'VEO 3 est le seul des trois à générer du son/audio synchronisé avec la vidéo en 2026',
         'Wan 2.5 est open-source et peut être exécuté localement sur des GPU puissants (gratuit)',
-        'Sora reste le plus restrictif côté modération de contenu — certains prompts créatifs sont bloqués',
+        'Sora reste le plus restrictif côté modération de contenu - certains prompts créatifs sont bloqués',
       ]},
 
       { type: 'heading', content: '1. Pourquoi la vidéo IA change tout pour les créateurs', id: 'contexte' },
-      { type: 'text', content: 'Produire une vidéo publicitaire professionnelle coûtait 500$ à 5 000$ en 2022 (acteurs, caméra, montage, studio). En 2026, le même résultat se génère en 2 minutes pour moins de 5$. Ce n\'est pas une exagération — c\'est la réalité que j\'utilise quotidiennement pour mes clients et mes propres projets.' },
+      { type: 'text', content: 'Produire une vidéo publicitaire professionnelle coûtait 500$ à 5 000$ en 2022 (acteurs, caméra, montage, studio). En 2026, le même résultat se génère en 2 minutes pour moins de 5$. Ce n\'est pas une exagération - c\'est la réalité que j\'utilise quotidiennement pour mes clients et mes propres projets.' },
       { type: 'stats-grid', items: [
         { value: '–92%', label: 'Réduction du coût de production vidéo avec les outils IA en 2026 vs 2022' },
         { value: '4K', label: 'Résolution maximale disponible sur VEO 3 et Wan 2.5' },
@@ -1177,17 +1177,17 @@ export const articles = [
         ['Accès pour africains', '✅ Via VPN si besoin', '⚠️ Google One requis', '✅ Via Replicate/API'],
       ]},
 
-      { type: 'heading', content: '3. Sora (OpenAI) — Le cinéaste', id: 'sora' },
+      { type: 'heading', content: '3. Sora (OpenAI) - Le cinéaste', id: 'sora' },
       { type: 'text', content: '<strong>Point fort :</strong> Sora produit les clips les plus cinématiques du marché. La compréhension des mouvements de caméra (dolly, pan, tilt, rack focus) est exceptionnelle. Les scènes avec personnages complexes et environnements détaillés sont bluffantes.' },
       { type: 'text', content: '<strong>Point faible :</strong> Sora est le plus lent (jusqu\'à 8 minutes pour un clip de 20 secondes en haute qualité) et le plus restrictif. De nombreux prompts créatifs sont refusés par le filtre de modération. Accessible via ChatGPT Pro (20$/mois) ou l\'API OpenAI.' },
       { type: 'text', content: '<strong>Meilleur pour :</strong> Films courts, teasers, contenus narratifs, vidéos musicales, contenu artistique à haute valeur de production.' },
 
-      { type: 'heading', content: '4. VEO 3 (Google DeepMind) — Le publicitaire', id: 'veo' },
-      { type: 'text', content: '<strong>Point fort :</strong> VEO 3 est le seul outil à générer <strong>son et vidéo simultanément</strong> — bruits ambiants, dialogues, musique. Pour une publicité produit, c\'est une révolution. La qualité photoréaliste des objets et des textures est imbattable. La vitesse de génération est excellente.' },
+      { type: 'heading', content: '4. VEO 3 (Google DeepMind) - Le publicitaire', id: 'veo' },
+      { type: 'text', content: '<strong>Point fort :</strong> VEO 3 est le seul outil à générer <strong>son et vidéo simultanément</strong> - bruits ambiants, dialogues, musique. Pour une publicité produit, c\'est une révolution. La qualité photoréaliste des objets et des textures est imbattable. La vitesse de génération est excellente.' },
       { type: 'text', content: '<strong>Point faible :</strong> Durée limitée à ~8 secondes par clip. Disponible via Google VideoFX (accès sur liste d\'attente) ou Google One AI Premium (30$/mois). L\'accès peut être compliqué hors des pays anglophones.' },
       { type: 'text', content: '<strong>Meilleur pour :</strong> Publicités produit, démonstrations e-commerce, contenu social media court, vidéos avec ambiance sonore.' },
 
-      { type: 'heading', content: '5. Wan 2.5 — La surprise open-source', id: 'wan' },
+      { type: 'heading', content: '5. Wan 2.5 - La surprise open-source', id: 'wan' },
       { type: 'text', content: '<strong>Point fort :</strong> Wan 2.5 est <strong>open-source</strong> (disponible sur Hugging Face). Sa gestion des fluides (eau, fumée, feu, tissu) surpasse Sora et VEO. Les mouvements de caméra sont fluides et naturels. Disponible gratuitement via des interfaces comme Replicate, ComfyUI ou en local.' },
       { type: 'text', content: '<strong>Point faible :</strong> Moins connu, donc moins de tutoriels en français. L\'utilisation locale nécessite un GPU puissant (minimum RTX 3080). La consistance des visages humains sur plusieurs secondes est légèrement inférieure à Sora.' },
       { type: 'text', content: '<strong>Meilleur pour :</strong> Effets spéciaux, vidéos abstraites, animations de produits avec matières (eau, métal liquide), utilisateurs avec GPU local.' },
@@ -1204,13 +1204,13 @@ export const articles = [
       ]},
 
       { type: 'heading', content: '7. Mon verdict', id: 'verdict' },
-      { type: 'text', content: 'Si je devais choisir <strong>un seul outil</strong> pour une agence de contenu en Afrique francophone en 2026, je choisirais <strong>VEO 3</strong>. Pourquoi ? Parce que la majorité des clients veulent des publicités courtes pour leurs produits — et VEO 3 est imbattable pour ça, surtout avec l\'audio intégré qui réduit encore le temps de post-production.' },
+      { type: 'text', content: 'Si je devais choisir <strong>un seul outil</strong> pour une agence de contenu en Afrique francophone en 2026, je choisirais <strong>VEO 3</strong>. Pourquoi ? Parce que la majorité des clients veulent des publicités courtes pour leurs produits - et VEO 3 est imbattable pour ça, surtout avec l\'audio intégré qui réduit encore le temps de post-production.' },
       { type: 'text', content: '<strong>Ma combinaison gagnante actuelle :</strong> VEO 3 pour les clips produit + Wan 2.5 (Replicate) pour les effets visuels et les transitions + ElevenLabs pour la voix off + CapCut pour le montage final. Cette stack coûte moins de 35$/mois et rivalise avec des productions à 2 000$.' },
 
       { type: 'faq-rich', items: [
         { q: 'Peut-on accéder à ces outils depuis l\'Afrique ?', a: 'Oui. ChatGPT Pro (Sora) fonctionne dans la plupart des pays africains avec un paiement par carte internationale. VEO 3 via Google One est accessible partout. Wan 2.5 via Replicate.com est universel.' },
         { q: 'Ces vidéos peuvent-elles être utilisées commercialement ?', a: 'OpenAI et Google permettent l\'usage commercial des vidéos générées. Wan 2.5 (Apache 2.0 license) également. Vérifiez les conditions d\'utilisation à jour de chaque plateforme avant une campagne majeure.' },
-        { q: 'Comment éviter les vidéos IA qui "se voient" ?', a: 'La clé est dans les prompts : précisez toujours l\'éclairage (lumière naturelle, studio), la texture de la caméra (légère granularité de film), et le mouvement (imperceptiblement instable, "handheld"). Évitez les personnages trop proches du visage — les mains et les dents restent difficiles à générer parfaitement.' },
+        { q: 'Comment éviter les vidéos IA qui "se voient" ?', a: 'La clé est dans les prompts : précisez toujours l\'éclairage (lumière naturelle, studio), la texture de la caméra (légère granularité de film), et le mouvement (imperceptiblement instable, "handheld"). Évitez les personnages trop proches du visage - les mains et les dents restent difficiles à générer parfaitement.' },
         { q: 'Quelle est la meilleure alternative gratuite ?', a: 'Wan 2.5 via Replicate est la meilleure option gratuite (crédits offerts à l\'inscription). Pour les plans publicitaires courts, les résultats sont bluffants sans dépenser un centime.' },
       ]},
 
@@ -1249,21 +1249,21 @@ export const articles = [
       { id: 'faq', label: 'FAQ' },
     ],
     sections: [
-      { type: 'intro', content: 'Tout le monde utilise ChatGPT. Mais très peu l\'utilisent de la bonne façon. La différence entre quelqu\'un qui gagne 30 minutes par semaine avec ChatGPT et quelqu\'un qui gagne 30 heures, c\'est le système — pas l\'outil. Voici le mien.' },
+      { type: 'intro', content: 'Tout le monde utilise ChatGPT. Mais très peu l\'utilisent de la bonne façon. La différence entre quelqu\'un qui gagne 30 minutes par semaine avec ChatGPT et quelqu\'un qui gagne 30 heures, c\'est le système - pas l\'outil. Voici le mien.' },
 
       { type: 'key-points', items: [
         'ChatGPT utilisé comme Google = réponses génériques sans valeur ajoutée réelle',
         'Le contexte précis = résultats 10x meilleurs pour le même outil',
         'Les Custom Instructions sont la fonctionnalité la plus sous-utilisée de ChatGPT',
         'Un bon prompt système remplace 80% des briefings que vous donneriez à un assistant humain',
-        'Le "Second Cerveau" n\'est pas un outil — c\'est un système de prompts + outils + workflows',
+        'Le "Second Cerveau" n\'est pas un outil - c\'est un système de prompts + outils + workflows',
         'Je génère 5 articles, 20 posts LinkedIn et 3 vidéos YouTube par semaine avec ce système',
         'Temps investi pour mettre en place le système : 2-3 heures. Gain quotidien : 2-4 heures',
       ]},
 
       { type: 'heading', content: '1. Pourquoi 90% des gens utilisent ChatGPT mal', id: 'probleme' },
-      { type: 'text', content: 'La plupart des gens ouvrent ChatGPT et tapent : <em>"Écris-moi un article sur l\'IA pour les entrepreneurs"</em>. Le résultat ? Un texte générique, sans personnalité, qui ressemble à tous les textes IA sur internet. Le problème n\'est pas l\'outil — c\'est l\'absence de contexte.' },
-      { type: 'text', content: '<strong>ChatGPT est une machine à probabilités.</strong> Sans contexte, il produit la réponse la plus probable — c\'est-à-dire la plus moyenne. Avec du contexte précis (qui vous êtes, à qui vous parlez, quel ton, quelles contraintes), il produit quelque chose d\'unique et d\'utile.' },
+      { type: 'text', content: 'La plupart des gens ouvrent ChatGPT et tapent : <em>"Écris-moi un article sur l\'IA pour les entrepreneurs"</em>. Le résultat ? Un texte générique, sans personnalité, qui ressemble à tous les textes IA sur internet. Le problème n\'est pas l\'outil - c\'est l\'absence de contexte.' },
+      { type: 'text', content: '<strong>ChatGPT est une machine à probabilités.</strong> Sans contexte, il produit la réponse la plus probable - c\'est-à-dire la plus moyenne. Avec du contexte précis (qui vous êtes, à qui vous parlez, quel ton, quelles contraintes), il produit quelque chose d\'unique et d\'utile.' },
       { type: 'stats-grid', items: [
         { value: '300M+', label: 'Utilisateurs ChatGPT dans le monde (2026)' },
         { value: '<10%', label: 'Qui utilisent les Custom Instructions et prompts systèmes' },
@@ -1286,15 +1286,15 @@ export const articles = [
       { type: 'text', content: 'Les Custom Instructions (paramètres → Instructions personnalisées dans ChatGPT) vous permettent de pré-charger votre contexte une fois pour toutes. Plus besoin de répéter qui vous êtes à chaque conversation.' },
       { type: 'text', content: 'Voici les deux champs des Custom Instructions et comment je les remplis :' },
       { type: 'list', items: [
-        '<strong>Champ 1 — "Informations sur vous" :</strong> "Je m\'appelle Oumarou Sanda. Je suis entrepreneur, formateur IA et auteur basé en Afrique francophone. Je gère des formations, un SaaS (CommentSticker), et ce blog. Mon audience principale : entrepreneurs africains et francophones qui veulent utiliser l\'IA et le digital pour scaler leur business."',
-        '<strong>Champ 2 — "Comment ChatGPT doit vous répondre" :</strong> "Réponds toujours en français (sauf si je demande l\'anglais). Ton : direct, concret, sans langue de bois. Donne des exemples tirés du contexte africain ou francophone quand c\'est possible. Évite les introductions génériques. Commence par la valeur. N\'hésite pas à donner ton avis tranché."',
+        '<strong>Champ 1 - "Informations sur vous" :</strong> "Je m\'appelle Oumarou Sanda. Je suis entrepreneur, formateur IA et auteur basé en Afrique francophone. Je gère des formations, un SaaS (CommentSticker), et ce blog. Mon audience principale : entrepreneurs africains et francophones qui veulent utiliser l\'IA et le digital pour scaler leur business."',
+        '<strong>Champ 2 - "Comment ChatGPT doit vous répondre" :</strong> "Réponds toujours en français (sauf si je demande l\'anglais). Ton : direct, concret, sans langue de bois. Donne des exemples tirés du contexte africain ou francophone quand c\'est possible. Évite les introductions génériques. Commence par la valeur. N\'hésite pas à donner ton avis tranché."',
       ]},
 
       { type: 'heading', content: '4. Mes 7 prompts systèmes incontournables', id: 'prompts' },
       { type: 'table', headers: ['Usage', 'Structure du prompt', 'Gain de temps'], rows: [
         ['Article de blog', '"[Contexte: Oumarou Sanda, entrepreneurs africains] Écris [type] sur [sujet] avec [structure]. Ton: [ton]. Mots-clés: [liste]. Pas de: [interdits]."', '80% du draft rédigé'],
         ['Post LinkedIn', '"Post LinkedIn pour entrepreneurs africains sur [sujet]. Style: storytelling, 1 insight fort. Max 250 mots. Hashtags pro. Appel à l\'action final."', '90% utilisable directement'],
-        ['Email newsletter', '"Newsletter Sanda — sujet: [X]. Accroche: chiffre ou question. Corps: 3 paragraphes de valeur. CTA: clic vers [lien]. Ton familier mais professionnel."', '70% du draft prêt'],
+        ['Email newsletter', '"Newsletter Sanda - sujet: [X]. Accroche: chiffre ou question. Corps: 3 paragraphes de valeur. CTA: clic vers [lien]. Ton familier mais professionnel."', '70% du draft prêt'],
         ['Analyse de document', '"Voici [doc]. Résume en bullet points les 5 points clés. Identifie les opportunités business pour un entrepreneur africain. Signale les risques."', '3h de lecture → 10 min'],
         ['Script vidéo YouTube', '"Script YouTube 8-12 min sur [sujet] pour audience entrepreunariale francophone. Format: accroche (30s), problème (1min), solution (6min), récap + CTA (1min). Ton: conversationnel."', '60% du script rédigé'],
         ['Réponse email client', '"Email reçu: [copier-coller]. Rédige une réponse professionnelle, chaleureuse, qui répond à chaque point et propose [action souhaitée]."', '5 min → 30 secondes'],
@@ -1304,11 +1304,11 @@ export const articles = [
       { type: 'heading', content: '5. Mon workflow de production de contenu', id: 'workflow' },
       { type: 'text', content: 'En combinant ChatGPT (ou Claude pour les textes longs) avec quelques autres outils, voici comment je produis chaque semaine :' },
       { type: 'pros', items: [
-        '<strong>Lundi — Planification (30 min) :</strong> Je demande à ChatGPT 10 idées de contenu pour la semaine basées sur mes thèmes (IA, business, Afrique). Je sélectionne les 3 meilleures. Je note les mots-clés cibles.',
-        '<strong>Mardi — Articles blog (1h) :</strong> Je génère le draft complet avec mon prompt article. Je relis, j\'injecte mes anecdotes personnelles, je corrige les erreurs factuelles. Publication dans le CMS.',
-        '<strong>Mercredi — Contenu social (45 min) :</strong> 5 posts LinkedIn basés sur les articles de la semaine. Chaque article → 2 angles de posts. Je génère avec mon prompt LinkedIn, j\'adapte légèrement.',
-        '<strong>Jeudi — Vidéo YouTube (2h) :</strong> Script généré par ChatGPT → enregistrement → sous-titres automatiques CapCut → thumbnail Canva.',
-        '<strong>Vendredi — Emails et réponses (30 min) :</strong> Je réponds à tous les emails de la semaine en utilisant ChatGPT pour les brouillons → je personnalise → j\'envoie.',
+        '<strong>Lundi - Planification (30 min) :</strong> Je demande à ChatGPT 10 idées de contenu pour la semaine basées sur mes thèmes (IA, business, Afrique). Je sélectionne les 3 meilleures. Je note les mots-clés cibles.',
+        '<strong>Mardi - Articles blog (1h) :</strong> Je génère le draft complet avec mon prompt article. Je relis, j\'injecte mes anecdotes personnelles, je corrige les erreurs factuelles. Publication dans le CMS.',
+        '<strong>Mercredi - Contenu social (45 min) :</strong> 5 posts LinkedIn basés sur les articles de la semaine. Chaque article → 2 angles de posts. Je génère avec mon prompt LinkedIn, j\'adapte légèrement.',
+        '<strong>Jeudi - Vidéo YouTube (2h) :</strong> Script généré par ChatGPT → enregistrement → sous-titres automatiques CapCut → thumbnail Canva.',
+        '<strong>Vendredi - Emails et réponses (30 min) :</strong> Je réponds à tous les emails de la semaine en utilisant ChatGPT pour les brouillons → je personnalise → j\'envoie.',
       ]},
 
       { type: 'heading', content: '6. L\'écosystème complet du Cerveau Augmenté', id: 'outils' },
@@ -1365,7 +1365,7 @@ export const articles = [
       { type: 'intro', content: 'Stripe est la passerelle de paiement préférée des SaaS, des formations en ligne et des freelances internationaux. Mais le Cameroun, le Sénégal, la Côte d\'Ivoire et la plupart des pays d\'Afrique francophone ne sont pas sur la liste des pays supportés. La solution est légale, accessible, et plus simple que vous ne le pensez.' },
 
       { type: 'key-points', items: [
-        'Stripe ne bloque pas les Africains — il bloque les entités légales domiciliées dans des pays non-supportés',
+        'Stripe ne bloque pas les Africains - il bloque les entités légales domiciliées dans des pays non-supportés',
         'La solution : créer une UK Ltd ou une US LLC dans un pays supporté par Stripe',
         'La UK Ltd coûte environ 89£ à créer et l\'accès à Stripe est disponible immédiatement après',
         'Vous avez besoin d\'un compte bancaire UK (Wise Business ou Revolut Business) au nom de votre société',
@@ -1376,7 +1376,7 @@ export const articles = [
 
       { type: 'heading', content: '1. Pourquoi Stripe est bloqué pour les Africains', id: 'probleme' },
       { type: 'text', content: 'Stripe sélectionne les pays supportés en fonction de plusieurs critères : réglementation bancaire locale, infrastructures de lutte contre la fraude, traités internationaux et maturité du marché des paiements en ligne. Le Cameroun, le Sénégal, la Côte d\'Ivoire et la plupart des pays d\'Afrique subsaharienne francophone ne remplissent pas encore ces critères selon Stripe.' },
-      { type: 'text', content: '<strong>Ce qui est bloqué :</strong> Créer un compte Stripe avec votre numéro de téléphone ou adresse camerounaise. <strong>Ce qui n\'est PAS bloqué :</strong> Avoir un compte Stripe au nom d\'une société légalement enregistrée en UK, USA, France, Canada ou tout autre pays supporté — même si vous, le directeur, vivez en Afrique.' },
+      { type: 'text', content: '<strong>Ce qui est bloqué :</strong> Créer un compte Stripe avec votre numéro de téléphone ou adresse camerounaise. <strong>Ce qui n\'est PAS bloqué :</strong> Avoir un compte Stripe au nom d\'une société légalement enregistrée en UK, USA, France, Canada ou tout autre pays supporté - même si vous, le directeur, vivez en Afrique.' },
 
       { type: 'heading', content: '2. La solution légale : la structure offshore', id: 'solution' },
       { type: 'text', content: 'La solution repose sur un principe simple : <strong>vous créez une entité légale dans un pays supporté par Stripe, et c\'est cette entité qui ouvre le compte Stripe</strong>. Vous en êtes le directeur et actionnaire, même depuis l\'Afrique.' },
@@ -1390,11 +1390,11 @@ export const articles = [
 
       { type: 'heading', content: '3. Guide étape par étape : de zéro à Stripe actif', id: 'etapes' },
       { type: 'pros', items: [
-        '<strong>Étape 1 — Créer la UK Ltd :</strong> Rendez-vous sur 1stformations.com ou companies-house.gov.uk. Choisissez un nom (vérifiez la disponibilité). Désignez-vous comme directeur et actionnaire unique. Choisissez une adresse de service enregistrée UK (5-15£/mois inclus dans certains packages). Paiement en ligne. Certificate of Incorporation reçu en 24h par email.',
-        '<strong>Étape 2 — Ouvrir un compte Wise Business UK :</strong> Sur wise.com/business, créez un compte au nom de votre UK Ltd. Vous devrez fournir : Certificate of Incorporation, votre pièce d\'identité, une preuve d\'adresse. Délai : 1-3 jours ouvrés. Vous obtenez un vrai numéro de compte bancaire UK (sort code + account number).',
-        '<strong>Étape 3 — Créer le compte Stripe :</strong> Sur stripe.com, sélectionnez "UK" comme pays. Entrez le nom de votre UK Ltd, votre Company Number (disponible sur le Certificate of Incorporation), votre adresse de service UK, et liez le compte Wise Business comme compte bancaire. Stripe vérifie les informations.',
-        '<strong>Étape 4 — Activer les paiements :</strong> Stripe peut demander des documents supplémentaires (Certificate of Incorporation, preuve d\'identité du directeur). Fournissez-les. L\'activation complète prend généralement 1-3 jours ouvrés.',
-        '<strong>Étape 5 — Intégrer Stripe dans votre site :</strong> Copiez vos clés API Stripe dans votre site, formation en ligne (Systeme.io, Podia) ou SaaS. Testez un paiement en mode test avant de passer en production.',
+        '<strong>Étape 1 - Créer la UK Ltd :</strong> Rendez-vous sur 1stformations.com ou companies-house.gov.uk. Choisissez un nom (vérifiez la disponibilité). Désignez-vous comme directeur et actionnaire unique. Choisissez une adresse de service enregistrée UK (5-15£/mois inclus dans certains packages). Paiement en ligne. Certificate of Incorporation reçu en 24h par email.',
+        '<strong>Étape 2 - Ouvrir un compte Wise Business UK :</strong> Sur wise.com/business, créez un compte au nom de votre UK Ltd. Vous devrez fournir : Certificate of Incorporation, votre pièce d\'identité, une preuve d\'adresse. Délai : 1-3 jours ouvrés. Vous obtenez un vrai numéro de compte bancaire UK (sort code + account number).',
+        '<strong>Étape 3 - Créer le compte Stripe :</strong> Sur stripe.com, sélectionnez "UK" comme pays. Entrez le nom de votre UK Ltd, votre Company Number (disponible sur le Certificate of Incorporation), votre adresse de service UK, et liez le compte Wise Business comme compte bancaire. Stripe vérifie les informations.',
+        '<strong>Étape 4 - Activer les paiements :</strong> Stripe peut demander des documents supplémentaires (Certificate of Incorporation, preuve d\'identité du directeur). Fournissez-les. L\'activation complète prend généralement 1-3 jours ouvrés.',
+        '<strong>Étape 5 - Intégrer Stripe dans votre site :</strong> Copiez vos clés API Stripe dans votre site, formation en ligne (Systeme.io, Podia) ou SaaS. Testez un paiement en mode test avant de passer en production.',
       ]},
 
       { type: 'heading', content: '4. Ouvrir un compte bancaire compatible Stripe', id: 'banque' },
@@ -1426,7 +1426,7 @@ export const articles = [
 
       { type: 'faq-rich', items: [
         { q: 'Cette méthode est-elle légale ?', a: 'Oui, à condition de respecter vos obligations fiscales. Créer une société dans un pays étranger est légal. Ce qui serait illégal : cacher les revenus de cette société aux autorités fiscales de votre pays de résidence. Consultez un expert-comptable local pour la déclaration de vos revenus étrangers.' },
-        { q: 'Stripe peut-il bloquer mon compte s\'il découvre que je vis en Afrique ?', a: 'Stripe vérifie l\'entité légale (votre UK Ltd) — pas où vit le directeur. Des centaines de milliers d\'entrepreneurs du monde entier gèrent des UK Ltd depuis leur pays de résidence. Ce n\'est pas un problème tant que votre UK Ltd est légalement constituée et vos documents en ordre.' },
+        { q: 'Stripe peut-il bloquer mon compte s\'il découvre que je vis en Afrique ?', a: 'Stripe vérifie l\'entité légale (votre UK Ltd) - pas où vit le directeur. Des centaines de milliers d\'entrepreneurs du monde entier gèrent des UK Ltd depuis leur pays de résidence. Ce n\'est pas un problème tant que votre UK Ltd est légalement constituée et vos documents en ordre.' },
         { q: 'Combien de temps prend la mise en place complète ?', a: 'Comptez 3 à 7 jours ouvrés pour avoir un compte Stripe actif : UK Ltd créée en 24h, Wise Business ouvert en 1-3 jours, Stripe activé en 1-3 jours. Le processus peut s\'accélérer si tous vos documents sont prêts dès le départ.' },
         { q: 'Faut-il un comptable UK ?', a: 'Pas immédiatement. Une UK Ltd inactive (qui ne fait pas de ventes) a très peu d\'obligations fiscales. Dès que vous commencez à générer des revenus, enregistrez-vous auprès de HMRC et consultez un comptable. FreeAgent est un logiciel de comptabilité UK abordable adapté aux petites structures.' },
       ]},
@@ -1482,21 +1482,21 @@ export const articles = [
       { type: 'heading', content: '1. Trouver son sujet de formation qui vend', id: 'idee' },
       { type: 'text', content: 'La pire erreur est de créer une formation sur ce que vous trouvez intéressant plutôt que sur ce que votre audience est prête à payer. Voici ma méthode pour valider un sujet avant de créer la moindre vidéo :' },
       { type: 'list', items: [
-        '<strong>Test 1 — La question d\'or :</strong> Quelqu\'un vous a-t-il déjà payé pour ce savoir, même informellement ? Si oui, il y a un marché. Si non, la vente sera plus difficile.',
-        '<strong>Test 2 — La recherche de concurrence :</strong> Cherchez sur YouTube, Udemy, Systeme.io votre sujet en français. S\'il y a des concurrents, c\'est bon signe — ça confirme la demande. S\'il y en a zéro, creusez avant de créer.',
-        '<strong>Test 3 — La question à l\'audience :</strong> Publiez un sondage sur vos réseaux sociaux : "Si je créais une formation sur [X], est-ce que vous seriez intéressé ?" Un taux de réponse positif > 20% est encourageant.',
-        '<strong>Test 4 — Le pré-lancement :</strong> Avant de créer, vendez. Proposez votre formation "en pré-vente" à prix réduit (50% du prix final). Si 10+ personnes achètent, créez la formation. Sinon, pivotez.',
+        '<strong>Test 1 - La question d\'or :</strong> Quelqu\'un vous a-t-il déjà payé pour ce savoir, même informellement ? Si oui, il y a un marché. Si non, la vente sera plus difficile.',
+        '<strong>Test 2 - La recherche de concurrence :</strong> Cherchez sur YouTube, Udemy, Systeme.io votre sujet en français. S\'il y a des concurrents, c\'est bon signe - ça confirme la demande. S\'il y en a zéro, creusez avant de créer.',
+        '<strong>Test 3 - La question à l\'audience :</strong> Publiez un sondage sur vos réseaux sociaux : "Si je créais une formation sur [X], est-ce que vous seriez intéressé ?" Un taux de réponse positif > 20% est encourageant.',
+        '<strong>Test 4 - Le pré-lancement :</strong> Avant de créer, vendez. Proposez votre formation "en pré-vente" à prix réduit (50% du prix final). Si 10+ personnes achètent, créez la formation. Sinon, pivotez.',
       ]},
       { type: 'text', content: '<strong>Sujets qui marchent particulièrement bien depuis l\'Afrique francophone en 2026 :</strong> utilisation de l\'IA pour les entrepreneurs, création de business en ligne, investissement personnel, e-commerce, Vibe Coding, formations métier (comptabilité, droit des affaires africain, trading).' },
 
       { type: 'heading', content: '2. Créer le contenu : structure et outils', id: 'creation' },
       { type: 'text', content: 'Une formation en ligne n\'est pas une série de vidéos. C\'est un <strong>parcours pédagogique</strong> conçu pour amener l\'étudiant du point A (problème) au point B (résultat). Commencez par la structure avant de filmer.' },
       { type: 'pros', items: [
-        '<strong>Phase 1 — Structurer (2-3 jours) :</strong> Définissez le résultat final de votre formation ("À la fin, l\'étudiant sera capable de..."). Listez les obstacles entre le départ et ce résultat. Chaque module = un obstacle surmonté.',
-        '<strong>Phase 2 — Scripter (3-5 jours) :</strong> Pour chaque leçon, écrivez un script de 300-800 mots. Utilisez ChatGPT pour vous aider : "Génère un script de leçon sur [sujet] pour des entrepreneurs africains débutants, ton pratique et direct, 500 mots."',
-        '<strong>Phase 3 — Filmer (3-7 jours) :</strong> Matériel minimum : un smartphone récent (iPhone 12+ ou équivalent Android), un micro-cravate 15-30$ (grande amélioration du son), fond sobre (mur blanc ou papier peint neutre). Filmez en 1080p minimum.',
-        '<strong>Phase 4 — Monter (2-5 jours) :</strong> CapCut Desktop pour le montage basique (gratuit). DaVinci Resolve pour plus de contrôle (gratuit). Ajoutez des sous-titres automatiques (CapCut fait ça en 1 clic), des visuels d\'appui (capture d\'écran, schéma), et de la musique de fond légère.',
-        '<strong>Phase 5 — Uploader et organiser :</strong> Mettez vos vidéos en accès privé sur YouTube ou directement sur votre plateforme de formation. Créez les exercices pratiques et ressources téléchargeables (PDF, templates Notion, fichiers Excel).',
+        '<strong>Phase 1 - Structurer (2-3 jours) :</strong> Définissez le résultat final de votre formation ("À la fin, l\'étudiant sera capable de..."). Listez les obstacles entre le départ et ce résultat. Chaque module = un obstacle surmonté.',
+        '<strong>Phase 2 - Scripter (3-5 jours) :</strong> Pour chaque leçon, écrivez un script de 300-800 mots. Utilisez ChatGPT pour vous aider : "Génère un script de leçon sur [sujet] pour des entrepreneurs africains débutants, ton pratique et direct, 500 mots."',
+        '<strong>Phase 3 - Filmer (3-7 jours) :</strong> Matériel minimum : un smartphone récent (iPhone 12+ ou équivalent Android), un micro-cravate 15-30$ (grande amélioration du son), fond sobre (mur blanc ou papier peint neutre). Filmez en 1080p minimum.',
+        '<strong>Phase 4 - Monter (2-5 jours) :</strong> CapCut Desktop pour le montage basique (gratuit). DaVinci Resolve pour plus de contrôle (gratuit). Ajoutez des sous-titres automatiques (CapCut fait ça en 1 clic), des visuels d\'appui (capture d\'écran, schéma), et de la musique de fond légère.',
+        '<strong>Phase 5 - Uploader et organiser :</strong> Mettez vos vidéos en accès privé sur YouTube ou directement sur votre plateforme de formation. Créez les exercices pratiques et ressources téléchargeables (PDF, templates Notion, fichiers Excel).',
       ]},
 
       { type: 'heading', content: '3. Héberger et vendre : les meilleures plateformes', id: 'hebergement' },
@@ -1545,7 +1545,7 @@ export const articles = [
 
       { type: 'faq-rich', items: [
         { q: 'Combien de temps faut-il pour créer sa première formation ?', a: 'En travaillant 2-3 heures par jour, une formation de 5-8 heures de contenu est créable en 4 à 6 semaines. La structure (1 semaine) + script (1 semaine) + tournage (1 semaine) + montage (1-2 semaines) + mise en ligne (1 semaine). En full-time, 2-3 semaines suffisent.' },
-        { q: 'Faut-il être expert reconnu pour vendre une formation ?', a: 'Non, mais il faut avoir des résultats tangibles. "Je n\'ai pas de diplôme mais j\'ai lancé 3 business digitaux rentables" est une crédibilité suffisante. Ce qui vend une formation, c\'est la transformation promise — pas votre CV. Montrez ce que vos étudiants ont accompli.' },
+        { q: 'Faut-il être expert reconnu pour vendre une formation ?', a: 'Non, mais il faut avoir des résultats tangibles. "Je n\'ai pas de diplôme mais j\'ai lancé 3 business digitaux rentables" est une crédibilité suffisante. Ce qui vend une formation, c\'est la transformation promise - pas votre CV. Montrez ce que vos étudiants ont accompli.' },
         { q: 'Comment accepter le Mobile Money sur Systeme.io ?', a: 'Systeme.io ne supporte pas nativement le Mobile Money, mais vous pouvez créer une page de commande manuelle avec un numéro Wave/Orange Money à contacter, puis confirmer l\'accès manuellement. Pour automatiser, intégrez PayDunya ou CinetPay via webhook.' },
       ]},
 
@@ -1582,15 +1582,15 @@ export const articles = [
       { id: 'faq', label: 'FAQ' },
     ],
     sections: [
-      { type: 'intro', content: 'Je vais être direct : j\'ai acheté plusieurs formations IA entre 2023 et 2025. La majorité m\'a déçu. Pas parce que l\'IA est compliquée — mais parce que la plupart des formateurs vendent de la vitrine, pas de la substance. Voici mon analyse sans filtre, comme formateur qui a lui-même accompagné 500+ entrepreneurs.' },
+      { type: 'intro', content: 'Je vais être direct : j\'ai acheté plusieurs formations IA entre 2023 et 2025. La majorité m\'a déçu. Pas parce que l\'IA est compliquée - mais parce que la plupart des formateurs vendent de la vitrine, pas de la substance. Voici mon analyse sans filtre, comme formateur qui a lui-même accompagné 500+ entrepreneurs.' },
 
       { type: 'key-points', items: [
         'L\'explosion de l\'IA a créé une ruée vers l\'or de "formateurs IA" sans vrai background terrain',
-        'La majorité des formations vendent des listes de prompts — pas des processus mentaux durables',
+        'La majorité des formations vendent des listes de prompts - pas des processus mentaux durables',
         'Un bon formateur IA a des preuves de résultats réels, pas uniquement des captures d\'écran de ChatGPT',
-        'Évitez les formations qui promettent "10 000$ en 30 jours avec l\'IA" — ce sont des promesses de marketing, pas des résultats reproductibles',
+        'Évitez les formations qui promettent "10 000$ en 30 jours avec l\'IA" - ce sont des promesses de marketing, pas des résultats reproductibles',
         'Une vraie formation IA vous apprend à penser avec l\'IA, pas à cliquer dessus',
-        'Les meilleurs formateurs mettent à jour leur contenu — l\'IA évolue tous les 3-6 mois',
+        'Les meilleurs formateurs mettent à jour leur contenu - l\'IA évolue tous les 3-6 mois',
         'Cherchez des formations avec accès à une communauté active et du support post-achat',
       ]},
 
@@ -1606,13 +1606,13 @@ export const articles = [
 
       { type: 'heading', content: '2. Les 7 signaux d\'alerte d\'une mauvaise formation IA', id: 'signaux' },
       { type: 'list', items: [
-        '<strong>Signal #1 — "10 000 prompts inclus" :</strong> Les prompts sans contexte sont inutiles. Un prompt parfait pour moi ne marchera pas pour vous si votre business, votre ton et votre audience sont différents. Les "packs de prompts" sont du contenu filler, pas de la valeur.',
-        '<strong>Signal #2 — Le formateur a commencé il y a moins de 6 mois :</strong> Vérifiez la date de création du compte YouTube/LinkedIn du formateur et ses premiers contenus sur l\'IA. Si c\'est récent, il apprend avec vous, pas avant vous.',
-        '<strong>Signal #3 — "Revenus passifs automatiques avec l\'IA" :</strong> Les revenus passifs existent mais demandent du travail actif au départ. Une formation qui promet l\'automatisation totale sans effort initial est du marketing mensonger.',
-        '<strong>Signal #4 — Aucune preuve de résultats clients :</strong> Des captures d\'écran de ChatGPT ne sont pas des résultats clients. Cherchez des témoignages vidéo, des études de cas détaillées, des évolutions de CA avant/après.',
-        '<strong>Signal #5 — Le contenu est centré sur un seul outil :</strong> Une formation sur "Comment utiliser ChatGPT" sera obsolète dans 6 mois. Les bons formateurs enseignent des méthodes et des raisonnements applicables à n\'importe quel outil.',
-        '<strong>Signal #6 — Pas de mise à jour du contenu :</strong> L\'IA évolue tous les 3 mois. Une formation non mise à jour depuis 2023 sur des outils comme ChatGPT est partiellement obsolète.',
-        '<strong>Signal #7 — Aucun support ou communauté post-achat :</strong> Une bonne formation inclut un espace pour poser des questions, partager des avancées, et obtenir des corrections personnalisées.',
+        '<strong>Signal #1 - "10 000 prompts inclus" :</strong> Les prompts sans contexte sont inutiles. Un prompt parfait pour moi ne marchera pas pour vous si votre business, votre ton et votre audience sont différents. Les "packs de prompts" sont du contenu filler, pas de la valeur.',
+        '<strong>Signal #2 - Le formateur a commencé il y a moins de 6 mois :</strong> Vérifiez la date de création du compte YouTube/LinkedIn du formateur et ses premiers contenus sur l\'IA. Si c\'est récent, il apprend avec vous, pas avant vous.',
+        '<strong>Signal #3 - "Revenus passifs automatiques avec l\'IA" :</strong> Les revenus passifs existent mais demandent du travail actif au départ. Une formation qui promet l\'automatisation totale sans effort initial est du marketing mensonger.',
+        '<strong>Signal #4 - Aucune preuve de résultats clients :</strong> Des captures d\'écran de ChatGPT ne sont pas des résultats clients. Cherchez des témoignages vidéo, des études de cas détaillées, des évolutions de CA avant/après.',
+        '<strong>Signal #5 - Le contenu est centré sur un seul outil :</strong> Une formation sur "Comment utiliser ChatGPT" sera obsolète dans 6 mois. Les bons formateurs enseignent des méthodes et des raisonnements applicables à n\'importe quel outil.',
+        '<strong>Signal #6 - Pas de mise à jour du contenu :</strong> L\'IA évolue tous les 3 mois. Une formation non mise à jour depuis 2023 sur des outils comme ChatGPT est partiellement obsolète.',
+        '<strong>Signal #7 - Aucun support ou communauté post-achat :</strong> Une bonne formation inclut un espace pour poser des questions, partager des avancées, et obtenir des corrections personnalisées.',
       ]},
 
       { type: 'heading', content: '3. Ce qu\'une vraie formation IA devrait vous apprendre', id: 'difference' },
@@ -1628,11 +1628,11 @@ export const articles = [
 
       { type: 'heading', content: '4. La checklist avant d\'acheter une formation IA', id: 'checklist' },
       { type: 'pros', items: [
-        '<strong>✅ Le formateur montre des preuves de résultats terrain :</strong> Business propre, clients dont le CA a progressé, études de cas documentées — pas uniquement des captures d\'écran d\'interface.',
+        '<strong>✅ Le formateur montre des preuves de résultats terrain :</strong> Business propre, clients dont le CA a progressé, études de cas documentées - pas uniquement des captures d\'écran d\'interface.',
         '<strong>✅ Le contenu est mis à jour régulièrement :</strong> Vérifiez la dernière date de mise à jour. L\'IA de 2024 est déjà partiellement obsolète. Un bon formateur actualise continuellement.',
         '<strong>✅ Il enseigne des processus, pas des outils :</strong> Si la formation s\'intitule "Maîtriser GPT-5", elle sera périmée dans 6 mois. Si elle s\'intitule "Automatiser votre prospection avec l\'IA", elle restera pertinente.',
         '<strong>✅ Il existe une politique de remboursement :</strong> Les formateurs sérieux offrent 14-30 jours de garantie satisfait ou remboursé. Ceux qui ne l\'offrent pas savent que leur contenu ne tient pas ses promesses.',
-        '<strong>✅ Une communauté active est incluse :</strong> Forum Discord, groupe privé, sessions de questions-réponses en live — quelque chose qui montre que le formateur est impliqué après la vente.',
+        '<strong>✅ Une communauté active est incluse :</strong> Forum Discord, groupe privé, sessions de questions-réponses en live - quelque chose qui montre que le formateur est impliqué après la vente.',
         '<strong>✅ Des applications concrètes à votre secteur :</strong> Une formation généraliste peut fonctionner, mais une formation adaptée à votre domaine (e-commerce, formation, freelance, service B2B) sera toujours plus efficace.',
       ]},
 
@@ -1675,7 +1675,7 @@ export const articles = [
       { id: 'faq', label: 'FAQ' },
     ],
     sections: [
-      { type: 'intro', content: 'En 2026, les plans gratuits des outils IA sont devenus étonnamment généreux. Les entreprises IA se battent pour vous faire adopter leurs outils — et elles vous offrent de la valeur réelle pour vous attirer. Voici ma sélection soignée des 10 outils que j\'utilise (ou que je recommande à mes étudiants) sans débourser un centime, ou presque.' },
+      { type: 'intro', content: 'En 2026, les plans gratuits des outils IA sont devenus étonnamment généreux. Les entreprises IA se battent pour vous faire adopter leurs outils - et elles vous offrent de la valeur réelle pour vous attirer. Voici ma sélection soignée des 10 outils que j\'utilise (ou que je recommande à mes étudiants) sans débourser un centime, ou presque.' },
 
       { type: 'key-points', items: [
         'Ces 10 outils couvrent 90% des besoins digitaux d\'un entrepreneur : recherche, rédaction, design, vidéo, audio, code',
@@ -1688,15 +1688,15 @@ export const articles = [
       { type: 'heading', content: 'Le Top 10 commenté', id: 'top10' },
 
       { type: 'monetization', items: [
-        { title: '1. Perplexity AI', desc: '<strong>Le remplaçant de Google.</strong> Perplexity répond avec des sources citées en temps réel — parfait pour les études de marché, les chiffres sectoriels, et les veilles concurrentielles. Plan gratuit : illimité en mode "Quick", 5 recherches Pro/jour. <em>Idéal pour :</em> Research, veille concurrentielle.', icon: '🔍' },
+        { title: '1. Perplexity AI', desc: '<strong>Le remplaçant de Google.</strong> Perplexity répond avec des sources citées en temps réel - parfait pour les études de marché, les chiffres sectoriels, et les veilles concurrentielles. Plan gratuit : illimité en mode "Quick", 5 recherches Pro/jour. <em>Idéal pour :</em> Research, veille concurrentielle.', icon: '🔍' },
         { title: '2. Claude 3.5 Haiku (Anthropic)', desc: '<strong>Meilleur pour l\'analyse de documents.</strong> Claude excelle dans l\'analyse de PDF longs (contrats, rapports annuels), la rédaction nuancée et le débug de code. Plan gratuit : messages limités mais généreux. <em>Idéal pour :</em> Rédaction longue, analyse documentaire.', icon: '🧠' },
-        { title: '3. ChatGPT (OpenAI) — Plan gratuit', desc: '<strong>Le plus connu, toujours utile.</strong> GPT-4o mini est disponible gratuitement et reste excellent pour la rédaction marketing, les brainstormings et les templates. Plan gratuit : accès limité à GPT-4o mais suffisant. <em>Idéal pour :</em> Rédaction, idéation rapide.', icon: '💬' },
-        { title: '4. CapCut Desktop', desc: '<strong>Le couteau suisse de la vidéo.</strong> Sous-titres automatiques en français et anglais, suppression du fond, retouche IA, montage automatique — tout ça en version gratuite. <em>Idéal pour :</em> Montage vidéo social, Reels, TikTok.', icon: '🎬' },
+        { title: '3. ChatGPT (OpenAI) - Plan gratuit', desc: '<strong>Le plus connu, toujours utile.</strong> GPT-4o mini est disponible gratuitement et reste excellent pour la rédaction marketing, les brainstormings et les templates. Plan gratuit : accès limité à GPT-4o mais suffisant. <em>Idéal pour :</em> Rédaction, idéation rapide.', icon: '💬' },
+        { title: '4. CapCut Desktop', desc: '<strong>Le couteau suisse de la vidéo.</strong> Sous-titres automatiques en français et anglais, suppression du fond, retouche IA, montage automatique - tout ça en version gratuite. <em>Idéal pour :</em> Montage vidéo social, Reels, TikTok.', icon: '🎬' },
         { title: '5. Canva (plan gratuit)', desc: '<strong>Le design sans Adobe.</strong> 1 000+ templates IA, suppression automatique de fond, "Magic Write" pour la génération de texte, création de présentations. Plan gratuit très généreux. <em>Idéal pour :</em> Visuels marketing, présentations, miniatures.', icon: '🎨' },
         { title: '6. Gamma.app', desc: '<strong>Les présentations que PowerPoint n\'a jamais su faire.</strong> Entrez un titre + quelques points, Gamma génère une présentation complète en 30 secondes. Interface moderne, animations fluides. Plan gratuit : 400 crédits (~10 présentations). <em>Idéal pour :</em> Pitchs clients, formations.', icon: '📊' },
         { title: '7. ElevenLabs (plan gratuit)', desc: '<strong>10 000 caractères/mois offerts.</strong> Suffisant pour générer des voix off courtes pour vos Reels ou vidéos YouTube. Choisissez parmi des dizaines de voix réalistes en français. <em>Idéal pour :</em> Voix off courtes, test du clone vocal.', icon: '🎙️' },
         { title: '8. Bolt.new', desc: '<strong>Créez une app web en 1 minute.</strong> Entrez votre idée en langage naturel, Bolt génère le code complet et déploie une app fonctionnelle. Plan gratuit : quelques projets par mois. <em>Idéal pour :</em> Vibe Coding, MVP rapide.', icon: '⚡' },
-        { title: '9. Google NotebookLM', desc: '<strong>L\'IA qui "lit" vos documents pour vous.</strong> Importez vos PDF, notes, liens — NotebookLM analyse et répond à vos questions sur ce contenu. Plan gratuit illimité. <em>Idéal pour :</em> Synthèse de rapports, préparation de formations.', icon: '📚' },
+        { title: '9. Google NotebookLM', desc: '<strong>L\'IA qui "lit" vos documents pour vous.</strong> Importez vos PDF, notes, liens - NotebookLM analyse et répond à vos questions sur ce contenu. Plan gratuit illimité. <em>Idéal pour :</em> Synthèse de rapports, préparation de formations.', icon: '📚' },
         { title: '10. Ideogram 2.0', desc: '<strong>La génération d\'images IA la plus précise pour le texte.</strong> Contrairement à Midjourney ou DALL-E, Ideogram génère correctement le texte dans les images (logos, affiches, bannières). Plan gratuit : 10 générations/jour. <em>Idéal pour :</em> Logos, visuels avec texte, publicités.', icon: '🖼️' },
       ]},
 
@@ -1723,11 +1723,11 @@ export const articles = [
         '<strong>Vidéo :</strong> CapCut Desktop (montage + sous-titres IA) + ElevenLabs gratuit (voix off)',
         '<strong>Présentations clients :</strong> Gamma.app (résultat professionnel en 2 minutes)',
         '<strong>Développement produit :</strong> Bolt.new (MVP en 5 minutes pour tester une idée)',
-        '<strong>Budget mensuel : 0$ à 5$</strong> — assez pour bâtir un business digital compétitif.',
+        '<strong>Budget mensuel : 0$ à 5$</strong> - assez pour bâtir un business digital compétitif.',
       ]},
 
       { type: 'faq-rich', items: [
-        { q: 'Ces outils gratuits sont-ils vraiment comparables aux versions payantes ?', a: 'Pour la majorité des cas d\'usage d\'un entrepreneur solo ou d\'une petite équipe, oui. Les limitations des plans gratuits (nombre de requêtes, accès aux modèles premium) ne deviennent contraignantes que quand votre volume augmente — et à ce moment-là, vous avez généralement les revenus pour passer Pro.' },
+        { q: 'Ces outils gratuits sont-ils vraiment comparables aux versions payantes ?', a: 'Pour la majorité des cas d\'usage d\'un entrepreneur solo ou d\'une petite équipe, oui. Les limitations des plans gratuits (nombre de requêtes, accès aux modèles premium) ne deviennent contraignantes que quand votre volume augmente - et à ce moment-là, vous avez généralement les revenus pour passer Pro.' },
         { q: 'Faut-il utiliser VPN pour accéder à ces outils depuis l\'Afrique ?', a: 'Non pour la grande majorité. Perplexity, Claude, ChatGPT, Canva, CapCut, Gamma, NotebookLM, Ideogram sont tous accessibles depuis les pays d\'Afrique francophone sans restriction. ElevenLabs et Bolt peuvent nécessiter une connexion stable mais pas de VPN.' },
         { q: 'Comment payer les versions Pro si je veux upgrader ?', a: 'La plupart de ces outils acceptent les cartes Visa/Mastercard internationales. Wise et Payoneer émettent des cartes utilisables partout. PayPal est aussi souvent accepté. Si vous avez une structure offshore (UK Ltd ou US LLC), vous pouvez ouvrir un Wise Business avec un vrai IBAN européen.' },
       ]},
@@ -1767,20 +1767,20 @@ export const articles = [
       { id: 'faq', label: 'FAQ' },
     ],
     sections: [
-      { type: 'intro', content: 'Créer et vendre des sites web n\'est pas nouveau. Ce qui est nouveau, c\'est la vitesse et la qualité que l\'IA permet d\'atteindre. Un site web qui prenait 3 semaines et 5 000$ de développement en 2022 se crée maintenant en 3 à 8 heures pour moins de 30$ d\'outils. Le marché africain est massif et sous-servi — la plupart des PME n\'ont pas de site, ou ont un site qui date de 2015 et ne convertit pas.' },
+      { type: 'intro', content: 'Créer et vendre des sites web n\'est pas nouveau. Ce qui est nouveau, c\'est la vitesse et la qualité que l\'IA permet d\'atteindre. Un site web qui prenait 3 semaines et 5 000$ de développement en 2022 se crée maintenant en 3 à 8 heures pour moins de 30$ d\'outils. Le marché africain est massif et sous-servi - la plupart des PME n\'ont pas de site, ou ont un site qui date de 2015 et ne convertit pas.' },
 
       { type: 'key-points', items: [
         '85% des PME africaines n\'ont pas de site web fonctionnel optimisé pour mobile',
         'Un site web professionnel se crée en 3-8 heures avec la stack IA en 2026',
         'Prix de vente justifiable : 150 000 à 750 000 FCFA (250$ à 1 300$) selon la complexité',
-        'L\'IA écrit aussi la copie commerciale — vous livrez site + textes en un seul package',
+        'L\'IA écrit aussi la copie commerciale - vous livrez site + textes en un seul package',
         'La maintenance mensuelle (30-80$/mois) crée des revenus récurrents',
         'Framer IA, Bolt.new et Cursor sont vos 3 outils principaux',
         '5 clients par mois = 750 000 à 2 000 000 FCFA de CA mensuel',
       ]},
 
       { type: 'heading', content: '1. L\'opportunité africaine', id: 'opportunite' },
-      { type: 'text', content: 'Le paradoxe africain du web est frappant : le continent a 1,4 milliard d\'habitants, 600+ millions de smartphones, et des millions d\'entrepreneurs — mais la grande majorité n\'a aucune présence web professionnelle. Un restaurant à Douala qui vend ses plats via WhatsApp Photos. Un cabinet comptable à Dakar dont le seul "site" est une page Facebook non maintenue. Une boutique de mode à Abidjan sans e-commerce.' },
+      { type: 'text', content: 'Le paradoxe africain du web est frappant : le continent a 1,4 milliard d\'habitants, 600+ millions de smartphones, et des millions d\'entrepreneurs - mais la grande majorité n\'a aucune présence web professionnelle. Un restaurant à Douala qui vend ses plats via WhatsApp Photos. Un cabinet comptable à Dakar dont le seul "site" est une page Facebook non maintenue. Une boutique de mode à Abidjan sans e-commerce.' },
       { type: 'stats-grid', items: [
         { value: '85%', label: 'Des PME africaines sans site web professionnel optimisé' },
         { value: '600M+', label: 'Utilisateurs de smartphones en Afrique (2026)' },
@@ -1809,25 +1809,25 @@ export const articles = [
       ]},
 
       { type: 'heading', content: '4. Tarification : la valeur, pas les heures', id: 'prix' },
-      { type: 'text', content: 'La grande erreur des freelances débutants est de calculer leur prix en multipliant les heures par un taux horaire. <strong>Vos clients ne paient pas pour votre temps — ils paient pour le résultat.</strong>' },
-      { type: 'text', content: 'Un site web professionnel pour un cabinet médical à Douala lui apportera 5-10 nouveaux patients par mois. Si chaque patient rapporte 20 000 FCFA en consultations, le site génère 100 000 à 200 000 FCFA par mois. Facturer 300 000 FCFA pour ce site est parfaitement justifié — le client le rentabilise en 2 mois.' },
+      { type: 'text', content: 'La grande erreur des freelances débutants est de calculer leur prix en multipliant les heures par un taux horaire. <strong>Vos clients ne paient pas pour votre temps - ils paient pour le résultat.</strong>' },
+      { type: 'text', content: 'Un site web professionnel pour un cabinet médical à Douala lui apportera 5-10 nouveaux patients par mois. Si chaque patient rapporte 20 000 FCFA en consultations, le site génère 100 000 à 200 000 FCFA par mois. Facturer 300 000 FCFA pour ce site est parfaitement justifié - le client le rentabilise en 2 mois.' },
 
       { type: 'heading', content: '5. Trouver ses premiers clients', id: 'clients' },
       { type: 'list', items: [
-        '<strong>Méthode 1 — Portfolio gratuit :</strong> Créez 2-3 sites "démo" pour des types d\'entreprises locales (restaurant fictif, boutique de mode fictive, cabinet comptable fictif). Ces sites deviennent votre portfolio. Pas besoin de vrais clients pour commencer.',
-        '<strong>Méthode 2 — Prospection directe :</strong> Parcourez les entreprises locales sur Instagram, Facebook, Google Maps qui n\'ont pas de site ou un site médiocre. Envoyez un message personnalisé avec votre portfolio.',
-        '<strong>Méthode 3 — Groupes Facebook :</strong> Rejoignez les groupes Facebook d\'entrepreneurs locaux. Publiez votre offre avec des exemples de réalisations. Répondez aux questions sur le web/digital.',
-        '<strong>Méthode 4 — Bouche-à-oreille :</strong> Votre premier client satisfait vous enverra 2-3 autres clients. Donnez un service exceptionnel pour le premier, demandez un témoignage vidéo.',
-        '<strong>Méthode 5 — LinkedIn :</strong> Positionnez-vous comme expert en sites web IA africains. Publiez vos réalisations régulièrement. Le marché B2B (entreprises) est accessible via LinkedIn.',
+        '<strong>Méthode 1 - Portfolio gratuit :</strong> Créez 2-3 sites "démo" pour des types d\'entreprises locales (restaurant fictif, boutique de mode fictive, cabinet comptable fictif). Ces sites deviennent votre portfolio. Pas besoin de vrais clients pour commencer.',
+        '<strong>Méthode 2 - Prospection directe :</strong> Parcourez les entreprises locales sur Instagram, Facebook, Google Maps qui n\'ont pas de site ou un site médiocre. Envoyez un message personnalisé avec votre portfolio.',
+        '<strong>Méthode 3 - Groupes Facebook :</strong> Rejoignez les groupes Facebook d\'entrepreneurs locaux. Publiez votre offre avec des exemples de réalisations. Répondez aux questions sur le web/digital.',
+        '<strong>Méthode 4 - Bouche-à-oreille :</strong> Votre premier client satisfait vous enverra 2-3 autres clients. Donnez un service exceptionnel pour le premier, demandez un témoignage vidéo.',
+        '<strong>Méthode 5 - LinkedIn :</strong> Positionnez-vous comme expert en sites web IA africains. Publiez vos réalisations régulièrement. Le marché B2B (entreprises) est accessible via LinkedIn.',
       ]},
 
       { type: 'heading', content: '6. Le workflow de production client', id: 'workflow' },
       { type: 'pros', items: [
-        '<strong>Jour 1 — Brief et collecte :</strong> Appelez le client 30 minutes (WhatsApp ou Zoom). Collectez : logo, photos du business, couleurs préférées, liste des pages souhaitées, exemples de sites qu\'il aime, textes existants (si disponibles).',
-        '<strong>Jour 1-2 — Génération IA :</strong> Entrez les infos dans Framer IA ou Bolt. Générez 2-3 variantes de design. Sélectionnez la meilleure. Affinez avec ChatGPT pour les textes.',
-        '<strong>Jour 2-3 — Personnalisation :</strong> Intégrez les vraies photos et textes du client. Adaptez les couleurs à la charte graphique. Ajoutez les informations de contact, horaires, localisation.',
-        '<strong>Jour 3-4 — Révision client :</strong> Envoyez l\'URL de prévisualisation. Maximum 2 rounds de révisions inclus dans le prix. Les modifications supplémentaires se facturent à l\'heure.',
-        '<strong>Jour 4-5 — Livraison :</strong> Déploiement sur le domaine du client. Formation de 30 minutes (Loom video ou appel) sur comment modifier le contenu basique. Facture envoyée.',
+        '<strong>Jour 1 - Brief et collecte :</strong> Appelez le client 30 minutes (WhatsApp ou Zoom). Collectez : logo, photos du business, couleurs préférées, liste des pages souhaitées, exemples de sites qu\'il aime, textes existants (si disponibles).',
+        '<strong>Jour 1-2 - Génération IA :</strong> Entrez les infos dans Framer IA ou Bolt. Générez 2-3 variantes de design. Sélectionnez la meilleure. Affinez avec ChatGPT pour les textes.',
+        '<strong>Jour 2-3 - Personnalisation :</strong> Intégrez les vraies photos et textes du client. Adaptez les couleurs à la charte graphique. Ajoutez les informations de contact, horaires, localisation.',
+        '<strong>Jour 3-4 - Révision client :</strong> Envoyez l\'URL de prévisualisation. Maximum 2 rounds de révisions inclus dans le prix. Les modifications supplémentaires se facturent à l\'heure.',
+        '<strong>Jour 4-5 - Livraison :</strong> Déploiement sur le domaine du client. Formation de 30 minutes (Loom video ou appel) sur comment modifier le contenu basique. Facture envoyée.',
       ]},
 
       { type: 'faq-rich', items: [
@@ -1874,17 +1874,17 @@ export const articles = [
       { type: 'intro', content: 'En 2026, vous avez trois façons de construire une application : le No-Code (Bubble, Webflow, FlutterFlow), le code traditionnel (JavaScript, Python, Swift), et le Vibe Coding (Cursor, Bolt.new, Windsurf). Chacune a des avantages réels et des limites réelles. Cet article vous aide à choisir en fonction de votre projet, votre niveau et vos ambitions.' },
 
       { type: 'key-points', items: [
-        'Le No-Code est le plus rapide à démarrer mais enferme dans la plateforme — vous ne possédez pas le code',
+        'Le No-Code est le plus rapide à démarrer mais enferme dans la plateforme - vous ne possédez pas le code',
         'Le code traditionnel vous donne un contrôle total mais nécessite 6 à 24 mois d\'apprentissage',
         'Le Vibe Coding est une troisième voie : vous générez du vrai code sans le mémoriser',
         'Pour un MVP simple (outil, SaaS basique), le Vibe Coding est aujourd\'hui la meilleure option',
         'Pour une app grand public avec millions d\'utilisateurs, le code traditionnel reste indispensable',
         'Le No-Code est idéal pour des prototypes internes et des outils sans ambition de scalabilité massive',
-        'Les trois approches sont complémentaires — pas mutuellement exclusives',
+        'Les trois approches sont complémentaires - pas mutuellement exclusives',
       ]},
 
       { type: 'heading', content: '1. Le nouveau paysage du développement', id: 'contexte' },
-      { type: 'text', content: 'Jusqu\'en 2020, créer une application signifiait soit apprendre à coder (long, difficile), soit payer un développeur (cher). Le No-Code a ouvert une troisième voie accessible aux non-techniciens, mais avec des limitations. Puis le Vibe Coding est apparu — et il a changé les règles du jeu fondamentalement.' },
+      { type: 'text', content: 'Jusqu\'en 2020, créer une application signifiait soit apprendre à coder (long, difficile), soit payer un développeur (cher). Le No-Code a ouvert une troisième voie accessible aux non-techniciens, mais avec des limitations. Puis le Vibe Coding est apparu - et il a changé les règles du jeu fondamentalement.' },
       { type: 'stats-grid', items: [
         { value: '6-24 mois', label: 'Temps pour devenir développeur junior compétent' },
         { value: '1-2 semaines', label: 'Temps pour créer son premier SaaS avec Vibe Coding' },
@@ -1895,21 +1895,21 @@ export const articles = [
       { type: 'heading', content: '2. Le No-Code : la vitesse sans la propriété', id: 'nocode' },
       { type: 'text', content: 'Le No-Code désigne des outils qui permettent de construire des applications via des interfaces visuelles (glisser-déposer, blocs logiques) sans écrire de code. Les plateformes les plus connues : <strong>Bubble</strong> (apps web complexes), <strong>Webflow</strong> (sites et landing pages), <strong>FlutterFlow</strong> (apps mobiles), <strong>Glide</strong> (apps depuis des tableurs Google Sheets).' },
       { type: 'list', items: [
-        '<strong>Avantage #1 — Rapidité :</strong> Un landing page Webflow se monte en 1-2 heures avec les bons templates. Une app Bubble basique en quelques jours.',
-        '<strong>Avantage #2 — Visuel :</strong> Vous voyez le résultat en temps réel — idéal pour les non-techniciens qui pensent en termes d\'interface.',
-        '<strong>Avantage #3 — Hébergement inclus :</strong> La plupart des plateformes No-Code gèrent le déploiement et le scaling automatiquement.',
-        '<strong>Limite #1 — Enfermement plateforme :</strong> Si Bubble ferme ou change ses tarifs, votre business est à risque. Vous ne pouvez pas "exporter" le code vers un autre hébergeur.',
-        '<strong>Limite #2 — Scalabilité plafonnée :</strong> Les apps Bubble peinent souvent au-delà de quelques milliers d\'utilisateurs simultanés sans plans Enterprise coûteux.',
-        '<strong>Limite #3 — Courbe d\'apprentissage parfois surprise :</strong> Bubble est réputé pour une courbe d\'apprentissage plus raide que prévu pour les cas d\'usage avancés.',
+        '<strong>Avantage #1 - Rapidité :</strong> Un landing page Webflow se monte en 1-2 heures avec les bons templates. Une app Bubble basique en quelques jours.',
+        '<strong>Avantage #2 - Visuel :</strong> Vous voyez le résultat en temps réel - idéal pour les non-techniciens qui pensent en termes d\'interface.',
+        '<strong>Avantage #3 - Hébergement inclus :</strong> La plupart des plateformes No-Code gèrent le déploiement et le scaling automatiquement.',
+        '<strong>Limite #1 - Enfermement plateforme :</strong> Si Bubble ferme ou change ses tarifs, votre business est à risque. Vous ne pouvez pas "exporter" le code vers un autre hébergeur.',
+        '<strong>Limite #2 - Scalabilité plafonnée :</strong> Les apps Bubble peinent souvent au-delà de quelques milliers d\'utilisateurs simultanés sans plans Enterprise coûteux.',
+        '<strong>Limite #3 - Courbe d\'apprentissage parfois surprise :</strong> Bubble est réputé pour une courbe d\'apprentissage plus raide que prévu pour les cas d\'usage avancés.',
       ]},
 
       { type: 'heading', content: '3. Le code traditionnel : puissance totale, investissement maximal', id: 'code' },
-      { type: 'text', content: 'Le développement traditionnel (JavaScript/TypeScript, Python, Swift, Kotlin) vous donne un contrôle total sur chaque aspect de votre application — performance, sécurité, scalabilité, design système. C\'est le choix de Netflix, Airbnb, et toutes les grandes plateformes mondiales.' },
-      { type: 'text', content: 'Pour un entrepreneur non-technicien, l\'investissement est cependant énorme : <strong>6 à 24 mois</strong> pour atteindre un niveau junior compétent. Pendant ce temps, votre idée peut être copiée, le marché peut changer, ou votre motivation peut flancher. Recruter un développeur résout le problème mais coûte entre <strong>500€ et 5 000€/mois</strong> — hors de portée pour la plupart des startups bootstrappées africaines.' },
+      { type: 'text', content: 'Le développement traditionnel (JavaScript/TypeScript, Python, Swift, Kotlin) vous donne un contrôle total sur chaque aspect de votre application - performance, sécurité, scalabilité, design système. C\'est le choix de Netflix, Airbnb, et toutes les grandes plateformes mondiales.' },
+      { type: 'text', content: 'Pour un entrepreneur non-technicien, l\'investissement est cependant énorme : <strong>6 à 24 mois</strong> pour atteindre un niveau junior compétent. Pendant ce temps, votre idée peut être copiée, le marché peut changer, ou votre motivation peut flancher. Recruter un développeur résout le problème mais coûte entre <strong>500€ et 5 000€/mois</strong> - hors de portée pour la plupart des startups bootstrappées africaines.' },
 
       { type: 'heading', content: '4. Le Vibe Coding : le meilleur des deux mondes ?', id: 'vibecoding' },
       { type: 'text', content: 'Le Vibe Coding est l\'art de générer du <strong>vrai code</strong> via des conversations en langage naturel avec une IA (Cursor, Bolt.new, Windsurf, Claude). Vous décrivez ce que vous voulez, l\'IA génère le code, vous testez, et vous corrigez en langage naturel quand quelque chose ne marche pas.' },
-      { type: 'text', content: 'L\'avantage clé sur le No-Code : <strong>vous possédez votre code</strong>. Une app créée en Vibe Coding tourne sur React, Node.js, Supabase — des technologies standards que vous pouvez déployer partout, modifier avec n\'importe quel développeur, et qui scalent à des millions d\'utilisateurs. Vous avez la vitesse du No-Code et la liberté du code traditionnel.' },
+      { type: 'text', content: 'L\'avantage clé sur le No-Code : <strong>vous possédez votre code</strong>. Une app créée en Vibe Coding tourne sur React, Node.js, Supabase - des technologies standards que vous pouvez déployer partout, modifier avec n\'importe quel développeur, et qui scalent à des millions d\'utilisateurs. Vous avez la vitesse du No-Code et la liberté du code traditionnel.' },
 
       { type: 'heading', content: '5. Comparatif complet des 3 approches', id: 'comparatif' },
       { type: 'table', headers: ['Critère', 'No-Code', 'Code Traditionnel', 'Vibe Coding'], rows: [
@@ -1930,12 +1930,12 @@ export const articles = [
         '<strong>→ Vous construisez un site vitrine ou une landing page :</strong> No-Code avec Webflow ou Framer. Interface visuelle parfaite pour ce cas d\'usage.',
         '<strong>→ Vous avez une vision de SaaS complexe et du temps :</strong> Apprenez les bases du code + utilisez le Vibe Coding pour accélérer.',
         '<strong>→ Vous avez un budget pour recruter :</strong> Développeur + Vibe Coding en support = combinaison optimale.',
-        '<strong>→ Vous êtes en Afrique avec budget limité et ambition internationale :</strong> Vibe Coding + Bolt/Cursor + Supabase + Vercel — stack complète à moins de 30$/mois.',
+        '<strong>→ Vous êtes en Afrique avec budget limité et ambition internationale :</strong> Vibe Coding + Bolt/Cursor + Supabase + Vercel - stack complète à moins de 30$/mois.',
         '<strong>→ Vous ciblez une app mobile :</strong> FlutterFlow (No-Code) pour tester, puis Vibe Coding avec Flutter/React Native pour la version production.',
       ]},
 
       { type: 'faq-rich', items: [
-        { q: 'Le Vibe Coding est-il solide pour des projets en production réelle ?', a: 'Oui, pour des SaaS avec jusqu\'à quelques dizaines de milliers d\'utilisateurs. CommentSticker (mon propre SaaS) est à 100% en Vibe Coding et gère ses utilisateurs sans problème. Pour Netflix à 200 millions d\'abonnés, vous aurez besoin d\'une équipe de développeurs — mais vous n\'en êtes pas là au démarrage.' },
+        { q: 'Le Vibe Coding est-il solide pour des projets en production réelle ?', a: 'Oui, pour des SaaS avec jusqu\'à quelques dizaines de milliers d\'utilisateurs. CommentSticker (mon propre SaaS) est à 100% en Vibe Coding et gère ses utilisateurs sans problème. Pour Netflix à 200 millions d\'abonnés, vous aurez besoin d\'une équipe de développeurs - mais vous n\'en êtes pas là au démarrage.' },
         { q: 'Peut-on passer du No-Code au Vibe Coding ?', a: 'Partiellement. Vous ne pouvez pas "convertir" une app Bubble en React automatiquement. En revanche, les concepts que vous apprendrez sur le No-Code (logique de base de données, workflows, gestion d\'utilisateurs) sont directement réutilisables en Vibe Coding.' },
         { q: 'Quel outil de Vibe Coding recommander à un débutant absolu ?', a: 'Bolt.new. 100% dans le navigateur, aucune installation. Vous entrez votre idée, l\'app est générée, déployée. Commencez par un outil simple (calculateur, générateur de texte) avant un SaaS complet.' },
       ]},
@@ -1980,21 +1980,21 @@ export const articles = [
       { type: 'key-points', items: [
         'ElevenLabs génère des voix off indiscernables de la réalité en 2026',
         'Le clonage vocal nécessite seulement 1-2 minutes d\'audio propre de votre voix',
-        'Le plan gratuit offre 10 000 caractères/mois — suffisant pour les débutants',
+        'Le plan gratuit offre 10 000 caractères/mois - suffisant pour les débutants',
         'Disponible en français, wolof, anglais, espagnol, arabe et 30+ autres langues',
         'Le Voice Cloning instantané (Instant Voice Cloning) est disponible dès le plan Starter (5$/mois)',
-        'ElevenLabs supporte la génération audio multilingue — votre voix en 10 langues',
+        'ElevenLabs supporte la génération audio multilingue - votre voix en 10 langues',
         'L\'API ElevenLabs peut être intégrée dans vos SaaS pour générer des audios automatiquement',
       ]},
 
       { type: 'heading', content: '1. Pourquoi ElevenLabs change tout', id: 'intro' },
       { type: 'text', content: 'Avant ElevenLabs, produire une voix off professionnelle nécessitait : un studio d\'enregistrement (100-500€/session), un comédien vocal (200-1000€/projet), un ingénieur du son (100-300€), et plusieurs jours de travail. Avec ElevenLabs, le même résultat s\'obtient en <strong>5 minutes et moins de 5$</strong>.' },
-      { type: 'text', content: 'La qualité n\'est pas "correcte" — elle est <strong>bluffante</strong>. La gestion des émotions (enthousiasme, sérieux, complicité), des silences naturels, des intonations de questions, et même des accents régionaux est à un niveau qui dépasse de nombreux comédiens amateurs.' },
+      { type: 'text', content: 'La qualité n\'est pas "correcte" - elle est <strong>bluffante</strong>. La gestion des émotions (enthousiasme, sérieux, complicité), des silences naturels, des intonations de questions, et même des accents régionaux est à un niveau qui dépasse de nombreux comédiens amateurs.' },
       { type: 'stats-grid', items: [
         { value: '10 000', label: 'Caractères offerts par mois sur le plan gratuit' },
         { value: '30+', label: 'Langues supportées dont le français, l\'arabe et le swahili' },
         { value: '1-2 min', label: 'D\'audio suffisant pour créer un clone vocal convaincant' },
-        { value: '5$', label: 'Plan Starter par mois — accès au clonage vocal instantané' },
+        { value: '5$', label: 'Plan Starter par mois - accès au clonage vocal instantané' },
       ]},
 
       { type: 'heading', content: '2. Plans et accès : ce que vous pouvez faire gratuitement', id: 'acces' },
@@ -2005,25 +2005,25 @@ export const articles = [
         ['Pro', '99$/mois', '500 000', '✅ Tous types', '✅ Oui'],
         ['Scale', '330$/mois', '2 000 000', '✅ Pro + custom models', '✅ Oui'],
       ]},
-      { type: 'text', content: '<strong>Mon conseil :</strong> Commencez par le plan gratuit pour tester. Si vous produisez des voix off régulièrement pour des clients ou des vidéos YouTube, le plan Creator (22$/mois) est le plus rentable — 100 000 caractères représentent environ 80 à 100 vidéos YouTube de 5 minutes.' },
+      { type: 'text', content: '<strong>Mon conseil :</strong> Commencez par le plan gratuit pour tester. Si vous produisez des voix off régulièrement pour des clients ou des vidéos YouTube, le plan Creator (22$/mois) est le plus rentable - 100 000 caractères représentent environ 80 à 100 vidéos YouTube de 5 minutes.' },
 
       { type: 'heading', content: '3. Cloner sa voix : tutoriel pas à pas', id: 'clonage' },
       { type: 'pros', items: [
-        '<strong>Étape 1 — Créer un compte ElevenLabs :</strong> Rendez-vous sur elevenlabs.io. Inscription gratuite avec votre email Google. Aucune carte bancaire requise pour le plan free.',
-        '<strong>Étape 2 — Préparer l\'enregistrement :</strong> Enregistrez 1 à 3 minutes de votre voix dans un endroit silencieux (pas de climatisation, pas de bruit de rue). Parlez naturellement à vitesse normale. Format accepté : MP3, WAV, M4A. Outils : Voice Memo (iPhone), Audacity (PC), l\'application Dictaphone Android.',
-        '<strong>Étape 3 — Créer la voix clonée :</strong> Dans le menu ElevenLabs → "Voices" → "+ Add Voice" → "Instant Voice Cloning". Uploadez votre fichier audio. Donnez un nom à votre voix (ex: "Ma voix YouTube"). Cliquez "Add Voice".',
-        '<strong>Étape 4 — Tester le clone :</strong> Allez dans "Speech Synthesis", sélectionnez votre voix clonée, tapez n\'importe quel texte et cliquez "Generate". Écoutez le résultat. Si la qualité vous convient, votre clone est prêt.',
-        '<strong>Étape 5 — Affiner (optionnel) :</strong> Si l\'intonation n\'est pas parfaite, vous pouvez ajouter d\'autres échantillons audio (ElevenLabs accepte jusqu\'à 250MB de samples). Plus l\'échantillon est long et varié, plus le clone est précis.',
-        '<strong>Étape 6 — Générer vos voix off :</strong> Collez votre script dans Speech Synthesis, ajustez la stabilité (50-70%) et la similarité (75-85%), générez et téléchargez en MP3.',
+        '<strong>Étape 1 - Créer un compte ElevenLabs :</strong> Rendez-vous sur elevenlabs.io. Inscription gratuite avec votre email Google. Aucune carte bancaire requise pour le plan free.',
+        '<strong>Étape 2 - Préparer l\'enregistrement :</strong> Enregistrez 1 à 3 minutes de votre voix dans un endroit silencieux (pas de climatisation, pas de bruit de rue). Parlez naturellement à vitesse normale. Format accepté : MP3, WAV, M4A. Outils : Voice Memo (iPhone), Audacity (PC), l\'application Dictaphone Android.',
+        '<strong>Étape 3 - Créer la voix clonée :</strong> Dans le menu ElevenLabs → "Voices" → "+ Add Voice" → "Instant Voice Cloning". Uploadez votre fichier audio. Donnez un nom à votre voix (ex: "Ma voix YouTube"). Cliquez "Add Voice".',
+        '<strong>Étape 4 - Tester le clone :</strong> Allez dans "Speech Synthesis", sélectionnez votre voix clonée, tapez n\'importe quel texte et cliquez "Generate". Écoutez le résultat. Si la qualité vous convient, votre clone est prêt.',
+        '<strong>Étape 5 - Affiner (optionnel) :</strong> Si l\'intonation n\'est pas parfaite, vous pouvez ajouter d\'autres échantillons audio (ElevenLabs accepte jusqu\'à 250MB de samples). Plus l\'échantillon est long et varié, plus le clone est précis.',
+        '<strong>Étape 6 - Générer vos voix off :</strong> Collez votre script dans Speech Synthesis, ajustez la stabilité (50-70%) et la similarité (75-85%), générez et téléchargez en MP3.',
       ]},
 
       { type: 'heading', content: '4. Text-to-Speech sans clonage', id: 'tts' },
       { type: 'text', content: 'Si vous ne souhaitez pas cloner votre propre voix, ElevenLabs propose une bibliothèque de <strong>voix professionnelles pré-entraînées</strong> couvrant différents styles et accents. Certaines voix francophones sont particulièrement réalistes :' },
       { type: 'list', items: [
-        '<strong>Charlotte</strong> — Voix féminine française, ton professionnel, idéale pour les vidéos business.',
-        '<strong>Antoine</strong> — Voix masculine française, ton chaleureux, parfaite pour les podcasts.',
-        '<strong>Matilda</strong> — Voix anglaise féminine très naturelle avec option de traduction française.',
-        '<strong>Custom voices</strong> — ElevenLabs permet d\'acheter des licences de voix de comédiens professionnels dans la Voice Library.',
+        '<strong>Charlotte</strong> - Voix féminine française, ton professionnel, idéale pour les vidéos business.',
+        '<strong>Antoine</strong> - Voix masculine française, ton chaleureux, parfaite pour les podcasts.',
+        '<strong>Matilda</strong> - Voix anglaise féminine très naturelle avec option de traduction française.',
+        '<strong>Custom voices</strong> - ElevenLabs permet d\'acheter des licences de voix de comédiens professionnels dans la Voice Library.',
       ]},
 
       { type: 'heading', content: '5. Cas d\'usage rentables', id: 'usages' },
@@ -2037,7 +2037,7 @@ export const articles = [
       { type: 'heading', content: '6. Conseils pour un rendu naturel en français', id: 'tips' },
       { type: 'list', items: [
         '<strong>Stabilité à 50-65% :</strong> Trop haute = voix robotique et monotone. Trop basse = variations excessives. Testez dans cette plage pour trouver votre équilibre.',
-        '<strong>Utilisez la ponctuation :</strong> Les virgules et points créent des pauses naturelles. Ajoutez des "..." pour une pause longue, des "—" pour une emphase.',
+        '<strong>Utilisez la ponctuation :</strong> Les virgules et points créent des pauses naturelles. Ajoutez des "..." pour une pause longue, des "-" pour une emphase.',
         '<strong>Évitez les textes trop longs d\'un seul bloc :</strong> Divisez en paragraphes de 100-150 mots. Générez par sections et assemblez dans CapCut ou Audacity.',
         '<strong>Testez plusieurs prises :</strong> Même prompt = résultats légèrement différents. Générez 2-3 fois et gardez la meilleure.',
         '<strong>Ajoutez une musique de fond :</strong> Même une légère musique d\'ambiance à -20dB masque les imperfections de la voix IA et augmente le réalisme perçu.',
@@ -2084,20 +2084,20 @@ export const articles = [
       { id: 'faq', label: 'FAQ' },
     ],
     sections: [
-      { type: 'intro', content: 'En Afrique subsaharienne francophone, 70 à 80% des transactions digitales se font via Mobile Money — pas par carte bancaire. Si votre business digital n\'accepte pas Wave, Orange Money ou MTN MoMo, vous excluez la grande majorité de vos clients potentiels. Ce guide vous explique comment intégrer le Mobile Money de manière simple et sécurisée.' },
+      { type: 'intro', content: 'En Afrique subsaharienne francophone, 70 à 80% des transactions digitales se font via Mobile Money - pas par carte bancaire. Si votre business digital n\'accepte pas Wave, Orange Money ou MTN MoMo, vous excluez la grande majorité de vos clients potentiels. Ce guide vous explique comment intégrer le Mobile Money de manière simple et sécurisée.' },
 
       { type: 'key-points', items: [
         'Le Mobile Money représente 70-80% des paiements digitaux en Afrique subsaharienne francophone',
         'Wave (Sénégal, Côte d\'Ivoire, Cameroun) est le leader en volume de transactions dans ces pays',
         'Ne pas accepter Mobile Money = exclure 80% de votre marché cible africain',
         'Les agrégateurs (CinetPay, PayDunya, Flutterwave) simplifient drastiquement l\'intégration multi-opérateurs',
-        'Les échecs de paiement Mobile Money sont fréquents (réseau, PIN oublié) — avoir un plan B est indispensable',
+        'Les échecs de paiement Mobile Money sont fréquents (réseau, PIN oublié) - avoir un plan B est indispensable',
         'Le délai de virement des fonds vers votre compte varie de 24h à 72h selon les agrégateurs',
         'Systeme.io et WordPress/WooCommerce ont des plugins Mobile Money disponibles',
       ]},
 
       { type: 'heading', content: '1. Le Mobile Money : l\'infrastructure financière africaine', id: 'contexte' },
-      { type: 'text', content: 'Lancé par M-Pesa au Kenya en 2007, le Mobile Money a révolutionné la finance africaine. En Afrique de l\'Ouest francophone, Wave, Orange Money, MTN MoMo et Moov Money dominent. <strong>Ces services permettent d\'envoyer, recevoir et payer via un simple numéro de téléphone mobile</strong> — sans compte bancaire traditionnel nécessaire.' },
+      { type: 'text', content: 'Lancé par M-Pesa au Kenya en 2007, le Mobile Money a révolutionné la finance africaine. En Afrique de l\'Ouest francophone, Wave, Orange Money, MTN MoMo et Moov Money dominent. <strong>Ces services permettent d\'envoyer, recevoir et payer via un simple numéro de téléphone mobile</strong> - sans compte bancaire traditionnel nécessaire.' },
       { type: 'stats-grid', items: [
         { value: '70%', label: 'Des adultes non-bancarisés en Afrique subsaharienne ont accès au Mobile Money' },
         { value: '830Mds$', label: 'Volume de transactions Mobile Money en Afrique en 2024' },
@@ -2129,10 +2129,10 @@ export const articles = [
 
       { type: 'heading', content: '4. Intégrer le Mobile Money à votre business', id: 'integration' },
       { type: 'list', items: [
-        '<strong>Option 1 — Lien de paiement (le plus simple) :</strong> Wave, Orange Money et MTN permettent de générer des liens de paiement depuis leur app business. Partagez le lien par WhatsApp. Le client clique, confirme sur son téléphone. Vous recevez une notification. Manuel mais fonctionnel pour débuter.',
-        '<strong>Option 2 — Systeme.io avec Mobile Money :</strong> Systeme.io ne supporte pas nativement le Mobile Money mais vous pouvez créer une page de commande manuelle. Le client voit les coordonnées de paiement, envoie l\'argent, et vous activez son accès manuellement. Solution transitoire acceptable pour les formations.',
-        '<strong>Option 3 — CinetPay ou PayDunya (recommandé pour les volumes) :</strong> Créez un compte sur CinetPay ou PayDunya. Intégrez leur plugin sur WordPress/WooCommerce ou leur API sur votre site custom. Le paiement et la confirmation sont automatiques.',
-        '<strong>Option 4 — API directe (développeurs) :</strong> Utilisez l\'API Wave Merchant ou MTN MOMO API directement dans votre SaaS. Plus de contrôle, moins de frais de commission, mais nécessite des compétences techniques.',
+        '<strong>Option 1 - Lien de paiement (le plus simple) :</strong> Wave, Orange Money et MTN permettent de générer des liens de paiement depuis leur app business. Partagez le lien par WhatsApp. Le client clique, confirme sur son téléphone. Vous recevez une notification. Manuel mais fonctionnel pour débuter.',
+        '<strong>Option 2 - Systeme.io avec Mobile Money :</strong> Systeme.io ne supporte pas nativement le Mobile Money mais vous pouvez créer une page de commande manuelle. Le client voit les coordonnées de paiement, envoie l\'argent, et vous activez son accès manuellement. Solution transitoire acceptable pour les formations.',
+        '<strong>Option 3 - CinetPay ou PayDunya (recommandé pour les volumes) :</strong> Créez un compte sur CinetPay ou PayDunya. Intégrez leur plugin sur WordPress/WooCommerce ou leur API sur votre site custom. Le paiement et la confirmation sont automatiques.',
+        '<strong>Option 4 - API directe (développeurs) :</strong> Utilisez l\'API Wave Merchant ou MTN MOMO API directement dans votre SaaS. Plus de contrôle, moins de frais de commission, mais nécessite des compétences techniques.',
       ]},
 
       { type: 'heading', content: '5. Optimiser le taux de conversion Mobile Money', id: 'optimiser' },
@@ -2185,15 +2185,15 @@ export const articles = [
       { id: 'faq', label: 'FAQ' },
     ],
     sections: [
-      { type: 'intro', content: 'Depuis 2023, j\'ai formé et accompagné plus de 500 entrepreneurs africains sur l\'IA — des sessions de groupe, des workshops intensifs, des accompagnements individuels de 3 à 6 mois. Voici ce que j\'ai appris sur la psychologie de l\'adoption de l\'IA dans le contexte africain. Des données qu\'aucun rapport de cabinet de conseil ne vous donnera.' },
+      { type: 'intro', content: 'Depuis 2023, j\'ai formé et accompagné plus de 500 entrepreneurs africains sur l\'IA - des sessions de groupe, des workshops intensifs, des accompagnements individuels de 3 à 6 mois. Voici ce que j\'ai appris sur la psychologie de l\'adoption de l\'IA dans le contexte africain. Des données qu\'aucun rapport de cabinet de conseil ne vous donnera.' },
 
       { type: 'key-points', items: [
-        'Le blocage principal n\'est pas technique — c\'est psychologique ("ce n\'est pas pour moi")',
+        'Le blocage principal n\'est pas technique - c\'est psychologique ("ce n\'est pas pour moi")',
         '80% des entrepreneurs qui adoptent l\'IA voient un gain de productivité mesurable en 30 jours',
         'Les femmes entrepreneures africaines ont généralement un taux d\'adoption plus rapide que les hommes',
         'Le premier succès concret (même petit) est le déclencheur de l\'adoption durable',
         'Les entrepreneurs avec un background commercial (vente, marketing) adoptent l\'IA plus vite que ceux avec un background technique',
-        'L\'IA ne remplace pas le bon sens business — elle amplifie ce qui fonctionne déjà',
+        'L\'IA ne remplace pas le bon sens business - elle amplifie ce qui fonctionne déjà',
         'La barrière de la langue française est réelle mais en train d\'être surmontée (modèles IA en français s\'améliorent rapidement)',
       ]},
 
@@ -2208,22 +2208,22 @@ export const articles = [
 
       { type: 'heading', content: '2. Les 5 blocages mentaux les plus fréquents', id: 'blocages' },
       { type: 'list', items: [
-        '<strong>Blocage #1 — "C\'est pour les techniciens" :</strong> Le blocage numéro un. 65% des participants pensaient initalement que l\'IA nécessitait des compétences en programmation. Réalité : ChatGPT, Claude et Gemini se pilotent en langage naturel. Si vous savez communiquer, vous savez utiliser l\'IA.',
-        '<strong>Blocage #2 — "Mes données ne sont pas assez bien pour l\'IA" :</strong> Beaucoup pensent qu\'ils n\'ont "rien à dire à l\'IA". En réalité, ils ont des années d\'expertise métier à transmettre. L\'IA structure ce qu\'ils savent déjà — elle ne remplace pas la connaissance terrain.',
-        '<strong>Blocage #3 — La peur de "paraître" utiliser l\'IA :</strong> Phénomène surprenant : certains ont honte de dire qu\'ils utilisent l\'IA, comme si c\'était de la triche. Je leur rappelle qu\'utiliser un calculateur n\'est pas de la triche en mathématiques. L\'IA est un outil, pas une fraude.',
-        '<strong>Blocage #4 — "Ça va prendre mes emplois" :</strong> Les employeurs africains ont peur des réactions de leurs équipes. La bonne approche : impliquer les équipes dans l\'adoption, montrer comment l\'IA rend leur travail moins répétitif, pas les remplace.',
-        '<strong>Blocage #5 — "Ça ne marchera pas en français africain" :</strong> Les modèles IA en 2026 comprennent très bien le français africain (expressions ivoiriennes, camerounismes, sénégalais). Les résultats sont parfois légèrement moins précis qu\'en anglais, mais largement utilisables.',
+        '<strong>Blocage #1 - "C\'est pour les techniciens" :</strong> Le blocage numéro un. 65% des participants pensaient initalement que l\'IA nécessitait des compétences en programmation. Réalité : ChatGPT, Claude et Gemini se pilotent en langage naturel. Si vous savez communiquer, vous savez utiliser l\'IA.',
+        '<strong>Blocage #2 - "Mes données ne sont pas assez bien pour l\'IA" :</strong> Beaucoup pensent qu\'ils n\'ont "rien à dire à l\'IA". En réalité, ils ont des années d\'expertise métier à transmettre. L\'IA structure ce qu\'ils savent déjà - elle ne remplace pas la connaissance terrain.',
+        '<strong>Blocage #3 - La peur de "paraître" utiliser l\'IA :</strong> Phénomène surprenant : certains ont honte de dire qu\'ils utilisent l\'IA, comme si c\'était de la triche. Je leur rappelle qu\'utiliser un calculateur n\'est pas de la triche en mathématiques. L\'IA est un outil, pas une fraude.',
+        '<strong>Blocage #4 - "Ça va prendre mes emplois" :</strong> Les employeurs africains ont peur des réactions de leurs équipes. La bonne approche : impliquer les équipes dans l\'adoption, montrer comment l\'IA rend leur travail moins répétitif, pas les remplace.',
+        '<strong>Blocage #5 - "Ça ne marchera pas en français africain" :</strong> Les modèles IA en 2026 comprennent très bien le français africain (expressions ivoiriennes, camerounismes, sénégalais). Les résultats sont parfois légèrement moins précis qu\'en anglais, mais largement utilisables.',
       ]},
 
       { type: 'heading', content: '3. Les 7 révélations qui changent tout', id: 'revelations' },
       { type: 'pros', items: [
-        '<strong>Révélation 1 — Le premier prompt réussi :</strong> Quand un entrepreneur obtient pour la première fois une réponse utile et précise de l\'IA — une proposition commerciale, un email de relance, un plan d\'action — le changement de posture est immédiat et visible. Le doute se transforme en curiosité, puis en enthousiasme.',
-        '<strong>Révélation 2 — "Je gagne 2 heures par jour" :</strong> La prise de conscience de la valeur du temps économisé. Un formateur qui passait 3 heures à créer ses slides en passe maintenant 30 minutes. Une comptable qui répondait à 50 emails similaires par semaine a créé des templates IA.',
-        '<strong>Révélation 3 — "L\'IA connaît mon secteur" :</strong> Découvrir que ChatGPT peut générer un bilan comptable fictif réaliste, rédiger un bail commercial camerounais, ou créer un plan de formation pédagogique est souvent stupéfiant pour les non-techniciens.',
-        '<strong>Révélation 4 — La personnalisation possible :</strong> Comprendre que l\'IA s\'adapte à leur voix, leur ton, leur secteur — que le résultat peut être indiscernable d\'un texte humain bien écrit — est un moment clé.',
-        '<strong>Révélation 5 — Le coût accessible :</strong> Beaucoup pensaient que "l\'IA pour les entreprises" coûtait des milliers d\'euros par mois. Découvrir que ChatGPT Pro coûte 20$/mois et couvre la majorité des besoins est souvent libérateur.',
-        '<strong>Révélation 6 — La complémentarité avec l\'expertise humaine :</strong> L\'IA fait les 80% mécaniques d\'une tâche (structure, rédaction, formatage). L\'entrepreneur apporte les 20% qui font la différence (nuances locales, ton personnel, décisions stratégiques, relations humaines).',
-        '<strong>Révélation 7 — L\'effet multiplicateur :</strong> Quand ils voient qu\'ils peuvent servir 3x plus de clients avec la même énergie, grâce à l\'IA qui gère les tâches répétitives, l\'adoption devient naturelle et enthousiaste.',
+        '<strong>Révélation 1 - Le premier prompt réussi :</strong> Quand un entrepreneur obtient pour la première fois une réponse utile et précise de l\'IA - une proposition commerciale, un email de relance, un plan d\'action - le changement de posture est immédiat et visible. Le doute se transforme en curiosité, puis en enthousiasme.',
+        '<strong>Révélation 2 - "Je gagne 2 heures par jour" :</strong> La prise de conscience de la valeur du temps économisé. Un formateur qui passait 3 heures à créer ses slides en passe maintenant 30 minutes. Une comptable qui répondait à 50 emails similaires par semaine a créé des templates IA.',
+        '<strong>Révélation 3 - "L\'IA connaît mon secteur" :</strong> Découvrir que ChatGPT peut générer un bilan comptable fictif réaliste, rédiger un bail commercial camerounais, ou créer un plan de formation pédagogique est souvent stupéfiant pour les non-techniciens.',
+        '<strong>Révélation 4 - La personnalisation possible :</strong> Comprendre que l\'IA s\'adapte à leur voix, leur ton, leur secteur - que le résultat peut être indiscernable d\'un texte humain bien écrit - est un moment clé.',
+        '<strong>Révélation 5 - Le coût accessible :</strong> Beaucoup pensaient que "l\'IA pour les entreprises" coûtait des milliers d\'euros par mois. Découvrir que ChatGPT Pro coûte 20$/mois et couvre la majorité des besoins est souvent libérateur.',
+        '<strong>Révélation 6 - La complémentarité avec l\'expertise humaine :</strong> L\'IA fait les 80% mécaniques d\'une tâche (structure, rédaction, formatage). L\'entrepreneur apporte les 20% qui font la différence (nuances locales, ton personnel, décisions stratégiques, relations humaines).',
+        '<strong>Révélation 7 - L\'effet multiplicateur :</strong> Quand ils voient qu\'ils peuvent servir 3x plus de clients avec la même énergie, grâce à l\'IA qui gère les tâches répétitives, l\'adoption devient naturelle et enthousiaste.',
       ]},
 
       { type: 'heading', content: '4. Les profils qui réussissent le mieux', id: 'succes' },
@@ -2236,10 +2236,10 @@ export const articles = [
 
       { type: 'heading', content: '5. Les erreurs les plus communes', id: 'echecs' },
       { type: 'list', items: [
-        '<strong>Erreur 1 — Utiliser l\'IA sans objectif précis :</strong> "J\'ai ChatGPT mais je ne sais pas quoi en faire." La formation commence toujours par identifier 3 tâches chronophages spécifiques avant de toucher un outil.',
-        '<strong>Erreur 2 — Ne pas lire les résultats :</strong> Certains copient-collent directement les textes IA sans les relire. Résultat : des emails contenant des informations incorrectes ou un ton inadapté à leur contexte culturel.',
-        '<strong>Erreur 3 — Abandonner après un premier prompt décevant :</strong> Le Vibe Coding de l\'IA s\'apprend comme tout skill. Les 10 premiers prompts sont toujours décevants. Ceux qui persistent passent un cap rapide.',
-        '<strong>Erreur 4 — Chercher la perfection du premier coup :</strong> L\'IA génère un 70-80% utilisable. Les 20-30% restants se complètent en 5-10 minutes. Chercher 100% du premier prompt est une perte de temps.',
+        '<strong>Erreur 1 - Utiliser l\'IA sans objectif précis :</strong> "J\'ai ChatGPT mais je ne sais pas quoi en faire." La formation commence toujours par identifier 3 tâches chronophages spécifiques avant de toucher un outil.',
+        '<strong>Erreur 2 - Ne pas lire les résultats :</strong> Certains copient-collent directement les textes IA sans les relire. Résultat : des emails contenant des informations incorrectes ou un ton inadapté à leur contexte culturel.',
+        '<strong>Erreur 3 - Abandonner après un premier prompt décevant :</strong> Le Vibe Coding de l\'IA s\'apprend comme tout skill. Les 10 premiers prompts sont toujours décevants. Ceux qui persistent passent un cap rapide.',
+        '<strong>Erreur 4 - Chercher la perfection du premier coup :</strong> L\'IA génère un 70-80% utilisable. Les 20-30% restants se complètent en 5-10 minutes. Chercher 100% du premier prompt est une perte de temps.',
       ]},
 
       { type: 'faq-rich', items: [
@@ -2284,8 +2284,8 @@ export const articles = [
       { type: 'intro', content: 'L\'automatisation n\'est pas réservée aux grandes entreprises tech. En 2026, avec Make.com (9$/mois) et l\'API OpenAI (quelques dollars selon l\'usage), n\'importe quel entrepreneur peut automatiser ses tâches répétitives. La question n\'est pas "est-ce que je peux automatiser ?" mais "par où commencer ?".' },
 
       { type: 'key-points', items: [
-        'Automatiser, c\'est déléguer à une machine ce qu\'elle fait mieux — pas tout remplacer',
-        'L\'audit de vos tâches répétitives est l\'étape la plus importante — avant de toucher un outil',
+        'Automatiser, c\'est déléguer à une machine ce qu\'elle fait mieux - pas tout remplacer',
+        'L\'audit de vos tâches répétitives est l\'étape la plus importante - avant de toucher un outil',
         'Make.com (ex-Integromat) est le meilleur outil pour les débutants avec logique visuelle',
         'L\'API OpenAI ajoutée au milieu d\'un workflow Make permet à l\'IA de lire, analyser et classer vos données',
         'Premier workflow à automatiser : réponses aux emails FAQ ou messages WhatsApp répétitifs',
@@ -2297,8 +2297,8 @@ export const articles = [
       { type: 'text', content: 'Avant d\'ouvrir Make.com, faites cet exercice : pendant une semaine, notez <strong>chaque tâche que vous ou votre équipe effectuez de manière répétitive</strong>. Chaque réponse standard à un email client. Chaque rapport hebdomadaire copié-collé depuis Sheets. Chaque post social media préparé avec le même template.' },
       { type: 'text', content: 'Ensuite, classez ces tâches selon deux axes :' },
       { type: 'list', items: [
-        '<strong>Axe 1 — Fréquence :</strong> Combien de fois par semaine cette tâche se répète-t-elle ?',
-        '<strong>Axe 2 — Règle :</strong> Est-ce que la tâche suit toujours les mêmes règles (si X → faire Y) ?',
+        '<strong>Axe 1 - Fréquence :</strong> Combien de fois par semaine cette tâche se répète-t-elle ?',
+        '<strong>Axe 2 - Règle :</strong> Est-ce que la tâche suit toujours les mêmes règles (si X → faire Y) ?',
         '<strong>Priorité haute :</strong> Tâches fréquentes + règles fixes. C\'est votre premier candidat à l\'automatisation.',
         '<strong>Exemples typiques :</strong> Réponse aux emails FAQ, qualification des leads entrants, extraction de données depuis des formulaires, publication de contenu sur les réseaux sociaux, relances de devis impayés.',
       ]},
@@ -2321,12 +2321,12 @@ export const articles = [
 
       { type: 'heading', content: '3. Les 6 workflows prêts à déployer', id: 'workflows' },
       { type: 'list', items: [
-        '<strong>Workflow 1 — Réponse automatique aux emails FAQ :</strong> Déclencheur : Email reçu sur Gmail. Action : OpenAI analyse l\'email + génère une réponse adaptée. Résultat : réponse envoyée automatiquement (ou mise en brouillon pour validation). Gain : 1-3h/semaine.',
-        '<strong>Workflow 2 — Qualification de leads entrants :</strong> Déclencheur : Formulaire Tally/Typeform complété. Action : OpenAI analyse les réponses + attribue un score de qualification (A/B/C). Résultat : Lead ajouté dans Notion ou Airtable avec score + message personnalisé envoyé. Gain : 30 min - 2h/semaine.',
-        '<strong>Workflow 3 — Résumé automatique des réunions :</strong> Déclencheur : Fin d\'une réunion Zoom/Meet (via calendrier). Action : Transcription récupérée + OpenAI génère un compte rendu structuré (décisions, actions, responsables). Résultat : Email envoyé automatiquement à tous les participants. Gain : 30 min/réunion.',
-        '<strong>Workflow 4 — Publication automatique de contenu :</strong> Déclencheur : Nouvelle entrée dans une base Notion "Contenu à publier". Action : Make publie automatiquement sur LinkedIn, Facebook Page, Twitter/X selon le type de contenu et l\'heure programmée. Gain : 1-3h/semaine.',
-        '<strong>Workflow 5 — Veille concurrentielle hebdomadaire :</strong> Déclencheur : Chaque lundi à 8h. Action : Perplexity AI ou API de recherche collecte les actualités de vos concurrents ou mots-clés. OpenAI résume + extrait les insights clés. Résultat : Email de veille envoyé à votre boîte mail. Gain : 2-4h/semaine.',
-        '<strong>Workflow 6 — Relance automatique devis non répondus :</strong> Déclencheur : Devis créé depuis +72h sans réponse (condition dans votre CRM). Action : Email de relance personnalisé généré par OpenAI et envoyé automatiquement. Résultat : Taux de relance × 3 sans effort manuel. Gain : Variable mais fort impact CA.',
+        '<strong>Workflow 1 - Réponse automatique aux emails FAQ :</strong> Déclencheur : Email reçu sur Gmail. Action : OpenAI analyse l\'email + génère une réponse adaptée. Résultat : réponse envoyée automatiquement (ou mise en brouillon pour validation). Gain : 1-3h/semaine.',
+        '<strong>Workflow 2 - Qualification de leads entrants :</strong> Déclencheur : Formulaire Tally/Typeform complété. Action : OpenAI analyse les réponses + attribue un score de qualification (A/B/C). Résultat : Lead ajouté dans Notion ou Airtable avec score + message personnalisé envoyé. Gain : 30 min - 2h/semaine.',
+        '<strong>Workflow 3 - Résumé automatique des réunions :</strong> Déclencheur : Fin d\'une réunion Zoom/Meet (via calendrier). Action : Transcription récupérée + OpenAI génère un compte rendu structuré (décisions, actions, responsables). Résultat : Email envoyé automatiquement à tous les participants. Gain : 30 min/réunion.',
+        '<strong>Workflow 4 - Publication automatique de contenu :</strong> Déclencheur : Nouvelle entrée dans une base Notion "Contenu à publier". Action : Make publie automatiquement sur LinkedIn, Facebook Page, Twitter/X selon le type de contenu et l\'heure programmée. Gain : 1-3h/semaine.',
+        '<strong>Workflow 5 - Veille concurrentielle hebdomadaire :</strong> Déclencheur : Chaque lundi à 8h. Action : Perplexity AI ou API de recherche collecte les actualités de vos concurrents ou mots-clés. OpenAI résume + extrait les insights clés. Résultat : Email de veille envoyé à votre boîte mail. Gain : 2-4h/semaine.',
+        '<strong>Workflow 6 - Relance automatique devis non répondus :</strong> Déclencheur : Devis créé depuis +72h sans réponse (condition dans votre CRM). Action : Email de relance personnalisé généré par OpenAI et envoyé automatiquement. Résultat : Taux de relance × 3 sans effort manuel. Gain : Variable mais fort impact CA.',
       ]},
 
       { type: 'heading', content: '4. Make.com vs Zapier : que choisir ?', id: 'makevszapier' },
@@ -2346,7 +2346,7 @@ export const articles = [
       { type: 'text', content: 'Même avec des estimations conservatives (1h économisée/semaine, 50 000 FCFA de valeur de votre temps) : gain 200 000 FCFA/mois pour un coût de 9 000 FCFA. ROI : 22x. <strong>Aucun investissement business n\'offre ce ratio.</strong>' },
 
       { type: 'faq-rich', items: [
-        { q: 'Faut-il savoir coder pour utiliser Make.com ?', a: 'Non. Make.com est conçu pour des non-développeurs. L\'interface est visuelle (glisser-déposer de modules, connexion de flèches). Pour les cas avancés (fonctions personnalisées, parsing JSON), quelques notions de base de données et de logique conditionnelle aident — mais sans codage.' },
+        { q: 'Faut-il savoir coder pour utiliser Make.com ?', a: 'Non. Make.com est conçu pour des non-développeurs. L\'interface est visuelle (glisser-déposer de modules, connexion de flèches). Pour les cas avancés (fonctions personnalisées, parsing JSON), quelques notions de base de données et de logique conditionnelle aident - mais sans codage.' },
         { q: 'Comment intégrer l\'API OpenAI dans Make.com ?', a: 'Make.com a un module OpenAI natif. Vous créez un scénario Make, ajoutez le module "OpenAI → Create Completion", entrez votre clé API OpenAI (disponible sur platform.openai.com), et rédigez votre prompt système. Le résultat (texte généré par GPT) est ensuite utilisable dans les modules suivants.' },
         { q: 'Quels sont les risques de l\'automatisation ?', a: 'Le risque principal : automatiser une réponse incorrecte à un client. Atténuation : commencez par mettre les réponses IA "en brouillon" (vous validez avant envoi) pour les 2-3 premiers mois. Une fois le modèle prouvé, passez à l\'envoi automatique. Toujours avoir un moyen de désactiver le workflow rapidement.' },
       ]},
@@ -2387,7 +2387,7 @@ export const articles = [
       { id: 'faq', label: 'FAQ' },
     ],
     sections: [
-      { type: 'intro', content: 'Un développeur à Douala qui facture des clients londoniens à 50€/heure. Une graphiste à Dakar qui travaille pour des agences parisiennes. Un rédacteur à Abidjan qui alimente des blogs américains. Le freelance international depuis l\'Afrique est une réalité en 2026 — pas une exception. Voici le manuel complet pour y arriver.' },
+      { type: 'intro', content: 'Un développeur à Douala qui facture des clients londoniens à 50€/heure. Une graphiste à Dakar qui travaille pour des agences parisiennes. Un rédacteur à Abidjan qui alimente des blogs américains. Le freelance international depuis l\'Afrique est une réalité en 2026 - pas une exception. Voici le manuel complet pour y arriver.' },
 
       { type: 'key-points', items: [
         'Le différentiel de coût de vie est votre avantage compétitif : vous pouvez facturer moins cher que Paris tout en vivant confortablement',
@@ -2405,7 +2405,7 @@ export const articles = [
         { value: '15-80€/h', label: 'Tarif horaire accessible pour un freelance africain compétent sur Malt/Upwork' },
         { value: '3-5×', label: 'Le différentiel de coût de vie Afrique vs Europe de l\'Ouest' },
         { value: '25M+', label: 'Freelances actifs sur Upwork (opportunité mondiale)' },
-        { value: '100%', label: 'Du travail effectué à distance — pas besoin de visa ni de déplacement' },
+        { value: '100%', label: 'Du travail effectué à distance - pas besoin de visa ni de déplacement' },
       ]},
 
       { type: 'heading', content: '2. Les services freelance les plus demandés en 2026', id: 'services' },
@@ -2439,7 +2439,7 @@ export const articles = [
       ]},
 
       { type: 'heading', content: '5. Construire un portfolio qui convainc', id: 'portfolio' },
-      { type: 'text', content: 'Pas de clients sans portfolio, pas de portfolio sans premiers clients — le paradoxe du débutant. Voici comment le briser :' },
+      { type: 'text', content: 'Pas de clients sans portfolio, pas de portfolio sans premiers clients - le paradoxe du débutant. Voici comment le briser :' },
       { type: 'list', items: [
         '<strong>Les projets fictifs :</strong> Créez 2-3 projets fictifs pour des clients imaginaires. Un logo pour une startup fictive. Un site web pour un restaurant inexistant. Un article de blog pour une marque que vous inventez. Ces projets demonstrent votre niveau sans mentir.',
         '<strong>Les projets gratuits ou quasi-gratuits :</strong> Proposez 1-2 projets à coût très réduit ou gratuit à des proches ou des associations. Ce sont vos premiers témoignages et premières références réelles.',
@@ -2460,14 +2460,14 @@ export const articles = [
       { type: 'heading', content: '7. Tarification : ne pas brader sa valeur', id: 'tarification' },
       { type: 'text', content: 'L\'erreur la plus commune des freelances africains débutants : fixer leurs tarifs au minimum pour "être compétitifs". C\'est contre-productif. Les clients perçoivent un tarif trop bas comme un signal de mauvaise qualité.' },
       { type: 'pros', items: [
-        '<strong>Règle 1 — Ne partez jamais en dessous de 15€/h :</strong> En dessous, vous ne survivez pas économiquement sur le long terme et vous envoyez un signal négatif.',
-        '<strong>Règle 2 — Tariez à la valeur, pas à l\'heure :</strong> Un logo qui prend 3 heures mais vaut 500€ pour le client → facturez 300-400€, pas 3h × 25€ = 75€.',
-        '<strong>Règle 3 — Augmentez vos tarifs chaque 3-6 mois :</strong> Si tous vos prospects acceptent votre prix sans négocier, votre tarif est trop bas. Augmentez jusqu\'à 20-30% de refus.',
-        '<strong>Règle 4 — Créez des packages :</strong> "Site web 5 pages + copyrighting + hébergement 1 an : 450€" est plus attractif que "Site web : 350€ + copyrighting : 100€ + hébergement : 50€". Le package simplifie la décision du client.',
+        '<strong>Règle 1 - Ne partez jamais en dessous de 15€/h :</strong> En dessous, vous ne survivez pas économiquement sur le long terme et vous envoyez un signal négatif.',
+        '<strong>Règle 2 - Tariez à la valeur, pas à l\'heure :</strong> Un logo qui prend 3 heures mais vaut 500€ pour le client → facturez 300-400€, pas 3h × 25€ = 75€.',
+        '<strong>Règle 3 - Augmentez vos tarifs chaque 3-6 mois :</strong> Si tous vos prospects acceptent votre prix sans négocier, votre tarif est trop bas. Augmentez jusqu\'à 20-30% de refus.',
+        '<strong>Règle 4 - Créez des packages :</strong> "Site web 5 pages + copyrighting + hébergement 1 an : 450€" est plus attractif que "Site web : 350€ + copyrighting : 100€ + hébergement : 50€". Le package simplifie la décision du client.',
       ]},
 
       { type: 'faq-rich', items: [
-        { q: 'Faut-il parler anglais pour être freelance international depuis l\'Afrique ?', a: 'Non. Le marché francophone international (France, Belgique, Suisse, Canada québécois) représente des millions de clients potentiels. Sur Malt par exemple, tous les profils et clients sont francophones. L\'anglais vous ouvre le marché Upwork/Fiverr anglophone — un plus mais pas une nécessité.' },
+        { q: 'Faut-il parler anglais pour être freelance international depuis l\'Afrique ?', a: 'Non. Le marché francophone international (France, Belgique, Suisse, Canada québécois) représente des millions de clients potentiels. Sur Malt par exemple, tous les profils et clients sont francophones. L\'anglais vous ouvre le marché Upwork/Fiverr anglophone - un plus mais pas une nécessité.' },
         { q: 'Comment expliquer son adresse africaine à un client européen ?', a: 'Soyez transparent et positif. "Je suis basé au Cameroun et je travaille 100% à distance avec des clients européens depuis 2 ans" est une réponse franche et professionnelle. Certains clients voient ça comme un avantage (réactivité différents fuseaux horaires, tarifs compétitifs). Ceux qui refusent de travailler avec des Africains ne sont pas vos clients cibles.' },
         { q: 'Comment gérer les contrats avec des clients internationaux ?', a: 'Pour les missions courtes et simples, un email de confirmation suffit. Pour les missions importantes (>500€), utilisez un contrat simple en PDF (ChatGPT peut générer un modèle en français). Plateformes comme Malt et Upwork ont leurs propres systèmes de contrats et de médiation en cas de litige.' },
       ]},
@@ -2510,12 +2510,12 @@ export const articles = [
 
       { type: 'key-points', items: [
         'Les freelances "faiseurs de tâches" (rédaction générique, traduction basique, design template) sont en difficulté depuis 2023',
-        'Les freelances "opérateurs stratégiques" qui utilisent l\'IA voient leur CA augmenter — ils font 3x plus de travail en moins de temps',
+        'Les freelances "opérateurs stratégiques" qui utilisent l\'IA voient leur CA augmenter - ils font 3x plus de travail en moins de temps',
         'Sur Upwork, les commandes de rédaction basique ont baissé de 40%, mais les commandes de consulting IA ont augmenté de 300%',
         'L\'IA ne remplace pas le jugement humain, la relation client, la créativité contextuelle, ni la responsabilité',
         'Le pivot clé : passer de "je fais X" à "j\'obtiens le résultat Y pour mes clients"',
         'Les freelances africains ont un avantage unique : coût de vie plus faible = tarifs compétitifs même en montant en gamme',
-        'Le marché du freelancing global va croître, pas rétrécir — mais sa structure change radicalement',
+        'Le marché du freelancing global va croître, pas rétrécir - mais sa structure change radicalement',
       ]},
 
       { type: 'heading', content: '1. État des lieux : ce qui se passe vraiment sur les plateformes', id: 'bilan' },
@@ -2525,8 +2525,8 @@ export const articles = [
         ['Traduction basique (FR/EN)', '📉 -30 à -50%', 'Google Translate + DeepL + GPT couvrent 80% des besoins'],
         ['Transcription audio/vidéo', '📉 -70%', 'Whisper (OpenAI) fait ça gratuitement en 2 min'],
         ['Design logo template', '📉 -30%', 'Canva IA + Ideogram génèrent des logos acceptables'],
-        ['Développement web (sites simples)', '📈 Stable/hausse', 'Le Vibe Coding crée de nouveaux freelances — marché en croissance'],
-        ['Automatisation IA / Make.com', '📈 +200 à +400%', 'Nouveau métier créé par l\'IA — très forte demande'],
+        ['Développement web (sites simples)', '📈 Stable/hausse', 'Le Vibe Coding crée de nouveaux freelances - marché en croissance'],
+        ['Automatisation IA / Make.com', '📈 +200 à +400%', 'Nouveau métier créé par l\'IA - très forte demande'],
         ['Prompt engineering', '📈 +150%', 'Nouveau marché émergent'],
         ['Consulting IA pour entreprises', '📈 +300%', 'Forte demande, peu d\'offreurs compétents'],
         ['Copywriting stratégique (brand voice)', '📈 Stable', 'L\'IA ne remplace pas la voix de marque unique'],
@@ -2555,21 +2555,21 @@ export const articles = [
       { type: 'heading', content: '4. Comment pivoter : du faiseur au stratège', id: 'pivot' },
       { type: 'text', content: '<strong>Le pivot fondamental</strong> est de cesser de vendre des tâches pour vendre des résultats. Vos clients ne veulent pas "un article de blog". Ils veulent "plus de trafic organique et des leads qualifiés". Ils ne veulent pas "un site web". Ils veulent "plus de clients en ligne et une image professionnelle".' },
       { type: 'pros', items: [
-        '<strong>Étape 1 — Identifiez le résultat, pas la tâche :</strong> Quelle transformation apportez-vous à vos clients ? En termes business (plus de CA, moins de temps perdu, plus de clients) et pas en termes de livrable (article, design, code).',
-        '<strong>Étape 2 — Intégrez l\'IA dans votre workflow :</strong> Pour chaque service que vous vendez, demandez-vous : "Comment l\'IA peut-elle faire 60% du travail mécanique pour que je me concentre sur les 40% à forte valeur ajoutée ?"',
-        '<strong>Étape 3 — Montez en gamme :</strong> Augmentez vos tarifs de 30 à 50%. Proposez moins de clients, mais avec un accompagnement plus profond. La relation et la stratégie ne peuvent pas être automatisées.',
-        '<strong>Étape 4 — Ajoutez une spécialisation sectorielle :</strong> Un rédacteur "généraliste" est remplacé par l\'IA. Un "rédacteur spécialisé en fintech africaine avec compréhension des réglementations OHADA" ne l\'est pas. La spécialisation est votre protection.',
-        '<strong>Étape 5 — Développez votre réseau humain :</strong> Dans un monde où l\'IA produit du contenu à l\'infini, la confiance et les relations humaines deviennent plus précieuses. Investissez dans votre réputation, vos témoignages clients, votre présence communautaire.',
+        '<strong>Étape 1 - Identifiez le résultat, pas la tâche :</strong> Quelle transformation apportez-vous à vos clients ? En termes business (plus de CA, moins de temps perdu, plus de clients) et pas en termes de livrable (article, design, code).',
+        '<strong>Étape 2 - Intégrez l\'IA dans votre workflow :</strong> Pour chaque service que vous vendez, demandez-vous : "Comment l\'IA peut-elle faire 60% du travail mécanique pour que je me concentre sur les 40% à forte valeur ajoutée ?"',
+        '<strong>Étape 3 - Montez en gamme :</strong> Augmentez vos tarifs de 30 à 50%. Proposez moins de clients, mais avec un accompagnement plus profond. La relation et la stratégie ne peuvent pas être automatisées.',
+        '<strong>Étape 4 - Ajoutez une spécialisation sectorielle :</strong> Un rédacteur "généraliste" est remplacé par l\'IA. Un "rédacteur spécialisé en fintech africaine avec compréhension des réglementations OHADA" ne l\'est pas. La spécialisation est votre protection.',
+        '<strong>Étape 5 - Développez votre réseau humain :</strong> Dans un monde où l\'IA produit du contenu à l\'infini, la confiance et les relations humaines deviennent plus précieuses. Investissez dans votre réputation, vos témoignages clients, votre présence communautaire.',
       ]},
 
       { type: 'heading', content: '5. Le freelance africain en 2030 : ma projection', id: 'avenir' },
       { type: 'text', content: 'Je vais vous partager ce que je crois sincèrement pour les freelances africains d\'ici 2030 :' },
       { type: 'text', content: '<strong>Le scénario positif (probable si adaptation) :</strong> Le freelance africain domine le marché francophone grâce à la combinaison d\'un coût de vie bas, d\'une maîtrise des outils IA, et d\'une compréhension des marchés locaux. Il vend des services à valeur élevée (consulting, automatisation, formation) à des clients européens et africains, depuis son pays, avec un niveau de vie excellent.' },
-      { type: 'text', content: '<strong>Le scénario négatif (si immobilisme) :</strong> Les freelances africains qui continuent à vendre des services "bas de gamme" sans adopter l\'IA seront écrasés par une concurrence mondiale encore plus compétitive — y compris des outils IA et des freelances asiatiques encore moins chers.' },
+      { type: 'text', content: '<strong>Le scénario négatif (si immobilisme) :</strong> Les freelances africains qui continuent à vendre des services "bas de gamme" sans adopter l\'IA seront écrasés par une concurrence mondiale encore plus compétitive - y compris des outils IA et des freelances asiatiques encore moins chers.' },
       { type: 'text', content: '<strong>Mon conseil :</strong> Commencez à vous former et à pivoter maintenant. La fenêtre de 2026-2028 est critique. Ceux qui s\'adaptent maintenant captureront une position de leader difficile à contester ensuite.' },
 
       { type: 'faq-rich', items: [
-        { q: 'Ma profession est-elle en danger avec l\'IA ?', a: 'Posez-vous cette question : "Est-ce que je peux décrire ma tâche en une phrase simple à quelqu\'un qui n\'a aucune expertise ?" Si oui, l\'IA peut probablement le faire. Si la réponse nécessite 10 minutes d\'explication et des nuances culturelles/sectorielles, vous êtes en sécurité — ou vous devez vous spécialiser dans cette zone.' },
+        { q: 'Ma profession est-elle en danger avec l\'IA ?', a: 'Posez-vous cette question : "Est-ce que je peux décrire ma tâche en une phrase simple à quelqu\'un qui n\'a aucune expertise ?" Si oui, l\'IA peut probablement le faire. Si la réponse nécessite 10 minutes d\'explication et des nuances culturelles/sectorielles, vous êtes en sécurité - ou vous devez vous spécialiser dans cette zone.' },
         { q: 'Dois-je apprendre à coder pour rester compétitif ?', a: 'Pas nécessairement. Ce qui est indispensable : apprendre à utiliser les outils IA liés à votre métier (ChatGPT pour la rédaction, Midjourney pour le design, Make.com pour l\'automatisation). Le Vibe Coding est un plus pour les profils qui veulent créer des outils, mais n\'est pas obligatoire pour tous.' },
         { q: 'Comment expliquer que j\'utilise l\'IA à mes clients sans qu\'ils exigent une baisse de prix ?', a: 'L\'IA est un outil dans votre workflow, pas votre service lui-même. Un plombier n\'explique pas à ses clients quel type de clé anglaise il utilise. Vous livrez un résultat. Si le client demande, soyez transparent : "J\'utilise l\'IA pour certaines parties du travail, ce qui me permet de livrer plus vite et de consacrer mon expertise aux parties stratégiques." Les bons clients voient ça comme un avantage.' },
       ]},
@@ -2611,7 +2611,7 @@ export const articles = [
       { id: 'faq', label: 'FAQ' },
     ],
     sections: [
-      { type: 'intro', content: 'Depuis que j\'ai rejoint Izimentor en tant qu\'utilisateur pionnier, j\'observe de près ce que cette communauté apporte réellement aux entrepreneurs africains. Dans cet article, je vous donne mon retour honnête — le bon comme le moins bon — pour que vous puissiez décider en connaissance de cause si c\'est le bon investissement pour vous.' },
+      { type: 'intro', content: 'Depuis que j\'ai rejoint Izimentor en tant qu\'utilisateur pionnier, j\'observe de près ce que cette communauté apporte réellement aux entrepreneurs africains. Dans cet article, je vous donne mon retour honnête - le bon comme le moins bon - pour que vous puissiez décider en connaissance de cause si c\'est le bon investissement pour vous.' },
 
       { type: 'stats-grid', items: [
         { num: '79 000', label: 'FCFA/an', desc: 'Prix abonnement annuel' },
@@ -2621,7 +2621,7 @@ export const articles = [
       ]},
 
       { type: 'heading', content: 'Qu\'est-ce qu\'Izimentor ?', id: 'qu-est-ce-izimentor' },
-      { type: 'text', content: 'Izimentor est une <strong>communauté privée en ligne</strong> dédiée aux entrepreneurs africains francophones. C\'est un espace où des entrepreneurs, solopreneurs et créateurs de business se retrouvent pour apprendre, se challenger et se développer ensemble. L\'accès est payant — 79 000 FCFA par an — ce qui crée un premier filtre de sérieux.' },
+      { type: 'text', content: 'Izimentor est une <strong>communauté privée en ligne</strong> dédiée aux entrepreneurs africains francophones. C\'est un espace où des entrepreneurs, solopreneurs et créateurs de business se retrouvent pour apprendre, se challenger et se développer ensemble. L\'accès est payant - 79 000 FCFA par an - ce qui crée un premier filtre de sérieux.' },
       { type: 'text', content: 'La plateforme n\'est pas un simple groupe Facebook. Elle combine une bibliothèque de masterclasses, des sessions live régulières, des groupes d\'accountability, des templates business et un annuaire de membres. C\'est plus proche d\'un <strong>programme d\'accélération communautaire en ligne</strong> que d\'un forum classique.' },
 
       { type: 'heading', content: 'Les fondateurs : Alain Nteff & Arno Nguembock', id: 'fondateurs' },
@@ -2650,7 +2650,7 @@ export const articles = [
       { type: 'heading', content: 'Ce que j\'ai moins aimé', id: 'ce-que-j-ai-moins-aime' },
       { type: 'pros', items: [
         '⚠️ <strong>Le prix élevé pour les débutants :</strong> 79 000 FCFA/an (~132 USD), c\'est un investissement réel. Pour un entrepreneur qui démarre avec peu de revenus, c\'est à peser. Mon conseil : rejoignez uniquement si vous avez déjà un projet en cours.',
-        '⚠️ <strong>La plateforme technique en amélioration continue :</strong> L\'interface n\'est pas encore parfaite — quelques bugs, navigation perfectible. Mais les fondateurs améliorent régulièrement sur la base des retours membres.',
+        '⚠️ <strong>La plateforme technique en amélioration continue :</strong> L\'interface n\'est pas encore parfaite - quelques bugs, navigation perfectible. Mais les fondateurs améliorent régulièrement sur la base des retours membres.',
         '⚠️ <strong>Les lives pas toujours pratiques selon le fuseau :</strong> Selon votre localisation et vos contraintes horaires, certaines sessions live tombent à des moments difficiles. Le replay disponible compense en partie.',
         '⚠️ <strong>Pas encore d\'application mobile dédiée :</strong> L\'accès se fait via navigateur mobile ou desktop. Une app native améliorerait l\'expérience quotidienne.',
       ]},
@@ -2669,7 +2669,7 @@ export const articles = [
         '✅ Vous cherchez un réseau d\'entrepreneurs africains sérieux et engagés',
         '✅ Vous voulez apprendre de ceux qui ont déjà réussi dans le contexte africain',
         '✅ Vous êtes en Afrique francophone et les plateformes occidentales ne parlent pas à votre réalité',
-        '❌ Vous débutez de zéro sans projet défini — commencez par les ressources gratuites',
+        '❌ Vous débutez de zéro sans projet défini - commencez par les ressources gratuites',
         '❌ Vous cherchez un simple groupe Facebook pour networker sans engagement réel',
       ]},
 

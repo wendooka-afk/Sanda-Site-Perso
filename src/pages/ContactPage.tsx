@@ -69,7 +69,7 @@ export default function ContactPage() {
     ].filter((line): line is string => line !== null).join('\n');
 
     const mailto = `mailto:${CONTACT_INBOX}?subject=${encodeURIComponent(
-      `[Contact] ${subjectLabel} — ${form.name}`
+      `[Contact] ${subjectLabel} - ${form.name}`
     )}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailto;
@@ -85,7 +85,7 @@ export default function ContactPage() {
         title={tx.seo.title}
         description={tx.seo.description}
         canonical="/contact"
-        schema={{ "@context": "https://schema.org", "@type": "ContactPage", "url": "https://oumarousanda.com/contact", "name": "Contact — Oumarou Sanda" }}
+        schema={{ "@context": "https://schema.org", "@type": "ContactPage", "url": "https://oumarousanda.com/contact", "name": "Contact - Oumarou Sanda" }}
       />
       <div className="bg-[#fafafa] min-h-screen">
 

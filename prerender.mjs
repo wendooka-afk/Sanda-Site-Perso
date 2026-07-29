@@ -105,6 +105,7 @@ const ROUTES = [
   '/ressources',
   '/kit-media',
   '/challenge-30-jours',
+  '/claude-skills-pack',
   '/links',
   '/quiz-ia',
 

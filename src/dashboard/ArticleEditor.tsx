@@ -607,7 +607,7 @@ export default function ArticleEditor({ article, onCreate, onUpdate, onClose }: 
                       <div className={`h-full rounded-full ${seoBarColor} transition-all duration-700`} style={{ width: `${seoScore}%` }} />
                     </div>
                     <p className="text-white/30 text-[10px] mt-2">
-                      {seoScore >= 80 ? '✓ Bon — article bien optimisé' : seoScore >= 60 ? '⚠ Moyen — améliorez le contenu' : '✗ Faible — optimisation nécessaire'}
+                      {seoScore >= 80 ? '✓ Bon - article bien optimisé' : seoScore >= 60 ? '⚠ Moyen - améliorez le contenu' : '✗ Faible - optimisation nécessaire'}
                     </p>
                   </div>
 

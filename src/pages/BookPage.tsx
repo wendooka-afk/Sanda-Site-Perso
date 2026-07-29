@@ -12,7 +12,7 @@ export default function BookPage() {
   return (
     <>
       <SEOHead
-        title="Livres | Si l'Afrique rate l'IA & Le Cerveau Augmenté — Oumarou Sanda"
+        title="Livres | Si l'Afrique rate l'IA & Le Cerveau Augmenté - Oumarou Sanda"
         description="Découvrez les livres d'Oumarou Sanda : «Si l'Afrique rate l'IA, elle rate le Futur», l'essai-manifeste sur la souveraineté numérique africaine (mai 2026), et «Le Cerveau Augmenté», le système mental pour maîtriser l'IA."
         canonical="/livres"
         schema={{ "@context": "https://schema.org", "@graph": [ { "@type": "Book", "name": "Si l'Afrique rate l'IA, elle rate le Futur", "author": { "@type": "Person", "name": "Oumarou Sanda" }, "inLanguage": "fr", "genre": "Non-fiction" }, { "@type": "Book", "name": "Le Cerveau Augmenté", "author": { "@type": "Person", "name": "Oumarou Sanda" }, "inLanguage": "fr", "genre": "Non-fiction" } ] }}
@@ -108,7 +108,7 @@ export default function BookPage() {
 
               <div className="prose prose-lg max-w-none mb-10 text-[#525252]">
                 <p className="text-[#0a0a0a] font-semibold text-xl mb-6">
-                  L'Afrique reçoit 0,02% du financement IA mondial. Ce livre explique pourquoi — et comment changer ça.
+                  L'Afrique reçoit 0,02% du financement IA mondial. Ce livre explique pourquoi - et comment changer ça.
                 </p>
                 <p className="mb-4">
                   Pendant que les États-Unis investissent 109 milliards de dollars par an dans l'IA et que la Chine dépose 70% des brevets mondiaux, l'Afrique regarde passer le train. Encore une fois.
@@ -166,7 +166,7 @@ export default function BookPage() {
                       <div className="shrink-0 w-8 h-8 rounded-full bg-[#fafafa] border border-black/10 flex items-center justify-center text-gold font-bold text-sm">2</div>
                       <div>
                         <h4 className="text-[#0a0a0a] font-bold mb-2">LES RESPONSABLES</h4>
-                        <p className="text-[#525252] text-sm leading-relaxed">Les États qui sous-investissent (0,33% du PIB en R&D, en baisse). Le secteur privé qui consomme au lieu de créer. Les 70 000 professionnels qualifiés qui quittent l'Afrique chaque année — et pourquoi ils partent. Ce chapitre nomme les coupables, données à l'appui.</p>
+                        <p className="text-[#525252] text-sm leading-relaxed">Les États qui sous-investissent (0,33% du PIB en R&D, en baisse). Le secteur privé qui consomme au lieu de créer. Les 70 000 professionnels qualifiés qui quittent l'Afrique chaque année - et pourquoi ils partent. Ce chapitre nomme les coupables, données à l'appui.</p>
                       </div>
                     </div>
 
@@ -174,7 +174,7 @@ export default function BookPage() {
                       <div className="shrink-0 w-8 h-8 rounded-full bg-[#fafafa] border border-black/10 flex items-center justify-center text-gold font-bold text-sm">3</div>
                       <div>
                         <h4 className="text-[#0a0a0a] font-bold mb-2">L'ANTIDOTE</h4>
-                        <p className="text-[#525252] text-sm leading-relaxed">Les 5 urgences absolues : former 1 million d'ingénieurs IA, construire 1 000 data centers souverains, réguler sans brider, investir 10 milliards $ en 5 ans, ramener la diaspora. Avec des modèles réels : comment Israël, l'Inde et l'Estonie ont réussi — et comment l'Afrique peut les surpasser.</p>
+                        <p className="text-[#525252] text-sm leading-relaxed">Les 5 urgences absolues : former 1 million d'ingénieurs IA, construire 1 000 data centers souverains, réguler sans brider, investir 10 milliards $ en 5 ans, ramener la diaspora. Avec des modèles réels : comment Israël, l'Inde et l'Estonie ont réussi - et comment l'Afrique peut les surpasser.</p>
                       </div>
                     </div>
 
@@ -302,7 +302,7 @@ export default function BookPage() {
                     <Zap className="w-5 h-5 text-gold shrink-0" />
                     <div>
                       <span className="font-bold text-[#0a0a0a] text-sm">CATALOGUE DE PROMPTS (83 pages)</span>
-                      <p className="text-[#737373] text-sm mt-1">200 prompts stratégiques — pas des prompts génériques, des prompts qui font travailler ChatGPT à ta place.</p>
+                      <p className="text-[#737373] text-sm mt-1">200 prompts stratégiques - pas des prompts génériques, des prompts qui font travailler ChatGPT à ta place.</p>
                     </div>
                   </li>
                   <li className="flex items-center gap-3">
@@ -339,7 +339,7 @@ export default function BookPage() {
                     {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 text-yellow-400 fill-yellow-400" />)}
                   </div>
                   <p className="text-[#525252] text-sm italic mb-4 leading-relaxed">"{t.text}"</p>
-                  <p className="text-[#0a0a0a] font-bold text-xs">— {t.name}</p>
+                  <p className="text-[#0a0a0a] font-bold text-xs">- {t.name}</p>
                 </div>
               ))}
             </div>

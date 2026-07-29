@@ -1,13 +1,13 @@
 export const contactTexts = {
   fr: {
     seo: {
-      title: "Contact | Oumarou Sanda — Projets, Collaborations & Médias",
+      title: "Contact | Oumarou Sanda - Projets, Collaborations & Médias",
       description: "Contactez Oumarou Sanda pour un projet web, un consulting IA, une collaboration média, un sponsoring ou une demande presse. Expert IA, entrepreneur digital basé au Cameroun. Réponse sous 48h.",
     },
     hero: {
       h1: "Parlons de",
       h1_accent: "ton projet.",
-      desc: "Que tu aies un projet web, une question business, une demande de sponsoring ou une invitation média — je suis accessible. Choisis le bon canal ci-dessous, et je reviens vers toi sous 48h.",
+      desc: "Que tu aies un projet web, une question business, une demande de sponsoring ou une invitation média - je suis accessible. Choisis le bon canal ci-dessous, et je reviens vers toi sous 48h.",
     },
     options: {
       sectionTitle: "Choisis ton sujet",
@@ -123,13 +123,13 @@ export const contactTexts = {
   },
   en: {
     seo: {
-      title: "Contact | Oumarou Sanda — Projects, Collaborations & Media",
+      title: "Contact | Oumarou Sanda - Projects, Collaborations & Media",
       description: "Contact Oumarou Sanda for a web project, AI consulting, media collaboration, sponsorship or press inquiry. AI expert, digital entrepreneur based in Cameroon. Response within 48h.",
     },
     hero: {
       h1: "Let's talk about",
       h1_accent: "your project.",
-      desc: "Whether you have a web project, a business question, a sponsorship request or a media invitation — I'm accessible. Choose the right channel below, and I'll get back to you within 48h.",
+      desc: "Whether you have a web project, a business question, a sponsorship request or a media invitation - I'm accessible. Choose the right channel below, and I'll get back to you within 48h.",
     },
     options: {
       sectionTitle: "Choose your topic",

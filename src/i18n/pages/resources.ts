@@ -1,7 +1,7 @@
 export const resourcesTexts = {
   fr: {
     seo: {
-      title: "Ressources Gratuites | Guides, Templates & Outils IA — Oumarou Sanda",
+      title: "Ressources Gratuites | Guides, Templates & Outils IA - Oumarou Sanda",
       description: "Téléchargez gratuitement les guides PDF, checklists, templates et outils sélectionnés par Oumarou Sanda pour lancer et développer ton business digital avec l'IA en Afrique.",
       canonical: "/ressources",
     },
@@ -9,7 +9,7 @@ export const resourcesTexts = {
       badge: "Ressources gratuites",
       h1_1: "Des outils pour passer",
       h1_2: "à l'action dès maintenant.",
-      desc_pre: "Guides PDF, checklists, templates, prompts et formations — tout le contenu que j'ai créé pour t'aider à lancer et développer ton business digital avec l'IA.",
+      desc_pre: "Guides PDF, checklists, templates, prompts et formations - tout le contenu que j'ai créé pour t'aider à lancer et développer ton business digital avec l'IA.",
       descBold: "Gratuit. Sans blabla.",
       stats: {
         pdf: "guides PDF",
@@ -35,7 +35,7 @@ export const resourcesTexts = {
     card: {
       emailPlaceholder: "ton@email.com",
       submit: "Recevoir",
-      successFree: "Accès débloqué — bonne lecture !",
+      successFree: "Accès débloqué - bonne lecture !",
       successEmail: "Envoyé ! Vérifie ta boîte mail.",
       viewContent: "Voir le contenu",
     },
@@ -74,7 +74,7 @@ export const resourcesTexts = {
       {
         id: '4',
         title: "Formation vidéo : Créer son premier revenu en ligne avec l'IA",
-        description: "Une formation de 45 minutes qui couvre les fondations : choisir sa niche, créer son offre, attirer ses premiers clients — tout en utilisant l'IA comme co-pilote.",
+        description: "Une formation de 45 minutes qui couvre les fondations : choisir sa niche, créer son offre, attirer ses premiers clients - tout en utilisant l'IA comme co-pilote.",
         cta: "Regarder maintenant",
       },
       {
@@ -92,7 +92,7 @@ export const resourcesTexts = {
       {
         id: '7',
         title: "Glossaire IA : 150 termes expliqués simplement",
-        description: "Du LLM au RAG, en passant par le Fine-tuning et le Prompt Engineering — un lexique complet et accessible pour naviguer dans l'univers de l'IA sans se perdre.",
+        description: "Du LLM au RAG, en passant par le Fine-tuning et le Prompt Engineering - un lexique complet et accessible pour naviguer dans l'univers de l'IA sans se perdre.",
         cta: "Télécharger le glossaire",
       },
       {
@@ -111,7 +111,7 @@ export const resourcesTexts = {
   },
   en: {
     seo: {
-      title: "Free Resources | AI Guides, Templates & Tools — Oumarou Sanda",
+      title: "Free Resources | AI Guides, Templates & Tools - Oumarou Sanda",
       description: "Download free AI guides, checklists, templates and tools curated by Oumarou Sanda to help you launch and grow your digital business with AI.",
       canonical: "/en/resources",
     },
@@ -119,7 +119,7 @@ export const resourcesTexts = {
       badge: "Free Resources",
       h1_1: "Tools to take action",
       h1_2: "starting right now.",
-      desc_pre: "PDF guides, checklists, templates, prompts and trainings — all the content I've created to help you launch and grow your digital business with AI.",
+      desc_pre: "PDF guides, checklists, templates, prompts and trainings - all the content I've created to help you launch and grow your digital business with AI.",
       descBold: "Free. No fluff.",
       stats: {
         pdf: "PDF guides",
@@ -145,7 +145,7 @@ export const resourcesTexts = {
     card: {
       emailPlaceholder: "you@email.com",
       submit: "Get it",
-      successFree: "Access unlocked — enjoy reading!",
+      successFree: "Access unlocked - enjoy reading!",
       successEmail: "Sent! Check your inbox.",
       viewContent: "View content",
     },
@@ -184,7 +184,7 @@ export const resourcesTexts = {
       {
         id: '4',
         title: "Video Training: Create Your First Online Income with AI (45 min)",
-        description: "A 45-minute training covering the foundations: choosing your niche, building your offer, attracting your first clients — all using AI as your co-pilot.",
+        description: "A 45-minute training covering the foundations: choosing your niche, building your offer, attracting your first clients - all using AI as your co-pilot.",
         cta: "Watch now",
       },
       {
@@ -196,13 +196,13 @@ export const resourcesTexts = {
       {
         id: '6',
         title: "SEO Checklist: 27 Essential Points Before You Publish",
-        description: "The 27 must-check items before publishing a blog post. From the title tag to page speed, internal links and Schema markup — nothing left to chance.",
+        description: "The 27 must-check items before publishing a blog post. From the title tag to page speed, internal links and Schema markup - nothing left to chance.",
         cta: "Download the checklist",
       },
       {
         id: '7',
         title: "AI Glossary: 150 Terms Explained Simply",
-        description: "From LLM to RAG, Fine-tuning to Prompt Engineering — a complete, accessible lexicon to navigate the AI world without getting lost.",
+        description: "From LLM to RAG, Fine-tuning to Prompt Engineering - a complete, accessible lexicon to navigate the AI world without getting lost.",
         cta: "Download the glossary",
       },
       {

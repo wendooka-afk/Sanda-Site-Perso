@@ -2,9 +2,9 @@ export const servicesTexts = {
   fr: {
     /* ═══════════════════════ SEO ═══════════════════════ */
     seo: {
-      title: "Services | Agence Web, Consulting IA & Production Vidéo — Oumarou Sanda",
+      title: "Services | Agence Web, Consulting IA & Production Vidéo - Oumarou Sanda",
       description: "Besoin d'un site web professionnel, d'une stratégie IA ou de vidéos produites avec l'intelligence artificielle ? Découvrez les services d'Oumarou Sanda : agence Wendooka, consulting IA, production vidéo IA et CommentSticker.",
-      ogTitle: "Services d'Oumarou Sanda — Agence Web IA, Consulting & Production Vidéo",
+      ogTitle: "Services d'Oumarou Sanda - Agence Web IA, Consulting & Production Vidéo",
     },
 
     /* ═══════════════════════ HERO ═══════════════════════ */
@@ -13,7 +13,7 @@ export const servicesTexts = {
       heading: "Tu n'as pas besoin d'un prestataire.",
       headingLine2: "Tu as besoin d'un partenaire qui comprend",
       headingHighlight: "l'IA et le business.",
-      description: "Que tu aies besoin d'un site web qui convertit, d'une stratégie IA sur mesure, de vidéos professionnelles produites avec l'intelligence artificielle, ou d'un outil SaaS — je ne livre pas des fichiers.",
+      description: "Que tu aies besoin d'un site web qui convertit, d'une stratégie IA sur mesure, de vidéos professionnelles produites avec l'intelligence artificielle, ou d'un outil SaaS - je ne livre pas des fichiers.",
       descriptionBold: "Je livre des résultats.",
       ctaPrimary: "DEMANDER UN DEVIS GRATUIT",
       ctaSecondary: "RÉSERVER UN APPEL STRATÉGIQUE",
@@ -36,7 +36,7 @@ export const servicesTexts = {
       label: "SERVICE 01",
       headingLine1: "On ne crée pas des sites vitrines.",
       headingHighlight: "On crée des machines à clients.",
-      descParagraph1: "La plupart des entreprises africaines ont un problème. Elles n'existent pas en ligne — ou pire, elles existaient mal. Un site lent, pas optimisé, qui ne convertit personne. Un marketing digital au hasard, sans stratégie ni automatisation.",
+      descParagraph1: "La plupart des entreprises africaines ont un problème. Elles n'existent pas en ligne - ou pire, elles existaient mal. Un site lent, pas optimisé, qui ne convertit personne. Un marketing digital au hasard, sans stratégie ni automatisation.",
       descParagraph2Start: "",
       descParagraph2Bold: "Wendooka existe pour régler ça.",
       descParagraph2End: " Depuis 2017, mon agence accompagne des PME, entrepreneurs et organisations à construire une présence digitale qui génère concrètement des clients et des revenus.",
@@ -49,7 +49,7 @@ export const servicesTexts = {
         { title: "Maintenance & Support", desc: "Sécurité, mises à jour, sauvegardes, monitoring. Ton site tourne 24/7 sans que tu y penses." },
       ],
       whyTitle: "Pourquoi Wendooka et pas une autre agence ?",
-      whyText: "Parce qu'on ne se contente pas de livrer un site. On comprend ton business, tes objectifs, ton marché — et on construit un système digital qui s'intègre dans ta stratégie globale. Et parce que derrière l'agence, il y a un entrepreneur qui utilise exactement les mêmes outils pour son propre business.",
+      whyText: "Parce qu'on ne se contente pas de livrer un site. On comprend ton business, tes objectifs, ton marché - et on construit un système digital qui s'intègre dans ta stratégie globale. Et parce que derrière l'agence, il y a un entrepreneur qui utilise exactement les mêmes outils pour son propre business.",
       whyBold: "Si ça ne marchait pas, je ne le vendrais pas.",
       ctaPrimary: "DEMANDER UN DEVIS GRATUIT",
       ctaSecondary: "VOIR NOS RÉALISATIONS",
@@ -72,7 +72,7 @@ export const servicesTexts = {
       approachHighlight: "3 phases",
       phases: [
         { id: "PHASE 1 : AUDIT", desc: "Où en est ton business aujourd'hui ? Quels processus peuvent être automatisés ? Où l'IA peut avoir le plus d'impact immédiat ? Je fais un diagnostic complet de ton activité pour identifier les leviers IA les plus rentables." },
-        { id: "PHASE 2 : STRATÉGIE", desc: "On construit ensemble un plan d'action clair. Quels outils adopter, dans quel ordre, avec quel budget. Pas une présentation PowerPoint — une feuille de route opérationnelle que tu peux exécuter dès le lendemain." },
+        { id: "PHASE 2 : STRATÉGIE", desc: "On construit ensemble un plan d'action clair. Quels outils adopter, dans quel ordre, avec quel budget. Pas une présentation PowerPoint - une feuille de route opérationnelle que tu peux exécuter dès le lendemain." },
         { id: "PHASE 3 : IMPLÉMENTATION", desc: "Si tu veux, je reste pour exécuter. Mise en place des outils IA, création des workflows d'automatisation, formation de tes équipes. Le résultat : un business qui tourne plus vite, avec moins de friction, et plus de marge." },
       ],
       expertiseTitle: "Domaines d'expertise :",
@@ -84,7 +84,7 @@ export const servicesTexts = {
         "Formation et montée en compétence des équipes sur l'IA",
       ],
       notForYouTitle: "Ce n'est PAS pour toi si :",
-      notForYouText: "Tu cherches quelqu'un pour te faire un ChatGPT custom en 10 minutes. Mon consulting est pour les entrepreneurs et les organisations qui veulent un avantage compétitif durable — pas un gadget.",
+      notForYouText: "Tu cherches quelqu'un pour te faire un ChatGPT custom en 10 minutes. Mon consulting est pour les entrepreneurs et les organisations qui veulent un avantage compétitif durable - pas un gadget.",
       idealTitle: "Idéal pour :",
       idealItems: [
         "Entrepreneurs qui atteignent un plafond et veulent scaler avec l'IA",
@@ -101,7 +101,7 @@ export const servicesTexts = {
       headingLine1: "Qualité studio.",
       headingLine2: "Budget divisé par 10.",
       headingLine3: "Délai divisé par 5.",
-      descParagraph1: "Le monde de la vidéo a changé. L'intelligence artificielle permet aujourd'hui de produire des vidéos publicitaires, corporate et cinématographiques d'une qualité qui aurait coûté des dizaines de milliers d'euros il y a deux ans — en une fraction du temps et du budget.",
+      descParagraph1: "Le monde de la vidéo a changé. L'intelligence artificielle permet aujourd'hui de produire des vidéos publicitaires, corporate et cinématographiques d'une qualité qui aurait coûté des dizaines de milliers d'euros il y a deux ans - en une fraction du temps et du budget.",
       descParagraph2Start: "Je ne le dis pas en théorie. C'est ce que je fais au quotidien. C'est ce que j'enseigne dans",
       descParagraph2Bold: "Protocole Vidéo IA",
       descParagraph2End: ". Et c'est ce que je propose comme service.",
@@ -126,7 +126,7 @@ export const servicesTexts = {
       headingEnd: "fonctionne.",
       headingLine2: "Et qu'il peut fonctionner pour toi.",
       descParagraph1: "CommentSticker n'est pas juste un outil. C'est la démonstration vivante de ce que j'enseigne : qu'on peut créer un SaaS fonctionnel, utile et rentable avec l'IA et le no-code, sans être développeur.",
-      descParagraph2: "C'est un produit que j'ai construit moi-même en utilisant exactement les méthodes que j'enseigne dans Sanda Vibe Code. Si tu veux une preuve concrète que le vibe coding n'est pas du bullshit — la voilà.",
+      descParagraph2: "C'est un produit que j'ai construit moi-même en utilisant exactement les méthodes que j'enseigne dans Sanda Vibe Code. Si tu veux une preuve concrète que le vibe coding n'est pas du bullshit - la voilà.",
       whyTitle: "Pourquoi c'est sur cette page :",
       whyText: "CommentSticker n'est pas seulement un produit SaaS. C'est aussi un service. Parce qu'il résout un problème concret pour les créateurs de contenu et les entrepreneurs (engagement automatisé, gestion de communauté). Et parce qu'il prouve que les méthodes de l'écosystème Sanda Vibe Code fonctionnent dans la réalité.",
       cta: "DÉCOUVRIR COMMENTSTICKER",
@@ -138,9 +138,9 @@ export const servicesTexts = {
       headingLine1: "Simple. Clair.",
       headingHighlight: "Sans mauvaise surprise.",
       steps: [
-        { id: "01", title: "APPEL DÉCOUVERTE", desc: "On parle de ton projet, de tes objectifs, de tes contraintes. Pas un pitch de vente — un vrai échange pour comprendre si on est les bons pour toi. 30 minutes. Gratuit. Sans engagement." },
+        { id: "01", title: "APPEL DÉCOUVERTE", desc: "On parle de ton projet, de tes objectifs, de tes contraintes. Pas un pitch de vente - un vrai échange pour comprendre si on est les bons pour toi. 30 minutes. Gratuit. Sans engagement." },
         { id: "02", title: "PROPOSITION & DEVIS", desc: "Tu reçois une proposition détaillée : scope précis, livrables, délais, tarif. Tout est écrit noir sur blanc. Pas de frais cachés, pas de surprises." },
-        { id: "03", title: "EXÉCUTION & SUIVI", desc: "On bosse. Tu as un point de contact dédié, des mises à jour régulières, et un accès direct pour tes retours. Pas de téléphone arabe — communication directe." },
+        { id: "03", title: "EXÉCUTION & SUIVI", desc: "On bosse. Tu as un point de contact dédié, des mises à jour régulières, et un accès direct pour tes retours. Pas de téléphone arabe - communication directe." },
         { id: "04", title: "LIVRAISON & SUPPORT", desc: "Livraison dans les délais convenus. Formation à l'utilisation si nécessaire. Et un support post-livraison pour s'assurer que tout fonctionne parfaitement." },
       ],
     },
@@ -178,7 +178,7 @@ export const servicesTexts = {
     ctaFinal: {
       headingLine1: "Tu as un projet ?",
       headingHighlight: "Parlons-en.",
-      description: "Que ce soit pour un site web, une stratégie IA, une vidéo ou un SaaS — la première étape, c'est un appel. 30 minutes. Gratuit. Et tu sauras exactement comment on peut t'aider.",
+      description: "Que ce soit pour un site web, une stratégie IA, une vidéo ou un SaaS - la première étape, c'est un appel. 30 minutes. Gratuit. Et tu sauras exactement comment on peut t'aider.",
       ctaPrimary: "RÉSERVER MON APPEL GRATUIT",
       ctaSecondary: "ME CONTACTER PAR EMAIL",
       selfLearnText: "Tu préfères te former en autonomie ?",
@@ -202,9 +202,9 @@ export const servicesTexts = {
   en: {
     /* ═══════════════════════ SEO ═══════════════════════ */
     seo: {
-      title: "Services | Web Agency, AI Consulting & Video Production — Oumarou Sanda",
+      title: "Services | Web Agency, AI Consulting & Video Production - Oumarou Sanda",
       description: "Need a professional website, an AI strategy, or videos produced with artificial intelligence? Discover Oumarou Sanda's services: Wendooka agency, AI consulting, AI video production and CommentSticker.",
-      ogTitle: "Oumarou Sanda's Services — AI Web Agency, Consulting & Video Production",
+      ogTitle: "Oumarou Sanda's Services - AI Web Agency, Consulting & Video Production",
     },
 
     /* ═══════════════════════ HERO ═══════════════════════ */
@@ -213,7 +213,7 @@ export const servicesTexts = {
       heading: "You don't need a contractor.",
       headingLine2: "You need a partner who understands",
       headingHighlight: "AI and business.",
-      description: "Whether you need a website that converts, a tailored AI strategy, professional videos produced with artificial intelligence, or a SaaS tool — I don't deliver files.",
+      description: "Whether you need a website that converts, a tailored AI strategy, professional videos produced with artificial intelligence, or a SaaS tool - I don't deliver files.",
       descriptionBold: "I deliver results.",
       ctaPrimary: "REQUEST A FREE QUOTE",
       ctaSecondary: "BOOK A STRATEGY CALL",
@@ -236,7 +236,7 @@ export const servicesTexts = {
       label: "SERVICE 01",
       headingLine1: "We don't build showcase websites.",
       headingHighlight: "We build client-generating machines.",
-      descParagraph1: "Most African businesses have a problem. They don't exist online — or worse, they exist poorly. A slow, unoptimized site that converts no one. Random digital marketing with no strategy or automation.",
+      descParagraph1: "Most African businesses have a problem. They don't exist online - or worse, they exist poorly. A slow, unoptimized site that converts no one. Random digital marketing with no strategy or automation.",
       descParagraph2Start: "",
       descParagraph2Bold: "Wendooka exists to fix that.",
       descParagraph2End: " Since 2017, my agency has been helping SMEs, entrepreneurs, and organizations build a digital presence that actually generates clients and revenue.",
@@ -249,7 +249,7 @@ export const servicesTexts = {
         { title: "Maintenance & Support", desc: "Security, updates, backups, monitoring. Your site runs 24/7 without you having to think about it." },
       ],
       whyTitle: "Why Wendooka and not another agency?",
-      whyText: "Because we don't just deliver a website. We understand your business, your goals, your market — and we build a digital system that fits into your overall strategy. And because behind the agency, there's an entrepreneur who uses the exact same tools for his own business.",
+      whyText: "Because we don't just deliver a website. We understand your business, your goals, your market - and we build a digital system that fits into your overall strategy. And because behind the agency, there's an entrepreneur who uses the exact same tools for his own business.",
       whyBold: "If it didn't work, I wouldn't sell it.",
       ctaPrimary: "REQUEST A FREE QUOTE",
       ctaSecondary: "SEE OUR WORK",
@@ -272,7 +272,7 @@ export const servicesTexts = {
       approachHighlight: "3 phases",
       phases: [
         { id: "PHASE 1: AUDIT", desc: "Where does your business stand today? Which processes can be automated? Where can AI have the most immediate impact? I run a complete diagnostic of your operations to identify the most profitable AI levers." },
-        { id: "PHASE 2: STRATEGY", desc: "Together, we build a clear action plan. Which tools to adopt, in what order, on what budget. Not a PowerPoint presentation — an operational roadmap you can execute the very next day." },
+        { id: "PHASE 2: STRATEGY", desc: "Together, we build a clear action plan. Which tools to adopt, in what order, on what budget. Not a PowerPoint presentation - an operational roadmap you can execute the very next day." },
         { id: "PHASE 3: IMPLEMENTATION", desc: "If you want, I stay on to execute. Setting up AI tools, creating automation workflows, training your teams. The result: a business that runs faster, with less friction, and higher margins." },
       ],
       expertiseTitle: "Areas of expertise:",
@@ -284,7 +284,7 @@ export const servicesTexts = {
         "Team training and upskilling on AI",
       ],
       notForYouTitle: "This is NOT for you if:",
-      notForYouText: "You're looking for someone to build you a custom ChatGPT in 10 minutes. My consulting is for entrepreneurs and organizations that want a lasting competitive advantage — not a gimmick.",
+      notForYouText: "You're looking for someone to build you a custom ChatGPT in 10 minutes. My consulting is for entrepreneurs and organizations that want a lasting competitive advantage - not a gimmick.",
       idealTitle: "Ideal for:",
       idealItems: [
         "Entrepreneurs hitting a ceiling who want to scale with AI",
@@ -301,7 +301,7 @@ export const servicesTexts = {
       headingLine1: "Studio quality.",
       headingLine2: "Budget divided by 10.",
       headingLine3: "Timeline divided by 5.",
-      descParagraph1: "The world of video has changed. Artificial intelligence now makes it possible to produce advertising, corporate, and cinematic videos of a quality that would have cost tens of thousands of euros two years ago — in a fraction of the time and budget.",
+      descParagraph1: "The world of video has changed. Artificial intelligence now makes it possible to produce advertising, corporate, and cinematic videos of a quality that would have cost tens of thousands of euros two years ago - in a fraction of the time and budget.",
       descParagraph2Start: "I'm not speaking theoretically. It's what I do every day. It's what I teach in",
       descParagraph2Bold: "Protocole Video IA",
       descParagraph2End: ". And it's what I offer as a service.",
@@ -326,7 +326,7 @@ export const servicesTexts = {
       headingEnd: "works.",
       headingLine2: "And that it can work for you too.",
       descParagraph1: "CommentSticker is not just a tool. It's a living demonstration of what I teach: that you can create a functional, useful, and profitable SaaS with AI and no-code, without being a developer.",
-      descParagraph2: "It's a product I built myself using exactly the methods I teach in Sanda Vibe Code. If you want concrete proof that vibe coding isn't BS — here it is.",
+      descParagraph2: "It's a product I built myself using exactly the methods I teach in Sanda Vibe Code. If you want concrete proof that vibe coding isn't BS - here it is.",
       whyTitle: "Why it's on this page:",
       whyText: "CommentSticker isn't just a SaaS product. It's also a service. Because it solves a real problem for content creators and entrepreneurs (automated engagement, community management). And because it proves that the Sanda Vibe Code ecosystem methods work in the real world.",
       cta: "DISCOVER COMMENTSTICKER",
@@ -338,9 +338,9 @@ export const servicesTexts = {
       headingLine1: "Simple. Clear.",
       headingHighlight: "No nasty surprises.",
       steps: [
-        { id: "01", title: "DISCOVERY CALL", desc: "We talk about your project, your goals, your constraints. Not a sales pitch — a real conversation to see if we're the right fit for you. 30 minutes. Free. No commitment." },
+        { id: "01", title: "DISCOVERY CALL", desc: "We talk about your project, your goals, your constraints. Not a sales pitch - a real conversation to see if we're the right fit for you. 30 minutes. Free. No commitment." },
         { id: "02", title: "PROPOSAL & QUOTE", desc: "You receive a detailed proposal: precise scope, deliverables, timelines, pricing. Everything in black and white. No hidden fees, no surprises." },
-        { id: "03", title: "EXECUTION & FOLLOW-UP", desc: "We get to work. You have a dedicated point of contact, regular updates, and direct access for your feedback. No broken telephone — direct communication." },
+        { id: "03", title: "EXECUTION & FOLLOW-UP", desc: "We get to work. You have a dedicated point of contact, regular updates, and direct access for your feedback. No broken telephone - direct communication." },
         { id: "04", title: "DELIVERY & SUPPORT", desc: "Delivery on the agreed schedule. Usage training if needed. Plus post-delivery support to make sure everything runs perfectly." },
       ],
     },
@@ -352,7 +352,7 @@ export const servicesTexts = {
       headingLine2: "than promises.",
       items: [
         { name: "E-commerce Company", service: "Wendooka Agency", text: "Wendooka built our e-commerce site in 3 weeks. Our online sales increased by 200% in the first month. Impressively precise and fast work.", logo: "E" },
-        { name: "CEO, Consulting Firm", service: "AI Consulting", text: "Oumarou's AI audit allowed us to cut our case processing time in half. His strategy isn't abstract — it's applicable the same day.", logo: "C" },
+        { name: "CEO, Consulting Firm", service: "AI Consulting", text: "Oumarou's AI audit allowed us to cut our case processing time in half. His strategy isn't abstract - it's applicable the same day.", logo: "C" },
         { name: "Startup Founder", service: "AI Video Production", text: "Our AI-generated ad cost a fraction of what traditional agencies were charging, with stunning visuals that sent our ROAS through the roof.", logo: "S" },
       ],
     },
@@ -378,7 +378,7 @@ export const servicesTexts = {
     ctaFinal: {
       headingLine1: "Got a project?",
       headingHighlight: "Let's talk.",
-      description: "Whether it's a website, an AI strategy, a video, or a SaaS — the first step is a call. 30 minutes. Free. And you'll know exactly how we can help.",
+      description: "Whether it's a website, an AI strategy, a video, or a SaaS - the first step is a call. 30 minutes. Free. And you'll know exactly how we can help.",
       ctaPrimary: "BOOK MY FREE CALL",
       ctaSecondary: "CONTACT ME BY EMAIL",
       selfLearnText: "Prefer to learn on your own?",

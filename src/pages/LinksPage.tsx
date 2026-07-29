@@ -66,7 +66,7 @@ const LINKS: LinkItem[] = [
   {
     id: 4,
     emoji: '📘',
-    title: { fr: 'Mon Livre — IA & Afrique', en: 'My Book — AI & Africa' },
+    title: { fr: 'Mon Livre - IA & Afrique', en: 'My Book - AI & Africa' },
     desc: { fr: 'Si l\'Afrique rate l\'IA, elle rate le futur', en: 'If Africa misses AI, it misses the future' },
     meta: { fr: '📚 Essai · Disponible maintenant', en: '📚 Essay · Available now' },
     href: '/livres',

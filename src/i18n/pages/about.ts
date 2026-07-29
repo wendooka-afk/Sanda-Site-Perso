@@ -6,7 +6,7 @@ export const aboutTexts = {
       description:
         "Découvrez le parcours d'Oumarou Sanda : ancien journaliste devenu expert en intelligence artificielle, fondateur de Wendooka, Sanda Vibe Code et CommentSticker, auteur et formateur de centaines d'entrepreneurs africains. Son histoire, sa vision, ses résultats.",
       ogTitle:
-        "L'histoire d'Oumarou Sanda — De la télé à la révolution IA en Afrique",
+        "L'histoire d'Oumarou Sanda - De la télé à la révolution IA en Afrique",
     },
 
     /* ═══════════════════════ HERO ═══════════════════════ */
@@ -15,7 +15,7 @@ export const aboutTexts = {
       headingLine1: "Je ne suis pas né expert.",
       headingLine2: "Je le suis devenu en refusant de rester à ma place.",
       description:
-        "Du micro de journaliste aux systèmes d'intelligence artificielle. De Ngaoundéré au monde entier. Voici comment un gars de l'Adamaoua est devenu la référence IA en Afrique francophone — avec 112 000 abonnés, plusieurs entreprises et un SaaS à son actif.",
+        "Du micro de journaliste aux systèmes d'intelligence artificielle. De Ngaoundéré au monde entier. Voici comment un gars de l'Adamaoua est devenu la référence IA en Afrique francophone - avec 112 000 abonnés, plusieurs entreprises et un SaaS à son actif.",
     },
 
     /* ═══════════════════════ CHAPTER 1 ═══════════════════════ */
@@ -33,9 +33,9 @@ export const aboutTexts = {
     chapter2: {
       label: "Chapitre 2 : Le Pivot",
       heading: "Du terrain à l'écran. Du reportage au revenu.",
-      p1: "En 2017, j'ai fondé <strong>Wendooka</strong>. Pas parce que c'était tendance de créer une agence web. Parce que je voyais des entreprises camerounaises et africaines perdre des opportunités chaque jour — simplement parce qu'elles n'existaient pas en ligne. Ou pire : elles existaient mal.",
-      p2: "Wendooka est devenu bien plus qu'une agence. C'est devenu un laboratoire. J'ai testé des tunnels de vente, des systèmes d'automatisation, des stratégies SEO et de marketing digital — d'abord pour mes clients, puis pour moi-même.",
-      p3: "Ensuite est venue la création de contenu. YouTube, TikTok, Facebook, LinkedIn, Instagram. Pas pour la célébrité — pour la légitimité. Pour prouver, vidéo après vidéo, que les outils que je recommande fonctionnent. Que les stratégies que j'enseigne génèrent des résultats.",
+      p1: "En 2017, j'ai fondé <strong>Wendooka</strong>. Pas parce que c'était tendance de créer une agence web. Parce que je voyais des entreprises camerounaises et africaines perdre des opportunités chaque jour - simplement parce qu'elles n'existaient pas en ligne. Ou pire : elles existaient mal.",
+      p2: "Wendooka est devenu bien plus qu'une agence. C'est devenu un laboratoire. J'ai testé des tunnels de vente, des systèmes d'automatisation, des stratégies SEO et de marketing digital - d'abord pour mes clients, puis pour moi-même.",
+      p3: "Ensuite est venue la création de contenu. YouTube, TikTok, Facebook, LinkedIn, Instagram. Pas pour la célébrité - pour la légitimité. Pour prouver, vidéo après vidéo, que les outils que je recommande fonctionnent. Que les stratégies que j'enseigne génèrent des résultats.",
       p3Bold: "Réel. Tangible. Mesurable.",
       proofBox: "112 000 abonnés plus tard, la preuve est faite.",
     },
@@ -47,7 +47,7 @@ export const aboutTexts = {
       headingLine2: "Je suis allé la chercher.",
       p1: "Quand les premiers outils d'intelligence artificielle grand public sont apparus, la plupart des gens ont vu un gadget. Moi, j'ai vu un tsunami. Un tsunami qui allait balayer les business modèles traditionnels, redéfinir les compétences qui comptent, et créer un fossé entre ceux qui s'adaptent et ceux qui disparaissent.",
       bold: "Je n'ai pas attendu. J'ai plongé.",
-      p2: "J'ai testé chaque outil. Démonté chaque workflow. Créé des systèmes complets de production de contenu, de vidéo, d'automatisation business — alimentés par l'IA. Et surtout, j'ai documenté tout ce que j'apprenais pour le rendre accessible à ceux qui n'avaient pas le temps, les ressources ou le background technique pour faire la même chose.",
+      p2: "J'ai testé chaque outil. Démonté chaque workflow. Créé des systèmes complets de production de contenu, de vidéo, d'automatisation business - alimentés par l'IA. Et surtout, j'ai documenté tout ce que j'apprenais pour le rendre accessible à ceux qui n'avaient pas le temps, les ressources ou le background technique pour faire la même chose.",
       coursesIntro: "C'est comme ça que sont nées mes formations.",
     },
 
@@ -61,19 +61,19 @@ export const aboutTexts = {
         {
           title: "WENDOOKA",
           subtitle: "L'Agence",
-          desc: "Agence web et digitale spécialisée dans WordPress, l'automatisation et les solutions orientées performance. On crée des sites qui convertissent, pas des vitrines qui prennent la poussière. On accompagne des PME, des entrepreneurs et des organisations à passer au digital — intelligemment.",
+          desc: "Agence web et digitale spécialisée dans WordPress, l'automatisation et les solutions orientées performance. On crée des sites qui convertissent, pas des vitrines qui prennent la poussière. On accompagne des PME, des entrepreneurs et des organisations à passer au digital - intelligemment.",
           linkText: "wendooka.com",
         },
         {
           title: "SANDA VIBE CODE",
           subtitle: "L'Écosystème",
-          desc: "Le vibe coding, c'est la nouvelle manière de créer des produits digitaux. Pas besoin d'être développeur. Tu combines IA, no-code et logique produit pour créer des SaaS, des applications web et mobiles, des outils — et les monétiser. Sanda Vibe Code, c'est l'écosystème complet pour y arriver.",
+          desc: "Le vibe coding, c'est la nouvelle manière de créer des produits digitaux. Pas besoin d'être développeur. Tu combines IA, no-code et logique produit pour créer des SaaS, des applications web et mobiles, des outils - et les monétiser. Sanda Vibe Code, c'est l'écosystème complet pour y arriver.",
           linkText: "sandavibecode.com",
         },
         {
           title: "COMMENTSTICKER",
           subtitle: "Le SaaS",
-          desc: "CommentSticker est mon premier SaaS lancé en 2026. La preuve concrète que le vibe coding fonctionne : un produit bâti avec l'IA, qui résout un vrai problème, et qui génère des revenus. Ce n'est pas de la théorie — c'est ce que j'enseigne, appliqué à mon propre business.",
+          desc: "CommentSticker est mon premier SaaS lancé en 2026. La preuve concrète que le vibe coding fonctionne : un produit bâti avec l'IA, qui résout un vrai problème, et qui génère des revenus. Ce n'est pas de la théorie - c'est ce que j'enseigne, appliqué à mon propre business.",
           linkText: "commentsticker.com",
         },
         {
@@ -100,7 +100,7 @@ export const aboutTexts = {
         { year: "2024", title: "Structuration Formations", desc: "Lancement des premières formations structurées en ligne répondant aux nouveaux besoins digitaux." },
         { year: "2025", title: "Protocole Vidéo IA", desc: "Lancement de la formation phare sur la création vidéo avec l'intelligence artificielle. Centaines d'apprenants inscrits." },
         { year: "2025", title: "Le Cerveau Augmenté & Offshore Empire", desc: "Déploiement de deux nouvelles formations. Structuration de l'écosystème de produits digitaux." },
-        { year: "2025", title: "Sanda Vibe Code + Livre Cerveau Augmenté", desc: "Lancement de l'écosystème vibe coding. Publication du livre «Cerveau Augmenté» — guide pour construire son système d'IA personnel." },
+        { year: "2025", title: "Sanda Vibe Code + Livre Cerveau Augmenté", desc: "Lancement de l'écosystème vibe coding. Publication du livre «Cerveau Augmenté» - guide pour construire son système d'IA personnel." },
         { year: "2026", title: "CommentSticker + Livre sur l'IA en Afrique", desc: "Lancement de CommentSticker (SaaS). Publication de «Si l'Afrique rate l'IA, elle rate le Futur». 112 000+ abonnés. Positionnement consolidé comme référence IA." },
       ],
     },
@@ -112,9 +112,9 @@ export const aboutTexts = {
       items: [
         { id: "01", title: "L'action bat la théorie. Toujours.", desc: "Je ne vends pas des idées. Je vends des systèmes qui marchent. Chaque formation, chaque service, chaque contenu que je crée est testé sur le terrain avant d'être partagé. Si ça ne génère pas de résultats, ça ne sort pas." },
         { id: "02", title: "L'Afrique n'est pas en retard. Elle est en position.", desc: "Pendant que les marchés occidentaux sont saturés, le continent africain est un terrain vierge pour l'IA, le digital et l'entrepreneuriat technologique. Ceux qui agissent maintenant écriront les règles du jeu. Je veux que ce soit nous." },
-        { id: "03", title: "La technologie sans stratégie est du bruit.", desc: "L'IA est un outil. Un outil puissant, mais un outil quand même. Ce qui fait la différence, c'est la stratégie derrière. C'est pour ça que mes formations ne sont pas des tutos YouTube glorifiés — ce sont des systèmes complets orientés revenus." },
+        { id: "03", title: "La technologie sans stratégie est du bruit.", desc: "L'IA est un outil. Un outil puissant, mais un outil quand même. Ce qui fait la différence, c'est la stratégie derrière. C'est pour ça que mes formations ne sont pas des tutos YouTube glorifiés - ce sont des systèmes complets orientés revenus." },
         { id: "04", title: "Pas de complexe. Pas de permission.", desc: "Personne ne t'a demandé d'attendre que quelqu'un te valide pour commencer. Le monde change pour ceux qui osent bouger. Pas pour ceux qui attendent un signal." },
-        { id: "05", title: "Souveraineté numérique.", desc: "Construire ses propres systèmes. Posséder ses outils. Ne dépendre d'aucune plateforme unique. C'est la philosophie derrière tout ce que je fais — et tout ce que j'enseigne." },
+        { id: "05", title: "Souveraineté numérique.", desc: "Construire ses propres systèmes. Posséder ses outils. Ne dépendre d'aucune plateforme unique. C'est la philosophie derrière tout ce que je fais - et tout ce que j'enseigne." },
       ],
     },
 
@@ -140,7 +140,7 @@ export const aboutTexts = {
       ctaHeadingLine1: "Tu connais mon histoire.",
       ctaHeadingLine2: "Maintenant, écrivons la tienne.",
       ctaSubtitle:
-        "Que tu veuilles te former, collaborer ou simplement rester connecté — choisis ton prochain pas.",
+        "Que tu veuilles te former, collaborer ou simplement rester connecté - choisis ton prochain pas.",
       btnCourses: "DÉCOUVRIR MES FORMATIONS",
       btnWork: "TRAVAILLER AVEC MOI",
       btnYoutube: "ME SUIVRE SUR YOUTUBE",
@@ -156,7 +156,7 @@ export const aboutTexts = {
         },
         {
           q: "Quelles formations Oumarou Sanda propose-t-il ?",
-          a: "Oumarou Sanda propose plusieurs formations en ligne : le Challenge 30 Jours IA (maîtriser 28 outils IA en 15 min/jour — oumarousanda.com/challenge-30-jours), Protocole Vidéo IA (création de vidéos professionnelles avec l'IA), Le Cerveau Augmenté (système personnel d'IA pour la productivité et le business), et Offshore Empire (création de sociétés offshore au Royaume-Uni depuis l'Afrique). Toutes ses formations sont orientées résultats et adaptées au contexte africain et francophone.",
+          a: "Oumarou Sanda propose plusieurs formations en ligne : le Challenge 30 Jours IA (maîtriser 28 outils IA en 15 min/jour - oumarousanda.com/challenge-30-jours), Protocole Vidéo IA (création de vidéos professionnelles avec l'IA), Le Cerveau Augmenté (système personnel d'IA pour la productivité et le business), et Offshore Empire (création de sociétés offshore au Royaume-Uni depuis l'Afrique). Toutes ses formations sont orientées résultats et adaptées au contexte africain et francophone.",
         },
         {
           q: "C'est quoi Wendooka ?",
@@ -164,7 +164,7 @@ export const aboutTexts = {
         },
         {
           q: "C'est quoi le vibe coding et Sanda Vibe Code ?",
-          a: "Le vibe coding est une nouvelle approche de création de produits digitaux qui combine l'intelligence artificielle, le no-code et la logique produit. Sanda Vibe Code est l'écosystème créé par Oumarou Sanda pour accompagner les entrepreneurs qui veulent créer des SaaS, applications web et mobiles, et outils digitaux — sans avoir besoin de coder.",
+          a: "Le vibe coding est une nouvelle approche de création de produits digitaux qui combine l'intelligence artificielle, le no-code et la logique produit. Sanda Vibe Code est l'écosystème créé par Oumarou Sanda pour accompagner les entrepreneurs qui veulent créer des SaaS, applications web et mobiles, et outils digitaux - sans avoir besoin de coder.",
         },
         {
           q: "Oumarou Sanda est-il basé au Cameroun ?",
@@ -181,7 +181,7 @@ export const aboutTexts = {
       description:
         "Discover Oumarou Sanda's journey: from journalist to AI expert, founder of Wendooka, Sanda Vibe Code and CommentSticker, author and trainer who has coached hundreds of African entrepreneurs. His story, his vision, his results.",
       ogTitle:
-        "The Story of Oumarou Sanda — From TV to the AI Revolution in Africa",
+        "The Story of Oumarou Sanda - From TV to the AI Revolution in Africa",
     },
 
     /* ═══════════════════════ HERO ═══════════════════════ */
@@ -190,7 +190,7 @@ export const aboutTexts = {
       headingLine1: "I wasn't born an expert.",
       headingLine2: "I became one by refusing to stay in my lane.",
       description:
-        "From a journalist's microphone to artificial intelligence systems. From Ngaoundere to the entire world. Here's how a guy from Adamaoua became the go-to AI reference in French-speaking Africa — with 112,000 subscribers, multiple businesses and a SaaS to his name.",
+        "From a journalist's microphone to artificial intelligence systems. From Ngaoundere to the entire world. Here's how a guy from Adamaoua became the go-to AI reference in French-speaking Africa - with 112,000 subscribers, multiple businesses and a SaaS to his name.",
     },
 
     /* ═══════════════════════ CHAPTER 1 ═══════════════════════ */
@@ -208,9 +208,9 @@ export const aboutTexts = {
     chapter2: {
       label: "Chapter 2: The Pivot",
       heading: "From the field to the screen. From reporting to revenue.",
-      p1: "In 2017, I founded <strong>Wendooka</strong>. Not because starting a web agency was trendy. Because I saw Cameroonian and African businesses losing opportunities every single day — simply because they didn't exist online. Or worse: they existed poorly.",
-      p2: "Wendooka became much more than an agency. It became a laboratory. I tested sales funnels, automation systems, SEO strategies and digital marketing — first for my clients, then for myself.",
-      p3: "Then came content creation. YouTube, TikTok, Facebook, LinkedIn, Instagram. Not for fame — for credibility. To prove, video after video, that the tools I recommend actually work. That the strategies I teach deliver results.",
+      p1: "In 2017, I founded <strong>Wendooka</strong>. Not because starting a web agency was trendy. Because I saw Cameroonian and African businesses losing opportunities every single day - simply because they didn't exist online. Or worse: they existed poorly.",
+      p2: "Wendooka became much more than an agency. It became a laboratory. I tested sales funnels, automation systems, SEO strategies and digital marketing - first for my clients, then for myself.",
+      p3: "Then came content creation. YouTube, TikTok, Facebook, LinkedIn, Instagram. Not for fame - for credibility. To prove, video after video, that the tools I recommend actually work. That the strategies I teach deliver results.",
       p3Bold: "Real. Tangible. Measurable.",
       proofBox: "112,000 subscribers later, the proof speaks for itself.",
     },
@@ -222,7 +222,7 @@ export const aboutTexts = {
       headingLine2: "I went looking for it.",
       p1: "When the first consumer-grade AI tools appeared, most people saw a gadget. I saw a tsunami. A tsunami that would sweep away traditional business models, redefine the skills that matter, and create a gap between those who adapt and those who disappear.",
       bold: "I didn't wait. I dove in.",
-      p2: "I tested every tool. Took apart every workflow. Built complete systems for content production, video, business automation — all powered by AI. And above all, I documented everything I learned to make it accessible to those who didn't have the time, resources or technical background to do the same.",
+      p2: "I tested every tool. Took apart every workflow. Built complete systems for content production, video, business automation - all powered by AI. And above all, I documented everything I learned to make it accessible to those who didn't have the time, resources or technical background to do the same.",
       coursesIntro: "That's how my courses were born.",
     },
 
@@ -236,19 +236,19 @@ export const aboutTexts = {
         {
           title: "WENDOOKA",
           subtitle: "The Agency",
-          desc: "A web and digital agency specializing in WordPress, automation and performance-driven solutions. We build websites that convert, not showpieces gathering dust. We help SMEs, entrepreneurs and organizations go digital — the smart way.",
+          desc: "A web and digital agency specializing in WordPress, automation and performance-driven solutions. We build websites that convert, not showpieces gathering dust. We help SMEs, entrepreneurs and organizations go digital - the smart way.",
           linkText: "wendooka.com",
         },
         {
           title: "SANDA VIBE CODE",
           subtitle: "The Ecosystem",
-          desc: "Vibe coding is the new way to build digital products. No developer skills needed. You combine AI, no-code and product thinking to create SaaS platforms, web and mobile apps, tools — and monetize them. Sanda Vibe Code is the complete ecosystem to make it happen.",
+          desc: "Vibe coding is the new way to build digital products. No developer skills needed. You combine AI, no-code and product thinking to create SaaS platforms, web and mobile apps, tools - and monetize them. Sanda Vibe Code is the complete ecosystem to make it happen.",
           linkText: "sandavibecode.com",
         },
         {
           title: "COMMENTSTICKER",
           subtitle: "The SaaS",
-          desc: "CommentSticker is my first SaaS launched in 2026. Concrete proof that vibe coding works: a product built with AI, solving a real problem, generating revenue. This isn't theory — it's what I teach, applied to my own business.",
+          desc: "CommentSticker is my first SaaS launched in 2026. Concrete proof that vibe coding works: a product built with AI, solving a real problem, generating revenue. This isn't theory - it's what I teach, applied to my own business.",
           linkText: "commentsticker.com",
         },
         {
@@ -275,7 +275,7 @@ export const aboutTexts = {
         { year: "2024", title: "Courses Structuring", desc: "Launch of the first structured online courses addressing new digital needs." },
         { year: "2025", title: "Protocole Video IA", desc: "Launch of the flagship course on AI-powered video creation. Hundreds of learners enrolled." },
         { year: "2025", title: "Le Cerveau Augmente & Offshore Empire", desc: "Rollout of two new courses. Structuring of the digital product ecosystem." },
-        { year: "2025", title: "Sanda Vibe Code + Cerveau Augmente Book", desc: "Launch of the vibe coding ecosystem. Publication of the \"Cerveau Augmente\" book — a guide to building your own personal AI system." },
+        { year: "2025", title: "Sanda Vibe Code + Cerveau Augmente Book", desc: "Launch of the vibe coding ecosystem. Publication of the \"Cerveau Augmente\" book - a guide to building your own personal AI system." },
         { year: "2026", title: "CommentSticker + Book on AI in Africa", desc: "Launch of CommentSticker (SaaS). Publication of \"Si l'Afrique rate l'IA, elle rate le Futur\". 112,000+ subscribers. Position cemented as the go-to AI reference." },
       ],
     },
@@ -287,9 +287,9 @@ export const aboutTexts = {
       items: [
         { id: "01", title: "Action beats theory. Always.", desc: "I don't sell ideas. I sell systems that work. Every course, every service, every piece of content I create is field-tested before it's shared. If it doesn't produce results, it doesn't go out." },
         { id: "02", title: "Africa isn't behind. It's in position.", desc: "While Western markets are saturated, the African continent is an open playing field for AI, digital and tech entrepreneurship. Those who act now will write the rules of the game. I want that to be us." },
-        { id: "03", title: "Technology without strategy is noise.", desc: "AI is a tool. A powerful tool, but a tool nonetheless. What makes the difference is the strategy behind it. That's why my courses aren't glorified YouTube tutorials — they're complete revenue-driven systems." },
+        { id: "03", title: "Technology without strategy is noise.", desc: "AI is a tool. A powerful tool, but a tool nonetheless. What makes the difference is the strategy behind it. That's why my courses aren't glorified YouTube tutorials - they're complete revenue-driven systems." },
         { id: "04", title: "No complex. No permission needed.", desc: "Nobody asked you to wait for someone to validate you before starting. The world changes for those who dare to move. Not for those waiting for a signal." },
-        { id: "05", title: "Digital sovereignty.", desc: "Build your own systems. Own your tools. Don't depend on any single platform. That's the philosophy behind everything I do — and everything I teach." },
+        { id: "05", title: "Digital sovereignty.", desc: "Build your own systems. Own your tools. Don't depend on any single platform. That's the philosophy behind everything I do - and everything I teach." },
       ],
     },
 
@@ -315,7 +315,7 @@ export const aboutTexts = {
       ctaHeadingLine1: "You know my story.",
       ctaHeadingLine2: "Now let's write yours.",
       ctaSubtitle:
-        "Whether you want to learn, collaborate or simply stay connected — choose your next move.",
+        "Whether you want to learn, collaborate or simply stay connected - choose your next move.",
       btnCourses: "EXPLORE MY COURSES",
       btnWork: "WORK WITH ME",
       btnYoutube: "FOLLOW ME ON YOUTUBE",
@@ -331,7 +331,7 @@ export const aboutTexts = {
         },
         {
           q: "What courses does Oumarou Sanda offer?",
-          a: "Oumarou Sanda offers several online courses: the 30-Day AI Challenge (master 28 AI tools in 15 min/day — oumarousanda.com/challenge-30-jours), Protocole Video IA (professional video creation with AI), Le Cerveau Augmente (personal AI system for productivity and business), and Offshore Empire (setting up offshore companies in the UK from Africa). All his courses are results-oriented and tailored to the African and French-speaking context.",
+          a: "Oumarou Sanda offers several online courses: the 30-Day AI Challenge (master 28 AI tools in 15 min/day - oumarousanda.com/challenge-30-jours), Protocole Video IA (professional video creation with AI), Le Cerveau Augmente (personal AI system for productivity and business), and Offshore Empire (setting up offshore companies in the UK from Africa). All his courses are results-oriented and tailored to the African and French-speaking context.",
         },
         {
           q: "What is Wendooka?",
@@ -339,7 +339,7 @@ export const aboutTexts = {
         },
         {
           q: "What is vibe coding and Sanda Vibe Code?",
-          a: "Vibe coding is a new approach to building digital products that combines artificial intelligence, no-code and product thinking. Sanda Vibe Code is the ecosystem created by Oumarou Sanda to support entrepreneurs who want to build SaaS platforms, web and mobile apps, and digital tools — without needing to code.",
+          a: "Vibe coding is a new approach to building digital products that combines artificial intelligence, no-code and product thinking. Sanda Vibe Code is the ecosystem created by Oumarou Sanda to support entrepreneurs who want to build SaaS platforms, web and mobile apps, and digital tools - without needing to code.",
         },
         {
           q: "Is Oumarou Sanda based in Cameroon?",

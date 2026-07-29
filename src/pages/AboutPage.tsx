@@ -244,7 +244,7 @@ function Ecosystem() {
                 <div className="flex items-center gap-2 mb-2">
                   <h3 className="font-heading font-black text-xl text-[#0a0a0a]">{p.title}</h3>
                 </div>
-                <span className={`${p.color} text-[12px] font-bold uppercase tracking-wider mb-4 block`}>— {p.subtitle}</span>
+                <span className={`${p.color} text-[12px] font-bold uppercase tracking-wider mb-4 block`}>- {p.subtitle}</span>
                 <p className="text-[#525252] text-[14px] leading-relaxed mb-6 flex-1">{p.desc}</p>
                 {p.link && ('linkText' in p) && (
                   <a href={p.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#a3a3a3] hover:text-[#0a0a0a] font-bold text-[13px] transition-colors group">

@@ -81,7 +81,7 @@ export function Book() {
                 L'Afrique a le talent, la jeunesse et la créativité. Il ne lui manque que la prise de conscience 
                 et les outils. Ce livre est conçu pour fournir les deux."
               </p>
-              <p className="text-accent-gold font-semibold text-sm mt-3">— Oumarou Sanda</p>
+              <p className="text-accent-gold font-semibold text-sm mt-3">- Oumarou Sanda</p>
             </div>
 
             {/* Chapters preview */}

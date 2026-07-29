@@ -331,7 +331,7 @@ export default function RessourcesPage() {
             },
             {
               "@type": "ItemList",
-              "name": language === 'en' ? "Free Resources — Oumarou Sanda" : "Ressources Gratuites — Oumarou Sanda",
+              "name": language === 'en' ? "Free Resources - Oumarou Sanda" : "Ressources Gratuites - Oumarou Sanda",
               "url": `https://oumarousanda.com${tx.seo.canonical}`,
               "itemListElement": allResources.map((r, i) => ({
                 "@type": "ListItem",

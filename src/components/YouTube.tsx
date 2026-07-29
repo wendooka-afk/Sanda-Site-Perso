@@ -26,7 +26,7 @@ const videos = [
     thumb: 'from-accent-gold/30 via-navy-700 to-navy-800',
   },
   {
-    title: 'J\'ai automatisé 80% de mon business avec l\'IA — voici comment',
+    title: 'J\'ai automatisé 80% de mon business avec l\'IA - voici comment',
     views: '98K vues',
     duration: '25:30',
     category: 'Automatisation',

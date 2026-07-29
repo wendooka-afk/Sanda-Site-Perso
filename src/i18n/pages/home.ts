@@ -5,7 +5,7 @@ export const homeTexts = {
       h1_1: "Je t'apprends à utiliser l'IA",
       h1_2: "pour bâtir un business",
       h1_3: "qui écrase la concurrence.",
-      desc: "Entrepreneur digital, expert en intelligence artificielle et formateur. J'ai aidé des centaines d'entrepreneurs et créateurs africains à transformer l'IA en machine à revenus. Formations, services, outils — tout est là pour",
+      desc: "Entrepreneur digital, expert en intelligence artificielle et formateur. J'ai aidé des centaines d'entrepreneurs et créateurs africains à transformer l'IA en machine à revenus. Formations, services, outils - tout est là pour",
       descBold: "accélérer ta croissance.",
       cta1: "Découvrir mes formations",
       cta2: "Travailler avec moi",
@@ -27,7 +27,7 @@ export const homeTexts = {
       h2_1: "Ancien journaliste.",
       h2_2: "Entrepreneur.",
       h2_3: "Obsédé par l'IA.",
-      p1: "J'ai quitté le journalisme le jour où j'ai compris que l'information la plus puissante n'était pas celle qu'on diffuse à la télé — mais celle qui permet de créer des business.",
+      p1: "J'ai quitté le journalisme le jour où j'ai compris que l'information la plus puissante n'était pas celle qu'on diffuse à la télé - mais celle qui permet de créer des business.",
       p2_prefix: "Aujourd'hui, je dirige",
       p2_wendooka: "Wendooka",
       p2_mid1: "(agence web), je développe",
@@ -66,7 +66,7 @@ export const homeTexts = {
       items: [
         {
           title: "PROTOCOLE VIDÉO IA",
-          desc: "Crée des vidéos publicitaires et cinématographiques de niveau professionnel avec l'intelligence artificielle. VEO, Sora, Wan, Higgsfield — maîtrise les outils que les agences facturent des milliers d'euros.",
+          desc: "Crée des vidéos publicitaires et cinématographiques de niveau professionnel avec l'intelligence artificielle. VEO, Sora, Wan, Higgsfield - maîtrise les outils que les agences facturent des milliers d'euros.",
           target:
             "Créateurs de contenu, marketeurs, entrepreneurs qui veulent des vidéos pro sans équipe ni budget.",
           badge: "Bestseller",
@@ -80,14 +80,14 @@ export const homeTexts = {
         },
         {
           title: "OFFSHORE EMPIRE",
-          desc: "Structure ton business à l'international. Crée ta société au Royaume-Uni depuis l'Afrique, ouvre un compte bancaire business, et accède aux marchés mondiaux — légalement.",
+          desc: "Structure ton business à l'international. Crée ta société au Royaume-Uni depuis l'Afrique, ouvre un compte bancaire business, et accède aux marchés mondiaux - légalement.",
           target:
             "Entrepreneurs africains qui veulent scaler au-delà des frontières locales.",
           badge: "Premium",
         },
         {
           title: "CHALLENGE 30 JOURS IA",
-          desc: "Passe du niveau zéro aux 28 outils IA que les pros utilisent vraiment en 2026. VEO 3, Sora 2, Nano Banana, Antigravity, N8N — 15 minutes par jour, 30 jours, résultats concrets.",
+          desc: "Passe du niveau zéro aux 28 outils IA que les pros utilisent vraiment en 2026. VEO 3, Sora 2, Nano Banana, Antigravity, N8N - 15 minutes par jour, 30 jours, résultats concrets.",
           target:
             "Débutants et intermédiaires qui veulent maîtriser rapidement l'écosystème IA 2026.",
           badge: "\u{1F680} Nouveau",
@@ -102,11 +102,11 @@ export const homeTexts = {
       h2: "Tu n'as pas besoin de",
       h2_accent: "tout faire seul.",
       desc_pre:
-        "Tu veux que quelqu'un fasse le travail pour toi ? Ou avec toi ? Que ce soit pour un site web ultra-performant, une stratégie IA sur mesure, ou un système d'automatisation complet —",
+        "Tu veux que quelqu'un fasse le travail pour toi ? Ou avec toi ? Que ce soit pour un site web ultra-performant, une stratégie IA sur mesure, ou un système d'automatisation complet -",
       descBold: "mon équipe et moi, on délivre.",
       items: [
         {
-          title: "AGENCE WEB & DIGITALE — WENDOOKA",
+          title: "AGENCE WEB & DIGITALE - WENDOOKA",
           desc: "Sites web professionnels, tunnels de vente, SEO, automatisation marketing. On ne crée pas des sites vitrines. On crée des machines à clients.",
           cta: "DEMANDER UN DEVIS",
         },
@@ -117,7 +117,7 @@ export const homeTexts = {
         },
         {
           title: "PRODUCTION VIDÉO IA",
-          desc: "Spots publicitaires, vidéos corporate, contenus cinématographiques — produits entièrement avec l'intelligence artificielle. Qualité studio, budget divisé par 10.",
+          desc: "Spots publicitaires, vidéos corporate, contenus cinématographiques - produits entièrement avec l'intelligence artificielle. Qualité studio, budget divisé par 10.",
           cta: "VOIR MES RÉALISATIONS",
         },
       ],
@@ -195,7 +195,7 @@ export const homeTexts = {
       h2: "L'IA n'attend pas.",
       h2_accent: "Toi non plus.",
       desc_pre:
-        "Que tu veuilles te former, lancer un business digital, ou intégrer l'IA dans ton activité existante — le moment, c'est maintenant.",
+        "Que tu veuilles te former, lancer un business digital, ou intégrer l'IA dans ton activité existante - le moment, c'est maintenant.",
       descBold: "Pas lundi. Maintenant.",
       startNow: "Commencer maintenant",
       discuss: "Discuter d'un projet",
@@ -218,7 +218,7 @@ export const homeTexts = {
       h1_1: "I teach you to use AI",
       h1_2: "to build a business",
       h1_3: "that crushes the competition.",
-      desc: "Digital entrepreneur, AI expert and trainer. I've helped hundreds of entrepreneurs and creators turn AI into a revenue machine. Courses, services, tools — everything you need to",
+      desc: "Digital entrepreneur, AI expert and trainer. I've helped hundreds of entrepreneurs and creators turn AI into a revenue machine. Courses, services, tools - everything you need to",
       descBold: "accelerate your growth.",
       cta1: "Explore my courses",
       cta2: "Work with me",
@@ -240,7 +240,7 @@ export const homeTexts = {
       h2_1: "Former journalist.",
       h2_2: "Entrepreneur.",
       h2_3: "Obsessed with AI.",
-      p1: "I left journalism the day I realized that the most powerful information isn't what you broadcast on TV — it's what lets you build businesses.",
+      p1: "I left journalism the day I realized that the most powerful information isn't what you broadcast on TV - it's what lets you build businesses.",
       p2_prefix: "Today, I run",
       p2_wendooka: "Wendooka",
       p2_mid1: "(digital agency), I develop",
@@ -279,7 +279,7 @@ export const homeTexts = {
       items: [
         {
           title: "AI VIDEO PROTOCOL",
-          desc: "Create professional-grade advertising and cinematic videos with artificial intelligence. VEO, Sora, Wan, Higgsfield — master the tools that agencies charge thousands for.",
+          desc: "Create professional-grade advertising and cinematic videos with artificial intelligence. VEO, Sora, Wan, Higgsfield - master the tools that agencies charge thousands for.",
           target:
             "Content creators, marketers, entrepreneurs who want pro videos without a team or budget.",
           badge: "Bestseller",
@@ -293,14 +293,14 @@ export const homeTexts = {
         },
         {
           title: "OFFSHORE EMPIRE",
-          desc: "Structure your business internationally. Set up a UK company from Africa, open a business bank account, and access global markets — legally.",
+          desc: "Structure your business internationally. Set up a UK company from Africa, open a business bank account, and access global markets - legally.",
           target:
             "African entrepreneurs who want to scale beyond local borders.",
           badge: "Premium",
         },
         {
           title: "30-DAY AI CHALLENGE",
-          desc: "Go from zero to the 28 AI tools pros actually use in 2026. VEO 3, Sora 2, Nano Banana, Antigravity, N8N — 15 minutes a day, 30 days, concrete results.",
+          desc: "Go from zero to the 28 AI tools pros actually use in 2026. VEO 3, Sora 2, Nano Banana, Antigravity, N8N - 15 minutes a day, 30 days, concrete results.",
           target:
             "Beginners and intermediates who want to quickly master the 2026 AI ecosystem.",
           badge: "\u{1F680} New",
@@ -315,11 +315,11 @@ export const homeTexts = {
       h2: "You don't need to",
       h2_accent: "do it all alone.",
       desc_pre:
-        "Want someone to do the work for you? Or with you? Whether it's a high-performance website, a custom AI strategy, or a complete automation system —",
+        "Want someone to do the work for you? Or with you? Whether it's a high-performance website, a custom AI strategy, or a complete automation system -",
       descBold: "my team and I deliver.",
       items: [
         {
-          title: "WEB & DIGITAL AGENCY — WENDOOKA",
+          title: "WEB & DIGITAL AGENCY - WENDOOKA",
           desc: "Professional websites, sales funnels, SEO, marketing automation. We don't build display sites. We build client machines.",
           cta: "REQUEST A QUOTE",
         },
@@ -330,7 +330,7 @@ export const homeTexts = {
         },
         {
           title: "AI VIDEO PRODUCTION",
-          desc: "Ad spots, corporate videos, cinematic content — produced entirely with artificial intelligence. Studio quality, budget divided by 10.",
+          desc: "Ad spots, corporate videos, cinematic content - produced entirely with artificial intelligence. Studio quality, budget divided by 10.",
           cta: "VIEW MY WORK",
         },
       ],
@@ -408,7 +408,7 @@ export const homeTexts = {
       h2: "AI won't wait.",
       h2_accent: "Neither should you.",
       desc_pre:
-        "Whether you want to learn, launch a digital business, or integrate AI into your existing activity — the time is now.",
+        "Whether you want to learn, launch a digital business, or integrate AI into your existing activity - the time is now.",
       descBold: "Not Monday. Now.",
       startNow: "Start now",
       discuss: "Discuss a project",

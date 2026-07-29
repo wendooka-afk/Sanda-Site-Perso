@@ -44,14 +44,14 @@ export const blogTexts = {
       expertIa: 'EXPERT IA',
     },
     seo: {
-      title: "Blog | IA, Business Digital & Entrepreneuriat — Oumarou Sanda",
+      title: "Blog | IA, Business Digital & Entrepreneuriat - Oumarou Sanda",
       description: "Analyses, tutoriels et stratégies sur l'intelligence artificielle, le business digital et l'entrepreneuriat en Afrique. Par Oumarou Sanda, expert IA et fondateur de Wendooka et Sanda Vibe Code.",
     },
     hero: {
       badge: "LE BLOG",
       h1_1: "L'IA avance.",
       h1_2: "Toi aussi.",
-      desc_pre: "Analyses sans filtre, tutoriels concrets et stratégies testées sur l'intelligence artificielle, le business digital et l'entrepreneuriat — avec un focus Afrique francophone. Pas de théorie creuse.",
+      desc_pre: "Analyses sans filtre, tutoriels concrets et stratégies testées sur l'intelligence artificielle, le business digital et l'entrepreneuriat - avec un focus Afrique francophone. Pas de théorie creuse.",
       descBold: "Du contenu que tu peux appliquer dès maintenant.",
       searchPlaceholder: "Rechercher un article, un outil, une stratégie...",
     },
@@ -71,7 +71,7 @@ export const blogTexts = {
       subscribe: "S'inscrire",
       note: "Gratuit • Pas de spam • Désinscription en un clic",
     },
-    ctaFormations: "Les articles c'est bien, l'action c'est mieux — Voir les formations",
+    ctaFormations: "Les articles c'est bien, l'action c'est mieux - Voir les formations",
     author: {
       desc: "Entrepreneur digital, expert en intelligence artificielle et formateur basé au Cameroun. Fondateur de",
       descEnd: ", il a formé des centaines d'entrepreneurs africains à utiliser l'IA pour générer des revenus. Il est l'auteur de «Si l'Afrique rate l'IA, elle rate le Futur».",
@@ -122,14 +122,14 @@ export const blogTexts = {
       expertIa: 'AI EXPERT',
     },
     seo: {
-      title: "Blog | AI, Digital Business & Entrepreneurship — Oumarou Sanda",
+      title: "Blog | AI, Digital Business & Entrepreneurship - Oumarou Sanda",
       description: "Analyses, tutorials and strategies on artificial intelligence, digital business and entrepreneurship in Africa. By Oumarou Sanda, AI expert and founder of Wendooka and Sanda Vibe Code.",
     },
     hero: {
       badge: "THE BLOG",
       h1_1: "AI is moving.",
       h1_2: "So should you.",
-      desc_pre: "Unfiltered analyses, hands-on tutorials and tested strategies on artificial intelligence, digital business and entrepreneurship — with a focus on francophone Africa. No empty theory.",
+      desc_pre: "Unfiltered analyses, hands-on tutorials and tested strategies on artificial intelligence, digital business and entrepreneurship - with a focus on francophone Africa. No empty theory.",
       descBold: "Content you can apply right now.",
       searchPlaceholder: "Search for an article, tool, strategy...",
     },
@@ -149,7 +149,7 @@ export const blogTexts = {
       subscribe: "Subscribe",
       note: "Free • No spam • Unsubscribe in one click",
     },
-    ctaFormations: "Articles are great, action is better — View the courses",
+    ctaFormations: "Articles are great, action is better - View the courses",
     author: {
       desc: "Digital entrepreneur, AI expert and trainer based in Cameroon. Founder of",
       descEnd: ", he has trained hundreds of African entrepreneurs to use AI to generate revenue. He is the author of \"If Africa Misses AI, It Misses the Future\".",

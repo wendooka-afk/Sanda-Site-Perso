@@ -19,7 +19,7 @@ export default function FormationDetailPage() {
   return (
     <>
       <SEOHead
-        title={`${formation.name} | Formation — Oumarou Sanda`}
+        title={`${formation.name} | Formation - Oumarou Sanda`}
         description={formation.longDescription || formation.tagline}
         canonical={`/formations/${formation.id}`}
         ogType="website"
